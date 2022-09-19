@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <script src="https://unpkg.com/vue@next"></script>
+    <title>learnaxios</title>
+  </head>
+  <body>
+    <div id="app">{{message}}</div>
+    
+  </body>
+  <script>
+    // vue3 创建组件
+    const app=Vue.createApp({
+        data(){
+            return{
+                message:'这是一个app'
+            }
+        }
+    })
+
+    // 挂载组件
+    const vm =app.mount('#app')
+    // 也可以简写
+    // app=Vue.createApp({
+
+    // }).mount('#app')
+  </script>
+</html>

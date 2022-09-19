@@ -1,0 +1,156 @@
+{
+  "id": "2521356",
+  "name": "no name",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "77031",
+      "name": "店铺",
+      "font_class": "dianpu",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "485763",
+      "name": "收 藏",
+      "font_class": "shoucang",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "1650786",
+      "name": "客服",
+      "font_class": "kefu",
+      "unicode": "e629",
+      "unicode_decimal": 58921
+    },
+    {
+      "icon_id": "12875260",
+      "name": "店铺",
+      "font_class": "icon_A",
+      "unicode": "e6b0",
+      "unicode_decimal": 59056
+    },
+    {
+      "icon_id": "14886548",
+      "name": "客服",
+      "font_class": "kefu1",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "15226165",
+      "name": "客服",
+      "font_class": "kefu2",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "13712363",
+      "name": "JamIcons chevron circle left f",
+      "font_class": "JamIconschevroncircleleftf",
+      "unicode": "edff",
+      "unicode_decimal": 60927
+    },
+    {
+      "icon_id": "8444337",
+      "name": "用户",
+      "font_class": "yonghu",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "11791522",
+      "name": "购物车",
+      "font_class": "che",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "18092189",
+      "name": "首页-选中",
+      "font_class": "index-0-copy",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "20086871",
+      "name": "分类",
+      "font_class": "category",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "2056560",
+      "name": "vue",
+      "font_class": "vue",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "9383137",
+      "name": "VUE",
+      "font_class": "vue1",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "11155780",
+      "name": "react",
+      "font_class": "react",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "13457159",
+      "name": "react",
+      "font_class": "react1",
+      "unicode": "e6ed",
+      "unicode_decimal": 59117
+    },
+    {
+      "icon_id": "21286241",
+      "name": "闪电定位",
+      "font_class": "shandiandingwei",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "21286377",
+      "name": "天气雷达",
+      "font_class": "tianqileida",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "21286759",
+      "name": "模式-未选中",
+      "font_class": "moshi-weixuanzhong",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "21286762",
+      "name": "闪电-选中",
+      "font_class": "shandian-xuanzhong",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "21286766",
+      "name": "信息员选中",
+      "font_class": "xinxiyuanxuanzhong",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "2246503",
+      "name": "uesr",
+      "font_class": "uesr",
+      "unicode": "e6b5",
+      "unicode_decimal": 59061
+    }
+  ]
+}
