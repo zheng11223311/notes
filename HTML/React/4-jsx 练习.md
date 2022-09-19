@@ -1,0 +1,90 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .title {
+            background-color: crimson;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="like_button_container"></div>
+
+
+
+
+
+    <!-- 加载 React。-->
+    <!-- 注意: 部署时，将 "development.js" 替换为 "production.min.js"。-->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+
+    <script type="text/babel">
+        //模拟一些数据
+        //对象不能遍历对象
+        const data = ['Angular', 'React', 'Vue']
+        const data2 = [<li>Angular</li>, <li>React</li>, <li>Vue</li>]
+        const obj = { name1: 'Angular', name2: 'React', name3: 'Vue' }
+        // 使用jsx 的规则
+        const VDOM = (
+            //标签中使用jsx 表达式要用{},不是语句
+            //使用class 也可以渲染,但是会报错,
+            //className 是为了避开原生js 的class 冲突
+            //jsx 只能有一个根标签
+            // 标签必须闭合
+            //如果任意自定义的标签是小写的,渲染成html 相应同名的标签,如果不是html 标签,会渲染出来,但是会报错
+            //如果是大写的渲染成组件,如果不是组件会报错
+
+            //一定注意区分:js 语句(代码) 和 js 表达式
+            // 1.表达式:一个表达式产生会一个值,可以放在任何一个需要值的地方
+            //下面这些都是表达式:(返回一个值)
+            // (1)  a
+            // (2)  a+b
+            // (3) fn(1)
+            // (4) arr.map()
+            // (5) function test(){}    返回一个函数 function test(){}
+            //2.语句(代码)
+            //下面这些都是语句(没有值,控制语句走向)
+            // (1) if(){}
+            // (2) for(){}
+            // (3) switch(){}
+            
+            
+            function fn(){
+            	alert('jsx 触发')
+            }
+
+            <div>
+                <h1>前端js 框架列表</h1>
+                <ul>
+                //一个{} 只能写一个变量
+                    {data}
+                    {data2}
+                    {
+                        data.map((item, index,self) => {
+                            //使用index 作为key 会有错误,插入数组会改变index 的位置
+                            // jsx 的 onClick 使用大写,不是onclick,函数不能使用字符串的形式
+                            return <li key={index} onClick={fun}>{item}</li>
+                        })
+                    }
+                </ul>
+            </div>
+        )
+        ReactDOM.render(VDOM, document.getElementById('like_button_container'))
+
+    </script>
+</body>
+
+</html>
+```
+

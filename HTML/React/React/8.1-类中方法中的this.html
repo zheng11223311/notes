@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .title {
+            background-color: crimson;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+
+
+
+    <script>
+        class Person {
+            constructor(name, age) {
+                this.name = name
+                this.age = age
+            }
+            study() {
+                //study 方法放在了哪里?---类的原型对象上,供实例使用
+                //通过Person 实例调用的study 时,study 中的this 就是Person 实例
+                console.log(this);
+            }
+        }
+
+        const p1 = new Person('tom', 18)
+        p1.study()   //通过实例调用study() 方法      
+        //结果Person {name: "tom", age: 18}  实例对象
+
+        const x = p1.study
+        x()     //undefined     类的局部都开启了严格模式,this 传递出去时,this 指向不会指向全局window,而是undefined
+        //严格模式下函数内的this 指向都是undefined
+    </script>
+</body>
+
+</html>

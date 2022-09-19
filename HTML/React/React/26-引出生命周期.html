@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .title {
+            background-color: crimson;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="like_button_container"></div>
+
+
+
+
+
+
+    <!-- 加载 React。-->
+    <!-- 注意: 部署时，将 "development.js" 替换为 "production.min.js"。-->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <!-- 在https://www.npmjs.com/package/prop-types 导入prop-types 文件 -->
+    <script src="https://unpkg.com/prop-types@15.6/prop-types.js"></script>
+    <script type="text/babel">
+
+        console.log(PropTypes);
+        // 1.创建组件
+        class Life extends React.Component {
+            state={opacity:1}
+            /* 
+            挂载 mount
+            卸载 unmount(移除)
+            */
+           death=()=>{
+            //    //清除定时器
+            //    clearInterval(this.timer)
+            //卸载组件
+            ReactDOM.unmountComponentAtNode(document.getElementById('like_button_container'))
+           }
+        //    挂载 组件完成挂载
+        componentDidMount(){
+            // 卸载组件会报错,因为状态opacity 没有被清除,一直在被调用
+             this.timer=setInterval(()=>{
+                //获取原状态
+                let {opacity}=this.state
+                //减少0.1
+                opacity-=0.1
+                // 不能使用==  因为小数加减法不准确
+                if(opacity<0) opacity=1
+                //设置新的透明度
+                this.setState({opacity})
+            },200)
+        }
+            
+        // 组件将要被卸载之前
+        componentWillUnmount(){
+            //清除定时器
+               clearInterval(this.timer)
+        }
+        
+        //初始化渲染,状态更新之后
+            render() {
+                //放在render 这样会无限递归调用了render,cpu 温度会升高,占用内存
+                // setInterval(()=>{
+                //     //获取原状态
+                //     let {opacity}=this.state
+                //     //减少0.1
+                //     opacity-=0.1
+                //     // 不能使用==  因为小数加减法不准确
+                //     if(opacity<0) opacity=1
+                //     //设置新的透明度
+                //     this.setState({opacity})
+                // },200)
+                return (
+                    <div>
+                        <h2 style={{opacity:this.state.opacity}}>React 的生命周期</h2>
+                        <button onClick={this.death}>不活了</button>
+                        </div>
+                )
+            }
+        }
+
+
+        ReactDOM.render(<Life />, document.getElementById('like_button_container'))
+
+    </script>
+</body>
+
+</html>

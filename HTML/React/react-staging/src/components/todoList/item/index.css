@@ -1,0 +1,14 @@
+li {
+    position: relative;
+    border: 1px solid #999;
+}
+
+.bth-danger {
+    position: absolute;
+    right: 0;
+    bottom: 1px;
+    background-color: red;
+    color: aliceblue;
+    outline: none;
+    border: none;
+}

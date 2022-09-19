@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .title {
+            background-color: crimson;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="like_button_container"></div>
+    <div id="demo"></div>
+
+
+
+
+
+    <!-- 加载 React。-->
+    <!-- 注意: 部署时，将 "development.js" 替换为 "production.min.js"。-->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+
+    <script type="text/babel">
+        //存储id
+        const myid = 'aaaa'
+        // 存储内容
+        const mydata = 'ccccc'
+        // 使用jsx 的规则
+        const VDOM = (
+            //使用jsx 表达式要用{}
+            //使用class 也可以渲染,但是会报错,
+            //className 是为了避开原生js 的class 冲突
+            //jsx 只能有一个根标签
+            // 标签必须闭合
+            //如果任意自定义的标签是小写的,渲染成html 相应同名的标签,如果不是html 标签,会渲染出来,但是会报错
+            //如果是大写的渲染成组件,如果不是组件会报错
+            <div>
+                <h1 id={myid.toLocaleUpperCase()} className="title">
+                    <span style={{ color: "gold", fontSize: '40px' }}>{mydata.toLocaleUpperCase()}</span>
+                </h1>
+                <h1 id={myid} className="title">
+                   {/*  相当于 const sty={ color: "gold", fontSize: '40px' }  插值表表达式中不能直接使用字符*/}
+                    <span style={{ color: "gold", fontSize: '40px' }}>{mydata.toLocaleUpperCase()}</span>
+                </h1>
+                <input type="text"></input>
+                <input type="text" />
+                <good>123</good>
+            </div>
+        )
+        ReactDOM.render(VDOM, document.getElementById('like_button_container'))
+
+    </script>
+</body>
+
+</html>

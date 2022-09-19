@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <div id="like_button_container"></div>
+
+
+
+
+
+    <!-- 加载 React。-->
+    <!-- 注意: 部署时，将 "development.js" 替换为 "production.min.js"。-->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+
+    <script type="text/babel">
+        //这里不是js 语法而是jsx,要使用 type="text/babel,要使用babel 解析
+
+        //1.创建虚拟DOM
+        //此处一定不要写引号,因为不是字符串
+        const VDOM = <h1>Hello React</h1>
+
+        //2.渲染虚拟DOM 到页面
+        //react 没有自带的选择器,要自己选择
+        // const domContainer = document.querySelector('#like_button_container');
+        // ReactDOM.render(e(LikeButton), domContainer);
+
+        // Download the React DevTools for a better development experience: https://reactjs.org/link/react-devtools
+        // You might need to use a local HTTP server (instead of file://): https://reactjs.org/link/react-devtools-faq
+        // 每个库的有自己的调试工具,提示下载工具
+        ReactDOM.render(VDOM, document.getElementById('like_button_container'))
+    </script>
+</body>
+
+</html>

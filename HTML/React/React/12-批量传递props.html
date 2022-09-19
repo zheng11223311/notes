@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .title {
+            background-color: crimson;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="like_button_container"></div>
+    <div id="like_button_container1"></div>
+
+
+
+
+
+    <!-- 加载 React。-->
+    <!-- 注意: 部署时，将 "development.js" 替换为 "production.min.js"。-->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+
+    <script type="text/babel">
+        // 1.创建组件
+        class Person extends React.Component {
+
+            render() {
+                let { name, age, sex } = this.props
+                return (
+                    <ul>
+                        <li>姓名:{name}</li>
+                        <li>性别:{sex}</li>
+                        <li>年龄:{age}</li>
+                    </ul>
+                )
+            }
+
+
+        }
+        let p = { name: "李四", age: "30", sex: '男' }
+        console.log(...p);  //react 的development和babel 可以使对象展开,但是不会打印出来,仅仅适用于标签属性的传递
+        ReactDOM.render(<Person name="张三" age="18" sex='男' />, document.getElementById('like_button_container'))
+        ReactDOM.render(<Person {...p} />, document.getElementById('like_button_container1'))
+
+
+    </script>
+</body>
+
+</html>

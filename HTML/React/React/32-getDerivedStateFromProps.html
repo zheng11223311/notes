@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .title {
+            background-color: crimson;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="like_button_container"></div>
+
+
+
+
+
+
+    <!-- 加载 React。-->
+    <!-- 注意: 部署时，将 "development.js" 替换为 "production.min.js"。-->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <!-- 在https://www.npmjs.com/package/prop-types 导入prop-types 文件 -->
+    <script src="https://unpkg.com/prop-types@15.6/prop-types.js"></script>
+    <script type="text/babel">
+
+        console.log(PropTypes);
+        // 1.创建组件
+        class A extends React.Component{
+            constructor(props){
+                super(props)
+                this.state={car:'11'}
+            }
+            
+            //组件完成更新
+            componentDidUpdate(){
+                console.log('A-Count-componentDidUpdate');
+            }
+            
+            // state 的值在任何时候都取决于props
+            // static  静态
+           static getDerivedStateFromProps(props,state){
+                console.log('getDerivedStateFromProps',props,state);
+                // return null
+                return {car:"123"}   //返回state 对象,会修改原来的state
+                // return props    //将props 的值赋给state 对象
+            }
+            render(){
+                 console.log('A-render');
+                return (
+                    <div>
+                        <div >A</div>
+                        <div >{this.state.car}</div>
+                        </div>
+                )
+            }
+            
+            
+        }
+       
+        ReactDOM.render(<A name="tom"/>, document.getElementById('like_button_container'))
+
+    </script>
+</body>
+
+</html>

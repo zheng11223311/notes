@@ -1,0 +1,13 @@
+.todo-container {
+  width: 500px;
+  margin: auto;
+}
+
+.todo-wrap {
+  width: 400px;
+  box-sizing: border-box;
+  padding-left: 40px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  border: 1px solid #999;
+}

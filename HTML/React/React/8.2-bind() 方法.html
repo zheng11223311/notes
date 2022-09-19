@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function demo() {
+            console.log(this);  //指向window
+        }
+        demo()
+
+        demo.bind({ a: 1, b: 2 })
+        //改变this 指向,指向一个新的对象{a:1,b:2}
+        //但是不会有任何响应,因为没有调用这个对象,不会执行
+
+        const x = demo.bind({ a: 1, b: 2 })
+        x()     //{a: 1, b: 2}
+    </script>
+</body>
+
+</html>

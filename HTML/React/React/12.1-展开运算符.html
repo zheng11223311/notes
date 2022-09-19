@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr1 = [1, 3, 5, 7, 9]
+        let arr2 = [2, 4, 6, 8, 10]
+        console.log(...arr1);//展开运算符
+        let arr3 = [...arr1, ...arr2]
+        console.log(arr3);
+
+        function sum(...num) {
+            return num.reduce((pre, current) => {
+                return pre + current
+            }, 0)       //0 为pre 初始值
+            console.log(num);
+        }
+        console.log(sum(1, 2, 3, 4, 5, 6, 7));
+        // 展开运算符不能展开对象
+        let obj = { name: 'tom', age: 18 }
+        // console.log(...obj)
+        let obj2 = { ...obj }  //表示复制
+        console.log(obj2);
+        obj.name = 'jerry'      //只改变obj,不改变复制的obj2
+        console.log(obj);
+        console.log(obj2);
+
+        // 合并
+        let obj3 = { ...obj, name: 'jon', address: 'beijing' }  //表示复制并改变属性,本质是后面的name 覆盖前面的name
+        console.log(obj3);
+    </script>
+</body>
+
+</html>

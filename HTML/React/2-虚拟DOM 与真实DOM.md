@@ -1,0 +1,54 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <div id="like_button_container"></div>
+    <div id="demo"></div>
+
+
+
+
+
+    <!-- 加载 React。-->
+    <!-- 注意: 部署时，将 "development.js" 替换为 "production.min.js"。-->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+
+    <script type="text/babel">
+        // 使用jsx 
+        const VDOM = (
+            <h1>
+                <span>Hello React</span>
+            </h1>
+        )
+        ReactDOM.render(VDOM, document.getElementById('like_button_container'))
+
+
+
+        console.log('虚拟DOM', VDOM);
+        console.log(typeof VDOM);
+        console.log(VDOM instanceof Object);
+        const demo = document.getElementById('demo')
+        console.log('真实DOM', demo);
+        debugger;   //断点,可以在控制台上点击要查看的demo 上查看真实dom 的属性
+        //虚拟DOM
+        //本质是Object 类型的对象(一般对象)
+        //2.虚拟DOM 比较轻,真实DOM 比较重,因为虚拟DOM 是react 内部在用,无需真实DOM 上那么多的属性
+        //3.虚拟DOM 最终会被react 转化为真实DOM,呈现在页面上
+    </script>
+</body>
+
+</html>
+```
+

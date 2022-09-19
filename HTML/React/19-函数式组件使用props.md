@@ -1,0 +1,72 @@
+函数式组件只能使用props ,state,不能使用refs
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .title {
+            background-color: crimson;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="like_button_container"></div>
+
+
+
+
+
+
+    <!-- 加载 React。-->
+    <!-- 注意: 部署时，将 "development.js" 替换为 "production.min.js"。-->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <!-- 在https://www.npmjs.com/package/prop-types 导入prop-types 文件 -->
+    <script src="https://unpkg.com/prop-types@15.6/prop-types.js"></script>
+    <script type="text/babel">
+
+        console.log(PropTypes);
+        // 1.创建组件
+        function Person(props) {
+            console.log(props);
+            const { name, age, sex } = props
+            //函数式没有static 关键字,只有类有
+            // 这个propTypes是react 的属性
+            Person.propTypes = {	
+            //这个PropTypes 是引入的prop-types.js 文件的属性
+                name: PropTypes.string.isRequired,
+                sex: PropTypes.string,
+                speak: PropTypes.func,
+            }
+            Person.defaultProps = {
+                name: '小二',
+                sex: '男',
+                age: 18
+            }
+            return (
+                <ul>
+                    <li>姓名:{name}</li>
+                    <li>性别:{sex}</li>
+                    <li>年龄:{age + 1}</li>
+                </ul>
+            )
+        }
+
+
+        ReactDOM.render(<Person name="张三" age={18} sex='男' />, document.getElementById('like_button_container'))
+
+    </script>
+</body>
+
+</html>
+```
+
