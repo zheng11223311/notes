@@ -1,0 +1,36 @@
+2022-07-15 17:53:29,697 INFO 12404 [Timer] D:\学习\wanye\HTML\Egg\代码\1-egg-example\node_modules\egg-multipart\app\schedule\clean_tmpdir.js next time will execute after 38190305ms at 2022-07-16 04:30:00.002
+2022-07-15 17:53:29,697 INFO 12404 [Timer] D:\学习\wanye\HTML\Egg\代码\1-egg-example\node_modules\egg-logrotator\app\schedule\clean_log.js next time will execute after 21990303ms at 2022-07-16 00:00:00.000
+2022-07-15 17:53:29,698 INFO 12404 [Timer] D:\学习\wanye\HTML\Egg\代码\1-egg-example\node_modules\egg-logrotator\app\schedule\rotate_by_file.js next time will execute after 21991303ms at 2022-07-16 00:00:01.001
+2022-07-15 17:53:29,590 INFO 13056 [egg-schedule]: register schedule D:\学习\wanye\HTML\Egg\代码\1-egg-example\node_modules\egg-multipart\app\schedule\clean_tmpdir.js
+2022-07-15 17:53:29,590 INFO 13056 [egg-schedule]: register schedule D:\学习\wanye\HTML\Egg\代码\1-egg-example\node_modules\egg-logrotator\app\schedule\clean_log.js
+2022-07-15 17:53:29,590 INFO 13056 [egg-schedule]: register schedule D:\学习\wanye\HTML\Egg\代码\1-egg-example\node_modules\egg-logrotator\app\schedule\rotate_by_file.js
+2022-07-15 17:53:56,642 INFO 17176 [egg-schedule]: register schedule D:\学习\wanye\HTML\Egg\代码\1-egg-example\node_modules\egg-multipart\app\schedule\clean_tmpdir.js
+2022-07-15 17:53:56,642 INFO 17176 [egg-schedule]: register schedule D:\学习\wanye\HTML\Egg\代码\1-egg-example\node_modules\egg-logrotator\app\schedule\clean_log.js
+2022-07-15 17:53:56,642 INFO 17176 [egg-schedule]: register schedule D:\学习\wanye\HTML\Egg\代码\1-egg-example\node_modules\egg-logrotator\app\schedule\rotate_by_file.js
+2022-07-15 18:04:03,314 INFO 11544 [egg-schedule]: register schedule D:\学习\wanye\HTML\Egg\代码\1-egg-example\node_modules\egg-multipart\app\schedule\clean_tmpdir.js
+2022-07-15 18:04:03,314 INFO 11544 [egg-schedule]: register schedule D:\学习\wanye\HTML\Egg\代码\1-egg-example\node_modules\egg-logrotator\app\schedule\clean_log.js
+2022-07-15 18:04:03,314 INFO 11544 [egg-schedule]: register schedule D:\学习\wanye\HTML\Egg\代码\1-egg-example\node_modules\egg-logrotator\app\schedule\rotate_by_file.js
+2022-07-15 18:04:09,812 INFO 17920 [egg-schedule]: register schedule D:\学习\wanye\HTML\Egg\代码\1-egg-example\node_modules\egg-multipart\app\schedule\clean_tmpdir.js
+2022-07-15 18:04:09,812 INFO 17920 [egg-schedule]: register schedule D:\学习\wanye\HTML\Egg\代码\1-egg-example\node_modules\egg-logrotator\app\schedule\clean_log.js
+2022-07-15 18:04:09,812 INFO 17920 [egg-schedule]: register schedule D:\学习\wanye\HTML\Egg\代码\1-egg-example\node_modules\egg-logrotator\app\schedule\rotate_by_file.js
+2022-07-15 18:04:23,994 INFO 7100 [egg-schedule]: register schedule D:\学习\wanye\HTML\Egg\代码\1-egg-example\node_modules\egg-multipart\app\schedule\clean_tmpdir.js
+2022-07-15 18:04:23,994 INFO 7100 [egg-schedule]: register schedule D:\学习\wanye\HTML\Egg\代码\1-egg-example\node_modules\egg-logrotator\app\schedule\clean_log.js
+2022-07-15 18:04:23,994 INFO 7100 [egg-schedule]: register schedule D:\学习\wanye\HTML\Egg\代码\1-egg-example\node_modules\egg-logrotator\app\schedule\rotate_by_file.js
+2022-07-15 18:14:58,522 INFO 14388 [egg-schedule]: register schedule D:\学习\wanye\HTML\Egg\代码\1-egg-example\node_modules\egg-multipart\app\schedule\clean_tmpdir.js
+2022-07-15 18:14:58,522 INFO 14388 [egg-schedule]: register schedule D:\学习\wanye\HTML\Egg\代码\1-egg-example\node_modules\egg-logrotator\app\schedule\clean_log.js
+2022-07-15 18:14:58,522 INFO 14388 [egg-schedule]: register schedule D:\学习\wanye\HTML\Egg\代码\1-egg-example\node_modules\egg-logrotator\app\schedule\rotate_by_file.js
+2022-07-15 18:15:04,246 INFO 11080 [egg-schedule]: register schedule D:\学习\wanye\HTML\Egg\代码\1-egg-example\node_modules\egg-multipart\app\schedule\clean_tmpdir.js
+2022-07-15 18:15:04,246 INFO 11080 [egg-schedule]: register schedule D:\学习\wanye\HTML\Egg\代码\1-egg-example\node_modules\egg-logrotator\app\schedule\clean_log.js
+2022-07-15 18:15:04,246 INFO 11080 [egg-schedule]: register schedule D:\学习\wanye\HTML\Egg\代码\1-egg-example\node_modules\egg-logrotator\app\schedule\rotate_by_file.js
+2022-07-15 18:15:22,796 INFO 13308 [egg-schedule]: register schedule D:\学习\wanye\HTML\Egg\代码\1-egg-example\node_modules\egg-multipart\app\schedule\clean_tmpdir.js
+2022-07-15 18:15:22,796 INFO 13308 [egg-schedule]: register schedule D:\学习\wanye\HTML\Egg\代码\1-egg-example\node_modules\egg-logrotator\app\schedule\clean_log.js
+2022-07-15 18:15:22,796 INFO 13308 [egg-schedule]: register schedule D:\学习\wanye\HTML\Egg\代码\1-egg-example\node_modules\egg-logrotator\app\schedule\rotate_by_file.js
+2022-07-15 18:15:25,790 INFO 18080 [egg-schedule]: register schedule D:\学习\wanye\HTML\Egg\代码\1-egg-example\node_modules\egg-multipart\app\schedule\clean_tmpdir.js
+2022-07-15 18:15:25,790 INFO 18080 [egg-schedule]: register schedule D:\学习\wanye\HTML\Egg\代码\1-egg-example\node_modules\egg-logrotator\app\schedule\clean_log.js
+2022-07-15 18:15:25,790 INFO 18080 [egg-schedule]: register schedule D:\学习\wanye\HTML\Egg\代码\1-egg-example\node_modules\egg-logrotator\app\schedule\rotate_by_file.js
+2022-07-15 18:15:27,164 INFO 16840 [egg-schedule]: register schedule D:\学习\wanye\HTML\Egg\代码\1-egg-example\node_modules\egg-multipart\app\schedule\clean_tmpdir.js
+2022-07-15 18:15:27,164 INFO 16840 [egg-schedule]: register schedule D:\学习\wanye\HTML\Egg\代码\1-egg-example\node_modules\egg-logrotator\app\schedule\clean_log.js
+2022-07-15 18:15:27,164 INFO 16840 [egg-schedule]: register schedule D:\学习\wanye\HTML\Egg\代码\1-egg-example\node_modules\egg-logrotator\app\schedule\rotate_by_file.js
+2022-07-15 18:15:33,052 INFO 12380 [egg-schedule]: register schedule D:\学习\wanye\HTML\Egg\代码\1-egg-example\node_modules\egg-multipart\app\schedule\clean_tmpdir.js
+2022-07-15 18:15:33,052 INFO 12380 [egg-schedule]: register schedule D:\学习\wanye\HTML\Egg\代码\1-egg-example\node_modules\egg-logrotator\app\schedule\clean_log.js
+2022-07-15 18:15:33,052 INFO 12380 [egg-schedule]: register schedule D:\学习\wanye\HTML\Egg\代码\1-egg-example\node_modules\egg-logrotator\app\schedule\rotate_by_file.js

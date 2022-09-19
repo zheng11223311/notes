@@ -1,0 +1,15 @@
+2022-07-15 17:53:45,449 ERROR 13056 [-/127.0.0.1/-/3ms GET /] nodejs.TypeError: this.config.keys.split is not a function
+    at Application.get keys [as keys] (D:\学习\wanye\HTML\Egg\代码\1-egg-example\node_modules\egg\lib\application.js:269:37)
+    at Object.get cookies [as cookies] (D:\学习\wanye\HTML\Egg\代码\1-egg-example\node_modules\egg\app\extend\context.js:23:66)
+    at Object.get [egg-security#CSRF_SECRET] (D:\学习\wanye\HTML\Egg\代码\1-egg-example\node_modules\egg-security\app\extend\context.js:91:35)
+    at Object.ensureCsrfSecret (D:\学习\wanye\HTML\Egg\代码\1-egg-example\node_modules\egg-security\app\extend\context.js:104:13)
+    at csrf (D:\学习\wanye\HTML\Egg\代码\1-egg-example\node_modules\egg-security\lib\middlewares\csrf.js:15:11)
+    at dispatch (D:\学习\wanye\HTML\Egg\代码\1-egg-example\node_modules\egg-security\node_modules\koa-compose\index.js:42:32)
+    at D:\学习\wanye\HTML\Egg\代码\1-egg-example\node_modules\egg-security\node_modules\koa-compose\index.js:34:12
+    at dispatch (D:\学习\wanye\HTML\Egg\代码\1-egg-example\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at session (D:\学习\wanye\HTML\Egg\代码\1-egg-example\node_modules\koa-session\index.js:41:13)
+    at dispatch (D:\学习\wanye\HTML\Egg\代码\1-egg-example\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+
+pid: 13056
+hostname: LAPTOP-DOKT2HPM
+

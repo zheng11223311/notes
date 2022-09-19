@@ -1,0 +1,9 @@
+/* 
+
+ //public/css/main.css
+
+ 通过访问 http://localhost:7001/public/css/main.css 获取到此内容
+  */
+  body{
+    background-color: #fff;
+  }
