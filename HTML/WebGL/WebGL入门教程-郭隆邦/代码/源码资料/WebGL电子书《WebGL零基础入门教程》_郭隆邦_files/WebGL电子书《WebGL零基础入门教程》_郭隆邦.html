@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<!-- saved from url=(0037)http://www.yanhuangxueyuan.com/WebGL/ -->
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <title>WebGL电子书《WebGL零基础入门教程》_郭隆邦</title>
+  <style>
+    body {
+      background-color: rgb(255, 255, 255);
+      margin: 0px;
+      overflow-x: hidden;
+      overflow-y: hidden;
+    }
+  </style>
+  <link href="./WebGL电子书《WebGL零基础入门教程》_郭隆邦_files/app.f67647ca.css" rel="preload" as="style">
+  <link href="./WebGL电子书《WebGL零基础入门教程》_郭隆邦_files/chunk-vendors.5a11a401.css" rel="preload" as="style">
+  <link href="./WebGL电子书《WebGL零基础入门教程》_郭隆邦_files/app.8f9c6ad8.js.下载" rel="preload" as="script">
+  <link href="./WebGL电子书《WebGL零基础入门教程》_郭隆邦_files/chunk-vendors.8c6f77c0.js.下载" rel="preload" as="script">
+  <link href="./WebGL电子书《WebGL零基础入门教程》_郭隆邦_files/chunk-vendors.5a11a401.css" rel="stylesheet">
+  <link href="./WebGL电子书《WebGL零基础入门教程》_郭隆邦_files/app.f67647ca.css" rel="stylesheet">
+  <link rel="manifest" href="http://www.yanhuangxueyuan.com/WebGL/manifest.json">
+  <meta name="theme-color" content="#4DBA87">
+  <meta name="apple-mobile-web-app-capable" content="no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="hello-world2">
+</head>
+
+<body style="">
+  <div id="app">
+    <div>
+      <div id="map"
+        style="width: 300px; position: absolute; left: 0px; top: 0px; background: rgb(250, 250, 250); padding: 10px; box-sizing: border-box; border-right: 1px solid rgba(0, 0, 0, 0.07); height: 100%; display: none;">
+        <div data-v-3f18ad1c="" style="background: rgb(250, 250, 250);">
+          <div data-v-3f18ad1c="" id="bookName" style="cursor: pointer; padding: 5px 2px;">
+            WebGL零基础入门教程(郭隆邦)
+          </div>
+          <div data-v-3f18ad1c=""
+            style="margin-top: 15px; margin-bottom: 15px; transform: scaleY(0.5); height: 1px; background: rgb(204, 204, 204); width: 100%;">
+          </div>
+          <div data-v-3f18ad1c="" class="input-with-select el-input el-input--suffix">
+            <!----><input type="text" autocomplete="off" placeholder="WebGL零基础入门教程全文检索" class="el-input__inner">
+            <!----><span class="el-input__suffix"><span class="el-input__suffix-inner"><i data-v-3f18ad1c=""
+                  class="el-icon-close el-input__icon" style="cursor: pointer;"></i>
+                <!---->
+                <!---->
+                <!---->
+                <!----></span>
+              <!----></span>
+            <!---->
+            <!---->
+          </div>
+          <div data-v-3f18ad1c=""
+            style="margin-top: 15px; margin-bottom: 15px; transform: scaleY(0.5); height: 1px; background: rgb(204, 204, 204); width: 100%;">
+          </div>
+          <!---->
+          <div data-v-3f18ad1c="" role="tree" class="el-tree el-tree--highlight-current" id="list"
+            style="width: 280px; background: rgb(250, 250, 250); overflow: auto; height: 604px;">
+            <div role="treeitem" tabindex="0" aria-expanded="true" draggable="false"
+              class="el-tree-node is-expanded is-focusable">
+              <div class="el-tree-node__content" style="padding-left: 0px;"><span
+                  class="is-leaf el-tree-node__expand-icon el-icon-caret-right"></span>
+                <!---->
+                <!----><span class="el-tree-node__label">学前必看</span></div>
+              <div role="group" aria-expanded="true" class="el-tree-node__children"></div>
+            </div>
+            <div role="treeitem" tabindex="-1" aria-expanded="true" draggable="false"
+              class="el-tree-node is-expanded is-focusable">
+              <div class="el-tree-node__content" style="padding-left: 0px;"><span
+                  class="expanded el-tree-node__expand-icon el-icon-caret-right"></span>
+                <!---->
+                <!----><span class="el-tree-node__label">一. WebGL零基础快速入门</span></div>
+              <div role="group" aria-expanded="true" class="el-tree-node__children">
+                <div role="treeitem" tabindex="-1" aria-expanded="true" draggable="false"
+                  class="el-tree-node is-expanded is-focusable">
+                  <div class="el-tree-node__content" style="padding-left: 18px;"><span
+                      class="expanded el-tree-node__expand-icon el-icon-caret-right"></span>
+                    <!---->
+                    <!----><span class="el-tree-node__label">1.WebGL绘制一个点(HTML框架文件)</span></div>
+                  <div role="group" aria-expanded="true" class="el-tree-node__children">
+                    <div role="treeitem" tabindex="-1" aria-expanded="true" draggable="false"
+                      class="el-tree-node is-expanded is-focusable">
+                      <div class="el-tree-node__content" style="padding-left: 36px;"><span
+                          class="is-leaf el-tree-node__expand-icon el-icon-caret-right"></span>
+                        <!---->
+                        <!----><span class="el-tree-node__label">Canvas画布</span></div>
+                      <div role="group" aria-expanded="true" class="el-tree-node__children"></div>
+                    </div>
+                    <div role="treeitem" tabindex="-1" aria-expanded="true" draggable="false"
+                      class="el-tree-node is-expanded is-focusable">
+                      <div class="el-tree-node__content" style="padding-left: 36px;"><span
+                          class="is-leaf el-tree-node__expand-icon el-icon-caret-right"></span>
+                        <!---->
+                        <!----><span class="el-tree-node__label">着色器语言GLSL ES</span></div>
+                      <div role="group" aria-expanded="true" class="el-tree-node__children"></div>
+                    </div>
+                    <div role="treeitem" tabindex="-1" aria-expanded="true" draggable="false"
+                      class="el-tree-node is-expanded is-focusable">
+                      <div class="el-tree-node__content" style="padding-left: 36px;"><span
+                          class="is-leaf el-tree-node__expand-icon el-icon-caret-right"></span>
+                        <!---->
+                        <!----><span class="el-tree-node__label">WebGL API</span></div>
+                      <div role="group" aria-expanded="true" class="el-tree-node__children"></div>
+                    </div>
+                    <div role="treeitem" tabindex="-1" aria-expanded="true" draggable="false"
+                      class="el-tree-node is-expanded is-focusable">
+                      <div class="el-tree-node__content" style="padding-left: 36px;"><span
+                          class="is-leaf el-tree-node__expand-icon el-icon-caret-right"></span>
+                        <!---->
+                        <!----><span class="el-tree-node__label">着色器代码放在script标签中</span></div>
+                      <div role="group" aria-expanded="true" class="el-tree-node__children"></div>
+                    </div>
+                  </div>
+                </div>
+                <div role="treeitem" tabindex="-1" aria-expanded="true" draggable="false"
+                  class="el-tree-node is-expanded is-focusable">
+                  <div class="el-tree-node__content" style="padding-left: 18px;"><span
+                      class="is-leaf el-tree-node__expand-icon el-icon-caret-right"></span>
+                    <!---->
+                    <!----><span class="el-tree-node__label">2.WebGL绘制一个矩形</span></div>
+                  <div role="group" aria-expanded="true" class="el-tree-node__children"></div>
+                </div>
+                <div role="treeitem" tabindex="-1" aria-expanded="true" draggable="false"
+                  class="el-tree-node is-expanded is-focusable">
+                  <div class="el-tree-node__content" style="padding-left: 18px;"><span
+                      class="is-leaf el-tree-node__expand-icon el-icon-caret-right"></span>
+                    <!---->
+                    <!----><span class="el-tree-node__label">3.WebGL坐标系(投影)</span></div>
+                  <div role="group" aria-expanded="true" class="el-tree-node__children"></div>
+                </div>
+                <div role="treeitem" tabindex="-1" aria-expanded="true" draggable="false"
+                  class="el-tree-node is-expanded is-focusable">
+                  <div class="el-tree-node__content" style="padding-left: 18px;"><span
+                      class="is-leaf el-tree-node__expand-icon el-icon-caret-right"></span>
+                    <!---->
+                    <!----><span class="el-tree-node__label">4.WebGL平移变换</span></div>
+                  <div role="group" aria-expanded="true" class="el-tree-node__children"></div>
+                </div>
+                <div role="treeitem" tabindex="-1" aria-expanded="true" draggable="false"
+                  class="el-tree-node is-expanded is-focusable">
+                  <div class="el-tree-node__content" style="padding-left: 18px;"><span
+                      class="is-leaf el-tree-node__expand-icon el-icon-caret-right"></span>
+                    <!---->
+                    <!----><span class="el-tree-node__label">5.绘制一个立方体(WebGL旋转变换)</span></div>
+                  <div role="group" aria-expanded="true" class="el-tree-node__children"></div>
+                </div>
+                <div role="treeitem" tabindex="-1" aria-expanded="true" draggable="false"
+                  class="el-tree-node is-expanded is-focusable">
+                  <div class="el-tree-node__content" style="padding-left: 18px;"><span
+                      class="is-leaf el-tree-node__expand-icon el-icon-caret-right"></span>
+                    <!---->
+                    <!----><span class="el-tree-node__label">6.WebGL顶点索引绘制</span></div>
+                  <div role="group" aria-expanded="true" class="el-tree-node__children"></div>
+                </div>
+                <div role="treeitem" tabindex="-1" aria-expanded="true" draggable="false"
+                  class="el-tree-node is-expanded is-focusable">
+                  <div class="el-tree-node__content" style="padding-left: 18px;"><span
+                      class="is-leaf el-tree-node__expand-icon el-icon-caret-right"></span>
+                    <!---->
+                    <!----><span class="el-tree-node__label">7.varying变量和颜色插值</span></div>
+                  <div role="group" aria-expanded="true" class="el-tree-node__children"></div>
+                </div>
+                <div role="treeitem" tabindex="-1" aria-expanded="true" draggable="false"
+                  class="el-tree-node is-expanded is-focusable">
+                  <div class="el-tree-node__content" style="padding-left: 18px;"><span
+                      class="is-leaf el-tree-node__expand-icon el-icon-caret-right"></span>
+                    <!---->
+                    <!----><span class="el-tree-node__label">8.立方体(每个面一种颜色)</span></div>
+                  <div role="group" aria-expanded="true" class="el-tree-node__children"></div>
+                </div>
+                <div role="treeitem" tabindex="-1" aria-expanded="true" draggable="false"
+                  class="el-tree-node is-expanded is-focusable">
+                  <div class="el-tree-node__content" style="padding-left: 18px;"><span
+                      class="expanded el-tree-node__expand-icon el-icon-caret-right"></span>
+                    <!---->
+                    <!----><span class="el-tree-node__label">9.WebGL光照渲染立方体</span></div>
+                  <div role="group" aria-expanded="true" class="el-tree-node__children">
+                    <div role="treeitem" tabindex="-1" aria-expanded="true" draggable="false"
+                      class="el-tree-node is-expanded is-focusable">
+                      <div class="el-tree-node__content" style="padding-left: 36px;"><span
+                          class="is-leaf el-tree-node__expand-icon el-icon-caret-right"></span>
+                        <!---->
+                        <!----><span class="el-tree-node__label">光照模型</span></div>
+                      <div role="group" aria-expanded="true" class="el-tree-node__children"></div>
+                    </div>
+                    <div role="treeitem" tabindex="-1" aria-expanded="true" draggable="false"
+                      class="el-tree-node is-expanded is-focusable">
+                      <div class="el-tree-node__content" style="padding-left: 36px;"><span
+                          class="is-leaf el-tree-node__expand-icon el-icon-caret-right"></span>
+                        <!---->
+                        <!----><span class="el-tree-node__label">立方体添加平行光</span></div>
+                      <div role="group" aria-expanded="true" class="el-tree-node__children"></div>
+                    </div>
+                    <div role="treeitem" tabindex="-1" aria-expanded="true" draggable="false"
+                      class="el-tree-node is-expanded is-focusable">
+                      <div class="el-tree-node__content" style="padding-left: 36px;"><span
+                          class="is-leaf el-tree-node__expand-icon el-icon-caret-right"></span>
+                        <!---->
+                        <!----><span class="el-tree-node__label">立方体添加点光源</span></div>
+                      <div role="group" aria-expanded="true" class="el-tree-node__children"></div>
+                    </div>
+                  </div>
+                </div>
+                <div role="treeitem" tabindex="-1" aria-expanded="true" draggable="false"
+                  class="el-tree-node is-expanded is-focusable">
+                  <div class="el-tree-node__content" style="padding-left: 18px;"><span
+                      class="is-leaf el-tree-node__expand-icon el-icon-caret-right"></span>
+                    <!---->
+                    <!----><span class="el-tree-node__label">10.立方体旋转动画</span></div>
+                  <div role="group" aria-expanded="true" class="el-tree-node__children"></div>
+                </div>
+                <div role="treeitem" tabindex="-1" aria-expanded="true" draggable="false"
+                  class="el-tree-node is-expanded is-focusable">
+                  <div class="el-tree-node__content" style="padding-left: 18px;"><span
+                      class="is-leaf el-tree-node__expand-icon el-icon-caret-right"></span>
+                    <!---->
+                    <!----><span class="el-tree-node__label">11.WebGL绘制多个几何体</span></div>
+                  <div role="group" aria-expanded="true" class="el-tree-node__children"></div>
+                </div>
+                <div role="treeitem" tabindex="-1" aria-expanded="true" draggable="false"
+                  class="el-tree-node is-expanded is-focusable">
+                  <div class="el-tree-node__content" style="padding-left: 18px;"><span
+                      class="is-leaf el-tree-node__expand-icon el-icon-caret-right"></span>
+                    <!---->
+                    <!----><span class="el-tree-node__label">12.纹理贴图</span></div>
+                  <div role="group" aria-expanded="true" class="el-tree-node__children"></div>
+                </div>
+                <div role="treeitem" tabindex="-1" aria-expanded="true" draggable="false"
+                  class="el-tree-node is-expanded is-focusable">
+                  <div class="el-tree-node__content" style="padding-left: 18px;"><span
+                      class="is-leaf el-tree-node__expand-icon el-icon-caret-right"></span>
+                    <!---->
+                    <!----><span class="el-tree-node__label">13.彩色图转灰度图</span></div>
+                  <div role="group" aria-expanded="true" class="el-tree-node__children"></div>
+                </div>
+                <div role="treeitem" tabindex="-1" aria-expanded="true" draggable="false"
+                  class="el-tree-node is-expanded is-focusable">
+                  <div class="el-tree-node__content" style="padding-left: 18px;"><span
+                      class="is-leaf el-tree-node__expand-icon el-icon-caret-right"></span>
+                    <!---->
+                    <!----><span class="el-tree-node__label">14.切换着色器程序</span></div>
+                  <div role="group" aria-expanded="true" class="el-tree-node__children"></div>
+                </div>
+                <div role="treeitem" tabindex="-1" aria-expanded="true" draggable="false"
+                  class="el-tree-node is-expanded is-focusable">
+                  <div class="el-tree-node__content" style="padding-left: 18px;"><span
+                      class="is-leaf el-tree-node__expand-icon el-icon-caret-right"></span>
+                    <!---->
+                    <!----><span class="el-tree-node__label">15.WebGL透明度与α融合</span></div>
+                  <div role="group" aria-expanded="true" class="el-tree-node__children"></div>
+                </div>
+                <div role="treeitem" tabindex="-1" aria-expanded="true" draggable="false"
+                  class="el-tree-node is-expanded is-focusable">
+                  <div class="el-tree-node__content" style="padding-left: 18px;"><span
+                      class="is-leaf el-tree-node__expand-icon el-icon-caret-right"></span>
+                    <!---->
+                    <!----><span class="el-tree-node__label">16.深度测试与α融合</span></div>
+                  <div role="group" aria-expanded="true" class="el-tree-node__children"></div>
+                </div>
+              </div>
+            </div>
+            <div role="treeitem" tabindex="-1" aria-expanded="true" draggable="false"
+              class="el-tree-node is-expanded is-focusable">
+              <div class="el-tree-node__content" style="padding-left: 0px;"><span
+                  class="expanded el-tree-node__expand-icon el-icon-caret-right"></span>
+                <!---->
+                <!----><span class="el-tree-node__label">二. GLSL ES着色器语言</span></div>
+              <div role="group" aria-expanded="true" class="el-tree-node__children">
+                <div role="treeitem" tabindex="-1" aria-expanded="true" draggable="false"
+                  class="el-tree-node is-expanded is-focusable">
+                  <div class="el-tree-node__content" style="padding-left: 18px;"><span
+                      class="is-leaf el-tree-node__expand-icon el-icon-caret-right"></span>
+                    <!---->
+                    <!----><span class="el-tree-node__label">1.声明一个变量</span></div>
+                  <div role="group" aria-expanded="true" class="el-tree-node__children"></div>
+                </div>
+                <div role="treeitem" tabindex="-1" aria-expanded="true" draggable="false"
+                  class="el-tree-node is-expanded is-focusable">
+                  <div class="el-tree-node__content" style="padding-left: 18px;"><span
+                      class="is-leaf el-tree-node__expand-icon el-icon-caret-right"></span>
+                    <!---->
+                    <!----><span class="el-tree-node__label">2.声明一个常量const</span></div>
+                  <div role="group" aria-expanded="true" class="el-tree-node__children"></div>
+                </div>
+                <div role="treeitem" tabindex="-1" aria-expanded="true" draggable="false"
+                  class="el-tree-node is-expanded is-focusable">
+                  <div class="el-tree-node__content" style="padding-left: 18px;"><span
+                      class="is-leaf el-tree-node__expand-icon el-icon-caret-right"></span>
+                    <!---->
+                    <!----><span class="el-tree-node__label">3.数据类型-基本类型</span></div>
+                  <div role="group" aria-expanded="true" class="el-tree-node__children"></div>
+                </div>
+                <div role="treeitem" tabindex="-1" aria-expanded="true" draggable="false"
+                  class="el-tree-node is-expanded is-focusable">
+                  <div class="el-tree-node__content" style="padding-left: 18px;"><span
+                      class="is-leaf el-tree-node__expand-icon el-icon-caret-right"></span>
+                    <!---->
+                    <!----><span class="el-tree-node__label">4.数据类型-向量</span></div>
+                  <div role="group" aria-expanded="true" class="el-tree-node__children"></div>
+                </div>
+                <div role="treeitem" tabindex="-1" aria-expanded="true" draggable="false"
+                  class="el-tree-node is-expanded is-focusable">
+                  <div class="el-tree-node__content" style="padding-left: 18px;"><span
+                      class="is-leaf el-tree-node__expand-icon el-icon-caret-right"></span>
+                    <!---->
+                    <!----><span class="el-tree-node__label">5.数据类型-矩阵</span></div>
+                  <div role="group" aria-expanded="true" class="el-tree-node__children"></div>
+                </div>
+                <div role="treeitem" tabindex="-1" aria-expanded="true" draggable="false"
+                  class="el-tree-node is-expanded is-focusable">
+                  <div class="el-tree-node__content" style="padding-left: 18px;"><span
+                      class="is-leaf el-tree-node__expand-icon el-icon-caret-right"></span>
+                    <!---->
+                    <!----><span class="el-tree-node__label">6.if-else语句和for语句</span></div>
+                  <div role="group" aria-expanded="true" class="el-tree-node__children"></div>
+                </div>
+                <div role="treeitem" tabindex="-1" aria-expanded="true" draggable="false"
+                  class="el-tree-node is-expanded is-focusable">
+                  <div class="el-tree-node__content" style="padding-left: 18px;"><span
+                      class="expanded el-tree-node__expand-icon el-icon-caret-right"></span>
+                    <!---->
+                    <!----><span class="el-tree-node__label">7.内置变量</span></div>
+                  <div role="group" aria-expanded="true" class="el-tree-node__children">
+                    <div role="treeitem" tabindex="-1" aria-expanded="true" draggable="false"
+                      class="el-tree-node is-expanded is-focusable">
+                      <div class="el-tree-node__content" style="padding-left: 36px;"><span
+                          class="is-leaf el-tree-node__expand-icon el-icon-caret-right"></span>
+                        <!---->
+                        <!----><span class="el-tree-node__label">gl_PointSize</span></div>
+                      <div role="group" aria-expanded="true" class="el-tree-node__children"></div>
+                    </div>
+                    <div role="treeitem" tabindex="-1" aria-expanded="true" draggable="false"
+                      class="el-tree-node is-expanded is-focusable">
+                      <div class="el-tree-node__content" style="padding-left: 36px;"><span
+                          class="is-leaf el-tree-node__expand-icon el-icon-caret-right"></span>
+                        <!---->
+                        <!----><span class="el-tree-node__label">gl_Position</span></div>
+                      <div role="group" aria-expanded="true" class="el-tree-node__children"></div>
+                    </div>
+                    <div role="treeitem" tabindex="-1" aria-expanded="true" draggable="false"
+                      class="el-tree-node is-expanded is-focusable">
+                      <div class="el-tree-node__content" style="padding-left: 36px;"><span
+                          class="is-leaf el-tree-node__expand-icon el-icon-caret-right"></span>
+                        <!---->
+                        <!----><span class="el-tree-node__label">gl_FragColor</span></div>
+                      <div role="group" aria-expanded="true" class="el-tree-node__children"></div>
+                    </div>
+                    <div role="treeitem" tabindex="-1" aria-expanded="true" draggable="false"
+                      class="el-tree-node is-expanded is-focusable">
+                      <div class="el-tree-node__content" style="padding-left: 36px;"><span
+                          class="is-leaf el-tree-node__expand-icon el-icon-caret-right"></span>
+                        <!---->
+                        <!----><span class="el-tree-node__label">gl_PointCoord</span></div>
+                      <div role="group" aria-expanded="true" class="el-tree-node__children"></div>
+                    </div>
+                    <div role="treeitem" tabindex="-1" aria-expanded="true" draggable="false"
+                      class="el-tree-node is-expanded is-focusable">
+                      <div class="el-tree-node__content" style="padding-left: 36px;"><span
+                          class="is-leaf el-tree-node__expand-icon el-icon-caret-right"></span>
+                        <!---->
+                        <!----><span class="el-tree-node__label">gl_FragCoord</span></div>
+                      <div role="group" aria-expanded="true" class="el-tree-node__children"></div>
+                    </div>
+                  </div>
+                </div>
+                <div role="treeitem" tabindex="-1" aria-expanded="true" draggable="false"
+                  class="el-tree-node is-expanded is-focusable">
+                  <div class="el-tree-node__content" style="padding-left: 18px;"><span
+                      class="is-leaf el-tree-node__expand-icon el-icon-caret-right"></span>
+                    <!---->
+                    <!----><span class="el-tree-node__label">8.attribute、uniform、varying</span></div>
+                  <div role="group" aria-expanded="true" class="el-tree-node__children"></div>
+                </div>
+                <div role="treeitem" tabindex="-1" aria-expanded="true" draggable="false"
+                  class="el-tree-node is-expanded is-focusable">
+                  <div class="el-tree-node__content" style="padding-left: 18px;"><span
+                      class="is-leaf el-tree-node__expand-icon el-icon-caret-right"></span>
+                    <!---->
+                    <!----><span class="el-tree-node__label">9.顶点和片元着色器</span></div>
+                  <div role="group" aria-expanded="true" class="el-tree-node__children"></div>
+                </div>
+                <div role="treeitem" tabindex="-1" aria-expanded="true" draggable="false"
+                  class="el-tree-node is-expanded is-focusable">
+                  <div class="el-tree-node__content" style="padding-left: 18px;"><span
+                      class="is-leaf el-tree-node__expand-icon el-icon-caret-right"></span>
+                    <!---->
+                    <!----><span class="el-tree-node__label">10.取样器sampler2D</span></div>
+                  <div role="group" aria-expanded="true" class="el-tree-node__children"></div>
+                </div>
+                <div role="treeitem" tabindex="-1" aria-expanded="true" draggable="false"
+                  class="el-tree-node is-expanded is-focusable">
+                  <div class="el-tree-node__content" style="padding-left: 18px;"><span
+                      class="is-leaf el-tree-node__expand-icon el-icon-caret-right"></span>
+                    <!---->
+                    <!----><span class="el-tree-node__label">11.内置函数</span></div>
+                  <div role="group" aria-expanded="true" class="el-tree-node__children"></div>
+                </div>
+                <div role="treeitem" tabindex="-1" aria-expanded="true" draggable="false"
+                  class="el-tree-node is-expanded is-focusable">
+                  <div class="el-tree-node__content" style="padding-left: 18px;"><span
+                      class="is-leaf el-tree-node__expand-icon el-icon-caret-right"></span>
+                    <!---->
+                    <!----><span class="el-tree-node__label">12.着色器计算精度precision</span></div>
+                  <div role="group" aria-expanded="true" class="el-tree-node__children"></div>
+                </div>
+                <div role="treeitem" tabindex="-1" aria-expanded="true" draggable="false"
+                  class="el-tree-node is-expanded is-focusable">
+                  <div class="el-tree-node__content" style="padding-left: 18px;"><span
+                      class="is-leaf el-tree-node__expand-icon el-icon-caret-right"></span>
+                    <!---->
+                    <!----><span class="el-tree-node__label">13.函数</span></div>
+                  <div role="group" aria-expanded="true" class="el-tree-node__children"></div>
+                </div>
+                <div role="treeitem" tabindex="-1" aria-expanded="true" draggable="false"
+                  class="el-tree-node is-expanded is-focusable">
+                  <div class="el-tree-node__content" style="padding-left: 18px;"><span
+                      class="is-leaf el-tree-node__expand-icon el-icon-caret-right"></span>
+                    <!---->
+                    <!----><span class="el-tree-node__label">14.结构体</span></div>
+                  <div role="group" aria-expanded="true" class="el-tree-node__children"></div>
+                </div>
+                <div role="treeitem" tabindex="-1" aria-expanded="true" draggable="false"
+                  class="el-tree-node is-expanded is-focusable">
+                  <div class="el-tree-node__content" style="padding-left: 18px;"><span
+                      class="is-leaf el-tree-node__expand-icon el-icon-caret-right"></span>
+                    <!---->
+                    <!----><span class="el-tree-node__label">15.discard舍弃片元</span></div>
+                  <div role="group" aria-expanded="true" class="el-tree-node__children"></div>
+                </div>
+                <div role="treeitem" tabindex="-1" aria-expanded="true" draggable="false"
+                  class="el-tree-node is-expanded is-focusable">
+                  <div class="el-tree-node__content" style="padding-left: 18px;"><span
+                      class="is-leaf el-tree-node__expand-icon el-icon-caret-right"></span>
+                    <!---->
+                    <!----><span class="el-tree-node__label">16.数组</span></div>
+                  <div role="group" aria-expanded="true" class="el-tree-node__children"></div>
+                </div>
+                <div role="treeitem" tabindex="-1" aria-expanded="true" draggable="false"
+                  class="el-tree-node is-expanded is-focusable">
+                  <div class="el-tree-node__content" style="padding-left: 18px;"><span
+                      class="is-leaf el-tree-node__expand-icon el-icon-caret-right"></span>
+                    <!---->
+                    <!----><span class="el-tree-node__label">17.预处理</span></div>
+                  <div role="group" aria-expanded="true" class="el-tree-node__children"></div>
+                </div>
+              </div>
+            </div>
+            <div role="treeitem" tabindex="-1" aria-expanded="true" draggable="false"
+              class="el-tree-node is-expanded is-focusable">
+              <div class="el-tree-node__content" style="padding-left: 0px;"><span
+                  class="is-leaf el-tree-node__expand-icon el-icon-caret-right"></span>
+                <!---->
+                <!----><span class="el-tree-node__label">视图矩阵和投影矩阵(相机)</span></div>
+              <div role="group" aria-expanded="true" class="el-tree-node__children"></div>
+            </div>
+            <div role="treeitem" tabindex="-1" aria-expanded="true" draggable="false"
+              class="el-tree-node is-expanded is-focusable">
+              <div class="el-tree-node__content" style="padding-left: 0px;"><span
+                  class="is-leaf el-tree-node__expand-icon el-icon-caret-right"></span>
+                <!---->
+                <!----><span class="el-tree-node__label">结束</span></div>
+              <div role="group" aria-expanded="true" class="el-tree-node__children"></div>
+            </div>
+            <!---->
+            <div class="el-tree__drop-indicator" style="display: none;"></div>
+          </div>
+        </div>
+      </div>
+      <div id="content"
+        style="overflow: auto; background: rgb(255, 255, 255); position: absolute; top: 0px; width: 1023px; left: 0px;">
+        <div style="margin: auto; width: 770px;">
+          <div style="height: 754px;">
+            <div style="width: 770px;">
+              <div data-v-09fec410="" id="cover"
+                style="width: 600px; height: 800px; margin-top: 3px; margin-left: 85px;">
+                <div data-v-09fec410="" style="position: relative;">
+                  <div data-v-09fec410="" id="doc1" class="doc" style="top: 100px; left: 45px; width: 510px;"><a
+                      data-v-09fec410="" href="http://www.webgl3d.cn/Three.js/index.html" target="_blank"
+                      style="margin-left: 5px;"><span data-v-09fec410=""
+                        style="color: rgb(255, 255, 255); font-size: 55px; padding: 10px 20px;">WebGL零基础入门</span></a>
+                  </div>
+                  <div data-v-09fec410="" id="doc2" class="doc" style="left: 240px; top: 705px; width: 350px;"><a
+                      data-v-09fec410="" href="http://www.yanhuangxueyuan.com/" target="_blank"><span data-v-09fec410=""
+                        style="font-size: 15px; color: rgb(255, 255, 255); padding: 10px 20px;">作者：郭隆邦</span></a><br
+                      data-v-09fec410=""><span data-v-09fec410=""
+                      style="font-size: 15px; color: rgb(255, 255, 255); padding: 10px 20px;">
+                      博客：http://www.yanhuangxueyuan.com/
+                    </span>
+                    <div data-v-09fec410="" style="position: absolute; bottom: 48px; right: 40px;"><a data-v-09fec410=""
+                        href="https://www.zhihu.com/people/guo-long-bang-11/activities" target="_blank"><img
+                          data-v-09fec410="" src="./WebGL电子书《WebGL零基础入门教程》_郭隆邦_files/知乎.ca1078b5.png" alt="" width="20"
+                          height="20"></a> 
+                    </div>
+                  </div>
+                  <div data-v-09fec410="" style="background: rgb(0, 0, 0); position: absolute; left: 0px; top: 0px;">
+                    <canvas data-v-09fec410="" id="webgl" width="600" height="800"></canvas></div>
+                </div>
+                <script data-v-09fec410="" id="vertexShader" type="x-shader/x-vertex">
+                  attribute vec4 position;
+
+  attribute float scale;
+
+
+  uniform mat4 modelViewMatrix;//
+  uniform mat4 projectionMatrix;//
+  void main() {
+  vec4 mvPosition = modelViewMatrix * position;
+
+  gl_PointSize = scale*1.0 * ( 200.0 / - mvPosition.z );
+
+  gl_Position = projectionMatrix * mvPosition;
+
+  }
+  </script>
+                <script data-v-09fec410="" id="fragmentShader" type="x-shader/x-fragment">
+                  void main() {
+      if ( length( gl_PointCoord - vec2( 0.5, 0.5 ) ) > 0.49 ) discard;
+      gl_FragColor = vec4(0.0,1.0,1.0,1.0);
+  }
+  </script>
+              </div>
+            </div>
+            <div id="doc" style="box-sizing: border-box;"></div>
+            <div style="transform: scaleY(0.5); height: 1px; background: rgb(204, 204, 204); width: 100%;"></div>
+            <div style="font-size: 12px; padding: 20px; color: rgb(128, 128, 128);"><span
+                style="margin-left: 160px;">未经允许不得随意转载</span><span
+                style="margin-left: 20px;">作者博客：http://www.yanhuangxueyuan.com/</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./WebGL电子书《WebGL零基础入门教程》_郭隆邦_files/chunk-vendors.8c6f77c0.js.下载"> </script>
+  <script src="./WebGL电子书《WebGL零基础入门教程》_郭隆邦_files/app.8f9c6ad8.js.下载"> </script>
+  <div class="xl-chrome-ext-bar" id="xl_chrome_ext_{4DB361DE-01F7-4376-B494-639E489D19ED}" style="display: none;">
+    <div class="xl-chrome-ext-bar__logo"></div>
+
+    <a id="xl_chrome_ext_download" href="javascript:;" class="xl-chrome-ext-bar__option">下载视频</a>
+    <a id="xl_chrome_ext_close" href="javascript:;" class="xl-chrome-ext-bar__close"></a>
+  </div>
+</body>
+
+</html>

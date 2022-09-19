@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="glMatrix-0.9.6.min.js"></script>
+    <script>
+        let vertexstring = `
+        attribute vec3 a_position; // vec3 三维矩阵:3个值作为一个点 , vec4 四维矩阵:4个值作为一个点
+        uniform     mat4    proj;
+
+
+        void main(void){
+            gl_Position = vec4(a_position,1.0)  ;
+            gl_PointSize=60.0;
+
+        }
+        `;
+        // 着色器语言 GLSL (opengl-shader-language)入门大全
+
+        // 精度限定:
+        // glsl在进行光栅化着色的时候,会产生大量的浮点数运算,
+        // 这些运算可能是当前设备所不能承受的,所以glsl提供了3种浮点数精度,
+        // 我们可以根据不同的设备来使用合适的精度.
+        // 在变量前面加上 highp mediump lowp 即可完成对该变量的精度声明.
+
+        // 我们一般在片元着色器(fragment shader)最开始的地方加上 precision mediump float; 
+        // 便设定了默认的精度.这样所有没有显式表明精度的变量 都会按照设定好的默认精度来处理.
+        let fragmentstring = `
+        precision mediump float;
+        void main(void){
+          gl_FragColor = vec4(0.0,0.0,1.0,1.0); //定义颜色
+        }
+        `;
+        var projMat4 = mat4.create();
+        var webgl;
+        function init() {
+            initWebgl();
+            initShader();
+            initBuffer();
+            draw();
+        }
+        function initWebgl() {
+            let webglDiv = document.getElementById('myCanvas');
+            webgl = webglDiv.getContext("webgl");
+            // webgl 视野范围
+            webgl.viewport(0, 0, webglDiv.clientWidth, webglDiv.clientHeight);
+            // 计算正交投影 返回给参数projMat4,将3D 视图投影到二维图片上
+            mat4.ortho(0, webglDiv.clientWidth, webglDiv.clientHeight, 0, -1.0, 1.0, projMat4)
+        }
+        function initShader() {
+
+            // 创建容器
+            let vsshader = webgl.createShader(webgl.VERTEX_SHADER);
+            let fsshader = webgl.createShader(webgl.FRAGMENT_SHADER);
+
+            // 绑定着色器和容器
+            webgl.shaderSource(vsshader, vertexstring);
+            webgl.shaderSource(fsshader, fragmentstring);
+
+            // 编译容器
+            webgl.compileShader(vsshader);
+            webgl.compileShader(fsshader);
+            if (!webgl.getShaderParameter(vsshader, webgl.COMPILE_STATUS)) {
+                var err = webgl.getShaderInfoLog(vsshader);
+                alert(err);
+                return;
+            }
+            if (!webgl.getShaderParameter(fsshader, webgl.COMPILE_STATUS)) {
+                var err = webgl.getShaderInfoLog(fsshader);
+                alert(err);
+                return;
+            }
+            // 创建项目
+            let program = webgl.createProgram();
+            // 绑定项目和容器
+            webgl.attachShader(program, vsshader);
+            webgl.attachShader(program, fsshader)
+
+            // 告诉webgl,连接创建好的项目
+            webgl.linkProgram(program);
+            // 使用项目
+            webgl.useProgram(program);
+
+            // 挂载项目,便于以后使用
+            webgl.program = program
+        }
+        // 用来装载鼠标点击创建出来的点 的数组
+        var points = [];
+        var colors=[];
+        function initBuffer() {
+            // 获取shader 的变量a_position 值
+            // 参数: 项目,需要获取的变量
+            let aPsotion = webgl.getAttribLocation(webgl.program, "a_position");
+            
+            document.addEventListener("mousedown", function (e) {
+                debugger
+                let x = e.clientX;
+                let y = e.clientY;
+                // 返回值是一个 DOMRect 对象，
+                // 是包含整个元素的最小矩形（包括 padding 和 border-width）。
+                // 该对象使用 left、top、right、bottom、x、y、width 和 height 
+                // 这几个以像素为单位的只读属性描述整个矩形的位置和大小。
+                // 除了 width 和 height 以外的属性是相对于视图窗口的左上角来计算的
+                let rect = e.target.getBoundingClientRect();
+                // webgl 是以-1 到1 为距离范围的
+                // ((鼠标x-画布左边距离可视屏幕大小)-画布宽一半)/画布宽一半=[-1,1]之间
+                // webgl 中点(0,0)在画布中心(宽/2,高/2)上
+                let pointx = ((x - rect.left) - 512) / 512;
+                let pointy = (350 - (y - rect.top)) / 350;
+                points.push(pointx); //x 坐标
+                points.push(pointy); //y 坐标
+                points.push(0); //z 坐标
+              
+                // 绘制的点坐标
+                // let pointPosition = new Float32Array([100.0, 100.0, 0.0, 1.0]);
+                let pointPosition = new Float32Array(points);
+                // 多个点,需要创建缓冲区
+                let pointBuffer = webgl.createBuffer();
+                // 绑定缓冲区,将webgl 和buffer 绑定
+                webgl.bindBuffer(webgl.ARRAY_BUFFER, pointBuffer);
+                // buffer 赋值
+                // 参数1需要与上方一致, 
+                // 参数2 要赋值的点
+                // 参数3 静态数据
+                webgl.bufferData(webgl.ARRAY_BUFFER, pointPosition, webgl.STATIC_DRAW);
+                // 启用aPsotion
+                webgl.enableVertexAttribArray(aPsotion);
+                // 将buffer 数据赋值给aPsotion
+                // 要赋值的变量,   指定要修改的顶点属性的索引
+                // 3 个值为一个点, 指定每个顶点属性的组成数量，必须是 1，2，3 或 4
+                // 数据的类型,       指定数组中每个元素的数据类型可能是
+                                // gl.BYTE 有符号的 8 位整数，范围 [-128, 127]
+                                // gl.SHORT 有符号的 16 位整数，范围 [-32768, 32767]
+                                // gl.UNSIGNED_BYTE 无符号的 8 位整数，范围 [0, 255]
+                                // gl.UNSIGNED_SHORT 无符号的 16 位整数，范围 [0, 65535]
+                                // gl.FLOAT 32 位 IEEE 标准的浮点数
+                                // 使用 WebGL2 版本(此功能某些浏览器尚在开发中)的还可以使用以下值：gl.HALF_FLOAT 16 位 IEEE 标准的浮点数
+
+                // 是否归一化      当转换为浮点数时是否应该将整数数值归一化到特定的范围。
+                                // 对于类型gl.BYTE和gl.SHORT，如果是 true 则将值归一化为 [-1, 1]
+                                // 对于类型gl.UNSIGNED_BYTE和gl.UNSIGNED_SHORT，如果是 true 则将值归一化为 [0, 1]
+                                // 对于类型gl.FLOAT和gl.HALF_FLOAT，此参数无效
+
+                // 步幅             一个 GLsizei，以字节为单位指定连续顶点属性开始之间的偏移量 (即数组中一行长度)。不能大于 255。如果 stride 为 0，则假定该属性是紧密打包的，即不交错属性，每个属性在一个单独的块中，下一个顶点的属性紧跟当前顶点之后
+                // 偏移量           GLintptr (en-US)指定顶点属性数组中第一部分的字节偏移量。必须是类型的字节长度的倍数。
+                // [1,2,3, 4,5,6 ,7,8,9]     例 2:表示从第二位数2,开始计算
+
+                // 告诉显卡从当前绑定的缓冲区（bindBuffer（） 指定的缓冲区）中读取顶点数据
+                // void gl.vertexAttribPointer(index, size, type, normalized, stride, offset);
+                webgl.vertexAttribPointer(aPsotion, 3, webgl.FLOAT, false, 0, 0);
+                // webgl.vertexAttribPointer(aPsotion, 3, webgl.FLOAT, false, 0*3, 0*3);
+
+                // 重置颜色 黑色rgba
+                webgl.clearColor(0.0, 0.0, 0.0, 1.0);
+                // 颜色检测
+                webgl.clear(webgl.COLOR_BUFFER_BIT | webgl.DEPTH_BUFFER_BIT);
+                // 绘图
+                // 参数: 绘制单个点, 从pointPosition 位置中哪一个点开始, 要绘制几个点
+                webgl.drawArrays(webgl.POINTS, 0, points.length / 3);
+            })
+
+
+
+            let uniformProj = webgl.getUniformLocation(webgl.program, "proj");
+            // 将投影坐标系uniformProj 赋值projMat4, 
+            // 参数2: 是否转至 一般都为false
+            // WebGLRenderingContext.uniformMatrix[2,3,4]fv(location, transpose, value);
+            //location       WebGLUniformLocation 对象包含了要修改的 uniform attribute 位置。位置使用 getUniformLocation() (en-US)获得。
+            // transpose     GLboolean (en-US) 指定是否转置矩阵。必须为 false.
+            // value         Float32Array 型或者是 GLfloat 序列值。假定值以列主要顺序提供。
+            webgl.uniformMatrix4fv(uniformProj, false, projMat4);
+        }
+        function draw() {
+            webgl.clearColor(0.0, 0.0, 0.0, 1.0);
+            webgl.clear(webgl.COLOR_BUFFER_BIT | webgl.DEPTH_BUFFER_BIT);
+
+        }
+    </script>
+</head>
+
+<body onload="init()">
+    <canvas id='myCanvas' width="1024" height='700'></canvas>
+</body>
+
+</html>

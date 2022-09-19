@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- webgl矩阵运算,使我们不用自己耗费时间去计算矩阵 -->
+    <script src="glMatrix-0.9.6.min.js"></script>
+    <script>
+        // 顶点着色器,字符串中的内容为要执行的代码
+        let vertexstring = `
+        attribute vec4 a_position; //定义变量,用来接收绘制点的坐标
+        uniform     mat4    proj;  //定义变量,用来接收投影坐标系
+        void main(void){    //定义shader 的入口函数
+            gl_Position =proj *  a_position; // 顶点着色器内置变量gl_Position,将点的数据(投影*点坐标 的变换数据)返回给他,传递到shader 绘制图形位置
+            gl_PointSize=60.0; // 点的大小,60像素
+        }
+        `;
+
+        // 片元着色器
+        let fragmentstring = `
+        void main(void){ // 入口函数
+          gl_FragColor = vec4(0,0,1.0,1.0); //片元着色器内置变量 gl_FragColor , 颜色为 vec4(0,0,1.0,1.0)
+        }
+        `;
+        // 定义一个初始矩阵projMat4 ,mat4.ortho() 经过运算后重新赋值
+        var projMat4 = mat4.create(); 
+        var webgl;
+        // 入口函数
+        function init() {
+            initWebgl(); // webgl 初始化函数
+            initShader();// shader(著色器; 着色程序) 初始化函数
+            initBuffer(); //数据缓冲区初始化函数
+            draw(); //webgl 的绘制函数
+        }
+        function initWebgl() {
+            let webglDiv = document.getElementById('myCanvas');
+            webgl = webglDiv.getContext("webgl");
+            // 绘制可视区域
+            webgl.viewport(0, 0, webglDiv.clientWidth, webglDiv.clientHeight);
+            // 设置投影坐标系 ortho 正交,即正交投影矩阵,projMat4 用来接收函数返回的值
+            //  0 ,w, h,0,单位-1 最远比例.单位1最近的比例
+            //  mat4 为引入文件的变量
+            mat4.ortho(0, webglDiv.clientWidth, webglDiv.clientHeight, 0, -1.0, 1.0, projMat4)
+        }
+        function initShader() {
+            // 创建着色器shader 容器 
+            // 参数 指定创建什么类型的shader 
+            //  VERTEX_SHADER 顶点shader
+            // FRAGMENT_SHADER 片元shader
+            let vsshader = webgl.createShader(webgl.VERTEX_SHADER);
+            let fsshader = webgl.createShader(webgl.FRAGMENT_SHADER);
+
+            // 将字符串着色器和容器绑定
+            // 参数: 容器,文本shader
+            webgl.shaderSource(vsshader, vertexstring);
+            webgl.shaderSource(fsshader, fragmentstring);
+
+            // 编译容器,打包
+            webgl.compileShader(vsshader);
+            webgl.compileShader(fsshader);
+            if (!webgl.getShaderParameter(vsshader, webgl.COMPILE_STATUS)) {
+                var err = webgl.getShaderInfoLog(vsshader);
+                alert(err);
+                return;
+            }
+            if (!webgl.getShaderParameter(fsshader, webgl.COMPILE_STATUS)) {
+                var err = webgl.getShaderInfoLog(fsshader);
+                alert(err);
+                return;
+            }
+
+            // 创建项目
+            let program = webgl.createProgram();
+            // 绑定项目和容器
+            // 参数: 项目,容器
+            webgl.attachShader(program, vsshader);
+            webgl.attachShader(program, fsshader)
+
+            // 告诉webgl,连接创建好的项目
+            webgl.linkProgram(program);
+            // 使用连接好的项目
+            webgl.useProgram(program);
+
+            // 上方已经构建完项目,这里只是挂载program 到webgl,便于以后取出使用
+            webgl.program = program
+        }
+        function initBuffer() {
+            // 点坐标 x=100,y=100,z=0,w=1   w 是多出来的,只需要三维就行,1x 任何数都是本身,所以没有影响
+            let pointPosition = new Float32Array([100.0, 100.0, 0.0, 1.0]);
+            // 获取shader 的变量a_position 值
+            // 参数: 项目,需要获取的变量
+            let aPsotion = webgl.getAttribLocation(webgl.program, "a_position");
+            // 将 pointPosition 赋值到shader aPsotion 中
+            // vertex 顶点 Attrib 属性 4 个参数 fv 数组,pointPosition 只有一个点才能使用此方法
+            webgl.vertexAttrib4fv(aPsotion, pointPosition); 
+            // 获取投影坐标系
+            let uniformProj = webgl.getUniformLocation(webgl.program, "proj");
+            // 将投影坐标系uniformProj 赋值projMat4, 
+            // 参数2: 是否转至 一般都为false
+            webgl.uniformMatrix4fv(uniformProj, false, projMat4);
+        }
+        function draw() {
+            // 重置颜色 黑色rgba
+            webgl.clearColor(0.0, 0.0, 0.0, 1.0);
+            // 颜色的检测
+            webgl.clear(webgl.COLOR_BUFFER_BIT | webgl.DEPTH_BUFFER_BIT);
+            // 绘制
+            // 参数: 绘制单个点, 从pointPosition 位置中哪一个点开始, 要绘制几个点
+            webgl.drawArrays(webgl.POINTS, 0, 1);
+        }
+    </script>
+</head>
+
+<body onload="init()">
+    <canvas id='myCanvas' width="1024" height='768'></canvas>
+</body>
+
+</html>
