@@ -1,0 +1,15 @@
+/* 公共（全局）样式 */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
