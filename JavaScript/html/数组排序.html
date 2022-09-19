@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组排序</title>
+	<script>
+	//1.翻转排序
+	//arr.reverse()
+	var arr=['pink','red','blue'];
+	arr.reverse();
+	alert(arr);
+	console.log(arr);
+	//2.冒泡排序
+	//arr1.sort()
+	var arr1=[3,2,6,9,4,1,7,8];//只能判断个位数  13 ,1,77 的排序是1,13,77.先判断数字的第一个数,在判断第二个数
+	arr1.sort();
+	console.log(arr1);
+	alert(arr1);
+	var arr2=[3,21,6,9,45,1,57,66];
+	arr2.sort(function(a,b){
+	return a-b;//正常升序排列
+	//return b-a;正常降序排列
+	});
+	console.log(arr2);
+		</script>
+	<style>
+
+	</style>
+
+</head>
+
+<body>
+	<div onclick="alert('你真的是猪')">你是猪!
+	</div>
+	<input type="button" value="按钮"  onclick="myFunc()"></input>
+
+
+
+
+</body>
+</html>

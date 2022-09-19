@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>百度换肤</title>
+	<script>
+
+	
+		</script>
+	<style>
+	*{
+	margin:0;
+	padding:0;
+	}
+	body{
+	background:url(huanfu1.jpg) no-repeat center center;
+	}
+	.baidu{
+	overflow:hidden;
+	margin:100px auto;
+	background-color:red;
+	width:510px;
+	padding-top:3px;
+	}
+	li{
+	list-style:none;
+	}
+	.baidu li{
+	float:left;
+	margin:0 1px;
+	cursor:pointer;
+	
+	}
+	.baidu img{
+	
+	width:100px;
+	height:50px;
+	}
+	</style>
+
+</head>
+
+<body>
+	
+	<ul class="baidu">
+	<li><img src="huanfu1.jpg"></li>
+	<li><img src="huanfu2.jpeg"></li>
+	<li><img src="huanfu3.jpg"></li>
+	<li><img src="huanfu4.jpg"></li>
+	<li><img src="huanfu5.jpg"></li>
+	
+	</ul>
+	
+
+	<script>
+	//获取元素
+	
+	var imgs =document.querySelector('.baidu').querySelectorAll('img');
+	//循环注册事件
+	//程序异步执行,输出结果为 0 1 2 3 4 a5(每次点击) a5 a5 a5....
+	console.log(imgs);  
+	for(var i=0;i<imgs.length;i++){
+		console.log(i);
+	imgs[i].onclick=function(){
+		console.log('a'+i);
+	console.log(this.src);
+	document.body.style.backgroundImage='url('+this.src+')';
+	
+	}
+	}
+	
+	
+	</script>
+
+
+
+</body>
+</html>  

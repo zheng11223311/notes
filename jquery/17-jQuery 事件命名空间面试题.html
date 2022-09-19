@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 事件命名空间面试题</title>
+    <script src="./css/jQueryDownload/jquery-1.9.1.min.js"></script>
+    <style>
+          *{
+            margin: 0;
+            padding: 0;
+        }
+        .father{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+        .son{
+            width: 100px;
+            height: 100px;
+            background: gold;
+        }
+    </style>
+    <script>
+       
+       $(function (){
+        //    想要事件命名空间有效,必须满足两个条件
+        //    1.事件必须是通过on 来绑定的
+        //    2.通过trigger 触发事件
+        // 事件命名空间在团队工作时,不同的人添加的事件可以不会
+        // 被其他人错误执行到自己的事件
+           $('.father').on('click.zhangsan',function(){
+           alert('f zs');
+       });
+           $('.father').on('click',function(){
+           alert('f');
+       });
+       $('.son').on('click.zhangsan',function(){
+           alert('s zs');
+       });
+            // $('.father').trigger('click');
+            // 利用trigger 触发子元素带命名空间的事件,那么父元素带相同
+            // 命名空间的事件也会被触发 而父元素没有命名空间的事件不会被触发
+            $('.son').trigger('click.zhangsan');
+            // 利用trigger 触发子元素不带命名空间的事件,那么父元素带
+            // 命名空间的事件会被触发 没有命名空间的事件也会被触发
+            $('.son').trigger('click');
+
+        //    $('.father').on('click.lisi',function(){
+        //    alert('自定义1111111111111');
+    //    });
+    
+       });
+    </script>
+</head>
+<body>
+     <div class="father">
+        <div class="son"></div>
+    </div>
+    <a href="http://www.baidu.com">我是百度/点击默认跳转</a>
+    <form action="http://www.taoabo.com">
+    <input type="text" placeholder="点击提交默认跳转">
+    <input type="submit">
+    </form>
+</body>
+</html>

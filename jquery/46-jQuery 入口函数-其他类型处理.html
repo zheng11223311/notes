@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/njQuery.js"></script>
+    <title>46-jQuery 入口函数-其他类型处理</title>
+</head>
+<body>
+    <ul>
+        <li></li>
+    </ul>
+</body>
+<script>
+     // 6.传入对象
+    //  会将传入的对象存储到jQuery 对象中返回
+function Person(){}
+console.log($(new Person()));
+var likerArr={0:'ljn',1:'33',2:'male',length:3}
+ console.log($(likerArr));
+ console.log($([1,2,3,4,5,6]));
+//  console.log($('<p>1</p><p>2</p><p>3</p>'));
+//  console.log($('li'));
+</script>
+</html>

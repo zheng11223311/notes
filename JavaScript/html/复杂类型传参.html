@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>复杂类型传参</title>
+	<script>
+	alert('传参: 传对象时传的是一个地址');
+	function persion(NAME){
+	this.name=NAME;
+	}
+	function f1(x){
+	console.log(x.name);
+	x.name='张学友';
+	console.log(x.name);
+	
+	}
+	var p=new persion('刘德华');
+	console.log(p.name);
+	f1(p);
+	console.log(p.name);
+		</script>
+	<style>
+
+	</style>
+
+</head>
+
+<body>
+	<div onclick="alert('你真的是猪')">你是猪!
+	</div>
+	<input type="button" value="按钮"  onclick="myFunc()"></input>
+
+
+
+
+</body>
+</html>

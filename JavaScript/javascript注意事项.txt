@@ -1,0 +1,23 @@
+1.
+e.currentTarge是指注册了事件监听器的对象，
+e.target是指对象里的子对象，实际触发这个事件的对象。
+
+2.
+1.onselectstart
+这个事件主要是用于禁止选择网页中的文字。代码为：
+
+document.onselectstart =function(){
+            return false;
+        }
+另外ff/opera不支持此事件，ff可以用css控制：css: body { -moz-user-select: none; }。webkit浏览器可以使用“-khtml-user-select”，当然也可以使用onselectstart事件来阻止用户选定元素内文本。
+注意此事件不支持对input和textarea无效。
+
+2.onselect
+此事件在选择textarea或input内的内容后触发。因此只有input和textarea标签支持。例如:
+<input type = 'text' id = 'input>
+<script>
+             var input = document.getElementById('input');
+             input.onselect = function(){
+                alert("被触发");
+            }     
+</script>    

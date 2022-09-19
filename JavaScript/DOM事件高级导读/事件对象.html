@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件对象</title>
+	<script>
+	
+		</script>
+	<style>
+	*{
+	margin:0;
+	padding:0;
+	}
+	div{
+	width:100px;
+	height:100px;
+	background-color:pink;
+	}
+	
+	</style>
+
+</head>
+
+<body>
+	<div class="father">你是猪
+	
+	</div>
+	
+	
+	<script>
+	//事件对象
+	var div=document.querySelector('div');
+	div.onclick=function(e){
+	//console.log(event);
+	//console.log(window.event);
+	e=e||windows.event;
+	console.log(e);
+	}
+	div.addEventListener('click',function(event){
+	console.log(event);
+	});
+	
+	
+	//1.event 就是一个事件对象 写到我们侦听函数的 小括号里面 当形参来看
+	//2.事件对象只有有了事件才会存在,它是系统给我们自动创建的,不需要我们传递参数
+	//3.事件对象 是 我们事件的一系列相关数据的集合 跟事件相关的 比如鼠标点击里面就包含了鼠标的
+	//相关信息,鼠标坐标啊.如果是键盘事件里面就包含的键盘事件的信息 比如 判断用户按下了那个键
+	//4.这个事件对象我们可以自己命名 比如 event evt e 这是一个形参 
+	//5.事件对象也有兼容性问题 ie678 通过window.event 兼容性的写法e=e||windows.event
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//报错 Uncaught SyntaxError: Unexpected end of input 
+		//1.缺少部分括号   指向最后一行
+	//报错 Uncaught TypeError: document.getEmentById is not a function
+		//1.关键词错误 改成getElementById 指向错误位置
+	//报错 Uncaught TypeError: Cannot read property 'getEmentsByTagName' of null
+		//1.关键词错误 改成getElementsByTagName 指向错误位置
+	//报错 Uncaught TypeError: Cannot read property 'getElementsByTagName' of null
+		//1.括号内 id 填写错误   指向错误位置  下方应该是 j_tb
+			//不能写成 var j_tbs=document.getElementById('j_tbsb').getElementsByTagName('input');
+	//报错 Uncaught ReferenceError: querySelector is not defined
+		//1.querySelector改为document.querySelector
+	//报错 Uncaught TypeError: Cannot read property '1' of undefined
+		//1.关键字错误 ul.removeChild(ul.children[1]);写成了 ul.removeChild(ul.child[1]);
+	//报错 Uncaught TypeError: Failed to execute 'removeChild' on 'Node': parameter 1 is not of type 'Node'.
+		//1.数组名错误 if(ul.children.length==0)写成了if(ul.length==0)
+	</script>
+
+
+
+</body>
+</html>  

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 对联广告</title>
+    <script src="./css/jQueryDownload/jquery-1.9.1.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            overflow: auto;
+        }
+
+        .left {
+            position: fixed;
+            left: 0;
+            top: 300px;
+            width: 300px;
+        }
+
+        .right {
+            position: fixed;
+            right: 0;
+            top: 300px;
+            width: 300px;
+        }
+
+        video {
+            display: none;
+        }
+
+        div {
+            width: 100px;
+            height: 1000px;
+            background-color: blueviolet;
+        }
+    </style>
+    <script>
+        $(function () {
+            // 监听网页的滚动
+            $(window).scroll(function () {
+                // 获取网页滚动的偏移位
+                var offset = $('html,body').scrollTop();
+                // console.log($('html,body').scrollTop());
+
+                if (offset >= 500) {
+                    console.log($('video'));
+                    $('video').show(1000);
+                } else {
+                    $('video').hide(1000);
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <video class="left" autoplay="autoplay" loop="loop">
+        <source src="./video/1.mp4">
+    </video>
+    <video class="right" autoplay="autoplay" loop="loop" muted="muted">
+        <source src="./video/2.mp4" type="">
+    </video>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>

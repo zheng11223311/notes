@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组转换为字符串</title>
+	<script>
+	//1.toString() 将我们的数组转换为字符串
+	var arr=[0,1,2,3,4];
+	console.log(arr.toString());
+	//2.join(分隔符)
+	var arr1=['green','blue','pink'];
+	console.log(arr1.join());//不写表示默认为用','隔开
+	console.log(arr1.join('-'));//用'-'隔开
+	console.log(arr1.join('&'));//用'&'隔开
+	
+	//concat()连接两个或多个数组 不影响原数组 返回一个新的数组
+	console.log(arr.concat(arr1));
+	//slice() 数组截取slice(begin,end) 返回被截取项目的新数组 不包含最后一个
+	console.log(arr.slice(0,2));
+	//splice() 数组删除splice(第几个开始,要删除个数) 返回被删除项目的新数组 注意,这个会影响原数组
+	console.log(arr.splice(1,2));
+	console.log(arr.splice(1,2));
+		</script>
+	<style>
+
+	</style>
+
+</head>
+
+<body>
+	<div onclick="alert('你真的是猪')">你是猪!
+	</div>
+	<input type="button" value="按钮"  onclick="myFunc()"></input>
+
+
+
+
+</body>
+</html>

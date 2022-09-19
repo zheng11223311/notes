@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 显示隐藏动画</title>
+    <script src="./css/jQueryDownload/jquery-1.9.1.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        div {
+            display: none;
+            width: 200px;
+            height: 200px;
+            background-color: brown;
+        }
+    </style>
+    <script>
+        $(function () {
+            $('button').eq(0).click(function () {
+                // $('div').css('display', 'block');
+                // 显示动画 参数 毫秒,回调函数
+                $('div').show(1000, function () {
+                    // 作用: 动画执行完毕之后调用
+                    alert('显示动画');
+                });
+            })
+            $('button').eq(1).click(function () {
+                // $('div').css('display', 'none');
+                // 隐藏动画 参数 毫秒,回调函数
+                $('div').hide(1000, function () {
+                    // 作用: 动画执行完毕之后调用
+                    alert('隐藏动画');
+                });
+
+            })
+            $('button').eq(2).click(function () {
+                // 切换动画 参数 毫秒,回调函数
+                $('div').toggle(1000, function () {
+                    // 作用: 动画执行完毕之后调用
+                    alert('切换动画');
+                });
+            })
+        });
+
+    </script>
+</head>
+
+<body>
+    <button>显示</button>
+    <button>隐藏</button>
+    <button>切换</button>
+    <div></div>
+</body>
+
+</html>

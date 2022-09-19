@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>e.target和this的区别</title>
+	<script>
+	
+		</script>
+	<style>
+	*{
+	margin:0;
+	padding:0;
+	list-style:none;
+	}
+	div{
+	width:100px;
+	height:100px;
+	background-color:pink;
+	}
+	
+	</style>
+
+</head>
+
+<body>
+	<div class="father">你是猪
+	
+	</div>
+	<ul>
+	<li>你</li>
+	<li>是</li>
+	<li>猪</li>
+	
+	</ul>
+	
+	<script>
+	//常见事件对象的属性和方法
+	//1. e.target 返回的人是事件触发的对象(元素) this 返回的是绑定事件的对象(元素)
+	var div =document.querySelector('div');
+	div.addEventListener('click',function(e){
+		console.log(e.target);
+		console.log(this);
+		console.log(e.currentTarget);
+	});
+	var ul =document.querySelector('ul');
+	ul.addEventListener('click',function(e){
+	//我们给ul 绑定了事件 那么this 就指向ul
+		console.log(this);
+		//e.target 指向我们点击的那个对象 谁触发了这个事件 我们点击的是li e.target 指向的就是li
+		console.log(e.target);
+	});
+	//兼容性处理
+	div.onclick=function(e){
+	e=e||window.event;
+	var target=e.target||e.srcElemwnt;
+	console.log(target);
+	}
+	//2.了解 跟this 有一个非常相似的属性 currentTarget ie678不认识
+	
+	
+	
+	
+	
+	
+	
+	//报错 Uncaught SyntaxError: Unexpected end of input 
+		//1.缺少部分括号   指向最后一行
+	//报错 Uncaught TypeError: document.getEmentById is not a function
+		//1.关键词错误 改成getElementById 指向错误位置
+	//报错 Uncaught TypeError: Cannot read property 'getEmentsByTagName' of null
+		//1.关键词错误 改成getElementsByTagName 指向错误位置
+	//报错 Uncaught TypeError: Cannot read property 'getElementsByTagName' of null
+		//1.括号内 id 填写错误   指向错误位置  下方应该是 j_tb
+			//不能写成 var j_tbs=document.getElementById('j_tbsb').getElementsByTagName('input');
+	//报错 Uncaught ReferenceError: querySelector is not defined
+		//1.querySelector改为document.querySelector
+	//报错 Uncaught TypeError: Cannot read property '1' of undefined
+		//1.关键字错误 ul.removeChild(ul.children[1]);写成了 ul.removeChild(ul.child[1]);
+	//报错 Uncaught TypeError: Failed to execute 'removeChild' on 'Node': parameter 1 is not of type 'Node'.
+		//1.数组名错误 if(ul.children.length==0)写成了if(ul.length==0)
+	</script>
+
+
+
+</body>
+</html>  

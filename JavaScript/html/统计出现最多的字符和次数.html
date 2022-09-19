@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>统计出现最多的字符和次数</title>
+	<script>
+	//有一个对象
+	var o={
+	age:18
+	}
+	if(o['age']){
+	console.log('里面有该属性');
+	}else{
+	console.log(没有该属性);
+	}
+	var str='abcoefoxyozzopp';
+	var c={};
+	for(var i=0;i<str.length;i++){
+	var chars=str.charAt(i);
+	if(c[chars]){//c[chars]存的是属性值
+	c[chars]++;
+	}else{
+	c[chars]=1;     //c.o:1
+	}
+	
+	}
+	console.log(c);
+	//遍历对象
+	var max=0;
+	var ch='';
+	for(var k in c){
+	//k得到的是 属性名
+	//c[k]得到的是属性值
+	if(c[k]>max){
+	max=c[k];
+	ch=k;
+	}
+	
+	
+	}
+	console.log(max);
+	console.log('最多的字符是:'+ch);
+		</script>
+	<style>
+
+	</style>
+
+</head>
+
+<body>
+	<div onclick="alert('你真的是猪')">你是猪!
+	</div>
+	<input type="button" value="按钮"  onclick="myFunc()"></input>
+
+
+
+
+</body>
+</html>

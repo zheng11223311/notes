@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 事件委托</title>
+     <script src="./css/jQueryDownload/jquery-1.9.1.min.js"></script>
+    <style>
+          *{
+            margin: 0;
+            padding: 0;
+        }
+        .father{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+        .son{
+            width: 100px;
+            height: 100px;
+            background: gold;
+        }
+    </style>
+    <script>
+    //    1.什么是事件委托?
+    //    请别人帮忙做事,然后将做完的结果反馈给我们
+       $(function (){
+        $('button').click(function(){
+            $('ul').append("<li>我是新增的li</li>");
+            // $('ul').append("只增加文字,不增加标签");
+        })
+        
+        // 在jQuery 中,如果通过核心函数找到的元素不只一个,那么在添加
+        // 事件的时候,jQuery 会遍历所有找到的元素,给所有找到添加事件
+        // ul>li ==> ul 里面的所有li
+        // DOM文档加载完毕时只有3个li ,新增的li 无效
+        //方法一 嵌套在button 点击事件里
+        $('ul>li').click(function(){
+            $(this).html();
+            console.log($(this).html());
+        })
+
+        // 方法二
+        // 把li 的点击事件委托给ul 监听
+        $('ul').delegate('li','click',function(){
+              console.log($(this).html());
+        })
+       });
+    </script>
+</head>
+<body>
+    <ul>
+        <li>我是第1个li</li>
+        <li>我是第2个li</li>
+        <li>我是第3个li</li>
+    </ul>
+    <button>新增一个li</button>
+</body>
+</html>

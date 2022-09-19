@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 复制节点相关的方法</title>
+    <script src="./css/jQueryDownload/jquery-1.9.1.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            overflow: auto;
+        }
+
+        ul>li {}
+
+
+
+
+
+        /* > 子选择器 只选择第一级后代 */
+        /* ul li 后代选择器 选择所有后代 */
+    </style>
+    <script>
+        // clone([Event[,deepEvent]])
+        // 如果传入false 或者不传参数 就是浅复制,如果传入的是true 就是深复制
+
+        // 浅复制只能复制元素和内容
+        // 深复制还能复制元素的事件
+        $(function () {
+            $('button').eq(0).click(function () {
+                // 浅复制一个元素
+                // var $li = $('li:first').clone(false);
+                var $li = $('li:first').clone();
+                $('ul').append($li);
+            })
+            $('button').eq(1).click(function () {
+
+                // 深复制一个元素
+                var $li = $('li:first').clone(true);
+                $('ul').append($li);
+            })
+
+
+            $('li').click(function () {
+                alert($(this).html());
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <button>浅复制节点</button>
+    <button>深复制节点</button>
+    <ul>
+        <li>我是第1个节点</li>
+        <li>我是第2个节点</li>
+        <li>我是第3个节点</li>
+        <li>我是第4个节点</li>
+        <li>我是第5个节点</li>
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,582 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    overflow: hidden;
+}
+
+/*滚动条的宽度*/
+
+::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+
+}
+
+/*外层轨道。可以用display:none让其不显示，也可以添加背景图片，颜色改变显示效果*/
+
+::-webkit-scrollbar-track {
+    width: 6px;
+    background-color: #0d1b20;
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    border-radius: 2em;
+
+}
+
+/*滚动条的设置*/
+
+::-webkit-scrollbar-thumb {
+    background-color: #606d71;
+    background-clip: padding-box;
+    min-height: 28px;
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    border-radius: 2em;
+}
+
+/*滚动条移上去的背景*/
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #fff;
+}
+
+/* ::-webkit-scrollbar {}
+
+::-webkit-scrollbar-button {}
+
+::-webkit-scrollbar-track {}
+
+::-webkit-scrollbar-track-piece {}
+
+::-webkit-scrollbar-thumb {}
+
+::-webkit-scrollbar-corner {}
+
+::-webkit-resizer {} */
+
+/* 以上CSS代码所管辖的区域对就关系：以上代码解释
+::-webkit-scrollbar 滚动条整体部分，其中的属性有width,
+height,background,border（就和一个块级元素一样）等。
+::-webkit-scrollbar-button 滚动条两端的按钮。
+可以用display:none让其不显示，也可以添加背景图片，颜色改变显示效果。
+::-webkit-scrollbar-track 外层轨道。可以用display:none让其不显示，
+也可以添加背景图片，颜色改变显示效果。
+::-webkit-scrollbar-track-piece 内层轨道，滚动条中间部分（除去）。
+::-webkit-scrollbar-thumb 滚动条里面可以拖动的那部分
+::-webkit-scrollbar-corner 边角
+::-webkit-resizer 定义右下角拖动块的样式  */
+.header {
+    width: 100%;
+    height: 45px;
+}
+
+.header .logo {
+    float: left;
+    margin-left: 20px;
+    opacity: 0.5;
+}
+
+.header .logo:hover {
+    opacity: 1;
+}
+
+.header .logo a {
+    display: inline-block;
+    width: 78px;
+    height: 21px;
+    background: url(../img/logo1.png) no-repeat -17px -90px;
+    background-size: 112px 133px;
+}
+
+.header .register {
+    float: right;
+    line-height: 45px;
+
+
+}
+
+.header .register li {
+    list-style: none;
+    float: left;
+    margin-right: 20px;
+    color: #fff;
+    opacity: 0.5;
+}
+
+.header .register li:hover {
+    opacity: 1;
+}
+
+.content {
+    width: 100%;
+    height: 460px;
+
+
+}
+
+.content .content_in {
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+
+
+.content_in .content_left {
+    float: left;
+    width: 800px;
+    height: 100%;
+}
+
+.content_in .content_right {
+    float: right;
+    width: 400px;
+    height: 100%;
+}
+
+.content_right .song_info {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 30px;
+}
+
+.song_info .song_info_pic {
+    display: inline-block;
+    width: 201px;
+    height: 180px;
+    text-align: left;
+    background: url(../img/album_cover_player.png) no-repeat;
+}
+
+.song_info_pic img {
+    width: 180px;
+    height: 180px;
+}
+
+.song_info div a {
+    text-decoration: none;
+    color: #fff;
+    opacity: 0.5;
+}
+
+.song_info div a:hover {
+    opacity: 1;
+}
+
+.content_right .song_lyric {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.content_right .song_lyric li {
+    list-style: none;
+    line-height: 30px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.content_right .song_lyric .cur {
+    color: #31c27c;
+}
+
+.content_left .content_toobal {
+    width: 100%;
+    height: 40px;
+}
+
+.content_left .content_toobal span {
+    display: inline-block;
+    width: 122px;
+    height: 100%;
+    line-height: 40px;
+    text-align: center;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    border-radius: 5px;
+    color: #fff;
+    opacity: 0.5;
+}
+
+.content_left span i {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: url(../img/icon_sprite.png) no-repeat;
+    vertical-align: -5px;
+    background-size: 200px 340px;
+    margin-right: 4px;
+
+}
+
+.content_left span:nth-child(1) i {
+    background-position: -60px -20px;
+}
+
+.content_left span:nth-child(2) i {
+    background-position: -20px -20px;
+}
+
+.content_left span:nth-child(3) i {
+    background-position: -40px -240px;
+}
+
+.content_left span:nth-child(4) i {
+    background-position: -100px -20px;
+}
+
+.content_left span:nth-child(5) i {
+    background-position: -40px -300px;
+}
+
+.content_left span:hover {
+    opacity: 1;
+}
+
+
+.content_left .content_list {
+    width: 100%;
+    height: 420px;
+    overflow-y: scroll;
+}
+
+.content_list li {
+    list-style: none;
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    box-sizing: border-box;
+    /* pointer-events: none; */
+    user-select: none;
+}
+
+.content_list li div {
+    float: left;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 50px;
+
+}
+
+.content_list .list_check {
+    width: 50px;
+    height: 100%;
+    text-align: center;
+
+}
+
+.content_list .list_check i {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #fff;
+    opacity: 0.5;
+}
+
+.content_list .list_checked i {
+    background: url(../img/icon_sprite.png) no-repeat -60px -80px;
+    opacity: 1;
+}
+
+.content_list .list_number {
+    width: 20px;
+    height: 100%;
+}
+
+.content_list .list_number2 {
+    color: transparent !important;
+    background: url(../img/wave.gif) no-repeat 0 center;
+}
+
+.content_list .list_name {
+    width: 50%;
+    height: 100%;
+}
+
+.list_name .list_menu {
+    margin-top: 8px;
+    float: right;
+    margin-right: 20px;
+    display: none;
+}
+
+.list_menu a {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    background: url(../img/icon_sprite@2x.png) no-repeat 0 0;
+    opacity: 0.5;
+
+}
+
+.list_menu a:hover {
+    opacity: 1;
+}
+
+.list_menu a:nth-child(1) {
+    background: url(../img/player.png) no-repeat;
+    background-position: 10px 6px;
+}
+
+.list_menu a:nth-child(2) {
+    background-position: -0px -400px;
+}
+
+.list_menu a:nth-child(3) {
+    background-position: -80px -480px;
+}
+
+.list_menu a:nth-child(4) {
+    background-position: -200px -399px;
+}
+
+.list_menu .list_menu_play2 {
+    background: url(../img/player.png) no-repeat;
+    background-position: -21px 2px !important;
+}
+
+.content_list .list_singer {
+    width: 20%;
+    height: 100%;
+}
+
+.content_list .list_time a {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    background: url(../img/icon_sprite@2x.png) no-repeat -200px -40px;
+    float: left;
+    margin-top: 8px;
+    opacity: 0.5;
+    display: none;
+
+}
+
+.content_list .list_time a:hover {
+    opacity: 1;
+}
+
+.footer {
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.footer .footer_in {
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.footer_in a {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    background: url(../img/player.png) no-repeat 0px 0px;
+    margin-right: 20px;
+}
+
+.footer_in .music_pre {
+    width: 19px;
+    height: 20px;
+    background-position: 0px -30px;
+
+}
+
+.footer_in .music_play {
+    width: 21px;
+    height: 29px;
+    background-position: 0px 0px;
+    vertical-align: -5px;
+}
+
+.footer_in .music_play2 {
+    background-position: -30px 0px;
+}
+
+.footer_in .music_next {
+    width: 19px;
+    height: 20px;
+    background-position: 0px -52px;
+}
+
+.footer_in .music_progress_info {
+    display: inline-block;
+    width: 669px;
+    height: 40px;
+    position: relative;
+    top: 10px;
+}
+
+.music_progress_info .music_progress_top {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+}
+
+.music_progress_top .music_progress_name {
+    float: left;
+    opacity: 0.5;
+}
+
+.music_progress_top .music_progress_name:hover {
+    opacity: 1;
+}
+
+.music_progress_top .music_progress_time {
+    float: right;
+    opacity: 0.5;
+}
+
+.music_progress_info .music_progress_bar {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.5);
+    margin-top: 5px;
+}
+
+.music_progress_bar .music_progress_line {
+    width: 100px;
+    height: 100%;
+    background: #fff;
+}
+
+.music_progress_line .music_progress_dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #fff;
+    position: relative;
+    top: -4px;
+    left: 100px;
+}
+
+.footer_in .music_mode {
+    width: 26px;
+    height: 25px;
+    background-position: 0px -205px;
+}
+
+.footer_in .music_mode2 {
+    width: 23px;
+    height: 20px;
+    background-position: 0px -260px;
+}
+
+.footer_in .music_mode3 {
+    width: 25px;
+    height: 20px;
+    background-position: 0px -74px;
+}
+
+.footer_in .music_mode4 {
+    width: 26px;
+    height: 25px;
+    background-position: 0px -232px;
+}
+
+.footer_in .music_fav {
+    width: 24px;
+    height: 21px;
+    background-position: 0px -96px;
+}
+
+.footer_in .music_fav2 {
+
+    background-position: -30px -96px;
+}
+
+.footer_in .music_down {
+    width: 22px;
+    height: 21px;
+    background-position: 0px -120px;
+}
+
+.footer_in .music_comment {
+    width: 24px;
+    height: 24px;
+    background-position: 0px -400px;
+}
+
+.footer_in .music_only {
+    width: 74px;
+    height: 27px;
+    background-position: 0px -310px;
+}
+
+.footer_in .music_only2 {
+    background-position: 0px -281px;
+}
+
+.footer_in .music_voice_info {
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    position: relative;
+
+}
+
+.music_voice_info .music_voice_icon {
+    width: 26px;
+    height: 21px;
+    background: url(../img/player.png) no-repeat 0px -143px;
+    position: absolute;
+    left: 0px;
+    top: 15px;
+}
+
+.music_voice_info .music_voice_bar {
+    width: 70px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    right: 0;
+    top: 23px;
+}
+
+.music_voice_bar .music_voice_line {
+    width: 50px;
+    height: 100%;
+    background: #fff;
+}
+
+.music_voice_line .music_voice_dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    top: -5px;
+    left: 50px;
+}
+
+.mask_bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    background: url(../img/LL.jpg) no-repeat 0 0;
+    background-size: cover;
+    filter: blur(100px);
+}
+
+.mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.35);
+}

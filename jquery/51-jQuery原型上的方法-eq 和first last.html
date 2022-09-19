@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/njQuery.js"></script>
+    <title>51-jQuery原型上的方法-eq 和first last</title>
+</head>
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+    
+</body>
+<script>
+$(function(){
+    //eq 与get 方法一样,只不过eq 返回的是jquery 对象
+        var res=$('div')
+        console.log(res.eq(-1));
+        console.log(res.first());
+        console.log(res.last());
+})
+</script>
+</html>

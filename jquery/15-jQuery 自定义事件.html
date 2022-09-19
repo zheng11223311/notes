@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 自定义事件</title>
+    <script src="./css/jQueryDownload/jquery-1.9.1.min.js"></script>
+    <style>
+          *{
+            margin: 0;
+            padding: 0;
+        }
+        .father{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+        .son{
+            width: 100px;
+            height: 100px;
+            background: gold;
+        }
+    </style>
+    <script>
+       
+       $(function (){
+           function test(e){
+            alert(888);
+
+            return false;
+            e.stopPropagation();
+        }
+        $('.son').click(test);
+    //    想要自定义事件,必须满足两个条件
+    //    1.事件必须是通过on 绑定的
+    //    2.事件必须通过trigger / triggerHandler 来触发的
+       $('.son').on('mmmm',function(){
+           alert('自定义');
+       });
+        $('.son').trigger('mmmm');
+        $('.son').triggerHandler('mmmm');
+       });
+    </script>
+</head>
+<body>
+      <div class="father">
+        <div class="son"></div>
+    </div>
+    <a href="http://www.baidu.com">我是百度/点击默认跳转</a>
+    <form action="http://www.taoabo.com">
+    <input type="text" placeholder="点击提交默认跳转">
+    <input type="submit">
+    </form>
+</body>
+</html>

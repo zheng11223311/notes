@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表格隔行变色</title>
+	<script>
+
+	
+		</script>
+	<style>
+	*{
+	margin:0;
+	padding:0;
+	}
+	body{
+	background:url(huanfu1.jpg) no-repeat center center;
+	}
+	table{
+	overflow:hidden;
+	margin:100px auto;
+	background-color:#fff;
+	width:510px;
+	padding-top:3px;
+	 border-collapse:collapse;//消除表格的间隙
+	}
+	
+	table thead{
+	background-color:skyblue;
+	}
+	.bg{
+	background-color:pink;
+	}
+	
+	</style>
+
+</head>
+
+<body>
+	
+	<table>
+	<thead>
+		<tr>
+		<th>代码</th>
+		<th>名称</th>
+		<th>最新公布净值</th>
+		<th>累计净值</th>
+		<th>前单位净值</th>
+		<th>净值增长率</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>003526</th>
+			<th>名称</th>
+			<th>最新公布净值</th>
+			<th>累计净值</th>
+			<th>前单位净值</th>
+			<th>净值增长率</th>
+		</tr>
+		<tr>
+			<th>003526</th>
+			<th>名称</th>
+			<th>最新公布净值</th>
+			<th>累计净值</th>
+			<th>前单位净值</th>
+			<th>净值增长率</th>
+		</tr>
+		<tr>
+			<th>003526</th>
+			<th>名称</th>
+			<th>最新公布净值</th>
+			<th>累计净值</th>
+			<th>前单位净值</th>
+			<th>净值增长率</th>
+		</tr>
+	</tbody>
+	</table>
+	
+
+	<script>
+	//获取元素
+	
+	var trs=document.querySelector('tbody').querySelectorAll('tr');
+	//循环注册事件
+	for(var i=0;i<trs.length;i++){
+	//鼠标经过事件 onmouseover
+	trs[i].onmouseover=function(){
+	console.log(11);
+	this.className='bg';
+	}
+	//鼠标离开事件 onmouseout
+	trs[i].onmouseout=function(){
+	console.log(11);
+	this.className='';//为空.没有背景颜色
+	}
+	
+	}
+	//报错 Uncaught SyntaxError: Unexpected end of input 
+	//1.缺少部分括号  指向最后一行
+	</script>
+
+
+
+</body>
+</html>  

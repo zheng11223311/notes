@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/njQuery.js"></script>
+    <title>47-jQuery 入口函数-extend 方法</title>
+</head>
+<body>
+    
+</body>
+<script>
+        function njQuery(){
+
+        }
+        // njQuery.extend=function(obj){
+        //     //此时此刻的this 就是njQuery 这个类
+        //     console.log(this);
+        //     for(var key in obj){
+        //         // njQuery["isTest"]=function(){  console.log('test');}
+        //         this[key]=obj[key]
+        //     }
+        // }
+
+
+        // njQuery.extend({
+        //     isTest:function(){
+        //         console.log('test');
+        //     }
+        // })
+        // njQuery.isTest()
+
+        // 输出
+        // ƒ njQuery(){
+
+        // }
+        //  test
+
+        // njQuery.prototype.extend=function(obj){
+        //      //此时此刻的this 就是njQuery 对象
+        //     console.log(this);  // njQuery()
+        //     for(var key in obj){
+        //     // q["isDemo"]=function(){  console.log('demo');}
+        //     this[key]=obj[key]
+        // }
+
+        // }
+        // var q=new njQuery()
+        // q.extend({
+        //     isDemo:function(){
+        //         console.log('demo');
+        //     }
+        // })
+        // q.isDemo()
+
+        njQuery.extend=njQuery.prototype.extend=function(obj){
+            for(var key in obj){
+                this[key]=obj[key]
+            }
+        }
+        // njQuery.extend({})
+        var q=new njQuery();
+        q.extend({})
+</script>
+</html>

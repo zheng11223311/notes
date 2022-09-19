@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/njQuery.js"></script>
+    <title>75-jQuery DOM 操作相关方法-clone 方法</title>
+</head>
+<body>
+    <button>浅复制节点</button>
+    <button>深复制节点</button>
+   <ul>
+       <li>我是第1个li</li>
+       <li>我是第2个li</li>
+   </ul>
+</body>
+<script>
+    $(function(){
+      
+      //1.clone :复制一个元素
+       
+
+         $('button').eq(0).on('click',function(){
+             //1.浅复制一个元素
+             var $li=$('li').clone(false)
+            //  console.log($li);
+             //2.将复制的元素添加到ul 中
+             $('ul').append($li)
+         })
+         $('button').eq(1).on('click',function(){
+             //1.深复制一个元素
+             var $li=$('li').clone(true)
+            //  console.log($li);
+             //2.将复制的元素添加到ul 中
+             $('ul').append($li)
+         })
+
+        $('li').on('click',function(){
+            console.log(this);
+            console.log($(this).html());
+        })
+
+
+       
+            
+
+     
+           
+        
+    })
+</script>
+</html>

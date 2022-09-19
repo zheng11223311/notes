@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/njQuery.js"></script>
+    <title>73-jQuery 事件操作相关方法-on 方法</title>
+</head>
+<body>
+    <button>我是按钮1</button>
+    <button>我是按钮2</button>
+   
+</body>
+<script>
+    $(function(){
+      
+    /* 
+        1. on(type,callback): 注册事件
+        2. off(type,callback): 移除事件
+    */
+        
+        /* 
+        1.注册多个相同类型事件,后注册的不会覆盖先注册的
+        2.注册多个不同类型事件,后注册的不会覆盖先注册的
+        */
+      
+
+        $('button').on('click',function(){
+            alert('hello')
+        })
+        // $('button').on('click',function(){
+        //     alert('hello222')
+        // })
+        $('button').on('mouseenter',function(){
+                alert($(this))
+            // alert('hello mouseenter')
+        })
+            
+
+        var btn=document.getElementsByTagName('button')[0]
+         // 低版本不支持addEventListener
+        // btn.addEventListener('click',function(){
+        //     alert('hello23456')
+        // })
+        // 高版本不支持attachEvent
+        // btn.attachEvent('onclick',function(){
+        //     alert('hello23456')
+        // })
+
+
+        // function addEvent(dom,name,callBack){
+        //      // 低版本不支持addEventListener
+        //     if(dom.addEventListener){
+        //         dom.addEventListener(name,callBack)
+        //          // 高版本不支持attachEvent
+        //     }else{
+        //         dom.attachEvent('on'+name,callBack)
+        //     }
+        // }
+        // btn.eventCashe=[test1,text2] //将回调函数一次存放,在依次取出,就不会有先后顺序的影响了
+        // addEvent(btn,'click',function(){
+        //     alert('hello00000000')
+        // })
+
+
+
+        // $.addEvent(btn,'click',function(){
+        //     alert('hello00000000')
+        // })
+        //防止低版本浏览器,多个回调由后往前(倒回)执行
+            //  if(dom.eventsCache){
+            //      console.log(dom.eventsCache);
+            //     dom.eventsCache={}
+            //     console.log(dom.eventsCache);
+        //     //  }
+        //     if(dom.eventsCache[name]){
+        //         console.log(1);
+        //         dom.eventsCache[name]=[]
+        //         console.log(dom.eventsCache[name]);
+        //         // 将每个回调函数放到数组里面,在依次执行,就不会倒回执行
+        //         dom.eventsCache[name].push(callBack)
+
+        //           // 低版本不支持addEventListener
+        //     if(dom.addEventListener){
+        //         dom.addEventListener(name,function(){
+        //             for(var i=0;i<dom.eventsCache[name].length;i++){
+        //                 dom.eventsCache[name][i]()
+        //             }
+        //         })
+        //          // 高版本不支持attachEvent
+        //     }else{
+        //         dom.attachEvent('on'+name,function(){
+        //             for(var i=0;i<dom.eventsCache[name].length;i++){
+        //                 dom.eventsCache[name][i]()
+        //             }
+        //         })
+        //     }
+        // }else{
+        //      dom.eventsCache[name].push(callBack)
+        // }
+           
+        
+    })
+</script>
+</html>

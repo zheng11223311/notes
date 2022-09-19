@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>父节点操作</title>
+	<script>
+
+	
+		</script>
+	<style>
+	#box{
+	position:relative;
+	width:200px;
+	text-align:center;
+	margin:100px auto;
+	}
+	#box i{
+	position:relative;
+	display:inline-block;
+	top:-150px;
+	left:3px;
+	font-style:none;
+	width:14px;
+	height:14px;
+	}
+	
+	</style>
+
+</head>
+
+<body>
+	<div class="box">
+	淘宝二维码
+	<p></p>
+	<i class="close-btn">x</i>
+	
+	
+	
+	</div>
+	<script>
+	//获取元素
+	var btn=document.querySelector('.close-btn');
+	//1.父节点 parentNode 获取元素
+	console.log(btn.parentNode);
+	//得到的是离元素最近的父级节点 如果找不到父节点就返回为null
+	
+	//2.注册事件 处理程序
+	
+	
+	
+	
+	//报错 Uncaught SyntaxError: Unexpected end of input 
+	//1.缺少部分括号   指向最后一行
+	//报错 Uncaught TypeError: document.getEmentById is not a function
+	//1.关键词错误 改成getElementById 指向错误位置
+	//报错 Uncaught TypeError: Cannot read property 'getEmentsByTagName' of null
+	//1.关键词错误 改成getElementsByTagName 指向错误位置
+	//报错 Uncaught TypeError: Cannot read property 'getElementsByTagName' of null
+	//1.括号内 id 填写错误   指向错误位置  下方应该是 j_tb
+	//不能写成 var j_tbs=document.getElementById('j_tbsb').getElementsByTagName('input');
+	//报错 Uncaught ReferenceError: querySelector is not defined
+	//1.querySelector改为document.querySelector
+	</script>
+
+
+
+</body>
+</html>  

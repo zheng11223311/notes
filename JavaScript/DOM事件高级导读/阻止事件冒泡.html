@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>阻止事件冒泡</title>
+	<script>
+	
+		</script>
+	<style>
+	*{
+	margin:0;
+	padding:0;
+	}
+	div{
+	width:100px;
+	height:100px;
+	background-color:pink;
+	}
+	
+	</style>
+
+</head>
+
+<body>
+	<div class="father">
+	<div class="son">son盒子</div>
+	</div>
+	
+	
+	<script>
+	//常见事件对象的属性和方法
+	//阻止冒泡 dom 推荐的标准 stopPropagation()
+	var son=document.querySelector('.son');
+	son.addEventListener('click',function(e){
+		alert('son');
+		e.stopPropagation();  //stop 停止 Propagation 传播 兼容性问题
+		e.cancelbubble=true;  //cancel 取消 bubble 泡泡  ie678
+	},false);
+	var father=document.querySelector('.father');
+	father.addEventListener('click',function(){
+		alert('father');
+	},false);
+	
+
+	document.addEventListener('click',function(){
+		alert('document');
+	});
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//报错 Uncaught SyntaxError: Unexpected end of input 
+		//1.缺少部分括号   指向最后一行
+	//报错 Uncaught TypeError: document.getEmentById is not a function
+		//1.关键词错误 改成getElementById 指向错误位置
+	//报错 Uncaught TypeError: Cannot read property 'getEmentsByTagName' of null
+		//1.关键词错误 改成getElementsByTagName 指向错误位置
+	//报错 Uncaught TypeError: Cannot read property 'getElementsByTagName' of null
+		//1.括号内 id 填写错误   指向错误位置  下方应该是 j_tb
+			//不能写成 var j_tbs=document.getElementById('j_tbsb').getElementsByTagName('input');
+	//报错 Uncaught ReferenceError: querySelector is not defined
+		//1.querySelector改为document.querySelector
+	//报错 Uncaught TypeError: Cannot read property '1' of undefined
+		//1.关键字错误 ul.removeChild(ul.children[1]);写成了 ul.removeChild(ul.child[1]);
+	//报错 Uncaught TypeError: Failed to execute 'removeChild' on 'Node': parameter 1 is not of type 'Node'.
+		//1.数组名错误 if(ul.children.length==0)写成了if(ul.length==0)
+	</script>
+
+
+
+</body>
+</html>  

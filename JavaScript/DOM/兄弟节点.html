@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>兄弟节点</title>
+	<script>
+	
+	
+		</script>
+	<style>
+	
+	</style>
+
+</head>
+
+<body>
+	
+	
+	<div>我是div</div>
+	<span>我是span</span>
+	
+	<script>
+	var div=document.querySelector('div');
+	//nextSibling 下一个兄弟节点 包含元素节点或者 文本节点等等
+	console.log(div.nextSibling);
+	//previousSibling 
+	console.log(div.previousSibling);
+	//得到下/上一个兄弟元素节点   IE 9以上支持
+	console.log(div.nextElementSibling);
+	console.log(div.previousElementSibling);
+	//如何解决兼容性问题
+	//自己封装一个兼容性的函数
+	//function getNextElementSibling(element){
+	// var el=element;
+	//	while(el=el.nextSibling){
+	//	if(el.nodeTape===1){
+	//		return el;
+	//	}
+	//	}
+	//	return null;
+	// }
+	
+	//报错 Uncaught SyntaxError: Unexpected end of input 
+	//1.缺少部分括号   指向最后一行
+	//报错 Uncaught TypeError: document.getEmentById is not a function
+	//1.关键词错误 改成getElementById 指向错误位置
+	//报错 Uncaught TypeError: Cannot read property 'getEmentsByTagName' of null
+	//1.关键词错误 改成getElementsByTagName 指向错误位置
+	//报错 Uncaught TypeError: Cannot read property 'getElementsByTagName' of null
+	//1.括号内 id 填写错误   指向错误位置  下方应该是 j_tb
+	//不能写成 var j_tbs=document.getElementById('j_tbsb').getElementsByTagName('input');
+	//报错 Uncaught ReferenceError: querySelector is not defined
+	//1.querySelector改为document.querySelector
+	</script>
+
+
+
+</body>
+</html>  

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>19-js 高级 循环遍历加监听</title>
+</head>
+
+<body>
+    <pre>
+        需求:点击某个按钮,提示"点击的是第n 个按钮"
+    </pre>
+    <button>测试1</button>
+    <button>测试2</button>
+    <button>测试3</button>
+
+</body>
+<script>
+    var btns = document.getElementsByTagName('button');
+    // 遍历加监听
+    // btns 是一个伪数组,而且它的length 不是固定的,每次都要统计
+    // 计算一遍才能得到结果,所以会计算多遍,为了提高效率
+    // 要么在外边定义,要么在里面写,这样只计算一次
+    for (var i = 0, length = btns.length; i < btns.length; i++) {
+        var btn = btns[i];
+
+
+        //立即执行函数 
+        // (function (i) {
+        //     btn.onclick = function () {
+        //         alert('第' + (i + 1) + '个按钮');
+        //     }
+        // })(i)
+
+        // 将btn 所对应的下标保存函数上
+        //for 循环,if 语句都是全局作用域,外面可以访问到里面
+        getConsole(i)
+    }
+
+
+    function getConsole(i) {
+        btn.onclick = function () {
+            alert('第' + (i + 1) + '个按钮==>方法二');
+        }
+    }
+</script>
+
+</html>

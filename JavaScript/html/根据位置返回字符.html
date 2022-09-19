@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>根据位置返回字符</title>
+	<script>
+	//1.charAt(index) 根据字符返回字符
+	var str='andy';
+	console.log(str.charAt(3));
+	//遍历所有的字符
+	for(var i=0;i<str.length;i++){
+	console.log(str.charAt(i));
+	alert(str.charAt(i));
+	}
+	//2.charCodeAt(index) 返回相应索引号的字符 目的:判断用户按下了那个键 常见于游戏设计
+	console.log(str.charCodeAt(0));//结果是97
+	//3.str[index] H5新增 IE8+支持
+	console.log(str[0]);//结果为a
+		</script>
+	<style>
+
+	</style>
+
+</head>
+
+<body>
+	<div onclick="alert('你真的是猪')">你是猪!
+	</div>
+	<input type="button" value="按钮"  onclick="myFunc()"></input>
+
+
+
+
+</body>
+</html>

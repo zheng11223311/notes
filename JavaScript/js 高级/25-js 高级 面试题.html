@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>25-js 高级 面试题</title>
+</head>
+<body>
+    <pre>
+        
+    </pre>
+</body>
+<script>
+    // 代码片段1
+    // var name='the window'
+    // var object={
+    //     name:'my object',
+    //     getNAmeFunc:function(){
+    //         return function(){
+    //             return this.name
+    //         }
+    //     }
+    // }
+    // alert(object.getNAmeFunc()())       //the window
+    // // object.getNAmeFunc() 得到的函数指向window
+
+
+    // // 代码片段二
+    // var name2='the window'
+    //  var object2={
+    //     name2:'my object',
+    //     getNAmeFunc:function(){
+    //         var that=this
+    //         return function(){
+    //             return that.name2
+    //         }
+    //     }
+    // }
+    // alert(object2.getNAmeFunc()())       //my object
+    // that 保存的是Z指向getNAmeFunc 的this
+
+
+    // 面试题二
+    function fun(n,o){
+        console.log(o);
+        return{
+            fun:function(m){
+                console.log('m 的值为:'+m);
+                return fun(m,n)   //这里的n==上面的n,这里的n 传到上面的n 里面
+            }
+        }
+    }
+    var a=fun(0);   a.fun(1);   a.fun(2);   a.fun(3);  
+     //underfined    0              0           0
+    var b=fun(0).fun(1).fun(2).fun(3);
+    //underfined    0               1           2
+    var c=fun(0).fun(1);   c.fun(2);    c.fun(3);
+    //underfined    0               1           1
+</script>
+</html>

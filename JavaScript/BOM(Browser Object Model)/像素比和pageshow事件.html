@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>像素比和pageshow事件</title>
+	<script>
+	
+		</script>
+	<style>
+	*{
+	margin:0;
+	padding:0;
+	}
+
+	.login-header{
+	position:relative;
+	width:300px;
+	height:300px;
+	margin:50px 100px;
+	font-size:20px;
+	border:#999  solid 10px;
+	cursor:move;
+	}
+	.login-header img{
+	width:400px;
+	height:400px;
+	}
+	.login{
+	display:none;
+	position:absolute;
+	margin:10px 20px;
+	background-color:pink;
+	opacity:0.5;
+	width:300px;
+	height:300px;
+	border:#999  solid 1px;
+	
+
+	}
+	.login-title{
+	display:none;
+	position:relative;
+	width:600px;
+	height:600px;
+	border:#999  solid 1px;
+		cursor:move;
+		top:-410px;
+	right:-580px;
+	}
+	.login-title img{
+	
+	width:600px;
+	height:600px;
+	}
+	
+
+	</style>
+
+</head>
+
+<body>
+			
+		<div class="login-header">
+			hello,world!
+		</div>
+		
+		
+			
+		
+		
+		
+		
+		
+	<script>
+	// alert()提示信息框
+	// confirm()提示确认框
+	// prompt()提示输入文本框
+	
+	
+	// 获取html 元素
+	var docEl=document.documentElement;
+	//dpr 物理像素比 pc端为1 移动端为2
+	var dpr=document.devicePixelPatio||1;
+	function fn(){
+	
+	console.log(window.devicePixelRatio);
+	function setBodyFontSize(){
+	if(document.body){ //判断是否有body
+	//如果页面中有body 这个元素 就设置body的字体
+	document.body.style.fontSize=(12*dpr)+'px';
+	}else{
+	//如果页面中没有body 这个元素, 则等着 我们页面主要的DOM元素加载完毕
+	//再去设置body 的字体大小
+	document.addEventListener('DOMContentloaded',setBodyFontSize);
+	}
+	}
+	setBodyFontSize();
+	}
+	fn();
+	
+	//set 1rem=viewWidth/10   设置我们html 元素的文字大小
+	function setRemUnit(){
+	var rem=docEl.clientWidth/10;
+	docEl.style.fontSize=rem+'px';
+	}
+	setRemUnit();
+	
+	//reset rem unit on page resize 当我们页面尺寸大小发生变化的时候,
+	//要重新设置下rem 的大小
+	window.addEventListener('resize',setRemUnit);
+	//pageshow 使我们重新加载页面触发的事件
+	//load 当页面有从缓存取过来时 往返回事不会触发加载事件
+	//window.addEventListener('load',function(e){
+	// alert(66);
+	//}
+	window.addEventListener('pageshow',function(e){
+	//epresisted 返回的是true 就是说如果这个页面是从缓存去过来的页面,也需要
+	//重新计算一下rem 的大小
+	if(e.persisted){
+	setRemUnit();
+	}
+	});
+	//detect 0.5px supports 有些移动端不支持0.5像素的写法
+	if(dpr>=2){
+	var fakebody=document.createElement('body');
+	var testElement=document.createElement('div');
+	testElement.style.border='.5px solid transparent';
+	fakebody.appendChild(testElement);
+	docEl.appendChild(fakebody);
+	if(textElement.offsetHight===1){
+	docEl.classList.add('hairlines');
+	}
+	docEl.removeChild(fakebody);
+	}
+	
+	
+	
+	
+	
+	//报错 Uncaught SyntaxError: Unexpected end of input 
+		//1.缺少部分括号   指向最后一行
+	//报错 Uncaught TypeError: document.getEmentById is not a function
+		//1.关键词错误 改成getElementById 指向错误位置
+	//报错 Uncaught TypeError: Cannot read property 'getEmentsByTagName' of null
+		//1.关键词错误 改成getElementsByTagName 指向错误位置
+	//报错 Uncaught TypeError: Cannot read property 'getElementsByTagName' of null
+		//1.括号内 id 填写错误   指向错误位置  下方应该是 j_tb
+			//不能写成 var j_tbs=document.getElementById('j_tbsb').getElementsByTagName('input');
+	//报错 Uncaught ReferenceError: querySelector is not defined
+		//1.querySelector改为document.querySelector
+	//报错 Uncaught TypeError: Cannot read property '1' of undefined
+		//1.关键字错误 ul.removeChild(ul.children[1]);写成了 ul.removeChild(ul.child[1]);
+	//报错 Uncaught TypeError: Failed to execute 'removeChild' on 'Node': parameter 1 is not of type 'Node'.
+		//1.数组名错误 if(ul.children.length==0)写成了if(ul.length==0)
+	//报错 Uncaught SyntaxError: Invalid left-hand side in assignment
+		//1.加号写成等号 begin.innerHTML='还剩'+time+'秒';写成了 begin.innerHTML='还剩'+time='秒';
+	</script>
+
+
+
+</body>
+</html>  

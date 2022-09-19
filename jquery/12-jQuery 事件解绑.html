@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 事件解绑</title>
+    <script src="./css/jQueryDownload/jquery-1.9.1.min.js"></script>
+    <style>
+          *{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script>
+
+       $(function (){
+           function test(){
+            alert(888);
+        }
+        $('button').click(test);
+        $('button').on('mouseover',function(){
+            alert(666);
+        });  
+        // off 方法如果不传递参数,会移除所有事件
+        // $('button').off();
+        // off 方法如果传递一个参数,会移除所有指定类型的事件
+        $('button').off('click');
+        // off 方法如果传入两个参数,会移除指定类型事件的指定方法
+        $('button').off('click',text);
+       });
+    </script>
+</head>
+<body>
+    <button>按钮</button>
+</body>
+</html>

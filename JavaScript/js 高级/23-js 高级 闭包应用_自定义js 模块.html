@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23-js 高级 闭包应用_自定义js 模块</title>
+</head>
+
+<body>
+    <pre>
+        闭包的应用2 : 定义js 模块
+            具有特定功能的js 文件
+            将所有的数据和功能都封装在一个函数内部(私有的)
+            只向外部暴露一个包含n 个方法的对象或函数
+            模块的使用者,只需要通过模块暴露的对象调用方法来实现对应的功能
+
+
+          1.缺点
+            函数执行完后,函数内的局部变量没有释放,占用内存事件会变长
+            容易造成内存泄漏
+        2.解决
+            能不用闭包就不用
+            及时释放
+        </pre>
+</body>
+<script src="js/jsBiBaobieModel.js"></script>
+<script>
+      function fn(){
+        var arr=new Array[1000]
+        function fn2(){
+            console.log(arr.lenght);
+        }
+        return fn2
+    }
+   var f=fn()
+   f()
+   f=null   //让内部函数成为垃圾对象--->回收闭包   
+
+</script>
+
+</html>

@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>仿淘宝固定侧边栏</title>
+	<script>
+	
+		</script>
+	<style>
+	*{
+	margin:0;
+	padding:0;
+	}
+	
+
+	.slider-bar{
+	position:relative;
+	width:46px;
+	
+	margin:100px 10px 500px 1200px;
+	font-size:16px;
+	border:#999  solid 1px;
+	cursor:move;
+	
+	background-color:orange;
+	
+	}
+	
+
+	.goBack{
+	display:none;
+	position:absolute;
+	text-align:center;
+	top:180px;
+	width:46px;
+	height:60px;
+	line-height:23px;
+	font-size:16px;
+	background-color:pink;
+	}
+	 .clear{
+       
+        clear:both;
+       
+    }
+    
+
+	.header{
+	position:relative;
+	text-align:center;
+	top:0px;
+	width:46px;
+	height:60px;
+	line-height:23px;
+	font-size:16px;
+	background-color:red;
+	}
+	.banner{
+	position:relative;
+	text-align:center;
+	top:0px;
+	width:46px;
+	height:60px;
+	line-height:23px;
+	font-size:16px;
+	background-color:purple;
+	
+
+	}
+	.main{
+	position:relative;
+	text-align:center;
+	top:0px;
+	width:46px;
+	height:60px;
+	line-height:23px;
+	font-size:16px;
+	background-color:green;
+	}
+	.login-title img{
+	
+	width:600px;
+	height:600px;
+	}
+	
+
+	</style>
+
+</head>
+
+<body>
+			
+		<div class="slider-bar ">
+			<span class="goBack">返回顶部</span>
+			<div class="header ">头部区域</div>
+		<div class="banner ">banner区域</div>
+		<div class="main ">主体部分</div>
+		<div class="clear "></div>
+		
+		</div>
+		
+		
+			
+		
+		
+		
+		
+		
+	<script>
+	// alert()提示信息框
+	// confirm()提示确认框
+	// prompt()提示输入文本框
+	
+	var sliderbar =document.querySelector('.slider-bar');
+	var main =document.querySelector('.main');
+	var goBack =document.querySelector('.goBack');
+	//页面滚动事件
+	var banner =document.querySelector('.banner');
+	console.log(main.offsetTop);
+	
+
+	//scroll 滚动事件当我们滚动条发生变化会触发的事件
+	document.addEventListener('scroll',function(){
+	//scrollTop 当滚动条移动时,滑上被隐藏的文字距离盒子的顶部的高度
+	// window.pageYOffset 页面被卷去的头部
+	console.log(window.pageYOffset);
+	
+	//当我们页面被卷去的头部大于等于 165 此时 侧边栏就要改为固定定位
+	if(window.pageYOffset>=221){
+	main.style.position='fixed';
+	
+	
+	}else{
+	main.style.position='relative';	
+	}
+	if(window.pageYOffset>=400){
+	goBack.style.display='block';
+	goBack.style.position='fixed';
+	
+	
+	}
+	
+	});
+	
+	
+	
+	
+	
+	//报错 Uncaught SyntaxError: Unexpected end of input 
+		//1.缺少部分括号   指向最后一行
+	//报错 Uncaught TypeError: document.getEmentById is not a function
+		//1.关键词错误 改成getElementById 指向错误位置
+	//报错 Uncaught TypeError: Cannot read property 'getEmentsByTagName' of null
+		//1.关键词错误 改成getElementsByTagName 指向错误位置
+	//报错 Uncaught TypeError: Cannot read property 'getElementsByTagName' of null
+		//1.括号内 id 填写错误   指向错误位置  下方应该是 j_tb
+			//不能写成 var j_tbs=document.getElementById('j_tbsb').getElementsByTagName('input');
+	//报错 Uncaught ReferenceError: querySelector is not defined
+		//1.querySelector改为document.querySelector
+	//报错 Uncaught TypeError: Cannot read property '1' of undefined
+		//1.关键字错误 ul.removeChild(ul.children[1]);写成了 ul.removeChild(ul.child[1]);
+	//报错 Uncaught TypeError: Failed to execute 'removeChild' on 'Node': parameter 1 is not of type 'Node'.
+		//1.数组名错误 if(ul.children.length==0)写成了if(ul.length==0)
+	//报错 Uncaught SyntaxError: Invalid left-hand side in assignment
+		//1.加号写成等号 begin.innerHTML='还剩'+time+'秒';写成了 begin.innerHTML='还剩'+time='秒';
+	</script>
+
+
+
+</body>
+</html>  

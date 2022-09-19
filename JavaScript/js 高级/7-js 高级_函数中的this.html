@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7-js 高级_函数中的this</title>
+</head>
+<body>
+    <pre>
+        1.this 是什么?
+            任何函数本质上都是通过某个对象来调用的,如果没有直接指定,默认是window
+            所有函数内部都有一个变量this
+            它的值是调用当前的对象
+
+        2.如何确定this 的值?
+            text();
+            window
+            p.text()
+            p
+            new text()   新创建的对象
+            p.call(obj)     obj
+    </pre>
+</body>
+<script>
+    function person(color){
+        console.log(this);
+        this.color=color;
+        this.getColor=function(){
+            console.log(this);
+            return this.color;
+        };
+        this.setColor=function(color){
+            console.log(this);
+            this.color=color;
+        };
+    }
+    person("red"); //this 指向谁?   window
+
+    var p=new person("yellow");//this 指向谁?  p
+
+    p.getColor(); //this 指向谁?    p
+
+    var obj={};
+    p.setColor.call(obj,"black"); //this 指向谁?  obj
+
+    var text =p.setColor;
+    text(); //this 指向谁?      window
+
+    function fun1(){
+        function fun2(){
+            console.log(this);
+        }
+        fun2(); //this 指向谁?  window
+    }
+    fun1();
+</script>
+</html>

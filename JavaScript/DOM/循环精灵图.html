@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>循环精灵图</title>
+	<script>
+
+	
+		</script>
+	<style>
+	#box{
+	position:relative;
+	width:202px;
+	height:200px;
+
+	margin:100px auto;
+	}
+	li{
+	list-style:none;
+	}
+	#box li{
+	float:left;
+	width:240px;
+	height:240px;
+	margin:15px;
+	background-color:pink;
+	background:url(z.jpg) no-repeat;
+	}
+	
+	</style>
+
+</head>
+
+<body>
+	<div id="box">
+	<ul>
+	<li>1</li>
+	<li>2</li>
+	<li>3</li>
+	<li>4</li>
+	<li>5</li>
+	<li>6</li>
+	<li>7</li>
+	<li>8</li>
+	<li>9</li>
+	
+	
+	
+	</ul>
+	</div>
+	
+	
+	<script>
+	//获取元素
+	var lis=document.querySelectorAll('li');
+	
+	//2.注册事件 处理程序
+	for(var i=0;i<lis.length;i++){
+	//让索引号 乘以44 就是每个li 的背景y坐标 index就是我们的y坐标
+	var index=i*20;
+	console.log(index);
+	lis[i].style.backgroundPosition='0 -'+index+'px';
+	}
+	</script>
+
+
+
+</body>
+</html>  

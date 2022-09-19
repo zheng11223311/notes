@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 内容选择器</title>
+    <script src="./css/jQueryDownload/jquery-1.9.1.min.js"></script>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+        }
+    </style>
+    <script>
+    $(function(){
+        // :empty 作用: 找到既没有文本内容也没有子元素的指定元素
+            var $div=$('div:empty');
+            console.log($div);
+
+        // :parent 作用: 找到有文本内容或有子元素的指定元素
+         var $div1=$('div:parent');
+            console.log($div1);
+            
+        // :contains(text) 作用: 找到包含指定文本内容的指定元素
+         var $div2=$('div:contains("晚上div")');
+            console.log($div2);
+
+        // :has(selector) 作用: 找到包含指定子元素的指定元素
+        var $div3=$('div:has("span")');
+            console.log($div3);
+        });
+        
+
+      
+    </script>
+</head>
+<body>
+    <div></div>
+    <div>晚上div</div>
+    <div>晚上div1111</div>
+    <div><span></span></div>
+    <div><p></p></div>
+</body>
+</html>

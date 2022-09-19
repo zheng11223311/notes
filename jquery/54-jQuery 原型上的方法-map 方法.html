@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/njQuery.js"></script>
+    <title>54-jQuery 原型上的方法-map 方法</title>
+</head>
+<body>
+    
+</body>
+<script>
+    $(function(){
+        var likerArr1={0:'ljn',1:'33',2:'male',length:3}
+        var likerArr=[1,3,5,7,9]
+        var likerArr2={'name':'ljn','age':'33'}
+        // njQuery.map(likerArr,function(value,key){
+           
+        //         console.log(value,key);
+        //         // console.log(1);
+        // })
+        // njQuery.map(likerArr1,function(value,key){
+           
+        //         console.log(value,key);
+        // })
+        // njQuery.map(likerArr2,function(value,key){
+           
+        //         console.log(value,key);
+        // })
+      var res=  njQuery.map(likerArr2,function(value,key){
+           
+                console.log(value,key);
+        })
+            console.log(res);       //返回一个空数组[undefined, undefined]
+    })
+    //  console.log( njQuery.map);
+</script>
+</html>

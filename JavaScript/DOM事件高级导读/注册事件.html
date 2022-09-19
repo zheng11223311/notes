@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>注册事件</title>
+	<script>
+	
+		</script>
+	<style>
+	*{
+	margin:0;
+	padding:0;
+	}
+	
+	</style>
+
+</head>
+
+<body>
+	<button>传统注册事件</button>
+	<button>方法监听注册事件</button>
+	<button>IE 9以前的方法监听注册事件 </button>
+	
+	
+	<script>
+	var btns=document.querySelectorAll('button');
+	//1.传统注册事件
+	btns[0].onclick=function(){
+		alert('hi');
+	}
+ 	btns[0].onclick=function(){
+		alert('hao a u');
+	}//后面的事件会覆盖前面的
+	
+	//2.事件监听注册事件 addEventListener 里面的事件类型是字符串 必定加引号 而且不带on
+	//IE 9以上支持
+	btns[1].addEventListener('click',function(){
+		alert('不要点我!');
+	});
+	btns[1].addEventListener('click',function(){
+		alert('听到没有!');
+	});
+	//3.attachEvent ie9以前的版本支持
+	btns[2].attachEvent('onclick',function(){
+		alert('ie9以前的版本支持,之后的不支持');
+	});
+	//报错 Uncaught SyntaxError: Unexpected end of input 
+		//1.缺少部分括号   指向最后一行
+	//报错 Uncaught TypeError: document.getEmentById is not a function
+		//1.关键词错误 改成getElementById 指向错误位置
+	//报错 Uncaught TypeError: Cannot read property 'getEmentsByTagName' of null
+		//1.关键词错误 改成getElementsByTagName 指向错误位置
+	//报错 Uncaught TypeError: Cannot read property 'getElementsByTagName' of null
+		//1.括号内 id 填写错误   指向错误位置  下方应该是 j_tb
+			//不能写成 var j_tbs=document.getElementById('j_tbsb').getElementsByTagName('input');
+	//报错 Uncaught ReferenceError: querySelector is not defined
+		//1.querySelector改为document.querySelector
+	//报错 Uncaught TypeError: Cannot read property '1' of undefined
+		//1.关键字错误 ul.removeChild(ul.children[1]);写成了 ul.removeChild(ul.child[1]);
+	//报错 Uncaught TypeError: Failed to execute 'removeChild' on 'Node': parameter 1 is not of type 'Node'.
+		//1.数组名错误 if(ul.children.length==0)写成了if(ul.length==0)
+	</script>
+
+
+
+</body>
+</html>  

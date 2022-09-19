@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>节点操作之第一和最后一个元素</title>
+	<script>
+
+	
+		</script>
+	<style>
+
+	</style>
+
+</head>
+
+<body>
+	<ul>
+	<li>1</li>
+	<li>2</li>
+	<li>3</li>
+	<li>4</li>
+	<li>5</li>
+	<li>6</li>
+	</ul>
+	
+	
+	</div>
+	<script>
+	var ul=document.querySelector('ul');
+	//firstChild 第一个子节点 不管是文本节点还是元素节点  
+	//lastChild 最后一个子节点 不管是文本节点还是元素节点
+	console.log(ul.firstChild);
+	console.log(ul.lastChild);
+	//以下IE 9 支持
+	//firstElementChild 返回第一个子元素节点
+	//lastElementChild 返回最后一个子元素节点
+	console.log(ul.firstElementChild);
+	console.log(ul.lastElementChild);
+	
+	//实际开发的写法 既没有兼容性问题又返回第一个子元素
+	console.log(ul.children[0]);
+	console.log(ul.children[5]);
+	console.log(ul.children[ul.children.length-1]);
+	
+	
+	//报错 Uncaught SyntaxError: Unexpected end of input 
+	//1.缺少部分括号   指向最后一行
+	//报错 Uncaught TypeError: document.getEmentById is not a function
+	//1.关键词错误 改成getElementById 指向错误位置
+	//报错 Uncaught TypeError: Cannot read property 'getEmentsByTagName' of null
+	//1.关键词错误 改成getElementsByTagName 指向错误位置
+	//报错 Uncaught TypeError: Cannot read property 'getElementsByTagName' of null
+	//1.括号内 id 填写错误   指向错误位置  下方应该是 j_tb
+	//不能写成 var j_tbs=document.getElementById('j_tbsb').getElementsByTagName('input');
+	//报错 Uncaught ReferenceError: querySelector is not defined
+	//1.querySelector改为document.querySelector
+	</script>
+
+
+
+</body>
+</html>  

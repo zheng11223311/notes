@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>简单版留言案例</title>
+	<script>
+	
+		</script>
+	<style>
+	*{
+	margin:0;
+	padding:0;
+	}
+	div{
+	position:relative;
+	margin:100px 40%;
+	}
+	textarea{
+	width:200px;
+	height:100px;
+	}
+	li{
+	display:inline-block;
+	width:200px;
+	list-style:none;
+	color:red;
+	background:url(huanfu1.jpg) 50% 50%;
+	overflow:auto;
+	}
+	</style>
+
+</head>
+
+<body>
+	
+	<div>
+	<textarea name="" id="">你是猪</textarea>
+	<button>发布</button>
+	<ul>    </ul>
+	</div>
+	<script>
+	//1.获取元素
+	var btn=document.querySelector('button');
+	var text=document.querySelector('textarea');
+	var ul=document.querySelector('ul');
+	//注册事件
+	btn.onclick=function(){
+	
+	//2.添加元素
+	
+	
+	if(text.value==''){
+	alert('请输入内容');
+	return false;
+	}else{
+	console.log(text.value);
+	//创建元素
+	var li=document.createElement('li');
+	//先有li 才能赋值
+	//ul.appendChild(li);
+	ul.insertBefore(li,ul.children[0]);
+	li.innerHTML=text.value;
+	
+	}
+}
+
+
+	
+	//报错 Uncaught SyntaxError: Unexpected end of input 
+		//1.缺少部分括号   指向最后一行
+	//报错 Uncaught TypeError: document.getEmentById is not a function
+		//1.关键词错误 改成getElementById 指向错误位置
+	//报错 Uncaught TypeError: Cannot read property 'getEmentsByTagName' of null
+		//1.关键词错误 改成getElementsByTagName 指向错误位置
+	//报错 Uncaught TypeError: Cannot read property 'getElementsByTagName' of null
+		//1.括号内 id 填写错误   指向错误位置  下方应该是 j_tb
+			//不能写成 var j_tbs=document.getElementById('j_tbsb').getElementsByTagName('input');
+	//报错 Uncaught ReferenceError: querySelector is not defined
+		//1.querySelector改为document.querySelector
+	</script>
+
+
+
+</body>
+</html>  

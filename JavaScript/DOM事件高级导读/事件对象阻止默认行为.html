@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件对象阻止默认行为</title>
+	<script>
+	
+		</script>
+	<style>
+	*{
+	margin:0;
+	padding:0;
+	list-style:none;
+	}
+	div{
+	width:100px;
+	height:100px;
+	background-color:pink;
+	}
+	
+	</style>
+
+</head>
+
+<body>
+	<div class="father">你是猪
+	
+	</div>
+	<a href="http://www.baidu.com">百度</a>
+	<form>
+	<input type="submit" value="提交" name="sub">
+	</form>
+	
+	<script>
+	//常见事件对象的属性和方法
+	//1.返回事件类型
+	var div=document.querySelector('div');
+	div.addEventListener('click',fn);
+	div.addEventListener('mouseover',fn);
+	div.addEventListener('mouseout',fn);
+	function fn(e){
+	console.log(e.type);
+	}
+	//2.阻止默认行为(事件) 让链接不跳转 或者 让我们提交按钮不提交
+	var a=document.querySelector('a');
+	a.addEventListener('click',function(e){
+	e.preventDefault(); //dom标准写法
+	});
+	//传统的注册方式
+	a.onclick=function(e){
+	//普通浏览器 e.reventDefault();
+	e.reventDefault();
+	//低版本浏览器 ie678
+	e.returnValue;
+	//我们也可以利用return false 也能阻止默认行为 没有兼容性问题
+	//return后面的代码不执行了,而且只限于传统的注册方式
+	return false;
+	alert(11) 
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//报错 Uncaught SyntaxError: Unexpected end of input 
+		//1.缺少部分括号   指向最后一行
+	//报错 Uncaught TypeError: document.getEmentById is not a function
+		//1.关键词错误 改成getElementById 指向错误位置
+	//报错 Uncaught TypeError: Cannot read property 'getEmentsByTagName' of null
+		//1.关键词错误 改成getElementsByTagName 指向错误位置
+	//报错 Uncaught TypeError: Cannot read property 'getElementsByTagName' of null
+		//1.括号内 id 填写错误   指向错误位置  下方应该是 j_tb
+			//不能写成 var j_tbs=document.getElementById('j_tbsb').getElementsByTagName('input');
+	//报错 Uncaught ReferenceError: querySelector is not defined
+		//1.querySelector改为document.querySelector
+	//报错 Uncaught TypeError: Cannot read property '1' of undefined
+		//1.关键字错误 ul.removeChild(ul.children[1]);写成了 ul.removeChild(ul.child[1]);
+	//报错 Uncaught TypeError: Failed to execute 'removeChild' on 'Node': parameter 1 is not of type 'Node'.
+		//1.数组名错误 if(ul.children.length==0)写成了if(ul.length==0)
+	</script>
+
+
+
+</body>
+</html>  

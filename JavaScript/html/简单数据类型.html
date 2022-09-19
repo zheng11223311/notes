@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>简单数据类型</title>
+	<script>
+	//null 返回的是一个空的对象
+	var timer=null;
+	console.log(typeof timer);
+	alert(typeof timer);
+	//如果有个变量我们以后打算储存对象, 暂时没想好放啥, 这个时候就给null 
+	//简单数据类型 又叫基本数据类型或者值类型  存储的是值本身 
+	//值类型 string number boolean undefined null
+	//复杂数据类型又叫引用类型 存储的是地址
+	//复杂数据 通过new关键字创建的对象(系统对象,自定义对象)如 Object Array Date
+	//栈:有操作系统自动分配释放存放函数的参数值 局部变量的值
+	//堆:存储复杂的数据类型,一般由程序员分配释放,若程序员不释放,由垃圾回收机制回收
+	//复杂数据  首先在栈里面存放地址 十六进制表示 然后这个地址指向堆里面的数据
+		</script>
+	<style>
+
+	</style>
+
+</head>
+
+<body>
+	<div onclick="alert('你真的是猪')">你是猪!
+	</div>
+	<input type="button" value="按钮"  onclick="myFunc()"></input>
+
+
+
+
+</body>
+</html>

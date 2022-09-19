@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13-js 高级 探索instanceof</title>
+</head>
+
+<body>
+    <pre>
+        1.instanceof 是如何判断的?
+        表达式: A instanceof B
+        如果B 函数的显示原型对象在A 对象的原型链上,则返回true, 否则
+            返回false
+        Function 是通过new 自己产生的实例
+    </pre>
+</body>
+<script>
+    //  1
+    function Foo() {
+        var f1 = new foo()
+        console.log(f1 instanceof Foo); //true
+        console.log(f1 instanceof object);  //true
+    }
+    //  2
+    console.log(Object instanceof Function);    //true
+    console.log(Object instanceof Object);    //true
+    console.log(Function instanceof Function);    //true
+    console.log(Function instanceof Object);    //true
+    console.log(Object instanceof Foo);    //false
+</script>
+
+</html>

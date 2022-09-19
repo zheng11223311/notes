@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>操作元素之修改样式属性</title>
+	<script>
+
+	
+		</script>
+	<style>
+	.box{
+	position:relative;
+	width:400px;
+	height:400px;
+	background-color:pink;
+	border-bottom:1px solid #ccc;
+	margin:100px auto;
+	}
+	
+	</style>
+
+</head>
+
+<body>
+	<div class="box">
+	
+	</div>
+	<script>
+	//获取元素
+	var div=document.querySelector('div');
+	
+	//2.注册事件 处理程序
+	div.onclick=function(){
+	this.style.backgroundColor='red';
+	this.style.height='200px';
+	this.style.width='200px';
+	//也可以div.style
+	//js修改style样式操作,产生的是行内样式,css权重比较高
+	}
+	</script>
+
+
+
+</body>
+</html>

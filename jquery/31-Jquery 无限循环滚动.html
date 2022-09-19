@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery 无限循环滚动</title>
+    <script src="./css/jQueryDownload/jquery-1.9.1.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            overflow: auto;
+        }
+
+        div {
+            width: 600px;
+            height: 161px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+
+        ul {
+            list-style: none;
+            width: 1800px;
+            height: 161px;
+            background-color: #000;
+        }
+
+        ul>li {
+            width: 300px;
+            height: 161px;
+            float: left;
+        }
+
+        ul>li img {
+            width: 300px;
+            height: 161px;
+        }
+
+
+
+        /* > 子选择器 只选择第一级后代 */
+        /* ul li 后代选择器 选择所有后代 */
+    </style>
+    <script>
+
+        $(function () {
+
+            // 0.定义变量保存偏移量
+            var offset = 0;
+            // 1.让图片滚动起来
+            var timer;
+            function autoPlay() {
+                timer = setInterval(function () {
+                    offset -= 10;
+                    if (offset <= -1200) {
+                        offset = 0;
+                    }
+                    $('ul').css('marginLeft', offset);
+                }, 50);
+            }
+            autoPlay();
+            // 2.监听li 的移入和移出事件
+            $('li').hover(function () {
+                // 停止滚动
+                clearInterval(timer);
+                // 给非当前选中元素添加蒙版
+                $(this).siblings().fadeTo(100, 0.5);
+                // 去除当前选中的蒙版
+                $(this).fadeTo(100, 1)
+            }, function () {
+
+                autoPlay();
+                // 去除所有的蒙版
+                $('li').fadeTo(100, 1);
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li><img src="./img/4.jpg" alt=""></li>
+            <li><img src="./img/1.jpg" alt=""></li>
+            <li><img src="./img/5.jpg" alt=""></li>
+            <li><img src="./img/6.jpg" alt=""></li>
+            <!-- 多添加两张,防止跳回来时有明显的跳转 -->
+            <li><img src="./img/4.jpg" alt=""></li>
+            <li><img src="./img/1.jpg" alt=""></li>
+        </ul>
+    </div>
+</body>
+
+</html>

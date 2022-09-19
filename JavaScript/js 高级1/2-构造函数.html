@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-构造函数</title>
+</head>
+<body>
+    <pre>
+        构造函数与普通函数的区别
+        构造函数首个字母大写,用new 方式调用
+        构造函数不需要return 而工厂函数需要return
+        
+        构造函数---构造对象的函数
+        1.会在内存中自动创建一个空对象
+        2.设置构造函数的this,让this 指向刚刚创建好的对象
+        3.执行构造函数中的代码
+        4.返回对象
+        
+        function Hero(name,age){
+            this.name=name
+            this.age=age
+        }
+
+        var hero=new Hero('刘备',20)
+
+
+        工厂函数(普通函数调用)
+         function hero1(name,age){
+            var o=new Object()
+            o.name=name
+            o.age=age
+            o.set=function(){
+                console.log(this.name+this.age+'岁');
+            }
+            return o
+        }
+            hero1('刘备',20).set()
+    </pre>
+</body>
+<script>
+    function hero1(name,age){
+            var o=new Object()
+            o.name=name
+            o.age=age
+            o.set=function(){
+                console.log(this.name+this.age+'岁');
+            }
+            return o
+        }
+            hero1('刘备',20).set()
+</script>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>创建和添加节点</title>
+	<script>
+	
+		</script>
+	<style>
+	
+	</style>
+
+</head>
+
+<body>
+	
+	
+	<ul>我是div</ul>
+	
+	
+	<script>
+	//1.创建节点 元素节点
+	var li=document.createElement('li');
+	//添加节点 node.appendChild(child) node 父级 child 是子级  后面追加元素 类似于数组中的push
+	var ul=document.querySelector('ul');
+	ul.appendChild(li);
+	var lis=document.querySelector('li');
+	lis.innerHTML='创建了一个li';
+	//添加节点 node.insertBefore(child,指定元素);
+	var lili=document.createElement('li');
+	ul.insertBefore(lili,ul.children[0]);
+	
+	ul.children[0].innerHTML='再次创建了一个li';
+	
+	//报错 Uncaught SyntaxError: Unexpected end of input 
+		//1.缺少部分括号   指向最后一行
+	//报错 Uncaught TypeError: document.getEmentById is not a function
+		//1.关键词错误 改成getElementById 指向错误位置
+	//报错 Uncaught TypeError: Cannot read property 'getEmentsByTagName' of null
+		//1.关键词错误 改成getElementsByTagName 指向错误位置
+	//报错 Uncaught TypeError: Cannot read property 'getElementsByTagName' of null
+		//1.括号内 id 填写错误   指向错误位置  下方应该是 j_tb
+			//不能写成 var j_tbs=document.getElementById('j_tbsb').getElementsByTagName('input');
+	//报错 Uncaught ReferenceError: querySelector is not defined
+		//1.querySelector改为document.querySelector
+	</script>
+
+
+
+</body>
+</html>  

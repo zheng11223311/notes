@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>获取自定义属性值</title>
+	<script>
+
+	
+		</script>
+	<style>
+	
+	</style>
+
+</head>
+
+<body>
+	<div id="demo" index="1"></div>
+	
+	<script>
+	//获取元素的属性值
+	//1.element.属性 先天自身的属性
+	var div=document.querySelector('div');
+	console.log(div.id);//结果为demo
+	//2.element.getAttribute('属性'); get得到获取 attribute 属性的意思 我们程序员后期自己添加的属性我们成为自定义属性
+	//自定义属性 index
+	console.log(div.getAttribute('id'));//结果为demo
+	console.log(div.getAttribute('index'));//结果为1
+	
+	
+	
+	
+	
+	//报错 Uncaught SyntaxError: Unexpected end of input 
+	//1.缺少部分括号   指向最后一行
+	//报错 Uncaught TypeError: document.getEmentById is not a function
+	//关键词错误 改成getElementById 指向错误位置
+	//报错 Uncaught TypeError: Cannot read property 'getEmentsByTagName' of null
+	//关键词错误 改成getElementsByTagName 指向错误位置
+	//报错 Uncaught TypeError: Cannot read property 'getElementsByTagName' of null
+	//1.括号内 id 填写错误   指向错误位置  下方应该是 j_tb
+	//不能写成 var j_tbs=document.getElementById('j_tbsb').getElementsByTagName('input');
+	</script>
+
+
+
+</body>
+</html>  

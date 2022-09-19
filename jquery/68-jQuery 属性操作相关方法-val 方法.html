@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/njQuery.js"></script>
+    <title>68-jQuery 属性操作相关方法-val 方法</title>
+</head>
+<body>
+<input type="text" value="hello">
+<input type="text" value="hello2">
+    <button>获取val</button>
+   
+</body>
+<script>
+    $(function(){
+        /* 
+        1.attr(): 设置或获取元素的属性节点值
+        2.prop(): 设置获取元素的属性值
+        3.css(): 设置获取样式
+        4.val(): 获取设置val 值
+        5.hasClass(): 判断有没有指定类
+        6.addClass(): 给所有元素添加指定类或所有类
+        7.removeClass(): 清空元素指定类或所有类
+        8.toggleClass(): 有则删,没有则添加
+        
+        */
+
+
+        //传递一个参数,返回第一个元素属性节点的值
+        // console.log($('input').val('height'));
+        // console.log($('input').val( '新设置的'));
+      
+   
+       var btn=document.querySelector('button')
+       btn.onclick=function(){
+            var input=document.querySelector('input')  
+        // input.setAttribute('value','ljn')
+    //console.log(input.getAttribute('value')); //不能获取到用户输入的value 值
+     //  console.log($('input').val()); //能获取到用户输入的value 值
+       console.log($('input').val('lll')); //能获取到用户输入的value 值
+         // input 有属性节点(prop 里面attribute 里面) 和属性(prop 里面 但不在attribute 里面)
+        //  console.log(input.value);      //属性  能获取到用户输入的value 值
+       }
+    })
+</script>
+</html>

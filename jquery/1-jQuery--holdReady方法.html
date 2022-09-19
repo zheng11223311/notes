@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery--holdReady方法</title>
+    <script src="./css/jQueryDownload/jquery-1.9.1.min.js"></script>
+    <script>
+        // 暂停ready方法的执行
+        $.holdReady(true);
+        $(document).ready(function(){
+            alert('ready');
+        });
+        
+       function back(){
+        //    恢复ready 方法的执行
+            $.holdReady(false);
+       }
+    </script>
+</head>
+
+<body>
+    <button onclick="back()">
+        恢复ready 事件
+    </button>
+</body>
+</html>

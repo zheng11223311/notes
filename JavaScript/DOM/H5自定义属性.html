@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>H5自定义属性</title>
+	<script>
+
+	
+		</script>
+	<style>
+
+	</style>
+
+</head>
+
+<body>
+	<div getTime="20" data-index="2" data-in="36" data-list-name="99">
+	//H5自定义属性新增属性 命名规范 区分内置属性 以date-开头
+	//或者使用js设置
+	//element.setAttribute('date-index',22);
+		
+			
+
+		
+	</div>
+	<script>
+	//获取元素的属性值
+	var div=document.querySelector('div');
+	//自定义属性 不能 通过元素的属性来获取  console.log(div.getTime); 这样是错误的
+	console.log(div.getAttribute('getTime'));
+	console.log(div.getAttribute('data-list-name'));
+	//获取H5自定义属性的方法
+	//H5新增element.dataset.index或者element.dataset['index']  IE 11 才开始支持
+	//dataset 是一个集合里面存放了所有已date开头的自定义属性
+	console.log(div.dataset.index);
+	console.log(div.dataset);
+	//如果自定义属性里面有多个-连接的单词,我们获取的时候采取 驼峰命名法
+	console.log(div.dataset.listName);
+	console.log(div.dataset['listName']);
+	
+	
+	
+	
+	//报错 Uncaught SyntaxError: Unexpected end of input 
+	//1.缺少部分括号   指向最后一行
+	//报错 Uncaught TypeError: document.getEmentById is not a function
+	//1.关键词错误 改成getElementById 指向错误位置
+	//报错 Uncaught TypeError: Cannot read property 'getEmentsByTagName' of null
+	//1.关键词错误 改成getElementsByTagName 指向错误位置
+	//报错 Uncaught TypeError: Cannot read property 'getElementsByTagName' of null
+	//1.括号内 id 填写错误   指向错误位置  下方应该是 j_tb
+	//不能写成 var j_tbs=document.getElementById('j_tbsb').getElementsByTagName('input');
+	</script>
+
+
+
+</body>
+</html>  

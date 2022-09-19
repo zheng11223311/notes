@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>当前时间</title>
+	<script >
+	
+	var date=new Date();
+	console.log(date);
+	alert(date);
+	//var date1=new Date('2021/1/19');
+	//var date2=new Date('2021-1-19');
+	//console.log(date1);
+	//alert(date1);
+	//alert(date2);
+	//alert('年份'+date.getFullYear());
+	//alert('月份'+date.getMonth()+1);//(取值范围0-11月)
+	//alert('日期'+date.getDate());//几号
+	//alert('星期'+date.getDay());//星期几(周日0到周六6)
+	//alert('时'+date.getHours());
+	//alert('分'+date.getMinutes());
+	//alert('秒'+date.getSeconds());
+	var day1=date.getFullYear();
+	var day2=date.getMonth();
+	var day3=date.getDate();
+	var day=date.getDay();
+	var day4=date.getHours();
+	var day5=date.getMinutes();
+	var day6=date.getSeconds();
+	day4=day4<10?'0'+day4:day4;
+	day5=day5<10?'0'+day5:day5;
+	day6=day6<10?'0'+day6:day6;
+	var arr=['星期日','星期一','星期二','星期三','星期四','星期五','星期六',];
+	alert('今天时间:'+day1+'年'+(day2+1)+'月'+day3+'日'+day4+':'+day5+':'+day6+'\n'+arr[day]);
+	alert('今天是'+arr[day]+'哦!');
+	//封装一个函数返回当前的时分秒
+	// function getTime(){
+	// var h=time.getHours();
+	// var m=time.getMinutes();
+	// var s=time.getSeconds();
+	// return h+':'+m+':'+s;
+	// }
+	// console.log(getTime());
+	
+	</script>
+	<style>
+
+	</style>
+
+</head>
+
+<body>
+	<div onclick="alert('你真的是猪')">你是猪!
+	</div>
+	<input type="button" value="按钮"  onclick="myFunc()"></input>
+
+
+
+
+</body>
+</html>

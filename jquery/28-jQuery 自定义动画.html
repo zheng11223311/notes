@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 自定义动画</title>
+    <script src="./css/jQueryDownload/jquery-1.9.1.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            overflow: auto;
+        }
+
+        div {
+
+
+            width: 100px;
+            height: 100px;
+            margin-top: 10px;
+            background-color: gold;
+        }
+
+        .two {
+            background-color: aqua;
+        }
+
+
+        /* > 子选择器 只选择第一级后代 */
+        /* ul li 后代选择器 选择所有后代 */
+    </style>
+    <script>
+        // animate(对象, 时间,linear / swing ,回调函数)
+        // 效果动画都可以使用 linear / swing
+        $(function () {
+            //1. 监听span 的点击事件
+            $('button').eq(0).click(function () {
+                $('.one').animate({
+                    width: 500,
+                    marginLeft: 500
+
+                    // 不支持颜色改变
+                    // backgroundColor: 'pink'
+                }, 1000, function () { });
+
+
+            })
+
+            $('button').eq(1).click(function () {
+                $('.two').animate({
+                    width: '+=200',
+                    marginLeft: 500
+
+                    // 不支持颜色改变
+                    // backgroundColor: 'pink'
+                }, 1000, function () { alert('点击多次会累加长度') });
+            })
+
+            $('button').eq(2).click(function () {
+                $('.one').animate({
+                    // width: 'hide'
+                    width: 'toggle',
+                    marginLeft: 500
+
+                    // 不支持颜色改变
+                    // backgroundColor: 'pink'
+                }, 1000, function () { });
+            })
+
+
+        })
+    </script>
+</head>
+
+<body>
+    <button>操作属性</button>
+    <button>累加属性</button>
+    <button>关键字</button>
+    <div class="one"></div>
+    <div class="two"></div>
+
+</html>

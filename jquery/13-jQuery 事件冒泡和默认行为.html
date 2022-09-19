@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 事件冒泡和默认行为</title>
+    <script src="./css/jQueryDownload/jquery-1.9.1.min.js"></script>
+    <style>
+          *{
+            margin: 0;
+            padding: 0;
+        }
+        .father{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+        .son{
+            width: 100px;
+            height: 100px;
+            background: gold;
+        }
+    </style>
+    <script>
+        // 1.什么是事件的冒泡?
+        // 2.如何阻止事件冒泡?
+        //  return false;或者 e.stopPropagation();阻止事件冒泡
+        // 3.什么是默认行为?
+        // 4.如何阻止默认行为?
+        //  return false;或者 e.preventDefault();阻止默认行为
+       $(function (){
+           function test(e){
+            alert(888);
+
+            return false;
+            e.stopPropagation();
+        }
+        $('.son').click(test);
+        $('.father').on('click',function(){
+            alert(666);
+        });  
+       
+        $('a').click(function(e){
+            alert('弹出信息');
+            return false;
+            e.preventDefault();
+        })
+       });
+    </script>
+</head>
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <a href="http://www.baidu.com">我是百度/点击默认跳转</a>
+    <form action="http://www.taoabo.com">
+    <input type="text" placeholder="点击提交默认跳转">
+    <input type="submit">
+    </form>
+</body>
+</html>

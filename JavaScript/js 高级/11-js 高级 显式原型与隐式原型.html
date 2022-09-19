@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11-js 高级 显式原型与隐式原型</title>
+</head>
+<body>
+    <pre>
+        1.每个function 函数都有一个prototype, 既显式原型(属性)
+        2.每一个实例对象(创建对象)都有一个__proto__,可称为隐式原型(属性)
+        3.对象的隐式原型的值为其对应构造函数的显式原型的值
+        4.内存结构
+        5.总结:
+        函数的prototype 属性:在定义函数自动添加的,默认是值一个空Object 对象
+        对象的__proto__属性: 创建对象时自动添加的,默认值为构造函数的prototype 属性值
+        程序员能直接操作显示原型,但不能直接操作隐式原型(ES6之前)
+    </pre>
+</body>
+<script>
+    function Fn(){
+
+    }
+// 每个function 函数都有一个prototype, 既显式原型属性,默认是值一个空Object 对象(实例对象)
+console.log(Fn.prototype)
+// 每一个实例对象都有一个__proto__,可称为隐式原型属性
+var fn=new Fn()
+console.log(fn.__proto__);
+// 对象的隐式原型的值为其对应构造函数的显式原型的值
+console.log(fn.__proto__===Fn.prototype);//true
+Fn.prototype.ttt=function(){
+    alert('显示原型函数不占用内存,本质上相当于在fn 函数内在创建了prototype 函数,又在prototype 函数内创建了ttt 函数');
+}
+Fn.prototype.ttt();
+</script>
+</html>

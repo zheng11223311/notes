@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/njQuery.js"></script>
+    <title>45-jQuery 入口函数-数组处理</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 4.传入数组
+    // 会将数组中存储的元素依次存储到jQuery 对象中返回
+  console.log($([1,2,3,4,5,6]));
+//   console.log(window);
+//   console.log($(window));
+var arr=[1,2,3,4,5,6]
+  var likerArr={0:'ljn',1:'33',2:'male',length:3}
+ console.log($(likerArr));
+//  console.log(typeof arr);         //object
+ console.log(typeof likerArr);         //object
+ console.log(arr.toString);             //ƒ toString() { [native code] }
+ console.log(likerArr.toString);    //ƒ toString() { [native code] }
+//  ({}).toString.apply(arr)
+
+/*  if(({}).toString.apply(selector)=='[object Array]'){
+                    console.log('真数组');
+                } */
+</script>
+</html>

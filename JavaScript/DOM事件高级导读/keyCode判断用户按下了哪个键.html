@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>keyCode判断用户按下了哪个键</title>
+	<script>
+	
+		</script>
+	<style>
+	*{
+	margin:0;
+	padding:0;
+	}
+	div{
+	width:100px;
+	height:100px;
+	background-color:pink;
+	}
+	body{
+	height:3000px;
+	}
+	img{
+	position:absolute;
+	height:50px;
+	width:66px;
+	}
+	</style>
+
+</head>
+
+<body>
+	
+	
+	<script>
+	
+	// 键盘事件对象中的keyCode属性可以得到相应键的ASCII码值
+	
+	document.addEventListener('keyup',function(e){
+	console.log(e);
+	console.log(e.key);
+	console.log(e.keyCode);
+	//1. 我们的keyup和keydown事件不区分大小写 a和A 得到的都是A的65
+	//2. 我们的kepress事件区分大小写 A 得到的是A的65 a得到的是97
+	
+	//if(e.keyCode===65){
+	//alert('您按下了a键');
+	 // }else{
+	//alert('您没有按下a键');
+	//}
+	})
+	//我们可以利用keyCode返回的ASCII码值;来判断用户按下了哪个键
+	document.addEventListener('keypress',function(e){
+	console.log(e);
+	console.log(e.key);
+	console.log(e.keyCode);
+	
+	})
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//报错 Uncaught SyntaxError: Unexpected end of input 
+		//1.缺少部分括号   指向最后一行
+	//报错 Uncaught TypeError: document.getEmentById is not a function
+		//1.关键词错误 改成getElementById 指向错误位置
+	//报错 Uncaught TypeError: Cannot read property 'getEmentsByTagName' of null
+		//1.关键词错误 改成getElementsByTagName 指向错误位置
+	//报错 Uncaught TypeError: Cannot read property 'getElementsByTagName' of null
+		//1.括号内 id 填写错误   指向错误位置  下方应该是 j_tb
+			//不能写成 var j_tbs=document.getElementById('j_tbsb').getElementsByTagName('input');
+	//报错 Uncaught ReferenceError: querySelector is not defined
+		//1.querySelector改为document.querySelector
+	//报错 Uncaught TypeError: Cannot read property '1' of undefined
+		//1.关键字错误 ul.removeChild(ul.children[1]);写成了 ul.removeChild(ul.child[1]);
+	//报错 Uncaught TypeError: Failed to execute 'removeChild' on 'Node': parameter 1 is not of type 'Node'.
+		//1.数组名错误 if(ul.children.length==0)写成了if(ul.length==0)
+	</script>
+
+
+
+</body>
+</html>  

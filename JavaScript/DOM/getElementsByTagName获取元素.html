@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>getElementsByTagName获取元素</title>
+	<script>
+	
+		</script>
+	<style>
+
+	</style>
+
+</head>
+
+<body>
+	<div onclick="alert('你真的是猪')">你是猪!
+	</div>
+	<input type="button" value="按钮"  onclick="myFunc()"></input>
+	
+	<ul>
+	<li>2021-1-21</li>
+	<li>2021-1-22</li>
+	<li>2021-1-23</li>
+	<li>2021-1-24</li>
+	<li>2021-1-25</li>
+
+	</ul>
+	
+	<ol id="ol">
+	<li>2021</li>
+	<li>202</li>
+	<li>20</li>
+	<li>2</li>
+	<li>2021125</li>
+
+	</ol>
+	
+	<script>
+	//返回的是 获取过来元素对象的集合 以伪数组的形式存储的
+	//如果页面只有一个li 返回的是还是伪数组的形式
+	//如果页面只有没有这个元素 返回的是还是伪数组的形式
+	var timer=document.getElementsByTagName('li');
+	console.log(timer);
+	console.log(timer[1]);
+	alert(timer[1]);
+	for(var i=0;i<timer.length;i++){
+	console.log(timer[i]);
+	}
+	//element.getElementsByTagName('标签名');父元素必须为指定标签的单个元素
+	 //var ol=document.getElementsByTagName('ol');获取的伪数组只有一个元素ol标签,因为只有一个元素  长度为一 ol[0]
+	// console.log(ol[0].getElementsByTagName('li'));
+	//也可以写成
+	var ol=document.getElementById('ol');
+	console.log(ol.getElementsByTagName('li'));
+	</script>
+
+
+
+</body>
+</html>

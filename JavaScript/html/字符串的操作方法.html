@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>字符串的操作方法</title>
+	<script>
+	//1.concat('字符串1','字符串2'.....)
+	var str ='andy';
+	console.log(str.concat('red'));
+	//2.substr('截取的起始位置','截取几个字符');
+	var str1='改革春风吹满地';
+	console.log(str1.substr(2,2));
+	alert(str1.substr(2,2));
+	//3.替换字符 replace('被替换的字符','替换为的字符') 他只会替换相同字符的第一个字符
+	var str3 ='andyandy';
+	console.log(str3.replace('a','b'));
+	//4.字符转换为数组 split('分隔符')  前面我们学过 join 把数组转换为字符串
+	//分隔符取决于字符串的分隔符
+	var str4='red,blue,pink';
+	console.log(str4.split(','));
+	var str5='red&blue&pink';
+	console.log(str5.split('&'));
+	
+		</script>
+	<style>
+
+	</style>
+
+</head>
+
+<body>
+	<div onclick="alert('你真的是猪')">你是猪!
+	</div>
+	<input type="button" value="按钮"  onclick="myFunc()"></input>
+
+
+
+
+</body>
+</html>

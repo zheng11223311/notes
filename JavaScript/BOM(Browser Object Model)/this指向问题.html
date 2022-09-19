@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>this指向问题</title>
+	<script>
+	
+		</script>
+	<style>
+	*{
+	margin:0;
+	padding:0;
+	}
+	body{
+	position:relative;
+	}
+	
+	span{
+	
+	position:relative;
+	display:inline-block;
+	left:200px;//无效值
+	top:100px;//无效值
+	margin-top:100px;
+	line-height:130px;
+	text-align:center;
+	width:100px;
+	height:130px;
+	background-color:#000;
+	color:#fff;
+	}
+	</style>
+
+</head>
+
+<body>
+		
+		<button class="begin">发送</button>
+		
+	<script>
+	//this 指向问题 一般情况下this指向的是那个调用它的对象
+	
+	//1.全局作用域或者普通函数中的this会指向全局对象window(注意定时器里面的this指向window)
+	console.log(this);
+	function fn(){
+	console.log(this);
+	}
+	window.fn();
+	window.setTimeout(function(){
+	console.log(this);
+	},1000);
+	//2.方法调用中谁调用this指向谁
+	var o={
+	sayHi:function(){
+	console.log(this);  //this指向的是o这个对象
+	}
+	}
+	o.sayHi();
+	var btn=document.querySelector('button');
+	btn.onclick=function(){
+	console.log(this);   //this指向的是btn这个按钮对象
+	}
+	btn.addEventListener('click',function(){
+	console.log(this);   //this指向的是btn这个按钮对象
+	});
+	//3.构造函数中this指向构造函数的实例
+	function Fun(){
+	console.log(this);  //this指向的fun 实例对象
+	}
+	var fun=Fun();
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//报错 Uncaught SyntaxError: Unexpected end of input 
+		//1.缺少部分括号   指向最后一行
+	//报错 Uncaught TypeError: document.getEmentById is not a function
+		//1.关键词错误 改成getElementById 指向错误位置
+	//报错 Uncaught TypeError: Cannot read property 'getEmentsByTagName' of null
+		//1.关键词错误 改成getElementsByTagName 指向错误位置
+	//报错 Uncaught TypeError: Cannot read property 'getElementsByTagName' of null
+		//1.括号内 id 填写错误   指向错误位置  下方应该是 j_tb
+			//不能写成 var j_tbs=document.getElementById('j_tbsb').getElementsByTagName('input');
+	//报错 Uncaught ReferenceError: querySelector is not defined
+		//1.querySelector改为document.querySelector
+	//报错 Uncaught TypeError: Cannot read property '1' of undefined
+		//1.关键字错误 ul.removeChild(ul.children[1]);写成了 ul.removeChild(ul.child[1]);
+	//报错 Uncaught TypeError: Failed to execute 'removeChild' on 'Node': parameter 1 is not of type 'Node'.
+		//1.数组名错误 if(ul.children.length==0)写成了if(ul.length==0)
+	//报错 Uncaught SyntaxError: Invalid left-hand side in assignment
+		//1.加号写成等号 begin.innerHTML='还剩'+time+'秒';写成了 begin.innerHTML='还剩'+time='秒';
+	</script>
+
+
+
+</body>
+</html>  

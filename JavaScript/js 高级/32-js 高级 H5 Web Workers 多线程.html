@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>32-js 高级 H5 Web Workers 多线程</title>
+</head>
+<body>
+    <pre>
+        1.H5 规范提供了js 分线程的实现,取名为Web Workers
+        2.相关API
+            Workers:构造函数,加载分线程执行的js 文件
+            Workers.prototype.onmessage:用于接收另一个线程的回调函数
+            Workers.prototype.postMessage:向另一个线程发送消息
+        3.不足
+            Workers 内存代码不能操作DOm (更新UI)
+            不能跨域加载js 
+            不是每一个浏览器都支持这个新特性
+
+    </pre>
+    <input type="text" placeholder="数值">
+    <button>计算</button>
+    <script>
+        // 效率慢
+    //1 1 2 3 5 8   f(n)=f(n-1)+f(n-2)
+// function fibonacci(number){ //递归调用,内部调用自己,递归调用效率比较低
+//     return n<=2?1:fibonacci(n-1)+fibonacci(n-2)
+    
+// }
+// console.log(fibonacci(6));
+// var input=document.getElementsByTagName('input')[0]
+// document.getElementsByTagName('button')[0].click=function(){
+//     var number=input. value
+//     var result=fibonacci(number)
+//     alert(result)
+// }
+
+
+
+// 效率快，不会有卡顿等待现象
+var input=document.getElementsByTagName('input')[0]
+document.getElementsByTagName('button')[0].onclick=function(){
+    var number=input.value;
+ 
+    //创建一个worker 对象
+    var worker=new Worker('./js/work.js')
+    // 绑定接收消息的监听
+    worker.onmessage=function(event){
+        console.log('主线程接收分线程返回的数据:'+event.data);
+        alert(event.data)
+    }
+    // 向分线程发消息
+    worker.postMessage(number)
+      console.log('主线程向分线程发送数据:'+number);
+}
+</script>
+</body>
+
+</html>

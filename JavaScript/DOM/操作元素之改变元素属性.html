@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>操作元素之改变元素内容</title>
+	<script>
+
+	
+		</script>
+	<style>
+
+	</style>
+
+</head>
+
+<body>
+	
+	<button id="ldh">刘德华</button>
+	<button id="zxy">张学友</button>
+	<img src="D:\wanye\h\h\img\wzry.png" alt="">
+	
+	
+	
+	<script>
+	//修改元素属性
+	//1.获取元素
+	var ldh=document.getElementById('ldh');
+	var zxy=document.getElementById('zxy');
+	var img=document.querySelector('img');
+	//2.注册事件 处理程序
+	zxy.onclick=function(){
+	img.src='D:\\wanye\\h\\h\\img\\wzry1.png';//相对路径老是无法显示,绝对路径\符号被转义?????
+	}
+	ldh.onclick=function(){
+	img.src='D:\\wanye\\h\\h\\img\\wzry.png';
+	}
+	</script>
+
+
+
+</body>
+</html>

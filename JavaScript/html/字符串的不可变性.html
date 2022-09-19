@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>字符串的不可变性</title>
+	<script>
+	var str='andy';
+	alert(str);
+	str='你好';//原来字符串没有没改变,改变的是地址 只是开辟了新的空间存放另外一个值了
+	//所以不要大量的拼接字符串,会占据内存
+	for(var i=0;i<100000;i++){
+	str +=i;
+	}
+	console.log(str);//这个结果需要大量的时间来显示,因为需要不断地开辟新的空间
+	alert(str);
+		</script>
+	<style>
+
+	</style>
+
+</head>
+
+<body>
+	<div onclick="alert('你真的是猪')">你是猪!
+	</div>
+	<input type="button" value="按钮"  onclick="myFunc()"></input>
+
+
+
+
+</body>
+</html>

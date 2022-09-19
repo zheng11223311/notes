@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动态生成表格</title>
+	<script>
+	
+		</script>
+	<style>
+	*{
+	margin:0;
+	padding:0;
+	}
+	table{
+	margin:100px 520px;
+	border-collapse:collapse;
+	text-align:center;
+	}
+	thead{
+	background-color:#999;
+	}
+	td{
+	padding: 2px 10px;
+	
+	}
+	</style>
+
+</head>
+
+<body>
+	<table>
+	<thead>
+	<tr>
+	<td>姓名</td>
+	<td>科目</td>
+	<td>成绩</td>
+	<td>操作</td>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+	<td>魏璎珞</td>
+	<td>javascript</td>
+	<td>100</td>
+	<td><a href="javascript:;">删除</a></td>
+	</tr>
+	<tr>
+	<td>宏利</td>
+	<td>javascript</td>
+	<td>99</td>
+	<td><a href="javascript:;">删除</a></td>
+	</tr>
+	<tr>
+	<td>傅恒</td>
+	<td>javascript</td>
+	<td>90</td>
+	<td><a href="javascript:;">删除</a></td>
+	</tr>
+	<tr>
+	<td>明玉</td>
+	<td>javascript</td>
+	<td>89</td>
+	<td><a href="javascript:;">删除</a></td>
+	</tr>
+	</tbody>
+	</table>
+	
+	
+	
+	<script>
+	var datas=[{
+	 name:'魏璎珞',
+	 subject:'javascript',
+	 score:'100'
+	},{
+	 name:'宏利',
+	 subject:'javascript',
+	 score:'99'
+	},{
+	 name:'傅恒',
+	 subject:'javascript',
+	 score:'90'
+	},{
+	 name:'明玉',
+	 subject:'javascript',
+	 score:'89'
+	}];
+	//往tbody 里面创建行 有几个人(通过数组的长度) 我们就创建几行
+	var tbody=document.querySelector('tbody');
+	for(var i=0;i<datas.length;i++){	  //外面的for循环管行 tr
+	//创建tr行
+	var tr=document.createElement('tr');
+	tbody.appendChild(tr);
+	//行里面创建单元格 td 单元格的数量取决于每个对象里面的属性个数 for循环遍历对象
+	for(var k in datas[i]){	//里面的for循环管列 td
+	//创建单元格
+	var td=document.createElement('td');
+	
+	//把对象里面的属性值 给 td
+	 console.log(datas[i][k]);
+	 td.innerHTML=datas[i][k];
+	 tr.appendChild(td);
+	}
+	//创建有删除2个字的单元格
+	var td=document.createElement('td');
+	tr.appendChild(td);
+	td.innerHTML='<a href="javascript:;">删除</a>';
+	}
+	//删除操作
+	var as=document.querySelectorAll('a');
+	for(var i=0;i<as.length;i++){
+	as[i].onclick=function(){
+	//点击a 删除当前a 所在的行 node.removeChild(child)
+	tbody.removeChild(this.parentNode.parentNode);
+	
+	}
+	
+	}
+	//for(var k in obj){
+		//k 得到的是属性名
+		//obj[k] 得到的是属性值
+		// }
+	
+	//报错 Uncaught SyntaxError: Unexpected end of input 
+		//1.缺少部分括号   指向最后一行
+	//报错 Uncaught TypeError: document.getEmentById is not a function
+		//1.关键词错误 改成getElementById 指向错误位置
+	//报错 Uncaught TypeError: Cannot read property 'getEmentsByTagName' of null
+		//1.关键词错误 改成getElementsByTagName 指向错误位置
+	//报错 Uncaught TypeError: Cannot read property 'getElementsByTagName' of null
+		//1.括号内 id 填写错误   指向错误位置  下方应该是 j_tb
+			//不能写成 var j_tbs=document.getElementById('j_tbsb').getElementsByTagName('input');
+	//报错 Uncaught ReferenceError: querySelector is not defined
+		//1.querySelector改为document.querySelector
+	//报错 Uncaught TypeError: Cannot read property '1' of undefined
+		//1.关键字错误 ul.removeChild(ul.children[1]);写成了 ul.removeChild(ul.child[1]);
+	//报错 Uncaught TypeError: Failed to execute 'removeChild' on 'Node': parameter 1 is not of type 'Node'.
+		//1.数组名错误 if(ul.children.length==0)写成了if(ul.length==0)
+	</script>
+
+
+
+</body>
+</html>  

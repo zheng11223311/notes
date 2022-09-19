@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>三种创建元素方式的区别</title>
+	<script>
+	
+		</script>
+	<style>
+	*{
+	margin:0;
+	padding:0;
+	}
+	
+	</style>
+
+</head>
+
+<body>
+	<button>点击</button>
+	<p>你是猪</p>
+	<div class="inner create"></div>
+	
+	
+	<script>
+	//window.onload=function(){ //当我们整个页面加载完后再去调用里面的js
+	//		document.write('<div>是的</div>');
+	//
+		//}
+	//document.write() 创建元素
+	//缺点: 直接将内容写入页面的内容流,但是文档流执行完毕,则它会导致页面全部重绘 
+	//既改变成了新的html
+	
+	//var btn=document.querySelector('button');
+	//btn.onclick=function(){
+		document.write('<div>是的</div>');
+	//}
+	//innerHTML 创建元素  创建多个元素时 大量拼接字符串耗时长
+	var inner=document.querySelector('.inner');
+	for(var i=0;i<100;i++){
+	inner.innerHTML='<a href="#">百度</a>';
+	}
+	//解决办法
+	var arr=[];
+	for(var i=0;i<100;i++){
+	arr.push('<a href="#">百度</a>');
+	}
+	inner.innerHTML=arr.join(',');//这样效率比 document.createElement() 更高
+	//document.createElement() 创建元素  创建 添加 结构清晰
+	var create=document.querySelector('.create');
+	for(var i=0;i<100;i++){
+	var a=document.createElement('a');
+	create.appendChild(a);
+	a.innerHTML='<a href="#">百度</a>';
+	}
+	
+	
+	//报错 Uncaught SyntaxError: Unexpected end of input 
+		//1.缺少部分括号   指向最后一行
+	//报错 Uncaught TypeError: document.getEmentById is not a function
+		//1.关键词错误 改成getElementById 指向错误位置
+	//报错 Uncaught TypeError: Cannot read property 'getEmentsByTagName' of null
+		//1.关键词错误 改成getElementsByTagName 指向错误位置
+	//报错 Uncaught TypeError: Cannot read property 'getElementsByTagName' of null
+		//1.括号内 id 填写错误   指向错误位置  下方应该是 j_tb
+			//不能写成 var j_tbs=document.getElementById('j_tbsb').getElementsByTagName('input');
+	//报错 Uncaught ReferenceError: querySelector is not defined
+		//1.querySelector改为document.querySelector
+	//报错 Uncaught TypeError: Cannot read property '1' of undefined
+		//1.关键字错误 ul.removeChild(ul.children[1]);写成了 ul.removeChild(ul.child[1]);
+	//报错 Uncaught TypeError: Failed to execute 'removeChild' on 'Node': parameter 1 is not of type 'Node'.
+		//1.数组名错误 if(ul.children.length==0)写成了if(ul.length==0)
+	</script>
+
+
+
+</body>
+</html>  

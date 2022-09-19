@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8-js 关于加不加分号问题</title>
+</head>
+<body>
+    <pre>
+        1.js 一条语句后面可以不加分号
+        2.在下面2种情况下不加分号会有问题
+            小括号开头的前一条语句
+            中括号开头前一条语句
+        3.解决办法: 在行首加分号
+        4.强有力的例子: vue.js 库
+    </pre>
+</body>
+<script>
+    var a=3
+    console.log(a)
+    ;(function(){alert('分号')})()
+    ;[1,3].forEach((index,txt)=>console.log(index))
+</script>
+</html>

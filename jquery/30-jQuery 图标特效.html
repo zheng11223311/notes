@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 图标特效</title>
+    <script src="./css/jQueryDownload/jquery-1.9.1.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            overflow: auto;
+        }
+
+        ul {
+
+            list-style: none;
+            width: 400px;
+            height: 250px;
+            margin: 100px auto;
+            border: 1px solid gold;
+        }
+
+        ul>li {
+            overflow: hidden;
+            width: 100px;
+            height: 50px;
+            margin-top: 50px;
+            text-align: center;
+            float: left;
+        }
+
+        ul>li>span {
+            position: relative;
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+        }
+
+        li:nth-child(1) span {
+            background-color: aqua;
+            background: url(./img/16.jpg);
+            background-size: 24px 24px;
+        }
+
+        li:nth-child(2) span {
+            background-color: aqua;
+            background: url(./img/weixin.jpg);
+            background-size: 24px 24px;
+        }
+
+        li:nth-child(3) span {
+            background-color: aqua;
+            background: url(./img/20.png);
+            background-size: 24px 24px;
+        }
+
+        li:nth-child(4) span {
+            background-color: aqua;
+            background: url(./img/bdwp.jpg);
+            background-size: 24px 24px;
+        }
+
+        li:nth-child(5) span {
+            background-color: aqua;
+            background: url(./img/blbl.png);
+            background-size: 24px 24px;
+        }
+
+        li:nth-child(6) span {
+            background-color: aqua;
+            background: url(./img/txsp.png);
+            background-size: 24px 24px;
+        }
+
+        li:nth-child(7) span {
+            background-color: aqua;
+            background: url(./img/jd.png);
+            background-size: 24px 24px;
+        }
+
+        li:nth-child(8) span {
+            background-color: aqua;
+            background: url(./img/kugou.webp.jpg);
+            background-size: 24px 24px;
+        }
+
+
+
+        /* > 子选择器 只选择第一级后代 */
+        /* ul li 后代选择器 选择所有后代 */
+    </style>
+    <script>
+
+        $(function () {
+            $('li').mouseenter(function () {
+                // 1.将图标往上移动
+                $(this).children('span').animate({
+                    top: -50
+                }, 800, function () {
+                    // 1.2将图标往下移动
+                    $(this).css('top', '50px');
+                    // 1.3 将图片复位
+                    $(this).animate({
+                        top: 0
+                    }, 1000)
+                });
+            })
+
+
+        })
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li><span>
+
+            </span>
+            <p>夸克</p>
+        </li>
+        <li><span>
+
+            </span>
+            <p>微信</p>
+        </li>
+        <li><span>
+
+            </span>
+            <p>Q浏</p>
+        </li>
+        <li><span>
+
+            </span>
+            <p>度盘</p>
+        </li>
+        <li><span>
+
+            </span>
+            <p>bili</p>
+        </li>
+        <li><span>
+
+            </span>
+            <p>腾讯</p>
+        </li>
+        <li><span>
+
+            </span>
+            <p>京东</p>
+        </li>
+        <li><span>
+
+            </span>
+            <p>酷狗</p>
+        </li>
+    </ul>
+</body>
+
+</html>

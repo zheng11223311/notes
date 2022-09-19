@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery-prop方法</title>
+    <script src="./css/jQueryDownload/jquery-1.9.1.min.js"></script>
+    <script>
+        
+        
+       $(function (){
+    //   1.prop 方法
+    // 特点和attr 方法一样
+    //   2.removeProp 方法
+    // 特点和removeAttr 方法一样
+
+    // 注意点:
+    // prop 方法不仅能够操作属性,他还能操作属性节点
+
+    // eq(0) 找到第1个span 增加demo
+    $('span').eq(0).prop("demo","it666");
+    // 结果在控制台sources-->watch--> + 输入document.querySelectorAll('span');
+    // -->展开查看
+    $('span').prop("demo");
+    console.log($('span').prop("demo"));
+
+    $('span').removeProp("demo");
+    
+    console.log($('span').prop("class"));
+    $('span').prop("class",'set');
+
+    
+        console.log( $('input').prop("checked")); //true
+        console.log( $('input').attr("checked")); //checked
+        
+
+      });
+    </script>
+</head>
+<body>
+      <span class="span" name="it"></span>
+    <span class="span1" name="ljn"></span>
+    <input type="checkbox" checked name="" id="">
+</body>
+</html>

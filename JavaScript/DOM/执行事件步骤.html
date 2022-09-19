@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件执行步骤</title>
+	<script>
+
+	
+		</script>
+	<style>
+
+	</style>
+
+</head>
+
+<body>
+	<div>卖彩票咯~(点我试试?)</div>
+	<input type="button" value="按钮"  onclick="myFunc()"></input>
+	<button id="btn">唐伯虎</button>
+	
+	<div onclick="alert('你真的是猪')">你是猪!
+	</div>
+	<script>
+	//事件执行步骤
+	//点击div 控制台输出 恭喜你中奖了!
+	//1.获取事件源
+	var div=document.querySelector('div');
+	//2.绑定事件 注册事件
+	//div.onclick
+	//3.添加事件处理程序
+	div.onclick=function(){
+	alert('恭喜你中奖了!');
+	}
+	div.onmouseout=function(){
+	alert('不要走哦!你还没有领奖呢~');
+	}
+	</script>
+
+
+
+</body>
+</html>

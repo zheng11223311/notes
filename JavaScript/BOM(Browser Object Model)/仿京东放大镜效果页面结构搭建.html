@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>仿京东放大镜效果页面结构搭建</title>
+	<script>
+	
+		</script>
+	<style>
+	*{
+	margin:0;
+	padding:0;
+	}
+
+	.login-header{
+	position:relative;
+	width:300px;
+	height:300px;
+	margin:50px 100px;
+	font-size:36px;
+	border:#999  solid 1px;
+	cursor:move;
+	}
+	.login-header img{
+	width:400px;
+	height:400px;
+	}
+	.login{
+	display:none;
+	position:absolute;
+	margin:10px 20px;
+	background-color:pink;
+	opacity:0.5;
+	width:300px;
+	height:300px;
+	border:#999  solid 1px;
+	
+
+	}
+	.login-title{
+	display:none;
+	position:relative;
+	width:600px;
+	height:600px;
+	border:#999  solid 1px;
+		cursor:move;
+		top:-410px;
+	right:-580px;
+	}
+	.login-title img{
+	
+	width:600px;
+	height:600px;
+	}
+	
+
+	</style>
+
+</head>
+
+<body>
+			
+		<div class="login-header">
+			<img src="../DOM/huanfu1.jpg" alt="">
+			<div class="login"></div>
+		</div>
+		
+		<div class="login-title">
+				
+			<img  class="login-img" src="../DOM/huanfu1.jpg" alt="">
+		</div>
+			
+		
+		
+		
+		
+		
+	<script>
+
+	var header=document.querySelector('.login-header');
+	var img=document.querySelector('.login-img');
+	var login=document.querySelector('.login');
+	var title=document.querySelector('.login-title');
+	header.addEventListener('mousemove',function(e){
+	login.style.display='block';
+	title.style.display='block';
+	var x=e.pageX-this.offsetLeft;
+	var y=e.pageY-this.offsetTop;
+	
+	if(x<130){
+	x=130;
+	}else if(x>230){
+	x=230;
+	}
+	if(y<140){
+	y=140;
+	}else if(y>240){
+	y=240;
+	}
+	login.style.left=x-150+'px';
+	login.style.top=y-150+'px';
+		header.addEventListener('mouseleave',function(){
+	login.style.display='none';
+	title.style.display='none';
+	});
+	var bigx=e.pageY-title.offsetTop;
+	var bigy=e.pageY-title.offsetTop;;
+	console.log(bigx);
+	console.log(bigy);
+	img.style.left=bigx-150+'px';
+	img.style.top=bigy-150+'px';
+	});
+	
+	//close.addEventListener('click',function(){
+	//bg.style.display='none';
+	//login.style.display='none';
+	
+	//});
+	//获得鼠标的位置
+	//当我们鼠标按下,就获得鼠标在盒子内的坐标
+	//title.addEventListener('mousedown',function(e){
+	//var x=e.pageX-login.offsetLeft;
+	//var y=e.pageY-login.offsetTop;
+	// 鼠标移动的时候,把鼠标在页面中的坐标 减去 鼠标在盒子内的坐标就是模态框的left和top值
+	
+	
+	//document.addEventListener('mousemove',move);
+//function move(e){
+	//console.log(e.pageY);
+	//console.log(e.pageX);
+	//login.style.left=e.pageX-x-400+'px';
+	//login.style.top=e.pageY-y-100+'px';
+//	}
+	//鼠标弹起,就让鼠标移动事件移除
+	//document.addEventListener('mouseup',function(e){
+	//document.removeEventListener('mousemove',move);
+	//});
+//});
+	
+	
+	//报错 Uncaught SyntaxError: Unexpected end of input 
+		//1.缺少部分括号   指向最后一行
+	//报错 Uncaught TypeError: document.getEmentById is not a function
+		//1.关键词错误 改成getElementById 指向错误位置
+	//报错 Uncaught TypeError: Cannot read property 'getEmentsByTagName' of null
+		//1.关键词错误 改成getElementsByTagName 指向错误位置
+	//报错 Uncaught TypeError: Cannot read property 'getElementsByTagName' of null
+		//1.括号内 id 填写错误   指向错误位置  下方应该是 j_tb
+			//不能写成 var j_tbs=document.getElementById('j_tbsb').getElementsByTagName('input');
+	//报错 Uncaught ReferenceError: querySelector is not defined
+		//1.querySelector改为document.querySelector
+	//报错 Uncaught TypeError: Cannot read property '1' of undefined
+		//1.关键字错误 ul.removeChild(ul.children[1]);写成了 ul.removeChild(ul.child[1]);
+	//报错 Uncaught TypeError: Failed to execute 'removeChild' on 'Node': parameter 1 is not of type 'Node'.
+		//1.数组名错误 if(ul.children.length==0)写成了if(ul.length==0)
+	//报错 Uncaught SyntaxError: Invalid left-hand side in assignment
+		//1.加号写成等号 begin.innerHTML='还剩'+time+'秒';写成了 begin.innerHTML='还剩'+time='秒';
+	</script>
+
+
+
+</body>
+</html>  

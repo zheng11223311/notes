@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>跟随鼠标的天使</title>
+	<script>
+	
+		</script>
+	<style>
+	*{
+	margin:0;
+	padding:0;
+	}
+	div{
+	width:100px;
+	height:100px;
+	background-color:pink;
+	}
+	body{
+	height:3000px;
+	}
+	img{
+	position:absolute;
+	height:50px;
+	width:66px;
+	}
+	</style>
+
+</head>
+
+<body>
+	
+	
+	<script>
+	
+	//1.keyup 按键弹起的时候触发
+	//document.onkeyup=function(e){
+	//console.log('弹起啦键盘');
+		
+	//}
+	document.addEventListener('keyup',function(){
+	console.log('弹起啦键盘');
+	alert('你是猪');
+	})
+	//2. keydown 按键按下的时候触发
+	document.addEventListener('keydown',function(){
+	console.log('按下啦键盘');
+	})
+	//3. keypress 按键按下的时候触发(不识别功能键)
+	document.addEventListener('keypress',function(){
+	console.log('按下啦键盘,不识别功能键');
+	})
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//报错 Uncaught SyntaxError: Unexpected end of input 
+		//1.缺少部分括号   指向最后一行
+	//报错 Uncaught TypeError: document.getEmentById is not a function
+		//1.关键词错误 改成getElementById 指向错误位置
+	//报错 Uncaught TypeError: Cannot read property 'getEmentsByTagName' of null
+		//1.关键词错误 改成getElementsByTagName 指向错误位置
+	//报错 Uncaught TypeError: Cannot read property 'getElementsByTagName' of null
+		//1.括号内 id 填写错误   指向错误位置  下方应该是 j_tb
+			//不能写成 var j_tbs=document.getElementById('j_tbsb').getElementsByTagName('input');
+	//报错 Uncaught ReferenceError: querySelector is not defined
+		//1.querySelector改为document.querySelector
+	//报错 Uncaught TypeError: Cannot read property '1' of undefined
+		//1.关键字错误 ul.removeChild(ul.children[1]);写成了 ul.removeChild(ul.child[1]);
+	//报错 Uncaught TypeError: Failed to execute 'removeChild' on 'Node': parameter 1 is not of type 'Node'.
+		//1.数组名错误 if(ul.children.length==0)写成了if(ul.length==0)
+	</script>
+
+
+
+</body>
+</html>  

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>拖动模态框</title>
+	<script>
+	
+		</script>
+	<style>
+	*{
+	margin:0;
+	padding:0;
+	}
+
+	.login-header{
+	position:absolute;
+	z-index:-2;
+	margin:0px 500px;
+	font-size:36px;
+	
+	}
+	.login-header a{
+	color:#000;
+	}
+	.login{
+	display:none;
+	position:absolute;
+	margin:120px 420px;
+	background-color:pink;
+	width:400px;
+	height:200px;
+	border:#999  solid 1px;
+	text-align:center;
+
+	}
+	.login .login-title{
+	position:relative;
+	font-size:20px;
+		cursor:move;
+	}
+	.login span{
+	position:absolute;
+	width:50px;
+	height:50px;
+	top:-26px;
+	right:-26px;
+	line-height:50px;	
+	border:#999 solid 1px;
+	border-radius:26px;
+	background-color:pink;
+	}
+	.login .login-input-content{
+		text-align:right;
+		padding:30px 80px 0 0px;
+		
+	}
+	
+	.login .login-input-content .login-input .input{
+	padding:5px 5px;
+	margin-bottom:10px;
+	width:200px;
+	}
+	.login .login-input-content .login-input .password{
+	padding:5px 5px;
+	width:200px;
+	}
+	.login .login-button{
+	margin-top:20px;
+	margin-left:110px;
+	line-height:40px;
+	width:180px;
+	height:40px;
+	border:#999 solid 2px;
+	}
+	a{
+	color:#000;
+	text-decoration:none;
+	}
+	.login-bg{
+	display:none;
+	position:relative;
+	z-index:-1;
+	background-color:#999;
+	top:-100px;
+	width:100%;
+	height:1000px;
+	opacity:0.5;
+	}
+	</style>
+
+</head>
+
+<body>
+			
+		<div class="login-header"><a id="link" href="javascript:;">点击,弹出登入框</a></div>
+		<div id="login" class="login">
+			<div id="title" class="login-title">登入会员
+			<span><a id="closeBtn" href="javascript:void(0);"class="close-login">关闭</a></span>
+			</div>
+			<div  class="login-input-content">
+				<div class="login-input">
+				<label>用户名:</label>
+				<input type="text" placeholder="请输入用户命名" name="inform[username]" id="username" class="input">
+				</div>
+				<div class="login-input">
+				<label>登入密码:</label>
+				<input type="password" placeholder="请输入登入密码" name="inform[password]" id="password" class="password">
+				</div>
+			</div>	
+			<div id="loginBtn" class="login-button"><a href="javascript:void(0);" id="login-button-submit" class="">登入</a></div>
+		</div>
+<!--遮盖层-->
+			<div id="bg" class="login-bg"></div>
+		
+		
+		
+		
+		
+		
+	<script>
+
+	var header=document.querySelector('.login-header');
+	var bg=document.querySelector('.login-bg');
+	var login=document.querySelector('.login');
+	var close=document.querySelector('.close-login');
+	var title=document.querySelector('.login-title');
+	header.addEventListener('click',function(){
+	bg.style.display='block';
+	login.style.display='block';
+	
+	});
+	close.addEventListener('click',function(){
+	bg.style.display='none';
+	login.style.display='none';
+	
+	});
+	//获得鼠标的位置
+	//当我们鼠标按下,就获得鼠标在盒子内的坐标
+	title.addEventListener('mousedown',function(e){
+	var x=e.pageX-login.offsetLeft;
+	var y=e.pageY-login.offsetTop;
+	// 鼠标移动的时候,把鼠标在页面中的坐标 减去 鼠标在盒子内的坐标就是模态框的left和top值
+	
+	
+	document.addEventListener('mousemove',move);
+	function move(e){
+	console.log(e.pageY);
+	console.log(e.pageX);
+	login.style.left=e.pageX-x-400+'px';
+	login.style.top=e.pageY-y-100+'px';
+	}
+	//鼠标弹起,就让鼠标移动事件移除
+	document.addEventListener('mouseup',function(e){
+	document.removeEventListener('mousemove',move);
+	});
+});
+	
+	
+	//报错 Uncaught SyntaxError: Unexpected end of input 
+		//1.缺少部分括号   指向最后一行
+	//报错 Uncaught TypeError: document.getEmentById is not a function
+		//1.关键词错误 改成getElementById 指向错误位置
+	//报错 Uncaught TypeError: Cannot read property 'getEmentsByTagName' of null
+		//1.关键词错误 改成getElementsByTagName 指向错误位置
+	//报错 Uncaught TypeError: Cannot read property 'getElementsByTagName' of null
+		//1.括号内 id 填写错误   指向错误位置  下方应该是 j_tb
+			//不能写成 var j_tbs=document.getElementById('j_tbsb').getElementsByTagName('input');
+	//报错 Uncaught ReferenceError: querySelector is not defined
+		//1.querySelector改为document.querySelector
+	//报错 Uncaught TypeError: Cannot read property '1' of undefined
+		//1.关键字错误 ul.removeChild(ul.children[1]);写成了 ul.removeChild(ul.child[1]);
+	//报错 Uncaught TypeError: Failed to execute 'removeChild' on 'Node': parameter 1 is not of type 'Node'.
+		//1.数组名错误 if(ul.children.length==0)写成了if(ul.length==0)
+	//报错 Uncaught SyntaxError: Invalid left-hand side in assignment
+		//1.加号写成等号 begin.innerHTML='还剩'+time+'秒';写成了 begin.innerHTML='还剩'+time='秒';
+	</script>
+
+
+
+</body>
+</html>  

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/njQuery.js"></script>
+    <title>48-jQuery 入口函数-函数处理</title>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+<script>
+/* 
+onload 事件会等到DOM 元素加载完毕,并且还会等到资源也加载完毕才会执行
+DOMContentLoaded 事件只会等到DOM 元素加载完毕就会执行回调
+*/
+//  window.onload=function(ev){
+// //     var res =document.querySelectorAll('div')
+// //     console.log(res);
+//     console.log('不快');
+//  }
+
+
+ //addEventListener 不兼容IE8及以下
+// document.addEventListener('DOMContentLoaded',function(){
+//     var res =document.querySelectorAll('div')
+// console.log(res);
+//     console.log('更快');
+// })
+
+
+//attachEvent 不能监听DOMContentLoaded 事件
+// document.attachEvent('DOMContentLoaded',function(){
+//     var res =document.querySelectorAll('div')
+// console.log(res);
+//     console.log('更快');
+// })
+
+
+// readyState 属性   onreadystatechange 事件就是专门用来监听这个事件的改变
+//uninitialized  未开始 loading 载入中  interactive 已加载,可以交流     complete    载入完成
+// document.attachEvent("onreadystatechange",function(){
+//     if(document.readyState=='complete'){
+
+//     }
+// })
+$(function(){
+    var res=document.querySelectorAll('div')
+    console.log(res);
+})
+
+
+</script>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>26-js 高级 对象创建模式</title>
+</head>
+
+<body>
+    <pre>
+        方式一:Object 构造函数模式
+            套路:先创建空Object 对象,在动态添加属性 / 方法
+            适用场景:起始时不确定对象内部数据
+            问题: 语句太多
+
+        
+        方式二:对象字面量模式
+            套路:使用{}创建对象,同时指定属性 / 方法
+            适用场景: 起始时对象内部数据是确定的
+            问题: 如果创建多个对象,有重复对象
+
+
+        方式三: 工厂模式
+            套路:通过工厂函数动态创建对象对象并返回
+            适用场景: 需要创建多个对象
+            问题:对象没有一个具体的类型,都是Object
+
+
+        方式四: 自定义构造函数模式
+            套路:自定义构造函数,通过new 创建对象对象
+            适用场景: 需要创建多个类型确定的对象
+            问题:每个对象都有相同的数据,浪费内存
+        
+        
+       方式五: 构造函数+原型的组合模式
+            套路:自定义构造函数,属性在函数中初始化,方法添加到原型上
+            适用场景: 需要创建多个类型确定的对象
+
+    </pre>
+</body>
+<script>
+    // 一个人: name: 'Tom ',age: 12 
+    // var p = new Object()
+    // p.name = 'Tom'
+    // p.age = 12
+    // p.setName = function (name) {
+    //     this.name = name;
+    // }
+
+    // //测试
+    // p.setName('jack')
+    // console.log(p.name, p.age);
+
+
+    // 二
+    // var p = {
+    //     name: 'Tom',
+    //     age: 12,
+    //     setName: function (name) {
+    //         this.name = name
+    //     }
+
+    // }
+    // console.log(p.name, p.age);
+    // p.setName('jack')
+    // console.log(p.name, p.age);
+
+
+    // 三
+    // function createPerson(name, age) {  //返回一个函数对象-->工厂函数
+    //     var obj = {
+    //         name: name,
+    //         age: age,
+    //         setName: function (name) {
+    //             this.name = name
+    //         }
+    //     }
+    //     return obj
+
+    // }
+    // //创建2个人
+    // var p1 = createPerson('Tom', 12)
+    // var p1 = createPerson('Bob', 12)
+
+    // function creaateStudetn(name, price) {
+    //     var obj = {
+    //         name: name,
+    //         price: price
+    //     }
+    //     return obj
+
+    // }
+    // var s = creaateStudetn('zhansan', 12000)
+
+
+    //  4
+    // function person(name, age) {
+    //     this.name = name
+    //     this.age = age
+    //     this.setName = function (name) {
+    //         this.name = name
+    //     }
+    // }
+    // var p1 = new person('tom', 12)
+    // p1.setName('jack')
+    // console.log(p1.name, p1.age);
+
+    // function student(name, price) {
+    //     this.name = name
+    //     this.price = price
+
+    // }
+    // var s = new student('Bob', 120000)
+    // console.log(s instanceof student);
+
+
+    //方式五
+    function person(name, price) {  //在构造函数中只初始化一般函数
+        this.name = name
+        this.price = price
+
+    }
+    person.prototype.setName = function (name) {
+        this.name = name
+    }
+    var p1 = new person('tom', 12)
+    var p2 = new person('Bob', 12)
+    console.log(p1, p2);
+</script>
+
+</html>

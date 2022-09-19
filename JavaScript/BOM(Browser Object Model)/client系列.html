@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>client系列</title>
+	<script>
+	
+		</script>
+	<style>
+	*{
+	margin:0;
+	padding:0;
+	}
+
+	.login-header{
+	position:relative;
+	width:300px;
+	height:300px;
+	margin:50px 100px;
+	font-size:20px;
+	border:#999  solid 10px;
+	cursor:move;
+	}
+	.login-header img{
+	width:400px;
+	height:400px;
+	}
+	.login{
+	display:none;
+	position:absolute;
+	margin:10px 20px;
+	background-color:pink;
+	opacity:0.5;
+	width:300px;
+	height:300px;
+	border:#999  solid 1px;
+	
+
+	}
+	.login-title{
+	display:none;
+	position:relative;
+	width:600px;
+	height:600px;
+	border:#999  solid 1px;
+		cursor:move;
+		top:-410px;
+	right:-580px;
+	}
+	.login-title img{
+	
+	width:600px;
+	height:600px;
+	}
+	
+
+	</style>
+
+</head>
+
+<body>
+			
+		<div class="login-header">
+			
+		</div>
+		
+		
+			
+		
+		
+		
+		
+		
+	<script>
+	var header=document.querySelector('.login-header');
+	//element.clientTop 上边框距
+	console.log('上边框距');
+	console.log(header.clientTop);
+	//element.clientleft 左边框距
+	console.log('左边框距');
+	console.log(header.clientLeft);
+	//element.clientHight 盒子高度 不包括边框
+	console.log('盒子高度 不包括边框');
+	console.log(header.clientHeight);
+	//element.clientWidth 盒子宽度 不包括边框
+	console.log('盒子宽度 不包括边框');
+	console.log(header.clientWidth);
+	header.innerHTML='上边框距'+'\n '+header.clientTop+'<br/>'
+	+'左边框距'+'\n '+header.clientLeft+'<br/>'+'盒子高度 不包括边框'+'\n '+
+	header.clientHeight+'<br/>'+'盒子宽度 不包括边框'+'\n '+header.clientWidth;
+	
+	
+	
+	
+	
+	
+	
+	
+	//报错 Uncaught SyntaxError: Unexpected end of input 
+		//1.缺少部分括号   指向最后一行
+	//报错 Uncaught TypeError: document.getEmentById is not a function
+		//1.关键词错误 改成getElementById 指向错误位置
+	//报错 Uncaught TypeError: Cannot read property 'getEmentsByTagName' of null
+		//1.关键词错误 改成getElementsByTagName 指向错误位置
+	//报错 Uncaught TypeError: Cannot read property 'getElementsByTagName' of null
+		//1.括号内 id 填写错误   指向错误位置  下方应该是 j_tb
+			//不能写成 var j_tbs=document.getElementById('j_tbsb').getElementsByTagName('input');
+	//报错 Uncaught ReferenceError: querySelector is not defined
+		//1.querySelector改为document.querySelector
+	//报错 Uncaught TypeError: Cannot read property '1' of undefined
+		//1.关键字错误 ul.removeChild(ul.children[1]);写成了 ul.removeChild(ul.child[1]);
+	//报错 Uncaught TypeError: Failed to execute 'removeChild' on 'Node': parameter 1 is not of type 'Node'.
+		//1.数组名错误 if(ul.children.length==0)写成了if(ul.length==0)
+	//报错 Uncaught SyntaxError: Invalid left-hand side in assignment
+		//1.加号写成等号 begin.innerHTML='还剩'+time+'秒';写成了 begin.innerHTML='还剩'+time='秒';
+	</script>
+
+
+
+</body>
+</html>  

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>21-js 高级 闭包的作用</title>
+</head>
+<pre>
+        1.使用函数内部的变量在函数执行完后,仍然存活在内存中(延长了局部变量的生命周期)
+        2.让函数外部可以操作(读写)到内部的数据(变量 / 函数)
+
+        问题
+        1.函数执行完后,函数内部声明的局部变量是否还存在?
+        一般不存在,闭包才会存在
+
+        2.在函数外部声明能直接访问函数内部的局部变量吗?
+        不能,但是我们可以通过闭包让外部操作它
+</pre>
+
+<body>
+    <script>
+        function fn1() {
+            var a = 2       //a 被引用==>a 形成闭包
+            function fn2() {//没有人引用他==>垃圾对象==>释放==>没有闭包 
+                a++
+                console.log(a);
+            }
+            function fn3() { //闭包 f变量获得返回的fn3 地址,fn3 被释放,但没有成为垃圾对象 如果没有声明f 存储,则没有闭包
+                a--
+                console.log(a);
+            }
+            return fn3;
+        }
+        // fn1() 执行后return 得到的还是函数fn2
+        var f = fn1()    //或者fn1()()
+        f()         //3
+        f()         //4
+    </script>
+</body>
+
+</html>

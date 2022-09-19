@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>H5新增的获取元素方式</title>
+	<script>
+
+	
+		</script>
+	<style>
+
+	</style>
+
+</head>
+
+<body>
+	<div onclick="alert('你真的是猪')">你是猪!
+	</div>
+	<input type="button" value="按钮"  onclick="myFunc()"></input>
+	<div class="box">你是猪!</div>
+	<div class="box">你是猪!</div>
+	<div id="nav">
+	<ul>
+	<li>首页</li>
+	<li>产品</li>
+
+	</ul>
+	</div>
+	<script>
+		//1.getElementsClassName 根据类名获得某些元素集合
+	var boxs=document.getElementsByClassName('box');
+	console.log(boxs);
+	//2.querySelector 返回指定选择器的第一个对象;
+	var firstBox=document.querySelector('.box');//返回第一个div.box
+	console.log(firstBox);
+	alert(firstBox);
+	var nav=document.querySelector('#nav');
+	console.log(nav);
+	var li=document.querySelector('li');
+	console.log(li);
+	//3.querySelectorAll 返回指定选择器的所有对象集合
+	var allBox=document.querySelectorAll('.box');
+	console.log(allBox);
+	</script>
+
+
+
+</body>
+</html>

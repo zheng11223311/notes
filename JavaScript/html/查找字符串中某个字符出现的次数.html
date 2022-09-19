@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>查找字符串中的某个字符出现的次数</title>
+	<script>
+	var str='abcoefoxyozzopp';
+	var index=str.indexOf('o');
+	var num=0;
+	while(index!==-1){
+	console.log(index);
+	alert(index);
+	num++;
+	index=str.indexOf('o',index+1);//查找下一个'o'
+	
+	}
+	console.log('o出现的次数是:'+num);
+	alert('o出现的次数是:'+num);
+		</script>
+	<style>
+
+	</style>
+
+</head>
+
+<body>
+	<div onclick="alert('你真的是猪')">你是猪!
+	</div>
+	<input type="button" value="按钮"  onclick="myFunc()"></input>
+
+
+
+
+</body>
+</html>

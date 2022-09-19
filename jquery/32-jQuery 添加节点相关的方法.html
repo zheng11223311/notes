@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 添加节点相关的方法</title>
+    <script src="./css/jQueryDownload/jquery-1.9.1.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            overflow: auto;
+        }
+
+        ul>li {}
+
+
+
+
+
+        /* > 子选择器 只选择第一级后代 */
+        /* ul li 后代选择器 选择所有后代 */
+    </style>
+    <script>
+        // 内部插入
+        // append(content | fn) 添加
+        // 会将元素添加到指定元素内部的最后位置
+        // appendTo(content) 添加到
+        // 会将元素添加到指定元素内部的最后位置
+        // prepend(content | fn)
+        // 会将元素添加到指定元素内部的最前面位置
+        // prependTo(content)
+        // 会将元素添加到指定元素内部的最前面位置
+
+        // 外部插入
+        // after(content | fn) 添加
+        // 会将元素添加到指定元素外部后面的位置
+        // before(content | fn) 
+        // 会将元素添加到指定元素外部前面的位置
+        // insertAfter(content) 添加到
+        // 会将元素添加到指定元素外部后面的位置
+        // insertBefore(content)
+        // 会将元素添加到指定元素外部前面的位置
+        $(function () {
+            $('button').click(function () {
+                // 1.创建一个节点
+                var $li = $('<li>新增的li</li>');
+                // 2.添加一个节点
+                // $('ul').append($li);
+                // $('ul').prepend($li);
+                // $li.appendTo('ul');
+                // $li.prependTo('ul');
+
+                // $('ul').after($li);
+                // $('ul').before($li);
+
+                // $li.insertAfter('ul');
+                $li.insertBefore('ul');
+            })
+
+        })
+    </script>
+</head>
+
+<body>
+    <button>添加节点</button>
+    <ul>
+        <li>我是第1个li</li>
+        <li>我是第2个li</li>
+        <li>我是第3个li</li>
+    </ul>
+</body>
+
+</html>

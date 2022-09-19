@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组去重(复)</title>
+	<script>
+	function unique(arr){
+
+	var newArr=[];
+	for(var i=0;i<arr.length;i++){
+	if(newArr.indexOf(arr[i])===-1){ //===因为元素也有可能有字符串的-1
+	newArr.push(arr[i]);
+	}
+
+	}
+		return newArr;
+	}
+	var demo=unique(['c','a','z','a','x','a','x','c','b']);
+	console.log(demo);
+	alert(demo);
+	
+		</script>
+	<style>
+
+	</style>
+
+</head>
+
+<body>
+	<div onclick="alert('你真的是猪')">你是猪!
+	</div>
+	<input type="button" value="按钮"  onclick="myFunc()"></input>
+
+
+
+
+</body>
+</html>

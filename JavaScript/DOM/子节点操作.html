@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>子节点操作</title>
+	<script>
+
+	
+		</script>
+	<style>
+
+	</style>
+
+</head>
+
+<body>
+	<ul>
+	<li>1</li>
+	<li>2</li>
+	<li>3</li>
+	<li>4</li>
+	<li>5</li>
+	<li>6</li>
+	</ul>
+	
+	
+	</div>
+	<script>
+	//DOM提供的方法(API)获取元素
+	var ul=document.querySelector('ul');
+	var lis=ul.querySelectorAll('li');
+	//1.子节点 childNodes 获取元素 得到的所有子节点 包含 元素节点 文本节点等等
+	console.log(ul.childNodes);//13个节点.包括了换行等
+	console.log(ul.childNodes[0]);
+	console.log(ul.childNodes[0].nodeType);//文本节点为3
+	console.log(ul.childNodes[1].nodeType);//元素节点为1
+	//一般用for循环过滤
+	
+	//2.children 获取所有的子元素节点 非标准 也是我们实际开发常用的方法
+	console.log(ul.children);//
+	//2.注册事件 处理程序
+	
+	
+	
+	
+	//报错 Uncaught SyntaxError: Unexpected end of input 
+	//1.缺少部分括号   指向最后一行
+	//报错 Uncaught TypeError: document.getEmentById is not a function
+	//1.关键词错误 改成getElementById 指向错误位置
+	//报错 Uncaught TypeError: Cannot read property 'getEmentsByTagName' of null
+	//1.关键词错误 改成getElementsByTagName 指向错误位置
+	//报错 Uncaught TypeError: Cannot read property 'getElementsByTagName' of null
+	//1.括号内 id 填写错误   指向错误位置  下方应该是 j_tb
+	//不能写成 var j_tbs=document.getElementById('j_tbsb').getElementsByTagName('input');
+	//报错 Uncaught ReferenceError: querySelector is not defined
+	//1.querySelector改为document.querySelector
+	</script>
+
+
+
+</body>
+</html>  

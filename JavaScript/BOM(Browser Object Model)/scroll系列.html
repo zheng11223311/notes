@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>scroll系列</title>
+	<script>
+	
+		</script>
+	<style>
+	*{
+	margin:0;
+	padding:0;
+	}
+
+	.login-header{
+	position:relative;
+	width:300px;
+	height:300px;
+	margin:50px 100px;
+	font-size:20px;
+	border:#999  solid 10px;
+	cursor:move;
+	overflow:auto;
+	}
+	.login-header img{
+	width:400px;
+	height:400px;
+	}
+	.login{
+	display:none;
+	position:absolute;
+	margin:10px 20px;
+	background-color:pink;
+	opacity:0.5;
+	width:300px;
+	height:300px;
+	border:#999  solid 1px;
+	
+
+	}
+	.login-title{
+	display:none;
+	position:relative;
+	width:600px;
+	height:600px;
+	border:#999  solid 1px;
+		cursor:move;
+		top:-410px;
+	right:-580px;
+	}
+	.login-title img{
+	
+	width:600px;
+	height:600px;
+	}
+	
+
+	</style>
+
+</head>
+
+<body>
+			
+		<div class="login-header">
+			hello,world! hello,world! hello,world!
+			hello,world! hello,world! hello,world!
+			hello,world! hello,world! hello,world!
+			hello,world! hello,world! hello,world!
+			hello,world! hello,world! hello,world!
+			hello,world! hello,world! hello,world!
+			hello,world! hello,world! hello,world!
+			hello,world! hello,world! hello,world!
+			hello,world! hello,world! hello,world!
+			hello,world! hello,world! hello,world!
+			hello,world! hello,world! hello,world!
+			hello,world! hello,world! hello,world!
+			
+		</div>
+		
+		
+			
+		
+		
+		
+		
+		
+	<script>
+	// alert()提示信息框
+	// confirm()提示确认框
+	// prompt()提示输入文本框
+	
+	var div =document.querySelector('div');
+	console.log(div.scrollHeight); //返回值不带px
+	console.log(div.clientHeight);
+	//scroll 滚动事件当我们滚动条发生变化会触发的事件
+	div.addEventListener('scroll',function(){
+	//scrollTop 当滚动条移动时,滑上被隐藏的文字距离盒子的顶部的高度
+	console.log(div.scrollTop);
+	});
+	
+	
+	
+	
+	//报错 Uncaught SyntaxError: Unexpected end of input 
+		//1.缺少部分括号   指向最后一行
+	//报错 Uncaught TypeError: document.getEmentById is not a function
+		//1.关键词错误 改成getElementById 指向错误位置
+	//报错 Uncaught TypeError: Cannot read property 'getEmentsByTagName' of null
+		//1.关键词错误 改成getElementsByTagName 指向错误位置
+	//报错 Uncaught TypeError: Cannot read property 'getElementsByTagName' of null
+		//1.括号内 id 填写错误   指向错误位置  下方应该是 j_tb
+			//不能写成 var j_tbs=document.getElementById('j_tbsb').getElementsByTagName('input');
+	//报错 Uncaught ReferenceError: querySelector is not defined
+		//1.querySelector改为document.querySelector
+	//报错 Uncaught TypeError: Cannot read property '1' of undefined
+		//1.关键字错误 ul.removeChild(ul.children[1]);写成了 ul.removeChild(ul.child[1]);
+	//报错 Uncaught TypeError: Failed to execute 'removeChild' on 'Node': parameter 1 is not of type 'Node'.
+		//1.数组名错误 if(ul.children.length==0)写成了if(ul.length==0)
+	//报错 Uncaught SyntaxError: Invalid left-hand side in assignment
+		//1.加号写成等号 begin.innerHTML='还剩'+time+'秒';写成了 begin.innerHTML='还剩'+time='秒';
+	</script>
+
+
+
+</body>
+</html>  

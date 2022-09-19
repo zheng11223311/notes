@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>密码框验证信息</title>
+	<script>
+
+	
+		</script>
+	<style>
+	.register{
+	position:relative;
+	top:100px;
+	left:40%;
+	}
+	 input{
+	color:#999;
+	}
+	.message{
+	color:#999;
+	}
+	.wrong{
+	color:red;
+	}
+	.right{
+	color:green;
+	
+	}
+	</style>
+
+</head>
+
+<body>
+	<div class="register">
+	<input class="ipt" type="password" value=""></input><span class="massage">请输入6~16位密码</span>
+	</div>
+	
+	<script>
+	//获取元素
+	var ipt=document.querySelector('.ipt');
+	var text=document.querySelector('.massage');
+
+	//2.注册事件 失去焦点事件 onblur
+	ipt.onblur=function(){
+	//根据表单里面值的长度 ipt.value.length
+	if(this.value.length<6||this.value.length>16){
+	console.log('错误');
+	text.className ='wrong';
+	text.innerHTML ='输入长度错误,请重新输入';
+	}else{
+	text.className ='right';
+	text.innerHTML ='输入正确';
+	}
+	}
+		</script>
+
+
+
+</body>
+</html>  

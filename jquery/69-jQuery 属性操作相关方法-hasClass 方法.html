@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/njQuery.js"></script>
+    <title>69-jQuery 属性操作相关方法-hasClass 方法</title>
+</head>
+<body>
+<div class="aabb bb cc"></div>
+<div class="aabb bb "></div>
+   
+</body>
+<script>
+    $(function(){
+        /* 
+        1.attr(): 设置或获取元素的属性节点值
+        2.prop(): 设置获取元素的属性值
+        3.css(): 设置获取样式
+        4.val(): 获取设置val 值
+        5.hasClass(): 判断有没有指定类
+        6.addClass(): 给所有元素添加指定类或所有类
+        7.removeClass(): 清空元素指定类或所有类
+        8.toggleClass(): 有则删,没有则添加
+        
+        */
+        // 传递参数,只要调用者其中有一个div包含指定类型就返回true,否则返回false
+        console.log($('div').hasClass('cc'));
+        console.log($('div').hasClass('abc'));
+
+        // // 没有传递参数,返回false
+        console.log($('div').hasClass());
+
+    var div=document.querySelector('div')
+    // console.log(div.getAttribute('class'));
+    // ===>等同
+    // console.log(div.className);
+    //1获取元素中class 保存的值
+    var className=''+div.className+''
+    //2.通过indexOf 判断是否包含指定的字符串
+    // console.log(className.indexOf('cc')!=-1);
+    //aabb 中也包含bb,不可取
+    // console.log(className.indexOf('bb'));
+    //解决aabb 中也包含bb
+    // console.log(className.indexOf(''+'bb'+''));
+    //bb 开头也不可取 在开头前后个加一个空格
+    console.log(className.indexOf(''+'bb'+''));
+
+      
+    })
+</script>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/njQuery.js"></script>
+    <title>65-jQuery属性操作相关方法-attr 方法</title>
+</head>
+<body>
+<span class="span1" name="it666"></span>
+<span class="span2" name="ljn"></span>
+    
+   
+</body>
+<script>
+    $(function(){
+        /* 
+        1.attr(): 设置或获取元素的属性节点值
+        2.prop(): 设置获取元素的属性值
+        3.css(): 设置获取样式
+        4.val(): 获取设置val 值
+        5.hasClass(): 判断有没有指定类
+        6.addClass(): 给所有元素添加指定类或所有类
+        7.removeClass(): 清空元素指定类或所有类
+        8.toggleClass(): 有则删,没有则添加
+        
+        */
+
+
+        //传递一个参数,返回第一个元素属性节点的值
+        console.log($('span').attr('class'));
+        // console.log($('span').attr('class','abc'));
+        console.log($('span').attr({
+            'class':123,
+            'name':'888'
+        }));
+   
+
+    })
+</script>
+</html>

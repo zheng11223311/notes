@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>检测是否为数组</title>
+	<script>
+	//翻转数组
+	function reverse(arr){
+	var newArr=[];
+	for(var i=arr.length-1;i>=0;i--){
+	newArr[newArr.length]=arr[i];
+	
+	}
+	return newArr;
+	
+	
+	}
+	alert(reverse([1,2,3]));
+	console.log(reverse([1,2,3]));
+	console.log(reverse(1,2,3));//不是数组,无法识别,返回空数组
+	//检测是否为数组
+	//1.instanceof 运算符 它可以用来检测是否为数组
+	var arr=[];
+	var obj={};
+	console.log(arr instanceof Array);//结果为true
+	alert(arr instanceof Array);
+	console.log(obj instanceof Array);//结果为false
+	//2.Array.isArray(参数);     H5新增的方法 ie9以上的版本
+		console.log(Array.isArray(arr));
+		</script>
+	<style>
+
+	</style>
+
+</head>
+
+<body>
+	<div onclick="alert('你真的是猪')">你是猪!
+	</div>
+	<input type="button" value="按钮"  onclick="myFunc()"></input>
+
+
+
+
+</body>
+</html>

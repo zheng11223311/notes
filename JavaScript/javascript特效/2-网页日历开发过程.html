@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网页日历开发过程</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            position: relative;
+            top: 100px;
+            width: 280px;
+            height: 260px;
+            border: 1px solid #000;
+            margin: 2px auto;
+        }
+
+        div li {
+            list-style: none;
+
+        }
+
+        div>p {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        div>h5 {
+            text-align: center;
+        }
+
+        div>p>span {
+            padding: 0 10px;
+        }
+
+        #pre,
+        #next {
+            cursor: pointer;
+        }
+
+        #main {
+            flex: 1;
+            text-align: center;
+        }
+
+        #title {
+            width: 280px;
+            background: #ccc;
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        #title>li {
+            display: inline-block;
+
+            height: 10%;
+            word-spacing: -30px;
+            line-height: 26px;
+            text-align: center;
+
+        }
+
+        ul#date>li {
+            float: left;
+            width: 34px;
+            height: 34px;
+            margin: 1px 1px;
+            border: 2px solid rgba(0, 0, 0, 0);
+            line-height: 34px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        ul#date>.hover:hover {
+            border: 2px solid red;
+        }
+
+        .active {
+            color: red;
+        }
+
+        */
+    </style>
+</head>
+
+<body>
+    <div id="data">
+        <p>
+            <span id="pre">上一月</span>
+            <span id="nian">2022</span>
+            <span id="next">下一月</span>
+        </p>
+        <h5 id="yue">五月</h5>
+        <ul id="title">
+            <li>日</li>
+            <li>一</li>
+            <li>二</li>
+            <li>三</li>
+            <li>四</li>
+            <li>五</li>
+            <li>六</li>
+        </ul>
+        <ul id="date">
+
+        </ul>
+    </div>
+
+
+    <script>
+        add();   //当页面第一次进入进行渲染一下
+        function add() {
+            let date = new Date();    //获取默认时间对象
+            let cYear = date.getFullYear();   //获取当前的年份
+            let cMonth = date.getMonth();     //获取当前的月份0-11
+            let cDay = date.getDate();        //获取当前的天
+
+            //每个月的第一天是周几
+            let zhou = new Date(cYear, cMonth, 1).getDay();   //当前月份的第一天是周几
+
+            console.log(new Date(cYear, cMonth, 1).getDay());
+            //获取每个月的天数
+            console.log(new Date(cYear, cMonth + 1, -1).getDate() + 1);    //-1 就是最后一天减1
+            let days = new Date(cYear, cMonth, -1).getDate() + 1;
+            let arr = ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月']
+            document.getElementById('yue').innerHTML = arr[cMonth];
+            document.getElementById('nian').innerHTML = cYear;
+
+            let hml = '';
+            for (var j = 0; j < zhou; j++) {
+                hml += '<li></li>';
+            }
+
+            for (var i = 0; i < days; i++) {
+                if (i == cDay) {
+                    hml += '<li class="active">' + i + '</li>';
+                } else {
+                    hml += '<li cl ass="hover">' + i + '</li>';
+                }
+
+
+            }
+            document.getElementById('date').innerHTML = hml;
+        }
+
+        document.getElementById('pre').onclick = function () {
+            date.setMonth(date.getMonth() - 1);
+            add();
+        };
+        document.getElementById('next').onclick = function () {
+            date.setMonth(date.getMonth() + 1);
+            add();
+        };
+    </script>
+</body>
+
+</html>

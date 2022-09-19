@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>28-js 高级 组合继承</title>
+</head>
+<pre>
+    方式2: 借用构造函数继承(假的)
+    1.套路:
+        1.定义父类型构造函数
+        2.定义子类型构造函数
+        3.在子类型构造函数中调用父类型构造
+    2.关键:
+        1.在子类型构造函数中通过用super() 调用父类型构造函数
+
+    方式3:原型链+借用构造函数的组合继承
+        1.利用原型链实现对父类型对象方法的继承
+        2.利用super() 借用父类型构造函数初始化相同的属性
+</pre>
+
+<body>
+
+</body>
+<script>
+    // 方式2: 借用构造函数继承(假的)
+    // function Person(name, age) {
+    //     this.name = name
+    //     this.age = age
+    // }
+    // function student(name, age, price) {
+    //     person.call(this, name, age)  //相当于this.Person(name,age)
+    //     this.price = price
+    // }
+    // var s = new student('Tom', 20, 10000)
+    // console.log(s.name, s.age, s.price);
+
+
+    // 方式3: 原型链 + 借用构造函数的组合继承
+    function Person(name, age) {
+        this.name = name
+        this.age = age
+    }
+    Person.prototype.setName = function (name) {
+        this.name = name
+    }
+    function student(name, age, price) {
+        Person.call(this, name, age)  //相当于this.Person(name,age)
+        this.price = price
+    }
+    student.prototype = new Person()    //为了能看到父类型的方法
+    student.prototype.constructor = student    //修正constructor 属性
+    student.prototype.setPrice = function (price) {
+        this.price = price
+    }
+    var s = new student('Tom', 20, 10000)
+    s.setName('Bob')
+    s.setPrice(120000)
+    console.log(s.name, s.age, s.price);
+</script>
+
+</html>
