@@ -1,0 +1,21 @@
+#define IDD_对话框1 1000
+#define IDC_标签1 1001
+#define IDC_编辑框1 1002
+#define IDC_按钮1 1003
+#define IDC_编辑框2 1004
+
+LANGUAGE 4,2
+
+129 ICON DISCARDABLE "res/icon.ico"
+
+IDD_对话框1 DIALOGEX 10,10,363,234
+CAPTION "黑月下载网页源码"
+FONT 9,"宋体",400,0,134
+STYLE 0x10CA0800
+BEGIN
+  CONTROL "地址:",IDC_标签1,"Static",0x50000000,6,6,27,12
+  CONTROL "http://www.dywt.com.cn/",IDC_编辑框1,"Edit",0x50010000,36,6,240,15,0x00000200
+  CONTROL "下载网页(&D)",IDC_按钮1,"Button",0x50010000,288,6,57,18
+  CONTROL "",IDC_编辑框2,"Edit",0x50210004,3,27,351,201,0x00000200
+END
+

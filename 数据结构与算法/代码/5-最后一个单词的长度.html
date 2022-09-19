@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var lengthOfLastWord = function(s) {
+            // 去除空格长度
+            console.log(s.trim());
+            for (let l=s.split(' ').length, index = l-1; index >=0; index--) {
+                if( s.split(' ')[index]!=''){
+                    return  s.split(' ')[index].length
+                }
+            }
+           
+        };
+        // console.log(lengthOfLastWord("   fly me   to   the moon  "));
+        console.log(lengthOfLastWord("a"));
+    </script>
+</body>
+</html>

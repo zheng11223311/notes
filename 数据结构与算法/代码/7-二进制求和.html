@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var addBinary = function(a, b) {
+            let ans=[]
+            // 接收并保存进位数
+        let ca = 0;
+        for(let i = a.length - 1, j = b.length - 1;i >= 0 || j >= 0; i--, j--) {
+            let sum = ca;
+            sum += i >= 0 ? a.charAt(i) - '0' : 0;
+            sum += j >= 0 ? b.charAt(j) - '0' : 0;
+            ans.unshift(sum % 2);
+            // 进位值
+                 ca = sum >>> 1;
+            
+            }
+            // 最后还有进位数时,保存到开头
+            ans.unshift(ca == 1 ? ca : "");
+            return ans.join('').toString();
+        }
+    //    console.log( addBinary('11','1'));
+       console.log( addBinary('1010','1011'));
+       console.log( addBinary('1111','1111'));
+    </script>
+</body>
+</html>

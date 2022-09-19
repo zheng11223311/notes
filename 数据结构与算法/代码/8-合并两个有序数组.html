@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var merge = function(nums1, m, nums2, n) {
+            let m1=0
+            let m2=0
+            let arr=[]
+            while(m1<m&&m2<n){
+                if(nums1[m1]<=nums2[m2]){
+                    console.log(nums1[m1]);
+                    arr.push(nums1[m1])
+                    m1++
+                   
+                }
+                if(nums1[m1]>nums2[m2]){
+                    arr.push(nums2[m2])
+                    m2++
+                }
+                // if(m1>10)return
+            }
+            console.log(m1,m2);
+            if(m1>=m){
+                for (const iterator in nums2) {
+                    if(iterator>=m2){
+                    arr.push(nums2[iterator])
+                    }
+                }
+            }
+            if(m2>=n){
+                for (const iterator in nums1) {
+                    if(iterator>=m1){
+                    arr.push(nums1[iterator])
+                    }
+                }
+            }
+            return arr
+            };
+            console.log(merge([1,2,3,0,0,0],3,[2,5,6],3));
+    </script>
+</body>
+</html>

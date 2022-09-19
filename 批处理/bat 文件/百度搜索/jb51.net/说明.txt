@@ -1,0 +1,5 @@
+批处理(Batch)，也称为批处理脚本。顾名思义，批处理就是对某对象进行批量的处理。批处理文件的扩展名为bat 
+
+bat教程 http://www.jb51.net/list/list_106_1.htm
+
+bat更多下载 http://www.jb51.net/bat/

@@ -1,0 +1,15 @@
+#define IDD_对话框1 1000
+#define IDC_按钮1 1001
+
+LANGUAGE 4,2
+
+129 ICON DISCARDABLE "res/icon.ico"
+
+IDD_对话框1 DIALOGEX 10,10,423,255
+CAPTION "用图片对象给窗口加底图"
+FONT 8,"MS Sans Serif",0,0,0
+STYLE 0x11CF0800
+BEGIN
+  CONTROL "IDC_按钮",IDC_按钮1,"Button",0x50010000,27,18,60,18
+END
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var romanToInt = function(s) {
+        s = s.replace("IV","a");
+        s = s.replace("IX","b");
+        s = s.replace("XL","c");
+        s = s.replace("XC","d");
+        s = s.replace("CD","e");
+        s = s.replace("CM","f");
+        
+        let res = 0;
+        for (let i of s) {
+            console.log(i);
+            res += getValue(i);
+        }
+        return res;
+
+        function getValue(c) {
+        switch(c) {
+            case 'I': return 1;
+            case 'V': return 5;
+            case 'X': return 10;
+            case 'L': return 50;
+            case 'C': return 100;
+            case 'D': return 500;
+            case 'M': return 1000;
+            case 'a': return 4;
+            case 'b': return 9;
+            case 'c': return 40;
+            case 'd': return 90;
+            case 'e': return 400;
+            case 'f': return 900;
+        }
+        return 0;
+    }
+
+};
+console.log(romanToInt('IIIX'));
+    </script>
+</body>
+</html>
