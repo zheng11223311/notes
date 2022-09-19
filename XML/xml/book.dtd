@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT books (book*)>
+<!-- books 下有任意个book 标签 -->
+<!ELEMENT book (name*,price,source,author)>
+<!-- book 下有一个price,source,author,任意个name -->
+<!ATTLIST book id CDATA #REQUIRED>
+<!-- book id设置为CDATA 类型,#REQUIRED 必须有-->
+<!ELEMENT name (#PCDATA)>
+<!-- 表示name 标签下只允许写文本,不允许出现标签 -->

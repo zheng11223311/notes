@@ -1,0 +1,13 @@
+<!-- 声明信息 ,用于描述xml 的版本和编码方式-->
+<!-- 版本只有是1.0 -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 声明外部DTD -->
+<!-- 引入外部DTD  -->
+<!DOCTYPE books SYSTEM "book.dtd">
+<books>
+    <book id="aaa">
+        <name>java 高级编程</name>
+        <author>张三</author>
+        <price>50.0</price>
+    </book>
+</books>

@@ -1,0 +1,12 @@
+1）git config -l 查看配置
+2）git config --system --list 查看系统配置  在Git/etc/gitconfig 文件夹里面的配置
+3）git config --global --list 查看本地配置（只适用于当前登录用户的配置）  在C:/Users/Administrator/.gitconfig  储存用户的用户名和邮箱地址
+
+当你安装Git 后首先要做的事情就是设置你的用户名和邮箱地址，这是非常重要的，
+因为每次Git 提交都会使用该信息，他被永远的嵌入到了你的提交中
+git config --global user.name "zheng"  #名称
+git config --global user.email 2404243334@qq.com  #邮箱
+
+只需要做一次这个设置，如果你传递了--global 选项，因为Git 将总是会使用该信息来处理你在系统中的所做的一切操作，
+如果你希望在一个特定的项目中使用不同的名称或邮箱地址，你可以在该项目中运行命令而不要--global 选项，
+总之，--global 为全局配置，不加为某个特定配置

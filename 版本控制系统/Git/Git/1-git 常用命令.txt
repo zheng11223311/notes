@@ -1,0 +1,15 @@
+1） cd 改变目录
+2）cd ..  回退到上一个目录，直接cd 进入默认位置（cd 与..之间有空格）
+3）pwd 显示当前所在的目录路径
+4）ls 或ll 都是列出当前目录中的所有文件，只不过ll 列出的内容更加详细
+5）touch 新建一个文件 如touch index.js 就会在当前目录下新建一个index.js 文件
+6）rm 删除一个文件，rm index.js 就会把index.js 文件删除
+7）mkdir 新建一个目录，就是新建一个文件夹
+8）rm -r 删除一个文件夹，rm -r wen 删除wen 目录	rm -r f/* 格式化所有文件  r 删除 f 强制
+9）mv 移动文件，mv index.html  wen  将 index.html 移动到wen 文件夹下
+10） reset 重新初始化终端/清屏
+11）clear 清屏
+12）history 查看命令历史
+13）help 帮助
+14）exit 退出
+15）# 表示注释
