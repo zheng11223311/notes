@@ -1,0 +1,10 @@
+先将文件打包 npm run build
+  window 下载nginx 
+  官方网站：https://nginx.org/
+  其中包含很多的nginx 版本，大致可以分成三类：
+  Mainline version ：Mainline 是nginx 目前主力在做的版本，可以说是开发版
+  Stable version ：最新稳定版，生产环境上建议使用的版本
+  Legacy versions ： 遗留的老版本的稳定版
+
+  我们选择Stable version
+  下载window 版本 

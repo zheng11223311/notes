@@ -1,0 +1,8 @@
+2021/05/18 23:13:12 [emerg] 7848#10872: CreateFile() "D:\wanye\Vue-2\nginx-1.20.0-服务器软件/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)
+2021/05/18 23:17:54 [emerg] 13112#6552: CreateFile() "D:\wanye\Vue-2\nginx-1.20.0-服务器软件/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)
+2021/05/18 23:17:55 [emerg] 7212#11744: CreateFile() "D:\wanye\Vue-2\nginx-1.20.0-服务器软件/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)
+2021/05/18 23:17:56 [emerg] 8684#32: CreateFile() "D:\wanye\Vue-2\nginx-1.20.0-服务器软件/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)
+2021/05/18 23:29:39 [emerg] 3996#1128: CreateFile() "D:\wanye\Vue-2\nginx-1.20.0-服务器软件/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)
+2021/05/18 23:29:41 [emerg] 12104#4852: CreateFile() "D:\wanye\Vue-2\nginx-1.20.0-服务器软件/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)
+2021/05/18 23:29:42 [emerg] 6652#3596: CreateFile() "D:\wanye\Vue-2\nginx-1.20.0-服务器软件/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)
+2021/05/18 23:29:43 [emerg] 12216#9316: CreateFile() "D:\wanye\Vue-2\nginx-1.20.0-服务器软件/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)
