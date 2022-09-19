@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        #div0 {
+            width: 500px;
+            background-color: brown;
+            display: flex;
+
+        }
+
+        #div0 div {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            /* 所有子div 宽度为50px(width 将失效) 父元素的宽度足够的话 
+            空间不足,自动做出缩小*/
+            /* flex-basis:50px; */
+            flex-basis:20%;
+            /* flex-grow:1 ;
+           父div 宽度-所有子div 宽度.剩余空间分配给有grow的, 
+            flex-grow:1  每个子div 各占一份,既各获得33.33%
+            每个子div 总长度=(width或)basis+获得的33.33%
+            */
+            flex-grow:1 ;
+            flex-shrink: 0;
+            /* 0 代表不允许缩小 */
+              /* flex-grow:1 ;
+           父div 宽度-所有子div 宽度.子div超出空间
+           分配给有shrink的, 
+            flex-shrink:1  每个子div 各占一份,既各失去33.33%
+            每个子div 总长度=(width或)basis-失去的33.33%
+            */
+        }
+
+    </style>
+</head>
+
+<body>
+    <pre>
+        放在子元素上
+        flex-basis          设置弹性盒伸缩基准值
+        flex-grow          设置弹性盒的扩展比率
+        flex-shrink          设置弹性盒的缩小比率
+        flex        flex-grow flex-shrink flex-basis 的缩写
+            
+                特殊写法
+        flex:auto           flex:1 1 auto
+        flex:none           flex:0 0 auto
+        flex:0%           flex:1 1 0%
+        flex:100px           flex:1 1 100px
+        flex:1           flex:1 1 0%
+    </pre>
+</body>
+<div id="div0">父元素宽度不够时,子元素会自动压缩,适应父元素
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+</div>
+
+</html>

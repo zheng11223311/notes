@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>2D转换之rotate</title>
+	<style>
+		img{
+
+			width: 100px;
+			height: 100px;
+			
+			border:red solid 2px;
+			border-radius: 52px;
+			transition:all,1s;
+		}
+		/*img:hover{
+				//transform: rotate(45deg);
+					transform: rotate(4turn);  //圈数
+		}*/
+	</style>
+</head>
+<body>
+	<pre>
+		1.语法
+		transform:rotate(度数);trun圈数 angle角度 还有弧度
+		rotate里面跟度数,单位是deg 比如 rotate(45deg);
+		角度为正时,顺时针.负时,为逆时针
+		默认旋转的中心点是元素的中心点
+		保留转后的角度,再次旋转在以旋转的角度上增加
+		
+	</pre>
+	<img src="./img/logo.png" alt="">
+	. 当前路径
+	..父路径
+	<script>
+      var imgs=document.querySelector('img');
+   		function fn(){
+   		var date=new Date();
+   		var s=date.getSeconds();
+   		console.log(s);
+   		imgs.style.transform='rotate('+s*6+'deg)';
+   		}
+   		
+      	var dings=setInterval(fn,1000);	
+
+      
+	</script>
+</body>
+</html>

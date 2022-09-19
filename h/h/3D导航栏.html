@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3D导航栏</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		ul{	
+			display:block;
+			position:relative;
+			margin:100px 100px;
+			transform-style: preserve-3d;
+			/*perspective: 500px;  去掉就是正面.不去掉会有点侧面*/
+			background-color: red;
+		}
+		li{
+			position:relative;
+			float: left;
+			width: 200px;
+			height: 35px;
+			transition: all .6s;
+			transform-style: preserve-3d;
+
+		}
+		ul li:hover{
+			transform:rotateX(90deg);
+		}
+		.box{
+			width: 100%;
+			height: 100%;
+		}
+		.front,.back{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height:100%;
+			background-color: pink;
+			font-size: 30px;
+			color: #fff;
+			line-height: 35px;
+			text-align: center;
+			transform: translateZ(17.5px);
+		}
+		 .box .back{
+			transform: translateY(17.5px) rotateX(-90deg);
+			background-color: purple;
+			z-index: -1;
+		}
+	</style>
+</head>
+<body><ul>
+	<li><div class="box">
+			<div class="front">黑马程序员</div>
+			<div class="back">pink老师</div>
+	</div>
+	<li><div class="box">
+			<div class="front">黑马程序员</div>
+			<div class="back">pink老师</div>
+	</div>
+	<li><div class="box">
+			<div class="front">黑马程序员</div>
+			<div class="back">pink老师</div>
+	</div>
+	<li><div class="box">
+			<div class="front">黑马程序员</div>
+			<div class="back">pink老师</div>
+	</div>
+	<li><div class="box">
+			<div class="front">黑马程序员</div>
+			<div class="back">pink老师</div>
+	</div>
+</li>
+	
+</ul>
+	<!-- 以中心点旋转 -->
+</body>
+</html>

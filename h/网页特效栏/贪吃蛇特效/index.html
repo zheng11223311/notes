@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>贪吃蛇</title>
+	<style>
+	 * {
+    margin:0;
+    padding:0;
+    background-color:rgb(255,255,255);
+}
+@media screen and (min-width:width 0px) and (max-width:1000px) {
+    /* 手机，平板等需要横屏加载 */
+}
+#playground {
+    margin:20px auto;
+    width:600px;
+    height:400px;
+    border:solid rgb(209,209,209) 1px;
+    border-radius:10px;
+    position:relative;
+    background-color:rgb(248,251,252);
+}
+#snake {
+    width:20px;
+    height:20px;
+    position:absolute;
+    background-color:black;
+    top:100px;
+    left:100px;
+    border-radius:50%;
+}
+#foods {
+    background-color:blue;
+    width:20px;
+    height:20px;
+    position:absolute;
+    top:300px;
+    left:300px;
+    border-radius:50%;
+}
+.body {
+    width:20px;
+    height:20px;
+    position:absolute;
+    background-color:rgb(119,119,119);
+    border-radius:50%;
+}
+p {
+    text-align:center;
+    background:transparent;
+    z-index:10;
+    position:relative;
+}
+div p {
+    top:-30px;
+}
+.container {
+    text-align:center;
+}
+div.container div#scores,div.container div#playground {
+    display:inline-block;
+}
+.background {
+    margin:0 auto;
+    width:350px;
+    height:35px;
+    background-color:black;
+    opacity:10%;
+    border-radius:0 0 20px 20px;
+    z-index:9;
+}
+span {
+    background:transparent;
+}
+#scores {
+    top:-20px;
+    width:200px;
+    height:400px;
+    position:relative;
+    margin-right:20px;
+    background-color:rgb(237,243,245);
+    border:solid rgb(209,209,209) 1px;
+    border-radius:10px;
+    left:30px;
+    opacity:.7;
+}
+.title {
+    margin:4px;
+    margin-bottom:10px;
+    margin-top:10px;
+    line-height:30px;
+    font-weight:bold;
+    background-color:transparent;
+    text-align:center;
+    border-radius:10px;
+}
+.score {
+    position:relative;
+    overflow:hidden;
+    margin:4px;
+    width:96%;
+    height:30px;
+    float:left;
+    border-radius:10px;
+}
+.scorespan {
+    position:relative;
+    top:5px;
+    left:90px;
+    float:left;
+}
+.score div.gametime {
+    position:relative;
+    float:right;
+    line-height:12px;
+    font-size:12px;
+    top:18px;
+    color:rgb(104,117,121);
+    width:70px;
+    height:12px;
+}
+
+	</style>
+</head>
+<body>
+	<div class="fa-refresh icon">
+    <div class="container">
+        <div id="playground">
+            <div class="background"></div>
+            <p>游戏时长：<span id="time">0</span>&nbsp;游戏次数：<span id="game">0</span>&nbsp;得分：<span id="score">0</span></p>
+            <div id="snake"></div>
+            <div id="foods"></div>
+
+            
+        </div>
+        <div id="scores">
+            <div class="title">历史得分</div>
+            <div class="score"><img class="score_1" src=""><span class="scorespan"></span>
+                <div class="gametime"></div>
+            </div>
+            <div class="score"><img class="score_2" src=""><span class="scorespan"></span>
+                <div class="gametime"></div>
+            </div>
+            <div class="score"><img class="score_3" src=""><span class="scorespan"></span>
+                <div class="gametime"></div>
+            </div>
+            <div class="score"><img class="score_4" src=""><span class="scorespan"></span>
+                <div class="gametime"></div>
+            </div>
+            <div class="score"><img class="score_5" src=""><span class="scorespan"></span>
+                <div class="gametime"></div>
+            </div>
+            <div class="score"><img class="score_6" src=""><span class="scorespan"></span>
+                <div class="gametime"></div>
+            </div>
+            <div class="score"><img class="score_7" src=""><span class="scorespan"></span>
+                <div class="gametime"></div>
+            </div>
+            <div class="score"><img class="score_8" src=""><span class="scorespan"></span>
+                <div class="gametime"></div>
+            </div>
+            <div class="score"><img class="score_9" src=""><span class="scorespan"></span>
+                <div class="gametime"></div>
+            </div>
+
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <p>《贪吃蛇》
+        <br>玩法简介：控制蛇吃到食物，每吃到一个食物都会增加蛇的长度，蛇碰撞四壁或者自己的身体时游戏结束。
+        <br>操作方式：w-向上移动，s-向下移动，a-向左移动，d-向右移动</p>
+</div>
+	<script>
+      //游戏次数
+
+var sec = 0;
+showScore();
+
+function showScore() {
+    var historyScores = document.getElementsByClassName("scorespan");
+    var times = document.getElementsByClassName("gametime");
+    var keyarr = [];
+    var reg = new RegExp();
+    reg = /^\d{5,}$/;
+    document.getElementById("game").innerHTML = sessionStorage.length;
+    // sessionStorage 是HTML5新增的一个会话存储对象，用于临时保存同一窗口(或标签页)的数据，在关闭窗口或标签页之后将会删除这些数据。
+        //console.log(sessionStorage.length);
+    for (var i = 0; i < sessionStorage.length; i++) {
+        if (sessionStorage.length > i) {
+            var key = sessionStorage.key(i);
+            if (reg.test(key)) {
+                var keynum = key - 1;
+                keyarr.push(keynum);
+                keyarr.sort((a, b) => b - a);
+            }
+
+        }
+    }
+
+    for (var j = 0; j < times.length; j++) {
+        if (sessionStorage.length > j) {
+            var a = new Number();
+            a = keyarr[j] + 1;
+            var JsonStr = sessionStorage.getItem(a.toString());
+            if (JsonStr == null) {
+                continue;
+            }
+            var JsonObj = JSON.parse(JsonStr);
+            historyScores[j].innerHTML = JsonObj.history_score;
+            times[j].innerHTML = JsonObj.history_duration;
+
+
+
+        }
+    }
+
+
+}
+
+window.onload = function() {
+
+    //$通过id返回元素
+    function $(id) {
+        return document.getElementById(id);
+    }
+
+    //获取snake，foods元素
+    var snake = $("snake");
+    var foods = $("foods");
+
+    //蛇身用一个数组body来装，body[num,0]内部是left数据，body[num,1]内部是top数据
+    // {
+    //  [100px,100px],
+    //  [101px,100px],
+    //  [102px,100px],
+    //  [103px,100px]
+    //                }
+    var body = new Array();
+    var num = 0;
+
+    //判断情况是或者否
+    var flag = false;
+
+    //游戏得分
+    var score = 0;
+
+    //蛇移动速度
+    var speed = 1.1;
+    NUM_1 = 1;
+
+    //div元素数组，元素是class为body的div元素
+    var boxes = new Array;
+
+    //t1计时器-每0.01秒检查一次是否碰壁，吃到食物，以及身体跟随蛇头
+    var t1 = window.setInterval(go, 10);
+
+    function go() {
+        //记录snake盒子走过的所有位置，放入二维string数组body
+        body.push([snake.offsetLeft, snake.offsetTop]);
+        // console.log(body[num][0]);
+        confirmWidth();
+        confirmHeight();
+        follow();
+        food();
+    }
+
+    //t2计时器-每0.01秒移动一次蛇头
+    var t2;
+
+
+    //t3计时器-计算游戏时间，每过一秒sec+1
+    var t3 = setInterval(Time, 1000);
+
+    function Time() {
+        var time = countTime();
+        $("time").innerHTML = time;
+    }
+
+    function countTime() {
+        if (t2) {
+            sec += 1;
+            if (sec <= 60) {
+                return sec + "s";
+            } else if (sec <= 3600) {
+                var minit = Math.floor(sec / 60);
+                var second = sec % 60;
+                return minit + "m" + second + "s";
+            } else {
+                var hour = Math.floor(sec / 3600);
+                minit = Math.floor((sec - hour * 3600) / 60);
+                second = sec - hour * 3600 - minit * 60;
+                return hour + "h" + minit + "m" + second + "S";
+            }
+        } else {
+            return 0;
+        }
+    }
+
+
+
+
+
+    var time = new Date().getTime();
+
+
+    //onkeydown事件绑定处理函数keydown
+    document.onkeydown = keydown;
+
+    //keydown函数-判断玩家按下的按键（wsad）并按指令运动snake
+    //创建新计时器来每零点一秒移动一次snake
+    //同时验证是否碰壁，并让body跟随snake移动
+    function keydown(e) {
+        //浏览器传入的event，在ie中需要用window.event获取
+        var evt = e || window.event;
+        //从event中获取用户按下的按键的ascII码，在火狐中需要用event.which获取
+        var key = evt.which || evt.KeyCode;
+        //将不同ascII码指令分开处理
+        // t1 = window.setInterval(go, 10);
+        switch (key) {
+            case 65: //左a
+                {
+                    clearInterval(t2);
+                    t2 = setInterval(() => {
+                        snake.style.left = snake.offsetLeft - speed + "px";
+                        snake.style.top = snake.offsetTop + "px";
+                    }, 10);
+                }
+                break;
+            case 87: //上w
+                {
+                    clearInterval(t2);
+                    t2 = setInterval(() => {
+                        snake.style.top = snake.offsetTop - speed + "px";
+                        snake.style.left = snake.offsetLeft + "px";
+                    }, 10);
+                    break;
+                }
+            case 68: //右d
+                {
+                    clearInterval(t2);
+                    t2 = setInterval(() => {
+                        snake.style.left = snake.offsetLeft + speed + "px";
+                        snake.style.top = snake.offsetTop + "px";
+                    }, 10);
+                    break;
+                }
+            case 83: //下s
+                {
+                    clearInterval(t2);
+                    t2 = setInterval(() => {
+                        snake.style.top = snake.offsetTop + speed + "px";
+                        snake.style.left = snake.offsetLeft + "px";
+                    }, 10);
+                }
+                break;
+            default:
+                break;
+        }
+    }
+
+    //follow-如果body存在，让body跟随snake移动
+    function follow() {
+        num += 1;
+        if (score > 0) {
+            var place = 0;
+            for (var i = 0; i < boxes.length; i++) {
+                place += 15;
+                boxes[i].style.left = body[num - place][0] + "px";
+                boxes[i].style.top = body[num - place][1] + "px";
+
+            }
+        }
+    }
+
+    //food-检查蛇是否吃到了食物
+    //     是则分数加一并让foods方块重新随机出现，给body数组增加新元素
+    function food() {
+        flag = check(snake, foods);
+        if (flag == true) {
+            score++;
+            $("score").innerHTML = score;
+            foods.style.left = parseInt(Math.floor(Math.random() * 580)) + "px";
+            foods.style.top = parseInt(Math.floor(Math.random() * 380)) + "px";
+            //新建一个div元素，用于蛇吃到食物后向数组内添加元素
+            var newbox = document.createElement("div");
+            newbox.setAttribute("class", "body");
+            $("playground").appendChild(newbox);
+            boxes.push(newbox);
+            flag = false;
+        }
+    }
+
+    //confirmWidth-检查蛇有没有超出左右边界
+    function confirmWidth() {
+        if (snake.offsetLeft <= -1) {
+            clearInterval(t2);
+            gameover();
+        } else if (snake.offsetLeft >= snake.parentElement.clientWidth - snake.clientWidth) {
+            clearInterval(t2);
+            gameover();
+        } else {
+            confirmBody();
+        }
+    }
+    //confirmHeight-检查蛇有没有超出上下边界
+    function confirmHeight() {
+        if (snake.offsetTop <= -1) {
+            clearInterval(t2);
+            gameover();
+        } else if (snake.offsetTop >= snake.parentElement.clientHeight - snake.clientHeight) {
+            clearInterval(t2);
+            gameover();
+        } else {
+            confirmBody();
+        }
+    }
+
+    //confirmBody-检查蛇有没有碰撞自身
+    function confirmBody() {
+        if (boxes.length > 2) {
+            for (i = 3; i < boxes.length; i++) {
+                flag = check(snake, boxes[i]);
+                if (flag == true) {
+                    gameover();
+                    flag = false;
+                }
+            }
+        }
+    }
+
+    //gameover-游戏结束:
+    function gameover() {
+        // var str = "游戏结束！！！您的得分是：" + score;
+        clearInterval(t3);
+
+        //记录得分，游戏时长，放进sessionStorage。
+        historyScore(score);
+
+        //变量归零
+        // score = 0;
+        // sec = 0;
+        // boxes.remove;
+        // num = 0;
+        // flag = false;
+        // //清空计时器
+        // //将蛇头，食物放回原位
+        // clearInterval(t2);
+        // // clearInterval(t1);
+        // snake.style.top = 100 + "px";
+        // snake.style.left = 100 + "px";
+        // foods.style.top = 300 + "px";
+        // foods.style.left = 300 + "px";
+    }
+
+    //记录历史得分和游玩时长
+    function historyScore(score) {
+        var durationStr = $("time").innerHTML;
+        var histry = {
+            history_score: score,
+            history_duration: durationStr,
+
+        }
+        let jsonstringify = JSON.stringify(histry);
+        window.sessionStorage.setItem(time.toString(), jsonstringify);
+        console.log(sessionStorage);
+    }
+
+
+
+
+    //check-a和b碰撞则返回true
+    function check(a, b) {
+        var aLeft = a.offsetLeft;
+        var aTop = a.offsetTop;
+        var bLeft = b.offsetLeft;
+        var bTop = b.offsetTop;
+        if (aLeft + a.clientWidth >= bLeft && aTop + a.clientHeight >= bTop) {
+            if (aLeft <= bLeft + b.clientWidth && aTop <= bTop + b.clientHeight) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
+	</script>
+</body>
+</html>

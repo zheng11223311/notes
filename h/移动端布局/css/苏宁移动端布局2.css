@@ -1,0 +1,18 @@
+html {
+    font-size: 180px !important;
+}
+
+body {
+    min-width: 320px;
+    max-width: 750px;
+    /* flexible 给我们划分了 10等分 */
+    /* cssrem 这个插件默认的是html 文字大小 cssroot 16px */
+    width: 10rem;
+    margin: 0 auto;
+    line-height: 1.5;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f2f2f2;
+
+
+
+}

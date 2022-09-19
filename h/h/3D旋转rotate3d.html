@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3D旋转rotate3d</title>
+	<style>
+		body{
+			perspective: 500px;
+		}
+		img{
+				width:400px;
+				height:400px;
+				background-color: pink;
+				margin:100px 100px;
+				transition-duration: 2s;
+			
+			}
+			img:hover{
+				/*transform: rotateX(45deg);
+				transform: rotateY(90deg);
+				transform: rotateZ(90deg);*/
+				transform: rotate3d(1,1,0,2000deg);
+				/*沿对角线旋转*/
+
+
+			}
+	</style>
+</head>
+<body>
+	<pre>
+		3D旋转
+		语法
+
+		transform:rotateX(45deg); 沿着x轴正方向旋转45度
+		transform:rotateY(45deg); 沿着y轴正方向旋转45度
+		transform:rotateZ(45deg); 沿着z轴正方向旋转45度
+		transform:rotate3d(x,y,z,deg); 沿着自定义方向旋转deg度
+		xyz是矢量, 方向都要叠加
+
+		左手的拇指指向x轴的正方向
+		其余手指的弯曲方向就是该元素沿着x轴旋转的方向
+
+
+	</pre>
+	<img src="./img/wzry1.png">	
+</body>
+</html>

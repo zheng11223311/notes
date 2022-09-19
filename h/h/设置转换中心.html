@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>设置转换中心</title>
+	<style>
+			div{
+			width: 200px;
+			height: 200px;
+			background-color: pink;
+			margin:100px auto;
+			transition:all 1s;
+			border:red solid 2px;
+		/* 	transform-origin:left bottom; //左下角
+		transform-origin:50% 50%; //等价于center center 
+			transform-origin: 50px 50px;*/
+			transform-origin: 100px 100px;*/
+		}
+		div:hover{
+
+			transform:rotate(360deg);
+		}
+		p{
+			position:absolute;
+			margin:50px 500px;
+		}
+	</style>
+</head>
+<body><pre>
+	1.语法
+	transform-origin:x y; 中间没有逗号
+
+	2.重点
+	注意后面的参数x和y用空格隔开
+	x y默认的中心点是元素的中心点(50% 50%)
+	还可以给x y设置 像素 或者 方位名词(top bottom left right center)
+	</pre>
+	<p>请看图</p>
+		<div>
+			
+		</div>
+
+	<script>
+      var div=document.querySelector('div');
+      var p=document.querySelector('p');
+   		function fn(){
+   		var date=new Date();
+   		var s=date.getSeconds();
+   		console.log(s);
+   		div.style.transform='rotate('+s*45+'deg)';
+   		p.innerHTML='当前秒数:'+s;
+   		}
+   		
+      	var dings=setInterval(fn,1000);	
+
+      
+	</script>
+</body>
+</html>

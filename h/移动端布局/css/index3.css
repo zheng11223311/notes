@@ -1,0 +1,185 @@
+body {
+	background-image: url(../img/10.jpg);
+	background-size: cover;
+	background-color: rgba(187, 255, 255, 0.5);
+	background-attachment: fixed;
+	background-position: center;
+	border-radius: 0.5rem;
+	overflow: hidden;
+	box-sizing: border-box;
+}
+
+
+/* header 模块 */
+header {
+	width: 100%;
+	height: 1.5rem;
+	display: flex;
+	font-size: 0.8rem;
+	/* color: aqua; */
+	color: #fff;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+header div.hd {
+	height: 1rem;
+	text-align: center;
+	line-height: 1rem;
+	/* background-color: aqua; */
+}
+
+header div:nth-child(1) {
+	flex: 3;
+	text-align: left;
+	line-height: 1.4rem;
+	padding: 0 0 0 0.5rem;
+
+}
+
+header div:nth-child(1) img {
+	width: 0.9rem;
+	height: 0.9rem;
+	vertical-align: middle;
+
+}
+
+header div:nth-child(2) {
+	flex: 3;
+	text-align: left;
+	letter-spacing: -3px;
+}
+
+header div:nth-child(2) img {
+	width: 0.8rem;
+	height: 0.8rem;
+	vertical-align: bottom;
+	border-radius: 0.1rem;
+
+}
+
+header div:nth-child(3) {
+	flex: 4;
+	text-align: right;
+	display: flex;
+	justify-content: flex-end;
+	padding: 0 0.5rem 0 0;
+}
+
+header div:nth-child(3) img {
+	width: 1rem;
+	height: 1rem;
+	vertical-align: bottom;
+	border-radius: 0.1rem;
+
+	letter-spacing: -60px;
+
+}
+
+header .down {
+	/* display:none 无效... */
+	display: none;
+	position: absolute;
+	width: 100%;
+	/* height: 80%; */
+	/* top: 2rem; */
+	display: flex;
+	background-color: purple;
+	z-index: 10;
+	padding: 1.5rem 0.5rem 1.5rem 1.5rem;
+	justify-content: flex-start;
+	opacity: 0.4;
+	animation: xiala 2s linear forwards;
+}
+
+header div.up {
+	position: absolute;
+	width: 100%;
+	display: flex;
+	background-color: purple;
+	z-index: 10;
+	padding: 0 0.5rem;
+	justify-content: flex-start;
+	opacity: 0.4;
+	animation: shangsheng 1s linear forwards;
+}
+
+@keyframes xiala {
+	0% {
+		height: 0;
+	}
+
+	100% {
+		height: 100%;
+	}
+}
+
+@keyframes shangsheng {
+	0% {
+		height: 100%;
+	}
+
+	100% {
+		height: 5%;
+	}
+}
+
+nav {
+	margin: 0.5rem 0 0 0;
+	width: 100%;
+}
+
+nav div.zhu {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	padding: 0 5%;
+	width: 90%;
+	/* flex 高度不能定死,否则有时候会多出空间被平分,导致排版分裂开 */
+}
+
+nav div.zhu div {
+	/* 让flex 强制隔4个换行 */
+	min-width: 25%;
+	min-height: 30%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	flex: 1;
+	padding-bottom: 0.5rem;
+	font-size: 0.6rem;
+}
+
+
+nav div.zhu div img,
+nav div.fu div img {
+	width: 3rem;
+	height: 3rem;
+	margin-bottom: 0.5rem;
+	border-radius: 0.5rem;
+}
+
+nav div.fu {
+	/* position: relative; */
+	width: 90%;
+	height: 6rem;
+	bottom: 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	margin: 0rem 5% 1rem;
+}
+
+nav div.fu div {
+	min-width: 25%;
+	min-height: 30%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	flex: 1;
+	padding-bottom: 0.5rem;
+	font-size: 0.6rem;
+}

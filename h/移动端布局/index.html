@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>小阵</title>
+	<style>
+        *{
+            margin: 0;
+            padding: 0;
+            
+        }
+	header{
+        position: relative;
+        width: 600px;
+        height: 300px;
+        margin: 100px auto;
+        background-color:  #111;
+        overflow: hidden;
+    }
+    p{
+        position: relative;
+        top: -300px;
+        float: left;
+        width: 10px;
+        word-wrap: break-word;
+        height: 300%;
+        color: red;
+        background-color: #111;
+       
+    }
+    p:nth-child(3n+1){
+         animation: a 5s linear 0s infinite ;
+    }
+    p:nth-child(3n+2){
+         animation: a 3s linear -1s infinite ;
+    }
+    p:nth-child(3n){
+         animation: a 2s linear -3s infinite ;
+    }
+    @keyframes a  {
+    0%{
+        transform: translateY(0px);
+    }
+    100%{
+        transform: translateY(600px);
+    }
+  
+}
+	</style>
+</head>
+<body>
+
+    <header>
+      
+    </header>
+    
+	<script>
+       var h=document.querySelector('header');
+       var c=0;
+      
+       for(var i=0;i<500;i++){
+            var p=document.createElement('p');
+        h. appendChild(p);
+        console.log(1);
+          for(var j=0;j<100;j++){
+            var a='1234567890qwertyuiopasdfghjklzxcvbnm';
+            var b=a.charAt(Math.round(Math.random()*36));
+           
+           c +=b;
+        }
+         p.innerHTML=c+'\n';
+      
+       }
+       
+	</script>
+</body>
+</html>

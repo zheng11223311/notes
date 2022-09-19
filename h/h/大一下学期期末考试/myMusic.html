@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/jquery-3.1.1.min.js"></script>
+    <link rel="stylesheet" href="./css/myMusic.css">
+    <link rel="stylesheet" href="./css/font/iconfont.css">
+
+    <title>jquery-我的音乐</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1 class="logo"><a href="index.html"></a></h1>
+        <ul class="register">
+            <li>登入</li>
+            <li>设置</li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="content_in">
+            <div class="content_left">
+                <div class="content_toobal">
+                    <span><i></i>收藏</span>
+                    <span><i></i>添加到</span>
+                    <span><i></i>下载</span>
+                    <span><i></i>删除</span>
+                    <span><i></i>清空列表</span>
+                </div>
+                <div class="content_list">
+                    <ul>
+                        <li class="list_title">
+                            <div class="list_check"><i></i></div>
+                            <div class="list_number"></div>
+                            <div class="list_name">歌曲</div>
+                            <div class="list_singer">歌手</div>
+                            <div class="list_time">时长</div>
+                        </li>
+                        
+                       
+                    </ul>
+
+                </div>
+            </div>
+            <div class="content_right">
+                <div class="song_info">
+                    <a href="javascript:;" class="song_info_pic">
+                        <img src="img/LL.jpg" alt="">
+                    </a>
+                    <div class="song_info_name">歌曲名称:
+                        <a href="javascript:;">从零</a>
+                    </div>
+                    <div class="song_info_singer">歌手名称
+                        <a href="javascript:;">曾老师</a>
+                    </div>
+                    <div class="song_info_ablum">专辑名:
+                        <a href="javascript:;">从零玩转</a>
+                    </div>
+                </div>
+               <div class="song_lyric_box">
+                    <ul class="song_lyric">
+                    <!-- <li class="cur">你爱着谁 心徒留几道伤</li>
+                    <li>爱多可悲 恨彼此天涯各一方</li> -->
+                </ul>
+               </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer_in">
+            <a href="javascript:;" class="music_pre"></a>
+            <a href="javascript:;" class="music_play"></a>
+            <a href="javascript:;" class="music_next"></a>
+            <div class="music_progress_info">
+               
+                    <div class="music_progress_top">
+                        <!-- 踏山河 / 七叔 -->
+                        <span class="music_progress_name"></span>
+                        <!-- 00:00 / 04:28 -->
+                        <span class="music_progress_time"></span>
+                    </div>
+                    <div class="music_progress_bar">
+                        <div class="music_progress_line">
+                            <div class="music_progress_dot"></div>
+                        </div>  
+                    </div>
+                
+            </div>
+            <a href="javascript:;" class="music_mode "></a>
+            <a href="javascript:;" class="music_fav "></a>
+            <a href="javascript:;" class="music_down"></a>
+            <a href="javascript:;" class="music_comment"></a>
+            <a href="javascript:;" class="music_only music_only2"></a>
+            <div class="music_voice_info">
+                <a href="javascript:;" class="music_voice_icon"></a>
+                <div class="music_voice_bar">
+                        <div class="music_voice_line">
+                            <div class="music_voice_dot"></div>
+                        </div>
+            </div>
+        </div>
+    </div>
+ </div>
+<div class="mask_bg"></div>
+<div class="mask"></div>
+<audio src="./music/胜利_K-391_Alan Walker_Julie Bergan-Ignite.mp3"></audio>
+</body>
+<script src="./js/myMusic.js"></script>
+</html>

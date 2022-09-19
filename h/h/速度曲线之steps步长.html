@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>速度曲线之步长</title>
+</head>
+<body><pre>	
+			速度曲线细节
+			animation-timing-function:
+			规定动画的速度曲线,默认的是 ease
+
+			  值                  描述
+			linear       动画从头到尾的速度是相同的.匀速
+			ease         默认,动画以低速开始,然后加快,在结束前变慢
+			ease-in      动画以低速开始
+			ease-out     动画以低速结束
+			ease-in-out  动画以低速开始和结束
+			steps()  	 指定了时间函数中的间隔数量(步长)
+
+			 steps 就是分几步来完成我们的动画 有了steps 就不要再写 ease 或者 linear 了 
+			 animation:动画名称 持续时间  steps(10) forwards;
+			 分10步.应用于逐个打字效果
+
+			 white-space:nowrap;	强制一行显示
+
+			 一个div有多个动画时
+			 animation:bear 1s steps(8) infinite,move 1s forwards;
+
+
+</pre>
+	
+</body>
+</html>

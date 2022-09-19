@@ -1,0 +1,51 @@
+.shujia{
+    position: relative;
+    perspective: 800px;
+    width: 1000px;
+    transform-style: preserve-3d;
+}
+
+ .waikuang1{
+    position: absolute;
+     top: 100px;
+     left: -46px;
+    height: 600px;
+    width: 200px;
+    background-color: #999;
+    transform-origin: right;
+    transform: rotateY(90deg);
+     
+}
+.waikuang2{
+    position: absolute;
+   top: 100px;
+    left: 154px;
+     width: 800px;
+    height: 600px;
+    background-color:red;
+     opacity: 0.4;
+     
+}
+.waikuang3{
+       position: absolute;
+    top: 125px;
+    left: 1067px;
+    height: 749px;
+    width: 200px;
+    background-color: purple;
+    transform-origin: left;
+    transform: rotateY(90deg);
+    opacity: 0.4;
+}
+.waikuang4{
+        position: absolute;
+    top: 125px;
+    left: 150px;
+    height: 200px;
+    width: 852px;
+    background-color: purple;
+    transform-origin: left;
+    transform: rotateX(90deg) translate3d(0,0,125px);
+    opacity: 0.4;
+}
+}

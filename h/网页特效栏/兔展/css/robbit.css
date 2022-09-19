@@ -1,0 +1,717 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+/* header 部分 */
+header {
+    position: relative;
+    width: 1349px;
+    height: 80px;
+    line-height: 80px;
+    color: #999;
+    border-top: 3px solid rgba(242, 115, 10, 1);
+    border-bottom: 1px solid #999;
+}
+
+header>div {
+    margin: 0 auto;
+    width: 1200px;
+    height: 77px;
+}
+
+header>div>a>img {
+    position: absolute;
+    top: 15px;
+    width: 74px;
+    height: 44px;
+}
+
+header>div>ul {
+    display: inline-block;
+    margin-left: 200px;
+}
+
+header>div>ul:nth-child(3) {
+    margin-left: 30px;
+    display: inline-block;
+}
+
+/* 所有li */
+header>div>ul>li {
+    position: relative;
+    display: inline-block;
+    padding-right: 30px;
+}
+
+/* 第二个li */
+header>div>ul>li>div {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 10px;
+    width: 110px;
+    height: 130px;
+    line-height: 30px;
+    color: #999;
+    border-radius: 5px;
+    border: 1px solid #999;
+    background-color: #fff;
+    overflow: hidden;
+    z-index: 99;
+}
+
+header>div>ul>li>div>a {
+    padding-left: 20px;
+    display: block;
+    height: 30px;
+    color: #999;
+}
+
+header>div>ul>li>div>a:nth-child(n+2):hover {
+    background: #999;
+    color: rgba(252, 239, 6, 1);
+}
+
+header>div>ul>li>div>a:nth-child(1) {
+    border-bottom: 1px solid #999;
+}
+
+/* 第三个li */
+header>div>ul:nth-child(2)>li:nth-child(n+3)>div {
+    position: absolute;
+    top: 60px;
+    left: 0px;
+    width: 650px;
+    height: 230px;
+    line-height: 30px;
+    border-radius: 5px;
+    overflow: hidden;
+    /* 去除行内元素间距 */
+    word-spacing: -10px;
+}
+
+header>div>ul:nth-child(2)>li:nth-child(n+3)>div>span {
+    padding-left: 30px;
+    padding-right: 30px;
+    display: inline-block;
+}
+
+header>div>ul:nth-child(2)>li:nth-child(n+3)>div>span>a {
+    padding-top: 5px;
+    color: #999;
+    display: block;
+
+}
+
+header>div>ul:nth-child(2)>li:nth-child(n+3)>div>span>a:nth-child(1) {
+    border-bottom: 1px solid #999;
+}
+
+header>div>ul:nth-child(2)>li:nth-child(n+3)>div>span>a:nth-child(n+2):hover {
+    background: rgba(227, 205, 248, 0.3);
+    ;
+    color: rgba(252, 239, 6, 1);
+}
+
+/* 第四个li */
+header>div>ul:nth-child(2)>li:nth-child(4)>div {
+    position: absolute;
+    top: 60px;
+    left: 0px;
+    width: 370px;
+    height: 300px;
+    line-height: 30px;
+    border-radius: 5px;
+    overflow: hidden;
+    /* 去除行内元素间距 */
+    word-spacing: -10px;
+}
+
+/* 第五个li */
+header>div>ul:nth-child(2)>li:nth-child(5)>div {
+    position: absolute;
+    top: 60px;
+    left: 0px;
+    width: 660px;
+    height: 260px;
+    line-height: 30px;
+    border-radius: 5px;
+    overflow: hidden;
+    /* 去除行内元素间距 */
+    word-spacing: -10px;
+}
+
+/* 第六个li */
+header>div>ul:nth-child(2)>li:nth-child(6)>div {
+    position: absolute;
+    top: 60px;
+    left: -200px;
+    width: 640px;
+    height: 220px;
+    line-height: 30px;
+    border-radius: 5px;
+    overflow: hidden;
+    /* 去除行内元素间距 放于父元素上 */
+    word-spacing: -10px;
+}
+
+header>div>ul:nth-child(2)>li:nth-child(6)>div {
+    display: none;
+    /* display:flex; */
+    justify-content: center;
+    align-self: flex-start;
+}
+
+/* hot 图标 */
+header>div>ul:nth-child(2)>li:nth-child(1)::before {
+    position: absolute;
+    content: "";
+    width: 25px;
+    height: 17px;
+    left: 65px;
+    top: 20px;
+    background: url(../img/2.png) no-repeat;
+    background-size: 25px 17px;
+}
+
+header>div>ul:nth-child(3)>li {
+    display: inline-block;
+    padding-right: 30px;
+}
+
+header>div>ul>li:hover {
+    color: rgba(252, 239, 6, 1);
+}
+
+header>div>ul:nth-child(2)>li:nth-child(3),
+header>div>ul:nth-child(3)>li:nth-child(2) {
+    color: rgba(252, 239, 6, 1);
+}
+
+header>div>ul:nth-child(3)>li:nth-child(2):hover {
+    color: aqua;
+}
+
+/* nav 部分 */
+nav {
+    position: relative;
+    margin: 50px auto;
+    width: 1230px;
+    height: 400px;
+    padding-left: 50px;
+    box-shadow: 5px -5px 10px rgba(0, 0, 0, 0.3);
+}
+
+nav div:nth-child(1) h2 {
+    display: inline-block;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    height: 68px;
+    width: 178px;
+    border-bottom: 3px solid rgba(242, 115, 10, 1);
+}
+
+nav div:nth-child(1)>span {
+    position: absolute;
+    top: 70px;
+    left: 50px;
+    width: 221px;
+    height: 330px;
+}
+
+nav div:nth-child(1)>span>ul>li {
+    padding-left: 20px;
+    margin-top: 20px;
+}
+
+nav div:nth-child(1)>span>ul>li>a {
+    color: #999;
+}
+
+nav div:nth-child(1)>span>ul>li>a:hover {
+    color: rgba(242, 115, 10, 1);
+}
+
+nav div:nth-child(1)>div {
+    position: absolute;
+    top: 0px;
+    left: 280px;
+    width: 950px;
+    height: 400px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+nav div:nth-child(1)>div>span {
+    position: absolute;
+    top: 0px;
+    /* left: 280px; */
+    width: 950px;
+    height: 400px;
+    overflow: hidden;
+}
+
+nav div:nth-child(1)>div>img:nth-child(-n+2) {
+    position: absolute;
+    top: 180px;
+    left: -30px;
+    width: 30px;
+    height: 60px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    opacity: 0;
+    transition: all 1s;
+    z-index: 2;
+}
+
+nav div:nth-child(1)>div>img:nth-child(2) {
+    position: absolute;
+    top: 180px;
+    left: 960px;
+}
+
+nav div:nth-child(1)>div>span {
+    position: absolute;
+    width: 4200px;
+    height: 400px;
+}
+
+nav div:nth-child(1)>div>span>img:nth-child(n) {
+    float: left;
+}
+
+nav div:nth-child(1)>div:hover .a {
+    transform: translateX(60px);
+    opacity: 1;
+}
+
+nav div:nth-child(1)>div:hover .b {
+    transform: translateX(-100px);
+    opacity: 1;
+}
+
+/* article 部分 */
+article {
+    position: relative;
+    top: 30px;
+    left: 60px;
+    width: 1230px;
+}
+
+article h1 {
+    font-size: 40px;
+    text-align: center;
+}
+
+article>div {
+    position: relative;
+    width: 1230px;
+}
+
+article>div>span>h2 {
+    position: absolute;
+    width: 1230px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+article>div>span:nth-child(1)>span {
+    position: absolute;
+    right: 0px;
+    width: 118px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    font-size: 18px;
+    color: rgba(242, 115, 10, 1);
+    margin-bottom: 10px;
+}
+
+article>div>span:nth-child(1)>span:hover {
+    color: #fff;
+    background: rgba(242, 115, 10, 1);
+}
+
+article>div>span:nth-child(2) {
+    position: absolute;
+    top: 60px;
+    width: 1230px;
+    height: 478px;
+}
+
+article>div>span:nth-child(2)>span:nth-child(1) {
+    position: absolute;
+    width: 280px;
+    height: 478px;
+    background: url(../img/8.png) no-repeat;
+    background-size: 280px 478px;
+}
+
+article>div>span:nth-child(2)>span:nth-child(2) {
+    position: absolute;
+    left: 320px;
+    width: 433px;
+    height: 226px;
+    background: url(../img/9.png) no-repeat;
+    background-size: 433px 226px;
+}
+
+article>div>span:nth-child(2)>span:nth-child(3) {
+    position: absolute;
+    left: 796px;
+    width: 433px;
+    height: 226px;
+    background: url(../img/10.png) no-repeat;
+    background-size: 433px 226px;
+}
+
+article>div>span:nth-child(2)>span:nth-child(4) {
+    position: absolute;
+    top: 252px;
+    left: 320px;
+    width: 280px;
+    height: 226px;
+    background: url(../img/11.png) no-repeat;
+    background-size: 280px 226px;
+}
+
+article>div>span:nth-child(2)>span:nth-child(5) {
+    position: absolute;
+    top: 252px;
+    left: 630px;
+    width: 280px;
+    height: 226px;
+    background: url(../img/12.png) no-repeat;
+    background-size: 280px 226px;
+}
+
+
+article>div>span:nth-child(2)>span:nth-child(6) {
+    position: absolute;
+    top: 252px;
+    left: 950px;
+    width: 280px;
+    height: 226px;
+    background: url(../img/13.png) no-repeat;
+    background-size: 280px 226px;
+}
+
+article>div>span:nth-child(2)>span>h2 {
+    color: #fff;
+    padding-left: 30px;
+    padding-top: 40px;
+    padding-bottom: 10px;
+}
+
+article>div>span:nth-child(2)>span>p {
+    color: #fff;
+    padding-left: 30px;
+    padding-bottom: 10px;
+    font-size: 15px;
+}
+
+article>div>span:nth-child(2)>span:hover {
+    transform: translateY(-5px);
+
+}
+
+article>div>span:nth-child(2)>span>span {
+    position: absolute;
+    left: 30px;
+    padding-right: 10px;
+    bottom: 10px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    line-height: 36px;
+    text-align: end;
+    transform-origin: 0 0;
+    transition: all 1s;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+article>div>span:nth-child(2)>span:hover span {
+    width: 100px;
+    height: 36px;
+    border-radius: 18px;
+    background-color: rgba(204, 57, 9, 1);
+
+}
+
+/* section 部分 */
+section {
+    position: relative;
+    top: 650px;
+    left: 50px;
+    width: 1230px;
+    height: 600px;
+}
+
+section>div:nth-child(1) {
+    position: absolute;
+    width: 1230px;
+    height: 60px;
+}
+
+section>div:nth-child(1)>h1 {
+    width: 1230px;
+    height: 60px;
+}
+
+section>div:nth-child(1)>span {
+    width: 1230px;
+    height: 60px;
+}
+
+section>div:nth-child(1)>span {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 118px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    font-size: 18px;
+    color: rgba(242, 115, 10, 1);
+    margin-bottom: 10px;
+}
+
+section>div:nth-child(1)>span:hover {
+    color: #fff;
+    background: rgba(242, 115, 10, 1);
+}
+
+section>div:nth-child(2) {
+    position: absolute;
+    top: 60px;
+    width: 586px;
+    height: 226px;
+    background: url(../img/20.png) no-repeat;
+    background-size: 586px 226px;
+}
+
+section>div>h2 {
+    position: absolute;
+    left: 30px;
+    top: 40px;
+}
+
+section>div>p {
+    position: absolute;
+    left: 30px;
+    top: 70px;
+}
+
+section>div:nth-child(4)>span,
+section>div:nth-child(3)>span {
+    position: absolute;
+    left: 30px;
+    bottom: 10px;
+    width: 36px;
+    height: 36px;
+    border-radius: 18px;
+    line-height: 36px;
+    padding-right: 10px;
+    text-align: end;
+    transform-origin: 0 0;
+    transition: all 0.6s;
+    overflow: hidden;
+    background-color: #fff;
+
+}
+
+section>div:nth-child(2)>span {
+    position: absolute;
+    left: 30px;
+    bottom: 10px;
+    width: 36px;
+    height: 36px;
+    border-radius: 18px;
+    padding-right: 10px;
+    line-height: 36px;
+    text-align: end;
+    transform-origin: 0 0;
+    transition: all 0.6s;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+section>div:nth-child(2):hover span {
+    width: 120px;
+    background: rgba(242, 115, 10, 1);
+}
+
+section>div:nth-child(3):hover span {
+    width: 120px;
+    background: rgba(242, 115, 10, 1);
+}
+
+section>div:nth-child(4):hover span {
+    width: 120px;
+    background: rgba(242, 115, 10, 1);
+}
+
+section>div:nth-child(3) {
+    position: absolute;
+    top: 60px;
+    left: 640px;
+    width: 280px;
+    height: 478px;
+    background: url(../img/21.png) no-repeat;
+    background-size: 280px 478px;
+}
+
+section>div:nth-child(4) {
+    position: absolute;
+    top: 60px;
+    left: 950px;
+    width: 280px;
+    height: 478px;
+    background: url(../img/22.png) no-repeat;
+    background-size: 280px 478px;
+}
+
+section>div:nth-child(4)>h6 {
+    position: relative;
+    top: 120px;
+    left: 30px;
+}
+
+section>div:nth-child(5) {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    /* align-items: flex-end; */
+    align-content: space-around;
+    flex-wrap: wrap;
+    top: 320px;
+    width: 586px;
+    height: 222px;
+}
+
+section>div:nth-child(5)>span {
+    width: 178px;
+    height: 100px;
+    padding-left: 30px;
+    padding-top: 20px;
+    font-size: 22px;
+    border: 1px solid #999;
+}
+
+section>div:nth-child(5)>span:nth-child(1) {
+    background: url(../img/14.png) no-repeat;
+    background-size: 178px 100px;
+}
+
+section>div:nth-child(5)>span:nth-child(2) {
+    background: url(../img/15.png) no-repeat;
+    background-size: 178px 100px;
+}
+
+section>div:nth-child(5)>span:nth-child(3) {
+    background: url(../img/16.png) no-repeat;
+    background-size: 178px 100px;
+}
+
+section>div:nth-child(5)>span:nth-child(4) {
+    background: url(../img/17.png) no-repeat;
+    background-size: 178px 100px;
+}
+
+section>div:nth-child(5)>span:nth-child(5) {
+    background: url(../img/18.png) no-repeat;
+    background-size: 178px 100px;
+}
+
+section>div:nth-child(5)>span:nth-child(6) {
+    background: url(../img/19.png) no-repeat;
+    background-size: 178px 100px;
+}
+
+section>div:nth-child(5)>span:hover {
+    transform: translateY(-7px);
+}
+
+section>div:nth-child(2):hover,
+section>div:nth-child(3):hover,
+section>div:nth-child(4):hover {
+    transform: translateY(-7px);
+}
+
+footer {
+    position: fixed;
+    right: 50px;
+    bottom: 170px;
+    display: block;
+    width: 66px;
+    height: 300px;
+
+
+}
+
+footer img {
+    position: absolute;
+    right: -10px;
+    width: 90px;
+    animation: cc 1s backwards infinite;
+}
+
+@keyframes cc {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+footer div {}
+
+footer div>span {
+    position: absolute;
+    width: 66px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    border: 1px solid #999;
+    background-color: #fff;
+    border-bottom: none;
+    font-size: 12px;
+    /* border-collapse: collapse; */
+
+}
+
+footer div>span:nth-child(1) {
+    top: 100px;
+}
+
+footer div>span:nth-child(2) {
+    top: 160px;
+}
+
+footer div>span:nth-child(3) {
+    top: 220px;
+}
+
+footer div>span:nth-child(4) {
+    border: 1px solid #999;
+    top: 280px;
+}
+
+footer div>span:nth-child(5) {
+    border: 1px solid #999;
+    top: 390px;
+}
+
+footer div>span:hover {
+    color: rgba(242, 115, 10, 1);
+}

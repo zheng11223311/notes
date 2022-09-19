@@ -1,0 +1,29 @@
+关于js Uncaught TypeError: Cannot read property 'style' of null 问题
+
+
+1.你调用属性的object是空的，你看看是不是没有找到你想要的对象，可能你调用的对象调用错了
+
+
+比如你想用 document.getElementById("text1").style
+
+其实这个控件id是test1，一些拼写错误导致
+
+2.有重复的id
+
+3.在页面还没加载完成就获取那个元素的属性,导致获取属性失败
+
+1.在页面还没加载完成就获取那个元素的属性,导致获取属性失败
+
+这类问题有很多情况
+
+常见的是调用的或许html标签的js写在了js上面，
+导致js加载完毕而html元素尚未加载，找不到目标
+
+我的问题是，js虽然写在html下面。但是在弹窗的时候重复调用获取基本信息页面。
+导致js报错
+
+2.是不是书写的问题 比如想document.getElementById("a").style 
+写错为 document.getElementById("ɑ").style等
+
+3.你调用属性的object是空的，你看看是不是没有找到你想要的对象，
+可能你调用的对象调用错了

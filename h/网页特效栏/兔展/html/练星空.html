@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            overflow: hidden;
+            /* background: #000; */
+        }
+
+        h1 {
+            position: absolute;
+            line-height: 50px;
+            letter-spacing: 5px;
+            color: #fff;
+            width: 300px;
+            top: 40%;
+            left: 50%;
+            margin-left: -200px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>
+
+    </h1>
+    <canvas>
+
+    </canvas>
+</body>
+<script>
+    var canvas = document.querySelector('canvas')
+    var ctx = canvas.getContext('2d')
+    w = canvas.width = innerWidth
+    // console.log(w);
+    h = canvas.height = innerHeight
+    // ctx.fillStyle = 'aqua'
+
+    function Star() {
+        function ds(x) {
+
+            // var x = Math.random() * w
+            // var y = Math.random() * h
+            var x = w / 4 * Math.sin(x / 100) + w / 2
+            var y = h / 2 * Math.sin(x / 100) + h / 2
+            // console.log(x);
+            // y = Math.cos(a) * h / 2 + h / 2;
+            // y = 300
+            // 渐变的开始圆的 x 坐标
+            // 渐变的开始圆的 y 坐标
+            // 开始圆的半径
+            // 渐变的结束圆的 x 坐标
+            // 渐变的结束圆的 y 坐标
+            // 结束圆的半径
+
+            var grandient = ctx.createRadialGradient(x, y, 0, x, y, a);
+            grandient.addColorStop(0.025, '#fff');
+            grandient.addColorStop(0.1, 'hsl(220,59%,18%)');
+            grandient.addColorStop(0.025, 'hsl(220,60%,33%)');
+            grandient.addColorStop(1, "transparent");
+            ctx.fillStyle = grandient;
+            ctx.beginPath();
+            // arc(x, y, r, start, stop)
+            ctx.arc(x, y, a, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.closePath();
+            // console.log(a);
+        }
+        var a = Math.random() * 360
+        var x = Math.random() * w
+        function draw() {
+            var z = x
+            ctx.clearRect(0, 0, w, h)
+            if (x < 360) {
+                x++
+            } else {
+                x = z
+                x++
+            }
+            // console.log(x);
+            ds(x)
+            requestAnimationFrame(draw);
+
+        }
+        draw()
+    }
+    Star()
+    // for (var i = 0; i < 100; i++) {
+    //     Star()
+    // }
+
+
+    // var oH = document.getElementsByTagName("h1")[0];
+    // var arr = ["这世间过于俗气", "不像你一般", "浩瀚星辰,温柔婉转"],
+    //     index = 0,
+    //     arrLen = arr.length,
+    //     strLen = arr[0].length;
+    // pos = 0,
+    //     row = 0,
+    //     str = "",
+    //     timer = null;
+    // function print() {
+    //     while (row < index) {
+    //         str = str + arr[row] + "<br>";
+    //         row++;
+    //     }
+    //     oH.innerHTML = str + arr[index].substring(0, pos);
+    //     if (pos == strLen) {
+    //         index++;
+    //         pos = 0;
+    //         if (index < arr.length) {
+    //             strLen = arr[index].length;
+    //             timer = setTimeout(print, 250);
+    //         }
+    //     } else {
+    //         pos++;
+    //         timer = setTimeout(print, 250);
+    //     }
+    // }
+    // setTimeout(print, 250);
+</script>
+
+</html>

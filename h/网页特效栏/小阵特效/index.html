@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>小阵</title>
+	<style>
+	* {
+    margin:0; 
+    padding:0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background: url(5.jpg);
+    transform-style: preserve-3d;
+    perspective: 200vh;
+}
+div{
+    position: absolute;
+    margin: 5vh calc(30%);
+    width: 90vh;
+    height:90vh;
+    transform: rotateX(80deg)  translate3d(-10vh,0 ,-20vh);
+    /* transform-origin: center center; */
+    animation: rotate 8s linear 0s infinite forwards ;
+}
+
+@keyframes rotate {
+    0%{
+         transform:translateZ(-1000vh) rotateX(80deg) rotateZ(0deg) ;
+    }
+    50%{
+        transform: translateZ(-10vh) rotateX(80deg) rotateZ(360deg);
+    }
+     100%{
+         transform:translateZ(-1000vh) rotateX(80deg) rotateZ(0deg) ;
+    }
+}
+header{
+    position: absolute;
+     transform-style: preserve-3d;
+    perspective: 200vh;
+    width: 90vh;
+    height:90vh;
+    border: 4vh solid rgb(250, 243, 243);
+    border-radius: 50%;
+}
+
+header::before{
+    content: "";
+    position: absolute;
+    width: 60vh;
+    height:60vh;
+     margin:13vh;
+    border: 2vh solid rgb(250, 243, 243);
+    border-radius: 50%;
+    z-index: 1;
+}
+main{
+    /* 以header 为父级 */
+   position: absolute;
+   transform-style: preserve-3d;
+    perspective: 200vh;
+   width: 20vh;
+   height:20vh;
+   line-height: 20vh;
+     margin:31vh;
+     font-size: 6vh;
+     color: darkblue;
+     text-align: center;
+    border: 4vh solid rgb(250, 243, 243);
+    border-radius: 50%;
+    z-index: 2;
+}
+main::before{
+    /* 以main为父级 */
+    /* content: "";
+    position: absolute;
+    transform: translateZ(30vh);
+    width: 20vh;
+    height:20vh;
+     margin:8vh;
+    border: 2vh solid rgb(250, 243, 243);
+    border-radius: 50%;
+    z-index: 3; */
+}
+article{
+       position: absolute;
+       left: 2vh;
+       top: 45vh;
+       width:12vh ;
+       height: 12vh;
+       border-radius: 6vh;
+       background-color:rgb(250, 243, 243);
+       transform-origin: 43vh 0vh;
+       transform: rotateZ(calc(var(--i)*40deg));
+}
+
+
+	</style>
+</head>
+<body>
+    <div>
+
+    <header>
+        <main>
+            2 0 2 1
+        </main>
+        <article style="--i:1;"> </article>
+        <article style="--i:2;"> </article>
+        <article style="--i:3;"> </article>
+        <article style="--i:4;"> </article>
+        <article style="--i:5;"> </article>
+        <article style="--i:6;"> </article>
+        <article style="--i:7;"> </article>
+        <article style="--i:8;"> </article>
+        <article style="--i:9;"> </article>
+    </header>
+    
+</div>
+	<script>
+       
+	</script>
+</body>
+</html>

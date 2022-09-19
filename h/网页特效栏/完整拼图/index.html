@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+
+	<title>旋转摩天轮</title>
+	<style>
+		body{
+		overflow: hidden;
+		}
+		section{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-self: center;
+		z-index: 11;
+		}
+		div{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-self: center;
+		z-index: 1;
+		}
+		span{
+			width: 30%;
+			height: 100vh;
+		}
+		section span:nth-child(2n+1)
+		{
+			height: 100vh;
+			background: url(./img/300.jpg) no-repeat;
+			/* background-position: center; */
+
+			/* 两个属性结合 背景图片不重复,拼成完整的一张 */ 
+			background-size: cover;
+           background-attachment: fixed;
+			position: relative;
+			animation: move 1s 1 forwards;
+		}
+		section span:nth-child(2){
+			height: 100vh;
+			background: url(./img/300.jpg) no-repeat;
+			/* background-position: center; */
+
+			/* 两个属性结合 背景图片不重复,拼成完整的一张 */ 
+			background-size: cover;
+           background-attachment: fixed;
+			position: relative;
+			animation: movetop 1s 1 forwards;
+		}
+		div span:nth-child(1){
+			height: 100vh;
+			background: url(./img/2.jpg) no-repeat;
+			/* background-position: center; */
+
+			/* 两个属性结合 背景图片不重复,拼成完整的一张 */ 
+			background-size: cover;
+           background-attachment: fixed;
+			position: relative;
+			transform: translateX(-120%);
+			animation: moveleft 1s 1 1s forwards;
+		}
+		div span:nth-child(3){
+			height: 100vh;
+			background: url(./img/2.jpg) no-repeat;
+			/* background-position: center; */
+
+			/* 两个属性结合 背景图片不重复,拼成完整的一张 */ 
+			background-size: cover;
+           background-attachment: fixed;
+			position: relative;
+			transform: translateX(120%);
+			animation: moveright 1s 1 1s forwards;
+		}
+		div span:nth-child(2){
+			height: 100vh;
+			background: url(./img/2.jpg) no-repeat;
+			/* background-position: center; */
+
+			/* 两个属性结合 背景图片不重复,拼成完整的一张 */ 
+			background-size: cover;
+           background-attachment: fixed;
+			position: relative;
+			transform: translateY(-120%);
+			animation: movemill 1s 1 1s forwards;
+		}
+		
+		@keyframes move {
+			0%{
+				transform: translateY(0px);
+			}
+			100%{
+				transform: translateY(100%);
+			}
+		}
+		@keyframes movetop {
+			0%{
+				transform: translateY(0px);
+			}
+			100%{
+				transform: translateY(-110%);
+			}
+		}
+		@keyframes moveleft {
+			0%{
+				transform: translateX(-120%);
+			}
+			100%{
+				transform: translateX(0%);
+			}
+		}
+		@keyframes moveright {
+			0%{
+				transform: translateX(120%);
+			}
+			100%{
+				transform: translateX(0%);
+			}
+		}
+		@keyframes movemill {
+			0%{
+				transform: translateY(-120%);
+			}
+			100%{
+				transform: translateY(0%);
+			}
+		}
+
+
+	</style>
+</head>
+<body>
+	<section>
+		
+	</section>
+	<div></div>
+<script>
+	var section=document.querySelector('section')
+	var div=document.querySelector('div')
+	for(var i=0;i<3;i++){
+	var span=document.createElement('span')
+	section.appendChild(span)
+	}
+	for(var i=0;i<3;i++){
+	var span=document.createElement('span')
+	div.appendChild(span)
+	}
+
+</script>
+</body>
+</html>

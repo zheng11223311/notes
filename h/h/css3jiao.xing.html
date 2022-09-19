@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+
+	div{
+		position: relative;
+		margin: 0 auto;
+		padding: 0 auto;
+		width: 500px;
+		height: 100px;
+		background-color:red;
+		/*border:10px;
+		border-color: pink;
+		border-style: solid;*/
+		top: 10px;
+	}
+	span{
+		position: relative;
+		top: -30px;
+		width:0;
+		height: 0;
+		border:10px solid red;
+		border-left-color: transparent;
+		border-right-color: transparent;
+		border-top-color: transparent;
+	}
+	.qq{
+		top: 20px;
+		width: 100px;
+		height: 20px;
+		border:1px solid skyblue;
+		background-color: white;
+	
+	}
+	.i{
+		position: absolute;
+		width: 60px;
+		height: 20px;
+		background-color: red;
+	}
+	.i1{
+		position: absolute;
+		left: 40px;
+		width: 0px;
+		height: 0px;
+		border: 10px solid white;
+		border-color:transparent white white transparent;
+
+	}
+	p{
+	float: right;
+	text-decoration:line-through;
+	}
+
+	
+</style>
+
+<body>
+	<span></span>
+	<div>
+	<span></span>
+	<span></span>
+
+	</div>
+	<div class="qq">
+<i class="i">$199</i>
+<i class="i1"></i>
+<p>$999</p>
+
+	</div>
+</body>
+</html>

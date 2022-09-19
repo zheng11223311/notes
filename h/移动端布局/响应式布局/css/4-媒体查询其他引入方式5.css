@@ -1,0 +1,12 @@
+/* 最大屏幕时候展示 */
+#div0 div:nth-child(1) {
+            width: 33.33%;
+        }
+
+        #div0 div:nth-child(2) {
+            width: 33.33%;
+        }
+
+        #div0 div:nth-child(3) {
+            width: 33.33%;
+        }

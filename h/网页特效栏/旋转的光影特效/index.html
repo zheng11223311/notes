@@ -1,0 +1,224 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>旋转的光影</title>
+ 
+<style>
+	*{
+		margin:0;
+		padding: 0;
+	}
+	body{
+		min-height: 1vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-image: linear-gradient(to right,#ffffff06 50%,transparent 50%);
+		background: #000;
+		background-size: 2em;
+	}
+	.ball{
+		margin: 100px auto;
+		width: 10em;
+		height: 10em;
+		animation: animate 12s linear infinite;
+		transform-style: preserve-3d;
+	}
+	@keyframes animate{
+		
+		100%{
+			transform:rotateX(360deg) rotateY(720deg) rotateZ(360deg);
+		}
+		
+	}
+	.circle{
+		width: 10em;
+		height: 10em;
+		position: absolute;
+		transform-style: preserve-3d;
+		perspective: 400em;
+	}
+	.circle2{
+		transform: rotateX(45deg) rotateY(45deg);
+	}
+	.circle3{
+		transform: rotateX(45deg) rotateZ(45deg);
+	}
+	.side{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			border-radius: 50%;
+			box-sizing: border-box;
+			border:1px dotted #ffd50059;
+			transform-style: preserve-3d;
+			perspective: 400em;
+
+	}
+	.side::before,
+	.side::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+		border:1px solid;
+		border-radius: inherit;
+
+	}
+	.side::before{
+		width: 2.5em;
+		height: 2.5em;
+		color: gold;
+		/*默认使用上面的color:gold颜色*/
+		box-shadow: inset 0 0 2em,0 0 2em;
+	}
+	.side::after {
+		width: 1.5em;
+		height: 1.5em;
+		color: teal;
+		box-shadow: inset 0 0 1em,0 0 1em;
+		transform: translateZ(-3em);
+	}
+	.circle .front{
+			transform: translateZ(5em);		
+	}
+	.circle .back{
+			transform: translateZ(-5em) rotateY(180deg);		
+	}
+	.circle .left{
+			transform: translateX(-5em) rotateY(-90deg);		
+	}
+	.circle .right{
+			transform: translateX(5em) rotateY(90deg);		
+	}
+	.circle .top{
+			transform: translateY(-5em) rotateX(90deg);		
+	}
+	.circle .bottom{
+			transform: translateY(5em) rotateX(-90deg);		
+	}
+	.inner{
+		position: absolute;
+		height: 50%;
+		width: 50%;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+		border-radius: inherit;
+		color: orangered;
+		box-shadow:  inset 0 0 2em;
+		transform: translateZ(2em);
+		transform-style: preserve-3d;
+		perspective: 400em;
+	}
+	.inner::before,
+	.inner::after{
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+		border:1px solid;
+		border-radius: inherit;
+		box-shadow: inset 0 0 2em,0 0 2em;
+	}
+	.inner::before{
+		width: 2.5em;
+		height: 2.5em;
+		color: crimson;
+		transform: translateZ(2em);
+	}
+	.inner::after{
+		width: 1.5em;
+		height: 1.5em;
+		color: purple;
+		transform: translateZ(4em);
+	}
+	
+</style>
+</head>
+<body>
+ 
+ 	<div class=" ball">
+ 		<div class="circle circle1">
+		<div class="side front">
+			<div class="inner"></div>
+		</div>
+		<div class="side back">
+			<div class="inner"></div>
+		</div>
+		<div class="side left">
+			<div class="inner"></div>
+		</div>
+		<div class="side right">
+			<div class="inner"></div>
+		</div>
+		<div class="side top">
+			<div class="inner"></div>
+		</div>
+		<div class="side bottom">
+			<div class="inner"></div>
+		</div>
+
+	
+ 		<div class="circle circle2">
+		<div class="side front">
+			<div class="inner"></div>
+		</div>
+		<div class="side back">
+			<div class="inner"></div>
+		</div>
+		<div class="side left">
+			<div class="inner"></div>
+		</div>
+		<div class="side right">
+			<div class="inner"></div>
+		</div>
+		<div class="side top">
+			<div class="inner"></div>
+		</div>
+		<div class="side bottom">
+			<div class="inner"></div>
+		</div>
+
+ 		<div class="circle circle3">
+		<div class="side front">
+			<div class="inner"></div>
+		</div>
+		<div class="side back">
+			<div class="inner"></div>
+		</div>
+		<div class="side left">
+			<div class="inner"></div>
+		</div>
+		<div class="side right">
+			<div class="inner"></div>
+		</div>
+		<div class="side top">
+			<div class="inner"></div>
+		</div>
+		<div class="side bottom">
+			<div class="inner"></div>
+		</div>
+		</div>
+ 	</div>
+
+
+
+
+
+
+
+
+
+ <script>
+ 
+</script>

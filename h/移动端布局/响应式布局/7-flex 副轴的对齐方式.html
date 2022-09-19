@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        #div0 {
+            width: 500px;
+            background-color: brown;
+            display: flex;
+
+        }
+
+        #div0 div {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+
+        }
+
+        #div0 div
+    </style>
+</head>
+
+<body>
+    <pre>
+
+            align-self(单个)
+    忘了
+
+            align-content(多行)
+
+    flex-start          一列的开头(横轴为主轴时)
+    flex-end            一列的结尾开始(横轴为主轴时)
+    center              居中
+    space-between       平均分配,两边不留空隙
+    space-around        平均分配,两边留一半空隙
+
+
+                align-item (单行对齐)
+
+    flex-start          一列的开头(横轴为主轴时)
+    flex-end          一列的结尾开始(横轴为主轴时)
+    center              居中
+
+                justify-content
+
+    flex-start      --> 挨着一行的开头
+    flex-end         <-- 挨着一行的结尾
+    center          居中
+    space-between   平均分配,两边不留空隙
+    space-around   平均分配,两边留一半空隙
+    
+                flex-direction
+
+
+    row                     ---->
+    row-reserve             <------
+    column                  上-->下
+    column-reserve           下-->上
+
+
+
+                flex-wrap
+
+
+    nowrap                  不换行/列
+    wrap                    换行/列
+    wrap-reserve            相反顺序换行/列 
+
+            flex-flow 两者的混合
+
+        flex-flow:flex-direction flex-wrap;
+    </pre>
+</body>
+<div id="div0">父元素宽度不够时,子元素会自动压缩,适应父元素
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+</div>
+
+</html>

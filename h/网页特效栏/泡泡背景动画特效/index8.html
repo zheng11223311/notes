@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport"
+        content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css">
+    <title>泡泡背景动画</title>
+   <style>
+       *{
+           margin: 0;
+           padding: 0;
+           box-sizing: border-box;
+       }
+       .container{
+           position: relative;
+           width: 100%;
+           height: 100%;
+           display:flex;
+           justify-content: center;
+           align-items: center;
+           flex-wrap: wrap;
+           background-color: #000;
+           overflow: hidden;
+       }
+       .container span{
+           position: relative;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           min-width: 20px;
+           min-height: 20px;
+       }
+       .container span::before{
+           content: "";
+           position: absolute;
+           width: 100%;
+           height: 100%;
+           /* 背景图片不重复,拼成完整的一张 */
+           background: url(./img/2.jpg);
+           background-size: cover;
+           background-position: center;
+           background-attachment: fixed;
+            transition: 4s;
+            opacity: 0;
+            border-radius: 50%;
+            pointer-events: none;
+       }
+       .container span:hover::before{
+           /* 泡泡消失的时候重叠会有湖面波动的效果 */
+           width: 1000%;
+           height: 1000%;
+           transition: 0s;
+           opacity: 1;
+       }
+   </style>
+
+</head>
+<body >
+    <section class="container">
+
+    </section>
+    <script >
+        for( let i=1;i<=3000;i++){
+            let box=document.createElement('span');
+            document.querySelector('.container').appendChild(box);
+        }
+    </script>
+</body>
+
+</html>

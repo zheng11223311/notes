@@ -1,0 +1,462 @@
+1.块级元素
+常用的块级元素:<div>.<p>.<h1>...<h6>.<ol>.<ul>.<dl>.<table>.<address>,<blockquote>.<form>
+块级元素特点：
+	1、每个块级元素都从新的一行开始，并且其后的元素也另起一行。（霸道，一个块级元素独占一行）
+	2、元素的高度、宽度、行高以及顶和底边距都可设置。
+	3、元素宽度在不设置的情况下，是它本身父容器的100%（和父元素的宽度一致）
+	
+常用内联元素：<a>、<span>、<br>、<i>、<em>、<strong>、<label>、<q>
+内联元素特点：
+	1、和其他元素都在一行上；
+	2、元素的高度、宽度及顶部和底部边距不可设置；
+	3、元素的宽度就是它包含的文字或图片的宽度，不可改变。
+
+常用内联块元素：<img>、<input>	
+内联块级元素特点：（同时具备内联元素、块级元素的特点）
+	1、和其他元素都在一行上；
+	2、元素的高度、宽度、行高以及顶和底边距都可设置！
+块级元素才能使用margin auto
+
+	
+2.top 如果 "position" 属性的值为 "static"，那么设置 "top" 属性不会产生任何效果。
+3.如果使用了display:none，会使该标签消失；可以通过display:block重新恢复该标签。但是这里有
+一个问题，使用了display：none之后会使该标签原本的样式被清除，所以就算重新恢复标签也不会恢
+复原本的样式。
+
+解决办法：
+
+不要直接令某一个标签的display属性设置为none，应当用一个div标签将要消失的标签包起来，然后通过该div标签的display
+来实现内部标签的隐藏和恢复，这样就不会破坏原本的样式了。
+
+4.background复合写法
+background : background-color background-image background-repeat background-attachment background-position;
+默认值background: transparent none repeat scroll 0% 0%;
+默认值(中文意思)background: 透明 / 无背景图片 / 平铺 / 背景图片随文本滚动(不理解的一定要自己动手试一下) / 位于元素左上角
+
+5.行内元素设置成浮动之后变得更加像是 inline-block行内块级元素,设置成这个属性的元素会同时拥有行内和块级的特性
+
+6.Z-index 仅能在定位元素上奏效（例如 position:absolute;）！
+
+7.css的left和top属性指的是距最近的一个position属性为relative或者absolute的父级元素的左边或上边的距离，所以当要设置
+css的top和left的属性时，一定要确保定义position为absolute或者relative
+"position":"absolute","top":"500px","left":"500px"
+
+8.关于background-size的语法说明：
+
+（1）属性名:background-size
+
+（2）属性值:
+
+<bg-size>* 其中 bg-size = [ <length> | <percentage> | auto ]{1,2} | cover | contain
+
+（3）初始值:auto auto
+
+（4）应用于:所有元素
+
+（5）继承性:无
+
+（6）百分比:后面会说明
+
+（7）计算值:根据指定
+代码说明：
+
+/* 一个值: 这个值指定图片宽度，第二个值为auto */
+
+background-size: auto
+
+background-size: 50%
+
+background-size: 3em
+
+background-size: 12px
+
+ 
+
+/* 两个值: 第一个值指定图片的宽度，第二个值指定图片的高度 */
+
+background-size: 50% auto
+
+background-size: 3em 25%
+
+background-size: auto 6px
+
+background-size: auto auto
+
+/*多重背景，用逗号隔开，在CSS语法中凡语法后跟*或者#，都是可以无限重复的，但必须用逗号隔开。 */
+
+background-size: auto, auto     /* 请区别于background-size: auto auto*/
+
+background-size: 50%, 25%, 25%
+
+background-size: 6px, auto, contain
+
+background-size: inherit
+
+9.css中使用hover属性控制同级元素，只需加个 " + "即可
+
+ .box2 {
+	    display: none;
+	}  
+.box1:hover +.box2 {
+	    display: block;
+	}
+
+10.transform 
+transform 对行内元素无效 transform适用于：所有块级元素及某些内联元素
+
+
+11.css中auto的用法
+—什么是auto?
+
+   +auto是自适应的意思，auto是很多尺寸值的默认值，也就是由浏览器自动计算。
+
+   +块级元素中margin、border、padding以及content宽度之和构成父元素width。
+
+      使用auto属性后，父元素宽度发生变化，该元素的宽度也会随之变化。
+
+     下图中   auto 的值就是margin、border、padding以及content宽度之和
+
+      
+
+   +但是当该元素被设为浮动时，该元素的width就变成了内容的宽度了，由内容撑开，也就是所谓的有了包裹性。
+
+      overflow |   position:absolute | float:left/right都可以产生包裹性，替换元素也同样具有包裹性。
+
+      *|position:relavtive|相对定位      占原来的位置，不能实现模式的转化，即不具有包裹性。
+
+        所以在具有包裹性的元素上不可以利用width : auto；来让元素宽度自适应浏览器宽。如下图所示
+
+       
+
+  —有时设置margin:0 auto;不起作用？
+
+     +maigin: 0 auto; 指元素的上下边距为0，左右边距根据于父元素（body）宽度自适应，即左右水平居中。如果该设置不起作用大致下面两种原因。
+
+     +（1）没有为DIV设置宽度，如果DIV没有宽度，就无法参考父元素的宽度来进行自身的auto。
+
+     +（2）DIV具有包裹性，即脱离标准流，就好比父对象所在的标准流比喻成地表，那包裹性元素就已经上天了。没有了可供参考的父元素宽度进行auto。
+
+对于 static 元素，为 auto；对于长度值，则为相应的绝对长度；对于百分比数值，为指定值；否则为 auto。
+
+对于相对定义元素，如果 top 和 bottom 都是 auto，其计算值则都是 0；如果其中之一为 auto，则取另一个值的相反数；如果二者都不是 auto，bottom 将取 top 值的相反数。
+
+12.
+为什么div设置其border无效？
+
+<div style="border-width:2px; border-style:solid; border-color:red;">111</div> 
+
+
+一定要border的样式，宽度，颜色都要设置才可以的！！ 
+
+
+也可以这样写：
+<div style="border:2px solid red;">111</div>
+
+13.
+行内块inline-block 空隙产生的原因
+元素被当成行内元素排版的时候，元素之间的空白符（空格、回车换行等）都会被浏览器处理，
+根据white-space的处理方式（默认是normal，合并多余空白），原来HTML代码中的回车换行
+被转成一个空白符，在字体不为0的情况下，空白符占据一定宽度，所以inline-block的元素之间
+就出现了空隙。这些元素之间的间距会随着字体的大小而变化，当行内元素font-size:16px时
+，间距为8px。
+
+解决空隙的办法
+
+<!-- 将所有子元素写在同一行 -->
+<div class="parent">
+  <div class="child">child1</div><div class="child">child2</div>
+</div>
+缺点：代码的可读性变差。
+
+为父元素中设置font-size: 0，在子元素上重置正确的font-size
+<div class="parent" style="font-size: 0px">
+  <div class="child" style="font-size: 16px">child1</div>
+  <div class="child" style="font-size: 16px">child2</div>
+</div>
+缺点：inline-block元素必须设定字体，不然行内元素中的字体不会显示。 增加了代码量。
+
+方法四：设置子元素margin值为负数
+.parent .child + .child {
+  margin-left: -2px
+}
+缺点：元素之间间距的大小与上下文字体大小相关；并且同一大小的字体，元素之间的间距
+在不同浏览器下是不一样的，如：font-size:16px时，Chrome下元素之间的间距为8px,
+而Firefox下元素之间的间距为4px。所以不同浏览器下margin-right的负值是不一样的，
+因此这个方法不通用。
+
+注意：当marigin-right使用相对单位em来表示时，Chrome下可以正常去除间距,
+而Firefox下元素之间有重叠。
+
+方法五：最优解在这，设置父元素，display:table和word-spacing
+.parent{
+  display: table;
+  word-spacing:-1em; /*兼容其他浏览器，题主还未验证*/
+}
+
+14.
+一 学习锚点定位之前的知识储备:
+
+1.1 #号的作用
+
+#代表网页中的一个位置。其右面的字符，就是该位置的标识符。比如，http://www.example.com/index.html#print
+就代表网页index.html的print位置。浏览器读取这个URL后，会自动将print位置滚动至可视区域。
+为网页位置指定标识符，有两个方法:
+
+一是使用锚点，比如<a name="print"></a>，
+二是使用id属性，比如<div id="print">。
+1
+2
+HTTP请求不包括#.
+
+2.2 a元素与URL对象
+
+URL对象是浏览器的原生对象，可以用来构造、解析和编码 URL。一般情况下，通过window.URL可以拿到这个对象。
+
+<a>元素和<area>元素都部署了这个接口。这就是说，
+它们的 DOM 节点对象可以使用 URL 的实例属性和方法。
+
+15.
+也就是说hover时间在不同的jq版本中是不一样的，
+mouseenter是没有冒泡事件的，而mouseover会发生冒泡时间，mouseleave和mouseout一样。
+
+16.
+css如何实现背景透明，文字不透明？
+之前做了个半透明弹层，但设置背景半透明时，子元素包含的字体及其它元素也都变成了半透明。
+对opacity这个属性认识的不透彻，在这里做一些总结，方便以后使用。
+
+ 
+背景透明，文字不透明的解决方法：
+ 
+为元素添加一个绝对定位的子元素，设置大小和该元素一样，把半透明加在绝对定位元素上作为遮罩，
+z-index设置到最底部，达到背景半透明效果。
+使用CSS3新属性rgba。
+ 
+实现透明的方法：
+ 
+css3的opacity，取值从 0 到 1，如opacity : 0.5，IE9及以上版本和标准浏览器都支持。
+IE8 以及更早的版本支持替代的 filter 属性，例如：filter : Alpha(opacity=50)。
+css3的rgba(red, green, blue, alpha)，alpha的取值从 0 到 1，
+如background-color : rgba(255,255,255,0.5)。
+
+17.
+js获取当前时间的年月日时分秒以及时间的格式化
+1.获取当前时间
+
+var myDate = new Date();
+2.获取时间中的年月日时分秒
+
+
+myDate.getYear();        // 获取当前年份(2位)
+myDate.getFullYear();    // 获取完整的年份(4位,1970-????)
+myDate.getMonth();       // 获取当前月份(0-11,0代表1月)
+myDate.getDate();        // 获取当前日(1-31)
+myDate.getDay();         // 获取当前星期X(0-6,0代表星期天)
+myDate.getTime();        // 获取当前时间(从1970.1.1开始的毫秒数)
+myDate.getHours();       // 获取当前小时数(0-23)
+myDate.getMinutes();     // 获取当前分钟数(0-59)
+myDate.getSeconds();     // 获取当前秒数(0-59)
+myDate.getMilliseconds();    // 获取当前毫秒数(0-999)
+myDate.toLocaleDateString();     // 获取当前日期
+var mytime=myDate.toLocaleTimeString();     // 获取当前时间
+myDate.toLocaleString( );        // 获取日期与时间
+
+3.时间的格式化
+
+// 对Date的扩展，将 Date 转化为指定格式的String
+// 月(M)、日(d)、小时(h)、分(m)、秒(s)、季度(q) 可以用 1-2 个占位符，
+// 年(y)可以用 1-4 个占位符，毫秒(S)只能用 1 个占位符(是 1-3 位的数字)
+// 例子：
+// (new Date()).Format("yyyy-MM-dd hh:mm:ss.S") ==> 2006-07-02 08:09:04.423
+// (new Date()).Format("yyyy-M-d h:m:s.S") ==> 2006-7-2 8:9:4.18
+
+Date.prototype.Format = function (fmt) { // author: meizz
+    var o = {
+        "M+": this.getMonth() + 1, // 月份
+        "d+": this.getDate(), // 日
+        "h+": this.getHours(), // 小时
+        "m+": this.getMinutes(), // 分
+        "s+": this.getSeconds(), // 秒
+        "q+": Math.floor((this.getMonth() + 3) / 3), // 季度
+        "S": this.getMilliseconds() // 毫秒
+    };
+    if (/(y+)/.test(fmt))
+        fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+    for (var k in o)
+        if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+            return fmt;
+}
+
+调用：
+
+var time1 = new Date().Format("yyyy-MM-dd");
+var time2 = new Date().Format("yyyy-MM-dd hh:mm:ss"); 
+————————————————
+
+原文链接：https://blog.csdn.net/vasilis_1/java/article/details/73649961
+
+18.
+在CSS3语法里面，除了backgroud-color是唯一一个不能使用多个值
+的background-*元素，所以，我们以上的三个元素都可以使用多个值，两个值之间以逗号相连。
+
+19.
+HTML5隐藏播放器播放背景音乐
+<audio controls autoplay>
+
+<source src="1.mp3" type="audio/mpeg" >
+
+您的浏览器不支持 audio 元素。
+
+</audio>
+
+HTML5隐藏播放器播放背景音乐
+ 
+
+html5添加网页背景音乐 
+一个客户要求给网站添加一个背景音乐，我用的是html5添加网页背景音乐的代码，
+在此记录一下以后有用。
+html5方法一：<audio autoplay="" loop=""><source src="http://mi.0w0.im/Letter_Song.mp3 
+"></audio>不显示播放器。  
+html5方法二：<video controls="" autoplay="" name="media">
+<source src="我是音乐" type="audio/mpeg"></video>会显示播放器。
+方法三：支持所有播放器：<embed src="/uploadfile/m.mp3" autostart="true"
+ loop="true" hidden="true"></embed>我使用的此方法。
+方法四：<bgsound src=背景音乐地址 loop=-1>  
+我使用的是方法三的代码，支持所有浏览器，方法1和2是html5的代码，
+有的浏览器还不支持html5所以慎用。特别注意的是使用方法3的代码，
+最好是把mp3传到自己的空间，网上找的外链，可能会出现自动下载的情况。
+转载于:https://www.cnblogs.com/HJQ2016/p/5860462.html
+
+20.
+匿名函数就是有参数形式的。fun(m)就是function(j){}(m);
+
+21.
+  一、clientWidth和clientHeigh 、 clientTop和clientLeft
+        1，clientWidth的实际宽度
+
+        clientWidth = width+左右padding
+
+        2，clientHeigh的实际高度
+
+         clientHeigh = height + 上下padding 
+
+        3，clientTop的实际宽度
+
+           clientTop = boder.top(上边框的宽度)
+
+        4，clientLeft的实际宽度
+
+            clientLeft = boder.left(左边框的宽度)
+
+    二、offsetWidth和offsetHight 、 offsetTop和offsetLeft
+         1,offsetWidth的实际宽度
+
+            offsetWidth = width + 左右padding + 左右boder
+
+         2,offsetHeith的实际高度
+
+                      offsetHeith = height + 上下padding + 上下boder
+
+         3，offsetTop实际宽度
+
+                       offsetTop：当前元素 上边框 外边缘 到 最近的已定位父级（offsetParent） 上边框 内边缘的 距离。如果父
+
+                 级都没有定位，则分别是到body 顶部 和左边的距离
+
+                 4，offsetLeft实际宽度
+
+              offsetLeft：当前元素 左边框 外边缘 到 最近的已定位父级（offsetParent） 左边框 内边缘的            距离。如果父级都没有定位，则分别是到body 顶部 和左边的距离
+
+    三、scrollWidth和scrollHeight 、 scrollTop和scrollLeft
+        1，scrollWidth实际宽度
+
+               scrollWidth：获取指定标签内容层的真实宽度（可视区域宽度+被隐藏区域宽度）。
+
+ 
+
+               2，scrollHeight的实际高度
+
+ 
+
+         scrollHeight：获取指定标签内容层的真实高度（可视区域高度+被隐藏区域高度）
+
+         3，scrollTop
+
+                scrollTop :内容层顶部 到 可视区域顶部的距离。
+
+          实例：var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+
+          持续获取高度的方式：
+
+          
+
+window.addEventListener('scroll', ()=>{
+var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+
+});
+
+                4，scrollLeft
+
+                scrollLeft:内容层左端 到 可视区域左端的距离.
+
+ 22.
+使用for循环添加点击事件时，获取i值的方法
+比如页面上有一个ul，数个li，现在给li添加点击事件。
+
+
+  var li = document.getElementsByTagName("li");
+　　for(var i = 0; i < li.length; i++) {
+  li[i].addEventListener("click",function () {
+  console.log(i);
+  })
+}
+但是，这样写之后我们发现，点击任何一个li，打印的值都为5，这是因为闭包中共用i值，
+而i的值由于执行for循环，都变为了5
+
+
+为了正常显示i值，我们可以使用如下方法:
+
+
+for (var i = 0; i < lis.length; i++) {
+   (function(arg){
+       li[arg].onclick = function(){
+           console.log(arg);
+       };
+   })(i)  
+}
+　　
+
+类似于这样
+
+
+var li = document.getElementsByTagName("li");
+for(var i = 0; i < li.length; i++) {
+    getConsole(i);
+}
+ 
+ 
+function getConsole(i){
+    li[i].addEventListener("click", function() {
+        console.log(i);
+    });
+     
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

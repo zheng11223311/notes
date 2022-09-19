@@ -1,0 +1,21 @@
+/* 没有媒体查询时的正常样式 */
+#div0 {
+            width: 100%;
+        }
+
+        #div0 div {
+            float: left;
+            height: 200px;
+        }
+
+        #div0 div:nth-child(1) {
+            background-color: red;
+        }
+
+        #div0 div:nth-child(2) {
+            background-color: aqua;
+        }
+
+        #div0 div:nth-child(3) {
+            background-color: red;
+        }

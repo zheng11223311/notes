@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>2D转换之缩放scale</title>
+	<style>
+			div{
+			width: 200px;
+			height: 200px;
+			background-color: pink;
+			margin:100px auto;
+			
+			border:red solid 2px;
+			border-radius: 101px;
+		}     
+		/* div:hover::after{}写法;div::after的样式 */
+
+		div:hover {
+		
+			/*transform:scale(2,2);*/
+				/*transform:scale(1,1);  //原样*/
+				transform:scale(0.1,0.1);
+		}
+	</style>
+</head>
+<body>
+	<pre>
+		1.语法
+		transform:scale(x,y);
+
+		2.注意
+		注意其中的 x 和 y 用逗号隔开
+		transform:scale(1,1); 宽度和高度都放大了一倍
+		transform:scale(2,2); 宽度和高度斗放大了2倍
+		transform:scale(2); 只写一个参数,第二个参数和第一个参数一样.相当于scale(2,2)
+		transform:scale(0.5,0.5); 缩小
+		scale 缩放最大的优势:可以设置转换中心点缩放.默认以中心点缩放,
+		而且不影响其他盒子.
+		平常的不是以中心缩放,以一个左上角为中心缩放.
+	</pre>
+		<div>
+111
+		</div>
+
+</body>
+</html>

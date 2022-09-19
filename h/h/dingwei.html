@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>定位</title>
+		<style>
+			
+			body{
+				background-image: url(img/wzry.png);
+				background-repeat: no-repeat ;
+				background-position:center top;
+				background-attachment: fixed;
+				/*background-attachment: scroll;*/
+			}
+			.pink{
+				background-color:  pink;
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				top:100px;
+				left:80px;
+				}
+			.red{
+				background-color:red;
+				width: 100px;
+				height: 100px;
+				position: relative;
+				top:0;
+				left:120px;
+				}
+			.blue{
+				background-color:blue;
+				width: 100px;
+				height: 100px;
+				position: fixed;
+				top:0;
+				left:120px;
+				}
+			.skyblue{
+				background-color:skyblue;
+				width: 100px;
+				height: 100px;
+				position: sticky;
+				top:50px;
+				/* left:50%; */
+				margin-left:50px ;
+				}
+			.green{
+				background-color: green;
+				width: 100px;
+				height: 100px;
+				position: sticky;
+				}
+			.salmon{
+				background-color:salmon;
+				width: 100px;
+				height: 100px;
+				float:left;
+				
+				}
+		</style>
+	</head>
+	<body>
+		<div class="salmon">浮动元素</div>
+		<p>最近有点忘了position几个取值的内容，在这里简单总结一下。
+
+　　position的含义是指定位类型，取值类型可以有：static、relative、absolute、fixed、inherit和sticky，这里sticky是CSS3新发布的一个属性。
+
+1、position: static
+
+　　static(没有定位)是position的默认值，元素处于正常的文档流中，会忽略left、top、right、bottom和z-index属性。
+
+2、position: relative
+
+　　relative(相对定位)是指给元素设置相对于原本位置的定位，元素并不脱离文档流，因此元素原本的位置会被保留，其他的元素位置不会受到影响。
+
+3、position: absolute
+
+　　absolute(绝对定位)是指给元素设置绝对的定位，相对定位的对象可以分为两种情况：
+
+　　1) 设置了absolute的元素如果存在有祖先元素设置了position属性为relative或者absolute，则这时元素的定位对象为此已设置position属性的祖先元素。
+
+　　2) 如果并没有设置了position属性的祖先元素，则此时相对于body进行定位。
+
+4、position: fixed
+
+　　可以简单说fixed是特殊版的absolute，fixed元素总是相对于body定位的。
+
+5、inherit
+
+　　继承父元素的position属性，但需要注意的是IE8以及往前的版本都不支持inherit属性
+		</p>
+		<div> 昨天下雪</div>
+		<div> 昨天下雪</div>
+		<div> 昨天下雪</div>
+		<div> 昨天下雪</div>
+		<div> 昨天下雪</div>
+		<div> 昨天下雪</div>
+		<div> 昨天下雪</div>
+		<div class=" green">静态定位</div>
+		<div class="pink">绝对定位</div>
+		<div class="red">相对定位</div>
+		<div class="blue">固定定位</div>
+		<div class="skyblue">粘性定位</div>
+		<br /><br /><br /><br /><br /> < <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+		<br /><br /><br /><br /><br />省略1000字...................................<br /><br /><br /><br /><br /><br />
+	</body>
+</html>

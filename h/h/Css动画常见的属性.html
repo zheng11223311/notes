@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS动画常见属性</title>
+	<style>
+		@keyframes move{
+					0%{
+						
+					transform:translate(0px);
+						}
+				100%{
+						
+				transform:translate(100px,100px);
+					}
+				}
+		div{
+			width: 200px;
+			height: 200px;
+			background-color: pink;
+			margin:100px auto;
+			
+			border:red solid 2px;
+			border-radius: 101px;
+			animation-name:move;
+			animation-timing-function: ease;
+			animation-delay: 1s;
+			/*animation-iteration-count: infinite;*/
+			/*animation-direction:alternate;*/
+		animation-duration:6s;
+		animation-fill-mode: forwards;
+		}    
+		div:hover{
+			/*鼠标经过div 让这个div 停止动画.鼠标离开就继续动画*/
+			animation-play-state: paused;
+
+		} 
+	</style>
+</head>
+<body>
+	<pre>
+			@keyfremes   
+			规定动画
+
+			animation    所有动画属性的简写属性,除了animation-play-state属性
+
+			animation-name  
+			规定@keyframes 动画效果的名称.(必须的)
+
+			animation-durtion
+			规定动画完成一个周期所花费的秒数或毫秒.默认是0.(必须的)
+     			秒 s   毫秒 ms
+
+			animation-timing-function
+			规定动画的速度曲线,默认是 ease .
+
+			animation-delay 
+			规定动画何时开始.默认是0.
+
+			animation-iteration-count
+			规定动画被播放的次数,默认的是1,还有 infinite(无限的意思)
+
+			animation-direction
+			规定动画是否在下一周期逆向播放,默认的时 normal , alternate(逆播放)
+			
+			animation-play-state 
+			规定动画是否正在运行或者暂停,默认的是 running ,还有 paused
+
+			animation-fill-mode 
+			规定动画结束后状态,(保持) forwards (回到起始) backwards
+
+	</pre>
+
+	<div>
+			
+	</div>
+</body>
+</html>

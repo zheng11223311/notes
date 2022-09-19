@@ -1,0 +1,245 @@
+body{
+	max-width: 540px;
+	min-width: 320px;
+	margin: 0 auto;
+	font:normal 14px/1.5 Tahoma,"Lucida Grande",Verdana,"Microsoft Yahei",STXihei,hei;
+	color:#000;
+	background:#f2f2f2;
+	overflow-x:hidden;
+	-webkit-tap-highlight-color:transparent; 
+
+}	
+a{
+	text-decoration: none;
+	color: #222;
+}
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+div{
+	box-sizing: border-box;
+}
+/*搜索模块*/
+.search-index{
+	/*固定定位跟父亲没有关系 它以屏幕为主 定位时 margin 无效*/
+	display: flex;
+	position: fixed;
+	top:0;
+	left: 50%;
+	transform:translate(-50%);
+	-webkit-transform:translate(-50%);
+	width: 100%;
+	min-width: 320px;
+	max-width: 540px;
+	/*固定的盒子应该有宽度,以浏览器为主*/
+	height: 44px;
+	border-top: 1px solid #ccc;
+	opacity: 0.9;
+}
+.search{
+	position: relative;
+	height: 26px;
+	border:1px solid #ccc; 
+	flex: 1;
+	font-size: 12px;
+	color: #666;
+	/*c3里面的高度要加上边框的高度,不是内容的高度,居中就会偏下.*/
+	line-height: 24px;
+	margin: 7px 10px;
+	padding-left: 25px;
+	border-radius: 5px;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+.search::before{
+	content: "";
+	position: absolute;
+	/*去除display:block; 防止将内容挤下来 absolute就可以直接有大小*/
+	top: 0;
+	left: 0;
+	/*需要left定位,不然会被父元素的padding带走*/
+	width: 15px;
+	height: 15px;
+	margin: 5px 2px;
+	background:url(../img/xcw.png) no-repeat 0px 0px;
+	background-size: 21px 123px;
+}
+.user{
+	width: 44px;
+	height: 44px;
+	font-size: 12px;
+	text-align: center;
+	color: #2eaae0;
+}
+.user::before {
+	content: "";
+	display: block;
+	width: 23px;
+	height: 23px;
+	margin: 4px auto -2px;
+	background:url(../img/xcw.png) no-repeat 2px -35px;
+	background-size: 21px 123px;
+}
+/*focus*/
+.fucus{
+	padding-top: 44px;
+}
+.focus img{
+	width: 100%;
+}
+/*局部导航栏*/
+.local-nav{
+	display: flex;
+	position: relative;
+	top: -32px;
+	height: 64px;
+	background-color: #fff;
+	border-radius: 8px;
+	margin: 3px 4px;
+
+}
+.local-nav li{
+	flex: 1;
+}
+.local-nav a{
+	display: flex;
+	flex-direction: column;
+	/*侧轴居中对齐*/
+	align-items: center;
+	font-size: 12px;
+
+}
+.local-nav-icon{
+	width: 40px;
+	height: 40px;
+	background-color: pink;
+	margin: 4px 8px 0;
+	background:url(../img/h15.png) no-repeat 0px 0px;
+	background-size: 40px 200px;
+}
+/*nav*/
+nav{
+	border-radius: 8px;
+	overflow: hidden;
+	margin: 0 4px 3px;
+}
+.nav-common{
+	display: flex;
+	height: 88px;
+	background-color: pink;
+}
+.nav-common:nth-child(2){
+	margin: 3px 0;
+}
+.nav-items{
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}
+.nav-items a{
+	flex: 1;
+	text-align: center;
+	line-height: 44px;
+	color: #fff;
+	font-size: 14px;
+	/*文字阴影*/
+	text-shadow: 1px 1px rgba(0,0,0,0.2);
+}
+.nav-items a:nth-child(2){
+	border-top: 1px solid #fff;
+}
+/*-n+2就是选者前两个*/
+.nav-items:nth-child(-n+2){
+	border-right: 1px solid #fff;
+}
+.nav-items:nth-child(1) a{
+	border: 0;
+	background:url(../img/hotel.png) no-repeat;
+	background-size: 300px 130px;
+}
+.nav-items:nth-child(1){
+	background:-webkit-linear-gradient(left,#fa5a55,#fa994d);
+}
+.nav-items:nth-child(2){
+	background:-webkit-linear-gradient(left,#4b90ed,#53bced);
+}
+.nav-items:nth-child(3){
+	background:-webkit-linear-gradient(left,#34c2a9,#6cd559);
+}
+.nav-items a{
+	
+	background:url(../img/hotel.png) no-repeat 7px 0px;
+	background-size: 300px 130px;
+}
+/*subnav-entry*/
+.subnav-entry{
+		display: flex;
+		flex-wrap: wrap;
+		padding: 5px 0;
+		border-radius: 8px;
+		background-color: #fff;
+		margin: 0 4px;
+}
+.subnav-entry li{
+	/*里面的子盒子可以写% 相对于父级来说的20%*/
+	flex: 20%; 
+}
+.subnav-entry a{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+}
+.subnav-entry-icon{
+	width: 28px;
+	height: 28px;
+	background-color: pink;
+	margin-top: 4px;
+	background:url(../img/33.png) no-repeat -14px -6px;
+	background-size: 56px 616px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

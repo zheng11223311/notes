@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+	<title>align-self和order</title>
+<body>
+</head>
+	<pre>
+		align-self 控制子项自己在侧轴上的排列方式
+		align-self 属性允许单个项目有与其他项目不一样的对齐方式,可覆盖align-items 属性
+		默认值为auto, 表示继承父元素的align-items 属性,如果没有父元素,则等同于stretch
+
+		div p:nth-child(1){
+		align-self:flex-end;
+		order:1;
+	}
+
+		order属性定义项目的排列顺序
+		数值越小,排列越靠前,默认为0
+		注意: 和z-index 不一样
+	</pre>
+</body>
+</html>

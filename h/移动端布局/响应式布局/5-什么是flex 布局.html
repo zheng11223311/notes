@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>主轴方向与换行</title>
+    <style>
+        #div0 {
+            width: 500px;
+            background-color: brown;
+            display: flex;
+            /* flex-direction: row-reverse; */
+            /* flex-direction: column; */
+            flex-wrap: wrap;
+            flex-flow: row wrap;
+        }
+
+        #div0 div {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+
+        }
+
+        #div0 div
+    </style>
+</head>
+
+<body>
+    <pre>
+                flex-direction
+
+
+    row                     ---->
+    row-reserve             <------
+    column                  上-->下
+    column-reserve           下-->上
+
+
+
+                flex-wrap
+
+
+    nowrap                  不换行/列
+    wrap                    换行/列
+    wrap-reserve            相反顺序换行/列 
+
+            flex-flow 两者的混合
+
+        flex-flow:flex-direction flex-wrap;
+    </pre>
+</body>
+<div id="div0">父元素宽度不够时,子元素会自动压缩,适应父元素
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+</div>
+
+</html>

@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>聚灯光</title>
+ 
+<style>
+	*{
+		margin:0;
+		padding: 0;
+	}
+	html{
+		font-size: 15px;
+	}
+	body{
+		background-color: #222;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		min-height: 100vh;
+	}
+	h1{
+		position: relative;
+		color: #333;
+		font-family: Helvetica;
+		font-size: 8rem;
+		letter-spacing: -0.3rem;
+	}
+	h1::after{
+		position: absolute;
+		content: attr(data-spotlight);
+		color: yellow;
+		top: 0;
+		left: 0;
+		-webkit-clip-path: ellipse(100px 100px at 0% 50%);
+		clip-path: ellipse(100px 100px at 0% 50%);
+		filter: contrast(15);
+		animation:e 5s linear infinite,spotlight 5s infinite;
+	}
+	@keyframes e{
+		0%{
+		filter: contrast(15) hue-rotate(0deg);
+		}
+		100%{
+		filter:contrast(15) hue-rotate(360deg);
+		}
+	}
+	@keyframes spotlight{
+		0%{
+			/* 椭圆ellipse（前100px是x半径 后100px是y轴半径 at后面是椭圆圆心） */
+		-webkit-clip-path: ellipse(100px 100px at 0% 50%);
+		clip-path: ellipse(100px 100px at 0% 50%);
+		}
+		50%{
+			-webkit-clip-path: ellipse(100px 100px at 100% 50%);
+		clip-path: ellipse(100px 100px at 100% 50%);
+		}
+		100%{
+		-webkit-clip-path: ellipse(100px 100px at 0% 50%);
+		clip-path: ellipse(100px 100px at 0% 50%);
+	}
+
+</style>
+</head>
+<body>
+
+	<h1 data-spotlight="CodingStratup">CodingStratup</h1>
+ 
+ 
+<script>
+
+
+</script>
+</body>
+</html>
+

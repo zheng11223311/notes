@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>透视perspective</title>
+	<style>
+		body{
+			perspective: 500px;
+		}
+			div{
+				width:200px;
+				height:200px;
+				background-color: pink;
+				transform:translate3d(200px,-100px,100px);
+				opacity: .5;
+			}
+			div:hover{
+						
+				transform:translate3d(500px,-200px,200px);
+			}
+	</style>
+</head>
+<body>
+	<pre>
+			透视perspective
+			如果想要在网页产生3D效果需要透视(理解成3D投影在2D平面内)
+
+			模拟人类的视觉位置,可以认为安排一只眼睛去看
+
+			透视我们也称为视距: 视距就是人的眼睛到屏幕的距离
+
+			距离视觉点越近的电脑平面成像越大,越远成像越小
+			z轴越大,看到的物体就越大
+
+			透视的单位是像素px
+
+			写在观察元素的父盒子上面
+	</pre>
+
+	<div>	</div>
+</body>
+</html>

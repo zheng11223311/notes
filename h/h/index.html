@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+	<!--告诉浏览器这是一个英文的网页，中文为zh-cn-->
+
+	<head>
+		<meta charset="utf-8" />
+		<title>我的第一个网页制作</title>
+		<style>
+		/*css颜色设计*/
+			
+			.red {
+				color: gold;
+			}
+			
+			.red1 {
+				background-color: pink;
+				/*标签选择器*/
+			}
+			
+			.box {
+				width: 100px;
+				height: 100px;
+				font-size: 1px;
+				/*类选择器*/
+			}
+			
+			#nihao {
+				color: magenta;
+				/*唯一性，只能调用一次 id选择器*/
+			}
+			/*	*{
+				color: darkred;
+			}*/
+			
+			/通配符选择器*将所有的标签都改颜色，包括html body等 也可以改变里面的边距等*/ h1 {
+				font-family: "agency fb" "微软雅黑";
+				/*css字体属性 字体系列 多个字体优先前面的字体 电脑没有字体在下个字体*/
+			}
+			/* body{
+				font-size: 50px;
+				/*设置所有body内的文字改变大小 标题h1等比较特殊，需要单独指定文字大小*/
+		}
+		*/
+		/*错误，没有效果*/
+		.b {
+			font-weight: bold;
+			/*等价于font-weight：700;后面不需要带上单位*/
+			/*字体粗细 bold bolder normal lighter number*/
+		}
+		p {
+			font-style: inherit;
+			/*字体样式 斜体  notmal是正常*/
+		}
+		/*em{
+				font-style: normal;
+			} 让倾斜字体恢复正常*/
+		/*div{
+			 字体大小 粗细 颜色 样式都可以一起放进来。同时设置
+			 font-weight:700
+			 font-style:
+			 font-family
+			 font-size
+			 复合属性写法 简写方式
+	写的顺序	 font： font-style font-weight  font-size/line-height font-family顺序不能换
+	打以下代码就可以了 font： italic 700 16px ‘微软雅黑’ 没有的可以不用写 必须有大小和字体样式family
+	}*/
+		</style>
+
+	</head>
+
+	<body>
+		<div id="nihao">div后面按tab直接补齐</div>
+		<div class="red1 box">
+			<p>
+				<font color="#666666">你是大笨蛋</font>
+			</p>
+			<!--颜色代码-->
+			<a href="#bendan">点击查看笨蛋名单</a>
+			<!--<p>不能锚点定位吗？锚点定位错误 id name-->
+			<a href="#dibu">到达底部</a>
+		</div>
+		<h4 class="b">href外部链接与内部链接<h4>
+		<br/><a href="http://www.4399.com/flash/80223.htm" target="_blank">4399幻想三国小游戏</a><!--网页代码-->
+	    <br/><a href="#">空链接</a>
+	    	<br/><a href="img/7.zip">点击此处下载图片</a>
+	    	<br/><a href="music/yuxitan.zip">点击此处下载虞兮叹音乐</a><!--此处下载的皆为本地音乐与图片-->
+	    	<br/><a href="http://ez.sycdn.kuwo.cn/ab49da21ca444351960e2449e82e37d8/5fba705c/resource/n1/77/88/3364499818.mp3">点击播放外部音乐地址</a>
+	        <!--<br/><a href="http://ez.sycdn.kuwo.cn/ab49da21ca444351960e2449e82e37d8/5fba705c/resource/n1/77/88/3364499818.zip">点击下载外部音乐地址</a>操作错误-->
+
+	    	
+	    <!--target="_blank"意为在新窗口打开target="_self意为在原窗口打开"-->
+	    <p><img  id="one" src="img/7.jpg" width="200"  border="11" alt="为替换文本，当图片显示不出来的时候替换成文本"title="当鼠标指到图片时显示文字"></p>
+	    <embed height="200" width="200" src="music/yuxitan.mp3" autostart="true">虞兮叹</embed>
+	    <embed height="200" width="200" src="music/yuxitan.mp3" autostart="true " hidden="true">虞兮叹歌曲被隐藏</embed>
+        <embed src="video/hehua.mp4"width="1000"height="1000"autoplay="true" controls="true"loop="loop"muted></embed>
+        <!--auto无法运行-->
+	   <h1>文本格式化标签&nbsp;加粗strong和b &nbsp;倾斜em和i &nbsp;删除线del和s &nbsp;下划线ins和u</h1>
+	   <strong>加粗示范</strong><br/><em>倾斜示范</em><br/><del>删除线示范</del><br /><ins>下划线示范</ins>	 
+	    <div>div标签独占一行 </div><div>div标签独占一行 </div>
+	    <span>span可以多个占一行</span><span>span可以多个占一行</span>
+	    <h4>&lt;&gt;</h4>
+
+		<h1>表格制作</h1>
+		<table id="bendan" align="center" border="1" cellpadding="11" cellspacing="0" class="red">
+
+			<tr>
+				<th>姓名</th>
+				<th>性别</th>
+				<th>年龄</th>
+				<th>职业</th>
+				<tr/>
+				<tr>
+					<td>郭德纲</td>
+					<td>男</td>
+					<td>59</td>
+					<td>相声</td>
+					<tr/>
+					<tr>
+						<td>刘德华</td>
+						<td>男</td>
+						<td>51</td>
+						<td>演员</td>
+						<tr/>
+						<tr>
+							<td>张学友</td>
+							<td>男</td>
+							<td>57</td>
+							<td>演员</td>
+							<tr/>
+							<!--跨行合并rowspan-->
+							<!--跨行合并2个格子写2不行？？？？-->
+							<tr>
+								<td rowspan="3"></td>
+								<td>男</td>
+								<td>57</td>
+								<td>演员</td>
+								<tr/>
+								<tr>
+									<td>男</td>
+									<td>57</td>
+									<td>演员</td>
+									<tr/>
+									<!--跨列合并colspan-->
+									<tr>
+										<td colspan="2"></td>
+										<td>57</td>
+										<td>演员</td>
+										<tr/>
+										<tr>
+											<td>张学友</td>
+											<td>男</td>
+											<td>57</td>
+											<td>演员</td>
+											<tr/>
+											<br />
+											<div>分割线</div>
+											<h4>列表标签</h4>
+											<ul>
+												<li>无序标签</li>
+												<li>没有顺序</li>
+												<li>可以容纳所有元素</li>
+												<li>一般用css来设置</li>
+
+											</ul>
+											<br />
+											<ol>
+												<li>有序列表</li>
+												<li>有排列顺序</li>
+												<li>可以容纳所有元素</li>
+												<li>一般用css来设置</li>
+
+											</ol>
+											<br />
+											<dl>
+												<dt>自定义列表 为头部</dt>
+												<dd>可以容纳所有元素
+													<dd>
+														<dd>都可以放任何标签</dd>
+														<dd></dd>
+
+											</dl>
+											<br />
+											<a href="#">顶部</a><br />
+											<a href="#one">图像</a>
+											<br/>
+											<a href="#">空链接=返回顶部</a><br />
+											<h4>表单标签</h4>
+											<form>
+												<!--text文本框 用户可以里面输入任何文字-->
+												用户名：<input type="text" value="input为单属性" name="username"><br />
+												<!--password 为密码框 用户看不见输入的密码-->
+												密码：<input type="password " name="pwd"><br />
+												<!--radio 单选按钮 可以实现多选一  在sex里面多选一-->
+												性别：<input type="radio" name="sex" value="男 可以不用 提供后台观看" checked="checked">男 <input type="radio" name="sex">女<input type="radio" name="sex"> 人妖<br />
+												<!--checkbox 复选框 可以实现多选-->
+												爱好：<input type="checkbox" name="hobby">吃饭<input type="checkbox" name="hobby"> 睡觉 <input type="checkbox" name="hobby">打豆豆
+												<!--name定义组别-->
+												<!--以下都是tapy属性的属性值-->
+												<!--vaule  默认显示的字符-->
+												<!--button 定义可点击按钮-->
+												<!--file 定义输入字段和浏览按钮，供上传文件-->
+												<!--hidden定义隐藏的输入字段-->
+												<!--image 定义图像形式的提交按钮-->
+												<!--reset 定义重置按钮-->
+												<!--submit定义提交按钮--><br />
+												<input type="reset" value="重置"><br />
+												<input type="submit" value="免费注册"><br />
+												<input type="button" value="获取短信验证码"><br /> 上传头像：
+												<input type="file">
+												<!--label标签·用于绑定一个表单元素，当点击label标签内的文本时
+                   			浏览器就会自动将光标转到选择对应的表单元素上，来增加用户体验  点击
+                   			按钮或男都可以将选项选为男
+                   		-->
+												性别：<label id="sss"><input type="radio"name="sx"value="男 可以不用 提供后台观看" checked="checked" for="sss">男</label><label id="ss"><input type="radio"name="sx"for="ss">女</label><label id="s"><input type="radio"name="sx"
+                   		 for="s"> 人妖</label><br />
+												<!--select 多个选项-->
+												籍贯
+												<select>
+
+													<option>火星</option>
+													<option selected="selected">地球</option>
+													<option>祖安人</option>
+													<option>天堂</option>
+
+												</select><br />
+												<!--selected="selected"为默认选项-->
+												<!--textarea 为文本域-->
+												今日反馈：<br /><textarea rows="11" cols="11">
+                  	
+                  cols每行中的字符数 rows显示的行数  实际操作中用css来改变的
+                  </textarea><br />
+											</form>
+
+		</table>
+
+		<font size="999" color="goldenrod">
+
+			编程over，开始学习css和js
+
+		</font>
+		<br />
+		<br />
+		<br id="dibu" />
+
+		<a href="#">返回顶部</a>
+
+	</body>
+
+</html>

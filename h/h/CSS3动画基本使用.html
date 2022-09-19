@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3动画基本使用</title>
+	<style>
+		@keyframes move{
+					0%{
+						
+					transform:translate(0px);
+						}
+				100%{
+						
+				transform:translate(100px);
+					}
+				}
+		div{
+			width: 200px;
+			height: 200px;
+			background-color: pink;
+			margin:100px auto;
+			
+			border:red solid 2px;
+			border-radius: 101px;
+			animation-name:move;
+	
+		animation-duration:6s;
+		}     
+	</style>
+</head>
+<body>
+	<pre>
+		制作动画分两步骤:
+		1.先定义动画
+		2.在使用(调用)动画
+		先使用 keyframes 定义动画(类似定义类选择器)
+			@keyframes 动画名称{
+					0%{
+					width:100px;
+						}
+				100%{
+
+				width:200px;
+					}
+				}
+				
+	动画序列
+	0%是动画的开始,100%是动画的完成,这样的规则就是动画序列
+	在 @keyframes 中规定某项css 样式,就能创建有当前样式逐渐改变为新样式的动画效果
+	动画是使元素从一种样式逐渐变化为另一种样式的效果,你可以改变任意多的样式任意多的次数
+	请用百分比来规定变化发生的时间,或者用关键词"from"和"to",等同于0%和100%
+		
+		元素使用动画
+		div{
+		width:200px;
+		height:200px;
+		background-color:aque;
+		margin:100px auto;
+		//调用动画
+		animation-name:动画名称;
+		//持续时间
+		animation-duration:持续时间;
+	}
+
+		我们想要页面一打,一个盒子就从左边走到右边
+
+	</pre>
+	<div>
+			
+	</div>
+</body>
+</html>

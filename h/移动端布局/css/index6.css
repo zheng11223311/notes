@@ -1,0 +1,61 @@
+article {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: 100px auto;
+    background-color: aqua;
+    border-radius: 50%;
+    transition: all 1s;
+}
+
+article:hover {
+    transform: rotateZ(45deg);
+}
+
+article::before {
+    position: absolute;
+    content: "1";
+    display: block;
+    width: 100px;
+    height: 10px;
+    background-color: red;
+    border-radius: 5px;
+    transform: rotateZ(45deg);
+}
+
+article::after {
+    position: absolute;
+    content: "1";
+    display: block;
+    width: 100px;
+    height: 10px;
+    top: 90%;
+    bottom: 0px;
+    left: 80%;
+    background-color: purple;
+    border-radius: 5px;
+    transform: rotateZ(45deg);
+}
+
+article div {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: gold;
+    border-radius: 50%;
+    left: 100px;
+    top: 100px;
+}
+
+article div::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100px;
+    height: 10px;
+    top: 90%;
+    background-color: pink;
+    border-radius: 5px;
+    transform-origin: 0 0;
+    transform: rotateZ(90deg);
+}

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport"
+        content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <link rel="shortcut icon" href="./img/JD1.png">
+    <title>随机取色板</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-self: center;
+            flex-wrap: wrap;
+        }
+    span{
+        margin:0 auto;
+        width:90%;
+        height:50px;
+        padding:0px 100px;
+        background-color:#f22c4e;
+    }
+        button {
+            margin:10px 30px;
+            width:17%;
+            height:30px;
+           
+        }
+
+        div {
+            width: 18%;
+            height: 150px;
+            line-height: 150px;
+            text-align: center;
+            font-size: 30px;
+            color: #fff;
+            border: 2px solid #fff;
+            box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+           
+        }
+    </style>
+
+</head>
+
+<body>
+    <span>
+      <button onclick="" style="color: #af1f95;">正常模式</button>
+    <button onclick="addcolor();" style="color: #af1f95;">更换颜色</button>
+    <p style="display:inline-block;">(点击模板颜色,即可复制)</p>
+    </span>
+  
+
+
+
+</body>
+<script>
+    var body = document.body
+    for (var i = 0; i < 100; i++) {
+        var cdiv = document.createElement('div')
+        cdiv.classList.add('box')
+        body.appendChild(cdiv)
+
+    }
+    var btn = document.querySelectorAll('button')
+    var div = document.querySelectorAll('div')
+    function changeColor() {
+        var chars = '0123456789abcdef'
+        var colorLength = 6
+        var color = ''
+        for (var i = 0, l = colorLength; i < l; i++) {
+            var colorbgc = Math.floor(Math.random() * (chars.length))
+            color += chars.substring(colorbgc, colorbgc + 1)
+        }
+        return '#' + color;
+    }
+     var flag=0;
+     addcolor()
+     function addcolor() {
+        // 遍历循环点击事件不用立即执行函数
+        div.forEach(e => {
+            if(flag===0){
+                var newcolor = changeColor();
+                e.style.fontSize='30px'
+            }else{
+                var newcolor = changeColor1();
+                e.style.fontSize='20px'
+            }
+            e.style.backgroundColor = newcolor
+            e.innerHTML = newcolor
+            e.onclick = function copyLink() {
+                // 获取点击的值
+                var spanvalue = e.innerHTML
+                // alert(spanvalue);
+
+                // select() 只对input 和txetarea 有效
+                // 创建要赋值的input 元素
+                var cinput = document.createElement('input')
+                // 需要添加后,浏览器才能执行选中功能
+                body.appendChild(cinput)
+                // 给input 赋值
+                cinput.value = spanvalue
+                // 选中input 框的内容
+                cinput.select(cinput.value)
+                // 执行浏览器复制命令
+                document.execCommand('copy')
+                //移除input
+                body.removeChild(cinput)
+                // 提示已复制
+                // alert('已复制')
+                e.innerHTML = '(已复制)'
+                e.style.width = '25%'
+                e.style.height = '155px'
+                e.style.boxShadow = ' inset 0 0 6px red'
+                e.onmouseleave = function () {
+                    e.style.width = '18%'
+                    e.style.height = '150px'
+                    e.innerHTML = newcolor
+                    e.style.boxShadow = '1px 1px 2px rgba(0, 0, 0, 0.2)'
+                }
+
+            }
+        })
+    }
+    function changeColor1(){
+        var r=Math.round(Math.random()*255)
+        var g=Math.round(Math.random()*255)
+        var b=Math.round(Math.random()*255)
+        // var a=Math.random()
+        return 'rgba('+r+','+g+','+b+','+1+')'
+    }
+  
+    btn[0].onclick=function(){
+    if(flag===0){
+     flag=1;
+    addcolor()
+    btn[0].innerHTML='rgba 模式'
+    }else{
+         flag=0;
+         addcolor()
+       btn[0].innerHTML='正常模式'  
+    }
+    }
+     btn[1].onclick=function(){
+             addcolor()
+    }
+
+</script>
+
+</html>

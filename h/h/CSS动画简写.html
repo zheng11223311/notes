@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS动画简写</title>
+	<style>
+			body{
+				color: gold;
+			}
+			button{
+				color: red;
+				position:relative;
+				left: 900px;
+				top:-260px;
+				font-size: 20px;
+
+			}
+			div{
+				font-size: 30px;
+			}
+	</style>
+</head>
+<body>
+	<pre>	
+		动画简写属性
+		animation:动画名称 持续时间 运动效果 何时开始 播放次数 是否反向 动画起始或者结束状态;	
+	
+		animation:动画名称 持续时间;      // 最简写法
+
+		简写属性里面不包含 animation-play-state
+
+		暂停动画: animation-play-state:paused; 经常和鼠标经过等其他配合使用
+
+		想要动画走回来,而不是直接跳回来: animation-diection:alternste;
+
+		盒子动画结束后,停在结束位置: animation-fill-mode:forwards;
+
+			属性选择器
+			.类名 div[class^="ccc"]{  }
+		权重   10  1      10    = 21
+			.类名 里面的div 里面的class 带有ccc 的类名
+
+			scale(2); 会放大盒子阴影 box-shadow 
+			所以有时候在动画效果里面直接改变高度和宽度而不用scale
+
+			top和buttom同时有 优先执行top
+
+			 steps 就是分几步来完成我们的动画 有了steps 就不要再写 ease 或者 linear 了 
+			 animation:动画名称 持续时间  steps(10) forwards;
+			 分10步.应用于逐个打字效果
+
+			 white-space:nowrap;	强制一行显示
+
+			 
+
+	</pre>      <div>解决了时间叠加问题
+					☺ <br/>
+					</div>
+					<button class="btn1">点击暂停变色
+					</button>
+					<button class="btn2">点击变回原色
+					</button>
+			<script>
+				var doc=document.body;
+				var btn1=document.querySelector('.btn1');
+				var btn2=document.querySelector('.btn2');
+				
+			function fn(){
+		
+		//var description = ""; 
+		
+		//遍历数组
+		//for(var i in bgc){ 
+       // var property=bgc[i]; 
+		//description+=i+" = "+property+"\n"; 
+         // console.log(description);
+         //  }
+          // 要求： 随机生成颜色RGB  核心点 ：（0,0,0)   rgb  每一组的数字取值范围是  0~255 
+        // 需要随机生成 0~255 之间的整数
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        // 返回我们要的颜色
+        function getRandomColor() {
+            var c1 = getRandom(0, 255);
+            var c2 = getRandom(0, 255);
+            var c3 = getRandom(0, 255);
+            return 'rgb(' + c1 + ',' + c2 + ',' + c3 + ')'
+        }
+         console.log(getRandomColor());
+        // 下面的代码我们不研究 只是 给你演示我们写的程序没有错误 
+            doc.style.color = getRandomColor();
+            }	
+        	
+        		var flag=0;
+        		var dings=setInterval(fn,1000);
+        	btn1.addEventListener('click',function(e){
+        	
+        		console.log(flag);
+        		clearInterval(dings);
+        		if(flag==0){
+ 				dings=setInterval(fn,1000);
+ 				btn1.innerHTML='点击暂停变色';
+ 				flag=1;
+ 			}else{
+ 				clearInterval(dings);
+ 				// btn1.disabled=true;
+ 				 btn1.innerHTML='点击开始变色';
+ 				flag=0;
+ 			}
+        		});
+          btn2.addEventListener('click',function(e){
+          	doc.style.color='gold';
+          	clearInterval(dings);
+          	btn1.innerHTML='点击开始变色';
+          	flag=0;
+          });
+			
+			</script>
+
+</body>
+</html>

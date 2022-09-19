@@ -1,0 +1,110 @@
+[
+    {
+    "name":"Ignite",
+    "singer":"Alan Walker",
+    "album":"Ignite",
+    "time":"03:30",
+    "link_url":"../music/胜利_K-391_Alan Walker_Julie Bergan-Ignite.mp3",
+    "cover":"https://y.qq.com/music/photo_new/T001R300x300M0000020PeOh4ZaCw1.jpg?max_age=2592000",
+    "link_lrc":"../music/胜利_K-391_Alan Walker_Julie Bergan-Ignite.lrc"
+    },
+    {
+    "name":"宝石Gem_陈伟霆-野狼Disco",
+    "singer":"宝石Gem/陈伟霆",
+    "album":"野狼Disco",
+    "time":"04:00",
+    "link_url":"../music/宝石Gem_陈伟霆-野狼Disco（feat.陈伟霆）.mp3",
+    "cover":"https://y.qq.com/music/photo_new/T001R300x300M000000in2fg3O6W83.jpg?max_age=2592000",
+    "link_lrc":"../music/宝石Gem_陈伟霆-野狼Disco（feat.陈伟霆）.lrc"
+    },
+    {
+    "name":"我的天空",
+    "singer":"南征北战NZBZ",
+    "album":"《青春派》电影主题曲",
+    "time":"03:54",
+    "link_url":"../music/南征北战NZBZ-我的天空-《青春派》电影主题曲.mp3",
+    "cover":"https://y.qq.com/music/photo_new/T001R150x150M000003ZQQb64D5317.jpg?max_age=2592000",
+    "link_lrc":"../music/南征北战NZBZ-我的天空-《青春派》电影主题曲.lrc"
+    },
+    {
+    "name":"爱的魔力转圈圈",
+    "singer":"泽亦龙",
+    "album":"爱的魔力转圈圈",
+    "time":"02:19",
+    "link_url":"../music/泽亦龙-爱的魔力转圈圈(DJ版).mp3",
+    "cover":"https://y.qq.com/music/photo_new/T002R180x180M0000035BMce3oa1u4_1.jpg?max_age=2592000",
+    "link_lrc":"../music/泽亦龙-爱的魔力转圈圈(DJ版).lrc"
+    },
+    {
+    "name":"春娇与志明",
+    "singer":"街道办GDC&欧阳耀莹",
+    "album":"春娇与志明",
+    "time":"03:25",
+    "link_url":"../music/街道办GDC_欧阳耀莹-春娇与志明.mp3",
+    "cover":"https://y.qq.com/music/photo_new/T002R180x180M000000lrXyA0MlEEo_3.jpg?max_age=2592000",
+    "link_lrc":"../music/街道办GDC_欧阳耀莹-春娇与志明.lrc"
+    },
+    {
+    "name":"All Falls Down",
+    "singer":"Alan Walker",
+    "album":"Animals",
+    "time":"03:19",
+    "link_url":"../music/Alan Walker_Noah Cyrus_Digital Farm Animals_Juliander-All Falls Down.mp3",
+    "cover":"https://y.qq.com/music/photo_new/T002R180x180M00000459X8Y1wfcQ7_1.jpg?max_age=2592000",
+    "link_lrc":"../music/Alan Walker_Noah Cyrus_Digital Farm Animals_Juliander-All Falls Down.lrc"
+    },
+    {
+    "name":"偏爱",
+    "singer":"张芸京",
+    "album":"《仙剑奇侠传3》电视剧插曲",
+    "time":"03:32",
+    "link_url":"../music/张芸京-偏爱-《仙剑奇侠传3》电视剧插曲.mp3",
+    "cover":"https://y.qq.com/music/photo_new/T002R180x180M000003vyvvf2kbfel_1.jpg?max_age=2592000",
+    "link_lrc":"../music/张芸京-偏爱-《仙剑奇侠传3》电视剧插曲.lrc"
+    },
+    {
+    "name":"千里之外",
+    "singer":"周杰伦_费玉清",
+    "album":"千里之外",
+    "time":"04:14",
+    "link_url":"../music/周杰伦_费玉清-千里之外.mp3",
+    "cover":"https://y.qq.com/music/photo_new/T002R180x180M000002jLGWe16Tf1H_1.jpg?max_age=2592000",
+    "link_lrc":"../music/周杰伦_费玉清-千里之外.lrc"
+    },
+    {
+    "name":"Reality",
+    "singer":"Frequencies_Janieck",
+    "album":"Lost",
+    "time":"02:39",
+    "link_url":"../music/Lost Frequencies_Janieck Devy-Reality.mp3",
+    "cover":"https://y.qq.com/music/photo_new/T002R180x180M000004bJ8m404XkfF_2.jpg?max_age=2592000",
+    "link_lrc":"../music/Lost Frequencies_Janieck Devy-Reality.lrc"
+    },
+    {
+    "name":"Animals",
+    "singer":"Maroon",
+    "album":"(Big Boi Remix)",
+    "time":"04:01",
+    "link_url":"../music/Maroon 5-Animals (Big Boi Remix).mp3",
+    "cover":"https://y.qq.com/music/photo_new/T001R150x150M000001JuGrt372YIQ.jpg?max_age=2592000",
+    "link_lrc":"../music/Maroon 5-Animals (Big Boi Remix).lrc"
+    },
+    {
+    "name":"That Girl",
+    "singer":"Olly Murs",
+    "album":"That Girl",
+    "time":"02:56",
+    "link_url":"../music/Olly Murs-That Girl.mp3",
+    "cover":"https://y.qq.com/music/photo_new/T001R150x150M000001RRlcX2n2NLs.jpg?max_age=2592000",
+    "link_lrc":"../music/Olly Murs-That Girl.lrc"
+    },
+    {
+    "name":"Beautiful Now",
+    "singer":"Bellion_Zedd",
+    "album":"Beautiful Now",
+    "time":"03:38",
+    "link_url":"../music/Jon Bellion_Zedd-Beautiful Now.mp3",
+    "cover":"https://y.qq.com/music/photo_new/T002R180x180M000001Pquv93KJu7p_1.jpg?max_age=2592000",
+    "link_lrc":"../music/Jon Bellion_Zedd-Beautiful Now.lrc"
+    }
+]

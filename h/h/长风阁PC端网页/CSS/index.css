@@ -1,0 +1,619 @@
+/*页面初始化*/
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	border-collapse: collapse;
+	text-decoration: none;
+}
+body{
+	/*复合写法有的是不需要关心顺序，例如background、border*/
+	background-image:url(../img/bjing.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed; /*背景图像不滚动*/
+}
+/* 确定版心 */
+.w{
+	position: relative;
+	width: 1035px;
+	/*电脑宽1349px*/
+	margin: 0 auto;
+	/*背景颜色为了更直观的显示当前盒子位置*/
+	/*background-color: red;*/
+}
+/*创建动画效果*/
+@keyframes donghua{
+	0%{
+			transform:translateX(0px);
+	}
+	100%{
+			transform:translateX(-1400px);
+	}
+}
+@keyframes luoye{
+	0%{
+		opacity: 0;
+		top: -10%;
+			transform:translateX(20px) rotate(0deg);
+			
+	}
+	10%{
+			opacity: 1;
+	}
+	20%{
+		transform:translateX(-20px) rotate(45deg);
+	}
+	40%{
+		transform:translateX(-20px) rotate(90deg);
+	}
+	60%{
+		transform:translateX(20px) rotate(180deg);
+	}
+	80%{
+		transform:translateX(-20px) rotate(180deg);
+	}
+	100%{
+		top: 180%;
+		transform:translateX(-20px) rotate(225deg);
+	}
+}
+
+/*头部开始*/
+  .section{
+  	position: absolute;
+  	display:flex;
+  	overflow:hidden;
+  	align-items: center;
+  	justify-content: center;
+  	/*background:radial-gradient(#333,#000);*/
+  	width: 120%;
+  	 /*height: 100vh;    /*百分百的可视高度*/*/
+  	 height: 2000px;
+  }  
+  section .sss{
+  	position: absolute;
+  	width: 100%;
+  	height: 100%;
+  	top: -10%;
+  	left: 0;
+  	pointer-events: none;
+  }
+  section .sss div{
+  	position: absolute;
+  	display:block;
+  }
+   section .sss1 div{
+  	position: absolute;
+  	display:block;
+  }
+   section .sss2 div{
+  	position: absolute;
+  	display:block;
+  }
+  section .sss  div:nth-child(1){
+  	left: 20%;
+  	animation:luoye 15s linear infinite;
+  	animation-delay: -7s;
+  }
+  section .sss div:nth-child(9){
+  	left: 5%;
+  	animation:luoye 20s linear infinite;
+  	animation-delay: -15s;
+  }
+  section .sss div:nth-child(10){
+  	left: 96%;
+  	animation:luoye 25s linear infinite;
+  	animation-delay: -20s;
+  }
+  section .sss div:nth-child(2){
+  	left: 50%;
+  	animation:luoye 20s linear infinite;
+  	animation-delay: -5s;
+  }
+  section .sss div:nth-child(3){
+  	left: 70%;
+  	animation:luoye 20s linear infinite;
+  	animation-delay: -2s;
+  }
+  section .sss div:nth-child(4){
+  	left: 0%;
+  	animation:luoye 15s linear infinite;
+  	animation-delay: -5s;
+  }
+  section .sss div:nth-child(5){
+  	left: 85%;
+  	animation:luoye 18s linear infinite;
+  	animation-delay: -10s;
+  }section .sss div:nth-child(6){
+  	left: 0%;
+  	animation:luoye 15s linear infinite;
+  }
+  section .sss div:nth-child(7){
+  	left: 15%;
+  	animation:luoye 14s linear infinite;
+  }
+   section .sss div:nth-child(8){
+  	left: 60%;
+  	animation:luoye 15s linear infinite;
+  }
+   section .sss div:nth-child(11){
+  	left: 90%;
+  	animation:luoye 25s linear infinite;
+  }
+   section .sss div:nth-child(12){
+  	left: 94%;
+  	animation:luoye 30s linear infinite;
+  }
+  .sss1{
+  	position: absolute;
+  	transform:scale(2) rotateY(180deg);
+  	filter: blur(1px);
+  }
+    .sss2{
+
+  	position: absolute;
+  	transform:scale(0.8) rotateY(180deg);
+  	filter: blur(2px);
+  }
+.fye img{
+		
+		width: 100px;
+}
+.header{
+	position: relative;
+	width: 100%;
+	height: 30px;
+	color: #2775b6;
+	line-height: 30px;
+	text-align: center;
+	background-color:#fff;
+}
+.header span{
+	position: relative;
+	white-space:nowrap;
+	display:block;
+	overflow:hidden;
+	background-color: none;
+	width: 710px;
+	height: 30px;
+	margin: 0 auto;
+	font-size: 20px;
+
+
+}
+/*调用动画*/
+.header span p{
+	position: absolute;
+	left: 640px;
+	 white-space:nowrap;
+	
+	width: 710px;
+	font-size: 16px;
+	animation:donghua 10s linear infinite;
+
+}
+.liuyan{
+	position: absolute;
+	width: 157px;
+	height: 300px;
+	text-align: center;
+	background-color: #00FA9A;
+	overflow:auto;
+	opacity: 0;
+}
+.liuyan:hover{
+	opacity: 0.4;
+}
+.liuyan input{
+	width: 120px;
+}
+.liuyan button{
+	position: relative;
+	left: 37px;
+}
+/*头部结束*/
+/*nav开始*/
+.nav{
+	background-color:#6a6da9;
+	height: 50px;
+	line-height: 46px;
+	opacity: 0.3;
+}
+.nav:hover{
+	opacity: 1;
+}
+.nav ul{
+	/*去除行内块间隙最优选择*/
+	display: table;
+  word-spacing:-1em; /*兼容其他浏览器，题主还未验证*/
+	
+
+}
+.nav ul li{
+	display:inline-block;
+	padding:2px 19px;
+	border-top: 2px solid red;
+	font-size: 20px;
+	/*宽度无法与父元素一样宽,过大就会掉下来,求解中...*/
+}
+.nav ul li a{
+	color: pink;
+}
+.nav li:hover{
+	color:pink;
+	border-color: pink;
+	background-color:#3d208a;
+}
+.nav .gengduo{
+	display:none;
+	position: absolute;
+	height: 300px;
+	z-index: 2;
+	background-color: #3d208a;
+}
+.nav li:active{
+	color:red;
+}
+/*nav结束*/
+/*分割线开始*/
+.hr{
+	position: relative;
+	height: 50px;
+	top: 0px;
+	background-color: #426ab3;
+	z-index: -1;
+	opacity: 0;
+}
+/*分割线结束*/
+/*banner开始*/
+.banner{
+	position: relative;
+	height: 300px;
+	margin: 10px auto;
+	border-radius: 10px;
+	background-color:rgba(105,105,105,0.2);
+	
+}
+
+.banner:hover{
+	margin: 0px auto 20px;
+	/*语法： box-shadow: h-shadow v-shadow blur spread color inset;
+					水平 (必须)	垂直(必须)  模糊距离 阴影的尺寸 color 将外部阴影 (outset) 改为内部阴影。
+　　　　注意参数顺序不要乱写，尽量标准，避免不必要的bug
+　　　　多个阴影间，逗号隔开*/
+	box-shadow: 7px 8px 6px 0 #fff;
+	background-color:rgba(28,28,28,0.4);
+
+
+
+}
+
+
+/*PPT模板开始*/
+.banner .banner1{
+	width:100px;
+	height: 100%;
+	text-align: center;
+	
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+.banner:hover .banner1{
+	background-color:rgba(139,71,93,0.4);
+}
+.banner .banner1 h1{
+	padding: 8px;
+	color: #8a2e3b;
+}
+.banner .ppt{
+	position:absolute; 
+	top: 0;
+	left: 100px;
+	width: 935px;
+	height: 100%;
+	
+}
+
+.banner .ppt tr td{
+	width:100px;
+	padding: 10px 15px
+}
+.banner .ppt tr a{
+	color:#fff;
+	
+}
+.banner .ppt tr a:hover{
+	color: red;
+	text-decoration: underline;
+}
+/*分割线开始*/
+.hr1{
+	position: relative;
+	height: 50px;
+	top: -10px;
+	background-color: #426ab3;
+	z-index: -1;
+	opacity: 0;
+}
+/*分割线结束*/
+/*网页模板开始*/
+.wangye{
+	position: relative;
+	height: 300px;
+	margin: 10px auto;
+	border-radius: 10px;
+	background-color:rgba(28,28,28,0.2);
+	
+}
+
+.wangye:hover{
+	margin: 0px auto 20px;
+	/*语法： box-shadow: h-shadow v-shadow blur spread color inset;
+					水平 (必须)	垂直(必须)  模糊距离 阴影的尺寸 color 将外部阴影 (outset) 改为内部阴影。
+　　　　注意参数顺序不要乱写，尽量标准，避免不必要的bug
+　　　　多个阴影间，逗号隔开*/
+	box-shadow: 7px 8px 6px 0 #fff;
+	background-color:rgba(28,28,28,0.4);
+
+
+}
+/*网页模板侧边开始*/
+.wangye .wangye1{
+	width:100px;
+	height: 100%;
+	text-align: center;
+	
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+.wangye .wangye1 h1{
+	padding: 8px;
+	color: #8a2e3b;
+}
+.wangye:hover .wangye1{
+	background-color:rgba(139,71,93,0.4);
+}
+/*网页模板侧边结束*/
+.wangye .wye{
+	position:absolute; 
+	top: 0;
+	left: 100px;
+	width: 935px;
+	height: 100%;
+
+}
+.wangye .wye tr td{
+	width:100px;
+	padding: 10px 15px
+}
+.wangye .wye tr a{
+	color:#fff;
+	
+}
+.wangye .wye tr a:hover{
+	color: red;
+	text-decoration: underline;
+}
+
+/*网页模板结束*/
+/*分割线开始*/
+.hr2{
+	position: relative;
+	height: 50px;
+	top: -10px;
+	background-color: #426ab3;
+	z-index: -1;
+	opacity: 0;
+}
+/*分割线结束*/
+/*教学模板开始*/
+.jiaoxue{
+	position: relative;
+	height: 300px;
+	margin: 10px auto;
+	border-radius: 10px;
+	background-color:rgba(28,28,28,0.2);
+	
+}
+
+.jiaoxue:hover{
+	margin: 0px auto 20px;
+	/*语法： box-shadow: h-shadow v-shadow blur spread color inset;
+					水平 (必须)	垂直(必须)  模糊距离 阴影的尺寸 color 将外部阴影 (outset) 改为内部阴影。
+　　　　注意参数顺序不要乱写，尽量标准，避免不必要的bug
+　　　　多个阴影间，逗号隔开*/
+	box-shadow: 7px 8px 6px 0 #fff;
+	background-color:rgba(28,28,28,0.4);
+
+
+}
+/*教学模板侧边开始*/
+.jiaoxue .jiaoxue1{
+	width:100px;
+	height: 100%;
+	text-align: center;
+	
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+.jiaoxue .jiaoxue1 h1{
+	padding: 8px;
+	color: #8a2e3b;
+}
+.jiaoxue:hover .jiaoxue1{
+	background-color:rgba(139,71,93,0.4);
+}
+/*教学模板侧边结束*/
+.jiaoxue .jxue{
+	position:absolute; 
+	top: 0;
+	left: 100px;
+	width: 935px;
+	height: 100%;
+
+}
+.jiaoxue .jxue tr td{
+	width:100px;
+	padding: 10px 15px
+}
+.jiaoxue .jxue tr a{
+	color:#fff;
+	
+}
+.jiaoxue .jxue tr a:hover{
+	color: red;
+	text-decoration: underline;
+}
+
+/*教学模板结束*/
+/*分割线开始*/
+.hr3{
+	position: relative;
+	height: 50px;
+	top: -10px;
+	background-color: #426ab3;
+	z-index: -1;
+	opacity: 0;
+}
+/*分割线结束*/
+/*电子模板开始*/
+.dianzi{
+	position: relative;
+	height: 300px;
+	margin: 10px auto;
+	border-radius: 10px;
+	background-color:rgba(28,28,28,0.2);
+	
+}
+
+.dianzi:hover{
+	margin: 0px auto 20px;
+	/*语法： box-shadow: h-shadow v-shadow blur spread color inset;
+					水平 (必须)	垂直(必须)  模糊距离 阴影的尺寸 color 将外部阴影 (outset) 改为内部阴影。
+　　　　注意参数顺序不要乱写，尽量标准，避免不必要的bug
+　　　　多个阴影间，逗号隔开*/
+	box-shadow: 7px 8px 6px 0 #fff;
+	background-color:rgba(28,28,28,0.4);
+
+
+}
+/*电子书籍模板侧边开始*/
+.dianzi .dianzi1{
+	width:100px;
+	height: 100%;
+	text-align: center;
+	
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+.dianzi .dianzi1 h1{
+	padding: 8px;
+	color: #8a2e3b;
+}
+.dianzi:hover .dianzi1{
+	background-color:rgba(139,71,93,0.4);
+}
+/*电子书籍模板侧边结束*/
+.dianzi .dzi{
+	position:absolute; 
+	top: 0;
+	left: 100px;
+	width: 935px;
+	height: 100%;
+
+}
+.dianzi .dzi tr td{
+	width:100px;
+	padding: 10px 15px
+}
+.dianzi .dzi tr a{
+	color:#fff;
+	
+}
+.dianzi .dzi tr a:hover{
+	color: red;
+	text-decoration: underline;
+}
+
+/*电子书籍模板结束*/
+/*分割线开始*/
+.hr4{
+	position: relative;
+	height: 50px;
+	top: -10px;
+	background-color: #426ab3;
+	z-index: -1;
+	opacity: 0;
+}
+/*分割线结束*/
+/*在线工具模板开始*/
+.zaixian{
+	position: relative;
+	height: 300px;
+	margin: 10px auto;
+	border-radius: 10px;
+	background-color:rgba(28,28,28,0.2);
+	
+}
+
+.zaixian:hover{
+	margin: 0px auto 20px;
+	/*语法： box-shadow: h-shadow v-shadow blur spread color inset;
+					水平 (必须)	垂直(必须)  模糊距离 阴影的尺寸 color 将外部阴影 (outset) 改为内部阴影。
+　　　　注意参数顺序不要乱写，尽量标准，避免不必要的bug
+　　　　多个阴影间，逗号隔开*/
+	box-shadow: 7px 8px 6px 0 #fff;
+	background-color:rgba(28,28,28,0.4);
+
+
+}
+/*电子书籍模板侧边开始*/
+.zaixian .zaixian1{
+	width:100px;
+	height: 100%;
+	text-align: center;
+	
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+.zaixian .zaixian1 h1{
+	padding: 8px;
+	color: #8a2e3b;
+}
+.zaixian:hover .zaixian1{
+	background-color:rgba(139,71,93,0.4);
+}
+/*教学模板侧边结束*/
+.zaixian .zxian{
+	position:absolute; 
+	top: 0;
+	left: 100px;
+	width: 935px;
+	height: 100%;
+
+}
+.zaixian .zxian tr td{
+	width:100px;
+	padding: 10px 15px
+}
+.zaixian .zxian tr a{
+	color:#fff;
+	
+}
+.zaixian .zxian tr a:hover{
+	color: red;
+	text-decoration: underline;
+}
+
+/*教学模板结束*/
+/*分割线开始*/
+.hr5{
+	position: relative;
+	height: 50px;
+	top: -10px;
+	background-color: #426ab3;
+	z-index: -1;
+	opacity: 0;
+}
+/*分割线结束*/

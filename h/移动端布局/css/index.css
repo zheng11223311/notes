@@ -1,0 +1,293 @@
+* {
+	margin: 0;
+	padding: 0;
+	border-collapse: collapse;
+	list-style: none;
+	text-decoration: none;
+	vertical-align: middle;
+	/*禁止高亮颜色*/
+	-webkit-tap-highlight-color: transparent;
+}
+
+body {
+	margin: 0 auto;
+	width: 100%;
+	min-width: 320px;
+	max-width: 640px;
+	font-size: 14px;
+	font-family: -apple-system, Helvetica, sans-serif;
+	color: #666;
+	line-height: 1.5;
+	background: url(../img/header.png) no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+
+}
+}
+
+input {
+	-webkit-appearance: none;
+}
+
+a {
+	color: #fff;
+	-webkit-touch-callout: none;
+	/*苹果禁止长按弹出的菜单*/
+
+	/*
+	安卓js控制
+	 window.ontouchstart = function(e) { 
+    e.preventDefault(); 
+};*/
+}
+
+/*头部功能*/
+header {
+	position: fixed;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+}
+
+header .kuaiJieDaoHang {
+	width: 25%;
+}
+
+header .kuaiJieDaoHang img {
+	width: 16%;
+}
+
+header .dengru {
+	width: 25%;
+}
+
+header .dengru img {
+	width: 16%;
+	margin: -4px 2px 0 0;
+}
+
+header .liuyan {
+	width: 25%;
+}
+
+header .liuyan img {
+	width: 20%;
+	margin: -4px 4px 0 0;
+}
+
+header .sheZhi {
+	width: 25%;
+}
+
+header .sheZhi img {
+	width: 20%;
+	margin: -4px 4px 0 0;
+}
+
+/*动画效果*/
+@keyframes luoye {
+	0% {
+		opacity: 0;
+		top: -10%;
+		transform: translateX(20px) rotate(0deg);
+
+	}
+
+	10% {
+		opacity: 1;
+	}
+
+	20% {
+		transform: translateX(-20px) rotate(45deg);
+	}
+
+	40% {
+		transform: translateX(-20px) rotate(90deg);
+	}
+
+	60% {
+		transform: translateX(20px) rotate(180deg);
+	}
+
+	80% {
+		transform: translateX(-20px) rotate(180deg);
+	}
+
+	100% {
+		top: 180%;
+		transform: translateX(-20px) rotate(225deg);
+	}
+}
+
+.section {
+	position: absolute;
+	display: flex;
+	overflow: hidden;
+	align-items: center;
+	justify-content: center;
+	/*background:radial-gradient(#333,#000);*/
+	width: 120%;
+	height: 100vh;
+	/*百分百的可视高度*/
+
+}
+
+section .sss {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+}
+
+section .sss div {
+	position: absolute;
+	display: block;
+}
+
+section .sss1 div {
+	position: absolute;
+	display: block;
+}
+
+section .sss2 div {
+	position: absolute;
+	display: block;
+}
+
+section .sss div:nth-child(1) {
+	left: 20%;
+	animation: luoye 15s linear infinite;
+	animation-delay: -7s;
+}
+
+section .sss div:nth-child(9) {
+	left: 5%;
+	animation: luoye 20s linear infinite;
+	animation-delay: -15s;
+}
+
+section .sss div:nth-child(10) {
+	left: 96%;
+	animation: luoye 25s linear infinite;
+	animation-delay: -20s;
+}
+
+section .sss div:nth-child(2) {
+	left: 50%;
+	animation: luoye 20s linear infinite;
+	animation-delay: -5s;
+}
+
+section .sss div:nth-child(3) {
+	left: 70%;
+	animation: luoye 20s linear infinite;
+	animation-delay: -2s;
+}
+
+section .sss div:nth-child(4) {
+	left: 0%;
+	animation: luoye 15s linear infinite;
+	animation-delay: -5s;
+}
+
+section .sss div:nth-child(5) {
+	left: 85%;
+	animation: luoye 18s linear infinite;
+	animation-delay: -10s;
+}
+
+section .sss div:nth-child(6) {
+	left: 0%;
+	animation: luoye 15s linear infinite;
+}
+
+section .sss div:nth-child(7) {
+	left: 15%;
+	animation: luoye 14s linear infinite;
+}
+
+section .sss div:nth-child(8) {
+	left: 60%;
+	animation: luoye 15s linear infinite;
+}
+
+section .sss div:nth-child(11) {
+	left: 90%;
+	animation: luoye 25s linear infinite;
+}
+
+section .sss div:nth-child(12) {
+	left: 94%;
+	animation: luoye 30s linear infinite;
+}
+
+.sss1 {
+	position: absolute;
+	transform: scale(2) rotateY(180deg);
+	filter: blur(1px);
+}
+
+.sss2 {
+
+	position: absolute;
+	transform: scale(0.8) rotateY(180deg);
+	filter: blur(2px);
+}
+
+.fye img {
+
+	width: 100px;
+}
+
+/*nav签名*/
+nav {
+	position: relative;
+	top: 40px;
+	width: 100%;
+	height: 100px;
+	line-height: 40px;
+	text-align: center;
+	color: #f47920;
+}
+
+nav h1 {
+	font-size: 30px;
+	margin: 0px 0 20px 0;
+}
+
+nav p {
+	color: #56452d;
+}
+
+/*网站大全*/
+.allWEB {
+	position: relative;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	align-content: space-around;
+	margin: 50px auto 0;
+	width: 100%;
+	background-color: pink;
+}
+
+.allWEB .ppt {
+	position: relative;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	align-content: space-around;
+	margin: 10px auto 0;
+	width: 80%;
+	height: 100px;
+	background-color: red;
+}
+
+.allWEB .ppt a {
+	width: 27%;
+}

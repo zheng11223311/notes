@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+	<title>子项flex属性使用</title>
+	<style>
+		section{
+			display: flex;
+			width: 100%;
+			height: 100px;
+			background-color: pink;
+		}
+		section div:nth-child(1),
+		section div:nth-child(3){
+			width:20%;
+			background-color: red;
+
+		}
+		section div:nth-child(2){
+			flex:2;
+			background-color: blue;
+
+		}
+		p{
+				display: flex;
+			width: 100%;
+			height: 100px;
+			
+			background-color: pink;
+		}
+		p a:nth-child(1),
+		p a:nth-child(5){
+			width:20%;
+			background-color: red;
+			height: 100px;
+
+		}
+		p a:nth-child(2)
+			
+			flex:1;
+			background-color: blue;
+
+		}
+	</style>
+<body>
+</head>
+	<pre>
+		flex 子项目占的份数
+		align-self 控制子项自己在侧轴的排列方式
+		order 属性定义子项的排列顺序(前后顺序)
+
+		flex 属性
+		flex 属性定义子项目分配剩余空间,用flex 来表示占多少份数
+		.item{
+		<!-- flex:<munber>;  -->    <!-- default 0 -->
+			number 填数字               默认为0
+	}
+	子div{
+		flex:1;  n(总的flex个数)份中占一份
+}
+	</pre>
+	<section>
+			<div></div>
+			<div></div>
+			<!-- <div></div> -->
+		
+			<div></div>
+	</section>
+			<p>
+			<a href="">1</a>
+			<a href="">2</a>
+			<a href="">33333333333</a>
+			<a href="">4</a>
+			<a href="">5</a>
+			</p>
+</body>
+</html>
