@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <img src="https://sf6-tccdn-tos.pstatp.com/obj/tuchong-avatar/ll_448574_6" alt="">
+</body>
+<script>
+    //  axios('https://httpbin.org').then(res=>{
+    //         console.log(res.data);
+    //     })
+    //  axios('http://d1.weather.com.cn/sk_2d/101010300.html').then(res=>{
+    //         console.log(res.data);
+    //     })
+    //  axios('https://sf6-tccdn-tos.pstatp.com/obj/tuchong-avatar/ll_448574_6').then(res=>{
+    //         console.log(res.data);
+    //     })
+     
+        
+        axios({
+            // url:'https://tuchong.com/rest/tags/%E7%BE%8E%E5%A5%B3/posts?page=1',
+            url:'http://yukirin.tuchong.com/',
+            // params:{
+            //     username:'张珊',
+            //     age:10
+            // }
+            // headers:{
+            //     'Access-Control-Allow-Origin': '*'
+            // }
+        }).then(res=>{
+            console.log(res);
+        })
+</script>
+</html>
