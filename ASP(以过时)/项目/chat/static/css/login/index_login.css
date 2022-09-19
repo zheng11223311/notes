@@ -1,0 +1,89 @@
+.login_in{
+    /* 隐藏 */
+    display: none;
+    position: absolute;
+    width: 1008px;
+    height: 90vh;
+    top: 10px;
+    transform: translate(-50%);
+    left: 50%;
+    background-color: #fff;
+    background: url(../../img/6.jpg) no-repeat 0 0;
+    background-size:cover ;
+    z-index: 1;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.login_in_back{
+    position: absolute;
+    display: flex;
+    width: 1008px;
+    height: 53px;
+    line-height: 90px;
+    background-color: #fff;
+    font-size: 20px;
+    color: #3bb4f2;
+
+}
+.login_in_back div{
+   flex: 1;
+   text-align: right;
+   line-height: 45px;
+   padding-right: 60px;
+   font-size: 20px;
+   color: #eb9f12;
+
+}
+.login_in_back div:nth-child(1){
+   text-align: left;
+}
+.login_in_back div:nth-child(2) img {
+    position: absolute;
+    right: 10px;
+    
+}
+.login_in_img{
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    margin: 100px auto;
+}
+.login_in_img img{
+    width: 100px;
+    height: 100px;
+}
+.login_in form{
+    padding-top: 20px;
+    width: 400px;
+    height: 300px;
+    background-color:rgb(255, 255, 255,0.7);
+    margin: 0 auto;
+    border-radius: 10px;
+}
+.login_in form div{
+    padding-top: 10px;
+    text-align: center;
+    width: 400px;
+    font-size: 20px;
+}
+.login_in form div input{
+   
+    width: 200px;
+    height: 30px;
+    line-height: 30px;
+    border: none;
+    border-radius: 30px;
+    padding-left: 15px;
+}
+.login_in form button,.login_in form input[type="button"]{
+    margin-left: 25px;
+    margin-top: 20px;
+    width: 200px;
+    height: 30px;
+    line-height: 30px;
+    border: none;
+    border-radius: 30px;
+    font-size: 25px;
+    color: #3bb4f2;
+    background-color: #eb9f12;
+}

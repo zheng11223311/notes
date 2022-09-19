@@ -1,0 +1,235 @@
+
+@import url("https://s0.pstatp.com/cdn/expire-1-M/font-awesome/5.8.1/css/all.min.css");
+body{background-color: #1F1F1F;}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wyymusic {
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    position: absolute;
+    width: 300px;
+    bottom: 40px;
+    left: 20px;
+    /* background-color: rgb(223, 15, 188); */
+    z-index: 12;
+
+    --bg: #EBEBEB;
+    --black: #333333;
+    --prog: #A4B7BE;
+}
+
+a {
+    text-decoration: none;
+}
+
+.wyymusic .player {
+    width: 80%;
+    max-width: 275px;
+    height: 460px;
+    margin: 0 0 0 30px;
+    padding: 2rem 1.25rem;
+    background: var(--bg);
+    border-radius: 15px;
+    border: 1px solid rgb(223, 223, 223);
+    position: relative;
+    overflow: hidden;
+}
+.wyymusic .player .sort{
+    position: absolute;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    
+    background-color:rgb(51, 51, 51,0.7);
+    z-index: 11;
+}
+.wyymusic .player .sort span{
+    user-select: none;
+    cursor: pointer;
+    flex: 1;
+    border-right: 2px solid rgb(51, 51, 51);
+}
+.wyymusic .player .sort span:nth-child(3){
+    border: none;
+}
+.wyymusic .player .sort span:hover{
+    color: rgb(219, 5, 5);
+}
+.wyymusic .art {
+    display: block;
+    width: 175px;
+    height: 175px;
+    margin: 1rem auto;
+    border-radius: 50%;
+    border: 4px solid #EBEBED;
+    box-shadow:  16px 16px 57px #acacac, 
+                -16px -16px 57px #ffffff;
+}
+
+.wyymusic .info {
+    margin: 1.5rem 0;
+    text-align: center;
+}
+.wyymusic .info h1 {
+    color: var(--black);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+.wyymusic .info p {
+    font-size: 1.15rem;
+    color: var(--prog);
+}
+
+.wyymusic .prog {
+    padding: 10px 0;
+}
+.wyymusic .prog-time {
+    padding: 3px 5px;
+    color: var(--prog);
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+}
+.wyymusic .prog-time > p {
+    font-size: 0.65rem;
+}
+
+.wyymusic .prog-bar {
+    width: 100%;
+    height: 10px;
+    padding: 1px;
+    border-radius: 25px;
+
+    background: linear-gradient(145deg, #fbfbfb, #d4d4d4);
+    box-shadow:  5px 5px 10px #a5a5a5, 
+                -5px -5px 10px #ffffff;
+
+}
+
+.wyymusic .prog-bar-inner {
+    height: 8px;
+    background: var(--prog);
+    border-radius: 25px;
+}
+
+.wyymusic .buttons {
+    margin: 1.5rem 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wyymusic .button {
+    color: var(--prog);
+    border-radius: 50%;
+    margin: 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 5px 10px #d4d4d4, 
+                -5px -5px 10px #ffffff;
+}
+
+.wyymusic .button-sm {
+    width: 2rem;
+    height: 2rem;
+    opacity: 0.75;
+}
+
+.wyymusic .button-md {
+    width: 2.5rem;
+    height: 2.5rem;
+    opacity: 0.85;
+}
+.wyymusic .button-lg {
+    width: 3.25rem;
+    height: 3.25rem;
+    box-shadow: inset 6px 6px 12px #c8c8c8, 
+            inset -6px -6px 12px #ffffff
+}
+
+
+.wyymusic .bar {
+    width: 50%;
+    height: 2px;
+    margin: auto;
+    background: var(--prog);
+    border-radius: 25px;
+    position: absolute;
+    left: 25%;
+    bottom: 1rem;
+}
+
+.wyymusic .art {
+    animation: rolling-disk 7.5s 0.25s linear infinite;
+}
+
+
+/* @keyframes timer {
+    0%      {width: 0%;}
+    100%    {width: 100%;}
+} */
+
+@keyframes rolling-disk {
+    0%      {transform: rotate(0);}
+    100%    {transform: rotate(1turn);}
+}
+.wyymusic>span{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 460px;
+}
+.wyymusic>span:nth-child(4){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 460px;
+}
+
+.wyymusic>span>img{
+    position: absolute;
+    top: 200px;
+    right: 0;
+}
+
+
+.wyymusic>span:nth-child(4)>img{
+    position: absolute;
+    top: 200px;
+    left: 0px;
+}
+.wyymusic_pick_up{
+    animation: pick_up 1s  linear 1 forwards;
+}
+@keyframes pick_up {
+    0%{
+        transform: translate(0);
+    }
+    100%{
+        transform: translate(-290px);
+    }
+}
+.wyymusic_pick_down{
+    animation: pick_down 1s   linear 1 forwards;
+}
+@keyframes pick_down {
+    0%{
+        transform: translate(-290px);
+    }
+    100%{
+        transform: translate(0px);
+    }
+}
