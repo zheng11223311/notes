@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>learnvuerouter</title>
+</head>
+
+<body>
+  打包构建应用加载时,js 包会非常大,影响加载,所以要将文件分离
+  一个路由打包一个js文件,不需要使用的路由暂时放在服务器,用到时在加载,
+  不需要使用的路由暂时放在服务器,不用一下子请求下载
+
+  方式一:结合Vue 的异步组件和webpack 的代码分析(老式写法)
+  const Home=resolve=>{require.ensure(['../components/Home.vue'],
+  ()=>{resolve(require('../components/About.vue'))})}
+
+  方式二:AMD 写法
+  const About=resolve=>require(['../components/About.vue'],resolve)
+
+  方式三: 在ES6 中.我们可以有更加简单的写法来组织Vue 异步组件和webpack
+  的代码分割(推荐)
+  const Home=()=>import('../components/Home.vue')
+</body>
+
+</html>

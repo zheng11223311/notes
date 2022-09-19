@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+     
+       <ul>
+           <li v-for='(item,index) in letters' >{{item}}{{index}}</li>
+       </ul>
+       <button @click='btnClick'>按钮</button>
+     
+        <!-- 
+           splice(2,3) 删除包括2号开始的3个元素
+           splice(2,0,'a') 删除包括2号开始的0个元素(没有删除元素),插入a
+        -->
+        <!-- 遍历对象 -->
+        
+    </div>
+</body>
+<script>
+ 
+    const app = new Vue({
+        el: '#app',     //挂载元素
+        data: {
+            
+           letters:['A','B','C','D','E'],
+           info:{
+               nam:'why',
+               age:18,
+               height:1.88
+           }
+        },
+        computed: {   // computed 里面的函数只打印一次
+            
+        },
+        // methods 调用里面的方法需要加()
+        methods: {  // methods 里面的函数打印多次
+           btnClick(){
+
+            // 界面响应式的方法
+               // 1. push 方法
+            //    this.letters.push('aa','bb')
+
+            //2.pop()
+            // 删除数组最后一个元素
+            // this.letters.pop() 
+
+            //3.shift()
+             // 删除数组最前面一个元素
+            // this.letters.shift()
+
+            //4.unshift()
+            // 在数组最前面添加一个元素
+            // this.letters.unshift('aa','bb')
+
+            //5.splice()
+            // 在数组中实现增删替改
+            // 开始位置,删除个数,追加添加元素
+            // this.letters.splice(2,0,'aa','bb','cc')
+
+            //6.sort()  
+            // 排序
+            // this.letters.sort()
+
+            //7.reverse()
+            // 反转排序
+            // this.letters.reverse()
+
+
+            //8.set(要修改的对象,索引值,修改后的值)
+            // vue 方法
+            Vue.set(this.letters,0,'bbbb')
+
+
+               //2.通过索引值修改数组中的元素
+            //    数组已经发生变化,但是浏览器没有渲染出来,界面不变
+            //    this.letters[0]='bbbbb'
+            //    console.log(this.letters);
+
+           }
+        }
+    })
+    // app.letters.splice(2,0,'a')
+    // app.letters.push('a')
+    // app.message = '嘻嘻嘻'
+
+    function sum(...num){       
+        //...代表可变参数,可以传任意个参数
+        // 把参数放到数组里面了
+
+    console.log(num);
+    }
+    sum(10,20,30,40,50,60)
+</script>
+
+    <!-- 报错 -->
+    <!-- Duplicate keys detected: 'aa'. This may cause an update error -->
+    <!-- 绑定key的元素中     aaa 的 key 值多次重复添加  不绑定就不会报错-->
+</html>

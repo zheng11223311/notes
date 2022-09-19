@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        组件内部是不能访问实例对象内部的数据的
+        组件内部数据必须在组件的data 内部访问,不能在
+        实例对象的data 内部访问,,,
+        组件内部的data 不能是对象,必须是函数且还要
+        返回一个对象
+        组件和实例对象差不多,一样有methods 等对象
+
+
+        为什么组件data 必须是函数
+
+        组件实例对象没有共用数据,return 的是一个新的对象
+        每次new的对象都是不一样的
+        <cpn2>无效内容</cpn2>
+        <cpn2>无效内容</cpn2>
+        <cpn2>无效内容</cpn2>
+    </div>
+    
+    
+    <template id="cpn2">
+        <div>
+            <!-- <h2>{{message}}</h2> -->
+            <h2>{{message}}</h2>
+            <h2>{{counter}}</h2>
+            <p>我是内容,哈哈哈2222</p>
+            <button @click='increment()'>+</button>
+            <button @click='decrement()'>-</button>
+        </div>
+
+    </template>
+
+</body>
+<script>
+
+    // 示例一
+    function abc(){
+        return {    //返回新创建的对象
+            name:'why',
+            age:18
+        }
+    }
+    let obj1=abc()
+    let obj2=abc()
+    let obj3=abc()
+    obj1.name='hh'
+    //不同的函数内返回的不同的对象,函数之间互不影响不会被修改
+    console.log(obj1.name); //hh
+    console.log(obj2.name); //why
+    console.log(obj3.name); //why
+    
+
+    // 示例二
+    const obj4={       //这样是获得obj4 的内存地址,
+            name:'why',
+            age:18
+        }
+
+    function abc1(){
+        return obj4     //返回引用地址0x2624
+    }
+    let obj5=abc1()
+    let obj6=abc1()
+    let obj7=abc1()
+    obj5.name='hh'
+    // 函数内返回的的对象不会被修改
+    console.log(obj5.name); //hh
+    console.log(obj6.name); //hh
+    console.log(obj7.name); //hh
+
+</script>
+<script>
+    const obj8={        
+        message:'hello word',
+        counter:0
+    }
+    // 注册组件(语法糖,省略创建组件)
+    Vue.component('cpn2',{  //vue 里面渲染成rander 函数
+        template:'#cpn2',
+        // data(){
+        //    return {      相互独立
+        //         message:'hello word',
+        //         counter:0
+        //    }
+        // }
+        data(){     //相互影响
+            return obj8
+        
+        },
+        methods:{
+            increment(){
+                this.counter++
+            },
+            decrement(){
+                this.counter--
+            }
+        }    
+    })
+
+    const app = new Vue({   //开发中一般只使用一个app
+        el: '#app',     //挂载元素
+        data: {
+          message:'你好啊'
+        },
+        computed: {   // computed 里面的函数只打印一次
+
+        },
+        methods: {  // methods 里面的函数打印多次
+
+        },
+        //过滤器 filters
+        filters: {
+
+        },
+        components: {    //注册局部组件
+            // 组件的标签名:组件构造器
+            // cpn1: cpnC1,
+            // cpn2: cpnC2
+
+    //         cpn2: {  //vue 里面渲染成rander 函数
+    //     template: `<div>
+    //         <h2>我是标题2222</h2>
+    //         <p>我是内容,哈哈哈2222</p>
+    //         </div>`,
+    // }
+        }
+    })
+
+</script>
+<!-- 报错 -->
+<!-- Duplicate keys detected: 'aa'. This may cause an update error -->
+<!-- 绑定key的元素中     aaa 的 key 值多次重复添加  不绑定就不会报错-->
+
+</html>

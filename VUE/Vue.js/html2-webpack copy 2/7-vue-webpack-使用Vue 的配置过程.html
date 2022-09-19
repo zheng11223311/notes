@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+安装vue 的三种方式
+1.直接下载应用
+2.cdn 引入
+3npm 安装
+
+      安装vue
+      npm install vue --save
+      npm install vue@2.5.21 --save
+      --save 是将信息保存在package.json 中,
+      -dev 是开发式依赖,使用时不依赖
+      在当前目录下生产js 文件夹和vue.js
+    
+      runtime-only
+  代码中,不可以有任何template 标签,挂载的app 也是一个template
+  没有对template 编译的代码
+      runtime-complier  
+  代码中,可以有template 标签,complier可以对template 编译
+  在webpack.config 里面配置
+    
+    npm run build 打包
+
+    <div id="app">
+      <h2>{{message}}</h2>
+    </div>
+</body>
+<script src="./dist/bundle.js"></script>
+
+</html>

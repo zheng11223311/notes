@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    父组件
+    <div id="app">
+        1.组件化开发
+        2.前端模块化
+        3.webpack
+        4.Vue CLI 脚手架
+        cpn中间没有内容的话,可以使用单标签/cpn
+        <!-- <cpn :number1='num1' :number2='num2'></cpn> -->
+        <cpn :number1='num1' :number2='num2' @num1change='num1change' @num2change='num2change' />
+    </div>
+
+
+    <template id="cpn">
+        <div> 组件必须有一个根元素
+            <h1>prop:{{number1}}</h1>
+            <h1>data:{{dnumber1}}</h1>
+            <input type="text" v-model='dnumber1'>
+            <h1>prop:{{number2}}</h1>
+            <h1>data:{{dnumber2}}</h1>
+            <input type="text" v-model='dnumber2'>
+        </div>
+
+    </template>
+
+</body>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            num1: 1,
+            num2: 0
+        },
+        components: {
+            cpn: {
+                template: '#cpn',
+                props: {
+                    number1: Number,
+                    number2: Number,
+                    name: ''
+                },
+                data() {
+                    return {
+                        //组件内部的双向绑定,必须绑定data 函数
+                        //内部的值,而不是data 对象里的值
+                        //而且必须是组件内部的data 函数,
+                        // 不是实例对象里面的data 对象
+                        dnumber1: this.number1,
+                        dnumber2: this.number2
+                    }
+                    //等同于methods 里的方法,v-model 的双向绑定原理
+                },
+                methods: {
+
+                },
+                // watch 是组件内的属性,用于监听属性的改变
+                watch: {
+                    // 监听props 里的name 属性的改变
+                    // name(newValue[, oldValue])
+                    name(newValue) {
+                        // 属性改变的会到这里
+                    },
+                    // 监听子组件的事件
+                    dnumber1(newValue) {
+                        this.dnumber2 = newValue * 100
+                        this.$emit('num1change', newValue)
+                    },
+                    dnumber2(newValue) {
+                        this.dnumber1 = newValue / 100
+                        this.$emit('num2change', newValue)
+                    }
+                }
+            }
+        },
+        methods: {
+            // 默认传过来的是String 类型
+            num1change(value) {
+                // console.log(value);
+                // console.log(typeof value);  //string
+                this.num1 = value * 1   //返回数字
+            },
+            num2change(value) {
+                // console.log(value);
+                // console.log(typeof value);
+                this.num2 = value * 1
+            }
+        }
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //从新敲一遍代码
+    // 子组件
+    // const cpn = {
+    // template: '#cpn2',
+    // props:{}   //两者都可以 很多中其他的写法  string boolean...
+    // props:['childmovies','cmessage'],
+    // props: {
+    //1.类型的限制
+    // childmovies:Array,
+    // cmessage:String     //String 大写..
+
+    // 2.提供一些默认值,以及必传值
+    // cmessage: {
+    //     type: String,
+    //     default: 'aaa',   //没有传值默认值
+    //     required: true    //布尔变量,必须向这个值传入值,不传报错 required 必须
+
+    // },
+    // childmovies: {
+    //     // type:Array,      一种报错?
+    //     //Object Array String Number Boolean Date Function Symbol
+    //     type: [Array, String],    //两种类型
+    //     //default 类型是对象或则数组时,默认值必须是一个函数
+    //     // default:[], //在vue2.5.3 以下不会报错
+    //     default() {
+    //         return []
+    //     },
+
+    //     // 自定义验证类型(自己定义),不匹配则报错
+    //     zdy(value) {
+    //         return ['a', 'b'].indexOf(value) !== -1
+    //     }
+    // }
+    //     },
+    //     data() {
+    //         return {
+
+    //         }
+    //     },
+    //     methods: {
+    //         btnClick(item) {
+
+    //             this.$emit('itemclick', item)
+    //         }
+    //     }
+
+    // }
+
+    // 父组件
+    // const app = new Vue({   //开发中一般只使用一个app
+    //     el: '#app',     //挂载元素
+    //     data: {
+
+    //     },
+    //     computed: {   // computed 里面的函数只打印一次
+
+    //     },
+    //     methods: {  // methods 里面的函数打印多次
+
+    //     },
+    //     //过滤器 filters
+    //     filters: {
+
+    //     },
+    //     components: {    //注册局部组件
+    //         cpn         //ES6字面量属性增强写法  原式  cpn:cpn
+    //     }
+    // })
+
+</script>
+<!-- 报错 -->
+<!-- Duplicate keys detected: 'aa'. This may cause an update error -->
+<!-- 绑定key的元素中     aaa 的 key 值多次重复添加  不绑定就不会报错-->
+
+<!-- [Vue warn]: Avoid mutating a prop directly since the value 
+will be overwritten whenever the parent component re-renders.
+Instead, use a data or computed property based on the prop's value.
+ Prop being mutated: "number1" -->
+
+<!-- 组件里props 属性必须通过父组件来修改 -->
+
+</html>

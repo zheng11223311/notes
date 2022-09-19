@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+     
+       <ul>
+           <!-- 在遍历过程中没有使用下标值(索引号) -->
+           <li v-for='item in name'>{{item}}</li>
+       </ul>
+
+       <!-- 在遍历的过程中,获取索引值 -->
+       <ul>
+           <li v-for='(item,index) in name'>{{index+1}}.{{item}}</li>
+       </ul>
+        <!-- 
+           
+        -->
+        <!-- 遍历对象 -->
+        <ul>
+            <!-- 遍历对象的过程中,如果只是获取一个值,获取到的是value -->
+            <li v-for="item in info">{{item}}</li>
+
+            <!-- 获取key 和value  （value，key） -->
+            <li v-for="(item,key) in info">{{item}}-{{key}}</li>
+            <li v-for="(item,key,index) in info">{{item}}-{{key}}-{{index}}</li>
+            
+        </ul>
+    </div>
+</body>
+<script>
+ 
+    const app = new Vue({
+        el: '#app',     //挂载元素
+        data: {
+           name:['aa','bb','cc','dd'],
+           info:{
+               nam:'why',
+               age:18,
+               height:1.88
+           }
+        },
+        computed: {   // computed 里面的函数只打印一次
+            
+        },
+        // methods 调用里面的方法需要加()
+        methods: {  // methods 里面的函数打印多次
+           fn(){
+               this.isshow=!this.isshow
+           }
+        }
+    })
+    // app.message = '嘻嘻嘻'
+</script>
+
+</html>

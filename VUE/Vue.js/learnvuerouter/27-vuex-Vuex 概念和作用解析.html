@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     Vuex 是一个专门为vue.js 应用程序开发的状态管理模式
+     它采用集中式储存管理应用的所有组件的状态,并以相应的规则保证
+     状态的一种可以预测的方式变化
+     Vuex 也集成到Vue 官方调试工具devtools extension,提供了诸如
+     零配置的tiime-travel 调试,状态快照导入导出等高级调试功能
+
+     状态管理到底是什么?
+     简单的看成把需要多个组件共享的变量全部存储在一个对象里面
+     然后,将这个对象放在顶层的vue 实例中,让其他组件组件可以使用
+     那么多个组件是不是就可以共享这个对象中的所有变量属性了呢?
+    
+</body>
+<script>
+
+    //原型链上没有响应式,name 数据变化时其他数据的name不会跟着变化
+//     const shareObj={
+//         name:'why'
+//     }
+//     Vue.prototype.shareObj=shareObj
+
+// vue.component('cpn1',{
+//     this.shareObj.name
+// })
+// vue.component('cpn1',{
+//     this.shareObj.name
+// })
+   
+    
+ 
+
+
+</script>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     
+    
+</body>
+<script>
+    
+    // reject 是可选参数
+    // 第二种处理方法
+    // new Promise((resolve,reject)=>{
+    //     setTimeout(()=>{
+    //         resolve('优雅永不过时')
+    //         // reject('err message')
+    //     },1000)
+    // }).then((res)=>{
+    //     console.log(res,'第一层的10行处理代码');
+
+    //     // 对第一次的结果进行处理
+    //     return new Promise((resolve)=>{
+    //         resolve(res+'1111')
+    //     })
+    // }).then(res=>{
+    //     console.log(res+'第二次处理');
+
+    //     // 对第一次的结果进行处理
+    //     return new Promise((resolve)=>{
+    //         resolve(res+'222222')
+    //     })
+    // }).then(res=>{
+    //     console.log(res);
+    // })
+
+
+
+    // 第二种
+    // new promise(resolve=>resolve(结果)) 简写
+    //  new Promise((resolve,reject)=>{
+    //     setTimeout(()=>{
+    //         resolve('优雅永不过时')
+    //     },1000)
+    // }).then((res)=>{
+    //     console.log(res,'第一层的10行处理代码');
+
+        
+    //     return Promise.resolve(res+'1111')
+    //    // return Promise.reject(res+'1111')
+       
+    // }).then(res=>{
+    //     console.log(res+'第二次处理');
+
+    //     // 对第一次的结果进行处理
+    //     return Promise.resolve(res+'222222')
+    // }).then(res=>{
+    //     console.log(res);
+    // }).catch(err=>{
+    //     console.log(err);
+    // })
+
+
+        // 第三种,更加简写
+    // 如果中间加了reject(),没有resolve()时链式会断开
+    new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            resolve('优雅永不过时')
+        },1000)
+    }).then((res)=>{
+        console.log(res,'第一层的10行处理代码');
+        return res+'1111'
+       
+    }).then(res=>{
+        console.log(res+'第二次处理');
+
+        // 对第一次的结果进行处理
+        return res+'222222'
+    }).then(res=>{
+
+        console.log(res);
+    }).catch(err=>{
+        console.log(err);
+    })
+</script>
+</html>

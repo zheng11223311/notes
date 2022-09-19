@@ -1,0 +1,11 @@
+{
+  "name": "edwork",
+  "version": "1.0.0",
+  "description": "this is test",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "jquery": "^3.6.0"
+  }
+}

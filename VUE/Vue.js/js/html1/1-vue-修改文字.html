@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <pre>
+            <!-- 对于制作原型或学习，你可以这样使用最新版本：
+            
+            <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+            对于生产环境，我们推荐链接到一个明确的版本号和构建文件，以避免新版本造成的不可预期的破坏：
+            
+            <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+            如果你使用原生 ES Modules，这里也有一个兼容 ES Module 的构建文件：
+            
+            <script type="module">
+                import Vue from 'https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.esm.browser.js'
+            </script> -->
+</pre>
+
+    <div id="app">
+        <div>{{message}}</div>
+        <h1>{{name}}</h1>
+    </div>
+
+</body>
+<script>
+    // function Vue(){
+
+    // }
+
+    // vue 使用let / const
+    // 声明式编程
+    const app = new Vue({
+        el: '#app',  //用于挂载要管理的元素
+        data: {      //定义数据
+            message: '你好',
+            name: 'vue'
+        }
+    })
+    // 原生js 属于编程范式:命令式编程
+    // 修改message 变量的值
+    app.message = 'hello'
+</script>
+
+</html>

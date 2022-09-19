@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+ 
+    <div id="app">
+      
+    </div>
+    loader 和plugin 的区别
+    loader 主要用于转换某些类型的模块,他是一个转换器
+    plugin 是插件,它是对webpack 本身的扩展,是一个扩展器
+    
+    配置文件里配置
+    const webpack =require('webpack')   自带的插件
+    plugins:[
+      //横幅
+      new webpack.BannerPlugin('最终解释权归逃离216 所有')
+    ]
+
+
+    npm run build 打包
+
+
+    在dist 的bundle.js 的头部显示
+</body>
+<script src="./dist/bundle.js"></script>
+
+</html>

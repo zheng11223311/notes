@@ -1,0 +1,242 @@
+webpack 是一个模块打包器(构建工具),它的主要目标是将JavaScript 文件打包在一起,打包后的文件用在浏览器中使用,但它也能过胜任转换(transform) 打包(bundle) 或包裹(package) 任何资源(resource or assets)
+官网:https://webpack.js.org/
+中文档:https://webpack.docschina.org/
+ 
+ webpack 的安装和体检
+npm init -y   //初始化,生成package.json 配置文件  -y = --yes   表示自动初始化
+npm init   手动初始化
+npm i webpack webpack-cki  --save-dev   //安装webpack 和webpack-cli 包,i = install  --save-dev = -D  安装包的时候在项目下会生成node_modules 文件夹,用于存储包的信息
+webpack -v 查看版本
+在项目下新疆src 和lib 文件夹
+webpack --mode development    //在开发环境下打包,默认在项目下生成dist 文件夹
+webpack --mode production    //在生产环境下打包,默认在项目下生成dist 文件夹
+node dist/main.js       //执行dist 文件夹下的main.js 文件 
+
+
+1.创建项目目录:webpack-demo  
+2.进入目录初始化NPM 操作:npm init -y
+3.安装webpack 及webpack-cli: npm install webpack webpack-cli --D
+4.创建src 目录或根据需要创建下面的子目录
+5.在src 下创建一些js 文件,和一个主入口文件index.js 
+6.控制台运行命令:webpack --mode development (开发环境)
+  控制台运行命令:webpack --mode production (生产环境)
+7.可以使用node 运行打包后的资源,也可以使用HTML 引入打包后的资源
+
+webpack 的5个核心概念
+1.entry
+    入口(entry) 指示webpack 以哪个文件作为入口起点开始打包,分析构建构建内部依赖图
+2.output
+    输出(output) 指示webpack 打包后的资源bundles 输出到哪里,以及如何命名
+3.loader
+    loader 让webpack 能够去处理那些非JavaScript 资源css img 等,将它们处理成webpack 能够识别的资源,可以理解为一个翻译过程(webpack 自身只能处理js 和json)
+4.plugins
+    插件(plugins) 可用于执行范围更广的任务,插件的范围包括,从打包优化和压缩,一直到新定义环境中的变量等
+5.mode 
+    模式(mode) 指示webpack 使用相应模式的配置
+        开发模式(development): 配置比较简单,能让代码本地调试运行的环境
+        生产模式(production): 代码需要不断优化达到性能最好,能让代码优化上线运行的环境
+    都会自动启用一些插件,生产模式使用插件更多
+
+webpack ./src/index.js -o ./build/build.js --mode development   //在开发模式下,将./src/index.js 打包(-o  output 输出)到./build/build.js
+在项目下新建webpack.config.js 配置文件
+
+多个入口和多个出口的情况
+1.String:单入口,打包成一个chunk,输出一个bundle 文件,chunk 的名称为默认
+    entry:'./src/index.js',
+2.Array:多入口,写多个入口,所有入口文件形成一个chunk(名称默认),输出只有一个bundle,chunk 名称默认 
+    entry:['./src/two.js','./src/index.js'],
+3.Object:多入口,有几个入口文件就生成几个chunk,并输出几个bundle 文件,chunk 的名称是key(键值)
+    entry:{
+        two:'./src/two.js',
+        index:'./src/index.js'
+    },
+    output:{            //输出路径
+        filename:'[name].js',    // 默认输出在dist/main.js 文件,[name] 是变量名,输出的是two 和index
+        path:resolve(__dirname,'build')   //调用path 方法 __dirname 项目当前的根目录路径,在跟路径下创建build 文件夹
+         filename:'[name].[chunkhash:8].js',//增加8位的哈希值，生成新的动态文件 ，
+        //运行指令webpack 将./src/index.js 文件打包到build/build.js 下
+    },
+4.特殊用法:
+    entry:{
+        //数组中所有入口文件生成一个chunk,输出一个bundle,chunk 的名称是key 
+        onetwo:['./src/one.js','./src/two.js'],
+        //形成一个chunk,输出一个bundle 文件 
+        index:'./src/index.js'
+    },
+    output:{            //输出路径
+        filename:'[name].js',    // 默认输出在dist/main.js 文件,[name] 是变量名,输出的是index
+        path:resolve(__dirname,'build')   //调用path 方法 __dirname 项目当前的根目录路径,在跟路径下创建build 文件夹
+        //运行指令webpack 将./src/index.js 文件打包到build/build.js 下
+    },
+
+webpack 打包html 资源       js 代码只需要设置成生产模式(production) 模式,会自动压缩
+压缩HTML 方法:
+使用插件(plugins)对HTML 文件进行处理(html-webpack-plugin)
+使用步骤:1.安装     2.引入      3.使用  
+下载安装:npm install html-webpack-plugin -D
+引入插件:const HtmlWebpackPlugin=require('html-webpack-plugin')
+使用插件:
+        plugins[
+            //功能:默认会创建一个空的HTML 文件,自动引入打包输出的所有资源(js/css)
+            //new HtmlWebpackPlugin()
+
+            //通过参数可以输出有结构的HTML 资源  多个.html 页面使用不同的js 文件,应创建多个new HtmlWebpackPlugin() 对象,分别引用不同额js 文件,使用的模板也不同
+            new HtmlWebpackPlugin({
+                //复制 './src/index.html' 文件,并自动引入打包输出的所有资源(js/css)
+                template:'./src/index.html',
+                //默认是index.html 名称,,通过filename 设置文件名称
+                //filename:'demo.html',
+                chunks:['index','vend']   //指定引入的js 文件,避免引入其他js 文件,数组内文件从后往前加载
+
+                //压缩html 代码 
+                minify:{
+                    //移除空格,但不移除字体间的空格
+                    collapseWhitespace:true,
+                    minimize:true,//是否打包为最小值
+                    removeAttrbuteQuotes:true,//去除引号
+                    removeComments:true,//去掉注释
+                    minifyCss:true,//压缩css
+                    removeEmptyElements:false,//清理内容为空的元素
+                }
+            })
+        ],
+        html-webpack-plugin 插件生成的内存中的页面以帮我们创建并正确引用了打包编译生成的资源(js/css)
+
+使用webpack 打包css 资源 
+需要使用npm 下载安装两个loader 帮我们完成打包
+1.css-loader 的作用是处理css 中的@import 和url 这样的外部资源  把css 打包到js 文件
+2.style-loader 的作用是把样式插入到DOM 元素中,方法是在head 中插入一个style 标签,并把样式写入到这个标签的innerHTML 里
+npm i css-loader style-loader -D
+webpack
+require('./style')    //入口js 文件引入css 文件 
+在webpack.json module 的 rules 下配置:
+            {
+                test:/\.css$/,    //匹配谁使用这个loader
+                use:['style-loader','css-loader']  //多个loader使用,注意先后顺序,数组内文件从后往前加载,先css 处理在style 导入
+            }
+
+webpack 打包less 或sass 资源 
+因为css 只是单纯的属性描述,它并不具有变量 条件语句等,css 特性导致他们难以组织和维护,sass 和less 都属于css 预处理器,定义了一种新的语法,其基本思想是用一种专门的编程语言,为css 增加一些编程的特性,将css 作为目标生成文件,然后开发者使用这种语言进行css 编码工作
+less 需要使用npm 下载less 包和less-loader
+sass 需要使用npm 下载node-sass 包和sass-loader
+require('./lessstyle.less')    //入口js 文件引入less 文件
+在webpack.json module 的 rules 下配置:
+            {
+                test:/\.less$/,    //匹配谁使用这个loader
+                use:['style-loader','css-loader','less-loader']  //多个loader使用,注意先后顺序,数组内文件从右到左,从下到上,先css 处理在style 导入
+            },
+
+require('./sassstyle.scss')    //入口js 文件引入sass 文件,后缀.scss
+在webpack.json module 的 rules 下配置:
+            {
+                test:/\.scss$/,    //匹配谁使用这个loader  sass 文件后缀.scss
+                use:['style-loader','css-loader','sass-loader']  //多个loader使用,注意先后顺序,数组内文件从右到左,从下到上,先css 处理在style 导入
+            },
+
+提取css 为单独文件
+css 内容是打包在js 文件中的,可以使用'mini-css-extract-plugin'插件提取成单独的css 文件(迷你css 提取插件)  在index.html 下生成css 文件
+npm i mini-css-extract-plugin -D
+1.在webpack.config.js 中引入插件
+    const MinCssExtractPlugin=require('mini-css-extract-plugin');
+2.在plugins 模板中使用插件
+    plugins:[new MinCssExtractPlugin()],
+    或通过参数filename 重新命名提职的css 文件名
+    new MinCssExtractPlugin({filename:'./css/demo.css'})   //可以不指定路径
+3,在css 的rules 中,使用MinCssExtractPlugin.loader 取代style-loader(style 会将文件打包到js 文件中),提取js 中的css 内容为单文件
+    {test:/\.css$/,use:[MinCssExtractPlugin.loader,'css-loader']}  //这个loader 不用带''
+    如果sass 和less 也是提取成单独css 文件,也一样将style-loader 换成MinCssExtractPlugin.loader  都生成在一个css 文件里面
+    {test:/\.scss$/,use:[MinCssExtractPlugin.loader,'css-loader','sass-loader']}
+
+处理css 的兼容性 --webkit--   --oz--
+需要使用postcss 处理,下载两个包postcss-loader 和postcss-preset-env 插件
+npm i postcss-loader postcss-preset-env -D
+postcss 会找到package.json 中的browserslist 里面配置,通过配置加载css 的兼容性
+         "browserslist":[
+                "> 0.2%",        //大于市场0.2% 的浏览器
+                "last 2 versions",  //最后的两个版本
+                "not dead"    //不是过时的浏览器
+            ]
+修改loader 的配置.新版本需要写postcss.config.js ,less 和sass 兼容性同理,plugins 加postcss-loader
+        module.exports={
+            plugins:[
+                require('postcss-preset-env')()
+            ]
+        }
+从postcss-loader 找到postcss.config.js 在找到 browserslist   
+
+
+压缩css 
+使用optimize-css-assets-webpack-plugin 插件压缩css 内容 
+下载插件
+npm i optimize-css-assets-webpack-plugin -D
+1.引入插件 
+    const OptimizeCssAssetsWebpackPlugin=require('optimize-css-assets-webpack-plugin');
+2.使用插件
+    plugins:[new OptimizeCssAssetsWebpackPlugin()],
+
+
+webpack 打包图片资源
+需要下载url-loader 和file-loader 两个依赖包,依赖关系
+css 中的background-image: url(./3.webp); 是找到打包后的文件夹下面图片
+npm i url-loader file-loader -D
+在css 中引入图片
+在HTML 中使用图片需要下载html-loader
+npm i html-loader -D
+    {
+                test:/\.(webp|jpg|jpeg|gif)$/,    //匹配谁使用这个loader
+                loader:'url-loader',
+                    options:{
+                        publicPath:'./images/',    //公共路径,会在输出路径前面创建一个路径 并创建images 文件
+                        outputPath:'images/',     //图片输出的路径
+                        limit:1024*8,           //小于limit 的小图片会转换base64 的格式
+                        // name:'[hash].[ext]',   //生成以哈希为名称的文件名,[ext]是变量名 为不同图片的后缀的格式 也可以写 [name].jpg
+                        name:'[name][hash:10].[ext]',   //以文件名字和哈希前10位组成文件名
+
+                } //option 对file 的操作
+            },
+            {
+                test:/\.html$/,
+                loader:'html-loader',  //用来处理引用打包后的图片路径的问题,既解决图片名称的变化带来的路径不对的情况
+            }
+    }
+
+
+打包其他资源字体图标
+require('./iconfont.css')        //index.js 需要引入资源 
+html 使用图标: <span class="iconfont vue-react"></span>  //vue-图标
+            {
+                exclude:/\.(js|json|html|css|less|scss|png|jpg|gif|gpeg|webp)$/,     //排除资源
+                loader:'file-loader',
+                options:{
+                    outputPath:'font/',
+                    publicPath:'./font',
+                    name:'[name][hash:10].[ext]'
+                }
+            }
+
+
+
+对js 语法配置语法检查eslint
+eslint 是一个开源的js 代码检查工具,初衷是为了让程序员可以创建自己的检查规则,实际生产中,团队往往会制定一套统一的标准,让整个团队的编码风格达到一致
+eslint 其实与webpack 没有任何关系,两者并不相互依赖,甚至一般情况下我们并不会在webpack 中进行eslint 的配置,可以单独使用
+语法检查使用eslint-loader,并基于eslint 包,只是用来检查js 语法
+注意只检查自己写的js 源代码,第三方库是不用检查的,可以在npmjs.com 中查看规则
+需要使用js 来的规则库来检查代码 'airbnb',需要使用eslint-config-airbnb-base 和eslint-plugin-import 两个包 
+npm i eslint-loader eslint eslint-config-airbnb-base eslint-plugin-import -D
+在js 文件中写入注释 //eslint-disable-next-line     eslint 会检查注释,自动忽略检查下一行代码,既下一行所有规则无效
+             {
+                test:/\.js$/,       //只检查js 语法,只检查自己写的代码,不检查第三方库的代码
+                exclude:/node_modules/,   //排除node_modules 第三方库
+                loader:'eslint-loader',
+                options:{
+                    fix:true        //检查出来后制动修复语法问题
+                }
+            }
+
+package.json 配置
+"eslintConfig":{
+    "extends":"airbnb-base"   //继承至airbnb-base
+  }
+
+
+

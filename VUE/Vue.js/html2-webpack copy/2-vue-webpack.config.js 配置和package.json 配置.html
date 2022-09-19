@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    dist-->distribution(发布)
+
+
+    需求:
+    在当前目录下  D:\wanye\Vue.js\html2-webpack
+    cmd 输入
+    webpack 
+  
+   就可以将src 下的文件main.js 打包到dist 下面生成bundle.js 文件
+    main.js 依赖的js 文件也将一同打包
+    
+
+    webpack.config.js 固定名字.不要随意更改
+    webpack 自动找到webpack.config.js 文件并执行
+
+
+    entry 入口
+    output 出口
+    bundle 打包
+    path 必须是绝对路径
+    导入npm 的path 包动态获取路径
+    在当前目录下
+    cmd 输入 
+    npm init    初始化,在使用npm 的相关东西,首先要初始化一下
+    package name:要求输入包名,直接回车,默认自己的包名
+    version:要求输入版本号,直接回车,默认1.0.0
+    description:  描述,可以不写
+    entry point: index.js 暂未讲到,随便写
+    test command:可以不写
+    git repository:可以不写,直接回车
+    keywords:   可以不写,直接回车
+    author: 可以不写,直接回车
+  license: 可以不写,直接回车
+  Is this OK? (yes) 直接回车
+
+  生成package.json 文件
+
+  npm install 根据package.json 安装一些东西
+
+  path 使用path 内部函数resolve 进行拼接地址
+  __dirname 当前文件路径  系统自带的参数
+
+  在当前目录下  D:\wanye\Vue.js\html2-webpack
+    cmd 输入
+    webpack 
+  
+   就可以将src 下的文件main.js 打包到dist 下面生成bundle.js 文件
+
+
+   第二个命令
+   npm run build  打包      npm run==>映射到
+
+   npm run  test   npm 找到package.json 里script 的test 并执行
+   npm run build 也是找到build,执行里面的webpack(先找局部(既本地),没有再找全局) 命令打包
+
+   在当前目录下安装本地webpack
+   cmd 输入
+   npm install webpack@3.6.0 --save-dev  
+
+   成功后package.json 会生成 devDependencies(开发式依赖) 的
+   webpack 包(局部),在目录下生成node_modules 文件夹,里面存放着包
+
+   终端直接运行webpack 的都是全局的webpack
+  使用 npm run build 会优先在本地里找webpack 
+  或 ./node_modules/.bin/webpack 也是使用本地的webpack
+
+
+  package.json 中的script 的脚本在执行,会先找本地的node_modules
+  /.bin 路径中对应的命令,如果没有找到会在全局环境变量中寻找
+
+  开发时依赖
+  开发时才会用到webpack 打包
+  运行时依赖
+  运行时不需要
+
+</body>
+<script src="./dist/bundle.js"></script>
+</html>

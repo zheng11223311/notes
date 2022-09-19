@@ -1,0 +1,218 @@
+为axios 应用准备接口案例
+项目的两种编程方式-模板编程(服务器端处理后发送到前端)和接口式编程(数据传送到前端来处理)  接口的好处.可以多个小程序,网页等一起是使用
+RestFul API 规范(URL.HTTP,版本,状态码,返回值,请求条件等规范)
+GET(SELECT):从服务器取出资源(一项或者多项)
+POST(CREATE):在服务器新建一个资源
+PUT(UPDATE):在服务器更新资源(客户端提供改变后的完整资源)
+PATCH(UPDATE):在服务器更新资源(客户端提供改变的属性)
+DELETE(DELETE):从服务器删除资源
+我们配置接口时,这只是一种规范,只是建议大家按照规范来使用而已
+
+
+Postman 安装和使用
+Postman 是一款非常流行的API 调试工具
+Postman 最早是作用于chrome 浏览器插件存在的
+Postman 提供了独立的安装包,不在依赖于chrome 浏览器了,同时支持MAC Windows 和Linux,推荐你使用这种方式安装
+https://www.getpostman.com/apps
+
+
+ES6 中的Promise 的原理和引用
+主要用于异步计算
+可以将异步操作列队化,安装期望的顺序执行,返回符合预期的结果
+可以在对象之间传递和操作promise,帮助我们处理列队
+
+异步回调的问题:
+之前处理是通过纯粹的回调函数的形式处理
+很容易进入到回调地狱中,剥夺了函数return 的能力
+问题可以解决,但是难以读懂,维护困难
+稍有不慎就会踏入回调地狱-嵌套层次深,不好维护
+promise 
+promise 是一个对象,对象和函数的区别就是对象可以保存状态,函数不可以(闭包除外)
+并未剥夺return 的能力,因此无需层层传递callback,进行回调获取数据
+代码风格,容易理解,便于维护
+多异步等待合并便于解决
+new Promise((resolve.reject)=>{
+        resolve('第一层')
+        reject('错误时传参')
+        
+}).then(res=>{
+    console.log(res)
+    return new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                //异步回调必须放在new Promise ,放在外面不会执行,因为在执行异步时,函数已经到下一层函数里了,不能执行回调函数
+            },1000)
+        })
+},err=>{
+    console.log(err)
+}).then(res=>{
+    console.log(res)
+})
+
+简化:
+new Promise((resolve.reject)=>{
+        resolve('第一层')
+        reject('错误时传参')
+        
+}).then(res=>{
+    console.log(res)
+    return  Promise.resolve(参数)
+},err=>{
+    console.log(err)
+}).then(res=>{
+    console.log(res)
+})
+
+在简化:
+new Promise((resolve.reject)=>{
+        resolve('第一层')
+        reject('错误时传参')
+        
+}).then(res=>{
+    console.log(res)
+    return {mess:'信息'}
+},err=>{
+    console.log(err)
+}).then(res=>{
+    console.log(res.mess)
+})
+
+统一抓取错误:
+new Promise((resolve.reject)=>{
+        resolve('第一层')
+        reject('错误时传参')
+}).then(res=>{
+    console.log(res)
+    return {mess:'信息'}
+}).catch(err=>{
+    console.log(err)
+})
+
+并发请求:
+Promise.all([
+    new Promise((resolve.reject)=>{
+
+    }),
+    new Promise((resolve.reject)=>{
+
+    }),
+]).then(res=>{
+    //接收到的是一个数组res
+    console.log(res)
+})
+
+axios 的入门应用:
+以CDN 的静态资源方式引入    引入script
+<script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.min.js"></script>
+官网:https://www.bootcdn.cn/
+发送GET 请求(默认的方法)
+axios('https://httpbin.org').then(res=>{console.log(res)});
+axios({
+    url:'https://localhost/axios/api.php?a=111&b=222',  //可以在url 后面拼接信息,也可以在params 里设置信息
+    method:'get',
+    params:{
+        name:'username',
+    }
+}).then(res=>{
+    console.log(res)
+}).catch(err=>{
+    console.log(err)
+})
+发送POST 请求 
+axios({
+    method:'post',  //post 请求需要headers 属性,不然还是get 方式请求,params还是会拼接到url 后面,用post 请求params 改为data 
+    url:'https://localhost/axios/api.php',
+    headers:{
+        'content-type':'application/x-wwww-form-urlencoded',
+    },
+    data:{          //data 也可以是字符类型
+        name:'username',
+        ahe:'30',
+        sex:'aaa'
+    }
+}).then(res=>{
+    console.log(res)
+})
+
+npm 安装引入
+axios 在生产环境的应用
+npm i axios -S     //安装生产时的axios
+axios 的post 和get 请求方式
+import axios from 'axios';  //导入axios
+
+axios request(config)
+axios.get(url[,config])
+axios.delete(url[,config])
+axios.post(url,data[,config])
+axios.put(url,data[,config])
+axios.patch(url,data[,config])
+服务器php 头部设置header 允许跨域
+header('Access Control Allow Origin:*');
+
+注意:项目名不能与包名一致,否则会报错 ENOSELF错误
+
+axios 处理并发请求
+ajxa 请求过多对页面性能可能会有影响,以及代码不美观,代码过于臃肿,所以我们可以使用axios 的并发请求axios.all()
+axios.all() 和promise.all() 方式是一个道理
+axios.all() 这个方法在axios 的构造函数数没有的,没有再实例对象上
+
+axios 的全局配置方案
+做完全局配置之后再发送axios 请求时就简单了
+axios.default.baseURL='http://127.0.0.1'    
+axios.default.timeout=5000             //超时时间
+axios.default.headers.post['content-type']='application/x-www-form-urlencoded'
+整理数据    transformRequest 是一个将post 的data 参数转换成格式的函数,在传入data 参数 encodeURLComponent  转码
+axios.default.transformRequest=function(data){
+    data=JSON.stringify(data)
+    return data
+}
+
+axios 的实例封装
+let eduwork=axios.create({
+    baseURL:'http://127.0.0.1',  //如果有全局的配置,会先找自己的配置,再找全局的配置
+    timeout:5000   
+})
+let eduwork1=axios.create({
+    baseURL:'https://localhost/axios/api.php',  //如果有全局的配置,会先找自己的配置,再找全局的配置
+    timeout:5000   
+})
+使用实例配置
+eduwork.get('https://httpbin.org').then(res=>{
+    console.log(res)
+     })
+eduwork1.get('https://httpbin.org').then(res=>{
+     console.log(res)
+     })
+
+axios.get('https://httpbin.org').then(res=>{    //这个使用全局配置
+     console.log(res)
+     })
+
+axios 的拦截器的应用
+axios 为每个请求都带上的参数,比如token,时间戳等
+对返回的状态进行判断,比如token 是否过期
+请求拦截
+axios.interceptors.request.use(res=>{
+        每次发送请求之前判断是否存在token,如果存在,则统一在http 请求的header 都加上token,这样后台根据token 判断你的登入情况,即使本地存在token,也有可能token 是过期的,所以在响应拦截器中要返回状态进行判断
+        const token=window.localStorage.getltem('token')
+        token&&(config.headers.Authotization=token)
+        return config
+},err=>{
+        return Promise.error(error)
+})
+
+axios.interceptors.response.use(
+    res=>{
+        如果返回的状态码为200,说明接口请求成功,可以正常拿到数据,否则抛出错误信息
+        if(res.status===200){
+            return Promise.resolve(res)   //return  返回,既放行,将数据返回回去
+        }else{
+            return Promise.reject(res)
+        }
+    },
+    服务器状态码不是2开头的情况,
+    error=>{
+        if(error.res.status){
+            return Promise.reject(error.res)
+        }
+    }
+)

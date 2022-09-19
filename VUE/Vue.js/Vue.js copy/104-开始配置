@@ -1,0 +1,93 @@
+开发服务器deServer 配置(自动编译,打包,每次保存会自动打包)
+devServer 给我们提供了开发过程中的服务器,是一个使用了express 的Http 服务器,它的作用主要是为了监听资源文件的改变,该Http 服务器和client 使用了websocket 通信协议,只要资源文件发生了改变,webpack-dev-server 就会实时的进行编译
+只会在内存中编译,不会有任何的输出,下载webpack-dev-server 包
+npm i webpack-dev-server -D
+webpack-dev-server 并不能读取你的webpack.config.js 的配置output
+启动deServer 指令为npx webpack server 本目录执行    npx  当前目录下
+webpack5 指令webpack serve 
+webpack5 无法自动刷新,解决:webpack.config.js 要加配置  target:"web"
+webpack serve --port 3003  //修改端口为3003,默认是8080
+webpack serve --content-base  //设定webpack-dev-server 的director 根目录,如果不进行设定的话,默认是在当前目录下
+webpack serve --quiet     //控制台中不输出打包的信息,开发中一般设置为false,进行打印,这样查看错误比较方面
+webpack serve --no-info     //不显示任何信息
+webpack serve --colors     //对信息进行颜色输出
+webpack serve --no-colors     //对信息不进行颜色输出
+webpack serve --compress     //开启gzip 压缩
+webpack serve --host     //设置ip
+webpack serve --inline     //webpack-dev-server 会在你的webpack.config.js 的入口配置文件轴添加一个入口
+webpack serve --hot     //开发热替换
+webpack serve --open     //启动命令    自动打来浏览器
+webpack serve --history-api-fallback     //查看历史url
+
+
+在package.json 中配置
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev":"webpack serve --mode development --port 3000",
+    "build":"webpack --mode production"
+  },
+
+  运行package.json 脚本    npm run test 或 dev 或 build
+
+webpack.config.js 配置以下时
+  devServer:{
+        port:3000,
+        compress:true,    //使用编译
+        open:true,          //自动打开浏览器
+    },
+package.json 中配置可以改为
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev":"webpack serve --mode development",
+    "build":"webpack --mode production"
+  },
+package.json 配置文件被修改需要自己手动npm run build   因为他不会监听配置文件的改变
+
+
+开发环境的优化HMR 模块热替换(只更新需要运行的模块,不需要的模块不更新)
+  HMR 热模块替换
+  模块热替换(Hot Module Replacement 既HMR)是webpack 提供的最有用的功能之一,它允许在运行时更新各种模块,而无需进行完全刷新
+  启用这个功能,只需要修改一下webpack.config.js 的配置,使用webpack 内置的HRM 插件就可以了,在devServer 中使用hot 参数
+  1.样式HRM 功能,在开发环境中使用style-loader    将MinCssExtractPlugin.loader 替换成style-loader
+            {
+                test:/\.css$/,    //匹配谁使用这个loader
+                use:['style-loader','css-loader','postcss-loader']  //多个loader使用,注意先后顺序,数组内文件从右到左,从下到上,先css 处理在style 导入
+            },
+  2.HTML 的HRM 功能,默认也没有HMR 功能(不用做HMR 功能),需要在entry 入口中引入html 文件
+  entry:['./src/index.js','./src/index.html'],
+   devServer:{
+        port:3001,
+        compress:true,    //使用编译
+        open:true,          //自动打开浏览器
+        hot:true,           //热替换开启没有引入到entry 时,界面会刷新但不会显示出来
+    },
+  3.js 的HMR 功能,默认也没有HMR 功能,只能处理非入口的js 文件(因为入口文件是必须加载的)
+  启用webpack 内置的HMR 插件后,module.hot 接口就会暴露在index.js 中,接下来需要在index.js 中配置告诉webpack 接受HMR 的模块
+  if(module.hot){
+      module.hot.accept('./print.js',function(){   //告诉webpack 接受热替换的模块./print.js  有更新的时候执行
+            console.log('Accepting the updated printMe module');
+            printMe()
+      })
+  }
+  服务器检测到了print.js 的代码变化并执行了module.hot.accept 的回调函数
+
+生产环境的优化
+去除项目里的死代码(不用的不打包)
+去除没有用到的js 代码
+    webpack 通过tree-shaking 去掉了实际上并没有使用的js 代码来减少包的大小
+    1.必须使用es6 模块化 导入导出import
+    2.开启production 环境
+去除没有用的css
+    比如,我们经常使用的Bootstrap(140kb)就可以减少到只有35kb 大小
+    webpack 使用purgecss-webpack-plugin 去除无用的css
+    npm i purgecss-webpack-plugin -D
+
+    const {resolve,join}=require('path');
+
+    const purgecssPlugin=require('purgecss-webpack-plugin')
+    const golb=require('glob')
+    const PATHS={src:join(__dirname,'src')}
+    
+    new purgecssPlugin({
+        paths:glob.sync(`${PATHS.src}/**/*`,{nodir:true}),  //在打包前读取有用的css,在打包
+    })

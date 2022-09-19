@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>learnvuerouter</title>
+</head>
+
+<body>
+  监听组件的跳转
+  index.js
+  meta  元数据(描述数据的数据)
+  beforeEach 方法
+  afterEach 方法,两者是全局守卫,
+  还有两种守卫
+  路由独享的守卫
+  组件内的守卫
+  next() 进行管道中的下一个钩子
+  next(false) 中断当前导航,路由会重置到from 路由对应的地址
+  next('/') 
+  next({path:'/'})
+  都是跳转到一个不同的地址,也可以传递其他地址
+  next(error) 导航会被终止,且该错误会被传递给router.onError()
+  注册过的回调
+
+
+  路由独享的守卫
+  {
+      path:'/profile',
+      component:profile,
+     beforeEnter:(to,from,next)=>{
+      next()
+     }
+
+
+     组件内的守卫
+     const Foo={
+       template:'',
+       beforeRouteEnter(to,from,next){
+         在渲染该组件的对应路由被confirm 前调用
+         不能获取组件实例的this
+         因为当前守卫前,组件实例还没有被创建
+       },
+       beforeRouteUpdate(to,from,next){
+         在当前路由改变,但是该组件被复用是调用
+         举例来说,对于一个带有动态参数的路径,/foo/:id,在
+         /foo/1 和/foo/2 之间跳转的时候,
+         由于会渲染同样的Foo 组件,因此组件实例会被复用,而这个钩子
+         就会在这个情况下被调用
+         可以访问组件实例的this
+       },
+       beforeRouteLeave(to,from,next){
+         导航离开该组件的对应路由时调用
+         可以访问组建实例this
+       }
+     }
+</body>
+
+</html>

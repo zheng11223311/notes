@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        const 的变量不可以被修改
+        const 声明变量时必须赋值,因为不给以改变值,不初始化无法使用
+        const name=1
+        声明的对象不能改变,但是可以改变对象内部的属性
+        <h2>总价格:{{}}</h2>
+        <!--3. methods -->
+        <h2>{{}}</h2>
+    </div>
+</body>
+<script>
+    const obj = {
+        name: 'zzz'
+    }
+    obj.name = 'aaa',
+        obj.Vue = 'bbb'
+    console.log(obj);
+    const app = new Vue({
+        el: '#app',     //挂载元素
+        data: {
+            firstName: 'pink',
+            lastName: 'look',
+        },
+        computed: {   // computed 里面的函数只打印一次
+
+        },
+        // methods 调用里面的方法需要加()
+        methods: {  // methods 里面的函数打印多次
+
+        }
+    })
+    app.message = '嘻嘻嘻'
+</script>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>Document</title>
+</head>
+<body>
+       从本质上来讲,webpack 是一个现代的javascript 应用的静态
+       模块打包工具
+       打包工具 grunt/gulp/webpack/rollup
+       vue 源码是rollup 的构建的
+
+
+       安装webpack 首先需要安装Node.js,Node.js 自带了软件包管理的工具npm
+
+       cmd 查看版本
+       node -v     ==>node 版本     v14.16.0
+       全局安装webpack(这里我向指定版本号,因为vue cli2 依赖该版本)
+       npm install webpack@3.6.0 -g         全局安装 -g
+
+       安装后的位置
+       C:\Users\administer\AppData\Roaming\npm\webpack -> 
+       C:\Users\administer\AppData\Roaming\npm\node_modules\
+       webpack\bin\webpack.js
+
+       查看webpack -v       3.5.0
+
+
+       局部安装webpack (后续才需要)
+       --save-dev`  是开发依赖,项目打包后不需要继续使用
+       cd 对应目录
+       npm install webpack@3.6.0 --save-dev 
+
+       为什么全局安装后,还需要局部安装
+       在终端直接执行webpack 命令,使用的全局安装的webpack
+       当在package.json 中定义了scripts 时,其中包含webpack 命令,
+       那么使用的是局部webpack
+</body>
+</html>
+

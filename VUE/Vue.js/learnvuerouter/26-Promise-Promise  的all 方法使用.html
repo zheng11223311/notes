@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     需求:
+     网络需要两次请求,只有一个请求完成不了
+    
+</body>
+<script>
+    Promise.all([
+        new Promise((resolve,reject)=>{
+              setTimeout(()=>{
+                resolve('result1')
+        },2000)
+        }),
+        new Promise((resolve,reject)=>{
+              setTimeout(()=>{
+                resolve('result2')
+        },1000)
+        })
+      
+    ]).then(results=>{
+        // 两次请求都成功后打印数据/
+            console.log(results);
+    })
+ 
+    
+
+
+   
+    // 上面的请求就不用定义handleResult 函数来处理了
+    function handleResult(){
+        if(isResult1&&isResult2){
+
+        }
+    }
+
+
+</script>
+</html>

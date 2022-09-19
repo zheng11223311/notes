@@ -1,0 +1,172 @@
+组件里的<style></style scoped lang='less'>      //scoped 表示局部样式,它的子组件不能访问它的写的样式   lang='less'  表示使用less 样式
+父子组件不能相互访问date 内容
+父组件通过子组件的props 属性来访问子组件
+ 子组件:                    父组件:
+ <script>                    在父组件里面的子组件里面添加<cpn msg='aaa'></cpn>           //<cpn m-sg='aaa'></cpn>           
+export default {                                            
+  name: 'HelloWorld',                                           
+  props: {       //也可以是[], ['msg']                             
+    msg: String,  //简单的可以不用写   数组等多个数据时写
+    default:'默认值',   //当没有值传进来时显示默认值,vue2,3支持
+    //default:[]          //vue3 支持
+    required:true,      //父组件必须传的属性                                 
+  }                                         
+}                                           
+</script>    
+
+子组件通过父组件的$emit 来访问父组件
+父组件中:                                                                 子组件 cpn           
+<cpn @父类的方法='父类定义的方法:fn1'></cpn>   //父类中子类组件cpn           methods:{   
+父类methods                                                               fn1(){  console.log(this.msg)     }          
+methods:{                                                                       }
+    fn(msg){                                                            
+        this.$emit('父类的方法',msg)                                                            
+    }                                                           
+}
+
+
+Vue 父子组件之间的访问方式
+子组件调用父组件的方法:$parent(父组件) 或$root(根组件)     //这里的传递的是调用方法,不是基本的数据
+子组件的methods
+methods:{                       
+    fn(msg){                                                            
+        this.$parent.变量(比如父组件的msg)                                                            
+        this.$root.变量(比如根组件的msg)                   //访问根组件的msg 变量                                         
+        //this.$parent.$parent.变量(比如父父组件的msg)      //也可以                                                      
+    }                                                           
+}
+父组件调用子组件的方法:$children 或$refs        //这里的传递的是调用方法,不是基本的数据
+父组件:
+<cpn ref='aaa'></cpn>           //识别多个相同子组件中的一个子组件
+<cpn ref='bbb'></cpn>
+<cpn ></cpn>          
+父组件的methods
+methods:{                       
+    fn(msg){                                                            
+        this.$children.变量(比如子组件的msg)      //$children 已经被vue3 弃用                                                       
+        //this.$children.$children.变量(比如子子组件的msg)      //也可以                                                      
+        //this.$refs.aaa.变量(比如子子组件的msg)                                                           
+    }                                                           
+}
+
+
+vue 插槽slot 应用
+父组件:                                                                                                                                                     子组件            
+<cpn > <button>按钮</button>  </cpn>   //子组件 cpn         //<tmplate>                                                                                     <slot>显示父组件的cpn 里面的信息,cpn 里面没有信息时显示这个slot 的值,既默认值</slot>  </tmplate>
+vue2 方法:
+<cpn > <button slot='aaa'>按钮</button>  </cpn>   //替换子组件cpn 多个插槽中为aaa 的一个插槽                                                                    <tmplate>  <slot  name='aaa'>显示父组件的cpn 里面的信息,cpn 里面没有信息时显示这个slot 的值,既默认值</slot>  </tmplate>
+vue3 方法:
+<cpn > <template v-slot:one(或者default 或者不写值=> 默认值)> <button >按钮</button> </template>  </cpn>   //替换子组件cpn 多个插槽中为aaa 的一个插槽             <tmplate>  <slot  name='aaa'>显示父组件的cpn 里面的信息,cpn 里面没有信息时显示这个slot 的值,既默认值</slot>  </tmplate>
+ v-slot:  语法糖 #  比如#one
+<cpn > <template v-slot:default='随便取名(ddd)'> <button >{{ddd.ccc}}</button> </template>  </cpn>   //替换子组件cpn 多个插槽中为aaa 的一个插槽                                 <tmplate>  <slot  :aaa=ccc></slot>  </tmplate>  //定义一个aaa 获取到本组件ccc 的值,传入到父组件的cpn组件
+<cpn > <template v-slot:one> <button >{{one.ddd}}</button> </template>  </cpn>   //替换子组件cpn 多个插槽中为aaa 的一个插槽                                 <tmplate>  <slot name='one' :aaa=ccc></slot>  </tmplate>  //定义一个aaa 获取到one 组件ccc 的值,传入到父组件的cpn组件
+
+
+vue3 中组件的生命周期函数(与date methods 等写法在同一级(平行))
+beforeCreate(){                             beforeCreate
+    console.log('实例刚刚被创建')               |
+}
+created(){                                   created
+    console.log('实例已经完成创建')             |
+}                                           has template -->  | 
+beforeMount(){                                          beforeMount
+    console.log('模板编译之前')                                 |
+}
+mounted(){                                                   Mounted   
+    console.log('模板编译完成')                                 |--->数据更新 
+}                                                                      |                 
+beforeUpdate(){                                                      beforeUpdate       
+    console.log('数据更新之前')
+}
+updated(){
+    console.log('数据更新完成')
+}
+activated(){
+    console.log('keep-alive 缓存的组件激活时调用')          //<template> <keep-alive> 存放子组件 或数据</keep-alive> </template>    //子组件或数据在keep-alive 里面及时被销毁了也会保存数据,再次创建的时候还会有原来的数,而不是初始值
+}
+deactivated(){
+    console.log('keep-alive 缓存的组件停用时调用')
+}
+beforeUnmount(){            //放在要销毁的组件里面 v-if 可以销毁组件
+    console.log('实例销毁之前')
+}
+unmounted(){
+    console.log('实例销毁完成')
+}
+this.$nextTick(()=>{
+
+})
+this.$nextTick() 将回调延迟到下次DOM 更新循环之后执行.在修改数据之后立即执行,然后等待DOM 数据更新,放在上面的方法里面或者date().methods()  等方法里面
+
+组件中
+methods:{                       
+    fn(msg){                                                            
+                                                                  
+    }                                                           
+},
+beforeCreate(){
+    console.log('实例刚刚被创建')
+}
+
+
+vue 中使用axios 请求服务器
+安装axios 
+npm i axios -S          //-S 生产时使用
+
+
+封装网络请求
+// 封装网络请求
+import axios from 'axios'
+
+const instance=axios.create({
+    baseURL:'',
+    timeout:5000,
+})
+
+// 拦截器
+instance.interceptors.request.use(res=>{
+    console.log(res);
+    // res.headers.token='1234'
+    return res
+},err=>{
+    console.log(err);
+    return Promise.reject(err)
+})
+instance.interceptors.response.use(res=>{
+    console.log(res);
+    console.log(11111);
+    // res.headers.token='1234'
+    return res
+},err=>{
+    console.log(err);
+    return Promise.reject(err)
+})
+
+
+ export function get(url,params){
+    // return  axios.get(url,{
+    return  instance.get(url,{
+         params
+     })
+ }
+ export function post(url,params){
+    return instance.post(url,params,{
+         transformRequest:[
+             function(data){
+                 let str=''
+                 for(let key in data){
+                     str+=encodeURLComponent(key)+'='+encodeURIComponent(data[key])+"$"
+                 }
+                 console.log(str);
+                 return str
+             }
+         ],
+         headers:{
+             'Content-Type':'application/x-www-form-urlencoded'
+         }
+     })
+ }
+
+ export function del(url){
+     return instance.delete(url)
+ }

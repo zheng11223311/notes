@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      pending:等待状态,比如正在进行网络请求,或者定时器没有到时间
+      fullfill:满足状态,当我们主动回调了resolve 时,就处于该状态
+      ,并且会回调.then()
+      reject:拒接状态,当我们主动回调了reject 时,就处于该状态,
+      并且会回调.catch()
+
+      sync->同步        synchronization
+      asnyc->异步       asynchronization
+    
+</body>
+<script>
+    
+
+    new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            // 成功的时候调用resolve
+            resolve('优雅永不过时')
+
+            //失败的时候调用reject  来到catch
+            reject('err message')
+        },1000)
+    }).then((data)=>{
+        console.log(data);
+        console.log(data);
+        console.log(data);
+    }).catch(err=>{
+        console.log(err);
+    })
+
+
+    // 第二种处理方法
+    new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            // 两个都打开时调用的是resolve 在上面,reject 就失效
+            // resolve 在下面时,resolve 会失效,reject 有效
+            //总结,只有一个会执行
+            resolve('优雅永不过时')
+            reject('err message')
+        },1000)
+    }).then((data)=>{
+        console.log(data);
+        console.log(data);
+        console.log(data);
+    },err=>{
+        console.log(err);
+    })
+</script>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h2>总价格:{{fullName}}</h2> <!-- font-size 可以 -->
+        <h2 :style=getStyle()>{{fullName}}</h2>
+    </div>
+</body>
+<script>
+
+    const app = new Vue({
+        el: '#app',     //挂载元素
+        data: {
+            firstName: 'pink',
+            lastName: 'look',
+        },
+        // 计算属性 自动执行fullName 函数 
+        // data 里面不会自动执行fullName 函数 需要fullName() 才执行
+        //写计算属性的时候不需要加()
+
+        //计算属性一般是没有set 方法,只读属性
+        computed: {
+            fullName: {
+                // set 有参数是才可以设置
+                set: function (newvalue) {
+                    console.log('----', newvalue);
+                    const names = newvalue.split(' ')
+                    this.firstName = names[0]
+                    this.lastName = names[1]
+                },
+                get: function () {
+                    return this.firstName + ' ' + this.lastName
+                }
+            }
+            // 没有set 方法时可以简写成
+            // ,fullName: function () {
+            //     return this.firstName + ' ' + this.lastName
+            // }
+        },
+        methods: {
+            getStyle: function () {
+                return { backgroundColor: '', fontSize: '50px', color: 'pink' }
+            }
+        }
+    })
+    app.message = '嘻嘻嘻'
+    // app.fullName = 'llll zzzzz'   //调用set 方法
+</script>
+
+</html>

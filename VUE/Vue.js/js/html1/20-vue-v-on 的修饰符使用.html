@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h2>总价格:{{counter}}</h2>
+        <h2>{{counte}}</h2>
+        <div @click="increment">
+            <button @click.stop="increment">+</button>
+            <button @click.stop="decrement">-</button>
+            所有的键盘(抬起事件)
+            <!-- <input @keyup.stop="decrement()">-</input> -->
+            所有的键盘(按下事件)
+            <!-- <input @keydown.stop="decrement()">-</input> -->
+            特定的键盘除外(按下事件)
+            <!-- <input @keypress.stop="decrement()">-</input> -->
+            只监听回车按键
+            <!-- <input @keyup.enter="decrement()">-</input> -->
+
+            <!-- 自定义组件 -->
+            自定义组件不会被监听(应该是原生的事件).只能添加.native 才能被监听
+            <!-- <cpn @click.native="increment"></cpn> -->
+            只有第一次有效果
+            <button @click.once="decrement">-</button>
+            只有第一次有效果且阻止冒泡,无效后继续会冒泡
+            <button @click.once.stop="decrement">-</button>
+            <button @click.stop.once="decrement">-</button>
+        </div>
+
+        <!-- 不传参时可以不要() -->
+        <!-- 
+            修饰符 
+
+            阻止事件冒泡
+            .stop 
+            js  e.stopPropagation()
+
+            阻止默认事件
+            .prevent
+            js e.preventDefault()
+
+            监听组件元素的原生事件
+            .native
+
+            只触发一次回调
+            .once
+
+            只当事件是从特定键触发时才触发回调
+            .{keyCode | keyAlias}
+        -->
+    </div>
+</body>
+<script>
+
+    const app = new Vue({
+        el: '#app',     //挂载元素
+        data: {
+            counter: 0,
+            counte: 1000
+        },
+        computed: {   // computed 里面的函数只打印一次
+
+        },
+        // methods 调用里面的方法需要加()
+        methods: {  // methods 里面的函数打印多次
+            increment(e) {    //增强写法
+                // e.stopPropagation() 也可以调用原生js 的方法
+                this.counter++
+                console.log(this.counte);
+            },
+            decrement(e) {
+                // event 是鼠标事件,浏览器自动创建的对象
+                console.log(e);
+                this.counte--
+                console.log(this.counte);
+            }
+        }
+    })
+    app.message = '嘻嘻嘻'
+</script>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+      <span v-if="type">
+          <!-- 点击 用户账号 也会定位光标到输入框-->
+           <label for='aa'>用户账号:</label>
+            <input type="text" placeholder="用户账号" id="aa">
+       </span>
+       <span v-else="">
+           <label for='a'>用户邮箱:</label>
+            <input type="text" placeholder="用户邮箱"id="a">
+        
+       </span>
+  <button v-on:click="fuc">切换类型</button>
+        <!-- 不传参时可以不要() -->
+        <!-- 
+           
+        -->
+    </div>
+</body>
+<script>
+ 
+    const app = new Vue({
+        el: '#app',     //挂载元素
+        data: {
+            type:true,
+            counte:3
+        },
+        computed: {   // computed 里面的函数只打印一次
+            
+        },
+        // methods 调用里面的方法需要加()
+        methods: {  // methods 里面的函数打印多次
+            increment(e){    //增强写法
+                // e.stopPropagation() 也可以调用原生js 的方法
+                this.counte++
+                console.log(this.counte);
+            },
+            decrement(e){
+                // event 是鼠标事件,浏览器自动创建的对象
+                console.log(e);
+                this.counte--
+                console.log(this.counte);
+            },
+            fuc(){
+                this.type=!this.type
+            }
+        }
+    })
+    // app.message = '嘻嘻嘻'
+</script>
+
+</html>

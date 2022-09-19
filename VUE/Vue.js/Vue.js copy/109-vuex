@@ -1,0 +1,441 @@
+vuex 状态管理
+vuex 是一个专门为vue.js 应用程序来发的状态管理模式
+就是一个加强版的data,在单页应用中会有一个data 函数,管理当前应用的状态,吃力大量的需要在组件间传递的数据,直接定义一个在全局的data 属性保存就行了
+如果我们的页面比较简单,切记千万不要没事找事引入vuex,我们使用vuex 是因为项目变得复杂之后,有很多数据在父组价,子组件和孙组件之间传递,吃力起来很繁琐,于是就需要vuex 这样一个可以对这一部分数据进行统一管理的东西
+也是响应式
+什么情况需要使用vuex 管理状态在多个组件间共享?
+大型项目中组件很多,多个组件中共有的数据.
+例如:用户的登入状态,用户名,头像,地理位置信息等等
+例如:商品的收藏,购物车中的物品
+
+
+
+创建项目learnvuex
+    vue init webpack learnvuex
+
+    State: 状态.姑且可以当做就是data 中的属性
+    View:视层图,可以针对State 的变化,显示不同的信息
+    Action:主要是各种用户的各种操作:点击,输入等,会导致状态的改变
+
+    安装vuex
+    cnpm install vuex@3.0.1 --save
+    npm run dev
+
+    Devtools  vue 开发的浏览器插件
+    记录状态的被谁改变
+
+    Backend   后端
+    frontend    前端
+
+
+安装插件Devtools
+   记录状态的改变
+   浏览器自带的没有的话
+   在https://huajiakeji.com/ 下载
+   下载后打开即可
+
+   打开vue 网页( http://localhost:8080),
+   按f12 调试栏多了一个vue 工具,用来调试vue
+
+
+   使用步骤:
+   1.提取出一个公共的store 对象,用于保存多个组件中共享的状态
+   2.将store 对象放置在new Vue 对象中这样可以保证在所有的组件
+   中都可以使用到
+   3.在其他1组件中使用store 对象保存中的状态即可
+   通过this.$store.state.属性 的方式来访问状态
+   通过this.$store.commit('mutations 中的方法')来修改状态
+
+   注意事项:
+   我们通过提交mutations 的方式,而非直接改变store.state.count 
+   这是因为Vuex 可以更明确的追踪状态的变化,所以不要直接改变
+   store.state.count 的值
+
+ 只使用一个store,
+    不使用多个store,
+    便于信息得统一管理和维护
+
+     参数都最多只能传递2个
+  可以state 等属性做为参数
+  $store.getters.more20stu  调用store 里面的getters 里的方法
+
+  Vuex 的store 状态的更新唯一方式:提交Mutation
+        Mutation 主要包括两部分:
+        字符串的事件类型(type)
+        一个回调函数(handler),该回调函数的第一个参数就是state
+
+    在通过mutation 更新数据的时候,有可能我们希望携带一些额外的
+    参数
+    参数被称为是mutation 的载荷(payload)
+    参数payload 也可以是一个对象
+
+    上面的通过commit 进行提交是一种普通的方式
+        Vue 还提供了另外一种风格,它是一个包含type 属性的对象
+
+        //1.普通的提交方式
+      this.$store.commit("incrementCount", count);
+
+      // 2.特殊的提交风格
+      this.$store.commit({
+        type:'incrementCount',
+        count:count,     //ES6 语法 直接count
+        age:18
+      })
+
+      index 里面 
+      incrementCount(state,count){
+            console.log(count);  count 是一个对象
+            //payload 负载 表示commit 可以多带一个参数 比如count,就是参数payload
+            state.counter+=count
+        },
+    
+    updataInfo(state){
+            state.info.name='coood'
+              // 洛杉矶 后来加上的不会被加到响应式系统里面
+            //既不会被响应
+            state.info['address']='洛杉矶'
+            // 和原来就有的属性state.info.name='coood' 一起
+            // 改变就会响应
+
+              // 响应式添加
+            Vue.set(state.info,'address','洛杉矶')
+
+             //非响应式删除
+            // delete info.age
+
+            // 响应式删除
+            Vue.delete(state.info,'age')
+          只要有响应式的触发,非响应式的操作也会被响应            
+        }
+
+
+        Vuex 的store 中的state 是响应式的,当state 中的数据
+        发生改变时,Vue 组件会自动更新
+        这就要求我们必须遵守一些Vuex 对应的规则:
+        提前在store 中初始化好所以需要的属性
+        当给state 中的对象添加新属性是,使用下面的方式:
+        方式一:使用Vue.set(obj,'newProp',123)
+        方式二:用新对象给旧对象重新赋值
+
+         在store 里面建立一个储存常量的文件
+        导出此文件,
+        需要用到常量的文件导入此文件
+        比如index.js 和App.vue
+
+        组合式API(Composition  API)
+        使用传统的option 配置方法写组件的时候问题,随着业务复杂度越来越高,代码量会不断的加大:由于相关业务的代码需要遵循option 的配置写到特定的区域,导致后续维护非常的复杂,同时代码可复用性不高,而Composition-API 就是为了解决这个问题而生的
+        Composition API 字面意思是组合API,它是为了实现基于函数的逻辑复用机制而产生的.主要思想是,我们将它定义为从新的setup 函数返回的javascript 变量,而不是将组件的功能(例如state,methods,computed 等)定义为对象属性
+        <button>{{state.double}}</button>
+        <script>
+        import {reactive,computed} from 'vue'
+        export default{
+          setup(){
+            const state=reactive({
+              count:0,
+              double:computed(()=>state.count*2)
+            })
+            function increment(){
+              state.count++
+            }
+            return {state,increment}
+          }
+        }
+        </script>
+
+
+setup() 方法应用
+setup()函数是vue3 中专门新增的方法,可以理解为Composition API 的入口
+执行时机在beforeCreate 之前执行
+调用时机
+this 指向
+函数参数
+返回值
+
+接收props 数据
+export default{
+  props:{
+    msg:{
+      type:String,
+      default:()=>{}
+    }
+  },
+  setup(props){
+    console.log(props)
+    return
+  }
+}
+
+接收context 是setup() 的第二个参数是一个上下文对象,这个上下文对象大致包含了这些属性,注意:在setup() 函数中无法访问this
+const MyComponent={
+  setup(props,content){
+    context.attrs   属性内容
+    context.slots   插槽内容 context.slots.default()
+    context.parent  
+    context.root
+    context.emit    子传父 context.emit('fn',name)
+    context.refs    
+  }
+}
+setup() 函数在创建组件之前被调用,所以在setup被执行时,组件实例并没有被创建,因此在setup 函数中,我们没有办法获取到this
+
+
+Composition 常用API
+ref() 函数用来给定的值创建一个响应式的数据对象,ref() 的返回值是一个对象,这个对象上只包含一个.value 属性 
+reactive 是一个用来创建一个响应式对象
+将ref 响应式数据挂载到reactive 中,当把ref() 创建出来字直接挂载到reactive() 中时,会自动把响应式数据对象的展开为原始的值,不需要通过.value 就可以直接访问到
+双向绑定 v-model
+toRefs() 解构响应式对象
+readonly 将响应式数据变回原始数据
+import {ref,reactive,toRefs,readonly,isRef} from 'vue'
+const MyComponent={
+  setup(props,content){
+   let num=1
+  
+  let num1=ref(2)   //num1.value=2 是响应式的,将声明的值变为响应式,除了对象都可以声明为响应式,ref  返回的是一个对象
+  let num2=reactive({     //将对象声明为响应式
+  name:'codewhy',
+  age:18
+  })
+  let num3=readonly(num2)     //将想响应式数据转化为原始数据
+  let num4=isRef(num2)     //判断num2 是不是响应式对象
+  return{
+    num,
+    num1,
+    ...num2     //ES6 暴露对象中的所有属性
+    ...toRefs(num2)     //响应式暴露对象中的所有属性
+  }
+  }
+}
+
+
+Composition 中的computed 计算属性API
+import {reactive} from 'vue'
+export default{
+  setup(props){
+    const user=reactive({
+      firstName:111,
+      lastName:222
+    })
+    let user1=computed(()=>{
+      return user.firstName+user.lastName
+    })
+    return {
+      ...toRefs(user),
+      user1
+    }
+  }
+}
+创可读可写的计算属性,在使用computed 函数期间,传入一个包含get 和set 函数的对象,可以得到一个可读可写的计算数属性
+为计算属性赋值的操作,会触发set 函数,触发set 函数后,值会被更新
+computed() 用来创建爱你计算属性,返回值是一个ref 的实例
+
+侦听器watch
+watch() 函数用来监视某些数据项的变化,从而触发某些特定的操作
+import { watch,watchEffect} from 'vue'
+const state=reactive({
+  count:0
+})
+watch(()=>{
+  console.log(count.value,'value')   //监听到值的变化时,执行函数watch,初始时打印值
+})
+watch(()=>state.count,(count,prevCount)=>{
+  console.log(count,prevCount)    //变化后的值,变化前的值
+})
+watch(count,()=>{
+  console.log(count)    //监听到count 的变化才执行,初始时不打印
+})
+watch(count,()=>{
+  console.log(count)    //监听到count 的变化才执行,immediate 初始时打印
+},{immediate:true})
+
+watch(count,(newValue,oldValue)=>{    //newValue 新值,oldValue 旧值
+  console.log(count)    //监听到count 的变化才执行,immediate 初始时打印
+},{immediate:true})
+watch([count1,count2],([newValue1,oldValue1],[newValue2,oldValue2])=>{    //监听多个值的变化
+  console.log(count)    //监听到count 的变化才执行,immediate 初始时打印
+},{immediate:true})
+
+第三个参数immediate:其值是true/false,确认是否以当前的初始值执行handler 函数
+
+watchEffect 立即执行传入的一个函数,并响应式追踪器依赖,并在其依赖变更时重新运行
+watchEffect(()=>{
+  console.log(count.value,'value')   //监听到值的变化时,执行函数watchEffect
+})
+都能监听响应式对象
+watch(state,(new,old)=>{
+  console.log('----')    //只能监听到变化,不能获得对象里面变化的值 
+},{immediate:true})
+
+watch(()=>state.count,(new,old)=>{
+  console.log(new+old)    //能监听到变化,能获得对象里面变化的值 
+},{immediate:true})
+
+watch([()=>state.count,()=>state.count1],([new,old],[new1,old1])=>{
+  console.log(new+old)    //监听一个对象的多个值
+},{immediate:true})
+
+
+
+Composition 中的生命周期API
+生命周期与Composition 之间的映射关系
+Composition 生命周期函数
+使用这些API 方法前需要导入
+import { onBeforeMount,onMounted,onBeforeUpdate} from 'vue'
+beforeCreate->use setup()
+created->use setup()      //以上两个函数setup() 内不能执行,因为setup 函数是在组件创建之前触发的
+beforeMount->onBeforeMount
+mounted->onMounted
+beforeUpdate->onBeforeUpdate
+updated->onUpdated
+beforeUnmount->onBeforeUnmount
+unmounted->onUnounted
+在新版的生命周期函数,可以按需导入到组件中,且只能在setup() 函数中使用
+setup(){
+  onBeforeUpdate(){
+    console.log('onBeforeUpdate')
+  }
+}
+
+
+在组合API 中provide 和inject 使用
+父子组件:通过props,$emit,$root,$parent,$children
+非父子组件:vuex 实现,父子层层传递,$ref
+vue 官网建议,在正常情况下,这两种方式已经能满足绝大多数甚至所有的业务需求,对于应用程序代码因优先使用它们处理
+provide/inject 这对选项允许一个祖先组件向其所有后代组件注入一个依赖,Burundi组件层次有多深,并在起上下游关系成立的时间里始终有效
+provide 就相当于加强版父组件prop,可以跨中间组件,inject 就下相当于加强版子组件的props 使用方法
+provide 提供变量:Object|()=>Object
+inject 注入变量:Array<string>|{[key:string]:string|Object}
+根组件:
+import {provide} from 'vue'
+export default{
+  //provide:{
+  //  name:'aaa'
+  //}
+  provide(){
+    return{
+        title:this.title
+    }
+  },
+  data(){
+    return{
+      title:'这是根组件'
+    }
+  }
+}
+
+
+子,孙组件:
+import {inject} from 'vue'
+export default{
+  inject:['title']
+  
+}
+以上是传统的方式,不会响应式
+根组件:
+import {ref,provide,toRefs,reactive} from 'vue'
+export default{
+  setup(){
+    let title=ref('这是根组件')
+
+    provide('title',title)  //声明一个变量(前一个),值是title 的值
+    let obj=reactive({
+      name:'aaa'
+    })
+
+    provide('user',obj)  //传出多个变量或对象
+
+    return{
+      title,
+      ...toRefs(obj)
+    }
+  }
+}
+
+子,孙组件:
+import {inject} from 'vue'
+export default{
+  
+  setup(){
+    let title=inject('title')
+  }
+}
+
+
+其他API 参考:
+学习手册:http://vue3js.cn/vue-composition-api 
+
+Composition API 结合路由器使用
+setup 和vue 的Composition API 的引入,开辟了新的可能性,但为了能够充分利用vue-router 的潜力,我们将需要使用一些新功能来替代对访问this 和组件导航保护的使用
+由于我们无权访问setup 的内部this,因此无法直接访问this.$router 或者this.$route 了,相反,我们使用useRouter 和useRoute 函数 
+请注意,我们仍然可以访问$router 和$route 在模板中,因此无需再router 或者route 内返回setup
+导航守卫:
+尽管你任可以将组件内导航保护与setup 功能结合使用,但vue-router 会将更新和离开提供Composition API:
+onBeforeRouteLeave((to,from)=>{ })   //离开路由时
+onBeforeRouteUpdate(async(to,from)=>{ })    //路由更新时
+
+
+import {useRouter,useRoute,onBeforeRouteLeave,onBeforeRouteUpdate} from 'vue-router'
+import {watch,ref} from 'vue'
+export default{
+  
+  setup(){
+    const route=useRoute()
+    const router=useRouter()
+    //let id=route.params.id      //函数只执行一次,不会响应式
+    let id=ref()      //函数只执行一次,不会响应式
+    watch(()=>route.params,(newId)=>{
+      console.log(newId)      /.响应式获取id 对象
+      console.log(newId.value)      //.响应式获取id 
+      id.value=newId.value        //.响应式获取id 
+    })
+    setTimeout(()=>{      //setup 里面异步请求数据
+      router.push({path:'/home',query:{name:'aaaa'}})
+    },5000)
+
+  onBeforeRouteLeave((to.from)=>{
+    return window.confirm(`你确定要从${from.fullPath}离开到${to.fullPath}`)
+  })
+
+
+    return {
+      id
+    }
+  }
+}
+
+
+
+Composition API 结合vuex 使用 
+import {useStore} from 'vuex'
+import {computed} from 'vue'
+export default{
+  setup(){
+      const store=useStore()
+
+    return {
+     num2:computed(()=>{store.state.num2}),   //state
+     num3:()=>{
+       store.commit('fn',newNum)   //提交到Mutation 的方法fn
+     },
+     num1:()=>{
+       store.dispatch('fn',newNum1)   //提交到Action 的方法fn 
+     }
+    }
+  }
+}
+
+讲解到 vue 的60%,70%
+
+
+事件总线:与store 相似,不过它是事件的管理
+main.js 
+Vue.prototype.$bus=new Vue()
+子组件
+this.$bus.$emit('aaa',()={    // 向其他任何组件发送aaa 方法 
+    //回调方法
+    this.$refs.scroll.refresh()   //(图片)加载完成时刷新
+})   
+其他组件:
+this.$bus.$on('aaa')       监听aaa 事件
+this.$bus.$off('aaa',函数)       取消全局事件
+新版要使用第三方库

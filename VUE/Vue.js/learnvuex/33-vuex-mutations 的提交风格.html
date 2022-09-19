@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        上面的通过commit 进行提交是一种普通的方式
+        Vue 还提供了另外一种风格,它是一个包含type 属性的对象
+
+        //1.普通的提交方式
+      this.$store.commit("incrementCount", count);
+
+      // 2.特殊的提交风格
+      this.$store.commit({
+        type:'incrementCount',
+        count:count,     //ES6 语法 直接count
+        age:18
+      })
+
+      index 里面 
+      incrementCount(state,count){
+            console.log(count);  count 是一个对象
+            //payload 负载 表示commit 可以多带一个参数 比如count,就是参数payload
+            state.counter+=count
+        },
+</body>
+<script>
+
+    
+ 
+
+
+</script>
+</html>

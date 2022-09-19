@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 当网络较慢，网页还在加载 Vue.js ，而导致 Vue 来不及渲染，这时页面就会显示出 Vue 源代码。我们可以使用 v-cloak 指令来解决这一问题。 -->
+    <div id="app" v-cloak>
+        <h2>{{message}}</h2>
+        <h2 v-once>{{message}}</h2> <!-- v-once message 不会再次被改变 -->
+        <h2 v-html="url">11</h2> <!-- 对内容进行html 解析 -->
+        <h2 v-text="message">内容被覆盖</h2><!-- 不灵活,不能拼接 -->
+        <h2 v-pre>{{括号不被解析}}{{message}}</h2><!-- 预保存 -->
+        <!-- 在vue 解析之前有一个属性v-cloak 且此时url 不被显示,解析之后,v-cloak 移除, url 内容被显示 与css 结合-->
+    </div>
+</body>
+<script>
+    //vue 自动调用内部函数
+    setTimeout(function () {
+        const app = new Vue({
+            el: '#app',     //挂载元素
+            data: {
+                message: '哈哈哈',
+                url: '<a href="http://www.baidu.com">百度一下</a>'
+
+            },
+            beforeCreate: function () { //vue 自动调用内部函数
+                console.log(1);
+            }
+
+
+        })
+        app.message = '嘻嘻嘻'
+    }, 1000)
+
+</script>
+
+</html>

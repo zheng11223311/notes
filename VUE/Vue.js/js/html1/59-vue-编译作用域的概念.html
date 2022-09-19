@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <cpn v-show='isShow'> 父组件的isShow
+        </cpn>
+    </div>
+
+
+    <template id="cpn">
+        <div>
+            <h1>我是子组件</h1>
+            <button v-show='isShow'>按钮</button>
+            <slot>
+                没有name 的插槽
+            </slot>
+        </div>
+
+    </template>
+</body>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            isShow: true
+        },
+        components: {
+            cpn: {
+                template: '#cpn',
+                props: {
+
+                },
+                data() {
+                    return {
+                        isShow: false
+                    }
+                },
+                methods: {
+
+                },
+                components: {
+
+
+                },
+                // watch 是组件内的属性,用于监听属性的改变
+                watch: {
+
+
+                }
+            }
+        },
+        methods: {
+
+        }
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //从新敲一遍代码
+    // 子组件
+    // const cpn = {
+    // template: '#cpn2',
+    // props:{}   //两者都可以 很多中其他的写法  string boolean...
+    // props:['childmovies','cmessage'],
+    // props: {
+    //1.类型的限制
+    // childmovies:Array,
+    // cmessage:String     //String 大写..
+
+    // 2.提供一些默认值,以及必传值
+    // cmessage: {
+    //     type: String,
+    //     default: 'aaa',   //没有传值默认值
+    //     required: true    //布尔变量,必须向这个值传入值,不传报错 required 必须
+
+    // },
+    // childmovies: {
+    //     // type:Array,      一种报错?
+    //     //Object Array String Number Boolean Date Function Symbol
+    //     type: [Array, String],    //两种类型
+    //     //default 类型是对象或则数组时,默认值必须是一个函数
+    //     // default:[], //在vue2.5.3 以下不会报错
+    //     default() {
+    //         return []
+    //     },
+
+    //     // 自定义验证类型(自己定义),不匹配则报错
+    //     zdy(value) {
+    //         return ['a', 'b'].indexOf(value) !== -1
+    //     }
+    // }
+    //     },
+    //     data() {
+    //         return {
+
+    //         }
+    //     },
+    //     methods: {
+    //         btnClick(item) {
+
+    //             this.$emit('itemclick', item)
+    //         }
+    //     }
+
+    // }
+
+    // 父组件
+    // const app = new Vue({   //开发中一般只使用一个app
+    //     el: '#app',     //挂载元素
+    //     data: {
+
+    //     },
+    //     computed: {   // computed 里面的函数只打印一次
+
+    //     },
+    //     methods: {  // methods 里面的函数打印多次
+
+    //     },
+    //     //过滤器 filters
+    //     filters: {
+
+    //     },
+    //     components: {    //注册局部组件
+    //         cpn         //ES6字面量属性增强写法  原式  cpn:cpn
+    //     }
+    // })
+
+</script>
+<!-- 报错 -->
+<!-- Duplicate keys detected: 'aa'. This may cause an update error -->
+<!-- 绑定key的元素中     aaa 的 key 值多次重复添加  不绑定就不会报错-->
+
+<!-- [Vue warn]: Avoid mutating a prop directly since the value 
+will be overwritten whenever the parent component re-renders.
+Instead, use a data or computed property based on the prop's value.
+ Prop being mutated: "number1" -->
+
+<!-- 组件里props 属性必须通过父组件来修改 -->
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>learnvuerouter</title>
+</head>
+
+<body>
+  保留切换页面之前的状态
+keep-alive 是Vue 内置的一个组件,可以使被包含的组件保留状态,
+或者避免重新渲染
+
+  router-view 也是一个组件,如果直接被包在keep-alive 里面,所有路径
+  匹配到的视图组件都会被缓存
+
+  deactivated 和activated 两个函数只有该组件被保持使用了
+  keep-alive 时,才有效过
+</body>
+
+</html>

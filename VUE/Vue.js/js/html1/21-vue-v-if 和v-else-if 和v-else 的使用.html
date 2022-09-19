@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        条件为false 时对应的元素及其子元素不会被浏览器渲染
+        也可以在app computed方法里面直接设置if 判断完在赋给message
+        在显示
+        <h2>总价格:{{counter}}</h2>
+        {{message}}
+        <h2>{{counte}}</h2>
+      <p v-if="counte>=3">显示标签内容{{fc}}
+          <a href="">带上子标签</a>
+      </p>
+      <p v-else-if="counte>=2">现在显示标签内容</p>
+      <!-- <p v-else="counte<2">都不符合时显示标签内容</p>
+      <p v-else="">都不符合时显示标签内容</p>
+      <p v-else=>都不符合时显示标签内容</p> -->
+      <p v-else>都不符合时显示标签内容</p>
+        <button @click.stop="increment">+</button>
+        <button @click.stop="decrement">-</button>
+        <!-- 不传参时可以不要() -->
+        <!-- 
+           
+        -->
+    </div>
+</body>
+<script>
+ 
+    const app = new Vue({
+        el: '#app',     //挂载元素
+        data: {
+            message:'1',
+            counter:0,
+            counte:3
+        },
+        computed: {   // computed 里面的函数只打印一次
+            fc(){
+                if(this.counte==3){
+              return  this.message='优秀'
+
+            //   这样变化的是函数的值,传进去的fc 函数会变成优秀
+            // 而Data 的message 不会发生改变
+            //   return  message='优秀'
+            }
+            }
+        },
+        // methods 调用里面的方法需要加()
+        methods: {  // methods 里面的函数打印多次
+            increment(e){    //增强写法
+                // e.stopPropagation() 也可以调用原生js 的方法
+                this.counte++
+                console.log(this.counte);
+            },
+            decrement(e){
+                // event 是鼠标事件,浏览器自动创建的对象
+                console.log(e);
+                this.counte--
+                console.log(this.counte);
+            }
+        }
+    })
+    // app.message = '嘻嘻嘻'
+</script>
+
+</html>

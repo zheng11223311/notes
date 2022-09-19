@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app" >
+
+        <!-- checkbox 单选框 -->
+<!-- <label for="agree"> -->
+    <!-- 没有name="sex" 也会互斥 -->
+    <!-- <input type="checkbox"  id="agree" value="男" v-model='isagree'>同意条款
+</label>
+
+<h2>你选择的是:{{isagree}}</h2>
+<button :disabled='!isagree'>下一步</button> -->
+     {{message}}
+
+     <!-- checkbox 多选框 -->
+     <input type="checkbox" name="" id="" value="篮球" v-model='hobbies'>篮球
+     <input type="checkbox" name="" id="" value="足球" v-model='hobbies'>足球
+     <input type="checkbox" name="" id="" value="乒乓球" v-model='hobbies'>乒乓球
+     <input type="checkbox" name="" id="" value="羽毛球" v-model='hobbies'>羽毛球
+     <h2>你选择的是:{{hobbies}}</h2>
+      <!-- oninput实时监听值的变化 -->
+      <!-- <input type="text" name="" id="" :value='message' oninput="console.log(this.value)"> -->
+      
+    </div>
+    
+</body>
+<script>
+    const app = new Vue({
+        el: '#app',     //挂载元素
+        data: {
+     message:'你好啊',
+    isagree:false,
+    hobbies:[]
+        },
+        computed: {   // computed 里面的函数只打印一次
+             
+        },
+        // methods 调用里面的方法需要加()
+        methods: {  // methods 里面的函数打印多次
+     
+        },
+        //过滤器 filters
+        filters:{
+             
+        }
+    })
+</script>
+    <!-- 报错 -->
+    <!-- Duplicate keys detected: 'aa'. This may cause an update error -->
+    <!-- 绑定key的元素中     aaa 的 key 值多次重复添加  不绑定就不会报错-->
+</html>

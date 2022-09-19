@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+   安装插件Devtools
+   记录状态的改变
+   浏览器自带的没有的话
+   在https://huajiakeji.com/ 下载
+   下载后打开即可
+
+   打开vue 网页( http://localhost:8080),
+   按f12 调试栏多了一个vue 工具,用来调试vue
+
+
+   使用步骤:
+   1.提取出一个公共的store 对象,用于保存多个组件中共享的状态
+   2.将store 对象放置在new Vue 对象中这样可以保证在所有的组件
+   中都可以使用到
+   3.在其他1组件中使用store 对象保存中的状态即可
+   通过this.$store.state.属性 的方式来访问状态
+   通过this.$store.commit('mutations 中的方法')来修改状态
+
+   注意事项:
+   我们通过提交mutations 的方式,而非直接改变store.state.count 
+   这是因为Vuex 可以更明确的追踪状态的变化,所以不要直接改变
+   store.state.count 的值
+
+</body>
+<script>
+
+    
+ 
+
+
+</script>
+</html>

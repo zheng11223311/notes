@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    4-vue-runtime-compiler 和runtime-only 的区别    v1 版
+    runtime-compiler   Vue 里面会注册template
+    components: { App },
+     <!-- template: '<App/>' -->
+
+    runtime-only        Vue 里面是render        v2 版
+    render：function (h){
+        1.普通用法
+        h() 就是一个createElement()
+        h('标签',{标签的属性},['标签的内容'])
+        h('h2',{class:'box'},['hello',
+        h('button',['按钮'])
+        ])
+        最后创建的h2 标签会替换#app
+        h2 里面会有hello 和button 标签
+        
+        return h(App)
+
+        2.传入组件对象:     前面应该有一个cpn 组件template,也可以是实例(根)组件
+        return h(cpn)
+        App 组件会被vue 编译成render 函数
+        ,log 打印出来的是一个对象,而App 不会存在
+        App 中的template 是被谁编译的
+        是我们和vue-loader 一起安装好的vue-template-compiler 编译的
+        template 都在开发时(运行)被编译了
+    }
+
+    runtime-only
+    1.性能更高
+    2.需要的源代码更少,处理的代码更少,一个项目轻6kb
+
+
+
+    template--parse(解析)--->ast(抽象语法树 abstract syntax tree)
+    --compile(编译)-->render(functions)--翻译--->
+    virtual dom(虚拟DOM)---渲染---->UI(真实DOM)
+
+</body>
+</html>

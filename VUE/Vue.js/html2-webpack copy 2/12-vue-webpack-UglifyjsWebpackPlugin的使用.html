@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+ 
+    <div id="app">
+      
+    </div>
+    uglifyjs  丑化
+    在真实发布项目之前,我们必然需要对js 等文件进行压缩处理
+    这里我们就对打包的js 文件进行压缩
+    我们使用一个第三方的插件uglifyjs-webpack-plugin,并且
+    版本号指定1.1.1,和CLI2 保持一致
+
+    安装插件
+    npm install uglifyjs-webpack-plugin@1.1.1 --save-dev
+
+
+    配置里面配置
+    const UglifyjsWebpackPlugin =require('uglifyjs-webpack-plugin')
+
+        plugins:[
+      //横幅
+      new webpack.BannerPlugin('最终解释权归逃离216 所有'),
+      new HtmlWebpackPlugin({
+         //根据src 文件夹下index.html 这个模板生成新的html
+        template:'index.html',  
+        
+      }),
+      new UglifyjsWebpackPlugin()
+    ]
+}
+    npm run build 打包
+
+
+   
+</body>
+<script src="./dist/bundle.js"></script>
+
+</html>

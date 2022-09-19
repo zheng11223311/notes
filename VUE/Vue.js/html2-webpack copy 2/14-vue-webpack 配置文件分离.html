@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+ 
+    <div id="app">
+      
+    </div>
+    开发时和生产时的需要用到的文件分开
+
+    merge  合并
+
+    安装插件
+    npm install webpack-merge --save-dev 
+    npm install webpack-merge@4.1.5 --save-dev 
+
+    删除webpack.config.js 文件
+    在json 文件里修改
+    "build": "webpack --config ./build/prod.config.js",
+    "dev": "webpack-dev-server --open --config ./build/dev.config.js"
+
+   
+    当前文件目录下
+    终端cmd   webpack-dev-server  命令是在全局下跑
+    中端要用反斜杠
+    .\node_modules\.bin\webpack-dev-sever.cmd    在局部下跑
+
+    
+    json 配置
+    "dev":"webpack-dev-server"  开发时执行的是这个脚本
+    "dev":"webpack-dev-server --open"  开发时执行的是这个脚本,自动打开页面
+
+    配置完后
+    执行 npm run dev
+    http://localhost:8080/  在此页面
+    保存时自动刷新
+
+
+    写完后 在 npm run build 真正打包,提交到服务器部署
+</body>
+<script src="./dist/bundle.js"></script>
+
+</html>

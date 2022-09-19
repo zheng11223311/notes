@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>learnvuerouter</title>
+</head>
+
+<body>
+见index.js 文件
+<router-link to="/home" tag='button' replace active-class="active"> 首页</router-link>
+to: 属性用于跳转到指定的路径
+tag: tag 可以指定router-link 之后渲染成什么组件,比如上面代码
+默认会被渲染成一个a 标签
+replace: replace 不会留下history 记录,所以指定replace 的情况下
+,后退键返回不能返回到上一个页面中
+active-class: 当router-link 对应的路由匹配成功时,会自动的给当前元素
+设置一个router-link-active 的class,设置active-class 可以修改默认的
+名称,class 可以设置css 属性
+在进行高亮显示的导航栏菜单或者底部tabbar 时,会使用到该类
+但是通常不会修改类的属性,会直接使用默认的router-link-active 即可
+
+active-class="active"  将默认的class 名为router-link-active 的
+属性修改为active
+
+路由的相关配置都在index.js 里面
+在里面增加linkActiveClass:'active' 默认class 的属性为active
+</body>
+
+</html>

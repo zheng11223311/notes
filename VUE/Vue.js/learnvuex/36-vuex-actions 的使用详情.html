@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+       通常情况下,Vuex 要求我们Mutation 中的方法必须是同步方法
+       主要的原因是当我们使用devtools 时,可以使用devtools 可以
+       帮助我们捕捉mutation 的快照
+       但是如果是异步操作,那么devtools 将不能很好的追踪这个操作
+       什么时候会被完成
+
+
+       Action 类似于Mutation ,但是是用来代替Mutation 进行异步操作的
+
+            backend API         Devtools
+                |向下               |向下
+   Dispatch     |      Commit       |
+vue--------->actions--------===-->mutations
+ |向下                               |向下   
+ |   Render               Mutate     |
+ <------------state<------------------
+
+
+
+
+    store    index.js
+actions:{
+        //异步操作通过这里操作
+        // 默认参数context 上下文
+        aUpdataInfo(context,payload){
+             setTimeout(()=>{
+                //  context   现在相当于$store   
+                // $store 有commit 方法
+                context.commit('updataInfo')
+            },1000)
+        }
+    },
+
+
+
+        App.vue         dispath 派遣
+   updataInfo() {
+       同步时使用的代码
+      // this.$store.commit("updataInfo");
+      //异步执行时用下面的代码
+      this.$store.dispath("aUpdataInfo");
+    },
+
+
+    App dispath调用updataInfo 方法--> 
+    
+    context.commit调用 action aUpdataInfo 方法
+
+    ----->调用mutation updataInfo 方法
+
+
+    多了一个 调用 action aUpdataInfo 方法  异步处理
+</body>
+<script>
+
+    
+ 
+
+
+</script>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+
+
+
+        component 意思:组件
+        template 模板
+
+        <!-- 3.使用组件 -->
+        <!-- <my-cpn></my-cpn>
+        <my-cpn></my-cpn>
+        <my-cpn></my-cpn> -->
+        <cpn></cpn>
+        <!-- oninput实时监听值的变化 -->
+        <!-- <input type="text" name="" id="" :value='message' oninput="console.log(this.value)"> -->
+
+    </div>
+    <div id="app1">
+        <my-cpn></my-cpn>
+        <cpn></cpn>
+
+    </div>
+</body>
+<script>
+
+    // ES6
+    // `` 也可以定义字符串  `abc`
+    // 单引号换行要用+ 拼接
+    //多了一个内部可以换行  `abc
+    //                aaa`
+
+    // 1.创建组件构造器
+    const cpnC = Vue.extend({
+        template: `<div>
+            <h2>我是标题</h2>
+            <p>我是内容,哈哈哈</p>
+            </div>`
+    })
+    const cpnC1 = Vue.extend({
+        template: `<div>
+            <h2>我是标题1</h2>
+            <p>我是内容,哈哈哈1</p>
+            </div>`
+    })
+
+    // 2.注册组件(全局组件,意味着可以在多个Vue 的实例下面使用)
+    // Vue.component('组件的标签名',组件构造器)
+    // Vue.component('my-cpn', cpnC)
+    Vue.component("my-cpn", cpnC)
+
+
+    // 怎么注册局部组件
+
+
+
+    const app = new Vue({   //开发中一般只使用一个app
+        el: '#app',     //挂载元素
+        data: {
+            message: '你好啊',
+            age: 0,
+            name: ''
+        },
+        computed: {   // computed 里面的函数只打印一次
+
+        },
+        // methods 调用里面的方法需要加()
+        methods: {  // methods 里面的函数打印多次
+
+        },
+        //过滤器 filters
+        filters: {
+
+        },
+        components: {    //注册局部组件
+            // 组件的标签名:组件构造器
+            cpn: cpnC1
+        }
+    })
+
+
+    const app1 = new Vue({
+        el: '#app1'
+    })
+</script>
+<!-- 报错 -->
+<!-- Duplicate keys detected: 'aa'. This may cause an update error -->
+<!-- 绑定key的元素中     aaa 的 key 值多次重复添加  不绑定就不会报错-->
+
+</html>

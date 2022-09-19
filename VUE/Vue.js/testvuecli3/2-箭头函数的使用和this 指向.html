@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  ()=>{
+
+  }
+  
+  只有一个参数可以省略()
+  const a=num=>{
+
+  }
+
+  方法体体只有一个语句,省略return和{}
+  const a=num=> num*num
+  log(a(1))
+
+  const obj={
+      aaa(){
+      setTimeout(function(){
+          log(this)     window
+      }),
+
+
+      setTimeout((){
+          log(this)     obj 
+      })
+
+      }
+  }
+
+  箭头函数中的this 是如何查找的?
+  向外层作用域中一层层查找this,直到this 的定义
+
+</body>
+
+</html>

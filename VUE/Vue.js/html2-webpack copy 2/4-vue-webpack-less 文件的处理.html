@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    当前路径下
+    less-loader 安装
+    npm install --save-dev less-loader less
+    npm install --save-dev less-loader@4.1.0 less@3.9.0
+    两个工具less-loader 负责加载
+    less 负责转化成css
+
+
+    webpack.config.js 里面的相关配置修改为
+rules: [
+      {
+        test: /\.css$/,
+        //css-loader 只负责将css 文件进行加载,不负责
+        use: [ 'style-loader','css-loader',"less-loader"]
+      },
+      {
+         test: /\.less$/,
+            use: [{
+                loader: "style-loader" // creates style nodes from JS strings
+            }, {
+                loader: "css-loader" // translates CSS into CommonJS
+            }, {
+                loader: "less-loader" // compiles Less to CSS
+            }]
+      }
+    ]
+
+    npm run build 打包
+
+</body>
+<script src="./dist/bundle.js"></script>
+
+</html>

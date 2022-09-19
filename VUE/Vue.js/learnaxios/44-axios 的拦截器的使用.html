@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+        请求成功拦截
+        请求失败拦截
+        响应成功拦截
+        响应失败拦截
+        export function request(config){
+    const instance=axios.create({
+        baseURL:'https://httpbin.org',
+    timeout:5000
+    })
+    //2.axios 拦截器    interceptors 拦截器
+    //拦截请求成功/失败
+instance.interceptors.request.use(config=>{
+        console.log(config);
+        // 请求拦截的作用
+        //1.比如说config 中的一些信息不符合服务器的要求
+        //2.比如每次发送网络请求时,都希望在界面中显示一个请求的图标
+        // 请求时显示,响应时隐藏
+        //某些网络请求(比如登入(token)),必须携带一些特殊的请求
+        //拦截成功后没有将数据return 返回给内部,err 也会打印
+        return config
+},err=>{
+        console.log(err);
+})
+
+//拦截响应成功/失败
+instance.interceptors.response.use(res=>{
+    console.log(res);
+    //拦截成功后没有将数据return 返回给内部,内部无法处理
+        return res.data
+},err=>{
+    console.log(err);
+})
+
+
+    //发送正真的网络请求
+    // instance(config) 本身返回的就是promise
+    //点击查看内部源码
+    //也就是将promise 导出
+    return instance(config)
+}
+
+
+// 可以写多个请求接口
+export function request1(){
+
+}
+
+
+
+
+        JSON-handle 插件下载
+        scr 下新建一个network 文件夹
+        里面都是axios 请求数据的封装
+
+
+
+
+
+
+       支持多种请求方式:
+       axios(config)
+       axios.request(config)
+       axios.get(url[,config])
+       axios.delete(url[,config])
+       axios.delete(url[,config])
+       axios.head(url[,config])
+       axios.post(url,data[,config])
+       axios.put(url,data[,config])
+       axios.patch(url,data[,config])
+     
+       
+    在上面的例子中,我们的BaseURL 是固定的
+    事实上,在开发过程中可能很多参数都是和固定的
+    这个时候我们可以进行一些抽取,也可以利用axios 的全局配置
+    axios.defaults.baseURL='123.207.32.32:8000'
+    axios.defaults.headers.post['Content-Type']='application/x-www-form-urlencoded';
+
+
+    常见的配置选项
+    请求地址:
+    url:'/user',
+    请求类型:
+    method:'get',
+    请求路径:
+    baseURL:'http://www.mt.com/api',
+    请求前的数据处理:
+    transformRequest:[function(data){}],
+    请求后的数据处理:
+    transformResponse:[function(data){}],
+    自定义的请求头:
+    headers:{'x-Requested-With':'XMLHttpRequest'},
+    URL 查询对象:
+    params:{id:12},
+    查询对象序列化函数:
+    paramsSerializer:function(params){}
+    request body:
+    data:{key:'aa'},
+    超时设置s:
+    timeout:1000,
+    跨域是否带Token
+    withCredentials:false,
+    自定义请求处理:
+    adapter:function(resolve,reject,config){},
+    身份验证信息:
+    auth:{uname:'',pwd:'12'},
+    响应式的数据格式json/blob/document/arraybuffer/text/stream:
+    responseType:'json',
+
+
+    method:'get',   用 params:{id:12},
+    method:'post',   用 data:{key:'aa'},
+
+    
+
+
+
+</body>
+<script>
+
+    const obj={
+        name:'codewhy',
+        age:18,
+        height:1.88
+    }
+ 
+    const {name,age,height}=obj
+    console.log(name);//codewhy
+    console.log(age);
+    console.log(height);
+
+
+    const names=['why','www','yyy']
+    const [name1,name2,name3]=names
+    console.log(name1);
+    console.log(name2);
+    console.log(name3);
+</script>
+</html>

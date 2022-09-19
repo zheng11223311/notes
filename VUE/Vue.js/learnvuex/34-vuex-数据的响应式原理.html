@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+         updataInfo(state){
+            state.info.name='coood'
+              // 洛杉矶 后来加上的不会被加到响应式系统里面
+            //既不会被响应
+            state.info['address']='洛杉矶'
+            // 和原来就有的属性state.info.name='coood' 一起
+            // 改变就会响应
+
+              // 响应式添加
+            Vue.set(state.info,'address','洛杉矶')
+
+             //非响应式删除
+            // delete info.age
+
+            // 响应式删除
+            Vue.delete(state.info,'age')
+          只要有响应式的触发,非响应式的操作也会被响应            
+        }
+
+
+        Vuex 的store 中的state 是响应式的,当state 中的数据
+        发生改变时,Vue 组件会自动更新
+        这就要求我们必须遵守一些Vuex 对应的规则:
+        提前在store 中初始化好所以需要的属性
+        当给state 中的对象添加新属性是,使用下面的方式:
+        方式一:使用Vue.set(obj,'newProp',123)
+        方式二:用新对象给旧对象重新赋值
+</body>
+<script>
+
+    
+ 
+
+
+</script>
+</html>

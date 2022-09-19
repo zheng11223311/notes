@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h2>总价格:{{counter}}</h2>
+        <h2>{{counter}}</h2>
+        <!-- <button v-on:click="counter++">+</button>
+        <button v-on:click="counter--">-</button> -->
+        <!-- <button v-on:click="increment()">+</button>
+        <button v-on:click="decrement()">-</button> -->
+        <!-- <button @click="increment()">+</button>
+        <button @click="decrement()">-</button> -->
+        <button @click="increment">+</button>
+        <button @click="decrement">-</button>
+        <!-- 不传参时可以不要() -->
+        <!-- 在事件定义时,写函数时省略了小括号,但是方法本身是需要一个参数的
+        如果有虚参被使用,而没有实参传入会报undefined
+        实参与虚参一样会报警告,log 打印出来undefined
+        increment(e) 和increment 不传参都一样 将event 赋值给第一个参数
+        Vue 会默认将浏览器生成的event 事件对象作为参数传入到方法中
+            increment(1,e)
+        在方法定义时,我们需要event 对象,可能同时又需要其他参数
+        此时将e 解析为变量 而aa 为浏览器生成的event 事件对象
+        解决方法
+        increment(1,$event) $event 代表浏览器生成的event 事件对象
+
+        -->
+    </div>
+</body>
+<script>
+ 
+    const app = new Vue({
+        el: '#app',     //挂载元素
+        data: {
+            counter:0
+        },
+        computed: {   // computed 里面的函数只打印一次
+
+        },
+        // methods 调用里面的方法需要加()
+        methods: {  // methods 里面的函数打印多次
+            increment(aa,event){    //增强写法
+                console.log(aa ,event);
+                this.counter++
+            },
+            decrement(e){
+                // event 是鼠标事件,浏览器自动创建的对象
+                console.log(e);
+                this.counter--
+            }
+        }
+    })
+    app.message = '嘻嘻嘻'
+</script>
+
+</html>

@@ -1,0 +1,247 @@
+项目说明:
+后台开发:PHP + Laravel + MySQL + Redis + Restrestful api 接口规范
+前台模板:Vue3.x + Composition API + Vant 组件库
+后台管理:React
+接口文档:https://www.showdoc.com.cn/1207745568269647
+
+
+初始化目录结构
+初始化项目别名: 在vue.config.js 里配置
+    module.exports={
+    configureWebpack:{
+        resolve:{
+            alias:{
+                'assets':"@/assets",
+                'components':"@/components",
+                'network':"@/network",
+                'utils':"@/utils",
+                'views':"@/views",
+            }
+        }
+    },
+    publicPath:'./'
+}
+
+初始化全局样式
+    @import './normalize.css';
+
+:root {
+    --color-text: #666;
+    --color-heigh-text: #42bBaa;
+    --color-tint: #42b983;
+    --color-background: #fff;
+    --font-size: 14px;
+    --line-height: 1.5;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    user-select: none;
+    background: var(--color-background);
+    color: var(--color-text);
+    width: 100vw;
+
+}
+
+a {
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+初始化网络请求
+安装axios: npm i axios -S
+请求数据
+
+开发上拉加载更过数据
+官网:https://better-scroll.github.io/docs/zh-CN/
+安装插件: npm i better-scroll -S            //github 官网搜索BetterScroll 详细介绍
+内容需要一个盒子包裹
+
+<back-top @click.native='fn'></back-top>    //组件添加点击事件需要使用修饰符.native 
+
+安装vant 组件库 (内含各种移动端组件)
+官网:https://vant-contrib.gitee.io/vant/#/zh-CN/image-preview
+安装vant: npm i vant@next -S
+安装导入库插件: npm i babel-plugin-import -D            //不用一个一个的导入vant 库的组件
+在babel.config.js 中导入
+plugins: [
+    ['import', {
+      libraryName: 'vant',
+      libraryDirectory: 'es',
+      style: true
+    }, 'vant']
+  ]
+
+  在main.js  导入vant 组件
+  import 'vant/lib/index.css'
+  import { Swipe, SwipeItem } from 'vant';          //导入轮播图组件
+createApp(App).use(store).use(router).use(Swipe).use(SwipeItem).mount('#app')     //这里设置使用的组件,所有的模板里面都可以不用引入,直接使用
+
+
+vant 图片懒加载
+import { Swipe, SwipeItem ,Lazyload } from 'vant';
+use(Lazyload ,{
+    loading:require('./assets/images/1.jpg')  //缺省(未加载)时显示默认图片
+})
+将src 替换成v-lazy ,有默认高度,所有图片显示完后会显示自己的高度
+<van-swipe-item><img v-lazy="url" alt=""/></van-swipe-item>
+
+
+使用徽章 Badge
+<router-link class="tab-bar-item" to="/shopcart">
+      <div class="icon">
+        <van-badge :content="200" max="99">     //购物车数量为content->200 ,大于max->99,会显示99+
+          <i class="iconfont icon-che"></i>
+        </van-badge>
+      </div>
+      <div>购物车</div>
+    </router-link>
+
+
+使用侧边栏
+import { Swipe, SwipeItem ,Lazyload,Badge,Sidebar, SidebarItem  } from 'vant';
+use(Sidebar).use(SidebarItem)
+category.vue
+<div class="leftmenu">
+        <van-sidebar v-model="activeKey">
+          <van-sidebar-item title="标签名称" />
+          <van-sidebar-item title="标签名称" />
+          <van-sidebar-item title="标签名称" />
+        </van-sidebar>
+      </div>
+
+setup(){
+    let activeKey=ref(0)
+    return{
+        activeKey
+    }
+}
+使用折叠面板
+import Vue from 'vue';
+import { Collapse, CollapseItem } from 'vant';
+
+Vue.use(Collapse);
+Vue.use(CollapseItem);
+
+
+<van-collapse v-model="activeNames">
+  <van-collapse-item title="标题1" name="1">内容</van-collapse-item>
+  <van-collapse-item title="标题2" name="2">内容</van-collapse-item>
+  <van-collapse-item title="标题3" name="3">内容</van-collapse-item>
+</van-collapse>
+
+setup(){
+    let activeNames=ref(1)
+    return{
+        activeNames
+    }
+}
+
+
+使用Tab 标签: 
+import Vue from 'vue';
+import { Tab, Tabs } from 'vant';
+
+Vue.use(Tab);
+Vue.use(Tabs);
+
+
+使用Card 卡片:
+import Vue from 'vue';
+import { Card } from 'vant';
+
+Vue.use(Card);
+
+
+使用图片:
+import Vue from 'vue';
+import { Image as VanImage } from 'vant';       //as 别名
+
+Vue.use(VanImage);
+
+
+使用商品卡片:
+import Vue from 'vue';
+import { Card } from 'vant';
+
+Vue.use(Card);
+.use(Tag).use(Button)       //使代码<van-button size="mini">按钮</van-button> 具有按钮效果
+     
+
+
+<van-card
+    num="2"
+    price="2.00"
+    desc="描述信息"
+    title="龙族"
+    thumb="https://uploadfile.huiyi8.com/2018/af/1e/8b/75/410842.jpg.270.jpg"
+  >
+    <template #tags>
+      <van-tag plain type="danger">流行</van-tag>
+      <van-tag plain type="danger"></van-tag>
+    </template>
+    <template #footer>
+      <van-button size="mini">按钮</van-button>
+      <van-button size="mini">按钮</van-button>
+    </template>
+  </van-card>
+
+
+  用户注册:
+  使用表单:
+  import Vue from 'vue';
+import { Form } from 'vant';
+
+Vue.use(Form);
+
+本地保存token
+window.localStorage.setItem('token',res.access_token)
+setItem(key,value)  //设置值
+getItem(key)  //获取值
+清除token 
+window.localStorage.setItem('token','')
+
+actions ==>,content===>$store.dispatch('fn',)
+mutations==>state,payload===>$store.commit('fn',)
+getters==>state,getters
+
+
+使用复选框:
+import { createApp } from 'vue';
+import { Checkbox, CheckboxGroup } from 'vant';
+
+const app = createApp();
+app.use(Checkbox);
+app.use(CheckboxGroup);
+
+
+使用地址:
+import { createApp } from 'vue';
+import { AddressEdit,AddressList  } from 'vant';
+
+const app = createApp();
+app.use(AddressEdit);
+app.use(AddressList );
+
+
+项目运行:
+在www 目录下放置打包后的dist 文件夹
+在c://windows/system32/drivers/etc/hosts 修改添加127.0.0.1 vue3.ewshop.com 
+在warmserver 的apache 的httped-vhosts  修改配置
+
+重启

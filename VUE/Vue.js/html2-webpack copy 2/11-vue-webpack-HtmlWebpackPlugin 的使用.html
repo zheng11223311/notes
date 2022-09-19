@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+ 
+    <div id="app">
+      
+    </div>
+    在真实发布项目时,发布的是dist 文件里面的内容,但是dist 文件夹中如果
+    没有index.html 文件,那么打包的js 也没有意义
+
+    安装插件
+    npm install html-webpack-plugin --save-dev
+    npm install html-webpack-plugin@3.2.0 --save-dev
+
+
+    配置里面配置
+    const HtmlWebpackPlugin =require('html-webpack-plugin')
+
+      plugins:[
+      //横幅
+      new webpack.BannerPlugin('最终解释权归逃离216 所有'),
+      new HtmlWebpackPlugin()
+    ]
+
+    npm run build 打包
+
+
+    在dist 生成index.html 文件
+</body>
+<script src="./dist/bundle.js"></script>
+
+</html>

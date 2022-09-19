@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>learnvuerouter</title>
+</head>
+
+<body>
+  npm run build 打包
+  
+  dist/static/js/app...js  表示当前应用程序
+  开发的所有代码(业务代码(自己写的代码))
+
+  dist/static/js/manifest....js   为了打包
+  的代码做底层的支撑的   比如导入导出import
+
+
+  dist/static/js/vendor...js  
+  vendor(提供商,第三方) vue/vue-router
+  /axios/bs 也是第三方
+
+  webpack.prod.conf.js 
+  压缩的代码的代码(ugly)
+  const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+  将
+    new UglifyJsPlugin({
+      uglifyOptions: {
+        compress: {
+          warnings: false
+        }
+      },
+      sourceMap: config.build.productionSourceMap,
+      parallel: true
+    }),
+    注释掉,就不会压缩代码了
+</body>
+
+</html>

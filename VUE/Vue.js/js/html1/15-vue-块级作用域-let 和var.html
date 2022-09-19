@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        for 循环和if 都是全局作用域
+        解决循环点击异步问题
+        1.获取for 循环遍历的下标
+        2.立即执行函数
+        3.否循环用let 声明i -->块级作用域
+        { let 在这里不会被外部修改}
+        4.箭头函数(未测试过)
+        5.foreach遍历循环点击事件
+        <h2>总价格:{{}}</h2>
+        <!--3. methods -->
+        <h2>{{}}</h2>
+    </div>
+</body>
+<script>
+
+    const app = new Vue({
+        el: '#app',     //挂载元素
+        data: {
+            firstName: 'pink',
+            lastName: 'look',
+        },
+        computed: {   // computed 里面的函数只打印一次
+
+        },
+        // methods 调用里面的方法需要加()
+        methods: {  // methods 里面的函数打印多次
+
+        }
+    })
+    app.message = '嘻嘻嘻'
+</script>
+
+</html>

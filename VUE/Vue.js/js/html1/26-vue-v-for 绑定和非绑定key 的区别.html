@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+     
+       <ul>
+           <li v-for='item in letters'>{{item}}</li>
+       </ul>
+       <ul>
+           <!-- 绑定key 的值要与{{ }} 里面的一致 -->
+           <li v-for='(item,index) in letters' :key='item'>{{item}}{{index}}</li>
+       </ul>
+
+     
+        <!-- 
+           splice(2,3) 删除包括2号开始的3个元素
+           splice(2,0,'a') 删除包括2号开始的0个元素(没有删除元素),插入a
+        -->
+        <!-- 遍历对象 -->
+        
+    </div>
+</body>
+<script>
+ 
+    const app = new Vue({
+        el: '#app',     //挂载元素
+        data: {
+            //虚拟DOM 的diff 算法  
+            // 算法过程里面执行  渲染出来的序号是依次增加
+            // 创建的a 会插入到B 后面,a 的序号为B 的序号
+            // B以及之后的value 的序号开始往后递减,效率低
+
+            //绑定key
+            // 高效率创建,a 序号为6 插入到B 后面
+             // B以及之后的value 的序号不变,效率高
+           letters:['A','B','C','D','E'],
+           info:{
+               nam:'why',
+               age:18,
+               height:1.88
+           }
+        },
+        computed: {   // computed 里面的函数只打印一次
+            
+        },
+        // methods 调用里面的方法需要加()
+        methods: {  // methods 里面的函数打印多次
+           fn(){
+               this.isshow=!this.isshow
+           }
+        }
+    })
+    app.letters.splice(2,0,'a')
+    // app.message = '嘻嘻嘻'
+</script>
+
+</html>

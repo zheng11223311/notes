@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+ 
+    <div id="app">
+      
+    </div>
+    vue 安装
+    npm install vue-loader vue-template-compiler --save-dev
+    npm install vue-loader@15.4.2 vue-template-compiler@2.5.21 --save-dev
+    vue-loader@15.4.2        加载vue
+    vue-template-compiler@2.5.21         vue 编译
+
+
+     webpack.config.js 里面的相关配置修改为
+rules: [
+      {
+        test: /\.css$/,
+        //css-loader 只负责将css 文件进行加载,不负责
+        use: [ 'style-loader','css-loader',"less-loader"]
+      },
+      {
+         test: /\.less$/,
+            use: [{
+                loader: "style-loader" // creates style nodes from JS strings
+            }, {
+                loader: "css-loader" // translates CSS into CommonJS
+            }, {
+                loader: "less-loader" // compiles Less to CSS
+            }]
+      },
+      {
+        // DOS早期后缀名只允许3位数.jpg .htm
+        test: /\.(png|jpg|gif|jpeg)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+                当加载的图片,小于limit时,会将图片编译为base64 格式
+                base64 格式不需要其他文件来存储
+                当加载的图片,大于limit时,需要使用file-loader 模块编译
+                需要其他文件来进行打包,会在dist 生成一张哈希值的图片
+                哈希图片不会重复
+                进行加载
+                webpack.config.js 里面的相关配置
+                publicPath:'dist/'  以后的每一个url 都会拼接'dist/'
+                来找到dist 文件夹下的文件
+
+              limit: 8192   限制大小 b
+            }
+          }
+        ]
+      },
+       {
+      test: /\.js$/,
+      exclude: /(node_modules|bower_components)/,
+      use: {
+        loader: 'babel-loader',
+        options: {
+          presets: ['es2015']
+        }
+      }
+    }
+    ]
+
+   "vue-loader": "^15.4.2",    //安装大于等于15.4.2 的版本,但不会大于等于16版本
+
+    vue 文件一般文件名开头大写,如App.vue
+
+    npm run build 打包
+</body>
+<script src="./dist/bundle.js"></script>
+
+</html>

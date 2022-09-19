@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        子组件放在父组件里面,子组件就不能在这里调用,
+        子组件的作用域在父组件里面
+        要在这里调用子组件,必须在实例对象里面再次注册
+
+        <cpn2></cpn2>
+    </div>
+</body>
+<script>
+    // 1.创建第一个组件(子组件)
+    const cpnC1 = Vue.extend({
+        template: `<div>
+            <h2>我是标题</h2>
+            <p>我是内容,哈哈哈</p>
+            </div>`
+    })
+
+    // 2.创建第二个组件(父组件)
+    const cpnC2 = Vue.extend({
+        template: `<div>
+            <h2>我是标题2222</h2>
+            <p>我是内容,哈哈哈2222</p>
+             <cpn1></cpn1>
+            </div>`,
+        components:{
+            cpn1: cpnC1,
+        }
+    })
+
+    // cpn1 放在cpn1 构造器里面注册,cpn2 在实例对象里面祖册
+    // Vue.component("cpn1", cpnC1)
+    // Vue.component("cpn2", cpnC2)
+
+    // root 组件
+    const app = new Vue({   //开发中一般只使用一个app
+        el: '#app',     //挂载元素
+        data: {
+          
+        },
+        computed: {   // computed 里面的函数只打印一次
+
+        },
+        methods: {  // methods 里面的函数打印多次
+
+        },
+        //过滤器 filters
+        filters: {
+
+        },
+        components: {    //注册局部组件
+            // 组件的标签名:组件构造器
+            // cpn1: cpnC1,
+            // cpn2: cpnC2
+
+            cpn2: cpnC2
+        }
+    })
+
+</script>
+<!-- 报错 -->
+<!-- Duplicate keys detected: 'aa'. This may cause an update error -->
+<!-- 绑定key的元素中     aaa 的 key 值多次重复添加  不绑定就不会报错-->
+
+</html>

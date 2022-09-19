@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        我是
+
+    </div>
+</body>
+<script>
+    //vue 自动调用内部函数
+    const app = new Vue({
+        el: '#app',     //挂载元素
+        data: {
+            counter: 0
+        },
+        beforeCreate: function () { //vue 自动调用内部函数
+            console.log(1);
+        },
+        created: function () {  //vue 自动调用内部函数
+            console.log(this);
+        },
+        mounted: function () {  //vue 自动调用内部函数
+            console.log(2);
+        }
+
+    })
+</script>
+
+</html>

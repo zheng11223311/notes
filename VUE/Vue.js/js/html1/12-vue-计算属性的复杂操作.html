@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h2>总价格:{{totalprice}}</h2> <!-- font-size 可以 -->
+        <h2 :style=getStyle()>{{totalprice}}</h2>
+    </div>
+</body>
+<script>
+
+    const app = new Vue({
+        el: '#app',     //挂载元素
+        data: {
+            book: [
+                {
+                    id: 110,
+                    name: 'unix 编程艺术',
+                    price: 116
+                },
+                {
+                    id: 111,
+                    name: '代码大全',
+                    price: 119
+                },
+                {
+                    id: 112,
+                    name: '深入理解计算机原理',
+                    price: 114
+                },
+                {
+                    id: 113,
+                    name: '现代操作系统',
+                    price: 118
+                }
+            ]
+
+        },
+        // 计算属性 自动执行fullName 函数 
+        // data 里面不会自动执行fullName 函数 需要fullName() 才执行
+        //写计算属性的时候不需要加()
+        computed: {
+            totalprice: function () {
+                let result = 0
+                // for (let i = 0; i < this.book.length; i++) {
+                //     result += this.book[i].price
+                // }
+                for (let i in this.book) {
+                    result += this.book[i].price
+                }
+                // for (let i of this.book) {
+                //     result += this.book[i].price
+                // }
+                return result
+            }
+        },
+        methods: {
+            getStyle: function () {
+                return { backgroundColor: '', fontSize: '50px', color: 'pink' }
+            }
+        }
+    })
+    app.message = '嘻嘻嘻'
+</script>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <img v-bind:src="imgurl" alt="" srcset=""> <!-- 动态绑定属性  也可以简写是:-->
+        <a :href="url" target="_blank" rel="noopener noreferrer">百度一下</a>
+    </div>
+</body>
+<script>
+
+    const app = new Vue({
+        el: '#app',     //挂载元素
+        data: {
+            url: 'http://www.baidu.com',
+            imgurl: '../img/4.jpg'
+
+        },
+    })
+    app.message = '嘻嘻嘻'
+</script>
+
+</html>

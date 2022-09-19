@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>learnvuerouter</title>
+</head>
+
+<body>
+  嵌套是一个很常见的功能
+  比如在home 页面中,我们希望通过/home/news 和/home/message
+  访问一些内容
+  一个路径映射一个组件,访问这两个路径也会分别渲染两个组件
+  /home/news  在home 组件里面显示news 组件的信息
+
+  实现嵌套路由有两个步骤:
+  创建对应的子组件,并且在路由映射中配置对应的子路由
+  在组件内部使用<router-view> 标签
+</body>
+
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    父组件
+    <div id="app">
+        计算属性
+        1.1
+        fullname{set(),get()}
+        1.2
+        计算属性在多次使用时,只会调用一次(缓存)
+        2.1
+        参数问题
+        没有参数是可以省略括号
+        函数有多个参数时,鼠标事件的参数用$event 表示
+        2.2 修饰符
+        stop
+        prevent
+        enter
+        once
+        native 自定义组件不会被监听,只有被native 才能被监听
+        3.1 条件判断
+        v-if/v-else-if/v-else
+        3.2
+        登入小案例
+        3.3
+        v-show 和v-if 的区别
+        4.1
+        循环遍历
+        遍历数组
+        4.2
+        遍历对象
+        value
+        value,key
+        value,key,index
+        4.3
+        数组响应式的方法
+        4.4
+        作业的完成
+        5.1
+        书籍案例
+        6.1
+        v-model 的基本使用
+        v-model=>v-bind:value v-on:input
+        6.2
+        v-model 和radio/checkbox/select 的使用
+        6.3
+        修饰符
+        lazy 输入框失去焦点时才触发事件
+        number 将String 转换成number 类型
+        v-mode 默认将输入内容转换成字符串
+        trim
+        7.1组件化的开发
+        认识组件化
+        7.2
+        组件的基本使用
+        7.3
+        全局组件和局部组件
+        7.4
+        父组件和子组件
+        7.5
+        组件注册的语法糖
+        7.6
+        模板的分离写法
+        script
+        template
+        7.7 数据的存放
+        子组件不能直接访问父组件
+        子组件中有自己的data 而且必须是一个函数
+        为什么必须是一个函数
+        7.8父子组件的通信
+        父传子:props
+        子传父:$emit
+        7.9项目案例
+        npm install
+        npm run serve
+
+    </div>
+
+
+    <template id="cpn2">
+        <div>
+
+        </div>
+
+    </template>
+
+</body>
+<script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // 子组件
+    // const cpn = {
+    // template: '#cpn2',
+    // props:{}   //两者都可以 很多中其他的写法  string boolean...
+    // props:['childmovies','cmessage'],
+    // props: {
+    //1.类型的限制
+    // childmovies:Array,
+    // cmessage:String     //String 大写..
+
+    // 2.提供一些默认值,以及必传值
+    // cmessage: {
+    //     type: String,
+    //     default: 'aaa',   //没有传值默认值
+    //     required: true    //布尔变量,必须向这个值传入值,不传报错 required 必须
+
+    // },
+    // childmovies: {
+    //     // type:Array,      一种报错?
+    //     //Object Array String Number Boolean Date Function Symbol
+    //     type: [Array, String],    //两种类型
+    //     //default 类型是对象或则数组时,默认值必须是一个函数
+    //     // default:[], //在vue2.5.3 以下不会报错
+    //     default() {
+    //         return []
+    //     },
+
+    //     // 自定义验证类型(自己定义),不匹配则报错
+    //     zdy(value) {
+    //         return ['a', 'b'].indexOf(value) !== -1
+    //     }
+    // }
+    //     },
+    //     data() {
+    //         return {
+
+    //         }
+    //     },
+    //     methods: {
+    //         btnClick(item) {
+
+    //             this.$emit('itemclick', item)
+    //         }
+    //     }
+
+    // }
+
+    // 父组件
+    const app = new Vue({   //开发中一般只使用一个app
+        el: '#app',     //挂载元素
+        data: {
+
+        },
+        computed: {   // computed 里面的函数只打印一次
+
+        },
+        methods: {  // methods 里面的函数打印多次
+
+        },
+        //过滤器 filters
+        filters: {
+
+        },
+        components: {    //注册局部组件
+            cpn         //ES6字面量属性增强写法  原式  cpn:cpn
+        }
+    })
+
+</script>
+<!-- 报错 -->
+<!-- Duplicate keys detected: 'aa'. This may cause an update error -->
+<!-- 绑定key的元素中     aaa 的 key 值多次重复添加  不绑定就不会报错-->
+
+</html>

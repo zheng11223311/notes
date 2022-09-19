@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    webpack的本身能力处理不了css 图片等文件
+    loader 是webpack的扩展,可以将scss less 等转化成css 等
+
+    npm run build 本地打包文件
+    网站后缀名是.org 非盈利组织
+    webpack 中文官网
+    https://www.webpackjs.com/loaders/css-loader/
+
+    css-loader 安装 当前路径下
+    npm install --save-dev css-loader --save-dev 开发时依赖
+    报错就安装npm install --save-dev css-loader@2.0.2 版本
+    在webpack.config.js 里面配置
+    module:{
+    rules:[
+    {
+    test:/\.css$/,
+    use:['css-loader']
+    }
+    ]
+    }
+
+    css-loader 只负责将css 文件进行加载,不负责解析
+    style-loader 负责将css 渲染到DOM
+
+    style-loader 安装 当前路径下
+    npm install style-loader --save-dev
+    npm install style-loader@0.23.1 --save-dev
+    在webpack.config.js 里面配置改为
+    module:{
+    rules:[
+    {
+    test:/\.css$/,
+    use:['style-loader','css-loader']
+    }
+    ]
+    }
+    //css-loader 只负责将css 文件进行加载,不负责解析
+    //style-loader 负责将样式添加到DOM 中
+    // webpack 在加载loader 是从右向左读取的
+    // 先读取css 在读取style
+    在打包 npm run build
+</body>
+<script src="./dist/bundle.js"></script>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app" >
+        <!-- 单选 -->
+        <!-- <select name="abc"  v-model='fruit'>
+            <option value="苹果">苹果</option>
+            <option value="香蕉">香蕉</option>
+            <option value="榴莲">榴莲</option>
+            <option value="葡萄">葡萄</option>
+        </select>
+        <h2>你选择的水果是:{{fruit}}</h2> -->
+
+        <!-- 多选 -->
+        <select name="abc"  v-model='fruits' multiple>
+            <option value="苹果">苹果</option>
+            <option value="香蕉">香蕉</option>
+            <option value="榴莲">榴莲</option>
+            <option value="葡萄">葡萄</option>
+        </select>
+        <h2>你选择的水果是:{{fruits}}</h2>
+
+
+
+
+      <!-- oninput实时监听值的变化 -->
+      <!-- <input type="text" name="" id="" :value='message' oninput="console.log(this.value)"> -->
+      
+    </div>
+    
+</body>
+<script>
+    const app = new Vue({
+        el: '#app',     //挂载元素
+        data: {
+     fruit:'香蕉',
+     fruits:[]
+        },
+        computed: {   // computed 里面的函数只打印一次
+             
+        },
+        // methods 调用里面的方法需要加()
+        methods: {  // methods 里面的函数打印多次
+     
+        },
+        //过滤器 filters
+        filters:{
+             
+        }
+    })
+</script>
+    <!-- 报错 -->
+    <!-- Duplicate keys detected: 'aa'. This may cause an update error -->
+    <!-- 绑定key的元素中     aaa 的 key 值多次重复添加  不绑定就不会报错-->
+</html>

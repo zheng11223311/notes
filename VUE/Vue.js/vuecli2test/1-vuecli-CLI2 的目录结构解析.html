@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    build 和config 文件夹都是关于webpack 的配置
+     "start": "npm run dev",
+     输入 npm run start  执行npm run dev
+
+     rm() 删除
+
+     process 监听打包的进度
+     --config 指定路径打包
+     node_modules  文件夹下的文件是package.json 的相关配置
+
+     static 文件夹存放的是一些静态资源
+     如果你放置一些静态资源在里面,他会原封不动的复制到dist 里面
+
+     .editorconfig文件 对文件进行一些统一
+charset = utf-8     
+indent_style = space    缩进方式:空格
+indent_size = 2         使用2个空格
+end_of_line = lf        换行方式
+insert_final_newline = true     文件结尾自动换一行
+trim_trailing_whitespace = true     清除无效空格
+
+    index.html 模板
+    ^1.21.1   表示版本最后一位可变
+    ~1.2.1      表示版本最后两位都可变
+
+
+    当前目录下
+    cnpm run build   
+</body>
+</html>
