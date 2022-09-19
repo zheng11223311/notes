@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax 跨域请求</title>
+    <script src="./jquery-3.1.1.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://tuchong.com/rest/tags/美女/posts?page=1"> -->
+</head>
+<body>
+        <input type="text" placeholder="输入你想要的搜索的文字"><button >通过script 标签去发送请求</button>
+
+<!-- <iframe src="https://tuchong.com/rest/tags/美女/posts?page=1" frameborder="0">
+</iframe> -->
+<!-- <img src="https://tuchong.com/rest/tags/美女/posts?page=1" alt="11" srcset=""> -->
+
+
+    <script>
+        //如果直接获取动态创建出来的li,是获取不到的,必须通过Jquery
+        //的事件委托
+        $('body').on('mouseover','li',function(){
+            this.style.background='orange'
+        })
+        $('body').on('mouseout','li',function(){
+            this.style.background=''
+        })
+
+
+        var ul=document.createElement('ul')
+        function getInfo(obj){
+            console.log(obj);
+            ul.innerHTML=''
+            let allli=''
+            for(var i in obj['result']){
+                allli+=`
+                <li>`+obj['result'][i]['word']+`</li>
+            `
+            }
+            ul.innerHTML=allli
+            document.body.appendChild(ul)
+        }
+        document.querySelector('input').oninput=function(){
+           
+            console.log(11);
+            var input=document.querySelector('input').value
+
+            var script=document.createElement('script')
+            // 后台(比如 php)  接收到callback  的值getInfo,并将getInfo+'(数据)',形成一个
+            //回调函数将数据返回回来
+            script.src='https://sug.so.360.cn/suggest?callback=getInfo&word='+input
+            document.body.appendChild(script)
+            
+    }
+        document.querySelector('button').onclick=function(){
+            console.log(11);
+            // var input=document.querySelector('input').value
+
+            // var script=document.createElement('script')
+            // script.src='https://sug.so.360.cn/suggest?callback=getInfo&word='+input
+            // document.body.appendChild(script)
+
+            // $.ajax({
+            //     type:'get',
+            //     url:'https://tuchong.com/rest/tags/美女/posts?page=1',
+            //     // data:'page=1',
+            //     dataType:'jsonp',   //开启跨域
+            //     success:function(msg){
+            //         console.log(msg);
+            //     },
+            //     error:function(err){
+            //         console.log(err);
+            //     }
+
+            // })
+
+        //     $.ajax({
+		// 	type:'post',
+		// 	url: 'https://tuchong.com/rest/tags/美女/posts?page=1',
+        //     dataType: 'json',
+        //     contentType: "application/json",
+		// 	xhrFields: {
+		// 		withCredentials: true  //解决跨服务传递时不传递cookie的问题，允许携带证书
+		// 	},
+		// 	crossDomain: true,  //允许跨域
+		// 	success: function (data) {
+        //         console.log(ok);
+		// 		console.info(data)
+        //     },
+        //     error:function(err){
+        //         console.log(err);
+        //     }
+		// })
+    }
+    </script>
+</body>
+</html>
