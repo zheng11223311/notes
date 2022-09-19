@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 引入bootstrap 的 css -->
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <!-- 引入jq ,bootstrap 插件基于jq 使用 -->
+  <script src="../js/jquery-3.1.1.min.js"></script>
+  <!-- 引入bootstrap的 js,基于jq 使用 -->
+  <script src="../js/bootstrap.min.js"></script>
+  <style>
+    .row {
+      background-color: pink;
+    }
+
+    /* class 中以col 开头 */
+    /* div[class|=col] {
+            border: 1px solid;
+        } */
+
+    /* class中每个类以col 开头/ */
+    /*div[class^=col] {
+            border: 1px solid;
+        }*/
+  </style>
+</head>
+
+<body>
+  用.form-range创建自定义< input type="range">控件。
+  轨迹（背景）和拇指（值）的样式在不同的浏览器上都是一样的。
+  由于只有Firefox支持从拇指的左边或右边 "filling"他们的轨道，
+  作为视觉上指示进度的一种手段，我们目前不支持它。
+  <!-- 
+    .form-range {
+    width: 100%;
+    height: 1.5rem;
+    padding: 0;
+    background-color: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+   -->
+  <label for="customRange1" class="form-label">Example range</label>
+<input type="range" class="form-range" id="customRange1">
+
+<br>
+<hr>
+<br>
+<br>
+
+
+最小和最大（Min and max）
+范围输入有隐含的最小和最大值，分别为 0 和 100。你可以使用min 和 max属性为它们指定新的值。
+<label for="customRange2" class="form-label">Example range</label>
+<input type="range" class="form-range" min="0" max="5" id="customRange2">
+
+<br>
+<hr>
+<br>
+<br>
+
+Steps（步数）
+默认情况下，范围输入"snap"是为整型。
+要改变这一点，你可以指定步数的值，
+在下面的例子中，我们通过设置step="0.5"将步数加倍。
+
+<label for="customRange3" class="form-label">Example range</label>
+<input type="range" class="form-range" min="0" max="5" step="0.5" id="customRange3">
+
+
+</body>
+<script>
+
+</script>
+
+</html>

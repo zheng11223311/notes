@@ -1,0 +1,260 @@
+# Bootstrap 案例
+
+配置管理在`nuget/bower.json`
+
+查看所需要的`jQuery`的版本
+
+`Bootstrap3\html\10-bootstrap 案例.html`
+
+```html
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <!-- content="IE=edge" ie 的表现和edge 差不多 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scable=no">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- 引入bootstrap 的 css -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!-- if lt IE 9 如果ie 版本小于9 -->
+    <!-- 注解,使用注释的方式,判断为真即会显示 -->
+    <!--[if lt IE 9]>
+      <script src="https://fastly.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://fastly.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        img {
+            width: 100%;
+            height: 500px;
+        }
+
+        .my-lunbo {
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .carousel-caption {
+            bottom: 45%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 导航 -->
+    <!-- navbar-default  导航栏默认颜色,白色 -->
+    <!-- navbar-inverse 反色导航栏 ,将导航栏的颜色变为黑色 -->
+    <!-- navbar-fixed-top 导航栏固定在顶部 -->
+    <nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">现代浏览器博物馆</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">综述 <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">简述</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false">特点 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Chrome</a></li>
+                            <li><a href="#">Firefox</a></li>
+                            <li><a href="#">Safari</a></li>
+                            <li><a href="#">Opear</a></li>
+                            <li><a href="#">IE</a></li>
+                            <!-- role="separator" class="divider" 画线 -->
+                            <!-- <li role="separator" class="divider"></li> -->
+                        </ul>
+                    </li>
+                    <!--  data-target="#a" data-toggle="modal" 为了模态框的调出 -->
+                    <li><a href="javascript:;" data-target="#a" data-toggle="modal">关于</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- 在官网js 插件中 -->
+    <!-- 在bootstrap 中 data-ride 都是要使用js 获取的标志位 -->
+    <!-- data-interval="5000"   轮播时间 5s -->
+    <!-- data-pause="null" 取消鼠标移入暂停事件 -->
+    <!-- data-wrap="true" 无缝浏览,到最后一张会重新开始循环播放,false 到最后一张时,停止播放 -->
+    <div id="carousel-example-generic" class="carousel slide my-lunbo" data-ride="carousel" data-interval="1000"
+        data-wrap="true" data-pause="null">
+        <!-- 底部小圆点 -->
+        <ol class="carousel-indicators">
+            <!-- active  当前处于轮播激活的点 -->
+            <!-- data-slide-to="0" 第几张 -->
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+        </ol>
+
+        <!-- 轮播的图片 -->
+        <div class="carousel-inner" role="listbox">
+            <!-- active 处于激活的图片,当前显示的图片 -->
+            <div class="item active">
+                <img src="../img/1634202081493163420208139.jpg" alt="...">
+                <div class="carousel-caption">
+                    内容1
+                </div>
+            </div>
+            <div class="item">
+                <img src="../img/Firefox_wallpaper.png" alt="...">
+                <div class="carousel-caption">
+                    内容2
+                </div>
+            </div>
+            <div class="item ">
+                <img src="../img/1634202081493163420208139.jpg" alt="...">
+                <div class="carousel-caption">
+                    内容3
+                </div>
+            </div>
+            <div class="item">
+                <img src="../img/Firefox_wallpaper.png" alt="...">
+                <div class="carousel-caption">
+                    内容4
+                </div>
+            </div>
+            <div class="item">
+                <img src="../img/Firefox_wallpaper.png" alt="...">
+                <div class="carousel-caption">
+                    内容5
+                </div>
+            </div>
+        </div>
+
+        <!-- 左右箭头 -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <!-- glyphicon 为字体图标 -->
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+
+    <!-- 三列布局 -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="thumbnail text-center">
+                    <img src="../img/1634202081493163420208139.jpg" alt="">
+                    <h3>哈哈</h3>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="thumbnail text-center">
+                    <img src="../img/1634202081493163420208139.jpg" alt="">
+                    <h3>哈哈</h3>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="thumbnail text-center">
+                    <img src="../img/1634202081493163420208139.jpg" alt="">
+                    <h3>哈哈</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 线 -->
+    <div class="container">
+        <hr>
+    </div>
+    <!-- 标签页 -->
+    <div class="container">
+        <div>
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab"
+                        data-toggle="tab">Home</a></li>
+                <li role="presentation"><a href="#profile" aria-controls="profile" role="tab"
+                        data-toggle="tab">Profile</a>
+                </li>
+                <li role="presentation"><a href="#messages" aria-controls="messages" role="tab"
+                        data-toggle="tab">Messages</a></li>
+                <li role="presentation"><a href="#settings" aria-controls="settings" role="tab"
+                        data-toggle="tab">Settings</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="home">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <h3>哈哈哈</h3>
+                            </div>
+                            <div class="col-md-6">
+                                <img height="200" src="../img/Firefox_wallpaper.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div role="tabpanel" class="tab-pane" id="profile">...</div>
+                <div role="tabpanel" class="tab-pane" id="messages">...</div>
+                <div role="tabpanel" class="tab-pane" id="settings">...</div>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- 模态框 -->
+    <div class="modal fade" id="a"  tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+                <!-- &times; 关闭x 字体 -->
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">模态框标题</h4>
+            </div>
+            <div class="modal-body">
+                <!-- &hellip; 省略号 -->
+              <p>嘿嘿嘿</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+              <button type="button" class="btn btn-primary">保存</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+    <!-- 引入jq ,bootstrap 插件基于jq 使用 -->
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <!-- 引入bootstrap的 js,基于jq 使用 -->
+    <script src="../js/bootstrap.min.js"></script>
+    <script>
+        // 或使用bootstrap 的jq 控制
+        $('.carousel').carousel({
+            interval: 2000,
+            pause: null,
+        })
+    </script>
+</body>
+
+</html>
+```
+

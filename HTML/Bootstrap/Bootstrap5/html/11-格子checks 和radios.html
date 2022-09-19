@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 引入bootstrap 的 css -->
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <!-- 引入jq ,bootstrap 插件基于jq 使用 -->
+  <script src="../js/jquery-3.1.1.min.js"></script>
+  <!-- 引入bootstrap的 js,基于jq 使用 -->
+  <script src="../js/bootstrap.min.js"></script>
+  <style>
+    .row {
+      background-color: pink;
+    }
+
+    /* class 中以col 开头 */
+    /* div[class|=col] {
+            border: 1px solid;
+        } */
+
+    /* class中每个类以col 开头/ */
+    /*div[class^=col] {
+            border: 1px solid;
+        }*/
+  </style>
+</head>
+
+<body>
+  <!-- 
+    .form-check {
+    display: block;
+    min-height: 1.5rem;
+    padding-left: 1.5em;
+    margin-bottom: .125rem;
+}
+.form-check-input:checked {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+.form-check-input:checked {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+form-check .form-check-input {
+    float: left;
+    margin-left: -1.5em;
+}
+   -->
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+    <label class="form-check-label" for="flexCheckDefault">
+      Default checkbox
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+    <label class="form-check-label" for="flexCheckChecked">
+      Checked checkbox
+    </label>
+  </div>
+  当通过 JavaScript 手动设置时，复选框可以使用 :indeterminate 伪类（没有可用的 HTML 属性来指定它）
+  <hr>
+  禁用（Disabled）
+  添加 disabled 属性，关联的 &lt;label> 会自动设置样式以匹配较浅的颜色，以帮助指示input的状态。
+
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled" disabled>
+    <label class="form-check-label" for="flexCheckDisabled">
+      Disabled checkbox
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedDisabled" checked disabled>
+    <label class="form-check-label" for="flexCheckCheckedDisabled">
+      Disabled checked checkbox
+    </label>
+  </div>
+
+  <hr>
+  Radios
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+    <label class="form-check-label" for="flexRadioDefault1">
+      Default radio
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+    <label class="form-check-label" for="flexRadioDefault2">
+      Default checked radio
+    </label>
+  </div>
+  <hr>
+  Disabled
+  添加 disabled 属性，关联的  < label> 会自动设置样式以匹配较浅的颜色，以帮助指示input的状态。
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="flexRadioDisabled" id="flexRadioDisabled" disabled>
+    <label class="form-check-label" for="flexRadioDisabled">
+      禁用的单选框
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="flexRadioDisabled" id="flexRadioCheckedDisabled" checked disabled>
+    <label class="form-check-label" for="flexRadioCheckedDisabled">
+      禁用的已选单选框
+    </label>
+  </div>
+  <hr>
+  开关（Switches）
+  开关具有自定义复选框的标记，但使用 .form-switch 类来呈现切换开关。 开关也支持 disabled(禁止) 属性。
+  <!-- .form-switch .form-check-input {
+    width: 2em;
+    margin-left: -2.5em;
+    background-image: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%280, 0, 0, 0.25%29'/%3e%3c/svg%3e);
+    background-position: left center;
+    border-radius: 2em;
+    transition: background-position .15s ease-in-out;
+}
+.form-check-input[type=checkbox] {
+    border-radius: .25em;
+}
+
+.form-switch {
+    padding-left: 2.5em;
+}
+-->
+需要继承基类form-check 
+  <div class="form-check form-switch">
+    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+    <label class="form-check-label" for="flexSwitchCheckDefault">开关</label>
+  </div>
+  <div class="form-check form-switch">
+    <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+    <label class="form-check-label" for="flexSwitchCheckChecked">选中的开关</label>
+  </div>
+  <div class="form-check form-switch">
+    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" disabled>
+    <label class="form-check-label" for="flexSwitchCheckDisabled">禁止的开关</label>
+  </div>
+  <div class="form-check form-switch">
+    <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" checked disabled>
+    <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">选中并禁止的开关</label>
+  </div>
+  <hr>
+  Inline（在线）
+通过在任何.form-check中添加.form-check-inline，将复选框或radios分组水平对齐。默认是垂直平分
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+  <label class="form-check-label" for="inlineCheckbox1">1</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+  <label class="form-check-label" for="inlineCheckbox2">2</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
+  <label class="form-check-label" for="inlineCheckbox3">3 (disabled)</label>
+</div>
+<hr>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+  <label class="form-check-label" for="inlineRadio1">1</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+  <label class="form-check-label" for="inlineRadio2">2</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" disabled>
+  <label class="form-check-label" for="inlineRadio3">3 (disabled)</label>
+</div>
+
+<hr>
+无标签
+对于没有标签文本的复选框和radios，省略包装的.form-check。记住仍然要为辅助技术提供某种形式的标签（例如，使用aria-label）
+<div>
+  <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">
+</div>
+
+<div>
+  <input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1" value="" aria-label="...">
+</div>
+<hr>
+
+切换按钮（Toggle buttons）
+复选框切换按钮（Checkbox toggle buttons）
+通过使用.btn样式而不是.form-check-label在< label>元素上创建类似按钮的复选框和单选按钮。如果需要的话，这些切换按钮可以进一步被分组到一个按钮组中。
+<!-- 
+.btn-check {
+    position: absolute;
+    clip: rect(0,0,0,0);   //裁剪区域,距离 top right bottom left 的值 ,clip-path,更多功能
+    // top button 相对顶部的值,right left 相对左边的值
+    pointer-events: none;
+}
+
+ -->
+  <input type="checkbox" class="btn-check" id="btn-check" autocomplete="off">
+<label class="btn btn-primary" for="btn-check">Single toggle</label>
+<!-- 禁用 -->
+<input type="checkbox" class="btn-check" id="btn-check-3" autocomplete="off" disabled>
+<label class="btn btn-primary" for="btn-check-3">Disabled</label>
+<hr>
+
+
+单选切换按钮（Radio toggle buttons）
+<input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked>
+<label class="btn btn-secondary" for="option1">Checked</label>
+
+<input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
+<label class="btn btn-secondary" for="option2">Radio</label>
+
+<input type="radio" class="btn-check" name="options" id="option3" autocomplete="off" disabled>
+<label class="btn btn-secondary" for="option3">Disabled</label>
+
+<input type="radio" class="btn-check" name="options" id="option4" autocomplete="off">
+<label class="btn btn-secondary" for="option4">Radio</label>
+<hr>
+其他风格
+<input type="checkbox" class="btn-check" id="btn-check-outlined" autocomplete="off">
+<label class="btn btn-outline-primary" for="btn-check-outlined">Single toggle</label><br>
+
+<input type="checkbox" class="btn-check" id="btn-check-2-outlined" checked autocomplete="off">
+<label class="btn btn-outline-secondary" for="btn-check-2-outlined">Checked</label><br>
+
+<div class="btn-group">
+  <input type="radio" class="btn-check" name="options-outlined" id="success-outlined" autocomplete="off" checked>
+  <label class="btn btn-outline-success" for="success-outlined">Checked success radio</label>
+
+  <input type="radio" class="btn-check" name="options-outlined" id="danger-outlined" autocomplete="off">
+  <label class="btn btn-outline-danger" for="danger-outlined">Danger radio</label>
+</div>
+
+</body>
+<script>
+
+</script>
+
+</html>

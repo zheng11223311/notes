@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入bootstrap 的 css -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- 引入jq ,bootstrap 插件基于jq 使用 -->
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <!-- 引入bootstrap的 js,基于jq 使用 -->
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        .row {
+            background-color: pink;
+        }
+
+        /* class 中以col 开头 */
+        /* div[class|=col] {
+            border: 1px solid;
+        } */
+
+        /* class中每个类以col 开头 */
+        div[class^=col] {
+            border: 1px solid;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 响应式图片 -->
+    <!-- 在Bootstrap中的图片是用.img-fluid.来做响应的，
+    它应用max-width: 100%;和height: auto;到图片上 
+    height: auto; 图片宽度比浏览器大时,跟随浏览器宽度,比浏览器小时,使用图像宽度
+    ，使它与父元素一起伸缩。 -->
+    <img src="../../Bootstrap3/img/1634202081493163420208139.jpg" class="img-fluid" alt="...">
+    <hr>
+    <!-- 图片缩略图 -->
+    <!-- 除了我们的border-radius外，你还可以使用.img-thumbnail来给图像一个圆润的1px边框外观。 -->
+    <img src="../../Bootstrap3/img/1634202081493163420208139.jpg" class="img-thumbnail" alt="...">
+    <hr>
+    <!--
+         .rounded {
+            border-radius: .25rem!important;
+        } 
+        .float-start {
+            float: left!important;
+        }
+-->
+    <img src="../../Bootstrap3/img/1634202081493163420208139.jpg" class="rounded float-start" alt="...">
+    <img src="../../Bootstrap3/img/1634202081493163420208139.jpg" class="rounded float-end" alt="...">
+
+    <!-- 
+        .mx-auto {   x 为x 轴 ,y 为y 轴 m-auto 为xy轴
+            margin-right: auto!important;
+            margin-left: auto!important;
+        }
+        . d-block{
+            display: block!important;
+        }
+     -->
+    <img src="../../Bootstrap3/img/1634202081493163420208139.jpg" class="rounded mx-auto d-block" alt="...">
+
+    <!-- text-center 文字居中 -->
+    <div class="text-center">
+        <img src="../../Bootstrap3/img/1634202081493163420208139.jpg" class="rounded" alt="...">
+    </div>
+    <hr>
+    <!-- 照片 -->
+    <!-- 
+        .img-thumbnail {
+            padding: .25rem;
+            background-color: #fff;
+            border: 1px solid #dee2e6;
+            border-radius: .25rem;
+            max-width: 100%;
+            height: auto;
+        }
+
+     -->
+    <picture>
+        <source srcset="../../Bootstrap3/img/1634202081493163420208139.jpg" type="image/svg+xml">
+        <img src="../../Bootstrap3/img/1634202081493163420208139.jpg" class="img-fluid img-thumbnail" alt="...">
+    </picture>
+
+</body>
+<script>
+
+</script>
+
+</html>

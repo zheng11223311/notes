@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入bootstrap 的 css -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- 引入jq ,bootstrap 基于jq 使用 -->
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <!-- 引入bootstrap的 js,基于jq 使用 -->
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        .container{
+            background-color: pink;
+        }
+        /* 对class 以col 开头的设置 */
+        div[class|=col]{
+            border: 1px solid red;
+        }
+        /* 同上 */
+        div[class^=col]{
+           color: aqua;
+           background-color: coral;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        栅格系统 grid system
+        <!-- row 行,一行总共有12格 -->
+        <div class="row">
+            <!--col 列 在 lg 超大屏下 一行里面有2列,一列占10格 一列占2格 -->
+            <!--col 列 在 md 中屏下 一行里面有2列,一列占1格 一列占3格 -->
+            <div class="col-lg-10 col-md-1">1</div>
+            <div class="col-lg-2 col-md-3">2</div>
+        </div>
+       
+        栅格系统css 源码:  ../less/grid.less 
+        1.固定布局 和 流体布局 的公共样式
+            margin-right:auto;
+            margin-left:auto;
+            padding-left:15px;
+            padding-right:15px;
+
+        2.
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入bootstrap 的 css -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- 引入jq ,bootstrap 基于jq 使用 -->
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <!-- 引入bootstrap的 js,基于jq 使用 -->
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        .a{
+            width: auto;
+            padding: 0 60px;
+            height: 50px;
+            background-color: darkgoldenrod;
+        }
+        .b{
+            width: 100%;
+            padding: 0 60px;
+            height: 50px;
+            background: antiquewhite;
+        }
+    </style>
+</head>
+
+<body>
+       <div class="a">
+        auto 不会被padding撑大
+       </div>
+       <div class="b">
+        100% 会被padding撑大,但是现在好像都一样不会被撑大
+       </div>
+</body>
+
+</html>

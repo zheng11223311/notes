@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入bootstrap 的 css -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- 引入jq ,bootstrap 插件基于jq 使用 -->
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <!-- 引入bootstrap的 js,基于jq 使用 -->
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        .row {
+            background-color: pink;
+        }
+
+        /* class 中以col 开头 */
+        /* div[class|=col] {
+            border: 1px solid;
+        } */
+
+        /* class中每个类以col 开头/ */
+        /*div[class^=col] {
+            border: 1px solid;
+        }*/
+    </style>
+</head>
+
+<body>
+    <!-- 
+      表单控件
+给文本表单控件，如<input>和<textarea>升级其能力，包括自定义样式、大小、焦点状态等等。
+   -->
+
+    <!-- 
+       mb-3 {
+            margin-bottom: 1rem!important;
+        }
+        .form-control {
+            display: block;
+            width: 100%;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #212529;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            -webkit-appearance: none;   //appearance:button; 渲染成button 元素
+            -moz-appearance: none;
+            appearance: none;
+            border-radius: .25rem;
+            transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        }
+        .form-label {
+            margin-bottom: .5rem;
+        }
+    -->
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+    <hr>
+    <!-- 
+        使用.form-control-lg和.form-control-sm来设置高度。
+   -->
+    <!-- 
+       .form-control-lg {
+            min-height: calc(1.5em + 1rem + 2px);
+            padding: .5rem 1rem;
+            font-size: 1.25rem;
+            border-radius: .3rem;
+        }
+    -->
+    <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg"
+        aria-label=".form-control-lg example">
+    <input class="form-control" type="text" placeholder="Default input" aria-label="deafult input example">
+    <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm"
+        aria-label=".form-control-sm example">
+    <hr>
+    <!-- 禁用 -->
+    <input class="form-control" type="text" placeholder="Disabled input" aria-label="Disabled input example" disabled>
+    <!-- 只读 -->
+    <!-- 无边框亮,也不能输入 -->
+    <input class="form-control" type="text" placeholder="Disabled readonly input" aria-label="Disabled input example"
+        disabled readonly>
+    <!-- 有边框亮,但是不能输入 -->
+    <input class="form-control" type="text" placeholder=" readonly input" aria-label="Disabled input example" readonly>
+    <hr>
+
+    <!-- 只读的纯文本 -->
+    <div class="mb-3 row">
+        <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-10">
+            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+        <div class="col-sm-10">
+            <input type="password" class="form-control" id="inputPassword">
+        </div>
+    </div>
+
+    <!-- 
+
+     -->
+    <form class="row g-3">
+        <div class="col-auto">
+            <label for="staticEmail2" class="visually-hidden">Email</label>
+            <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="email@example.com">
+        </div>
+        <div class="col-auto">
+            <label for="inputPassword2" class="visually-hidden">Password</label>
+            <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+        </div>
+        <div class="col-auto">
+            <!-- btn-primary 按钮 -->
+            <!-- 
+                .btn-primary {
+                    color: #fff;
+                    background-color: #0d6efd;
+                    border-color: #0d6efd;
+                }
+            -->
+            <button type="submit" class="btn btn-primary mb-3">Confirm identity</button>
+        </div>
+    </form>
+    <hr>
+    <!-- 颜色,取色可以脱离浏览器 -->
+    <label for="exampleColorInput" class="form-label">Color picker</label>
+    <input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c"
+        title="Choose your color">
+    <hr>
+
+    <!-- 
+    
+        数据列表（Datalists）
+        Datalists允许你创建<option>，
+        可以从<input>中访问（和自动完成）。
+        这类似于<select>元素，但有更多的菜单样式限制和差异。
+        虽然大多数浏览器和操作系统包括对<datalist>元素的一些支持，
+        但它们的风格设计充其量是不一致的。
+    -->
+
+    <label for="exampleDataList" class="form-label">Datalist example</label>
+    <!-- 
+        list 为datalist 的id
+     -->
+    <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+    <datalist id="datalistOptions">
+        <option value="San Francisco">
+        <option value="New York">
+        <option value="Seattle">
+        <option value="Los Angeles">
+        <option value="Chicago">
+    </datalist>
+
+</body>
+<script>
+
+</script>
+
+</html>

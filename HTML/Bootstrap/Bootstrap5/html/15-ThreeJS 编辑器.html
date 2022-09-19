@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThreeJS 中文编辑器</title>
+    <!-- 引入bootstrap 的 css -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- 引入jq ,bootstrap 插件基于jq 使用 -->
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <!-- 引入bootstrap的 js,基于jq 使用 -->
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .mythree-h {
+            height: 30px;
+            line-height: 30px;
+        }
+
+        .mythree-select-father div {
+            top: 30px;
+            display: none;
+        }
+
+        .mythree-select-father div:hover {
+            display: block;
+        }
+
+        .mythree-select-father:hover div {
+            cursor: pointer;
+            display: block;
+        }
+
+        .mythree-select p:hover {
+            cursor: pointer;
+            color: rgb(255, 172, 55);
+            vertical-align: bottom;
+        }
+
+        .mythree-canvas {
+            height: calc(100vh - 30px);
+        }
+
+        .mythree-side {
+            width: 200px;
+            z-index: 99999;
+        }
+
+        .mythree-side:hover {
+            z-index: 99999;
+        }
+
+        .mythree-side-card .card {
+            max-width: 100px !important;
+        }
+
+        .mythree-side-card .card .options1 {
+            display: none;
+            width: 400px;
+            min-height: 300px;
+        }
+
+        .mythree-side-card .card .options1 .accordion ul li {
+            background-color: rgba(211, 206, 69, 0.767) !important;
+
+        }
+
+        .mythree-side-card .card .options1 .accordion ul li:hover {
+            background-color: rgba(13, 202, 240) !important;
+
+        }
+        .toast{
+            z-index: 100000;
+        }
+        .mythree-optionsfathyer:hover .options1{
+            display: block;
+        }
+    </style>
+</head>
+
+
+
+<body class="overflow-hidden">
+    <!--手册 https://v4.bootcss.com/#  -->
+    <!--手册 https://threejs.org/docs/index.html#api/zh/materials/LineDashedMaterial  -->
+
+
+    <!-- 全局弹框 -->
+    <div class="toast position-absolute  top-0" style="right: 10px;" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <!-- <img src="../img/sphere.png" class="rounded me-2" alt="..."> -->
+            <strong class="me-auto">提示:</strong>
+            <!-- <small class="text-muted">11 mins ago</small> -->
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            出错了!
+        </div>
+    </div>
+    <!-- 头部 -->
+    <div class="container-lg user-select-none mythree-h">
+        <div class="d-flex  text-info mythree-h">
+            <div class="col-md-8 ">
+                <div class="row h-100 m-0">
+                    <span class="position-relative bg-black col-md-2 p-0 h-100 mythree-select-father ">
+                        <h6 class="px-1 mythree-h h-100">文件</h6>
+                        <div class="vw-100   text-white position-absolute top-25 ">
+                            <div class="mythree-select col-md-2 bg-dark px-1 py-1">
+                                <p class="h6 small">新建</p>
+                                <p class="h6 small">导入</p>
+                                <p class="h6 small">导出几何体</p>
+                                <p class="h6 small">导出对象</p>
+                                <p class="h6 small">导出场景</p>
+                            </div>
+                        </div>
+                    </span>
+                    <span class="position-relative bg-black col-md-2 p-0 h-100 mythree-select-father ">
+                        <h6 class="px-1 mythree-h h-100">编辑</h6>
+                        <div class="vw-100   text-white position-absolute top-25 ">
+                            <div class="mythree-select col-md-2 bg-dark px-1 py-1">
+                                <p class="h6 small">撤回</p>
+                                <p class="h6 small">重做</p>
+                                <p class="h6 small">清除历史</p>
+                                <p class="h6 dropdown-divider"></p>
+                                <p class="h6 small">复制</p>
+                            </div>
+                        </div>
+                    </span>
+                    <span class="position-relative bg-black col-md-2 p-0 h-100 mythree-select-father ">
+                        <h6 class="px-1 mythree-h h-100">添加</h6>
+                        <div class="vw-100   text-white position-absolute top-25 ">
+                            <div class="mythree-select col-md-2 bg-dark px-1 py-1">
+                                <p class="h6 small">组</p>
+                                <p class="h6 dropdown-divider"></p>
+                                <p class="h6 small" onclick="createPlane()">平面</p>
+                                <p class="h6 small">立方体</p>
+                                <p class="h6 small" onclick="createSphere()">圆</p>
+                                <p class="h6 dropdown-divider"></p>
+                                <p class="h6 small">点光线</p>
+                                <p class="h6 small">台灯光</p>
+                                <p class="h6 small">太阳光</p>
+                                <p class="h6 small">双向光</p>
+                                <p class="h6 small">环境光</p>
+                                <p class="h6 dropdown-divider"></p>
+                                <p class="h6 small">透视相机</p>
+                                <p class="h6 small">正交相机</p>
+
+                            </div>
+                        </div>
+                    </span>
+
+                </div>
+            </div>
+            <div class="col-md-4 d-md-block d-none">
+                <div class="border-light bg-light form">
+                    <input type="checkbox" id="autoSave" class="form-check-input "
+                        style="vertical-align:text-bottom;" />
+                    <label for="autoSave" class="form-check-label">自动保存</label>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- 中间 -->
+    <div class=" container-lg user-select-none ">
+        <div class="d-flex mythree-canvas">
+            <div class="canvas col-md-9 bg-success  py-1">
+
+            </div>
+            <div class=" col-md-3 bg-warning  py-1"></div>
+        </div>
+    </div>
+    <!-- 侧边图形选择栏 -->
+    <div class="mythree-side container-lg position-absolute h-100 top-0 ">
+        <div class="row h-100">
+            <div class="mythree-side-card col-md-12 bg-warning h-100 position-relative">
+                <p class="text-muted px-3 h4">选择几何体</p>
+                <div class="mythree-optionsfathyer card  text-center w-50 position-relative">
+                    <img src="../img/sphere.png" class="card-img-top w-100" alt="...">
+                    <div class="options1 position-absolute offset-11 bg-info p-2 py-3">
+                        <div class="text-end p-1">
+                            <span class="form text-end px-2 btn btn-primary " onclick="getNewData()" title="刷新获取最新添加位置的数据">刷新</span>
+                        </div>
+                        <div class="form">
+                            <div class="row">
+                                <span class="col-md-4">材质:</span>
+                                <select name="material" id="material" class="col-md-7 rounded border-0 ">
+                                    <option value="MeshBasicMaterial">MeshBasicMaterial</option>
+                                    <option value="MeshNormalMaterial">MeshNormalMaterial</option>
+                                    <option value="MeshStandardMaterial">MeshStandardMaterial</option>
+                                    <option value="MeshLampMaterial">MeshLampMaterial</option>
+                                    <option value="BufferMaterial">BufferMaterial</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form my-1">
+                            <div class="row">
+                                <span class="col-md-4">半径:</span>
+                                <input type="number" name="radius" class=" col-md-7 rounded border-0" value="2" />
+                            </div>
+                        </div>
+                        <div class="form  my-1">
+                            <div class="row">
+                                <span class="col-md-4">半径分段数:</span>
+                                <input type="number" name="radiusSegmentation" class=" col-md-7 rounded border-0"
+                                    value="30" />
+                            </div>
+                        </div>
+                        <div class="form my-1">
+                            <div class="row">
+                                <span class="col-md-4">颜色:</span>
+                                <!-- color 优点可以不被限制在浏览器页面取色 -->
+                                <input type="color" name="color" class=" col-md-7 rounded border-0" />
+                            </div>
+                        </div>
+                        <div class="form my-1">
+                            <div class="row">
+                                <span class="col-md-4">显示骨架:</span>
+                                <input type="checkbox" name="wireframe" class="form-check col-md-1 rounded border-0 " />
+                            </div>
+                        </div>
+                        <div class="form my-1">
+                            <div class="row">
+                                <span class="col-md-4">初始位置:</span>
+                                <input type="text" name="positionx" class="mx-1 col-md-2 rounded border-0 " value="1"
+                                    placeholder="x 轴" />
+                                <input type="text" name="positiony" class="mx-1 col-md-2 rounded border-0 " value="1"
+                                    placeholder="y 轴" />
+                                <input type="text" name="positionz" class="mx-1 col-md-2 rounded border-0 " value="1"
+                                    placeholder="z 轴" />
+                            </div>
+                        </div>
+                        <div class="form my-1">
+                            <div class="row">
+                                <span class="col-md-4">初始角度:</span>
+                                <input type="text" name="rotationx" class="mx-1 col-md-2 rounded border-0 " value="0"
+                                    placeholder="x 轴" />
+                                <input type="text" name="rotationy" class="mx-1 col-md-2 rounded border-0 " value="0"
+                                    placeholder="y 轴" />
+                                <input type="text" name="rotationz" class="mx-1 col-md-2 rounded border-0 " value="0"
+                                    placeholder="z 轴" />
+                            </div>
+                        </div>
+                        <div class="form my-1">
+                            <div class="row">
+                                <span class="col-md-4">初始缩放:</span>
+                                <input type="text" name="scalex" class="mx-1 col-md-2 rounded border-0 " value="1"
+                                    placeholder="x 轴" />
+                                <input type="text" name="scaley" class="mx-1 col-md-2 rounded border-0 " value="1"
+                                    placeholder="y 轴" />
+                                <input type="text" name="scalez" class="mx-1 col-md-2 rounded border-0 " value="1"
+                                    placeholder="z 轴" />
+                            </div>
+                        </div>
+                        <div class="form my-1">
+                            <div class="row">
+                                <span class="col-md-4">请选择添加的位置:</span>
+                                <select  name="fatherAdd" class="col-md-7 rounded border-0 ">
+                                    <option value="0">scene</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form my-1">
+                            <div class="row">
+                                <span class="col-md-4">当前物体起名:</span>
+                                <input type="text"  name="name" class="col-md-7 rounded border-0">
+                            </div>
+                        </div>
+                        <div class="form my-1">
+                            <div class="row">
+                                <span class="col-md-4">贴图:</span>
+                                <input type="text"  name="texture" class="col-md-7 rounded border-0" value="https://tse1-mm.cn.bing.net/th/id/OIP-C.fhbUnfNip6dTEVdG1pbBigHaFj?w=257&h=193&c=7&r=0&o=5&dpr=1.25&pid=1.7">
+                            </div>
+                        </div>
+                        <button class="btn btn-primary my-2 w-75" onclick="sideCreateSphere()">创建圆</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<!-- js文件引入 -->
+<script src="../../../ThreeJS/js/three.js-master/build/three.min.js"></script>
+<!-- 引入帧率检测文件 -->
+<script src="../../../ThreeJS/js/three.js-master/examples/js/libs/stats.min.js"></script>
+<!-- 引入鼠标交互文件 orbitcontrol-->
+<!-- 鼠标操作三维场景 -->
+<script src="../../../ThreeJS/js/three.js-master/examples/js/controls/OrbitControls.js"></script>
+<!-- 引入dat.gui  -->
+<script src="../../../ThreeJS/js/dat.gui.min.js"></script>
+<!-- 引入 RectAreaLightHelper 矩形辅助光线 -->
+<script src="../../../ThreeJS/js/node_modules/three/examples/js/helpers/RectAreaLightHelper.js"></script>
+
+<script src="../js/15-threejs.js"></script>
+
+</html>

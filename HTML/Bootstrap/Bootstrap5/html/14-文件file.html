@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 引入bootstrap 的 css -->
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <!-- 引入jq ,bootstrap 插件基于jq 使用 -->
+  <script src="../js/jquery-3.1.1.min.js"></script>
+  <!-- 引入bootstrap的 js,基于jq 使用 -->
+  <script src="../js/bootstrap.min.js"></script>
+  <style>
+    .row {
+      background-color: pink;
+    }
+
+    /* class 中以col 开头 */
+    /* div[class|=col] {
+            border: 1px solid;
+        } */
+
+    /* class中每个类以col 开头/ */
+    /*div[class^=col] {
+            border: 1px solid;
+        }*/
+  </style>
+</head>
+
+<body>
+  
+  <div class="mb-3">
+    <label for="formFile" class="form-label">Default file input example</label>
+    <input class="form-control" type="file" id="formFile">
+  </div>
+  <div class="mb-3">
+    <label for="formFileMultiple" class="form-label">Multiple files input example</label>
+    <input class="form-control" type="file" id="formFileMultiple" multiple>
+  </div>
+  <div class="mb-3">
+    <label for="formFileDisabled" class="form-label">Disabled file input example</label>
+    <input class="form-control" type="file" id="formFileDisabled" disabled>
+  </div>
+  <div class="mb-3">
+    <label for="formFileSm" class="form-label">Small file input example</label>
+    <input class="form-control form-control-sm" id="formFileSm" type="file">
+  </div>
+  <div>
+    <label for="formFileLg" class="form-label">Large file input example</label>
+    <input class="form-control form-control-lg" id="formFileLg" type="file">
+  </div>
+  <hr>
+  进度条
+  <progress></progress>
+  <progress value="0.7"></progress>
+  <div class="d-lg-none">hide on lg and wider screens</div>
+<div class="d-none d-lg-block">hide on screens smaller than lg</div>
+<hr>
+<div class="d-print-none">Screen Only (Hide on print only)</div>
+<div class="d-none d-print-block">Print Only (Hide on screen only)</div>
+<div class="d-none d-lg-block d-print-block">Hide up to large on screen, but always show on print</div>
+<hr>
+
+
+</body>
+<script>
+var obj = //;  
+</script>
+
+</html>

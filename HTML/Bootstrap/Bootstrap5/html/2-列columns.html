@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 引入bootstrap 的 css -->
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <!-- 引入jq ,bootstrap 插件基于jq 使用 -->
+  <script src="../js/jquery-3.1.1.min.js"></script>
+  <!-- 引入bootstrap的 js,基于jq 使用 -->
+  <script src="../js/bootstrap.min.js"></script>
+  <style>
+    .row {
+      background-color: pink;
+    }
+
+    /* class 中以col 开头 */
+    /* div[class|=col] {
+            border: 1px solid;
+        } */
+
+    /* class中每个类以col 开头 */
+    div[class^=col] {
+      border: 1px solid;
+    }
+
+    .row {
+      height: 200px;
+      background-color: aqua;
+      border: 10px solid gold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- align-items-start 此行中列在行中的位置,头部,中间,底部 -->
+    <div class="row align-items-start">
+      <div class="col">
+        One of three columns1
+      </div>
+      <div class="col">
+        One of three columns2
+      </div>
+      <div class="col">
+        One of three columns
+      </div>
+    </div>
+    <div class="row align-items-center">
+      <div class="col">
+        One of three columns11
+      </div>
+      <div class="col">
+        One of three columns22
+      </div>
+      <div class="col">
+        One of three columns
+      </div>
+    </div>
+    <div class="row align-items-end">
+      <div class="col">
+        One of three columns
+      </div>
+      <div class="col">
+        One of three columns
+      </div>
+      <div class="col">
+        One of three columns
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="container">
+    <div class="row">
+      <!-- align-self-start 此列在行中的前面,中间,后面(从左到右) -->
+      <div class="col align-self-start">
+        One of three columns
+      </div>
+      <div class="col align-self-center">
+        One of three columns
+      </div>
+      <div class="col align-self-end">
+        One of three columns
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="container">
+    <!-- justify-content-* 相当于 display 的各种对齐方式-->
+    <div class="row justify-content-start">
+      <div class="col-4">
+        靠前
+      </div>
+      <div class="col-4">
+        靠前
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-4">
+        靠中
+      </div>
+      <div class="col-4">
+        靠中
+      </div>
+    </div>
+    <div class="row justify-content-end">
+      <div class="col-4">
+        靠后
+      </div>
+      <div class="col-4">
+        靠后
+      </div>
+    </div>
+    <div class="row justify-content-around">
+      <div class="col-4">
+        col-4 指定大小,平分剩余空间作为间距
+      </div>
+      <div class="col-4">
+        col-4 指定大小,平分剩余空间作为间距
+      </div>
+    </div>
+    <div class="row justify-content-between">
+      <div class="col-4">
+        靠两边
+      </div>
+      <div class="col-4">
+        靠两边
+      </div>
+    </div>
+    <div class="row justify-content-evenly">
+      <div class="col-4">
+        flex项都沿着主轴均匀分布在指定的对齐容器中。相邻flex项之间的间距，主轴起始位置到第一个flex项的间距，主轴结束位置到最后一个flex项的间距，都完全一样。
+        即所有的间距都一样
+      </div>
+      <div class="col-4">
+        flex项都沿着主轴均匀分布在指定的对齐容器中。相邻flex项之间的间距，主轴起始位置到第一个flex项的间距，主轴结束位置到最后一个flex项的间距，都完全一样。
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="container">
+    <div class="row">
+      <div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
+      <div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
+
+      <!--w-100 :指定此列宽度为100% ,但是没有内容,使其前后两个列强制换行, -->
+      <div class="w-100"></div>
+
+      <div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
+      <div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
+    </div>
+  </div>
+  <hr>
+  <div class="container">
+    <div class="row">
+      <div class="col-6 col-sm-4">.col-6 .col-sm-4</div>
+      <div class="col-6 col-sm-4">.col-6 .col-sm-4</div>
+  
+      <!-- Force next columns to break to new line at md breakpoint and up -->
+      <!--w-100 指定盒子宽100%  -->
+      <!--  d-none  任何屏幕下不显示 -->
+      <!-- d-md-block md 屏幕下显示,但是没有内容,相当与在md 屏幕下换行 -->
+      <div class="w-100 d-none d-md-block"></div>
+  
+      <div class="col-6 col-sm-4">.col-6 .col-sm-4</div>
+      <div class="col-6 col-sm-4">.col-6 .col-sm-4</div>
+    </div>
+  </div>
+  <hr>
+  <div class="container">
+    <div class="row">
+      <div class="col order-last">
+        最后一个
+      </div>
+      <div class="col order-first">
+       第一个
+      </div>
+      <div class="col">
+        没有使用权重排序
+      </div>
+      <div class="col order-5">
+        使用权重为5的排序
+      </div>
+      <div class="col order-1">
+        使用权重为1的排序
+      </div>
+      <div class="col order-0">
+        使用权重为0的排序
+      </div>
+      <div class="col order-1">
+        使用权重为120的排序
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">.col-md-4</div>
+      <!-- offset-md-4 md 屏幕下,相对前一个列偏移4格 -->
+      <div class="col-md-4 offset-md-4">.col-md-4 .offset-md-4</div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 offset-md-3">.col-md-3 .offset-md-3</div>
+      <div class="col-md-3 offset-md-3">.col-md-3 .offset-md-3</div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 offset-md-3">.col-md-6 .offset-md-3</div>
+    </div>
+  </div>
+  <hr>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">.col-md-4</div>
+      <!--ms-auto 本质 margin-left: auto!important; -->
+      <div class="col-md-4 ms-auto">.col-md-4 .ms-auto</div>
+    </div>
+    <div class="row">
+       <!-- ms-md-auto  在md 下 会 margin-left: auto!important;-->
+      <div class="col-md-3 ms-md-auto">.col-md-3 .ms-md-auto</div>
+      <div class="col-md-3 ms-md-auto">.col-md-3 .ms-md-auto</div>
+    </div>
+    <div class="row">
+      <!-- .me-auto 本质 margin-right: auto!important; -->
+      <div class="col-auto me-auto">.col-auto .me-auto</div>
+      <div class="col-auto">.col-auto</div>
+    </div>
+  </div>
+  <hr>
+  <!-- 这些类还可以在 外部使用，为元素指定特定的宽度。每当将列类用作行的非直接子级时，都会省略填充 -->
+  <!-- bg-light  背景颜色 -->
+  <!-- p-3 padding:1rem!important -->
+  <!-- border 1px 的边框 -->
+  <div class="col-3 bg-light p-3 border">
+    .col-3: width of 25%
+  </div>
+  <div class="col-sm-9 bg-light p-3 border">
+    .col-sm-9: width of 75% above sm breakpoint
+  </div>
+  <hr>
+  <!-- clearfix 清除浮动 -->
+  <!-- col-md-6 在md 下,分配6格 -->
+  <!--float-md-end  在md 下,向右浮动 -->
+  <!--float-lg-start 在lg 下,向左浮动 -->
+  <!--  mb-3  margin-bottom: 1rem!important; -->
+  <!--ms-md-3  在 md 下,远离 margin-left: 1rem!important;  -->
+  <div class="clearfix">
+    <img src="../../Bootstrap3/img/Firefox_wallpaper.png" 
+    class="col-md-6 float-md-end  float-lg-start mb-3 ms-md-3" alt="...">
+  
+    <p>
+      A paragraph of placeholder text. We're using it here to show the use of the clearfix class. We're adding quite a few meaningless phrases here to demonstrate how the columns interact here with the floated image.
+    </p>
+  
+    <p>
+      As you can see the paragraphs gracefully wrap around the floated image. Now imagine how this would look with some actual content in here, rather than just this boring placeholder text that goes on and on, but actually conveys no tangible information at. It simply takes up space and should not really be read.
+    </p>
+  
+    <p>
+      And yet, here you are, still persevering in reading this placeholder text, hoping for some more insights, or some hidden easter egg of content. A joke, perhaps. Unfortunately, there's none of that here.
+    </p>
+  </div>
+</body>
+
+</html>

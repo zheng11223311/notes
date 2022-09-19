@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入bootstrap 的 css -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- 引入jq ,bootstrap 插件基于jq 使用 -->
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <!-- 引入bootstrap的 js,基于jq 使用 -->
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        .row {
+            background-color: pink;
+        }
+
+        /* class 中以col 开头 */
+        /* div[class|=col] {
+            border: 1px solid;
+        } */
+
+        /* class中每个类以col 开头 */
+        div[class^=col] {
+            border: 1px solid;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- .h1到.h6类也可用 效果同h1-h6 标题 -->
+    <p class="h1">h1. Bootstrap heading</p>
+    <p class="h2">h2. Bootstrap heading</p>
+    <p class="h3">h3. Bootstrap heading</p>
+    <p class="h4">h4. Bootstrap heading</p>
+    <p class="h5">h5. Bootstrap heading</p>
+    <p class="h6">h6. Bootstrap heading</p>
+    <hr>
+
+    <!-- 使用小字体 -->
+    <!-- text-muted 文字颜色灰白色 -->
+    <h3>
+        Fancy display heading
+        <small class="text-muted">With faded secondary text</small>
+    </h3>
+    <hr>
+
+    <!-- 一个更大、更有观点的标题样式 -->
+    <h1>Display 1</h1>
+    <h1 class="display-1">Display 1</h1>
+    <h1 class="display-2">Display 2</h1>
+    <h1 class="display-3">Display 3</h1>
+    <h1 class="display-4">Display 4</h1>
+    <h1 class="display-5">Display 5</h1>
+    <h1 class="display-6">Display 6</h1>
+    <hr>
+    <!-- .Lead使一个段落与众不同 -->
+    <p class="lead">
+        This is a lead paragraph. It stands out from regular paragraphs.
+    </p>
+    <!-- 如果要设置文本样式 -->
+    <!-- 标记或突出显示的文本。 与 <mark> 相同的样式 -->
+    <div class="mark ">12312</div>
+    <!-- <small> 相同的样式。 -->
+    <div class="small  ">12312</div>
+    <!-- .text-decoration-underline将应用与<u>相同的样式。 -->
+    <div class="text-decoration-underline">
+        哈哈哈哈
+    </div>
+    <!-- .text-decoration-line-through将应用与<s>相同的样式。 -->
+    <div class="text-decoration-line-through">哈哈哈哈</div>
+    <hr>
+    <!-- <abbr>元素的风格化实现，用于缩写和缩略语，在悬停时显示扩展版本 -->
+    <p><abbr title="attribute">attr</abbr></p>
+    <p><abbr title="HyperText Markup Language" class="initialism">HTML</abbr></p>
+    <hr>
+    <!-- 块引用（Blockquotes）
+用于文档中引用其他来源的内容块 -->
+    <blockquote class="blockquote">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+    </blockquote>
+    <!-- 
+HTML规范要求，区块引号的署名要放在<blockquote>的外面。
+    当提供署名时，将你的<blockquote>包裹在<figure>中，
+        并使用<figcaption>或带有.blockquote-footer类的块级元素（如<p>）。请确保用<cite>来包装源作品的名称。 -->
+    <figure class="text-center">
+        <blockquote class="blockquote">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+        </blockquote>
+        <figcaption class="blockquote-footer">
+            Someone famous in <cite title="Source Title">Source Title</cite>
+        </figcaption>
+    </figure>
+
+    <hr>
+    <!-- 移除默认的list-style和列表项的左边距（仅适用于直系子项）。
+        这只适用于直系子列表项，
+        这意味着你也需要为任何嵌套列表添加该类。 -->
+    <ul class="list-unstyled">
+        <li>Lorem ipsum dolor sit amet</li>
+        <li>Consectetur adipiscing elit</li>
+        <li>Integer molestie lorem at massa</li>
+        <li>Facilisis in pretium nisl aliquet</li>
+        <li>Nulla volutpat aliquam velit
+            <ul>
+                <li>Phasellus iaculis neque</li>
+                <li>Purus sodales ultricies</li>
+                <li>Vestibulum laoreet porttitor sem</li>
+                <li>Ac tristique libero volutpat at</li>
+            </ul>
+        </li>
+        <li>Faucibus porta lacus fringilla vel</li>
+        <li>Aenean sit amet erat nunc</li>
+        <li>Eget porttitor lorem</li>
+    </ul>
+    <hr>
+    <!-- 删除列表的项目符号并应用一些轻微的margin，
+        结合两个类，.list-inline和.list-inline-item。 -->
+    <ul class="list-inline">
+        <li class="list-inline-item">li1</li>
+        <li class="list-inline-item">li2</li>
+        <li class="list-inline-item">Nulla volutpat</li>
+    </ul>
+    <hr>
+    <!-- 通过使用我们的网格系统的预定义类（或语义混合类），
+        使术语和描述水平对齐。对于较长的术语，
+        你可以选择添加一个.text-truncate类，用省略号来截断文本。 -->
+    <dl class="row">
+        <dt class="col-sm-3 text-truncate">Truncated term is truncated</dt>
+    </dl>
+
+
+</body>
+<script>
+    console.log(typeof undefined == typeof NULL);
+    console.log(typeof
+        function () {} == typeof class {});
+</script>
+
+</html>

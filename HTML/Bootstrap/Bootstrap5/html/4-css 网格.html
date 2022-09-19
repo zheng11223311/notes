@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入bootstrap 的 css -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- 引入jq ,bootstrap 插件基于jq 使用 -->
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <!-- 引入bootstrap的 js,基于jq 使用 -->
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        .row {
+            background-color: pink;
+        }
+
+        /* class 中以col 开头 */
+        /* div[class|=col] {
+            border: 1px solid;
+        } */
+
+        /* class中每个类以col 开头 */
+        div[class^=col] {
+            border: 1px solid;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- https://v5.bootcss.com/docs/layout/css-grid/ 需要禁用默认网格才能使用 -->
+    <div class="grid">
+        <div class="g-col-4">.g-col-4</div>
+        <div class="g-col-4">.g-col-4</div>
+        <div class="g-col-4">.g-col-4</div>
+      </div>
+
+
+</body>
+
+
+</html>

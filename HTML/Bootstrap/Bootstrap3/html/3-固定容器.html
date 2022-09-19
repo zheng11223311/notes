@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入bootstrap 的 css -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- 引入jq ,bootstrap 基于jq 使用 -->
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <!-- 引入bootstrap的 js,基于jq 使用 -->
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        .container{
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        流体布局
+        固定布局
+            宽的阈值                                     width 
+            大于等于1200 px(lg 大屏PC)                  ->1170px(1140+槽宽) 槽宽:左右padding 之和,默认共30px
+            大于等于992 px 小于等于1200(md 中屏PC)       ->970px(940+槽宽)
+            大于等于768 px 小于等于992(sm 平板)          ->750px(720+槽宽)
+            小于768(xs 移动手机)                         ->auto : 使用padding时,不会增加宽度,与100%的区别.100% 使用padding 会增加宽度
+        栅格系统
+
+    </div>
+</body>
+</html>

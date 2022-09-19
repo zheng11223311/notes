@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入bootstrap 的 css -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- 引入jq ,bootstrap 基于jq 使用 -->
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <!-- 引入bootstrap的 js,基于jq 使用 -->
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        .row{
+            background-color: pink;
+        }
+        /* 所有class 以col 开头的 */
+      div[class|=col]{
+        border: 1px solid;
+      }
+    </style>
+</head>
+
+<body>
+     <div class="container">
+         <div class="row">
+             <!-- col-lg-offset-4 在 超大屏下 向有移动4格 -->
+             <!-- 本质使用 margin-left -->
+             <div class="col-log-4 col-lg-offset-4">
+                col-log-4
+             </div>
+         </div>
+     </div>
+</body>
+
+</html>

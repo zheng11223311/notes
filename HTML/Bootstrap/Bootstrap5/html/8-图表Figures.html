@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入bootstrap 的 css -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- 引入jq ,bootstrap 插件基于jq 使用 -->
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <!-- 引入bootstrap的 js,基于jq 使用 -->
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        .row {
+            background-color: pink;
+        }
+
+        /* class 中以col 开头 */
+        /* div[class|=col] {
+            border: 1px solid;
+        } */
+
+        /* class中每个类以col 开头 */
+        div[class^=col] {
+            border: 1px solid;
+        }
+    </style>
+</head>
+
+<body>
+   <!-- 
+       
+
+当你需要显示内容（例如带有可选标题的图片）时，可以考虑使用<figure>。
+
+使用包含的.fig、.fig-img和.fig-caption为HTML5<figure>和<figcaption>元素提供一些基本样式。
+    图表中的图片没有明确的大小，所以请确保在你的<img>中添加.img-fluid类，使其变为响应式的。
+    -->
+
+    <!-- 
+        .figure {
+            display: inline-block;
+        }
+        .figure-img {
+            margin-bottom: .5rem;
+            line-height: 1;
+        }
+     -->
+    <figure class="figure col-md-6">
+        <img src="../../Bootstrap3/img/Firefox_wallpaper.png" class="figure-img img-fluid rounded" alt="...">
+        <figcaption class="figure-caption">A caption for the above image.</figcaption>
+      </figure>
+      <!-- 使用我们的文本实用工具。可以很容易地对齐图表里的说明。 -->
+      <figure class="figure col-md-6">
+        <img src="../../Bootstrap3/img/Firefox_wallpaper.png" class="figure-img img-fluid rounded" alt="...">
+        <figcaption class="figure-caption text-end">A caption for the above image.</figcaption>
+      </figure>
+      
+
+</body>
+<script>
+
+</script>
+
+</html>

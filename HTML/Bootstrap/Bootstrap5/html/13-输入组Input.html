@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 引入bootstrap 的 css -->
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <!-- 引入jq ,bootstrap 插件基于jq 使用 -->
+  <script src="../js/jquery-3.1.1.min.js"></script>
+  <!-- 引入bootstrap的 js,基于jq 使用 -->
+  <script src="../js/bootstrap.min.js"></script>
+  <style>
+    .row {
+      background-color: pink;
+    }
+
+    /* class 中以col 开头 */
+    /* div[class|=col] {
+            border: 1px solid;
+        } */
+
+    /* class中每个类以col 开头/ */
+    /*div[class^=col] {
+            border: 1px solid;
+        }*/
+  </style>
+</head>
+
+<body>
+  在input任意一侧放置一个附加组件或按钮。你也可以在input的两边各放一个。
+  记住要把< label>放在input-group之外。
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon1">@</span>
+    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+  </div>
+  
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+    <span class="input-group-text" id="basic-addon2">@example.com</span>
+  </div>
+  
+  <label for="basic-url" class="form-label">Your vanity URL</label>
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
+    <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+  </div>
+  
+  <div class="input-group mb-3">
+    <span class="input-group-text">$</span>
+    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+    <span class="input-group-text">.00</span>
+  </div>
+  
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Username" aria-label="Username">
+    <span class="input-group-text">@</span>
+    <input type="text" class="form-control" placeholder="Server" aria-label="Server">
+  </div>
+  
+  <div class="input-group">
+    <span class="input-group-text">With textarea</span>
+    <textarea class="form-control" aria-label="With textarea"></textarea>
+  </div>
+
+
+  <hr>
+  Input groups默认通过flex-wrap: wrap进行包装，
+  以适应输入组内的自定义表单字段验证
+  。你可以用.flex-nowrap来禁用它。
+  <div class="input-group flex-nowrap">
+    <span class="input-group-text" id="addon-wrapping">@</span>
+    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+  </div>
+  
+  <hr>
+  尺寸
+将相关的表单大小类添加到.input-group本身，
+其中的内容将自动调整大小 —— 无需在每个元素上重复表单控件大小类。
+不支持在单个输入组元素上调整大小。
+<div class="input-group input-group-sm mb-3">
+  <span class="input-group-text" id="inputGroup-sizing-sm">Small</span>
+  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+</div>
+
+<div class="input-group mb-3">
+  <span class="input-group-text" id="inputGroup-sizing-default">Default</span>
+  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+</div>
+
+<div class="input-group input-group-lg">
+  <span class="input-group-text" id="inputGroup-sizing-lg">Large</span>
+  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+</div>
+复选框 和 单选框
+将任何复选框或单选框放置在输入组插件中（不是text）。 
+当输入旁边没有可见文本时，
+我们建议将 .mt-0 添加到 .form-check-input 中。
+
+<div class="input-group mb-3">
+  <div class="input-group-text">
+    <input class="form-check-input" type="checkbox" value="" aria-label="Checkbox for following text input">
+  </div>
+  <input type="text" class="form-control" aria-label="Text input with checkbox">
+</div>
+
+<div class="input-group">
+  <div class="input-group-text">
+    <input class="form-check-input" type="radio" value="" aria-label="Radio button for following text input">
+  </div>
+  <input type="text" class="form-control" aria-label="Text input with radio button">
+</div>
+<hr>
+
+按钮插件
+<div class="input-group mb-3">
+  <button class="btn btn-outline-secondary" type="button" id="button-addon1">Button</button>
+  <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+</div>
+
+<div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+  <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+</div>
+
+<div class="input-group mb-3">
+  <button class="btn btn-outline-secondary" type="button">Button</button>
+  <button class="btn btn-outline-secondary" type="button">Button</button>
+  <input type="text" class="form-control" placeholder="" aria-label="Example text with two button addons">
+</div>
+
+<div class="input-group">
+  <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username with two button addons">
+  <button class="btn btn-outline-secondary" type="button">Button</button>
+  <button class="btn btn-outline-secondary" type="button">Button</button>
+</div>
+
+<hr>
+带下拉菜单的按钮
+<div class="input-group mb-3">
+  <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="#">Separated link</a></li>
+  </ul>
+  <input type="text" class="form-control" aria-label="Text input with dropdown button">
+</div>
+
+<div class="input-group mb-3">
+  <input type="text" class="form-control" aria-label="Text input with dropdown button">
+  <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="#">Separated link</a></li>
+  </ul>
+</div>
+
+<div class="input-group">
+  <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Action before</a></li>
+    <li><a class="dropdown-item" href="#">Another action before</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="#">Separated link</a></li>
+  </ul>
+  <input type="text" class="form-control" aria-label="Text input with 2 dropdown buttons">
+  <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="#">Separated link</a></li>
+  </ul>
+</div>
+
+分段式按钮
+<div class="input-group mb-3">
+  <button type="button" class="btn btn-outline-secondary">Action</button>
+  <!-- dropdown-toggle-split 箭头 -->
+  <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+    <span class="visually-hidden">Toggle Dropdown</span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="#">Separated link</a></li>
+  </ul>
+  <input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
+</div>
+
+<div class="input-group">
+  <input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
+  <button type="button" class="btn btn-outline-secondary">Action</button>
+  <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+    <span class="visually-hidden">Toggle Dropdown</span>
+  </button>
+  <!-- dropdown-menu-end 最后边时的样式 -->
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+    <!-- 分割线 -->
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="#">Separated link</a></li>
+  </ul>
+</div>
+<hr>
+自定义表单
+输入组包括对自定义选择和自定义文件输入的支持。不支持这些的浏览器默认版本。
+自定义选择
+<div class="input-group mb-3">
+  <label class="input-group-text" for="inputGroupSelect01">Options</label>
+  <select class="form-select" id="inputGroupSelect01">
+    <option selected>Choose...</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>
+</div>
+
+<div class="input-group mb-3">
+  <select class="form-select" id="inputGroupSelect02">
+    <option selected>Choose...</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>
+  <label class="input-group-text" for="inputGroupSelect02">Options</label>
+</div>
+
+<div class="input-group mb-3">
+  <button class="btn btn-outline-secondary" type="button">Button</button>
+  <select class="form-select" id="inputGroupSelect03" aria-label="Example select with button addon">
+    <option selected>Choose...</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>
+</div>
+
+<div class="input-group">
+  <select class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+    <option selected>Choose...</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>
+  <button class="btn btn-outline-secondary" type="button">Button</button>
+</div>
+
+<hr>
+自定义文件输入
+<div class="input-group mb-3">
+  <label class="input-group-text" for="inputGroupFile01">Upload</label>
+  <input type="file" class="form-control" id="inputGroupFile01">
+</div>
+
+<div class="input-group mb-3">
+  <input type="file" class="form-control" id="inputGroupFile02">
+  <label class="input-group-text" for="inputGroupFile02">Upload</label>
+</div>
+
+<div class="input-group mb-3">
+  <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon03">Button</button>
+  <input type="file" class="form-control" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03" aria-label="Upload">
+</div>
+
+<div class="input-group">
+  <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+  <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Button</button>
+</div>
+
+
+</body>
+<script>
+
+</script>
+
+</html>
