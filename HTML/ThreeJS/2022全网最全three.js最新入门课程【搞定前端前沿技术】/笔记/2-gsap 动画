@@ -1,0 +1,59 @@
+**此笔记只记录未学到的知识点**
+
+
+
+## 1-gsap 动画
+
+`npm 地址`: [gsap - npm (npmjs.com)](https://www.npmjs.com/package/gsap) 
+
+安装`gsap`
+
+```
+npm install gsap
+```
+
+导入`gsap`动画库
+
+```js
+// 直接导入所有
+import gsap from "gsap";
+
+// 导入插件
+// import ScrollTrigger from "gsap/ScrollTrigger";
+// import Flip from "gsap/Flip";
+// import Draggable from "gsap/Draggable";
+
+// 或者在all 导入所有插件
+// import { gsap, ScrollTrigger, Draggable, MotionPathPlugin } from "gsap/all";
+
+// 注册插件,不导入插件可以不用注册
+// gsap.registerPlugin(ScrollTrigger, Draggable, Flip, MotionPathPlugin); 
+
+
+//设置动画  移动cube 的x 位置到5,耗时5s
+gsap.to(cube.position,{x:5,duration:5})
+//设置旋转的动画
+gsap.to(cube.rotation,{x:Math.PI,duration:5})
+// ease 运行动画的速度方式
+var animate=gsap.to(cube.position,{x:5,duration:5,ease:"power1.inOut",onComplete:()=>{
+    console.log("动画运行完成")
+},
+onStart:()=>{
+    console.log("动画开始")
+},
+repeat:2,	//重复次数,-1为 无限循环
+yoyo:true,	//往返运动
+delay:2,	//延迟时间 2s
+})
+
+animate.pause()  //暂停动画
+animate.resume()	//恢复动画
+if(animate.isActive()){
+    console.log("正在进行动画")
+}
+```
+
+gsap 曲线运行速度调试 
+
+https://greensock.com/get-started#easing
+
