@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .item {
+            width: 200px;
+            height: 150px;
+            border: 1px solid pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="page-header">点击切换颜色</h2>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+    <script>
+        //    const a=['a','b','c','d']
+        //    let [a1,b1,c1,d1]=a
+        //    console.log(a1,b1,c1,d1);
+
+        //    let name='tom'
+        //    let age=18
+        //    let fn=function(){
+        //            console.log('这是一个函数');
+        //        }
+        //    const b={
+        //        name,
+        //        age,
+        //        fn
+        //    }
+        //    let {name,age,fn}=b
+        //    console.log(name,age,fn);
+
+
+        // let fn = (a, b) => {
+        //     return a + b
+        // }
+
+        // function getName(){
+        //     console.log(this.name);
+        // }
+        // let getName1=()=>{
+        //     console.log(this.name);
+        // }
+        // window.name='Tom'
+        // const school={
+        //     name:'jack'
+        // }
+
+        // // 直接调用
+        // getName1()  //Tom
+        // getName()   //Tom
+
+        // // call 方法调用，call 会改变this 指向
+        //  getName1.call(school)     //Tom
+        // getName.call(school)        //jack
+
+        //             let GetName1=()=>{
+        //             console.log(this.name);
+        //         }
+        // let g=new GetName1()	//错误
+
+        //         let GetName1=()=>{
+        //             console.log(arguments);
+        //         }
+        // GetName1(1,2,3,4)	//错误
+
+
+        // function add(a,b=20){
+        //     return a+b
+        // }
+        // add(10)
+
+        //创建Smbol
+        // let s1=Symbol()
+        // console.log(s1,typeof s1)
+
+        // //添加标识的Symbol
+        // let s2=Symbol('Tom')
+        // let s3=Symbol('Tom')
+        // console.log(s2===s3);
+
+        // // Symbol.for() 创建
+        // let s4=Symbol.for('Tom')
+        // let s5=Symbol.for('Tom')
+        // console.log(s4===s5);       //true
+
+        // let a={
+        // down:function(){
+        //     console.log('原先a 对象的down 函数')
+        // 	}
+        // }
+
+        // //声明一个对象
+        // let methods={
+        //     down:Symbol()
+        // }
+
+        // a[methods.down]=function(){
+        //     console.log('不会影响到原来的down 函数')
+        // }
+        // let a={
+        // [Symbol('down')]:function(){
+        //     console.log('原先a 对象的down 函数')
+        //     }
+        // }
+        // console.log(a);
+
+        // class Person{
+        //     static [Symbol.hasInstance](params){
+        //         console.log(params);        //o 的值
+        //         console.log('我被用来检测类型了');
+        //         // return true
+        //         // return false
+        //     }
+        // }
+
+        // let o={name:1}
+        // console.log(o instanceof Person);   // 接过受到 return false/true 的改变而改变
+
+
+        // const arr=[1,2,3]
+        // const arr1=[4,5,6]
+        // console.log(arr.concat(arr1));  // [1, 2, 3, 4, 5, 6]
+        // arr1[Symbol.isConcatSpreadable]=false   //代表不可展开
+        // console.log(arr.concat(arr1));  // [1, 2, 3, Array(3)]
+
+        // const xiyou = ['唐僧', '孙悟空', '猪八戒', '沙僧']
+        // // 使用for...of 遍历数组
+        // for (let v of xiyou) {
+        //     console.log(v);
+        // }
+
+        // //原型链上有个Symbol(Symbol.iterator) 属性
+        // console.log(xiyou);
+
+        // //调用对象的next 方法
+        // let iterator = xiyou[Symbol.iterator]()
+
+        // console.log(iterator);      //Array Iterator {}
+        // console.log(iterator.next());   //{value: "唐僧", done: false}  done 表示是否完成
+        // console.log(iterator.next());   //{value: "孙悟空", done: false}
+        // console.log(iterator.next());   //{value: "猪八戒", done: false}
+        // console.log(iterator.next());   //{value: "沙僧", done: false}
+        // console.log(iterator.next());   //{value: undefined, done: true}
+
+
+        //不能被迭代，因为没有迭代器,需要自定义迭代器
+        // const banji = {
+        //     name: '终极一班',
+        //     stus: [
+        //         '小明',
+        //         '小宁',
+        //         '小天',
+        //         'knight',
+        //     ]
+        // }
+
+
+        // const banji = {
+        //     name: '终极一班',
+        //     stus: [
+        //         '小明',
+        //         '小宁',
+        //         '小天',
+        //         'knight',
+        //     ],
+        //     //迭代器被下面的for...of 使用
+        //     [Symbol.iterator]() {
+        //         //定义索引变量
+        //         let index = 0
+        //         //保存this
+        //         let _this = this
+        //         return {
+        //             next: function () {
+        //                 if (index < _this.stus.length) {
+        //                     const result = { value: _this.stus[index], done: false }
+        //                     // 下标自增
+        //                     index++
+        //                     // 返回结果
+        //                     return result
+        //                 } else {
+        //                     return { value: undefined, done: true }
+        //                 }
+
+        //             }
+        //         }
+        //     }
+        // }
+
+        // //不能被迭代，因为没有迭代器,for循环使用的是对象里面的迭代器[Symbol.iterator]() 
+        // for (let v of banji) {
+        //     console.log(v);
+        // }
+
+
+        // function* gen() {
+        //     console.log("hello");
+        // }
+
+        // // yield 将函数代码分割，3个yield 将代码分成4代码块，相当于4个函数
+        // // 头到yield1，最后一个yield 到结束
+        // function* gen() {
+        //     console.log('这是第一个函数');
+        //     yield '一只没有耳朵'
+        //     console.log('这是第二个函数');
+        //     yield '一只没有眼睛'
+        //     console.log('这是第三个函数');
+        //     yield '真奇怪'
+        //     console.log('这是第四个函数');
+        // }
+
+        // let iterator = gen()
+        // // console.log(iterator); //gen {<suspended>}
+        // //执行函数
+        // // iterator.next() //这是第一个函数
+        // // iterator.next() //这是第二个函数
+        // // iterator.next() //这是第三个函数
+        // // iterator.next() //这是第四个函数
+        // // iterator.next() //  空
+        // console.log(iterator.next()); //{ value: "一只没有耳朵", done: false }
+
+        // // 遍历
+        // //返回结果为yield 后面的值
+        // for (let v of gen()) {
+        //     console.log(v);
+        // }
+
+
+        // function* gen(args) {
+        //     console.log(args);
+        //     let one = yield '一只没有耳朵'
+        //     console.log(one);
+        //     let two = yield '一只没有眼睛'
+        //     console.log(two);
+        //     let three = yield '真奇怪'
+        //     console.log(three);
+        // }
+        // let iterator = gen('AAA')
+        // //第一个next() 没有yield
+        // console.log(iterator.next()); //{ value: "一只没有耳朵", done: false }
+        // // next 方法可以传入实参,第二个next 参数作为第一个yield 返回的结果
+        // console.log(iterator.next('BBB')); //{value: "一只没有眼睛", done: false}
+        // // 第三个next 参数作为第二个yield 返回的结果
+        // console.log(iterator.next('CCC'));
+        // console.log(iterator.next('DDD')); 
+
+        // // 1s 后输出111，2是后输出222，3s 后输出333
+        // function one() {
+        //     setTimeout(() => {
+        //         console.log(111);
+        //         iterator.next()
+        //     }, 1000)
+        // }
+        // function two() {
+        //     setTimeout(() => {
+        //         console.log(222);
+        //         iterator.next()
+        //     }, 2000)
+        // }
+        // function three() {
+        //     setTimeout(() => {
+        //         console.log(333);
+        //         iterator.next()
+        //     }, 3000)
+        // }
+
+        // function* gen() {
+        //     yield one()
+        //     yield two()
+        //     yield three()
+        // }
+
+        // // 调用生成器函数
+        // let iterator = gen()
+        // iterator.next()
+
+        // // 模拟获取，用户数据，订单数据，商品数据
+        // function getUsers() {
+        //     setTimeout(() => {
+        //         let data = '用户数据'
+        //         iterator.next(data)
+        //     }, 1000)
+        // }
+        // function getOrders() {
+        //     setTimeout(() => {
+        //         let data = '订单数据'
+        //         iterator.next(data)
+        //     }, 1000)
+        // }
+        // function geGoods() {
+        //     setTimeout(() => {
+        //         let data = '商品数据'
+        //         iterator.next(data)
+        //     }, 1000)
+        // }
+
+        // function* gen() {
+        //     let users = yield getUsers()
+        //     console.log(users);
+        //     let orders = yield getOrders()
+        //     console.log(orders);
+        //     let goods = yield geGoods()
+        //     console.log(goods);
+        // }
+
+        // // // 调用生成器函数
+        // let iterator = gen()
+        // iterator.next()
+
+
+        // //实例化Promise 对象
+        // const p = new Promise(function (resolve, reject) {
+        //     setTimeout(function () {
+        //         // let data = '数据库中的用户数据'
+        //         // resolve(data)
+
+        //         let err = '数据读取失败'
+        //         reject(err)
+        //     }, 1000)
+        // })
+
+        // // 调用Promise 对象的then 方法
+        // p.then(function (value) {
+        //     console.log(value); //数据库中的用户数据
+        // }, function (error) {
+        //     console.error(error); //数据读取失败
+        // })
+
+
+        // //1.引入fs 模块
+        // const fs = require('fs')
+
+        // //2.调用方法读取文件
+        // fs.read('./1-let-案例.html', (err, data) => {
+        //     //如果失败，则抛出错误
+        //     if (err) throw err
+        //     //如果没有出错，则输出内容
+        //     console.log(data);  //二进制文件
+        //     console.log(data.toString());
+        // })
+
+
+//         //接口地址：https://api.apiopen.top/getJoke?page=1&count=2&type=video
+// const p = new Promise(function (resolve, reject) {
+//         // 1.创建对象
+//         const xhr=new XMLHttpRequest()
+
+//         //2.初始化
+//         xhr.open('GET','https://api.apiopen.top/getJoke?page=1&count=2&type=video')
+
+//         //3.发送
+//         xhr.send()
+
+//         //4.绑定事件，处理响应结果
+//         xhr.onreadystatechange=function(){
+//             //判断
+//             if(xhr.readyState===4){
+//                 //判断响应状态码 200-299
+//                 if(xhr.status>=200&&xhr.status<300){
+//                     //表示成功
+//                     resolve(xhr.response);
+                   
+                    
+//                 }else{
+//                     reject(xhr.status);
+//                 }
+//             }
+//         }
+//     })
+
+//     p.then(function (value) {
+//          console.log(value);
+//     }, function (error) {
+//          console.error(error); 
+//     })
+
+
+//3.使用Promise 封装
+// const p = new Promise(function (resolve, reject) {
+//    setTimeout(()=>{
+//        resolve('用户数据')
+//    },1000)
+            
+//         })
+
+//         //then 方法返回结果是Promise 对象，对象状态由回调函数的执行结果决定
+//         //1.如果回调函数中返回的结果是 非Promise 类型的属性，状态为成功，返回值为对象
+//         //的成功值
+//     const result=p.then(function (value) {
+//         console.log(value.toString()); 
+//         //1 非Promise 对象
+//         // return 123
+//         //2 是Promise 对象
+//         // return new Promise((resolve,reject)=>{
+//         //     resolve('ok')   //[[PromiseResult]]: ok
+//         // })
+//         //3 抛出错误
+//         throw new Error('出错了')
+//         //[[PromiseResult]]: Error: 出错了 at http://127.0.0.1:55。。。。
+//     }, function (error) {
+//         console.warn(error); 
+//     })
+
+
+//   console.log(result);
+    //     Promise {<pending>}
+    // __proto__: Promise
+    // [[PromiseState]]: "fulfilled"
+    // [[PromiseResult]]: 123
+// const p = new Promise(function (resolve, reject) {
+//    setTimeout(()=>{
+//        resolve('用户数据')
+//    },1000)
+            
+// })
+//     // 链式调用
+//     p.then((value)=>{},(error)=>{}).then((value)=>{},(error)=>{})
+//     p.then((value)=>{}).then((value)=>{})
+
+
+// const p = new Promise(function (resolve, reject) {
+//             setTimeout(()=>{
+//                 //设置p 对象的状态为失败，并设置失败的值
+//                 reject('出错了')
+//             },1000)
+            
+//         })
+
+// p.then((value)=>{}).then((value)=>{})
+// .catch(err=>{
+//     console.error(err);
+// })
+  
+
+
+// let s=new Set()
+// let s=new Set('1')
+
+// //接收可迭代数据
+// let s1=new Set(['大事儿','小事儿','好事儿','坏事儿','没事儿','没事儿'])
+// console.log(s,typeof s);
+// console.log(s1);
+
+// // 元素的个数
+// console.log(s1.size);
+// // 添加新的元素
+// s1.add('喜事儿')
+// console.log(s1);
+// // 删除元素
+// s1.delete('坏事儿')
+// console.log(s1);
+// // 检测
+
+// console.log(s1.has('好事儿'));
+// console.log(s1.has('糟心事'));
+// //清空
+// // s1.clear()
+// // console.log(s1);
+// // 遍历
+// for(let v of s1){
+//     console.log(v);
+// }
+
+
+
+// let arr=[1,2,3,4,5,4,3,2,1]
+// //1 数组去重
+// let s=[...new Set(arr)]
+// console.log(s);
+// //2 交集
+// let arr1=[4,5,6,5,6]
+// // let result=[...new Set(arr)].filter(item=>{
+// //     let s2=new Set(arr1)    //4,5,6
+// //     if(s2.has(item)){
+// //         return true
+// //     }else{
+// //         return false
+// //     }
+// // })
+// //简化
+// let result=[...new Set(arr)].filter(item=>new Set(arr1).has(item))
+// console.log(result);
+
+// //3 并集
+// let union=[...new Set([...arr,...arr1])]
+// console.log(union);
+
+// //4 差集
+// let diff=[...new Set(arr)].filter(item=> !new Set(arr1).has(item))
+// console.log(diff);
+
+// let m=new Map()
+
+// //添加元素
+// m.set('name','尚硅谷')
+// m.set('change',function(){
+//     console.log('你们是哦泡果奶');
+// })
+// let key={
+//     school:'ATGUIGU'
+// }
+// m.set(key,['北京','上海','深圳'])
+// console.log(m);
+// //获取元素个数
+// console.log(m.size);
+// //删除
+// m.delete('name')
+// console.log(m);
+
+// //获取
+// console.log(m.get('change'));
+// // 检测
+
+// console.log(m.has('change'));
+// console.log(m.has('name'));
+
+// //清空
+// // m.clear()
+// // console.log(m);
+
+// // 遍历
+// for(let v of m){
+//     console.log(v);
+// }
+
+
+
+// // 手机
+// function Phone(brand,price){
+//     this.brand=brand
+//     this.price=price
+// }
+// //添加方法
+// Phone.prototype.call=function(){
+//     console.log('我可以打电话');
+// }
+
+// // 实例化对象
+// let huawei=new Phone('华为',5999)
+// console.log(huawei);
+// huawei.call()
+
+
+// // class
+// class Phone{
+//     //构造方法 名字不能修改
+//     //new 时自动执行
+//     constructor(brand,price){
+//         this.brand=brand
+//         this.price=price
+//     }
+//     //方法必须使用改语法，不能使用ES5 的对象完整形式call：function(){}
+//     // constructor 外面方法的都是放在原型链上
+//     call(){
+//         console.log('我可以打电话');
+//     }
+// }
+
+// let onePlus=new Phone('1+',1999)
+// console.log(onePlus);
+
+
+// function Phone(){
+
+// }
+// // 属于函数对象的方法，不属于实例对象的方法
+// Phone.name1='手机'
+// Phone.change=function(){
+//     console.log('我可以改变世界');
+// }
+
+// let nokia=new Phone()
+// //实例对象上的属性和constructor和Phone.prototype  上是相通的
+
+// console.log(nokia);
+// console.log(nokia.name);
+// Phone.prototype.size='5.5inch'
+// console.log(nokia.size);
+
+
+// class Phone{
+//     //静态属性
+//     // static 表示属于类，而不属于实例对象
+//     static name='手机'
+//     static change(){
+//         console.log('我可以改变世界');
+//     }
+// }
+// let nokia =new Phone()
+// console.log(nokia.name);
+// console.log(Phone.name);
+// console.log(nokia);
+// console.log(Phone);
+
+
+// // 手机
+// function Phone(brand,price){
+//     this.brand=brand
+//     this.price=price
+// }
+// //添加方法
+// Phone.prototype.call=function(){
+//     console.log('我可以打电话');
+// }
+
+// function SmartPhone(brand,price,color,size){
+//     Phone.call(this,brand,price)
+//     this.color=color
+//     this.size=size
+// }
+
+// // 设置子级构造函数的原型
+// // SmartPhone 实例化对象的私有链指向 Phone 的函数
+// SmartPhone.prototype=new Phone;
+// SmartPhone.prototype.constructor=SmartPhone
+
+// // 声明子类的方法
+// SmartPhone.prototype.phone=function(){
+//     console.log('我可以拍照');
+// }
+// SmartPhone.prototype.playGame=function(){
+//     console.log('我可以打游戏');
+// }
+
+// const chuizi=new SmartPhone('锤子',24999,'黑色','5.5inch')
+// console.log(chuizi);
+
+
+// class Phone{
+//     //构造方法 名字不能修改
+//     constructor(brand,price){
+//         this.brand=brand
+//         this.price=price
+//     }
+//     // 父类的成员属性
+//     call(){
+//         console.log('我可以打电话');
+//     }
+// }
+
+// class SmartPhone extends Phone{
+//     //构造方法 
+//     constructor(brand,price,color,size){
+//         super(brand,brand)
+//         //调用父类的call
+//         super.call()
+//         this.color=color
+//         this.size=size
+//     }
+//     call(){
+//         console.log('子类-----我可以打电话');
+//     }
+// }
+
+// const chuizi=new SmartPhone('锤子',24999,'黑色','5.5inch')
+// console.log(chuizi);
+
+// // 子类重写父类的方法，调用时只会调用子类的方法
+// chuizi.call()
+
+
+// class Phone{
+//     get price(){
+//         console.log('价格属性被读取了');
+//         return '返回就是打印出来的属性值'
+//     }
+//     set price(newValue){
+//         console.log('价格被修改了');
+//     }
+// }
+
+// //实例化对象
+// let s=new Phone()
+
+// console.log(s.price);
+// s.price='free'
+
+
+// function equal(a,b){
+//     if(Math.abs(a-b)<Number.EPSILON){
+//         return true
+//     }else{
+//         return false
+//     }
+// }
+// console.log(0.1+0.2===0.3);     //false
+// console.log(equal(0.1+0.2,0.3));    //true
+// console.log(Number.EPSILON);    //2.220446049250313e-16
+
+// // 二进制
+// let b=0b1010
+// console.log(b); //10
+// // 八进制
+// let o=0o777
+// console.log(o); //511
+// // 十进制
+// let d=100
+// console.log(d); //100
+// // 十六进制
+// let x=0xff
+// console.log(x); //255
+
+
+// console.log(Number.isFinite(100));  //true
+// console.log(Number.isFinite(100/0));  //false
+// console.log(Number.isFinite(Infinity));  //false
+
+// console.log(Number.isNaN(123)); //false
+// console.log(Number.isNaN('123')); //false
+// console.log(Number.isNaN(NaN)); //true
+// console.log(Number.isNaN(undefined)); //false
+// console.log(Number.isNaN(null)); //false
+// console.log(Number.isNaN(0)); //false
+// console.log(Number.isNaN(Infinity)); //false
+
+// console.log(Number.parseInt('1233333331')); //1233333331
+// console.log(Number.parseInt('1233333331love')); //1233333331
+// console.log(Number.parseInt('123.111ewe'));     //123
+// console.log(Number.parseFloat('123.111'));   //123.111
+// console.log(Number.parseFloat('123.111ewe'));   //123.111
+
+
+// console.log(Number.isInteger(5));   //true
+// console.log(Number.isInteger(2.5));     //false
+// console.log(Number.isInteger(0));     //true
+// console.log(Number.isInteger(null));     //false
+
+
+// console.log(Math.trunc(3.555));     //3
+// console.log(Math.trunc(null));     //0
+// console.log(Math.trunc(undefined));     //NaN
+// console.log(Math.trunc(NaN));     //NaN
+// console.log(Math.trunc(0));     //0
+
+
+// console.log(Math.sign(100));    //1
+// console.log(Math.sign(0));      //0
+// console.log(Math.sign(-100));   //-1
+// console.log(Math.sign(NaN));    //NaN
+// console.log(Math.sign(undefined));  //NaN
+// console.log(Math.sign(null));       //0
+
+
+
+// console.log(Object.is(120,120));    //true
+// console.log(Object.is(120,100));    //false
+// console.log(Object.is(null,0));    //false
+// console.log(Object.is(null,undefined));    //false
+// console.log(Object.is(null,NaN));    //false
+// console.log(Object.is(0,NaN));    //false
+// console.log(Object.is(0,undefined));    //false
+// console.log(Object.is(NaN,undefined));    //false
+// console.log(Object.is(NaN,NaN));    //true
+// console.log(NaN===NaN);     //false
+// console.log(-0===+0);     //true
+// console.log(Object.is(-0,+0)); //false
+
+
+// let config1={
+//     host:'localhost',
+//     port:'3306',
+//     name:'root',
+//     pass:'root',
+//     test:'test'
+// }
+// let config2={
+//     host:'http://baidu.com',
+//     port:'33060',
+//     name:'root11',
+//     pass:'root22',
+//     age:10
+// }
+
+// //后面的参数覆盖前面的参数,参数里面不同的属性会被合并,相同的会覆盖
+// console.log(Object.assign(config1,config2));
+//{host: "http://baidu.com", port: "33060", name: "root11", pass: "root22", test: "test", …}
+
+// const school={
+//     name:'tom'
+// }
+
+// const cities={
+//     xiaoqu:['北京','上海','深圳']
+// }
+
+// Object.setPrototypeOf(school,cities)
+// console.log(school);
+// // 获取原型对象
+// console.log(Object.getPrototypeOf(school));
+// console.log(Object.getPrototypeOf(cities));
+
+
+// const xyj=['西游记','红楼梦','三国演义','水浒传']
+// console.log(xyj.includes('西游记'));    //true
+// console.log(xyj.includes('金瓶梅'));    //false
+// // indexOf 返回的是一个下标，没有-1
+
+// console.log(2**10); //1024
+// // 等同于
+// console.log(Math.pow(2,10));    //1024
+
+
+// async function fn(){
+//     //返回一个字符串
+//     // return 'guigu'
+//     //返回的结果不是一个Promise 类型的对象，返回的结果就是成功的Promise 对象
+//     // return 
+//     //抛出错误，，返回的结果是一个失败的Promise
+//     //throw new Error('出错了！')
+//     //返回的结果如果是一个Promise 对象
+//     return new Promise((resolve,reject)=>{
+//         resolve('成功的数据')
+//     })
+// }
+
+// const result=fn()
+// console.log(result);
+
+// // 调用then 方法
+// result.then(value=>{
+//     console.log(value);     //成功的数据
+// })
+
+
+//   const p= new Promise((resolve,reject)=>{
+//         resolve('成功的数据')
+//     })
+
+// async function main(){
+//    try{
+//         let result=await p
+//     console.log(result);
+//    }catch(e){
+//     console.log(e);
+//    }
+// }
+// main()
+
+
+// 发送ajax 请求
+// function sendAJAX(url){
+//     return new Promise((resolve,reject)=>{
+//          //1.创建对象
+//     const x=new XMLHttpRequest()
+
+//     //2.初始化
+//     x.open("GET",url)
+
+//     //3.发送
+//     x.send()
+
+//     //4.事件绑定
+//     x.onreadystatechange=function(){
+//         if(x.readyState===4){
+//             if(x.status>=200&&x.status<300){
+//                 resolve(x.response)
+//             }else{
+//                 reject(x.status)
+//             }
+//         }
+//     }
+//     })
+   
+// }
+
+// //测试
+
+
+// async function main(){
+//     const result=await sendAJAX('https://api.apiopen.top/getJoke?page=2&count=2&type=video')
+//     console.log(result);
+// }
+// main()
+
+
+
+// const school={
+//     name:'shangguigu',
+//     cities:['北京','上海','深圳'],
+//     xueke:['前端','Java','大数据','运维']
+// }
+
+// // //获取对象所有的键
+// // console.log(Object.keys(school));
+// // //获取对象所有的值
+// // console.log(Object.values(school));
+// // //entries  返回数组，每个键值对都以数组的形式储存
+// // console.log(Object.entries(school));
+
+// // const m=new Map(Object.entries(school))
+// // console.log(m);
+// // console.log(m.get('name'));
+
+// console.log(Object.getOwnPropertyDescriptors(school));
+
+
+// // 创建对象 create(原型对象，描述对象)
+// const obj =Object.create(null,{
+//     name:{
+//         //设置值
+//         value:'shanguigu',
+//         //属性特性
+//         writable:true,  //是否可写
+//         configurable:true,  //是否可以删除
+//         enumerable:true,    //是否可以枚举
+//     }
+// })
+
+
+// function connect({host,port,...user}){
+//     console.log(host);
+//     console.log(port);
+//     console.log(user);
+// }
+// connect({
+//     host:'127.0.0.1',
+//     port:3306,
+//     username:'root',
+//     password:'root',
+//     type:'master'
+// })
+
+
+// const skillOne={
+//     q:'天音波',
+// }
+// const skillTwo={
+//     w:'金钟罩',
+// }
+// const skillThree={
+//     e:'天雷破',
+// }
+// const skillFour={
+//     r:'猛龙过江',
+// }
+
+// const mangseng={...skillOne,...skillTwo,...skillThree,...skillFour}
+// console.log(mangseng);
+
+
+// let str='<a href="https://www.atguigu.com">尚硅谷</a>'
+
+//     //提取url 与标签文本
+//     const reg=/<a href="(.*)">(.*)<\/a>/
+//     //执行
+//     const result=reg.exec(str)
+//     // 将每个(.*) 里的元素提取出来
+//     console.log(result);
+//     console.log(result[1]);
+//     console.log(result[2]);
+
+    // 命名捕获分组
+    // let str1='<a href="https://www.atguigu.com">尚硅谷</a>'
+    // const reg1=/<a href="(?<url>.*)">(?<text>.*)<\/a>/
+    //     //以 ?<url> ?<text> 进行分组
+    //     const result1=reg1.exec(str1)
+    //     //存在在groups 里面
+    //     console.log(result1);
+    //     console.log(result1.groups.url);
+    //     console.log(result1.groups.text);
+
+    
+    // 提取后边的数字
+    // let str='11231312你知道么132零零零零'
+    // //正向断言
+    // const reg=/\d+(?=零)/
+    // const result=reg.exec(str)
+    // console.log(result);
+
+
+    // // 提取后边的数字
+    // let str='11231312你知道么132零零零零'
+    // //反向断言
+    // //(?<=么)前边是否为么
+    // const reg=/(?<=么)\d+/
+    // const result=reg.exec(str)
+    // console.log(result);
+
+
+        // //dot => .   元字符，除换行符以外的任意单个字符
+        // let str=`
+        //       <ul>
+        //         <li>
+        //             <a>肖申克的救赎</a>
+        //             <p>上映时间：1994-09-10</p>
+        //         </li>
+        //         <li>
+        //             <a>阿甘正传</a>
+        //             <p>上映时间：1994-07-6</p>
+        //         </li>
+        //     </ul>
+        // `
+        //     // const reg=/<li>\s+<a>(.*?)<\/a>\s+<p>(.*?)<\/p>/
+        //     //Es9 s 模式下 允许匹配任意字符，包括换行符,g 全局匹配
+        //     const reg=/<li>.*?<a>(.*?)<\/a>.*?<p>(.*?)<\/p>/gs
+        //     //执行匹配
+        //     let result
+        //     let data=[]
+        //    while(result=reg.exec(str)){
+        //         console.log(result);
+        //         data.push({title:result[1],time:result[2]})
+        //    }
+
+        //    console.log(data);
+
+
+
+//         //将二维数组转换为对象
+// const result=Object.fromEntries(
+//     [
+//         ['name','shangguigu'],
+//         ['xueke','前端']
+//     ]
+// )
+// console.log(result);        //{name: "shangguigu", xueke: "前端"}
+// //Map
+// const m=new Map()
+// m.set('name','ATGUIGU')
+
+// const result1=Object.fromEntries(m) 
+
+
+// console.log(result1);       //{name: "ATGUIGU"}
+
+
+// //将对象转换为二维数组
+// // Object.entries ES8
+// const arr= Object.entries({
+//     name:'尚硅谷'
+// })
+
+// console.log(arr);   //[Array(2)]
+
+
+
+// let str='     iloveu      '
+// console.log(str);       //     iloveu      
+// console.log(str.trimStart());    //iloveu     
+// console.log(str.trimEnd());     //     iloveu
+// console.log(str.trim());        //iloveu
+
+
+// const arr=[1,2,3,4,5,[6,[7,8,9]]]
+// console.log(arr.flat());    //(7) [1, 2, 3, 4, 5, 6, Array(3)]
+
+// console.log(arr.flat(2));       //深度，降低3次（降低二维），数值过大，只降到一维
+
+// // flatMap
+// const arr1=[1,2,3,4]
+// // 将每个数字扩大10倍
+// const result=arr1.map(item=>item*10)
+// console.log(result);
+
+// // flatMap=flat+map
+// const arr2=[1,2,3,4]
+// // 将每个数字扩大10倍,并降维
+// const result1=arr2.flatMap(item=>[item*10])
+// console.log(result1);
+
+
+
+// // 创建Symbol
+// let s=Symbol('尚硅谷')
+
+// // 得到字符串
+// console.log(s.description); //尚硅谷
+
+
+// class Person{
+//     //公有属性
+//     name
+//     //私有属性,只能在类里面访问得到
+//     #age
+//     #weight
+//     //构造方法
+//     constructor(name,age,weight){
+//         this.name=name
+//         this.#age=age
+//         this.#weight=weight
+//     }
+
+//     intro(){
+//         console.log(this.name);     //晓红
+//         console.log(this.#age);     //18
+//         console.log(this.#weight);      //45kg
+//     }
+// }
+
+// // 实例化
+// const girl=new Person('晓红',18,'45kg')
+
+// console.log(girl);      //Person {name: "晓红", #age: 18, #weight: "45kg"}
+// console.log(girl.name);     //晓红
+// console.log(girl.age)       //undefined
+// console.log(girl.weight)    //undefined
+// girl.intro()
+
+
+
+// const p1=new Promise((resolve,reject)=>{
+//     setTimeout(()=>{
+//         resolve('商品数据 - 1')
+//     },1000)
+// })
+// const p2=new Promise((resolve,reject)=>{
+//     setTimeout(()=>{
+//         resolve('商品数据 - 2')
+//     },1000)
+// })
+
+// // 调用allSettled 方法
+// const result=Promise.allSettled([p1,p2])
+// console.log(result);
+// //成功的数据和失败的err 都会存放起来
+
+// const result1=Promise.all([p1,p2])
+// console.log(result1);
+// //all 只要有一个失败，就会报错，只有全部成功才会返回成功的Promise 对象
+
+
+//  let str=`
+//               <ul>
+//                 <li>
+//                     <a>肖申克的救赎</a>
+//                     <p>上映时间：1994-09-10</p>
+//                 </li>
+//                 <li>
+//                     <a>阿甘正传</a>
+//                     <p>上映时间：1994-07-6</p>
+//                 </li>
+//             </ul>
+//         `
+//  reg=/<li>.*?<a>(.*?)<\/a>.*?<p>(.*?)<\/p>/sg
+    
+// // 调用方法
+// //自动批量匹配，直到匹配结束，不用自己调用next()
+// const result=str.matchAll(reg)
+// console.log(result);
+// // for(let v of result){
+// //     console.log(v);
+// // }
+
+// const arr=[...result]
+// console.log(arr);   //[Array(3), Array(3)]
+
+// // ?. 的使用
+// function main(config){
+//     // 判断是否存在config，存在就使用config,不存在,就是undefined
+//     //在判断是否存在config.db 存在就使用config.db
+//     //在判断是否存在config.db.host 存在就使用config.db.host
+//     // const dbHost=config&&config.db&&config.db.host
+
+//     // 新语法
+//     // 判断是否存在config，存在就使用config,不存在,就是undefined
+//     //在判断config 里面是否存在db 存在就使用db
+//     //在判断db 里面是否存在 host 存在就使用host
+//     // const dbHost=config?.db?.host
+//     // 也可以混用
+//     const dbHost=config?.db&&config.db.host
+//     console.log(dbHost);    //192.168.1.100
+// }
+
+// main({
+//     db:{
+//         host:'192.168.1.100',
+//         username:'root'
+//     },
+//     cache:{
+//         host:'192.168.1.200',
+//         username:'admin'
+//     }
+// })
+
+// 大整形,在整数后面加n
+// let n=521n
+// console.log(n,typeof(n));   //521n "bigint"
+
+// // 函数,将整数转化为大整形,不能使用浮点数进行转换
+// let a=123
+// console.log(BigInt(a)); //123n
+
+// // 用于大数值运算
+// let max=Number.MAX_SAFE_INTEGER
+// console.log(max);   //9007199254740991
+// console.log(max+1);   //9007199254740992
+// //不能在进行更大的数据运算了
+// console.log(max+2);   //9007199254740992
+
+// // BigInt 不能和普通整数进行运算
+// console.log(BigInt(max)+BigInt(1))  //9007199254740992n
+// console.log(BigInt(max)+BigInt(2))  //9007199254740993n
+// console.log(BigInt(max)+BigInt(3))  //9007199254740994n
+
+
+console.log(globalThis);    //指向全局对象 Window
+// nodejs 下 指向 全局对象 global
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
