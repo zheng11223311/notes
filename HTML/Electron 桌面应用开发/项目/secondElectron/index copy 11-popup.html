@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>remote 打开窗口</title>
+    <style>
+        .wv {
+            width: 640px;
+            height: 480px;
+        }
+    </style>
+</head>
+
+<body>
+    这是新开的子窗口
+    <button onclick="sendMsg()">向父窗口发送消息</button>
+    <script>
+      function sendMsg(){
+          window.opener.postMessage('我是子窗口哦!')
+          window.opener.postMessage({   //上方方法不会被覆盖
+              type:1,   //对象里面自定义的属性可以为type123
+              message1:'我是子窗口哦!-也可以发送一个对象'
+          })
+      }
+    </script>
+</body>
+
+</html>

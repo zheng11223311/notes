@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>渲染线程之间通信的 新窗口</title>
+</head>
+
+<body>
+    <script>
+        const {
+            ipcRenderer
+        } = require("electron");
+
+        const re = require('@electron/remote')
+        let BrowserWindow = re.BrowserWindow
+        console.log(re);
+        console.log(BrowserWindow);
+
+
+        // 监听新页面传递过来的newIndex 事件
+        ipcRenderer.on('tonews', (event, data, id) => {
+            console.log(`消息 ${data} 由 ${id} 窗口发送`);
+            // console.log(BrowserWindow);
+            //通过 id 返回 该窗口的BrowserWindow 对象
+            // var id1 = BrowserWindow.fromId(id);
+            // 通过webContents 向该窗口传递信息
+
+            // 渲染进程和渲染进程之间的通信
+            // id1.webContents.send('tonews111', 'this is new')
+            
+
+        })
+    </script>
+</body>
+
+</html>

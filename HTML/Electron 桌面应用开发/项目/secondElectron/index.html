@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>郑先森的WEB 录屏</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow: hidden;
+        }
+        video{
+            width: 600px;
+            height: 400px;
+        }
+    
+    </style>
+</head>
+
+<body>
+    <button>开始录制</button>
+    <button>停止录制</button>
+    <button>播放</button>
+    <video src="" controls></video>
+    <video src="" controls></video>
+
+    <script>
+        const btn = document.querySelectorAll('button')[0]
+        const btn1 = document.querySelectorAll('button')[1]
+        const btn2 = document.querySelectorAll('button')[2]
+        const video = document.querySelectorAll('video')[0]
+        const video1 = document.querySelectorAll('video')[1]
+        // const init = async () => {
+        //     // 使用navigator 的视频流
+        //     const stream = await navigator.mediaDevices.getUserMedia({
+        //         video: {
+        //             width: 600,
+        //             height: 500,
+        //         }
+        //     })
+        //     // 将流文件直接赋值给video 的srcObject
+        //     video.srcObject = stream
+        //     video.play() //播放
+        // }
+
+        let stream 
+        let recordInstance
+        let blobslice=[]
+        const init1 = async () => {
+            // 使用navigator 的视频流
+             stream = await navigator.mediaDevices.getDisplayMedia({
+                video: true,
+                audio: true,
+            })
+            // 将流文件直接赋值给video 的srcObject
+            video.srcObject = stream
+            video.play() //播放
+        }
+        init1()
+
+        // 流程 : 先开启屏幕共享 init1()->开始录制 startRecord()-.结束录制 stop()->播放录播 play() ->停止共享
+        const startRecord=()=>{
+            recordInstance= new MediaRecorder(stream,{
+                mimeType:'video/webm'
+            })
+            console.log(recordInstance);
+
+            if(recordInstance){ //是否存在recordInstance
+                recordInstance.start()  //开始录制
+
+                recordInstance.ondataavailable=function(e){     //需要在onstop 开启的时候触发,一次性拿到资源
+                    // 存在视频流数据
+                    console.log(e.data);
+                    blobslice.push(e.data)
+                }
+                recordInstance.onstop=function(){   //监听录制结束
+                    console.log(blobslice);
+                }   
+            }
+        }
+        btn.onclick=startRecord //点击开始录屏
+        btn1.onclick=()=>{  //停止录制
+            recordInstance?.stop()
+        }
+        btn2.onclick=()=>{  //播放录播
+            // video1.srcObject=blobslice
+            const blob=new Blob(blobslice,{type:'video/mp4'})
+            const videoUrl=URL.createObjectURL(blob)    //转换成一个http 的url链接
+            console.log(videoUrl);
+            video1.src=videoUrl
+            video1.play()
+        }
+    </script>
+</body>
+
+</html>

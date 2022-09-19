@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文件拖动</title>
+    <style>
+        .wv {
+            width: 640px;
+            height: 480px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button onclick="getProcess()"> 获取进程</button>
+    <script>
+        function getProcess(){
+            console.log('CUP',process.getCPUUsage());   //CPU
+            console.log('env',process.env);     //获取系统的环境变量 path
+            console.log('arch',process.arch);       //操作系统标识,64位
+        }
+    </script>
+</body>
+
+</html>

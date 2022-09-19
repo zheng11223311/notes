@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文件拖动</title>
+    <style>
+        .wv {
+            width: 640px;
+            height: 480px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 渲染进程中使用快捷键 -->
+    <script>
+        // electron 10下，remote模块默认关闭， 必须手动设置webPreferences中的enableRemoteModule为true之后才能使用
+        // const remote = require('electron').remote;   //需要在主进程中的配置允许使用node 模块require
+        // console.log(require('electron') );
+        // const ret = remote.globalShortcut.register('CommandOrControl+x', () => {
+        //     // Command linux  下
+        //     // Control window 下
+        //     // CommandOrControl+E 或 CommandOrControl+e 都可以,不区分大小写
+        //     console.log('渲染进程中使用快捷键ctrl+xxxxxx');
+        // })
+        // if (!ret) {
+        //     console.log('注册失败!1111');
+        // }
+    </script>
+</body>
+
+</html>

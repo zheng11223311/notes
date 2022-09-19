@@ -1,0 +1,44 @@
+shell 提供与桌面集成相关的功能
+
+index.html
+
+```js
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文件拖动</title>
+    <style>
+        .wv {
+            width: 640px;
+            height: 480px;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="http://120.24.51.158">站点</a>
+    <script>
+         const {shell} = require('electron')
+		 console.log(shell);
+		console.log(require('electron'));
+       let a =document.querySelector('a')
+
+       a.addEventListener('click',(e)=>{
+          e.preventDefault();
+          a=a.getAttribute('href')
+          //在用户的默认浏览器中打开URL 的示例
+          shell.openExternal(a)
+       })
+    //   功能： 打开文件，打开指定路径，移动文件等
+    </script>
+</body>
+
+</html>
+```
+
+index.js 无变化,需要使用,请复制上一节的内容
+

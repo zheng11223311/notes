@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文件拖动</title>
+    <style>
+        .wv {
+            width: 640px;
+            height: 480px;
+        }
+    </style>
+</head>
+
+<body>
+    <button>点击粘贴</button>
+    <input type="text" placeholder="已复制，请在这里粘贴">
+    <script>
+         const {clipboard} = require('electron')
+       clipboard.writeText('写入的文本')
+        // 还有读取图片,数据流等方法..
+       let span =document.querySelector('button')
+       let input=document.querySelector('input')
+
+       span.addEventListener('click',()=>{
+           if(input.value!=='') input.value=''
+           input.value=clipboard.readText()
+       })
+    </script>
+</body>
+
+</html>

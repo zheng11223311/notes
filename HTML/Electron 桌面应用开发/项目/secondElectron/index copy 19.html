@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>郑先森的WEB 录屏</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow: hidden;
+        }
+        video{
+            width: 600px;
+            height: 400px;
+        }
+    
+    </style>
+</head>
+
+<body>
+    <button>点击打开摄像头</button>
+    <button>点击录制屏幕</button>
+    <video src=""></video>
+
+    <script>
+        const btn = document.querySelectorAll('button')[0]
+        const btn1 = document.querySelectorAll('button')[1]
+        const video = document.querySelector('video')
+        const init = async () => {
+            // 使用navigator 的视频流
+            const stream = await navigator.mediaDevices.getUserMedia({
+                video: {
+                    width: 600,
+                    height: 500,
+                }
+            })
+            // 将流文件直接赋值给video 的srcObject
+            video.srcObject = stream
+            video.play() //播放
+        }
+
+
+        const init1 = async () => {
+            // 使用navigator 的视频流
+            const stream = await navigator.mediaDevices.getDisplayMedia({
+                video: true,
+                audio: true,
+            })
+            // 将流文件直接赋值给video 的srcObject
+            video.srcObject = stream
+            video.play() //播放
+        }
+
+
+        btn.onclick=init //点击开始录屏,并显示摄像头所拍摄到的画面
+        btn1.onclick=init1 //点击开始录制屏幕
+    </script>
+</body>
+
+</html>

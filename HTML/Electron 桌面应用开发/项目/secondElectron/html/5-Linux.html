@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>命令参数</title>
+</head>
+
+<body>
+    <div class="" id="con"></div>
+    <script>
+        console.log(location.href);
+
+
+        let tmp = ''
+
+        con.innerHTML = tmp
+        console.log(window);
+        window.opener.postMessage('向父窗口发送事件消息,父窗口监听到消息,返回json 数据', '*')
+
+        // 监听窗口事件  父窗口发送过来的消息
+        window.addEventListener('message', (msg) => {
+            console.log(msg);
+            for (const cmd in msg.data) {
+                console.log( msg.data);
+                console.log(cmd);
+                tmp += `<li>${Object.keys(msg.data[cmd])} - ${Object.values((msg.data[cmd]))}</li>`
+            }
+            con.innerHTML=tmp
+        })
+    </script>
+</body>
+
+</html>

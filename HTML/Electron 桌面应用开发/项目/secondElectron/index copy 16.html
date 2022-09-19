@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文件拖动</title>
+    <style>
+        .wv {
+            width: 640px;
+            height: 480px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button onclick="sendmsg()">向主进程发送消息</button>
+    <script>
+        let {
+            ipcRenderer, //渲染进程的发射和监听事件的模块
+            // BrowserWindow, //引用桌面窗口,子窗口使用的是主线程的返回窗口的BrowserWindow ,不能在子线程导入使用新的BrowserWindow
+        } = require('electron')
+
+
+        function sendmsg() {
+            //  渲染进程向主进程发射事件
+            ipcRenderer.send('openWindow', '打开新串口')
+        }
+
+        //监听新窗口发送的事件
+        ipcRenderer.on('tonews', (event, data) => {
+            console.log('新页面传递过来的消息: ' + data);
+        })
+    </script>
+</body>
+
+</html>

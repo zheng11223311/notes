@@ -1,0 +1,9 @@
+/node_modules/
+/.idea/
+/.cache/
+/db.json/
+yarn.lock
+yarn-error.log
+/ignore/
+/pkg/
+package-lock.json

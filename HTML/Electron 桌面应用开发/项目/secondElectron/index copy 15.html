@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文件拖动</title>
+    <style>
+        .wv {
+            width: 640px;
+            height: 480px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        const {
+            Menu,
+            MenuItem,
+            BrowserWindow,
+            getCurrentWindow
+        } = require('@electron/remote')
+
+        console.log(Menu,
+            MenuItem,
+            BrowserWindow,
+            getCurrentWindow);
+
+        window.addEventListener('contextmenu', (e) => {
+            e.preventDefault()
+            // 创建上下文菜单
+            const template = [{
+                    label: 'Menu Item 1',
+                    click: () => {
+                        // event.sender.send('context-menu-command', 'menu-item-1')
+                        console.log('点击');
+                    }
+                },
+                {
+                    // 分割线
+                    type: 'separator'
+                },
+                {
+                    label: 'Menu Item 2',
+                    type: 'checkbox',
+                    checked: true
+                }
+                ,
+                {
+                    label: '注册快捷键',
+                    // 注册快捷键
+                    // 目前好像需要和主进程1通信才能使用快捷键
+                    accelerator:'CommandOrControl+n',   //在菜单选项旁边写着ctrl+n
+                    // 点击触发回调
+                    click:()=>{
+                        console.log('CommandOrControl+n');
+                    }
+                }
+            ]
+
+            const menu = Menu.buildFromTemplate(template)
+            // menu.popup({window:getCurrentWindow()})     //作用在当前渲染窗口
+
+            // 或 追加形式
+            // const menu=new Menu()
+            //  menu.append(new MenuItem({   //添加菜单
+            //         label: 'Menu Item 1',
+            //         click: () => {
+            //             // event.sender.send('context-menu-command', 'menu-item-1')
+            //             console.log('点击');
+            //         }
+            //     }))
+            //     menu.append(new MenuItem({
+                // 分割线
+            //         type: 'separator'
+            //     }))
+            //     menu.append(new MenuItem({
+            //         label: 'Menu Item 2',
+            //         type: 'checkbox',
+            //         checked: true
+            //     }))
+            //     menu.append(new MenuItem({
+            //         label: 'Menu Item 2',
+            //         type: 'checkbox',
+            //         checked: true
+            //     }))
+            // menu.popup({window:getCurrentWindow()})     //作用在当前渲染窗口
+        },false)
+    </script>
+</body>
+
+</html>

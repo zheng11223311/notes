@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>郑先森的文本编辑器</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow: hidden;
+        }
+
+        #textarea {
+            width: 100vw;
+            height: 100vh;
+            border: none;
+            font-size: 25px;
+            /* 禁止拉伸 */
+            resize: none;
+            outline: none;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <textarea name="" id="textarea" cols="30" rows="10"></textarea>
+    <script>
+        const {
+            ipcRenderer,
+            dialog, //主进程发送和接收事件的模块
+        } = require('electron')
+        const fs = require('fs')
+
+        // const re = require('@electron/remote')
+        // let BrowserWindow = re.BrowserWindow
+
+        let filePath = ''
+        let fileTitle = '郑先森的文本编辑器'
+        let isSaveFile = true //文件是否已保存
+
+        // 监听打开文件
+        ipcRenderer.on('openFile', (event, path, canceled) => {
+            // console.log(path, canceled);
+            fs.readFile(path[0], (err, data) => {
+                if (err) {
+                    console.log(err);
+                    alert('发生错误,请重试!!')
+                    return
+                }
+                // for (const key in data.toString()) {   //是否存在换行
+                //     if(data.toString().charAt(key)=='\n'){
+                //     console.log('哈哈哈');
+                // }
+                // }
+                filePath = path[0]
+                let titleLength = path[0].split('\\')
+                let title = titleLength[titleLength.length - 1]
+                fileTitle = title
+                document.title = '打开文件 - ' + title
+                // console.log(data.toString());
+                textarea.value = `${data.toString()}` //value 有换行和空格效果,innerText 没有
+
+
+                // console.log(textarea.value);
+
+                // 监听文本变化,显示是否修改过文本,标题带有*
+                // textarea.oninput = () => {
+                //     // console.log(textarea.value);
+                //     // document.title = '文件未保存 - ' + title + '*'
+                //     // isSaveFile = false //实现 窗口关闭时提示未保存
+                // }
+            })
+
+
+
+        })
+
+        // 监听保存文件
+        ipcRenderer.on('saveFile', (event) => {
+            if (filePath == '') { //不存在路径,新建文件
+                ipcRenderer.send('saveCreateNewFile')
+            } else { //存在路径,保存文件
+                fs.writeFile(filePath, textarea.value, (err) => {
+                    if (err) {
+                        console.log(err);
+                        alert('发生错误,请重试!!')
+                        return
+                    }
+                    document.title = '文件已保存 - ' + fileTitle
+                })
+            }
+
+        })
+        // 监听文件另存为
+        ipcRenderer.on('saveOtherFile', (event, file) => {
+            // if (filePath == '') return //没有打开的文件,不能另存为
+            // console.log(file);
+            console.log(file.filePath);
+            // if (filePath == '') {
+            //     //如果没有打开的文件路径,则为新建文件
+
+            // }
+            if (file.filePath == '') {
+                console.log('取消另存为');
+                return //如果点击另存为时又退出
+            }
+            fs.writeFile(file.filePath, textarea.value, (err) => {
+                if (err) {
+                    console.log(err);
+                    alert('发生错误,请重试!!')
+                    return
+                }
+                document.title = '文件已另存至 - ' + file.filePath
+            })
+        })
+
+
+        //监听新建文件
+        ipcRenderer.on('createNewFile', () => {
+            // 初始化
+            document.title = '新建文件 - united*'
+            filePath = ''
+            isSaveFile = false
+            textarea.value = ''
+            fileTitle = ''
+
+        })
+
+        // 监听文本变化,显示是否修改过文本,标题带有*
+        textarea.oninput = () => {
+            // console.log(textarea.value);
+            if (fileTitle != ''&&fileTitle!='郑先森的文本编辑器') {
+                document.title = '文件未保存 - ' + fileTitle + '*'
+            } else {
+                document.title = '新文件未保存 - united*'
+            }
+            isSaveFile = false //实现 窗口关闭时提示未保存
+        }
+
+        //外部拖动文件进入
+        textarea.addEventListener('drop', (e) => { //监听文件落下
+            e.preventDefault(); //阻止默认事件
+            e.stopPropagation() //阻止冒泡事件
+            console.log(e.dataTransfer.files);
+            // console.log(e.dataTransfer.files[0]);
+            // console.log(typeof e.dataTransfer.files); //object
+            // console.log(typeof e.dataTransfer.files[0]); //object
+            for (const file of e.dataTransfer.files) {
+                fs.readFile(file['path'], (err, data) => {
+                    if (err) {
+                        console.log(err);
+                        alert('发生错误,请重试!!')
+                        return
+                    }
+                    filePath = file.path
+                    let title = file.name
+                    fileTitle = title
+                    document.title = '打开文件 - ' + title
+                    textarea.value = `${data.toString()}` //value 有换行和空格效果,innerText 没有
+                    textarea.oninput = () => {
+                        // console.log(textarea.value);
+                        document.title = '文件未保存 - ' + title + '*'
+                        isSaveFile = false //实现 窗口关闭时提示未保存
+                    }
+                })
+            }
+
+        })
+
+        textarea.addEventListener('dragover', (e) => {
+            e.preventDefault(); //阻止默认事件
+            e.stopPropagation() //阻止冒泡事件
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>郑先森的文本编辑器</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow: hidden;
+        }
+
+        #content {
+            display: flex;
+            font-size: 20px;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Linux 命令大全</h1>
+    <button>添加命令</button>
+    <button>删除命令</button>
+    <div id="content"></div>
+    <a href="./html/5-Linux.html" target="_blank">链接产生的窗口不能与父窗口通信</a>
+    <script>
+        const {
+            ipcRenderer,
+            dialog, //主进程发送和接收事件的模块
+        } = require('electron')
+        const fs = require('fs')
+
+        function a(cmd) {
+            console.log(cmd);
+            // 父窗口打开子窗口,直接使用a 标签打开的窗口无法与父窗口通信
+            // 不是electron BrowserWindow 创建的窗口不能使用node 库,无法使用fs 读取json 文件
+             window.index = window.open('./html/5-Linux.html?cmd=' + cmd, 'popup')
+        }
+
+        let json1
+        // const re = require('@electron/remote')
+        // let BrowserWindow = re.BrowserWindow
+        fs.readFile('./json/1-Linux.json', (err, data) => {
+            console.log(1);
+            if (err) {
+                console.log(err);
+                alert('发生错误,请重试!!')
+                return
+            }
+            //   console.log(data.toString());
+            console.log(JSON.parse(data.toString()));
+            let json = JSON.parse(data.toString())
+            json[Symbol.iterator] = function () { //为json 添加迭代器,使json 可被迭代
+                const keys = Object.keys(this);
+                let index = 0;
+
+                return {
+                    next: () => { //next 向下遍历的指针
+                        return {
+                            value: this[keys[index++]], // 每次迭代的结果
+                            done: index > keys.length // 迭代结束标识 false停止迭代，true继续迭代
+                        };
+                    }
+                }
+            }
+
+            json1=json
+
+            let tmp = ''
+            for (const cmd in json) {
+                console.log(cmd);
+                tmp += `<li onclick="a('${cmd}')">${cmd}</li>`
+            }
+            content.innerHTML = tmp
+
+
+        })
+
+        // 监听子窗口事件
+        window.addEventListener('message', (msg) => {
+            // 监听子窗口创建后发送的消息
+            console.log(msg);
+            // 向子窗口发送事件
+            // window.index.postMessage('发送到子窗口')
+            window.index.postMessage(json1)     //将json 数据发送到子窗口
+        })
+    </script>
+</body>
+
+</html>

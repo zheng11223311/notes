@@ -1,0 +1,31 @@
+{
+  "name": "color-point",
+  "version": "1.0.3",
+  "private": true,
+  "description": "A colour picking app based on Electron",
+  "main": "./app/main.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=dev electron .",
+    "build:win": "electron-packager . Color-Point --platform=win32 --icon=./icon.ico  --overwrite",
+    "build:mac": "electron-packager . Color-Point --platform=darwin --icon=./icon.icns --overwrite --darwinDarkModeSupport=true"
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "Electron",
+    "Color",
+    "Picker",
+    "App"
+  ],
+  "author": "Bruce.Au",
+  "license": "TIM",
+  "devDependencies": {
+    "cross-env": "^5.2.0",
+    "electron": "^4.0.7",
+    "electron-debug": "^1.5.0",
+    "electron-packager": "^13.1.1"
+  },
+  "dependencies": {
+    "desktop-screenshot": "^0.1.1",
+    "lowdb": "^1.0.0"
+  }
+}
