@@ -1,0 +1,22 @@
+
+
+// var url = "http://zcore.zqzan.com/app/douyin/mine/my/info"
+
+var url = "http://zcore.zqzan.com/app/oss/sign_img"
+var token = "c5e57ad2-7a90-4ee6-8b74-17c81b864646"
+
+var res = http.post(url,{},{
+    headers: {
+        "Token": token
+    }
+})
+
+if(res.statusCode == 200){
+    log(res.body.json())
+}
+
+// { code: 0,  msg: '操作成功',  data:    { sign_douyin_sample: 'https://zqzan.oss-cn-shanghai.aliyuncs.com/sample/dy_sign.jpg@!fwidth',     dyin_status: 0 } }
+
+toast("123")
+
+

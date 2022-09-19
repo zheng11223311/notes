@@ -1,0 +1,228 @@
+    public static void start () {
+        boolean isFrist = true;
+        boolean isCloned = false;
+        int interval = 2000;
+        int timeout = 60000;
+        String appName = "抖音";
+        int appNum = 1;
+        String likeText = "D音点赞";
+        String followText = "D音关注";
+
+        while (Util.isStart)  {
+            try {
+
+                Box<ShuaLeInfo> shuaLeInfoBox = App.getBoxStore().boxFor(ShuaLeInfo.class);
+                List <ShuaLeInfo> shuaLeInfoList = shuaLeInfoBox.query().greater(ShuaLeInfo_.createTime, DateUtil.getTimesmorning()).less(ShuaLeInfo_.createTime, DateUtil.getTimesnight()).order(ShuaLeInfo_.round).build().find();
+                if (shuaLeInfoList.isEmpty()) return;
+                ShuaLeInfo shuaLeInfo = Stream.of(shuaLeInfoList).filter(sli-> sli.getFollowNum() < sli.getMaxFollowNum() || sli.getLikeNum() < sli.getMaxLikeNum()).findFirst().orElse(null);
+                if (shuaLeInfo == null) return;
+
+                if (appNum != shuaLeInfo.getAppNum()) {
+                    isFrist = true;
+                }
+
+                interval = shuaLeInfo.getInterval();
+                timeout = shuaLeInfo.getTimeout();
+                appName = shuaLeInfo.getAppName();
+                appNum = shuaLeInfo.getAppNum();
+                if (isFrist) {
+                    Util.toast("启动刷乐");
+                    Util.runAppByPackageName("com.helper.readhelper");
+
+                    Util.sleep (interval);
+
+                    Util.toast("切换帐号");
+                    changeAccount(timeout, interval);
+
+                    Util.sleep (interval);
+
+                    if (appName.equals("快手")) {
+                        likeText = "K手点赞";
+                        followText = "K手关注";
+                    }
+                    isFrist = false;
+                }
+                UiObject checkPermission_close = Util.newUiSelector().id ("com.helper.readhelper:id/checkPermission_close").findOne(interval);
+                if (Objects.nonNull(checkPermission_close)) {
+                    Util.sleep (interval);
+                    checkPermission_close.click();
+                }
+
+                if (appName.equals("快手")) {
+                    UiObject K手 = ((UiSelector)Util.newUiSelector().text ("K手")).findOne(timeout);
+                    if (Objects.nonNull(K手)) {
+                        Util.sleep (interval);
+                        K手.click();
+                    }
+                } else {
+                    UiObject D音 = ((UiSelector)Util.newUiSelector().text ("D音")).findOne(timeout);
+                    if (Objects.nonNull(D音)) {
+                        Util.sleep (interval);
+                        D音.click();
+                    }
+                }
+
+                String finalLikeText = likeText;
+                String finalFollowText = followText;
+                UiObject r = ((UiSelector)Util.newUiSelector().filter (ub-> (ub.text().equals(finalLikeText) && shuaLeInfo.getFollowNum() < shuaLeInfo.getMaxFollowNum())  || (ub.text().equals(finalFollowText) && shuaLeInfo.getLikeNum() < shuaLeInfo.getMaxLikeNum()))).findOne(timeout);
+                findClick(r).click();
+                Util.sleep (interval);
+
+                UiObject 开始任务 = ((UiSelector)Util.newUiSelector().text ("开始任务")).findOne(timeout);
+                if (Objects.nonNull(开始任务)) {
+                    Util.sleep (interval);
+                    开始任务.click();
+                }
+
+                UiObject 去检测 = ((UiSelector)Util.newUiSelector().text ("去检测")).findOne(interval);
+                if (Objects.nonNull(去检测)) {
+                    Util.sleep (interval);
+                    去检测.click();
+                    Util.sleep (3000);
+                    if (((UiSelector)Util.newUiSelector().text ("请选择要使用的应用")).exists()) {
+                        isCloned = true;
+                        Util.newUiSelector().id ("android.miui:id/app" + appNum).findOne(timeout).click();
+                        Util.sleep (interval);
+                    }
+                    if (appName.equals("快手")) {
+                        UiObject left_btn = Util.newUiSelector().id ("com.smile.gifmaker:id/left_btn").findOne(timeout);
+                        Util.sleep (interval);
+                        left_btn.click();
+
+                        Util.sleep (interval);
+
+                        UiObject tab_avatar = Util.newUiSelector().id ("com.smile.gifmaker:id/tab_avatar").findOne(timeout);
+                        Util.sleep (interval);
+                        tab_avatar.click();
+
+                        Util.sleep (interval);
+
+                        UiObject profile_settings_button = Util.newUiSelector().id ("com.smile.gifmaker:id/profile_settings_button").findOne(timeout);
+                        Util.sleep (interval);
+                        profile_settings_button.click();
+
+                        Util.sleep (interval);
+                    } else {
+                        while (true) {
+                            UiObject ko = Util.newUiSelector().id("com.ss.android.ugc.aweme:id/ko").findOne(1000);
+                            if (Objects.isNull(ko)) {
+                                break;
+                            } else {
+                                if (ko.bounds().left > Util.width) {
+                                    break;
+                                } else {
+                                    ko.click();
+                                    Util.sleep (interval);
+                                }
+
+                            }
+                        }
+                        UiObject 我 = ((UiSelector)Util.newUiSelector().text ("我")).findOne(timeout);
+                        Util.sleep (interval);
+                        findClick(我).click();
+                    }
+
+                }
+
+                if (isCloned) {
+                    UiObject 请选择要使用的应用 = ((UiSelector)Util.newUiSelector().text ("请选择要使用的应用")).findOne(interval);
+                    if (Objects.nonNull(请选择要使用的应用)) {
+                        Util.newUiSelector().id ("android.miui:id/app" + appNum).findOne(timeout).click();
+                        Util.sleep (interval);
+                    }
+                }
+
+                if (appName.equals("快手")) {
+                    UiObject 去看看 = ((UiSelector)Util.newUiSelector().text ("去看看")).findOne(timeout);
+                    if (Objects.nonNull(去看看)) {
+                        Util.sleep (interval);
+                        去看看.click();
+                    }
+
+                    Util.sleep (interval);
+
+                    if (r.text().equals(likeText)) {
+                        UiObject like_layout = Util.newUiSelector().id ("com.smile.gifmaker:id/like_layout").findOne(timeout);
+                        Util.sleep (interval);
+                        like_layout.click();
+                    } else if (r.text().equals(followText)) {
+                        UiObject follow_layout = Util.newUiSelector().id ("com.smile.gifmaker:id/follow_layout").findOne(timeout);
+                        Util.sleep (interval);
+                        AutoJs.getInstance().getAutomator().click(follow_layout.bounds().centerX(), follow_layout.bounds().centerY());
+                    }
+                    Util.sleep (interval);
+
+                } else {
+                    UiObject 前往 = ((UiSelector)Util.newUiSelector().text ("前往")).findOne(timeout);
+                    if (Objects.nonNull(前往)) {
+                        Util.sleep (interval);
+                        前往.click();
+                    }
+
+                    Util.sleep (interval);
+
+                    if (r.text().equals(likeText)) {
+                        UiObject afs = Util.newUiSelector().id ("com.ss.android.ugc.aweme:id/afs").findOne(timeout);
+                        Util.sleep (interval);
+                        afs.click();
+                    } else if (r.text().equals(followText)) {
+                        UiObject d76 = Util.newUiSelector().id ("com.ss.android.ugc.aweme:id/d76").findOne(timeout);
+                        Util.sleep (interval);
+                        d76.click();
+                    }
+                }
+
+                Util.sleep (interval);
+
+                UiObject 提交 = ((UiSelector)Util.newUiSelector().textStartsWith ("提交")).findOne(timeout);
+                Util.sleep (interval);
+                提交.click();
+                if (r.text().equals(likeText)) {
+                    shuaLeInfo.setLikeNum(shuaLeInfo.getLikeNum() + 1);
+                } else if (r.text().equals(followText)) {
+                    shuaLeInfo.setFollowNum(shuaLeInfo.getFollowNum() + 1);
+                }
+
+                shuaLeInfoBox.put(shuaLeInfo);
+
+                Util.sleep(5000);
+            } catch (Exception e) {
+                e.printStackTrace();
+                if (!(e instanceof ScriptExecution) && !(e instanceof ScriptInterruptedException)) {
+                    UiObject 放弃 = ((UiSelector)Util.newUiSelector().textStartsWith ("放弃")).findOne(interval);
+                    Util.sleep (interval);
+                    if (Objects.nonNull(放弃)) {
+                        放弃.click();
+                    } else {
+                        Util.runAppByPackageName("com.helper.readhelper");
+                    }
+                } else {
+                    Util.stop();
+                    break;
+                }
+
+
+//                else {
+//                    new Thread(()-> Util.timeout("com.helper.readhelper")).start();
+//                    break;
+//                }
+            }
+        }
+    }
+
+    private static void changeAccount (int timeout, int interval) {
+        UiObject colsedialog = Util.newUiSelector().id ("com.helper.readhelper:id/colsedialog").findOne(5000);
+        if (Objects.nonNull(colsedialog)) {
+            Util.sleep (interval);
+            colsedialog.click();
+        }
+        UiObject huanhao = Util.newUiSelector().id ("com.helper.readhelper:id/huanhao").findOne(timeout);
+        Util.sleep (interval);
+        huanhao.click();
+        UiObject huanhaoButton = Util.newUiSelector().id ("com.helper.readhelper:id/huanhaobutton").findOne(timeout);
+        Util.sleep (interval);
+        huanhaoButton.click();
+        UiObject 确定 = ((UiSelector)Util.newUiSelector().text ("确定")).findOne(timeout);
+        Util.sleep (interval);
+        确定.click();
+    }

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="echarts.min.js"></script>
+</head>
+
+<body>
+  <div style="width: 1500px;height: 400px"></div>
+  <div id="a" style="width: 1500px;height: 400px"></div>
+  <script>
+    //1. ECharts最基本的代码结构
+    //2. x轴数据:['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
+    //3. y轴数据:[3000, 2800, 900, 1000, 800, 700, 1400, 1300, 900, 1000, 800, 600]
+    //4. 将type的值设置为line
+    var mCharts = echarts.init(document.querySelector('div'))
+    var xDataArr = []
+    var yDataArr = [
+        '311', '452', '536', '624', '333', '326', '326', '242', '552', '114', '352', '516',
+        '525','112','651','153','612','465','353','365','243','533',
+        '562','665','623','365','115','263','241','354','566','314',
+        '616','335','114','432','266','625','655','121','661','556',
+        '416','316','126','562','164','621','534','546','263','446',
+        '344','434','432','266','235','433','615','411','335','136',
+        '535','513','553','124','255','434','536','363','315','216',
+        '435','116','462','543','222','244','443','133','361','113',
+        '215','544','266','143','512','241','364','356','351','634',
+        '435','625'
+]
+    let start =94764
+    // 94857
+    for(let i=start;i<94800;i++){
+        xDataArr.push(i)
+    }
+    let yDataArr1=[]
+    let yDataArr2=[]
+    let yDataArr3=[]
+    for(let i=0;i<yDataArr.length;i++){
+          yDataArr1.push(parseInt(yDataArr[i][0]))
+          yDataArr2.push(parseInt(yDataArr[i][1]))
+          yDataArr3.push(parseInt(yDataArr[i][2]))
+    }
+    console.log(xDataArr);
+    var option = {
+      xAxis: {
+        type: 'category',
+        data: xDataArr
+      },
+      yAxis: {
+        type: 'value'
+      },
+      toolbox: {
+        feature: {
+          saveAsImage: {}, // 导出图片
+          dataView: {}, // 数据视图
+          restore: {}, // 重置
+          dataZoom: {}, // 区域缩放
+          magicType: {
+            type: ['bar', 'line']
+          } // 动态图表类型的切换
+        }
+      },
+      tooltip:{
+        
+      },
+      series: [
+        {
+          name: '康师傅',
+          data:yDataArr1,
+          type: 'line' // 设置图表类型为 折线图
+        },
+        {
+          name: '康师傅',
+          data:yDataArr2,
+          type: 'line',
+          color:'gold'
+        },
+        {
+          name: '康师傅',
+          data:yDataArr3,
+          type: 'line',
+          color:'skyblue'
+        },
+      ]
+    }
+    mCharts.setOption(option)
+
+
+    var mCharts1 = echarts.init(document.querySelector('#a'))
+    var yDataArr = [
+        '311', '452', '536', '624', '333', '326', '326', '242', '552', '114', '352', '516',
+        '525','112','651','153','612','465','353','365','243','533',
+        '562','665','623','365','115','263','241','354','566','314',
+        '616','335','114','432','266','625','655','121','661','556',
+        '416','316','126','562','164','621','534','546','263','446',
+        '344','434','432','266','235','433','615','411','335','136',
+        '535','513','553','124','255','434','536','363','315','216',
+        '435','116','462','543','222','244','443','133','361','113',
+        '215','544','266','143','512','241','364','356','351','634',
+        '435','625'
+]
+console.log(yDataArr.length);
+let o=[]
+let j=[]
+let b=[]
+let s=[]
+    for(let i=0;i<yDataArr.length;i++){
+        // console.log(parseInt(yDataArr[i][0]));
+        // console.log(parseInt(yDataArr[i][1]));
+        // console.log(parseInt(yDataArr[i][2]));
+        if(parseInt(yDataArr[i][0])+parseInt(yDataArr[i][2])+parseInt(yDataArr[i][1])>10){
+            // console.log('大');
+            b.push((yDataArr[i]))
+        }else{
+            // console.log('小');
+            s.push((yDataArr[i]))
+        }
+        if((parseInt(yDataArr[i][0])+parseInt(yDataArr[i][2])+parseInt(yDataArr[i][1]))%2==0){
+            console.log('偶数');
+            o.push((yDataArr[i]))
+        }else{
+          j.push((yDataArr[i]))
+        }
+    }
+    console.log(o);
+    console.log(j);
+    console.log(b);
+    console.log(s);
+    var option1 = {
+      xAxis: {
+        type: 'category',
+        data: xDataArr
+      },
+      yAxis: {
+        type: 'value'
+      },
+      toolbox: {
+        feature: {
+          saveAsImage: {}, // 导出图片
+          dataView: {}, // 数据视图
+          restore: {}, // 重置
+          dataZoom: {}, // 区域缩放
+          magicType: {
+            type: ['bar', 'line']
+          } // 动态图表类型的切换
+        }
+      },
+      series: [
+        {
+          name: '康师傅',
+          data: o,
+          type: 'line' // 设置图表类型为 折线图
+        }
+      ]
+    }
+    mCharts1.setOption(option1)
+  </script>
+</body>
+
+</html>

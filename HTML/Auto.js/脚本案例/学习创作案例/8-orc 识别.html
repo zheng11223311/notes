@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='https://unpkg.com/tesseract.js@v2.1.0/dist/tesseract.min.js'></script>
+    <!-- <script src='./tesseract.min.js'></script> -->
+</head>
+<body>
+    <script>
+        console.log(Tesseract);
+        const worker = Tesseract.createWorker({
+            // 显示进度,1为进度完成
+        logger: m => console.log(m),
+        langPath:'./chi_tra.traineddata.gz'
+        });
+         // const worker = Tesseract.createWorker({
+        //      // 显示进度,1为进度完成
+        // logger: m => console.log(m),
+        // workerPath: 'https://unpkg.com/tesseract.js@v2.0.0/dist/worker.min.js',
+        // langPath: 'https://tessdata.projectnaptha.com/4.0.0',
+        // corePath: 'https://unpkg.com/tesseract.js-core@v2.0.0/tesseract-core.wasm.js',
+        // });
+
+        (async () => {
+        await worker.load();
+        await worker.loadLanguage('eng+chi_tra');
+        await worker.initialize('eng+chi_tra');
+        const { data: { text } } = await worker.recognize('1.jpg');
+        console.log(text);
+        await worker.terminate();
+        })();
+    </script>
+</body>
+</html>
