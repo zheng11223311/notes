@@ -1,0 +1,108 @@
+### condition 启动模式配置
+
+启动模式配置,仅开发期间生效,用于模拟直达页面的场景,如:小程序转发后,用户点击所打开的页面
+
+**属性说明:**
+
+| 属性    | 类型   | 是否必填 | 描述                             |
+| ------- | ------ | -------- | -------------------------------- |
+| current | Number | 是       | 当前激活的模式,list 节点的索引值 |
+| list    | Array  | 是       | 启动模式列表                     |
+
+**list 说明:**
+
+| 属性  | 类型   | 是否必填 | 描述                                  |
+| ----- | ------ | -------- | ------------------------------------- |
+| name  | String | 是       | 启动模式路径                          |
+| path  | String | 是       | 启动页面路径                          |
+| query | String | 否       | 启动参数,可在页面的 onload 函数里获得 |
+
+**pages.json**
+
+```json
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+	// 第一个对象 中的path 代表首页
+		{
+			"path": "pages/message/message", //pages下message 下的message.vue 页面文件
+			"style":{
+				"navigationBarTitleText":"信息页",
+				"navigationBarBackgroundColor":"#007AFF",
+				"h5":{
+					// 设置H5 的样式
+					"pullToRefresh":{	//设置下拉属性
+						"color":"#aaaaaa"	//下拉刷新时的颜色
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/index/index",	//pages下index 下的index.vue 页面文件
+			"style": {
+				// "navigationBarTitleText": "uni-app"		//页面的导航栏文字,设置后全局的导航栏文字 失效,使用页面的导航栏文字
+			}
+		},
+		{
+			"path": "pages/my/my",	//pages下index 下的index.vue 页面文件
+			"style": {
+				"navigationBarTitleText": "我的"		//页面的导航栏文字,设置后全局的导航栏文字 失效,使用页面的导航栏文字
+			}
+		},
+		{
+			"path": "pages/detail/detail",	//pages下index 下的index.vue 页面文件
+			"style": {
+				"navigationBarTitleText": "详情页"		//页面的导航栏文字,设置后全局的导航栏文字 失效,使用页面的导航栏文字
+			}
+		}
+		
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",		//导航栏文字颜色
+		"navigationBarTitleText": "开发小程序",	//导航栏文字
+		"navigationBarBackgroundColor": "#7fff00",		//导航栏颜色
+		"backgroundColor": "#F8F8F8",	//下拉背景色	//下拉再小程序上会显示
+		"enablePullDownRefresh":true,	//全局开启下拉
+		"backgroundTextStyle":"light"	//下拉刷新的颜色
+	},
+	"tabBar":{
+		"color":"#aa386f",	//tabbar 中文字的颜色
+		"selectedColor":"#ddbe4c",	//选中时的颜色
+		"backgroundColor":"#e1fff1",	//tabbar 背景颜色
+		"borderStyle":"white",	//tabbar 上边框颜色,仅支持App 修改颜色
+		// "position":"top",   //tabbar 在顶部显示
+		"list":[
+			{
+				"text":"首页",
+				"pagePath":"pages/index/index",
+				"iconPath":"static/tab/首页.png",
+				"selectedIconPath":"static/tab/首页s.png"
+			},{
+				"text":"分类",
+				"pagePath":"pages/message/message",
+				"iconPath":"static/tab/分类.png",
+				"selectedIconPath":"static/tab/分类s.png"
+			},{
+				"text":"我的",
+				"pagePath":"pages/my/my",
+				"iconPath":"static/tab/用户.png",
+				"selectedIconPath":"static/tab/用户s.png"
+			}
+			
+		]
+	},
+	"condition":{	//配置跳转的其他不是tabbar 的页面
+		"current":0,
+		"list":[
+			{
+				"name":"详情页",
+				"path":"pages/detail/detail",
+				"query":"id=80"		//传递到详情页的参数
+			}
+		]
+	}
+}
+
+```
+
+H5 可以直接访问 http://localhost:8080/#/pages/detail/detail 到详情页
+
