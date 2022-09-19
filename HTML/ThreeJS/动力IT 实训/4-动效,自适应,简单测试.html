@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./threejs/three.js"></script>
+    <!-- 用于检测动画的帧数 -->
+    <script src="./threejs/stats.min.js"></script>
+    <!-- 用于物体跳跃的函数库 -->
+    <script src="./threejs/dat.gui.min.js"></script>
+    <style>
+        body{
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <!-- 我们把threejs 渲染效果显示在这个div 中 -->
+    <div id="puiedu-webgl-output"></div>
+
+    <!--  -->
+    <div id="myStats"></div>
+
+    <script>
+        // 创建场景对象
+        var scene=new THREE.Scene()
+        // 创建透视的摄像机 (角度,宽高比)
+        var camera=new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000)
+        // 创建渲染器
+        var render=new THREE.WebGLRenderer()
+        // 设置渲染器渲染的大小
+        render.setSize(window.innerWidth,window.innerHeight)
+        // 是否渲染阴影
+        render.shadowMap.enabled=true
+        document.getElementById("puiedu-webgl-output").appendChild(render.domElement)
+
+        // 设置坐标轴 (长度)
+        var axes=new THREE.AxesHelper(50)
+        // 自定义坐标轴的颜色
+        // axes.setColors(0x00ffff,0xffff00,0x00ff00)
+        // 添加到场景中
+        scene.add(axes)
+
+
+
+
+
+        // 创建几何体 (x,y,z)
+        var geometry=new THREE.BoxGeometry(8,8,8);
+        // 创建材质
+        // 基础材质
+        // var material=new THREE.MeshBasicMaterial({color:0x002299})
+        // lamb 材质,可以产生阴影
+        var material=new THREE.MeshLambertMaterial({color:0xff2288})
+        var cube=new THREE.Mesh(geometry,material)
+        // 是否投影
+        cube.castShadow=true
+        scene.add(cube)
+
+        
+
+        // 移动立方体位置,移动4个单位
+        cube.position.x=4
+        cube.position.y=10
+        cube.position.z=20
+
+         // 旋转角度
+        // cube.rotation.x+=0.5
+        // cube.rotation.y+=0.5
+
+
+
+         //创建一个地面,用于接收立方体的投影 (长,宽)
+         var planeGeometry=new THREE.PlaneGeometry(100,100)
+        //创建一个材质,可以接收光线并反射
+        var planeMaterial=new THREE.MeshLambertMaterial({color:0xffff})
+        // 创建地面网格对象
+        var plane=new THREE.Mesh(planeGeometry,planeMaterial)
+        // 是否接收投影
+        plane.receiveShadow=true
+        scene.add(plane)
+
+         // 地面旋转90度
+         plane.rotation.x=-0.5*Math.PI
+        // 地面向x 移动15个单位,y,z 为0
+        plane.position.set(15,0,0)
+        
+
+        camera.position.x=-30
+        camera.position.y=45
+        // 摄像机垂直距离
+        camera.position.z=35;
+        // 摄像机的方向看向场景中心点
+        camera.lookAt(scene.position)
+
+
+        // 创建一个聚光灯对象,用于产生光源,产生阴影
+        var spotLight=new THREE.SpotLight(0xffffff)
+        // 设置聚光灯位置
+        spotLight.position.set(-60,40,-65)
+        // 设置是否产生阴影
+        spotLight.castShadow=true
+        // 设置阴影效果
+        spotLight.shadow.mapSize=new THREE.Vector2(1024,1024)
+        spotLight.shadow.camera.far=130
+        spotLight.shadow.camera.near=40
+        scene.add(spotLight)
+
+       
+
+
+
+        // 创建ambientLight 光源
+        var ambientLight=new THREE.AmbientLight(0xcccccc)
+        scene.add(ambientLight)
+
+
+
+        // render.render(scene,camera)
+
+        var stats=addStats()
+
+        // 用于保存修改的值  旋转速度  跳跃速度
+        var ctrlObj={rotationSpeed:0.01,jumpSpeed:0.01}
+        // 创建dat.gui 对象
+        var ctrl=new dat.GUI()
+        // 设置旋转速度范围0-1
+        ctrl.add(ctrlObj,'rotationSpeed',0,1)
+        ctrl.add(ctrlObj,'jumpSpeed',0,1)
+
+        // 立方体的跳跃动动效,gap 跳跃速度
+        var gap=0
+        // 渲染场景
+        function animate() {
+                // 同时stats 统计对象需要被刷新
+                stats.update()
+                // 最重要的一点或许就是当用户切换到其它的标签页时，它会暂停
+                requestAnimationFrame( animate );
+                // 让它旋转起来
+                // cube.rotation.x += 0.01;
+                // cube.rotation.y += 0.01;
+                // gap+=0.01
+
+                cube.rotation.x += ctrlObj.rotationSpeed;
+                cube.rotation.y += ctrlObj.rotationSpeed;
+                gap+=ctrlObj.jumpSpeed
+               
+                cube.position.x=25+(20* (Math.sin(gap)))
+                cube.position.x=6+(20* (Math.abs(Math.cos(gap))))
+                
+                render.render( scene, camera );
+            }
+            animate();
+            function addStats(){
+                // 创建一个统计对象
+                var stats=new Stats()
+                //初始化对象的位置
+                stats.domElement.style.position='absolute'
+                stats.domElement.style.left='0px'
+                stats.domElement.style.top='0px'
+                // 检测动画帧数,(显示渲染时间)
+                stats.setMode(0)
+                document.getElementById('myStats').appendChild(stats.domElement)
+                return stats
+            }
+
+            // 监听页面窗口变化
+            window.addEventListener('resize',onWindowResize,false)
+
+            function onWindowResize(){
+                // 重新确定需要渲染的长宽比
+                camera.aspect=window.innerWidth/window.innerHeight
+                // 更新投影矩阵
+                camera.updateProjectionMatrix()
+                //重置场景渲染尺寸
+                render.setSize(window.innerWidth,window.innerHeight)
+            }
+    </script>
+</body>
+</html>

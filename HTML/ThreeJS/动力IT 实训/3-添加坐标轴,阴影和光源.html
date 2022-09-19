@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./threejs/three.js"></script>
+    <style>
+        body{
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <!-- 我们把threejs 渲染效果显示在这个div 中 -->
+    <div id="puiedu-webgl-output"></div>
+
+    <script>
+        // 创建场景对象
+        var scene=new THREE.Scene()
+        // 创建透视的摄像机 (角度,宽高比)
+        var camera=new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000)
+        // 创建渲染器
+        var render=new THREE.WebGLRenderer()
+        // 设置渲染器渲染的大小
+        render.setSize(window.innerWidth,window.innerHeight)
+        // 是否渲染阴影
+        render.shadowMap.enabled=true
+        document.getElementById("puiedu-webgl-output").appendChild(render.domElement)
+
+        // 设置坐标轴 (长度)
+        var axes=new THREE.AxesHelper(50)
+        // 自定义坐标轴的颜色
+        // axes.setColors(0x00ffff,0xffff00,0x00ff00)
+        // 添加到场景中
+        scene.add(axes)
+
+
+
+
+
+        // 创建几何体 (x,y,z)
+        var geometry=new THREE.BoxGeometry(8,8,8);
+        // 创建材质
+        // 基础材质
+        // var material=new THREE.MeshBasicMaterial({color:0x002299})
+        // lamb 材质,可以产生阴影
+        var material=new THREE.MeshLambertMaterial({color:0xff2288})
+        var cube=new THREE.Mesh(geometry,material)
+        // 是否投影
+        cube.castShadow=true
+        scene.add(cube)
+
+        
+
+        // 移动立方体位置,移动4个单位
+        cube.position.x=4
+        cube.position.y=10
+        cube.position.z=20
+
+         // 旋转角度
+        // cube.rotation.x+=0.5
+        // cube.rotation.y+=0.5
+
+
+
+         //创建一个地面,用于接收立方体的投影 (长,宽)
+         var planeGeometry=new THREE.PlaneGeometry(100,100)
+        //创建一个材质,可以接收光线并反射
+        var planeMaterial=new THREE.MeshLambertMaterial({color:0xffff})
+        // 创建地面网格对象
+        var plane=new THREE.Mesh(planeGeometry,planeMaterial)
+        // 是否接收投影
+        plane.receiveShadow=true
+        scene.add(plane)
+
+         // 地面旋转90度
+         plane.rotation.x=-0.5*Math.PI
+        // 地面向x 移动15个单位,y,z 为0
+        plane.position.set(15,0,0)
+        
+
+        camera.position.x=-30
+        camera.position.y=45
+        // 摄像机垂直距离
+        camera.position.z=35;
+        // 摄像机的方向看向场景中心点
+        camera.lookAt(scene.position)
+
+
+        // 创建一个聚光灯对象,用于产生光源,产生阴影
+        var spotLight=new THREE.SpotLight(0xffffff)
+        // 设置聚光灯位置
+        spotLight.position.set(-60,40,-65)
+        // 设置是否产生阴影
+        spotLight.castShadow=true
+        // 设置阴影效果
+        spotLight.shadow.mapSize=new THREE.Vector2(1024,1024)
+        spotLight.shadow.camera.far=130
+        spotLight.shadow.camera.near=40
+        scene.add(spotLight)
+
+       
+
+
+
+        // 创建ambientLight 光源
+        var ambientLight=new THREE.AmbientLight(0xddddd)
+        scene.add(ambientLight)
+
+
+
+        render.render(scene,camera)
+
+    </script>
+</body>
+</html>

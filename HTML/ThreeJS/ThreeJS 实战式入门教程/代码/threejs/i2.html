@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+
+        }
+
+        .tanchuang {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            display: none;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <!-- 直接onclick 使用的是window 作用域的tan ,即全局作用域中的tan-->
+        <button id="btn" onclick="tan()">弹出</button>
+        <button id="btn1" onclick="tan1()">弹出1</button>
+        <button id="btn1" onclick="tan2()">弹出2</button>
+        <button id="btn1" onclick="tan3()">弹出3</button>
+        <button id="btn1" onclick="tan4()">弹出4</button>
+        <button id="btn1" onclick="tan5()">弹出5</button>
+        <div class="tanchuang">
+            哈哈哈哈
+            <div>
+                <!-- 不能写成close()  这是window 关闭窗口关键字,点击没有任何事件 -->
+                <button onclick="close1()">关闭</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function tan2(){
+            alert(2)
+            console.log(this);
+            console.log( document.querySelector('.tanchuang').style);
+        }
+        function close1(){
+            alert(3)
+            console.log( document.querySelector('.tanchuang').style);
+        }
+        window.onload = function () {
+            // html页面调用js文件里的函数，写法必须为 tan = function (){}形式，
+            // 因为如果不添加var关键字的话，默认就是windows对象作为他的作用域，
+            // 所以才能调用.其他方式写，html页面会搜索不到该函数。
+            //  window.onload不添加var,默认是在window 对象的作用域中,添加就会报错
+            // 没有 window.onload 时,有没有var 都可以
+            tan = function () {
+                document.querySelector('.tanchuang').style.display = 'block'
+            }
+            console.log(this);
+            // tan3,4,5 都没有挂载到window 及其原型上 
+            // 需要使用window.tan4 挂载到全局window 上
+            var tan4 = function () {
+                console.log(this);
+                document.querySelector('.tanchuang').style.display = 'block'
+            }
+            function tan3() {
+                document.querySelector('.tanchuang').style.display = 'block'
+            }
+            let tan5=function() {
+                document.querySelector('.tanchuang').style.display = 'block'
+            }
+
+            close2 = function () {
+                console.log(1);
+                document.querySelector('.tanchuang').style.display = 'none'
+                window.close()
+            }
+            // function close() {
+            //     console.log(1);
+            //     document.querySelector('.tanchuang').style.display = 'none'
+            // }
+        }
+    </script>
+</body>
+
+</html>

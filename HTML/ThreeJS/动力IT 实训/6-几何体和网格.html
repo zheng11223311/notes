@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./threejs/three.js"></script>
+    <!-- 用于检测动画的帧数 -->
+    <script src="./threejs/stats.min.js"></script>
+    <!-- 用于物体跳跃的函数库 -->
+    <script src="./threejs/dat.gui.min.js"></script>
+    <style>
+        body{
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <!-- 我们把threejs 渲染效果显示在这个div 中 -->
+    <div id="puiedu-webgl-output"></div>
+
+    <!--  -->
+    <div id="myStats"></div>
+
+    <script>
+        // 创建场景对象
+        var scene=new THREE.Scene()
+        // 物化效果,越远越模糊 (雾化颜色,近处值,远处值)
+        // scene.fog=new THREE.Fog(0xffff,0.01,100)
+        // 第二种雾化效果 (雾化颜色,雾化浓度)
+        // scene.fog=new THREE.FogExp2(0x0000ff,0.01)
+
+        // 强制场景中所有物体使用相同的材质
+        // scene.overrideMaterial=new THREE.MeshLambertMaterial({color:0x0000ff}) 
+        // 创建透视的摄像机 (角度,宽高比)
+        var camera=new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000)
+        // 创建渲染器
+        var render=new THREE.WebGLRenderer()
+        // 设置渲染器渲染的大小
+        render.setSize(window.innerWidth,window.innerHeight)
+        // 是否渲染阴影
+        render.shadowMap.enabled=true
+        document.getElementById("puiedu-webgl-output").appendChild(render.domElement)
+
+        // 设置坐标轴 (长度)
+        var axes=new THREE.AxesHelper(50)
+        // 自定义坐标轴的颜色
+        // axes.setColors(0x00ffff,0xffff00,0x00ff00)
+        // 添加到场景中
+        scene.add(axes)
+
+
+
+
+
+        // 创建几何体 (x,y,z)
+        var geometry=new THREE.BoxGeometry(8,8,8); //几何体
+        // 创建材质
+        // 基础材质
+        // var material=new THREE.MeshBasicMaterial({color:0x002299})
+        // lamb 材质,可以产生阴影
+        var material=new THREE.MeshLambertMaterial({color:0xff2288})  //材质
+        var cube=new THREE.Mesh(geometry,material)  //网格
+        // 是否投影
+        cube.castShadow=true
+        scene.add(cube)
+
+        // 创建圆环几何体
+        //  (圆环半径(默认1),管道半径(默认0.4),圆环的分段数(默认是8),管道的分段数(默认是6),圆心角(默认值math.pi*2))
+        var torusgeo=new THREE.TorusGeometry(10,2,10,10);
+        var torusmaterial=new THREE.MeshLambertMaterial({color:0xff2288})
+        var torus=new THREE.Mesh(torusgeo,torusmaterial)
+        torus.castShadow=true
+        torus.position.x=1
+        torus.position.z=-10
+        torus.position.y=10
+        scene.add(torus)
+
+        // 圆柱几何体
+        // (顶部半径,底部半径,高度,侧面周围分段数,侧面沿其高度的分段数,地面是开放的还是封顶的,第一个分段的起始角度,底面圆扇区的中心角)
+        var cylindergeo=new THREE.CylinderGeometry(4,4,10)
+        var cylindermaterial=new THREE.MeshLambertMaterial({color:0xff2288})
+        var cylinder=new THREE.Mesh(cylindergeo,cylindermaterial)
+        cylinder.castShadow=true
+        cylinder.position.x=10
+        cylinder.position.z=-10
+        cylinder.position.y=10
+        scene.add(cylinder)
+
+
+        // 自定义几何体(例如:正方体)
+        // var geometry=new THREE.BufferGeometry()
+        // // 创建点数组
+        // var vartices=new THREE.Float32Array([
+        //     // 第一个面,三维位置点
+        //     0,0,0,
+        //     10,0,0,
+        //     0,10,0,
+        //     10,0,0,
+        //     0,10,0,
+        //     10,10,0,
+        //     // 第二个面
+        //     // ....
+        //     // 第六个面
+        //     // ...
+        // ])
+        // // 存储与BufferGeometry 关联的属性 (保存存储在缓冲区的数据的数组,保存在数组中矢量的长度)
+        // var attribute=new THREE.BufferAttribute(vartices,3)
+        // // 设置几何体位置
+        // geometry.attributes.position=attribute
+        // // 自定义材质
+        // var material=new THREE.MeshLambertMaterial({
+        //     color:0xff2288,
+        //     // 两面均可视
+        //     side:DoubleSide,
+        // })
+        // var mesh=new THREE.Mesh(geometry,material)
+        // // 创建线条
+        // var wireFrame=new THREE.WireframeGeometry(geometry)
+        // // 新建线条框架
+        // var line=new THREE.LineSegments(wireFrame)
+        // // 线条材质属性 depthTest 允许修改深度测试
+        // line.material.depthTest=false
+        // // 线条透明
+        // line.material.transparent=false
+        // line.material.opacity=0.25
+        // scene.add(line)
+        // scene.add(mesh)
+
+
+
+        // 创建几何体 (x,y,z)
+        var geometry1=new THREE.BoxGeometry(4,4,4);
+        var material1=new THREE.MeshLambertMaterial({color:0x00ff00})
+        var cube1=new THREE.Mesh(geometry1,material1)
+        // 是否投影
+        cube1.castShadow=true
+        // 调整位置
+        cube1.position.x=-10
+        cube1.position.y=10
+        cube1.position.z=0
+        // 设置特定名字
+        cube1.name='cube1..'
+        scene.add(cube1)
+        
+        // 获取场景中对象个数
+        console.log(scene.children.length);
+        // 获取特定对象,false 表示仅在调用者的子元素中查找,true 在调用者的所有后代中查找
+        var final=scene.getObjectByName('cube1..',false)
+        // 该对象的位置信息
+        console.log(final.position);
+
+        // 删除对象
+        var ctrlObj=new function(){
+            this.removeFindCube=function(){
+                if(final instanceof THREE.Mesh){
+                    scene.remove(final)
+                }
+            }
+            this.addNewCube=function(){
+                 // 创建几何体 (x,y,z)
+                var geometry11=new THREE.BoxGeometry(4,4,4);
+                var material11=new THREE.MeshLambertMaterial({color:0x0000ff})
+                var cube11=new THREE.Mesh(geometry11,material11)
+                // 是否投影
+                cube11.castShadow=true
+                // 调整位置
+                cube11.position.x=Math.random()*10
+                cube11.position.y=Math.random()*10
+                cube11.position.z=Math.random()*10
+                scene.add(cube11)
+            }
+            // 克隆 
+            // this.clone=function(){
+            //     var cloneGeometry=mesh.geometry.clone()
+            //     var clonematerial=new THREE.MeshBasicMaterial({
+            //         color:0xff000,
+            //     side:DoubleSide,
+            // })
+            // var clonemesh=new THREE.Mesh(cloneGeometry,clonematerial)
+            // // 位置偏移
+            // clonemesh.translateZ(20);
+            // clonemesh.name='copy'
+            // scene.remove(scene.getObjectByName('copy'))
+            // scene.add(clonemesh)
+            //     // 创建线条
+            // var clonewireFrame=new THREE.WireframeGeometry(cloneGeometry)
+            // // 新建线条框架
+            // var cloneline=new THREE.LineSegments(clonewireFrame)
+            // // 线条材质属性 depthTest 允许修改深度测试
+            // cloneline.material.depthTest=false
+            // // 线条透明
+            // cloneline.material.transparent=false
+            // cloneline.material.opacity=0.25
+            // scene.add(cloneline)
+            // }
+        }
+
+
+        // 移动立方体位置,移动4个单位
+        cube.position.x=4
+        cube.position.y=10
+        cube.position.z=20
+
+         // 旋转角度
+        // cube.rotation.x+=0.5
+        // cube.rotation.y+=0.5
+
+
+
+         //创建一个地面,用于接收立方体的投影 (长,宽)
+         var planeGeometry=new THREE.PlaneGeometry(100,100)
+        //创建一个材质,可以接收光线并反射
+        var planeMaterial=new THREE.MeshLambertMaterial({color:0xffff})
+        // 创建地面网格对象
+        var plane=new THREE.Mesh(planeGeometry,planeMaterial)
+        // 是否接收投影
+        plane.receiveShadow=true
+        scene.add(plane)
+
+         // 地面旋转90度
+         plane.rotation.x=-0.5*Math.PI
+        // 地面向x 移动15个单位,y,z 为0
+        plane.position.set(15,0,0)
+        
+
+        camera.position.x=-30
+        camera.position.y=45
+        // 摄像机垂直距离
+        camera.position.z=35;
+        // 摄像机的方向看向场景中心点
+        camera.lookAt(scene.position)
+
+
+        // 创建一个聚光灯对象,用于产生光源,产生阴影
+        var spotLight=new THREE.SpotLight(0xffffff)
+        // 设置聚光灯位置
+        spotLight.position.set(-60,40,-65)
+        // 设置是否产生阴影
+        spotLight.castShadow=true
+        // 设置阴影效果,Vector2 2维
+        spotLight.shadow.mapSize=new THREE.Vector2(1024,1024)
+        spotLight.shadow.camera.far=130
+        spotLight.shadow.camera.near=40
+        scene.add(spotLight)
+
+       
+
+
+
+        // 创建ambientLight 光源
+        var ambientLight=new THREE.AmbientLight(0xcccccc)
+        scene.add(ambientLight)
+
+
+
+        // render.render(scene,camera)
+
+        var stats=addStats()
+
+        // 创建dat.gui 对象
+        var ctrl=new dat.GUI()
+        // 注册
+        ctrl.add(ctrlObj,'removeFindCube')
+        ctrl.add(ctrlObj,'addNewCube')
+        // ctrl.add(ctrlObj,'clone')
+
+        // 立方体的跳跃动动效,gap 跳跃速度
+        var gap=0
+        // 渲染场景
+        function animate() {
+                // 同时stats 统计对象需要被刷新
+                stats.update()
+                // 最重要的一点或许就是当用户切换到其它的标签页时，它会暂停
+                requestAnimationFrame( animate );
+                // 让它旋转起来
+                // cube.rotation.x += 0.01;
+                // cube.rotation.y += 0.01;
+
+                // cube1.rotation.x += 0.01;
+                // cube1.rotation.y += 0.01;
+
+                // 调用者和每个后代都会调用传递的方法
+                scene.traverse(function(obj){
+                    if(obj instanceof THREE.Mesh &&obj!=plane){
+                        obj.rotation.x += 0.01;
+                        obj.rotation.y += 0.01;
+                    }
+                })
+                gap+=0.01
+
+               
+                cube.position.x=25+(20* (Math.sin(gap)))
+                cube.position.x=6+(20* (Math.abs(Math.cos(gap))))
+                
+                render.render( scene, camera );
+            }
+            animate();
+            function addStats(){
+                // 创建一个统计对象
+                var stats=new Stats()
+                //初始化对象的位置
+                stats.domElement.style.position='absolute'
+                stats.domElement.style.left='0px'
+                stats.domElement.style.top='0px'
+                // 检测动画帧数,(显示渲染时间)
+                stats.setMode(0)
+                document.getElementById('myStats').appendChild(stats.domElement)
+                return stats
+            }
+
+            // 监听页面窗口变化
+            window.addEventListener('resize',onWindowResize,false)
+
+            function onWindowResize(){
+                // 重新确定需要渲染的长宽比
+                camera.aspect=window.innerWidth/window.innerHeight
+                // 更新投影矩阵
+                camera.updateProjectionMatrix()
+                //重置场景渲染尺寸
+                render.setSize(window.innerWidth,window.innerHeight)
+            }
+    </script>
+</body>
+</html>

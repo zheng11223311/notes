@@ -1,0 +1,307 @@
+# 添加阴影shadow
+
+```js
+ // 地面开启接收阴影 接收物体产生的阴影
+plane.receiveShadow=true
+```
+
+
+
+```js
+// 开启产生阴影
+sphere.castShadow=true
+```
+
+```js
+        dlight.position.set(3,3,3)
+        // 光线开启产生阴影
+        dlight.castShadow=true
+        // 设置阴影的大小(清晰度),在光线这里设置,默认是5~25M
+        // 即设置阴影中每个像素的大小,越大越清晰
+        dlight.shadow.mapSize.width=1024*2
+        dlight.shadow.mapSize.height=1024*2
+        // 阴影的计算量比较大,一般使用贴图来模拟
+```
+
+```js
+ // 是否开启渲染阴影, 还需要一个物体开启接收阴影,一个物体开启产生阴影,光线开启产生阴影,共4步
+        // 需要在 renderer.render 渲染之前开启,渲染之后开启无效
+        renderer.shadowMap.enabled=true
+        // 大致4 个步骤
+        // 1.renderer 开启阴影
+        // 2.设置何种光线开启阴影
+        // 3.设置何种物体产生阴影
+        // 4.设置何种物体接收阴影
+        // 计算机计算式从灯光的位置看向物体,物体挡住的部分,就会在被渲染成阴影
+
+        // 渲染场景和相机
+        renderer.render(scene, camera)
+```
+
+
+
+`ThreeJS 入门 - 进华讲解\代码\14-添加阴影shadow.html`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- js文件引入 -->
+    <script src="../../js/three.js-master/build/three.min.js"></script>
+
+    <!--cdn 引入文件  -->
+    <!-- https://cdnjs.com/ 搜索 threejs -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" referrerpolicy="no-referrer"> -->
+    <!-- 引入帧率检测文件 -->
+    <!-- <script src="../../js/node_modules/three/examples/js/libs/stats.min.js"></script> -->
+    <!--
+         node 中使用 导入
+        import Stat from 'three/examples/jsm/libs/stats.module'
+    -->
+    <script src="../../js/three.js-master/examples/js/libs/stats.min.js"></script>
+
+    <!-- 引入鼠标交互文件 orbitcontrol-->
+    <!-- 鼠标操作三维场景 -->
+    <script src="../../js/three.js-master/examples/js/controls/OrbitControls.js"></script>
+    <!--
+         node 中使用 导入
+        import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls'
+    -->
+
+    <!-- 引入dat.gui  -->
+    <script src="../../js/dat.gui.min.js"></script>
+    <!-- 
+         node 中使用 npm install dat.gui
+          导入
+        import *as dat from 'dat.gui'
+     -->
+
+     <!-- 引入 RectAreaLightHelper 矩形辅助光线 -->
+     <script src="../../js/node_modules/three/examples/js/helpers/RectAreaLightHelper.js"></script>
+     <!-- 模块包 -->
+     <!-- <script src="../../js/node_modules/three/examples/jsm/helpers/RectAreaLightHelper.js"></script> -->
+     <!-- 
+         node 中使用导入
+        import {RectAreaLightHelper} dat from 'three/examples/jsm/helpers/RectAreaLightHelper.js'
+      -->
+
+    </script>
+    <script>
+        // console.log(THREE);
+        const w = window.innerWidth
+        const h = window.innerHeight
+        const stat = new Stats() //查看包 stats.min.js 中的变量可知为Stats
+        const gui = new dat.GUI()
+
+        // 将threejs 和照片中的房间相比较
+        // 房间 -3d 容器
+        //Scene( 场景)
+        const scene = new THREE.Scene()
+
+
+        // 坐标系   三边的长度
+        const axes = new THREE.AxesHelper(2, 2, 2)
+        // 添加到场景中,也可以将坐标系添加到物体中
+        scene.add(axes)
+
+        // 材质
+        // const m=new THREE.MeshPhongMaterial({
+        //     color:0xff00ff
+        // })
+        const m=new THREE.MeshStandardMaterial({
+            color:0xffff00
+        })
+        // plane 平面地面
+        const planeM=new THREE.MeshStandardMaterial({
+            color:0xcccccc
+        })
+        const planeG=new THREE.PlaneGeometry(4,4)
+        const plane=new THREE.Mesh(planeG,planeM)
+        plane.rotation.x=-0.5*Math.PI
+        // 开启接收阴影 接收物体产生的阴影
+        plane.receiveShadow=true
+        
+        // 球
+        const sphereG=new THREE.SphereGeometry(0.5)
+        const sphere=new THREE.Mesh(sphereG,m)
+        sphere.position.y=0.5
+        // 开启产生阴影
+        sphere.castShadow=true
+
+        // 立方体
+        const cubeG=new THREE.CubeGeometry(0.5,0.5,0.5)
+        const cube=new THREE.Mesh(cubeG,m)
+        cube.position.set(1,0.8,0)
+        
+
+        //圆环
+        const torusG=new THREE.TorusGeometry(0.3,0.1,10,20)
+        const torus=new THREE.Mesh(torusG,m)
+        torus.position.set(-1,0.8,0)
+        torus.rotation.x=-0.5*Math.PI
+
+        
+        
+        scene.add(plane,sphere,cube,torus)
+
+
+
+        // 光线 -台灯,吊灯,太阳光...
+        // AmbientLight 创建环境光,用来提亮
+        // const light = new THREE.AmbientLight()
+        // 颜色,强度
+        const alight = new THREE.AmbientLight(0xffffff,0.2)
+        alight.intensity=0.2    //  也可以这样添加光线强度
+        scene.add(alight)
+
+
+        // 创建太阳光
+        const dlight = new THREE.DirectionalLight(0xffffff)
+        dlight.intensity=1  //光线强度,默认为1
+        // dlight.intensity=200  //光线强度
+        // 定义方向光的方向
+        dlight.position.set(3,3,3)
+        // 光线开启产生阴影
+        dlight.castShadow=true
+        // 设置阴影的大小(清晰度),在光线这里设置,默认是5~25M
+        // 即设置阴影中每个像素的大小,越大越清晰
+        dlight.shadow.mapSize.width=1024*2
+        dlight.shadow.mapSize.height=1024*2
+        // 阴影的计算量比较大,一般使用贴图来模拟
+
+        scene.add(dlight)
+
+        // 添加太阳光辅助光线 参数 光线
+        const dLightHelper=new THREE.DirectionalLightHelper(dlight)
+        // 添加到场景中
+        scene.add(dLightHelper)
+
+      
+
+
+       
+
+
+
+
+
+        const colors={
+            dlight:0xffffff,
+            slight:0xffffff,
+            plight:0xffffff,
+        }
+         // 如果非常多的时候,直接过多使用gui.add() 渲染出来的时候会照成排版过长问题
+        // 使用文件夹的形式,界面形成折叠板
+        const folder1 = gui.addFolder('太阳光控制器') //折叠版名称
+        folder1.add(dlight.position, 'x', -5, 5).name('太阳光的x 位置')
+        folder1.add(dlight.position, 'y', -5, 5).name('太阳光的y 位置')
+        folder1.add(dlight.position, 'z', -5, 5).name('太阳光的z 位置')
+        folder1.add(dlight, 'intensity', -5, 5).name('太阳光的强度')
+       
+        // addColor 出现颜色选择器
+        folder1.addColor(colors,'dlight').onChange(()=>{
+            dlight.color.set(colors.dlight)
+        }).name('太阳光的颜色')
+
+
+
+        
+        // 相机 -
+        // 广泛使用的PerspectiveCamera 相机类型
+        // 75  角度的范围 相机的看到宽高比 最近距离 最远距离
+        const camera = new THREE.PerspectiveCamera(75, w / h, 0.1, 100)
+        // 因为最初渲染的位置都是在0,0,0 上,相机和物体重合,相机拍摄不到物体
+        // 需要调整相机位置
+        camera.position.set(4, 5, 5) //x,y,z
+        camera.lookAt(0, 0, 0) //相机朝向哪里
+
+
+
+
+        // 渲染器- Renderer 计算机进行渲染数据
+        // css 渲染器,canvas 渲染器,webGL 渲染器(我们用的)
+        const renderer = new THREE.WebGLRenderer()
+        // 设置渲染器的渲染的大小
+        renderer.setSize(w, h)
+        // 是否开启渲染阴影, 还需要一个物体开启接收阴影,一个物体开启产生阴影,光线开启产生阴影,共4步
+        // 需要在 renderer.render 渲染之前开启,渲染之后开启无效
+        renderer.shadowMap.enabled=true
+        // 大致4 个步骤
+        // 1.renderer 开启阴影
+        // 2.设置何种光线开启阴影
+        // 3.设置何种物体产生阴影
+        // 4.设置何种物体接收阴影
+        // 计算机计算式从灯光的位置看向物体,物体挡住的部分,就会在被渲染成阴影
+
+        // 渲染场景和相机
+        renderer.render(scene, camera)
+
+
+
+
+
+        // 渲染器最终渲染出来的是一个canvas
+        // 我们需要将渲染器添加到页面中
+        document.body.append(renderer.domElement)
+        // 将帧率检测添加到页面中
+        document.body.append(stat.domElement)
+        console.log(renderer
+            .domElement); //canvas 画布 <canvas width="762" height="511" style="width: 762px; height: 511px;"></canvas>
+
+            
+
+
+        // 实例化鼠标交互
+        // 如果不是在npm 中导入,而是使用直接使用本地文件的,应先查看本地文件
+        // 内此文件的中的变量名是否为 THREE.OrbitControls,根据文件中的变量名来实例化
+        // 参数 相机,renderer的canvas 元素
+        // 实现放大,移动
+        const orbitcontrol = new THREE.OrbitControls(camera, renderer.domElement)
+
+
+
+
+        // threejs 本身提供了一个好用的对象处理此问题
+        let clock = new THREE.Clock()
+        // console.log(clock);
+        // console.log(clock.getElapsedTime());
+
+
+        function run() {
+            let time = clock.getElapsedTime() //从 0 开始一直在增加的值
+            // console.log(time); 
+
+            torus.rotation.x=time*0.4
+            torus.rotation.y=time*0.4
+            cube.rotation.x=time*0.4
+            cube.rotation.y=time*0.4
+            sphere.position.y=Math.abs(Math.sin(time))+0.5
+
+            // 渲染场景和相机,每次改变都需要重新渲染视图
+            renderer.render(scene, camera)
+            stat.update() //实时更新帧率  fps 为分辨率 hz
+            orbitcontrol.update() //实时更新鼠标操作后的变化
+            // spotLightHelper.update()  //实时更新辅助线上的最远距离小圆环
+            requestAnimationFrame(run)
+        }
+        run()
+    </script>
+
+</body>
+
+</html>
+```
+

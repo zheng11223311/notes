@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./threejs/three.js"></script>
+    <style>
+        body{
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <!-- 我们把threejs 渲染效果显示在这个div 中 -->
+    <div id="puiedu-webgl-output"></div>
+
+    <script>
+        // 创建场景对象
+        var scene=new THREE.Scene()
+        // 创建透视的摄像机 (角度,宽高比)
+        var camera=new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000)
+        // 创建渲染器
+        var render=new THREE.WebGLRenderer()
+        // 设置渲染器渲染的大小
+        render.setSize(window.innerWidth,window.innerHeight)
+        document.getElementById("puiedu-webgl-output").appendChild(render.domElement)
+        // 创建几何体
+        var geometry=new THREE.BoxGeometry();
+        // 创建材质
+        var material=new THREE.MeshBasicMaterial({color:0x002299})
+        var cube=new THREE.Mesh(geometry,material)
+        scene.add(cube)
+
+        // 垂直距离
+        camera.position.z=5;
+
+        // 旋转角度
+        cube.rotation.x+=0.5
+        cube.rotation.y+=0.5
+        render.render(scene,camera)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- js文件引入 -->
+    <script src="../../js/three.js-master/build/three.min.js"></script>
+
+    <!--cdn 引入文件  -->
+    <!-- https://cdnjs.com/ 搜索 threejs -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" referrerpolicy="no-referrer"> -->
+    </script>
+    <script>
+        // console.log(THREE);
+
+
+        // 将threejs 和照片中的房间相比较
+        // 房间 -3d 容器
+        //Scene( 场景)
+        const scene = new THREE.Scene()
+        const w = window.innerWidth
+        const h = window.innerHeight
+
+        // 坐标系   三边的长度
+        const axes = new THREE.AxesHelper(2, 2, 2)
+        // 添加到场景中
+        scene.add(axes)
+
+
+
+
+
+        // 东西 -家电,家具...
+        // 物体由: geometry(几何体,即骨架) + material(材质,即皮肤) 构成
+        // BoxGeometry 立方体材质  长宽高
+        const geometry = new THREE.BoxGeometry(1, 1, 1)
+        // 材质 ,这里我们使用 MeshBasicMaterial 最基础的材质
+        const material = new THREE.MeshBasicMaterial()
+        // cube (立方体) 骨架+材质
+        const cube = new THREE.Mesh(geometry, material)
+        scene.add(cube) //加入到场景中
+
+
+
+
+        // 光线 -台灯,吊灯,太阳光...
+        // AmbientLight 创建环境光
+        const light = new THREE.AmbientLight()
+        scene.add(light)
+
+        // 相机 -
+        // 广泛使用的PerspectiveCamera 相机类型
+        // 75  角度的范围 相机的看到宽高比 最近距离 最远距离
+        const camera = new THREE.PerspectiveCamera(75, w / h, 0.1, 100)
+        // 因为最初渲染的位置都是在0,0,0 上,相机和物体重合,相机拍摄不到物体
+        // 需要调整相机位置
+        camera.position.set(0, 0, 5) //x,y,z
+        camera.lookAt(0, 0, 0) //相机朝向哪里
+
+
+        // 渲染器- Renderer 计算机进行渲染数据
+        // css 渲染器,canvas 渲染器,webGL 渲染器(我们用的)
+        const renderer = new THREE.WebGLRenderer()
+        // 设置渲染器的渲染的大小
+        renderer.setSize(w, h)
+        // 渲染场景和相机
+        renderer.render(scene, camera)
+        // 渲染器最终渲染出来的是一个canvas
+        // 我们需要将渲染器添加到页面中
+        document.body.append(renderer.domElement)
+        console.log(renderer
+            .domElement); //canvas 画布 <canvas width="762" height="511" style="width: 762px; height: 511px;"></canvas>
+
+        // 定时器执行渲染,并不推荐,如果其中的代码过多,会阻塞执行,使执行时间推后
+        // setInterval(() => {
+        //     cube.rotation.z += 0.01
+        //     // 渲染场景和相机,每次改变都需要重新渲染视图
+        //     renderer.render(scene, camera)
+        // }, 1000 / 60);
+
+        // 使用 requestAnimationFrame  使用屏幕的刷新率刷新,1hz 的刷新率,即1s 刷新1次,旋转 z =1*0.01 
+        // 缺点,不同刷新率的设备,旋转的角度快慢不一样
+        // function run() {
+        //     cube.rotation.z += 0.01
+        //     // 渲染场景和相机,每次改变都需要重新渲染视图
+        //     renderer.render(scene, camera)
+        //     requestAnimationFrame(run)
+        // }
+        // run() 
+
+        // 解决不同刷新率的问题
+        // let time=Date.now()
+        // function run() {
+        //     let currentTime=Date.now()
+        //     let deltaTime=currentTime-time
+        //     time=Date.now()
+        //     cube.rotation.z += deltaTime *0.005
+        //     // 渲染场景和相机,每次改变都需要重新渲染视图
+        //     renderer.render(scene, camera)
+        //     requestAnimationFrame(run)
+        // }
+        // run() 
+
+        // threejs 本身提供了一个好用的对象处理此问题
+        let clock=new THREE.Clock()
+        // console.log(clock);
+        // console.log(clock.getElapsedTime());
+        function run() {
+            let time=clock.getElapsedTime() //从 0 开始一直在增加的值
+            console.log(time);
+            cube.rotation.z = time
+            cube.position.x=Math.sin(time)*2
+            cube.position.y=Math.cos(time)*2
+            // 渲染场景和相机,每次改变都需要重新渲染视图
+            renderer.render(scene, camera)
+            requestAnimationFrame(run)
+        }
+        run() 
+
+    </script>
+
+</body>
+
+</html>
