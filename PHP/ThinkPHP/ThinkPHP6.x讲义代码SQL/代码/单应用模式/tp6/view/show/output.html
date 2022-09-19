@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{$arr.name|default='没有姓名'}--{$arr.age}
+<br>
+{$obj->name}--{$obj->age}--{$obj->fn()}--{$obj::PI}
+<br>
+{$Request.get.id}
+{$Request.param.id}
+{$Request.host}
+{$Think.const.PHP_VERSION}
+{$Think.PHP_VERSION}
+{$Think.config.app.app_host}
+{$Think.config.session.name}
+<br>
+md5 加密 raw 原生       格式化日期
+{$password|md5|raw}--{$time|date='Y-m-d'}
+<br>
+截取字符串              使用php 的方法需要加:
+{$arr.name|substr=0,3}--{:md5(substr($arr.name, 0, 3))}
+<br>
+{$number + $number|md5}
+<br>
+{$arr.name ? '正确' : '错误'}
+name 为true 返回真
+{$arr.name ?= '真'}
+??用于系统变量,没有值时输出
+{$Request.get.id ?? '不存在'}
+?: 用于普通变量,没有值时输出
+{$arr.name ?: '不存在'}
+
+</body>
+</html>

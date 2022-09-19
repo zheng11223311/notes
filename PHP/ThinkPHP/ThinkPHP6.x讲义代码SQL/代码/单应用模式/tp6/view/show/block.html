@@ -1,0 +1,13 @@
+{extend name="public/base"}
+
+<!-- 替换base 文件中name=nav 的block 中的数据 -->
+{block name="nav"}
+{include file="public/nav,public/header" title="$title" keyword="$keyword"}
+{/block}
+
+{block name="body"}
+    <div>
+        这里是主体部分
+    </div>
+{/block}
+

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 使用include 导入的title 值 -->
+    <title>[title]</title>
+    <meta name="keywords" content="[keywords]">
+    <!-- 加载 文件
+    需要在config/view 添加
+    // 模版替换输出
+    'tpl_replace_string' => [
+        '__JS__' => '../static/js',
+        '__CSS__' => '../static/css',
+    ],
+    
+    -->
+    {load href="__CSS__/basic.css,__JS__/basic.js"}
+    {load href="__JS__/basic.js"}
+    <!-- js css 只是一个别名,识别的还是根据.js 后缀 -->
+    {js href="__JS__/basic.js"}
+    {css href="__JS__/basic.css"}
+
+</head>
+<body>
+
+header
