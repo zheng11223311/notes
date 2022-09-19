@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset=utf-8>
+		<title>My first three.js app</title>
+		<style>
+			body { margin: 0; }
+			canvas { width: 100%; height: 100% }
+		</style>
+	</head>
+	<body>
+        <script src="./js/WebGL.js"></script>
+
+		<script src="./js/three.js-master/build/three.js"></script>
+		<script>
+            // 建立了场景
+			var scene = new THREE.Scene();
+            // 建立了相机和渲染器。
+            // three.js里有几种不同的相机，在这里，我们使用的是PerspectiveCamera（透视摄像机）
+            //视野角度 长宽比 远剪切面和近剪切面。
+            var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+
+            // 建立了渲染器。
+            var renderer = new THREE.WebGLRenderer();
+            //设置渲染范围
+            renderer.setSize( window.innerWidth, window.innerHeight );
+            //添加到元素上
+            document.body.appendChild( renderer.domElement );
+
+            //创建一个立方体
+            var geometry = new THREE.BoxGeometry( 1, 1, 1 );
+            // 材质
+            var material = new THREE.MeshBasicMaterial( { color: 0x99c990 } );
+            // 第三步，我们需要一个Mesh（网格）。 
+            // 网格是包含有一个几何体以及应用在在此几何体上的材质的对象，我们可以直接将网格对象放入到我们的场景中，并让它在场景中自由移动。
+            var cube = new THREE.Mesh( geometry, material );
+             // 默认情况下，当我们调用scene.add()的时候，物体将会被添加到坐标为(0,0,0)的位置。
+            // 但这可能会使得摄像机的位置和立方体相互重叠（也就是摄像机位于立方体中）。为了防止这种情况的发生，我们只需要将摄像机稍微向外移动一些即可。
+            scene.add( cube );
+            camera.position.z = 5;
+            // 渲染场景
+            function animate() {
+                // 最重要的一点或许就是当用户切换到其它的标签页时，它会暂停
+                requestAnimationFrame( animate );
+                // 让它旋转起来
+                cube.rotation.x += 0.01;
+                cube.rotation.y += 0.01;
+                
+                renderer.render( scene, camera );
+            }
+            animate();
+		</script>
+	</body>
+</html>

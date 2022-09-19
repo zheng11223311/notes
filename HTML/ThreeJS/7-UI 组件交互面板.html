@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7-UI 组件交互面板</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+<!--引入three.js三维引擎-->
+<script src="http://www.yanhuangxueyuan.com/versions/threejsR92/build/three.js"></script>
+<script src="./js/dat.gui.min.js"></script>
+</head>
+<body>
+  <script>
+    //设置渲染
+    var renderer = new THREE.WebGLRenderer(  );
+    console.log(renderer);
+
+    //设置选择
+//     var propsLocal = {
+// 	 get Enabled() {
+//     // renderer.localClippingEnabled = flase
+//         return renderer.localClippingEnabled;
+//       },
+//     set Enabled(v) {
+//         renderer.localClippingEnabled = v;
+//       }
+// }
+// var gui = new dat.GUI(),
+//  folderLocal = gui.addFolder("Local Clipping")
+//  folderLocal.add(propsLocal, "Enabled");
+
+
+//  设置拖动进度条
+    // var gui = new dat.GUI()
+    // folderLocal = gui.addFolder("面板")
+    // console.log(renderer.value);
+    // propsLocal = {
+    //   get Enabled() {
+    //     return renderer.value||1;     //设置进度条默认长度(值)
+    //   },
+    //   set Enabled(v) {
+    //     renderer.value = v;   //修改进度条长度为拖动后的值
+    //   }
+    // }
+    // //这里的Enabled 要与propsLocal Enabled  一样
+    //   folderLocal.add(propsLocal, "Enabled", 0.3, 1.25);// 后面多的2个参数是拉动条的最大和最小值
+
+
+
+// 生成按钮
+// 设置一个回调
+// let params = {
+// 	btn :function (){
+// 	alert("按钮")
+// 	}
+// }
+//  var gui = new dat.GUI(),
+// folderLocal = gui.addFolder("面板")
+//  folderLocal.add(params , "btn");   //btn 为面板上按钮的value
+
+
+
+// 下拉表
+// var gui = new dat.GUI()
+// var statesFolder = gui.addFolder( 'States' );
+// // 默认值设置
+// var dropdown= { state: 'Walking' };
+// //选项
+// var states = [ 'Idle', 'Walking', 'Running', 'Dance', 'Death', 'Sitting', 'Standing' ];
+// // 添加
+// var clipCtrl = statesFolder.add( dropdown, 'state' ).options( states );
+// // 设置点击事件
+// clipCtrl.onChange( function () {
+// 				//输出dropdown 的默认值
+//   console.log(clipCtrl.initialValue);
+//   console.log(clipCtrl);
+//   //输出点击的值
+//   console.log(clipCtrl.object.state); //state 与dropdown 一致
+// } );
+
+
+var gui = new dat.GUI()
+var planeX = gui.addFolder("面版");
+var params={}
+ params.planeX={
+  displayHelper:true,
+  constant:12
+}
+   planeX
+     .add(params.planeX, "displayHelper")
+     .onChange(v => ( displayHelper= v));// 按钮
+     
+  planeX
+     .add(params.planeX, "constant")  //constant 进度条默认值
+     .min(0)  //最小值
+     .max(20) //最大值
+     .onChange(d => (constant = d));// 拖动条修改值
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>

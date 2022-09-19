@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>第一个three.js文件_WebGL三维场景</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      /* 隐藏body窗口区域滚动条 */
+    }
+  </style>
+
+  <!--引入three.js三维引擎-->
+  <script src="http://www.yanhuangxueyuan.com/versions/threejsR92/build/three.js"></script>
+    <!-- 鼠标操作三维场景 -->
+    <script src="js\three.js-master\examples\js\controls\OrbitControls.js"></script>
+  <!-- <script src="./three.js"></script> -->
+  <!-- <script src="http://www.yanhuangxueyuan.com/threejs/build/three.js"></script> -->
+</head>
+
+<body>
+  <div id="webgl"></div>
+  <script>
+    //创建场景对象Scene
+    var scene = new THREE.Scene();
+    //创建网格模型
+
+    //创建一个立方体几何对象Geometry
+    // 参数 半径，经度分段数 纬度分段数（越细越圆） 可选参数不列举
+    var geometry = new THREE.SphereGeometry(60, 20, 100); 
+
+    //材质对象Material
+    var material = new THREE.MeshLambertMaterial({
+      color: 0x0000ff
+    });
+
+    //网格模型对象Mesh
+    var mesh = new THREE.Mesh(geometry, material); 
+    mesh.position.y=50
+
+     //立方体对象是否渲染到阴影贴图当中
+     mesh.castShadow=true;
+
+    //网格模型添加到场景中
+    scene.add(mesh); 
+
+    
+
+      //创建聚光灯（可以显示投影的灯光）
+    var spotLight=new THREE.SpotLight(0xaaaa)
+
+    //聚光灯位置  参数 xyz
+    spotLight.position.set(100,600,-1600)
+
+    // 阴影设置
+    spotLight.castShadow=true
+
+    //设置阴影衰减度
+    spotLight.shadow.penumbra=0.05
+
+    //聚光灯的扩散范围
+    spotLight.angle=Math.PI/10
+
+    // 设置阴影精度，精度越高，投影效果越好。越低越像马赛克
+    spotLight.shadow.mapSize.width=1024
+    spotLight.shadow.mapSize.height=1024
+console.log(spotLight.shadow.mapSize);
+    //添加到场景当中
+    scene.add(spotLight)
+
+
+    //显示三位坐标  参数:坐标系长度
+    var axes=new THREE.AxesHelper(500)
+
+    //三位坐标添加到场景中
+    scene.add(axes)
+
+    //相机设置
+    //窗口宽度
+    var width = window.innerWidth; 
+
+    //窗口高度
+    var height = window.innerHeight; 
+
+    //窗口宽高比
+    var k = width / height; 
+
+    //三维场景显示范围控制系数，系数越大，显示的范围越大,物体越小
+    var s = 200; 
+
+    //创建相机对象
+    //.正交投影摄像机 Three.OrthographicCamera(left,right,top,bottom,near,far)
+    //3.透视投影摄像机
+    // 透视投影摄影机的构造函数：
+    // THREE.PerspectiveCamera(fov, aspect(宽高比值), near, far)
+    // fov — 摄像机视锥体垂直视野角度
+    // aspect — 摄像机视锥体长宽比
+    // near — 摄像机视锥体近端面
+    // far — 摄像机视锥体远端面
+    // var camera = new THREE.OrthographicCamera(-s * k, s * k, s, -s, 1, 1000);
+    var camera = new THREE.PerspectiveCamera(45,k,1,1000);
+    //设置相机位置  camera.position.y=900 也可以
+    camera.position.set(400, 300, -500); 
+    
+
+    //设置相机方向(指向的场景对象)
+    camera.lookAt(scene.position); 
+
+
+
+
+  
+
+    //创建地板 参数:宽高
+    var planeGeometry=new THREE.PlaneGeometry(600,800);
+
+    //给地面物体上色
+    // var planeMaterial=new THREE.MeshBasicMaterial({color:0xcccccc})
+    // 可以接收阴影
+    // var planeMaterial=new THREE.MeshLambertMaterial({color:0xcccccc})
+    //可以接收灯光与阴影
+    var planeMaterial=new THREE.MeshStandardMaterial({color:0xcccccc})
+
+    // 创建地面
+    var plane=new THREE.Mesh(planeGeometry,planeMaterial);
+
+    //物体移动位置
+    plane.rotation.x=-0.5*Math.PI
+    plane.position.x=15
+    plane.position.y=0
+    plane.position.z=0
+    plane.castShadow=true
+
+    // 设置接收阴影
+    plane.receiveShadow=true;
+    console.log(plane);
+
+    //将地面添加到场景中
+    scene.add(plane)
+
+     // 创建渲染器对象
+     var renderer = new THREE.WebGLRenderer();
+    renderer.setSize(width, height);//设置渲染区域尺寸
+    renderer.setClearColor(0xb9d3ff, 1); //设置初始背景颜色
+    document.body.appendChild(renderer.domElement); //body元素中插入canvas对象
+
+    
+  
+         //设置物体渲染阴影
+         renderer.shadowMap.enabled=true
+
+       
+        mesh.rotateY(0.01);//旋转角速度0.001弧度每毫秒
+        renderer.render(scene,camera);
+        
+
+var controls = new THREE.OrbitControls(camera,renderer.domElement);//创建控件对象
+controls.addEventListener('change', ()=>{
+   //执行渲染操作   指定场景、相机作为参数
+   //执行渲染操作
+   renderer.render(scene,camera);
+
+});//监听鼠标、键盘事件
+  </script>
+</body>
+</html>
