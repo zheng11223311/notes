@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    
+    <!-- 1.font-class 引用 -->
+    <link rel="stylesheet" href="./font/iconfont.css">
+
+
+    <!--2. Unicode 引用  -->
+    <style>
+      /* 第一步：拷贝项目下面生成的 @font-face */
+      @font-face {
+        font-family: 'iconfont';
+        src: url('iconfont.woff2?t=1623939629431') format('woff2'),
+            url('iconfont.woff?t=1623939629431') format('woff'),
+            url('iconfont.ttf?t=1623939629431') format('truetype');
+        }
+        /* 第二步：定义使用 iconfont 的样式 */
+        .iconfont {
+        font-family: "iconfont" !important;
+        font-size: 16px;
+        font-style: normal;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+
+
+
+    <!--3. Symbol 引用 -->
+    <!-- 第一步：引入项目下面生成的 symbol 代码： -->
+    <script src="./font/iconfont.js"></script>
+    <!-- 第二步：加入通用 CSS 代码（引入一次就行）： -->
+    <style>
+        .icon {
+        width: 1em;
+        height: 1em;
+        vertical-align: -0.15em;
+        fill: currentColor;
+        overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <!-- 三种使用方式,每个使用方式对应每个css 的引入和使用-->
+    <!--1. font-class 引用 -->
+  <span class="iconfont icon-Adobe-AfterEffects"></span>
+
+    <!--2. Unicode 引用 -->
+  <span class="iconfont">&#xe6c9;</span>
+
+    <!--3. Symbol 引用 -->
+    <svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-dianpu"></use>
+    </svg>
+
+    具体解释在./font/demo_index.html  文件内
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!doctype html >  //声明html5 版本
+专业术语:DTD   文档定义类型[]document type definition] 指令,不属于标签,告诉浏览器编写页面所用的标记版本
+meta 元数据,告诉浏览器或搜索引擎关于网页的一些基本数据
+<meta charset="utf-8">
+charset="utf-8"
+属性         属性值
+字符集信息,网页文件的编码格式
+展示中文字符集的种类
+gb2312   gb国家拼音的缩写 6763 个文字,不够使用
+gbk   21866 个文字(简体字)    
+gb18030    70224个文字
+utf-8  包含全世界200多个国家个地区等的语言文字
+
+<meta name="keyword" content="乖乖">
+<meta name="description" content="这是一个属于乖乖老师的一个网页">
+h1 权重最高,网页中只能出现一次
+ul 里面只能是li 标签
+ul 标签type="disc" 黑心圆 circle 空心圆 square 正方形    无序列表
+ol 标签type="a" a  A 1 i   I   顺序列表
+strong 标签的权重大于b 标签,方便于浏览器搜索
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

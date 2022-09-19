@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>韩剧--再次18</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            margin: 10px auto;
+            width: 500px;
+        }
+        li {
+            list-style: none;
+            width: 500px;
+            height: 150px;
+            border-bottom: 1px solid #999;
+        }
+
+        img {
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+        }
+
+        span {
+            margin: 23px ;
+            width: 100px;
+            height: 100%;
+            display: inline-block;
+            overflow: hidden;
+        }
+        .left{
+            position: relative;
+            height: 100px;
+            border-radius: 50px;
+            background-color: brown;
+        }
+        /* .left>span{
+            display: none;
+            position: absolute;
+            left: 0;
+            margin: 0;
+            bottom: 0;
+            width: 100px;
+            height: 50px;
+            line-height:40px;
+            border-radius: 50px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            font-size: 14px;
+            text-align: center;
+            background-color: rgba(27, 26, 25, 0.39);
+        } */
+         .left>span{
+            position: absolute;
+            left: 0;
+            margin: 0;
+            bottom: -50px;
+            width: 100px;
+            height: 50px;
+            line-height:40px;
+            font-size: 14px;
+            text-align: center;
+            background-color: rgba(27, 26, 25, 0.39);
+            transition: all 0.5s;
+         }
+        .left:hover span{
+            transform: translateY(-50px);
+        }
+        span.right{
+            width: 300px;
+            height: 100px;
+            margin:20px;
+            border: 0px solid;
+        }
+        p{
+            padding: 5px;
+        }
+        p:nth-child(1):hover{
+            color: orange;
+        }
+        p:nth-child(2):hover{
+            color: orange;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul>
+        <li>
+            <div>
+                <span class="left">
+                    <img src="./img/1.jpg" alt="" srcset="">
+                    <span>金荷娜</span>
+                </span>
+                <span class="right">
+                    <p class="">金荷娜（Kim Ha Neul）</p>
+                    <p class="">1978年2月21日出生于韩国忠清北道丹阳郡 。韩国女演员，毕业于首尔艺术大学。</p>
+                </span>
+            </div>
+        </li>
+        <li>
+            <div>
+                <span class="left">
+                    <img src="./img/2.jpg" alt="" srcset="">
+                    <span>李到晛</span>
+                </span>
+                <span class="right">
+                    <p class="">李到晛（???、Lee Do hyun）</p>
+                    <p class="">1995年4月11日出生于韩国，韩国男演员。2020年9月，主演JTBC奇幻剧《再次十八岁》</p>
+                </span>
+            </div>
+        </li>
+        <li>
+            <div>
+                <span class="left">
+                    <img src="./img/3.jpg" alt="" srcset="">
+                    <span>魏化儁</span>
+                </span>
+                <span class="right">
+                    <p class="">魏化儁（Ha Jun Wi）</p>
+                    <p class="">韩国男演员，艺名魏化儁 本名魏贤伊 1991年8月5日出生于韩国全罗南道莞岛郡 身高180cm 毕业于圣洁大学戏剧电影学部 2015年参演电影《中国城》出道。</p>
+                </span>
+            </div>
+        </li>
+        <li>
+            <div>
+                <span class="left">
+                    <img src="./img/4.jpg" alt="" srcset="">
+                    <span>韩素恩</span>
+                </span>
+                <span class="right">
+                    <p class="">韩素恩（Kim Ha Neul）</p>
+                    <p class="">出生于1993年7月8日，演员。2019年7月17日,2020年9月21日，参演电视剧《再次十八岁》在韩国播出饰演郑多贞。</p>
+                </span>
+            </div>
+        </li>
+    </ul>
+
+</body>
+
+</html>

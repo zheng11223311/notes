@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JD</title>
+
+    <style>
+        /* 初始化代码 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        body {
+            background-color: rgb(228, 108, 154);
+        }
+
+        /* 主体 */
+        .content {
+            width: 290px;
+            height: 340px;
+            margin: 50px auto;
+            background-color: #fff;
+        }
+
+        /* JOY 寻宝 头部 */
+        h3 {
+            width: 122px;
+            height: 32px;
+            font-size: 24px;
+            display: inline-block;
+            padding: 10px;
+        }
+
+        img {
+            vertical-align: -1px;
+        }
+
+        /* 分类栏category */
+        .category {
+            position: relative;
+            width: 100%;
+            text-align: center;
+            margin-top: 10px;
+            /* background-color: tomato; */
+        }
+
+        /* 换个新机 */
+        .huan {
+            margin-left: 8px;
+            width: 62px;
+            height: 20px;
+            font-size: 12px;
+            float: left;
+            line-height: 20px;
+            border-radius: 20px;
+            background-color: rgba(204, 199, 199, 0.5);
+        }
+
+        .huan a {
+            display: block;
+            height: 70px;
+            color: #999;
+        }
+
+        .huan:hover {
+            background-color: #e1251b;
+        }
+
+        .huan:hover a {
+            color: #fff;
+        }
+
+        .huan ul {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            top: 20px;
+            left: 0;
+            /* background-color: chocolate; */
+        }
+
+        .huan:nth-child(1) ul {
+            display: block;
+        }
+
+
+
+        .huan ul li {
+            padding-top: 10px;
+            padding-left: 10px;
+            overflow: hidden;
+        }
+
+        .huan ul li .img img {
+            width: 70px;
+            height: 70px;
+        }
+
+        .huan ul li .img,
+        .huan ul li .box {
+            float: left;
+        }
+
+        .huan ul li .box {
+            width: 180px;
+            height: 70px;
+            text-align: left;
+            /* word-wrap: break-word; */
+            word-break: break-all;
+            margin-left: 10px;
+            /* background-color: crimson; */
+        }
+
+        .huan ul li .box>span {
+            height: 36px;
+            font-size: 14px;
+            color: #333;
+            /* background-color: darkmagenta; */
+            display: block;
+            overflow: hidden;
+        }
+
+        .huan ul li .box>p {
+            color: #e1251b;
+            margin-top: 10px;
+            /* background-color: aqua; */
+            font-size: 16px;
+        }
+
+        .huan ul li .box>p>span {
+            font-size: 12px;
+        }
+
+        /* 层级提升 */
+        .huan:hover ul {
+            display: block;
+            background-color: #fff;
+            z-index: 999;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="title">
+            <a href="#" class="">
+                <h3>JOY 寻宝</h3>
+                <img src="./img/1.png" alt="" srcset="">
+            </a>
+        </div>
+        <div class="category">
+
+            <div class="huan ">
+                <a href="#" class="">换个新机</a>
+                <ul>
+                    <li>
+                        <a href="" class="">
+                            <div class="img">
+                                <img src="./img/2.webp" alt="">
+                            </div>
+                            <div class="box">
+                                <span>【准新机】Apple iPhone12Pro Max(A2412)苹果12ProMax二手5G 海蓝色 128G全网通『赠20W PD闪充』</span>
+                                <p class=""><span>¥</span>7799<span>.00</span></p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="">
+                            <div class="img">
+                                <img src="./img/2.webp" alt="">
+                            </div>
+                            <div class="box">
+                                <span>【准新机】Apple iPhone12Pro Max(A2412)苹果12ProMax二手5G 海蓝色 128G全网通『赠20W PD闪充』</span>
+                                <p class=""><span>¥</span>7799<span>.00</span></p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="">
+                            <div class="img">
+                                <img src="./img/2.webp" alt="">
+                            </div>
+                            <div class="box">
+                                <span>【准新机】Apple iPhone12Pro Max(A2412)苹果12ProMax二手5G 海蓝色 128G全网通『赠20W PD闪充』</span>
+                                <p class=""><span>¥</span>7799<span>.00</span></p>
+                            </div>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="huan ">
+                <a href="#" class="">新机妙算</a>
+                <ul>
+                    <li>
+                        <a href="" class="">
+                            <div class="img">
+                                <img src="./img/4.webp" alt="">
+                            </div>
+                            <div class="box">
+                                <span>潮束派 Air1.1三代Pro无线蓝牙耳机 运动适用于/苹果/华为/一加oppo小米vivo三星手机 官方标配+改名定位+高清通话</span>
+                                <p class=""><span>¥</span>1<span>.00</span></p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="">
+                            <div class="img">
+                                <img src="./img/4.webp" alt="">
+                            </div>
+                            <div class="box">
+                                <span>潮束派 Air1.1三代Pro无线蓝牙耳机 运动适用于/苹果/华为/一加oppo小米vivo三星手机 官方标配+改名定位+高清通话</span>
+                                <p class=""><span>¥</span>1<span>.00</span></p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="">
+                            <div class="img">
+                                <img src="./img/4.webp" alt="">
+                            </div>
+                            <div class="box">
+                                <span>潮束派 Air1.1三代Pro无线蓝牙耳机 运动适用于/苹果/华为/一加oppo小米vivo三星手机 官方标配+改名定位+高清通话</span>
+                                <p class=""><span>¥</span>1<span>.00</span></p>
+                            </div>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="huan ">
+                <a href="#" class="">手机控</a>
+                <ul>
+                    <li>
+                        <a href="" class="">
+                            <div class="img">
+                                <img src="./img/3.webp" alt="">
+                            </div>
+                            <div class="box">
+                                <span>【限量款丨无需贴膜】锐舞苹果12手机壳iphone 12全包镜头保护套超薄硅胶玻璃透明防摔磁吸磨砂壳 【石墨黑】360°全包防护
+                                    航空防爆玻璃丨原机色铝金边框</span>
+                                <p class=""><span>¥</span>156<span>.00</span></p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="">
+                            <div class="img">
+                                <img src="./img/3.webp" alt="">
+                            </div>
+                            <div class="box">
+                                <span>【限量款丨无需贴膜】锐舞苹果12手机壳iphone 12全包镜头保护套超薄硅胶玻璃透明防摔磁吸磨砂壳 【石墨黑】360°全包防护
+                                    航空防爆玻璃丨原机色铝金边框</span>
+                                <p class=""><span>¥</span>156<span>.00</span></p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="">
+                            <div class="img">
+                                <img src="./img/3.webp" alt="">
+                            </div>
+                            <div class="box">
+                                <span>【限量款丨无需贴膜】锐舞苹果12手机壳iphone 12全包镜头保护套超薄硅胶玻璃透明防摔磁吸磨砂壳 【石墨黑】360°全包防护
+                                    航空防爆玻璃丨原机色铝金边框</span>
+                                <p class=""><span>¥</span>156<span>.00</span></p>
+                            </div>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="huan ">
+                <a href="#" class="">男神必备</a>
+                <ul>
+                    <li>
+                        <a href="" class="">
+                            <div class="img">
+                                <img src="./img/5.webp" alt="">
+                            </div>
+                            <div class="box">
+                                <span>守护宝（上海中兴）F20 老人机 电信版4g老年手机 全网通老人智能手机学生机 端午节父亲节礼物 蓝色</span>
+                                <p class=""><span>¥</span>99999<span>.00</span></p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="">
+                            <div class="img">
+                                <img src="./img/5.webp" alt="">
+                            </div>
+                            <div class="box">
+                                <span>守护宝（上海中兴）F20 老人机 电信版4g老年手机 全网通老人智能手机学生机 端午节父亲节礼物 蓝色</span>
+                                <p class=""><span>¥</span>99999<span>.00</span></p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="">
+                            <div class="img">
+                                <img src="./img/5.webp" alt="">
+                            </div>
+                            <div class="box">
+                                <span>守护宝（上海中兴）F20 老人机 电信版4g老年手机 全网通老人智能手机学生机 端午节父亲节礼物 蓝色</span>
+                                <p class=""><span>¥</span>99999<span>.00</span></p>
+                            </div>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #999;
+        }
+
+        .div {
+            
+            margin: 100px 20px;
+            height: 300px;
+        }
+
+        .div>img {
+            float: left;
+        }
+
+        .div>span {
+            background-color: #fff;
+            margin-left: 20px;
+            float: left;
+            text-align: center;
+            width: 234px;
+            height: 300px;
+        }
+
+        .div>span img {
+            margin-top: 20px;
+            width: 160px;
+            height: 160px;
+        }
+        .div>span>span{
+            color: #ff6700;
+        }
+
+        p {
+            padding-top: 10px;
+            font-size: 14px;
+        }
+        .div>span p:nth-child(n+3) {
+            padding-top: 10px;
+            color: #999;
+        }
+        del{
+            color: #999;
+        }
+        .div span:nth-child(5){
+            padding: 0;
+        }
+        
+        .top,.bottom{
+            display: inline-block;
+            width: 100%;
+           height: 140px;
+        }
+        .top{
+            border-bottom: 20px solid #999;
+        }
+        .top .right img{
+            padding-left: 10px;
+            width: 80px;
+            height: 80px;
+        }
+        .bottom .right img{
+            padding-left: 20px;
+            padding-top: 30px;
+            width: 48px;
+            height: 48px;
+        }
+        .div span:nth-child(5) p{
+            padding-left: 10px;
+            display: inline-block;
+        }
+        .div span:nth-child(5) p:nth-child(2){
+           color: #ff6700;
+        }
+        .div span:nth-child(5) {
+            text-align: left;
+            display: inline-block;
+        }
+        .left,.right{
+            display: inline-block;
+            width: 40%;
+            height: 100%;
+        }
+        .div span:nth-child(5) .bottom p:nth-child(1){
+            padding-left: 20px;
+            font-size: 18px;
+        }
+        .div span:nth-child(5) .bottom p:nth-child(2){
+             padding-left: 20px;
+           color: #999;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="div">
+        <img src="./img/2.jpg" alt="">
+        <span>
+            <img src="./img/3.jpg" alt="">
+            <p>Redmi全自动波轮洗衣机1A 8kg</p>
+            <p>一键操作，父母都爱用</p>
+            <span>799元</span>&nbsp;
+            <del>899元</del>
+        </span>
+        <span>
+            <img src="./img/4.jpg" alt="">
+            <p>米家互联网烟灶套装（天然气)</p>
+            <p>点火排烟，风随火动</p>
+            <span>2099元</span>&nbsp;
+            <del>2298元</del>
+        </span>
+        <span>
+            <img src="./img/5.jpg" alt="">
+            <p>米家电烤箱</p>
+            <p>全能烘焙体验</p>
+            <span>299元</span>
+        </span>
+        <span>
+            <div class="top">
+                <div class="left">
+                    <p> 小米米家空气净化器 2S</p>
+                    <p>649元</p>
+                </div>
+                <div class="right">
+                    <img src="./img/6.jpg" alt="" srcset="">
+                </div>
+
+            </div>
+            <div class="bottom">
+               <div class="left">
+                    <p>浏览更多</p>
+                    <p>热门</p>
+                </div>
+                <div class="right">
+                    <img src="./img/7.png" alt="" srcset="">
+                </div>
+
+            </div>
+        </span>
+    </div>
+</body>
+
+</html>

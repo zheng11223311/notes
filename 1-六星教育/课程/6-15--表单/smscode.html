@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>欢迎登入华为站点</title>
+    <style>
+        /* 初始化样式 */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {}
+
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        /* 设置头部 */
+        .header {
+            width: 100%;
+            background-color: #000000;
+            height: 27px;
+            padding: 11px 0 10px;
+
+        }
+
+        .header>a>img {
+            margin-left: 112px;
+            width: 120px;
+            height: 26px;
+        }
+
+        .header>span {
+            float: right;
+            padding-right: 130px;
+        }
+
+        .header>span>span {
+            float: left;
+            margin-left: 30px;
+        }
+
+        .header>span>span>a {
+            font-size: 12px;
+        }
+
+        .header>span>span:nth-child(3) {
+            position: relative;
+            width: 90px;
+            height: 23px;
+            text-align: center;
+            line-height: 20px;
+            z-index: 3;
+        }
+
+
+
+        .header>span>span:nth-child(3):hover {
+            position: relative;
+            background-color: #fff;
+            z-index: 3;
+            margin-left: 28px;
+            border: 1px solid #999;
+            border-bottom: none;
+        }
+
+        .header>span>span:nth-child(3):hover a {
+            color: #000000;
+        }
+
+        /* a 标签里面不能放ul 标签 */
+        .header>span>span:nth-child(3)>ul {
+            position: absolute;
+            display: none;
+            padding: 15px;
+            box-sizing: border-box;
+            text-align: left;
+            width: 202px;
+            height: 440px;
+            background-color: #fff;
+            border: 1px solid #999;
+            border-top: none;
+        }
+
+        .header>span>span>ul>li>a {
+            color: #000000;
+            font-size: 12px;
+        }
+
+        .header>span>span:nth-child(3)>ul>li>a:hover {
+            color: #1189E6;
+        }
+
+        .header>span>span:nth-child(3):hover ul {
+            display: block;
+            right: -1px;
+            top: 22px;
+            z-index: 2;
+        }
+
+        /* 设置title */
+        .title {
+            width: 100%;
+            height: 112px;
+            line-height: 170px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        /* 设置body */
+        .body {
+            width: 100%;
+            text-align: center;
+        }
+
+        /* 设置btitle */
+        .btitle {
+            font-size: 0px;
+            color: #000000;
+
+        }
+
+        .btitle>span {
+            display: inline-block;
+            box-sizing: border-box;
+            width: 144px;
+            height: 30px;
+            line-height: 30px;
+            font-size: 14px;
+            color: #000;
+            opacity: 0.5;
+            border-bottom: #dddddd 2px solid;
+        }
+
+        .btitle>span>a {
+            color: #000;
+
+        }
+
+        .btitle>span:nth-child(3) {
+            color: #000000;
+            font-weight: 600;
+            opacity: 1;
+            border-bottom: #F66F6A 2px solid;
+        }
+
+        /* 设置input */
+        .inp {
+            position: relative;
+            margin: 40px auto 0;
+            width: 432px;
+            height: 232px;
+        }
+
+        .inp span {
+            position: relative;
+            padding-left: 15px;
+            text-align: left;
+            top: 1px;
+            display: inline-block;
+            width: 160px;
+            height: 48px;
+            box-sizing: border-box;
+            line-height: 48px;
+            font-size: 14px;
+            border: 1px solid rgba(190, 189, 189, 0.5);
+        }
+
+        .inp span:nth-of-type(2) {
+            position: absolute;
+            top: 69px;
+            right: 0px;
+            border: none;
+            width: 130px;
+            text-align: center;
+        }
+
+        .inp span:nth-of-type(2) a {
+            color: #1189E6;
+        }
+
+        .inp span ul {
+            display: none;
+            position: absolute;
+            left: -2px;
+            width: 432px;
+            height: 230px;
+            box-sizing: border-box;
+
+            border: #000 1px solid;
+            background-color: #fff;
+            overflow: scroll;
+            overflow-x: hidden;
+            z-index: 11;
+        }
+
+        .inp span ul li {
+            padding-left: 20px;
+        }
+
+        .inp span:hover ul {
+            display: block;
+        }
+
+        .inp span ul li:hover {
+            background-color: rgb(87, 152, 236, 0.5);
+        }
+
+        .inp span img {
+            position: absolute;
+            top: 22px;
+            right: 15px;
+            width: 11px;
+            height: 6px;
+            opacity: 0.6;
+        }
+
+
+
+        .inp input {
+            width: 432px;
+            height: 48px;
+            outline: none;
+            box-sizing: border-box;
+            font-size: 14px;
+            padding: 0 39px 0 16px;
+            margin-bottom: 20px;
+        }
+
+        .inp input:nth-child(2) {
+            width: 265px;
+        }
+
+
+        .inp input:nth-child(-n+3):hover {
+            outline: 1px solid #000;
+        }
+
+        .inp input:nth-child(-n+3) {
+            border: 1px solid rgba(190, 189, 189, 0.5);
+
+        }
+
+        .inp>input:nth-of-type(3) {
+            background: #F66F6A;
+            border: none;
+            border-radius: 5px;
+            font-size: 20px;
+            color: #fff;
+            margin-top: 30px;
+            cursor: pointer;
+        }
+
+
+
+        /* 设置注册 */
+        .registry {
+            margin: 0 auto;
+            width: 432px;
+        }
+
+        .registry::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .registry span a {
+            color: #007DFF;
+            font-size: 14px;
+        }
+
+        .registry span {
+            float: left;
+        }
+
+        .registry span:nth-child(n+2) {
+            float: right;
+            margin-left: 20px;
+        }
+
+        /* 设置copyright */
+        .copyright {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            background-color: rgb(10, 10, 10, 0.1);
+            height: 36px;
+            line-height: 36px;
+        }
+
+        .copyright span {
+
+            font-size: 12px;
+            opacity: 0.6;
+            color: #000;
+        }
+
+        .copyright a {
+            font-size: 12px;
+            color: #007DFF;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <a href="#" class="">
+            <img src="https://uniportal.huawei.com/uniportal/images/huawei_logo.png?version=2.0" alt="Logo" border="0">
+        </a>
+        <span>
+            <span><a href="#" class="">联系我们</a></span>
+            <span><a href="#" class="">帮助</a></span>
+            <span id="three">
+                <a href="#" class="">简体中文(中国)</a>
+                <ul>
+                    <li><a href="#" class="">简体中文 (中国)</a></li>
+                    <li><a href="#" class="">English (United States)</a></li>
+                    <li><a href="#" class="">français (France)</a></li>
+                    <li><a href="#" class="">Deutsch (Deutschland)</a></li>
+                    <li><a href="#" class="">italiano (Italia)</a></li>
+                    <li><a href="#" class="">español (España)</a></li>
+                    <li><a href="#" class="">Русский (Россия)</a></li>
+                    <li><a href="#" class="">Türkçe (Türkiye)</a></li>
+                    <li><a href="#" class="">português (Brasil)</a></li>
+                    <li><a href="#" class="">ไทย (ภาษาไทย)</a></li>
+                    <li><a href="#" class="">español (México)</a></li>
+                    <li><a href="#" class="">日本語 (日本)</a></li>
+                    <li><a href="#" class="">polski (Polska) </a></li>
+                    <li><a href="#" class="">Bahasa Indonesia (Indonesia)</a></li>
+                    <li><a href="#" class="">Burmese (Myanmar)</a></li>
+                    <li><a href="#" class="">العربية (المملكة العربية السعودية )</a></li>
+                    <li><a href="#" class="">Tiếng Việt (Việt Nam)</a></li>
+                    <li><a href="#" class="">فارسی (ایران)</a></li>
+                    <li><a href="#" class="">English (Malaysia)</a></li>
+                </ul>
+            </span>
+
+        </span>
+    </div>
+    <div class="title">
+        <h1>Uniportal帐号登录</h1>
+    </div>
+    <div class="body">
+        <div class="btitle">
+            <span class="emial">
+                <a href="index.html">帐号/邮箱登录</a>
+            </span>
+            <span class="phone">
+                <a href="phone.html">手机号码登录</a>
+            </span>
+            <span class="smscode">
+                <a href="#">短信登录</a>
+            </span>
+        </div>
+        <div class="inp">
+            <span>中国大陆(+86)
+                <img src="https://uniportal.huawei.com/uniportal/images/select_up.png" alt="" srcset="">
+                <ul class="hw-poplist">
+                    <li class="list-item" id=" " value="0">--请选择--</li>
+                    <li class="list-item" data-value="阿尔巴尼亚" (+355)="" id="+355">阿尔巴尼亚 (+355)</li>
+                    <li class="list-item" data-value="阿尔及利亚" (+213)="" id="+213">阿尔及利亚 (+213)</li>
+                    <li class="list-item" data-value="阿富汗" (+93)="" id="+93">阿富汗 (+93)</li>
+                    <li class="list-item" data-value="阿根廷" (+54)="" id="+54">阿根廷 (+54)</li>
+                    <li class="list-item" data-value="阿拉伯联合酋长国" (+971)="" id="+971">阿拉伯联合酋长国 (+971)</li>
+                    <li class="list-item" data-value="阿曼" (+968)="" id="+968">阿曼 (+968)</li>
+                    <li class="list-item" data-value="阿塞拜疆" (+994)="" id="+994">阿塞拜疆 (+994)</li>
+                    <li class="list-item" data-value="埃及" (+20)="" id="+20">埃及 (+20)</li>
+                    <li class="list-item" data-value="埃塞俄比亚" (+251)="" id="+251">埃塞俄比亚 (+251)</li>
+                    <li class="list-item" data-value="爱尔兰" (+353)="" id="+353">爱尔兰 (+353)</li>
+                    <li class="list-item" data-value="爱沙尼亚" (+372)="" id="+372">爱沙尼亚 (+372)</li>
+                    <li class="list-item" data-value="安道尔共和国" (+376)="" id="+376">安道尔共和国 (+376)</li>
+                    <li class="list-item" data-value="安哥拉" (+244)="" id="+244">安哥拉 (+244)</li>
+                    <li class="list-item" data-value="安提瓜和巴布达" (+1268)="" id="+1268">安提瓜和巴布达 (+1268)</li>
+                    <li class="list-item" data-value="奥地利" (+43)="" id="+43">奥地利 (+43)</li>
+                    <li class="list-item" data-value="澳大利亚" (+61)="" id="+61">澳大利亚 (+61)</li>
+                    <li class="list-item" data-value="巴布亚新几内亚" (+675)="" id="+675">巴布亚新几内亚 (+675)</li>
+                    <li class="list-item" data-value="巴哈马" (+1242)="" id="+1242">巴哈马 (+1242)</li>
+                    <li class="list-item" data-value="巴基斯坦" (+92)="" id="+92">巴基斯坦 (+92)</li>
+                    <li class="list-item" data-value="巴拉圭" (+595)="" id="+595">巴拉圭 (+595)</li>
+                    <li class="list-item" data-value="巴林" (+973)="" id="+973">巴林 (+973)</li>
+                    <li class="list-item" data-value="巴拿马" (+507)="" id="+507">巴拿马 (+507)</li>
+                    <li class="list-item" data-value="巴西" (+55)="" id="+55">巴西 (+55)</li>
+                    <li class="list-item" data-value="白俄罗斯" (+375)="" id="+375">白俄罗斯 (+375)</li>
+                    <li class="list-item" data-value="保加利亚" (+359)="" id="+359">保加利亚 (+359)</li>
+                    <li class="list-item" data-value="贝宁" (+229)="" id="+229">贝宁 (+229)</li>
+                    <li class="list-item" data-value="比利时" (+32)="" id="+32">比利时 (+32)</li>
+                    <li class="list-item" data-value="冰岛" (+354)="" id="+354">冰岛 (+354)</li>
+                    <li class="list-item" data-value="波兰" (+48)="" id="+48">波兰 (+48)</li>
+                    <li class="list-item" data-value="波斯尼亚黑塞哥维那" (+387)="" id="+387">波斯尼亚黑塞哥维那 (+387)</li>
+                    <li class="list-item" data-value="玻利维亚" (+591)="" id="+591">玻利维亚 (+591)</li>
+                    <li class="list-item" data-value="伯利兹" (+501)="" id="+501">伯利兹 (+501)</li>
+                    <li class="list-item" data-value="博茨瓦纳" (+267)="" id="+267">博茨瓦纳 (+267)</li>
+                    <li class="list-item" data-value="不丹" (+975)="" id="+975">不丹 (+975)</li>
+                    <li class="list-item" data-value="布基纳法索" (+226)="" id="+226">布基纳法索 (+226)</li>
+                    <li class="list-item" data-value="布隆迪" (+257)="" id="+257">布隆迪 (+257)</li>
+                    <li class="list-item" data-value="朝鲜" (+850)="" id="+850">朝鲜 (+850)</li>
+                    <li class="list-item" data-value="赤道几内亚" (+240)="" id="+240">赤道几内亚 (+240)</li>
+                    <li class="list-item" data-value="丹麦" (+45)="" id="+45">丹麦 (+45)</li>
+                    <li class="list-item" data-value="德国" (+49)="" id="+49">德国 (+49)</li>
+                    <li class="list-item" data-value="多哥" (+228)="" id="+228">多哥 (+228)</li>
+                    <li class="list-item" data-value="多米尼加共和国" (+1809)="" id="+1809">多米尼加共和国 (+1809)</li>
+                    <li class="list-item" data-value="俄罗斯" (+7)="" id="+7">俄罗斯 (+7)</li>
+                    <li class="list-item" data-value="厄瓜多尔" (+593)="" id="+593">厄瓜多尔 (+593)</li>
+                    <li class="list-item" data-value="法国" (+33)="" id="+33">法国 (+33)</li>
+                    <li class="list-item" data-value="菲律宾" (+63)="" id="+63">菲律宾 (+63)</li>
+                    <li class="list-item" data-value="斐济" (+679)="" id="+679">斐济 (+679)</li>
+                    <li class="list-item" data-value="芬兰" (+358)="" id="+358">芬兰 (+358)</li>
+                    <li class="list-item" data-value="冈比亚" (+220)="" id="+220">冈比亚 (+220)</li>
+                    <li class="list-item" data-value="刚果" (+242)="" id="+242">刚果 (+242)</li>
+                    <li class="list-item" data-value="哥伦比亚" (+57)="" id="+57">哥伦比亚 (+57)</li>
+                    <li class="list-item" data-value="哥斯达黎加" (+506)="" id="+506">哥斯达黎加 (+506)</li>
+                    <li class="list-item" data-value="格林纳达" (+1473)="" id="+1473">格林纳达 (+1473)</li>
+                    <li class="list-item" data-value="格鲁吉亚" (+995)="" id="+995">格鲁吉亚 (+995)</li>
+                    <li class="list-item" data-value="古巴" (+53)="" id="+53">古巴 (+53)</li>
+                    <li class="list-item" data-value="圭亚那" (+592)="" id="+592">圭亚那 (+592)</li>
+                    <li class="list-item" data-value="哈萨克斯坦" (+7)="" id="+7">哈萨克斯坦 (+7)</li>
+                    <li class="list-item" data-value="海地" (+509)="" id="+509">海地 (+509)</li>
+                    <li class="list-item" data-value="韩国" (+82)="" id="+82">韩国 (+82)</li>
+                    <li class="list-item" data-value="荷兰" (+31)="" id="+31">荷兰 (+31)</li>
+                    <li class="list-item" data-value="荷属安的列斯" (+599)="" id="+599">荷属安的列斯 (+599)</li>
+                    <li class="list-item" data-value="黑山共和国" (+382)="" id="+382">黑山共和国 (+382)</li>
+                    <li class="list-item" data-value="洪都拉斯" (+504)="" id="+504">洪都拉斯 (+504)</li>
+                    <li class="list-item" data-value="吉布提" (+253)="" id="+253">吉布提 (+253)</li>
+                    <li class="list-item" data-value="吉尔吉斯坦" (+996)="" id="+996">吉尔吉斯坦 (+996)</li>
+                    <li class="list-item" data-value="几内亚" (+224)="" id="+224">几内亚 (+224)</li>
+                    <li class="list-item" data-value="加拿大" (+1)="" id="+1">加拿大 (+1)</li>
+                    <li class="list-item" data-value="加纳" (+233)="" id="+233">加纳 (+233)</li>
+                    <li class="list-item" data-value="加蓬" (+241)="" id="+241">加蓬 (+241)</li>
+                    <li class="list-item" data-value="柬埔寨" (+855)="" id="+855">柬埔寨 (+855)</li>
+                    <li class="list-item" data-value="捷克" (+420)="" id="+420">捷克 (+420)</li>
+                    <li class="list-item" data-value="津巴布韦" (+263)="" id="+263">津巴布韦 (+263)</li>
+                    <li class="list-item" data-value="喀麦隆" (+237)="" id="+237">喀麦隆 (+237)</li>
+                    <li class="list-item" data-value="卡塔尔" (+974)="" id="+974">卡塔尔 (+974)</li>
+                    <li class="list-item" data-value="科特迪瓦" (+225)="" id="+225">科特迪瓦 (+225)</li>
+                    <li class="list-item" data-value="科威特" (+965)="" id="+965">科威特 (+965)</li>
+                    <li class="list-item" data-value="克罗地亚" (+385)="" id="+385">克罗地亚 (+385)</li>
+                    <li class="list-item" data-value="肯尼亚" (+254)="" id="+254">肯尼亚 (+254)</li>
+                    <li class="list-item" data-value="库拉索" (+599)="" id="+599">库拉索 (+599)</li>
+                    <li class="list-item" data-value="拉脱维亚" (+371)="" id="+371">拉脱维亚 (+371)</li>
+                    <li class="list-item" data-value="莱索托" (+266)="" id="+266">莱索托 (+266)</li>
+                    <li class="list-item" data-value="老挝" (+856)="" id="+856">老挝 (+856)</li>
+                    <li class="list-item" data-value="黎巴嫩" (+961)="" id="+961">黎巴嫩 (+961)</li>
+                    <li class="list-item" data-value="立陶宛" (+370)="" id="+370">立陶宛 (+370)</li>
+                    <li class="list-item" data-value="利比里亚" (+231)="" id="+231">利比里亚 (+231)</li>
+                    <li class="list-item" data-value="利比亚" (+218)="" id="+218">利比亚 (+218)</li>
+                    <li class="list-item" data-value="列支敦士登" (+423)="" id="+423">列支敦士登 (+423)</li>
+                    <li class="list-item" data-value="卢森堡" (+352)="" id="+352">卢森堡 (+352)</li>
+                    <li class="list-item" data-value="卢旺达共和国" (+250)="" id="+250">卢旺达共和国 (+250)</li>
+                    <li class="list-item" data-value="罗马尼亚" (+40)="" id="+40">罗马尼亚 (+40)</li>
+                    <li class="list-item" data-value="马达加斯加" (+261)="" id="+261">马达加斯加 (+261)</li>
+                    <li class="list-item" data-value="马尔代夫" (+960)="" id="+960">马尔代夫 (+960)</li>
+                    <li class="list-item" data-value="马耳他" (+356)="" id="+356">马耳他 (+356)</li>
+                    <li class="list-item" data-value="马拉维" (+265)="" id="+265">马拉维 (+265)</li>
+                    <li class="list-item" data-value="马来西亚" (+60)="" id="+60">马来西亚 (+60)</li>
+                    <li class="list-item" data-value="马里" (+223)="" id="+223">马里 (+223)</li>
+                    <li class="list-item" data-value="马其顿" (+389)="" id="+389">马其顿 (+389)</li>
+                    <li class="list-item" data-value="毛里求斯" (+230)="" id="+230">毛里求斯 (+230)</li>
+                    <li class="list-item" data-value="毛里塔尼亚" (+222)="" id="+222">毛里塔尼亚 (+222)</li>
+                    <li class="list-item" data-value="美国" (+1)="" id="+1">美国 (+1)</li>
+                    <li class="list-item" data-value="蒙古" (+976)="" id="+976">蒙古 (+976)</li>
+                    <li class="list-item" data-value="孟加拉国" (+880)="" id="+880">孟加拉国 (+880)</li>
+                    <li class="list-item" data-value="秘鲁" (+51)="" id="+51">秘鲁 (+51)</li>
+                    <li class="list-item" data-value="缅甸" (+95)="" id="+95">缅甸 (+95)</li>
+                    <li class="list-item" data-value="民主刚果" (+243)="" id="+243">民主刚果 (+243)</li>
+                    <li class="list-item" data-value="摩尔多瓦" (+373)="" id="+373">摩尔多瓦 (+373)</li>
+                    <li class="list-item" data-value="摩洛哥" (+212)="" id="+212">摩洛哥 (+212)</li>
+                    <li class="list-item" data-value="摩纳哥" (+377)="" id="+377">摩纳哥 (+377)</li>
+                    <li class="list-item" data-value="莫桑比克" (+258)="" id="+258">莫桑比克 (+258)</li>
+                    <li class="list-item" data-value="墨西哥" (+52)="" id="+52">墨西哥 (+52)</li>
+                    <li class="list-item" data-value="纳米比亚" (+264)="" id="+264">纳米比亚 (+264)</li>
+                    <li class="list-item" data-value="南非" (+27)="" id="+27">南非 (+27)</li>
+                    <li class="list-item" data-value="尼泊尔" (+977)="" id="+977">尼泊尔 (+977)</li>
+                    <li class="list-item" data-value="尼加拉瓜" (+505)="" id="+505">尼加拉瓜 (+505)</li>
+                    <li class="list-item" data-value="尼日尔" (+227)="" id="+227">尼日尔 (+227)</li>
+                    <li class="list-item" data-value="尼日利亚" (+234)="" id="+234">尼日利亚 (+234)</li>
+                    <li class="list-item" data-value="挪威" (+47)="" id="+47">挪威 (+47)</li>
+                    <li class="list-item" data-value="葡萄牙" (+351)="" id="+351">葡萄牙 (+351)</li>
+                    <li class="list-item" data-value="日本" (+81)="" id="+81">日本 (+81)</li>
+                    <li class="list-item" data-value="瑞典" (+46)="" id="+46">瑞典 (+46)</li>
+                    <li class="list-item" data-value="瑞士" (+41)="" id="+41">瑞士 (+41)</li>
+                    <li class="list-item" data-value="萨尔瓦多" (+503)="" id="+503">萨尔瓦多 (+503)</li>
+                    <li class="list-item" data-value="塞尔维亚" (+381)="" id="+381">塞尔维亚 (+381)</li>
+                    <li class="list-item" data-value="塞拉利昂" (+232)="" id="+232">塞拉利昂 (+232)</li>
+                    <li class="list-item" data-value="塞内加尔" (+221)="" id="+221">塞内加尔 (+221)</li>
+                    <li class="list-item" data-value="塞浦路斯" (+357)="" id="+357">塞浦路斯 (+357)</li>
+                    <li class="list-item" data-value="塞舌尔" (+248)="" id="+248">塞舌尔 (+248)</li>
+                    <li class="list-item" data-value="沙特阿拉伯" (+966)="" id="+966">沙特阿拉伯 (+966)</li>
+                    <li class="list-item" data-value="圣多美和普林西比" (+239)="" id="+239">圣多美和普林西比 (+239)</li>
+                    <li class="list-item" data-value="圣马力诺" (+378)="" id="+378">圣马力诺 (+378)</li>
+                    <li class="list-item" data-value="斯里兰卡" (+94)="" id="+94">斯里兰卡 (+94)</li>
+                    <li class="list-item" data-value="斯洛伐克" (+421)="" id="+421">斯洛伐克 (+421)</li>
+                    <li class="list-item" data-value="斯洛文尼亚" (+386)="" id="+386">斯洛文尼亚 (+386)</li>
+                    <li class="list-item" data-value="斯威士兰" (+268)="" id="+268">斯威士兰 (+268)</li>
+                    <li class="list-item" data-value="苏丹" (+249)="" id="+249">苏丹 (+249)</li>
+                    <li class="list-item" data-value="苏里南" (+597)="" id="+597">苏里南 (+597)</li>
+                    <li class="list-item" data-value="塔吉克斯坦" (+992)="" id="+992">塔吉克斯坦 (+992)</li>
+                    <li class="list-item" data-value="泰国" (+66)="" id="+66">泰国 (+66)</li>
+                    <li class="list-item" data-value="坦桑尼亚" (+255)="" id="+255">坦桑尼亚 (+255)</li>
+                    <li class="list-item" data-value="汤加" (+676)="" id="+676">汤加 (+676)</li>
+                    <li class="list-item" data-value="特立尼达和多巴哥" (+1868)="" id="+1868">特立尼达和多巴哥 (+1868)</li>
+                    <li class="list-item" data-value="突尼斯" (+216)="" id="+216">突尼斯 (+216)</li>
+                    <li class="list-item" data-value="土耳其" (+90)="" id="+90">土耳其 (+90)</li>
+                    <li class="list-item" data-value="土库曼斯坦" (+993)="" id="+993">土库曼斯坦 (+993)</li>
+                    <li class="list-item" data-value="危地马拉" (+502)="" id="+502">危地马拉 (+502)</li>
+                    <li class="list-item" data-value="委内瑞拉" (+58)="" id="+58">委内瑞拉 (+58)</li>
+                    <li class="list-item" data-value="文莱" (+673)="" id="+673">文莱 (+673)</li>
+                    <li class="list-item" data-value="乌干达" (+256)="" id="+256">乌干达 (+256)</li>
+                    <li class="list-item" data-value="乌克兰" (+380)="" id="+380">乌克兰 (+380)</li>
+                    <li class="list-item" data-value="乌拉圭" (+598)="" id="+598">乌拉圭 (+598)</li>
+                    <li class="list-item" data-value="乌兹别克斯坦" (+998)="" id="+998">乌兹别克斯坦 (+998)</li>
+                    <li class="list-item" data-value="西班牙" (+34)="" id="+34">西班牙 (+34)</li>
+                    <li class="list-item" data-value="希腊" (+30)="" id="+30">希腊 (+30)</li>
+                    <li class="list-item" data-value="新加坡" (+65)="" id="+65">新加坡 (+65)</li>
+                    <li class="list-item" data-value="新西兰" (+64)="" id="+64">新西兰 (+64)</li>
+                    <li class="list-item" data-value="匈牙利" (+36)="" id="+36">匈牙利 (+36)</li>
+                    <li class="list-item" data-value="叙利亚" (+963)="" id="+963">叙利亚 (+963)</li>
+                    <li class="list-item" data-value="牙买加" (+1876)="" id="+1876">牙买加 (+1876)</li>
+                    <li class="list-item" data-value="亚美尼亚" (+374)="" id="+374">亚美尼亚 (+374)</li>
+                    <li class="list-item" data-value="也门" (+967)="" id="+967">也门 (+967)</li>
+                    <li class="list-item" data-value="伊拉克" (+964)="" id="+964">伊拉克 (+964)</li>
+                    <li class="list-item" data-value="伊朗" (+98)="" id="+98">伊朗 (+98)</li>
+                    <li class="list-item" data-value="以色列" (+972)="" id="+972">以色列 (+972)</li>
+                    <li class="list-item" data-value="意大利" (+39)="" id="+39">意大利 (+39)</li>
+                    <li class="list-item" data-value="印度" (+91)="" id="+91">印度 (+91)</li>
+                    <li class="list-item" data-value="印度尼西亚" (+62)="" id="+62">印度尼西亚 (+62)</li>
+                    <li class="list-item" data-value="英国" (+44)="" id="+44">英国 (+44)</li>
+                    <li class="list-item" data-value="约旦" (+962)="" id="+962">约旦 (+962)</li>
+                    <li class="list-item" data-value="越南" (+84)="" id="+84">越南 (+84)</li>
+                    <li class="list-item" data-value="赞比亚" (+260)="" id="+260">赞比亚 (+260)</li>
+                    <li class="list-item" data-value="乍得" (+235)="" id="+235">乍得 (+235)</li>
+                    <li class="list-item" data-value="智利" (+56)="" id="+56">智利 (+56)</li>
+                    <li class="list-item" data-value="中非共和国" (+236)="" id="+236">中非共和国 (+236)</li>
+                    <li class="list-item" data-value="中国澳门" (+853)="" id="+853">中国澳门 (+853)</li>
+                    <li class="list-item" data-value="中国大陆" (+86)="" id="+86">中国大陆 (+86)</li>
+                    <li class="list-item" data-value="中国台湾" (+886)="" id="+886">中国台湾 (+886)</li>
+                    <li class="list-item" data-value="中国香港" (+852)="" id="+852">中国香港 (+852)</li>
+                </ul>
+            </span>
+            <input type="text" size="20" class="input" placeholder="手机号"><br />
+            <input type="password" class="pwinput" placeholder="短信验证码">
+            <span><a href="#" class="">获取验证码</a></span>
+            <input type="submit" value="登入">
+        </div>
+        <div class="registry">
+            <span><a href="#" class="">立即注册</a></span>
+            <span><a href="#" class="">修改密码</a></span>
+            <span><a href="#" class="">忘记密码</a></span>
+        </div>
+    </div>
+    <div class="copyright">
+        <span class="">版权所有 &copy; 华为技术有限公司 1998-2021。保留一切权利。粤A2-20044005号</span>
+        <a href="#" class="">隐私声明</a>
+    </div>
+</body>
+
+</html>

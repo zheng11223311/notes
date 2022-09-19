@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>过度</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        body{
+            background-color: #f5f5f5;
+        }
+        .content{
+            margin: 50px auto;
+            width: 235px;
+            height: 300px;
+            background-color: #fff;
+            text-align: center;
+            transition: all 0.5s;
+        }
+        .content img{
+            /* padding-left: calc((235px - 160px) / 2); */
+            padding-top: 30px;
+            width: 160px;
+            height: 160px;
+        }
+        .content p{
+            padding-top: 5px;
+        }
+        .content p:nth-of-type(2){
+            font-size: 12px;
+            color: #ccc;
+        }
+        .content p:last-child{
+            padding-top: 10px;
+        }
+        .content p:last-child span{
+            padding-right:10px;
+            color: #ff6700;
+        }
+        .content p:last-child del{
+            padding-right:10px;
+            color: #ccc;
+        }
+        /* hover 效果 */
+        .content:hover{
+            margin: 40px auto;
+            /* background-color: aqua; */
+            box-shadow: 0 15px 30px #999;
+        }
+    </style>
+</head>
+<body>
+        <div class="content">
+            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/34caee2c867bfd8c5e0dc2d8c663e121.jpg?thumb=1&w=200&h=200&f=webp&q=90" alt="" srcset="">
+            <p class="">小米11 Pro</p>
+            <p class="desc">1/1.12''GN2｜骁龙888</p>
+            <p class="price"><span class="num">4499元起</span><del>4999元</del></p>
+        </div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>太极</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background-color: rgb(189, 114, 114);
+            overflow: hidden;
+        }
+        .content{
+            margin: 100px auto;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            border: #000 2px solid;
+            background-color: #FFF;
+            overflow: hidden;
+           /* background:radial-gradient(ellipse  20px 20px at 100px 100px,#000 50px,#000 50px) no-repeat 0px 0px/100px 100px,
+           radial-gradient(ellipse  20px 20px at 100px 100px,black 50px,rgb(143, 31, 31) 50px) no-repeat 0px 0px/400px 400px,
+                         radial-gradient(ellipse  20px 20px at 300px 300px, black,rgb(250, 246, 246)) no-repeat;  */
+        }
+        .top,.bottom{
+             width: 400px;
+             height: 200px;
+        }
+        .bottom{
+            background-color: #000;
+        }
+        span{
+            background-color: aqua;
+            width: 201px;
+            height: 100px;
+            box-sizing: border-box;
+            border: 2px solid black;
+            border-radius: 100px;
+            border-top-left-radius:0;
+            border-top-right-radius:0;
+            border-top: none;
+            float: left;
+            background:radial-gradient(ellipse  20px 20px at 140px 40px,#000 50px,#FFF 50px) no-repeat 0px 0px ;
+            
+        }
+        .top span{
+           transform: rotateZ(180deg);
+           margin-top: 100px;
+          background:radial-gradient(ellipse  20px 20px at 140px 40px,#FFF  50px, #000 50px) no-repeat 0px 0px ;
+        }
+        .bottom span{
+            float: right;
+        }
+         
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="top">
+            <span></span>
+        </div>
+             
+        <div class="bottom">
+            <span></span>
+        </div>
+    </div>
+</body>
+
+</html>

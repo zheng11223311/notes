@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        div{
+            position: relative;
+            width: 1226px;
+            height: 460px;
+            margin: 70px auto;
+            background: url(./img/7.jpg);
+        }
+        div.content>ul{
+            position: relative;
+            padding-top: 40px;
+            width: 234px;
+            height: 420px;
+            background-color: rgba(105,101,101,.6);
+        }
+        div.content>ul>li{
+            list-style: none;
+            width: 204px;
+            height: 42px;
+            line-height: 42px;
+            padding: 0 0 0 30px;
+            font-size: 14px;
+            color: #fff;
+        }
+        div.content>ul>li:hover{
+            background-color:#ff6700;
+        }
+        div.content>ul>li:hover div.box{
+           display: block;
+        }
+        div.content>ul>li>img{
+            float: right;
+            margin-top: 15px;
+            padding-right: 20px;
+            width: 16px;
+            height: 16px;
+        }
+        div.content>ul>li>div.box{
+            position: absolute;
+            display: none;
+            top: -70px;
+            left: 234px;
+            color: black;
+            /* width:calc(1226px - 232px); */
+            background: #fff;
+            height:458px;
+            border: 1px solid rgba(153, 153, 153, 0.404);
+            z-index: 11;
+        }
+         div.content>ul>li:nth-child(3) .box{
+             width:calc(1226px - 464px);
+         }
+         div.content>ul>li:nth-child(4) .box,
+         div.content>ul>li:nth-child(5) .box,
+         div.content>ul>li:nth-child(6) .box{
+             width:calc(1226px - 700px);
+         }
+        div.box>ul>li{
+            margin-left:48px ;
+            float: left;
+            height: 76.6px;
+            line-height: 76.6px;
+            width: 200px;
+        }
+        div.box>ul>li:hover{
+            color: #ff6700;
+        }
+        div.box>ul>li>img{
+            float: left;
+            padding-top: 20px;
+            padding-right: 15px;
+        }
+        .left,.right{
+            position: absolute;
+            width: 42px;
+            height: 65px;
+            top: 150px;
+            background: none;
+        }
+        .left{
+            left: 234px;
+        }
+        .right img,.left img{
+            display: none;
+            height: 65px;
+             width: 42px;
+        }
+        .right{
+            height: 65px;
+             width: 42px;
+            right: 0;
+            
+        }
+        .right:hover img{
+            display: block;
+        }
+        .left:hover img{
+            display: block;
+        }
+        .content>.smallbox{
+            position: absolute;
+            bottom: -40px;
+            right: 60px;
+            width: 90px;
+            height: 20px;
+            line-height: 20px;
+            background: none;
+            z-index: 10;
+        }
+        .content>.smallbox>span{
+            margin-left: 5px;
+            width: 7px;
+            height: 7px;
+            display: inline-block;
+            background-color: rgba(0, 0, 0, 0.301);
+            border: rgb(73, 72, 72) 2px solid;
+            border-radius: 7px;
+        }
+        .content>.smallbox>span:hover{
+            background-color: #fff;
+        }
+        .content>.smallbox>span:nth-child(1){
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="smallbox">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="left">
+            <img src="./img/8.png" alt="" srcset="">
+        </div>
+        <div class="right">
+            <img src="./img/9.png" alt="" srcset="">
+        </div>
+        <ul>
+            <li>手机 电话卡 
+                <img src="./img/1.png" alt="" srcset="">
+                <div class="box">
+                    <ul>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                    </ul>
+                </div>
+            </li>
+            <li>电视 盒子
+                <img src="./img/1.png" alt="" srcset="">
+                <div class="box">
+                    <ul>
+                        <li><img src="./img/3.png" alt="" class="">Redmi MAX 86”</li>
+                        <li><img src="./img/3.png" alt="" class="">Redmi MAX 86”</li>
+                        <li><img src="./img/3.png" alt="" class="">Redmi MAX 86”</li>
+                        <li><img src="./img/3.png" alt="" class="">Redmi MAX 86”</li>
+                        <li><img src="./img/3.png" alt="" class="">Redmi MAX 86”</li>
+                        <li><img src="./img/3.png" alt="" class="">Redmi MAX 86”</li>
+                        <li><img src="./img/3.png" alt="" class="">Redmi MAX 86”</li>
+                        <li><img src="./img/3.png" alt="" class="">Redmi MAX 86”</li>
+                        <li><img src="./img/3.png" alt="" class="">Redmi MAX 86”</li>
+                        <li><img src="./img/3.png" alt="" class="">Redmi MAX 86”</li>
+                        <li><img src="./img/3.png" alt="" class="">Redmi MAX 86”</li>
+                        <li><img src="./img/3.png" alt="" class="">Redmi MAX 86”</li>
+                        <li><img src="./img/3.png" alt="" class="">Redmi MAX 86”</li>
+                        <li><img src="./img/3.png" alt="" class="">Redmi MAX 86”</li>
+                        <li><img src="./img/3.png" alt="" class="">Redmi MAX 86”</li>
+                        <li><img src="./img/3.png" alt="" class="">Redmi MAX 86”</li>
+                        <li><img src="./img/3.png" alt="" class="">Redmi MAX 86”</li>
+                        <li><img src="./img/3.png" alt="" class="">Redmi MAX 86”</li>
+                        <li><img src="./img/3.png" alt="" class="">Redmi MAX 86”</li>
+                        <li><img src="./img/3.png" alt="" class="">Redmi MAX 86”</li>
+                        <li><img src="./img/3.png" alt="" class="">Redmi MAX 86”</li>
+                        <li><img src="./img/3.png" alt="" class="">Redmi MAX 86”</li>
+                        <li><img src="./img/3.png" alt="" class="">Redmi MAX 86”</li>
+                        <li><img src="./img/3.png" alt="" class="">Redmi MAX 86”</li>
+                    </ul>
+                </div>
+            </li>
+            <li>笔记本 显示器
+                <img src="./img/1.png" alt="" srcset="">
+                <div class="box">
+                    <ul>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                      
+                    </ul>
+                </div>
+            </li>
+            <li>家电 插线板
+                <img src="./img/1.png" alt="" srcset="">
+                <div class="box">
+                    <ul>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                       
+                    </ul>
+                </div>
+            </li>
+            <li>出行 穿戴
+                <img src="./img/1.png" alt="" srcset="">
+                <div class="box">
+                    <ul>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        
+                    </ul>
+                </div>
+            </li>
+            <li>智能 路由器
+                <img src="./img/1.png" alt="" srcset="">
+                <div class="box">
+                    <ul>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        
+                    </ul>
+                </div>
+            </li>
+            <li>电源 配件
+                <img src="./img/1.png" alt="" srcset="">
+                <div class="box">
+                    <ul>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                    </ul>
+                </div>
+            </li>
+            <li>健康 儿童
+                <img src="./img/1.png" alt="" srcset="">
+                <div class="box">
+                    <ul>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                    </ul>
+                </div>
+            </li>
+            <li>耳机 音箱
+                <img src="./img/1.png" alt="" srcset="">
+                <div class="box">
+                    <ul>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                    </ul>
+                </div>
+            </li>
+            <li>生活 箱包
+                <img src="./img/1.png" alt="" srcset="">
+                <div class="box">
+                    <ul>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                        <li><img src="./img/2.png" alt="" class="">小米MIX FOLD</li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

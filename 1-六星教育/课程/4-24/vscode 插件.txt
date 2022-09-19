@@ -1,0 +1,8 @@
+vscode常用插件：
+chinese 汉化插件
+open in browser 右键打开浏览器
+Live Server 开启自动刷新功能
+Prettier 代码格式化 让代码的展示更加美观
+vscode-icons 根据文件的后缀名来显示不同的图标
+Bracket Pair Colorizer 2 以不同颜色显示成对的括号，并用
+连线标注括号范围。简称彩虹括号。

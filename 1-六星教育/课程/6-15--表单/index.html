@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>欢迎登入华为站点</title>
+    <style>
+        /* 初始化样式 */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        /* 设置头部 */
+        .header {
+            width: 100%;
+            background-color: #000000;
+            height: 27px;
+            padding: 11px 0 10px;
+
+        }
+
+        .header>a>img {
+            margin-left: 112px;
+            width: 120px;
+            height: 26px;
+        }
+
+        .header>span {
+            float: right;
+            padding-right: 130px;
+        }
+
+        .header>span>span {
+            float: left;
+            margin-left: 30px;
+        }
+
+        .header>span>span>a {
+            font-size: 12px;
+        }
+
+        .header>span>span:nth-child(3) {
+            position: relative;
+            width: 90px;
+            height: 23px;
+            text-align: center;
+            line-height: 20px;
+            z-index: 3;
+        }
+
+
+
+        .header>span>span:nth-child(3):hover {
+            position: relative;
+            background-color: #fff;
+            z-index: 3;
+            margin-left: 28px;
+            border: 1px solid #999;
+            border-bottom: none;
+        }
+
+        .header>span>span:nth-child(3):hover a {
+            color: #000000;
+        }
+
+        /* a 标签里面不能放ul 标签 */
+        .header>span>span:nth-child(3)>ul {
+            position: absolute;
+            display: none;
+            padding: 15px;
+            box-sizing: border-box;
+            text-align: left;
+            width: 202px;
+            height: 440px;
+            background-color: #fff;
+            border: 1px solid #999;
+            border-top: none;
+        }
+
+        .header>span>span>ul>li>a {
+            color: #000000;
+            font-size: 12px;
+        }
+
+        .header>span>span:nth-child(3)>ul>li>a:hover {
+            color: #1189E6;
+        }
+
+        .header>span>span:nth-child(3):hover ul {
+            display: block;
+            right: -1px;
+            top: 22px;
+            z-index: 2;
+        }
+
+        /* 设置title */
+        .title {
+            width: 100%;
+            height: 112px;
+            line-height: 170px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        /* 设置body */
+        .body {
+            width: 100%;
+            text-align: center;
+        }
+
+        /* 设置btitle */
+        .btitle {
+            font-size: 0px;
+            color: #000000;
+
+        }
+
+        .btitle>span {
+            display: inline-block;
+            box-sizing: border-box;
+            width: 144px;
+            height: 30px;
+            line-height: 30px;
+            font-size: 14px;
+            color: #000;
+            opacity: 0.5;
+            border-bottom: #dddddd 2px solid;
+        }
+
+        .btitle>span>a {
+            color: #000;
+
+        }
+
+        .btitle>span:nth-child(1) {
+            color: #000000;
+            font-weight: 600;
+            opacity: 1;
+            border-bottom: #F66F6A 2px solid;
+        }
+
+        /* 设置input */
+        .inp {
+            position: relative;
+            margin: 40px auto 0;
+            width: 432px;
+            height: 232px;
+        }
+
+        .inp input {
+            width: 432px;
+            height: 48px;
+            outline: none;
+            box-sizing: border-box;
+            font-size: 14px;
+            padding: 0 39px 0 16px;
+            margin-bottom: 20px;
+        }
+
+        .inp input:nth-child(-n+2):hover {
+            outline: 1px solid #000;
+        }
+
+        .inp input:nth-child(-n+2) {
+            border: 1px solid rgba(190, 189, 189, 0.5);
+
+        }
+
+        .inp input:nth-child(5) {
+            background: #F66F6A;
+            border: none;
+            border-radius: 5px;
+            font-size: 20px;
+            color: #fff;
+            margin-top: 30px;
+            cursor: pointer;
+        }
+
+        .inp img {
+            position: absolute;
+            right: 10px;
+            top: 75px;
+            width: 32px;
+            height: 32px;
+        }
+
+        .inp img:nth-child(4) {
+            opacity: 0;
+        }
+
+        .inp img:nth-child(3) {
+            z-index: 10;
+        }
+
+        .inp img:nth-child(3):hover {
+            opacity: 0;
+        }
+
+        .inp img:nth-child(3):hover~img:nth-child(4) {
+            opacity: 1;
+        }
+
+        /* 设置注册 */
+        .registry {
+            margin: 0 auto;
+            width: 432px;
+        }
+
+        .registry::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .registry span a {
+            color: #007DFF;
+            font-size: 14px;
+        }
+
+        .registry span {
+            float: left;
+        }
+
+        .registry span:nth-child(n+2) {
+            float: right;
+            margin-left: 20px;
+        }
+
+        /* 设置copyright */
+        .copyright {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            background-color: rgb(10, 10, 10, 0.1);
+            height: 36px;
+            line-height: 36px;
+        }
+
+        .copyright span {
+
+            font-size: 12px;
+            opacity: 0.6;
+            color: #000;
+        }
+
+        .copyright a {
+            font-size: 12px;
+            color: #007DFF;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <a href="#" class="">
+            <img src="https://uniportal.huawei.com/uniportal/images/huawei_logo.png?version=2.0" alt="Logo" border="0">
+        </a>
+        <span>
+            <span><a href="#" class="">联系我们</a></span>
+            <span><a href="#" class="">帮助</a></span>
+            <span id="three">
+                <a href="#" class="">简体中文(中国)</a>
+                <ul>
+                    <li><a href="#" class="">简体中文 (中国)</a></li>
+                    <li><a href="#" class="">English (United States)</a></li>
+                    <li><a href="#" class="">français (France)</a></li>
+                    <li><a href="#" class="">Deutsch (Deutschland)</a></li>
+                    <li><a href="#" class="">italiano (Italia)</a></li>
+                    <li><a href="#" class="">español (España)</a></li>
+                    <li><a href="#" class="">Русский (Россия)</a></li>
+                    <li><a href="#" class="">Türkçe (Türkiye)</a></li>
+                    <li><a href="#" class="">português (Brasil)</a></li>
+                    <li><a href="#" class="">ไทย (ภาษาไทย)</a></li>
+                    <li><a href="#" class="">español (México)</a></li>
+                    <li><a href="#" class="">日本語 (日本)</a></li>
+                    <li><a href="#" class="">polski (Polska) </a></li>
+                    <li><a href="#" class="">Bahasa Indonesia (Indonesia)</a></li>
+                    <li><a href="#" class="">Burmese (Myanmar)</a></li>
+                    <li><a href="#" class="">العربية (المملكة العربية السعودية )</a></li>
+                    <li><a href="#" class="">Tiếng Việt (Việt Nam)</a></li>
+                    <li><a href="#" class="">فارسی (ایران)</a></li>
+                    <li><a href="#" class="">English (Malaysia)</a></li>
+                </ul>
+            </span>
+
+        </span>
+    </div>
+    <div class="title">
+        <h1>Uniportal帐号登录</h1>
+    </div>
+    <div class="body">
+        <div class="btitle">
+            <span class="emial">
+                <a href="#">帐号/邮箱登录</a>
+            </span>
+            <span class="phone">
+                <a href="phone.html">手机号码登录</a>
+            </span>
+            <span class="smscode">
+                <a href="smscode.html">短信登录</a>
+            </span>
+        </div>
+        <div class="inp">
+            <input type="text" size="20" class="input" placeholder="Uniportal帐号/邮箱/W3帐号">
+            <input type="password" class="pwinput" placeholder="密码">
+            <img src="https://uniportal.huawei.com/uniportal/images/icon_eyeClose.png">
+            <img src="https://uniportal.huawei.com/uniportal/images/icon_eyeopen.png">
+            <input type="submit" value="登入">
+        </div>
+        <div class="registry">
+            <span><a href="#" class="">立即注册</a></span>
+            <span><a href="#" class="">修改密码</a></span>
+            <span><a href="#" class="">忘记密码</a></span>
+        </div>
+    </div>
+    <div class="copyright">
+        <span class="">版权所有 &copy; 华为技术有限公司 1998-2021。保留一切权利。粤A2-20044005号</span>
+        <a href="#" class="">隐私声明</a>
+    </div>
+</body>
+
+</html>

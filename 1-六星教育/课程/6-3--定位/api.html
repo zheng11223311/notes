@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电影页</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./api.js"></script>
+    <style>
+        body{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+        div {
+            margin: 5px;
+            width: 300px;
+            height: 500px;
+            text-align: center;
+            background: aqua;
+        }
+        div a{
+            text-decoration: none;
+        }
+        div p:hover{
+            text-decoration: solid;
+            color: coral;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="" ></a>
+</body>
+<script>
+    //    axios({
+    //   url:'http://haokan.hao123.com/web/video/feed?tab=yinyue_new&act=pcFeed&pd=pc&num=20&shuaxin_id=1622877220464',
+    //   method:'GET',
+    //   headers:{
+    //       'reference': '180.97.36.22:80'
+    //   }
+    // }).then(res=>{
+    //     let body=document.body
+    //     body.innerHTML=res.data
+    //   console.log(res.data);
+    // })
+    console.log(api());
+    let body =document.body
+        for( let i in api()){
+            let div =document.createElement('div')
+            div.innerHTML=`
+            <a href=`+api()[i]['url']+` >
+            <img src=`+api()[i]['cover_image_src']+` alt="" srcset="">
+            <p>`+api()[i]['excerpt']+`</p></a>
+            `
+            body.appendChild(div)
+        }
+    // let div = document.querySelector('.content')
+    // let divp = document.querySelector('.content p')
+    // let divimg = document.querySelector('.content img')
+    // console.log(divimg);
+    // divp.innerHTML = api()[0]['excerpt']
+    // divimgsrc = api()[0]['cover_image_src']
+    // console.log(divimgsrc);
+    // //    divpimg.setAttribute('src',divimgsrc)
+    // divimg.src = divimgsrc
+</script>
+
+</html>
