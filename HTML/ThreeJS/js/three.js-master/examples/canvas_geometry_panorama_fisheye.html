@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>three.js canvas - panorama fisheye demo</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<style>
+			body {
+				background-color: rgb(200,200,200);
+				margin: 0px;
+				overflow: hidden;
+			}
+
+			#info {
+				position: absolute;
+				top: 0px; width: 100%;
+				color: #ffffff;
+				padding: 5px;
+				font-family:Monospace;
+				font-size:13px;
+				font-weight: bold;
+				text-align:center;
+			}
+
+			a {
+				color: #ffffff;
+			}
+		</style>
+	</head>
+	<body>
+
+		<div id="container"></div>
+		<!-- <div id="info"><a href="http://threejs.org" target="_blank" rel="noopener">three.js</a> - panorama fisheye demo. cubemap by <a href="http://www.zfight.com/" target="_blank" rel="noopener">Jochum Skoglund</a>. (mousewheel: change fov)</div> -->
+		<div id="info"><a href="http://threejs.org" target="_blank" rel="noopener">three.js</a> - 全景鱼眼演示. cubemap by <a href="http://www.zfight.com/" target="_blank" rel="noopener">Jochum Skoglund</a>. (mousewheel: change fov)</div>
+
+		<script src="../build/three.js"></script>
+
+		<script src="js/renderers/Projector.js"></script>
+		<script src="js/renderers/CanvasRenderer.js"></script>
+
+		<script>
+
+
+			// 全景原理:正方体六面贴上贴图,相机位置放在正方体中,观察到的是全景,房间的效果也是如此
+			// 也可以是一个球体
+			var camera, scene, renderer;
+
+			var texture_placeholder,
+			isUserInteracting = false,
+			onMouseDownMouseX = 0, onMouseDownMouseY = 0,
+			lon = 90, onMouseDownLon = 0,
+			lat = 0, onMouseDownLat = 0,
+			phi = 0, theta = 0,
+			target = new THREE.Vector3();
+
+			init();
+			animate();
+
+			function init() {
+
+				var container, mesh;
+
+				container = document.getElementById( 'container' );
+
+				camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 1100 );
+
+				scene = new THREE.Scene();
+
+				texture_placeholder = document.createElement( 'canvas' );
+				texture_placeholder.width = 128;
+				texture_placeholder.height = 128;
+
+				var context = texture_placeholder.getContext( '2d' );
+				context.fillStyle = 'rgb( 200, 200, 200 )';
+				context.fillRect( 0, 0, texture_placeholder.width, texture_placeholder.height );
+
+				var materials = [
+
+					loadTexture( 'textures/cube/skybox/px.jpg' ), // right
+					loadTexture( 'textures/cube/skybox/nx.jpg' ), // left
+					loadTexture( 'textures/cube/skybox/py.jpg' ), // top
+					loadTexture( 'textures/cube/skybox/ny.jpg' ), // bottom
+					loadTexture( 'textures/cube/skybox/pz.jpg' ), // back
+					loadTexture( 'textures/cube/skybox/nz.jpg' ) // front
+
+				];
+
+				var geometry = new THREE.BoxGeometry( 300, 300, 300, 7,7,7 );	//分段越多,那边越趋向于圆,长宽高都趋向圆时,就是一个球体,前提是vertex.normalize(); 将坐标初始化为1单位
+				geometry.scale( - 1, 1, 1 );
+
+				mesh = new THREE.Mesh( geometry, materials );
+				scene.add( mesh );
+
+				console.log(mesh.geometry.vertices);	//vertices 顶点  296/3=   296 是因为分段数多
+				// (296) [Vector3, Vector3, Vector3, Vector3, Vector3, Vector3, Vector3, Vector3, Vector3, Vector3, Vector3, Vector3, Vector3, Vector3, Vector3, Vector3, Vector3, Vector3, Vector3, Vector3, Vector3, Vector3, Vector3, Vector3, Vector3, Vector3, Vector3, Vector3, Vector3, Vector3, Vector3...]
+				for ( var i = 0, l = mesh.geometry.vertices.length; i < l; i ++ ) {
+
+					var vertex = mesh.geometry.vertices[ i ];
+
+					// 将该向量转换为单位向量（unit vector）， 也就是说，将该向量的方向设置为和原向量相同，但是其长度（length）为1。
+					vertex.normalize();
+					// function () {
+						// return this.divideScalar( this.length() || 1 );
+						// }
+
+						// divideScalar
+						//function ( scalar ) {
+						// return this.multiplyScalar( 1 / scalar );
+						// }
+						
+						// multiplyScalar
+						// function ( scalar ) {
+						// this.x *= scalar;
+						// this.y *= scalar;
+						// this.z *= scalar;
+						// return this;
+						// }
+					vertex.multiplyScalar( 550 ); //放大
+					// vertex.multiplyScalar( 55 );	//球体,水滴
+
+				}
+
+				renderer = new THREE.CanvasRenderer();
+				renderer.setPixelRatio( window.devicePixelRatio );
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				container.appendChild( renderer.domElement );
+
+				document.addEventListener( 'mousedown', onDocumentMouseDown, false );
+				document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+				document.addEventListener( 'mouseup', onDocumentMouseUp, false );
+				document.addEventListener( 'wheel', onDocumentMouseWheel, false );
+
+				document.addEventListener( 'touchstart', onDocumentTouchStart, false );
+				document.addEventListener( 'touchmove', onDocumentTouchMove, false );
+
+				//
+
+				window.addEventListener( 'resize', onWindowResize, false );
+
+			}
+
+			function onWindowResize() {
+
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+
+				renderer.setSize( window.innerWidth, window.innerHeight );
+
+			}
+
+			function loadTexture( path ) {
+
+				// 初始化贴图
+				var texture = new THREE.Texture( texture_placeholder );
+				// map 使用贴图
+				var material = new THREE.MeshBasicMaterial( { map: texture, overdraw: 0.5 } );
+
+				var image = new Image();
+				image.onload = function () {
+
+					texture.image = this;
+					texture.needsUpdate = true;
+
+				};
+				image.src = path;
+
+				return material;
+
+			}
+
+			function onDocumentMouseDown( event ) {
+
+				event.preventDefault();
+
+				isUserInteracting = true;		//允许用户操作视角
+
+				onPointerDownPointerX = event.clientX;
+				onPointerDownPointerY = event.clientY;
+
+				onPointerDownLon = lon;
+				onPointerDownLat = lat;
+
+			}
+
+			function onDocumentMouseMove( event ) {
+
+				if ( isUserInteracting === true ) {
+
+					lon = ( onPointerDownPointerX - event.clientX ) * 0.1 + onPointerDownLon;
+					lat = ( event.clientY - onPointerDownPointerY ) * 0.1 + onPointerDownLat;
+
+				}
+			}
+
+			function onDocumentMouseUp( event ) {
+
+				isUserInteracting = false;
+
+			}
+
+			function onDocumentMouseWheel( event ) {
+
+				var fov = camera.fov + event.deltaY * 0.05;
+
+				camera.fov = THREE.Math.clamp( fov, 10, 75 );
+
+				camera.updateProjectionMatrix();
+
+			}
+
+			function onDocumentTouchStart( event ) {
+
+				if ( event.touches.length == 1 ) {
+
+					event.preventDefault();
+
+					onPointerDownPointerX = event.touches[ 0 ].pageX;
+					onPointerDownPointerY = event.touches[ 0 ].pageY;
+
+					onPointerDownLon = lon;
+					onPointerDownLat = lat;
+
+				}
+
+			}
+
+			function onDocumentTouchMove( event ) {
+
+				if ( event.touches.length == 1 ) {
+
+					event.preventDefault();
+
+					lon = ( onPointerDownPointerX - event.touches[0].pageX ) * 0.1 + onPointerDownLon;
+					lat = ( event.touches[0].pageY - onPointerDownPointerY ) * 0.1 + onPointerDownLat;
+
+				}
+
+			}
+
+			function animate() {
+
+				requestAnimationFrame( animate );
+				update();
+
+			}
+
+			function update() {
+
+				if ( isUserInteracting === false ) {
+
+					lon += 0.1;
+
+				}
+
+				lat = Math.max( - 85, Math.min( 85, lat ) );
+				phi = THREE.Math.degToRad( 90 - lat );	//角度转弧度
+				// console.log(THREE.Math.degToRad);
+				// ƒ ( degrees ) {
+				// return degrees * _Math.DEG2RAD;
+				// }
+				theta = THREE.Math.degToRad( lon );		
+
+				target.x = 500 * Math.sin( phi ) * Math.cos( theta );
+				target.y = 500 * Math.cos( phi );
+				target.z = 500 * Math.sin( phi ) * Math.sin( theta );
+
+				camera.position.copy( target ).negate();
+				camera.lookAt( target );
+
+				renderer.render( scene, camera );
+
+			}
+
+		</script>
+	</body>
+</html>

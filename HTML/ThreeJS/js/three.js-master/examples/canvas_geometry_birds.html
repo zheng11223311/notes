@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>three.js canvas - geometry - birds</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<style>
+		body {
+			color: #808080;
+			font-family: Monospace;
+			font-size: 13px;
+			text-align: center;
+
+			background-color: #ffffff;
+			margin: 0px;
+			overflow: hidden;
+		}
+
+		#info {
+			position: absolute;
+			top: 0px;
+			width: 100%;
+			padding: 5px;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div id="container"></div>
+	<!-- <div id="info"><a href="http://threejs.org" target="_blank" rel="noopener">three.js</a> - birds demo</div> -->
+	<div id="info"><a href="http://threejs.org" target="_blank" rel="noopener">three.js</a> - 案例-鸟</div>
+	<!-- threejs 内核 -->
+	<script src="../build/three.js"></script>
+
+	<script src="js/renderers/Projector.js"></script>
+	<script src="js/renderers/CanvasRenderer.js"></script>
+
+	<script src="js/libs/stats.min.js"></script>
+
+	<script>
+		var Bird = function () {
+
+			var scope = this;
+			// console.log(this);	//Bird {}
+			// console.log(THREE.Geometry);
+			THREE.Geometry.call(this);
+
+			//v(5, 0, 0);  创建顶点  每一个v() 代表一个顶点坐标,每个顶点都有标识号(索引),
+			//v(5, 0, 0);第一个创建的标识号为0
+			v(5, 0, 0);
+			v(-5, -2, 1);
+			v(-5, 0, 0);
+			v(-5, -2, -1);
+
+			v(0, 2, -6);
+			v(0, 2, 6);
+			v(2, 0, 0);
+			v(-3, 0, 0); //到这里创建8个顶点,标识号为0-8
+
+			// 使用上方创建好的顶点标识,创建一个面,标识号为创建的顶点数量 0-8
+			// 这三个面确定一只鸟
+			f3(0, 2, 1);
+
+			f3(4, 7, 6);
+			f3(5, 6, 7);
+
+			//如果没有特别指明，面computeFaceNormals()和顶点geometry.computeVertexNormals(); 的法向量可以通过如下代码自动计算
+			this.computeFaceNormals();
+
+			function v(x, y, z) {
+				// vertices 顶点   
+				// new THREE.Vector3(x, y, z) 三个值确定顶点坐标,顶点的法向量
+				//将所有创建的点添加到几何体的点的队列
+				scope.vertices.push(new THREE.Vector3(x, y, z));
+				// console.log(scope);
+			}
+
+			function f3(a, b, c) {
+				// Face3构造函数创建一个三角面
+				//将创建的面添加到几何体的面的队列
+				scope.faces.push(new THREE.Face3(a, b, c));
+
+			}
+
+		}
+		// Object.create 创建新对象(即复制原来对象数据到新对象中,复制后两者数据互不干扰)
+		Bird.prototype = Object.create(THREE.Geometry.prototype);
+		console.log(Bird.prototype);
+		// constructor 属性返回 Object 的构造函数（用于创建实例对象）
+		// 继承后,将object 重新指向自己
+		Bird.prototype.constructor = Bird;
+		console.log(Bird.prototype);
+
+		// Based on https://www.openprocessing.org/sketch/6910
+
+		// 鸟类的动作类
+		var Boid = function () {
+			// console.log(this); //Biod{} ,Boid 函数的对象
+			// 创建3维坐标
+			var vector = new THREE.Vector3(),
+				_acceleration, //加速度
+				_width = 500,
+				_height = 500,
+				_depth = 200,
+				_goal,
+				_neighborhoodRadius = 100,
+				_maxSpeed = 4,
+				_maxSteerForce = 0.1, //方向操纵力
+				_avoidWalls = false;
+
+			// console.log(this.position);	//undefined
+			this.position = new THREE.Vector3();
+			// console.log(this.velocity);//undefined
+			this.velocity = new THREE.Vector3();
+			_acceleration = new THREE.Vector3();
+
+			// console.log(this.setGoal);	//undefined
+			this.setGoal = function (target) {
+
+				_goal = target;
+
+			};
+
+			this.setAvoidWalls = function (value) {
+
+				_avoidWalls = value;
+
+			};
+
+			this.setWorldSize = function (width, height, depth) {
+
+				_width = width;
+				_height = height;
+				_depth = depth;
+
+			};
+			// 鸟类飞翔
+			this.run = function (boids) {
+
+				if (_avoidWalls) {
+
+					// 设置三维坐标的值
+					vector.set(-_width, this.position.y, this.position.z);
+					vector = this.avoid(vector);
+					console.log(vector);
+					// console.log( this.avoid);
+					// ƒ (target) {
+					// var steer = new THREE.Vector3();
+					// steer.copy(this.position);		//复制顶点值
+					// steer.sub(target);		//xyz 值减等于传入的顶点xyz
+					// steer.multiplyScalar(1 / this.position.distanceToSquared(target));	//乘等于
+					// return steer;
+					// }
+					vector.multiplyScalar(5);	
+					_acceleration.add(vector);		//加等于
+
+					vector.set(_width, this.position.y, this.position.z);
+					vector = this.avoid(vector);
+					vector.multiplyScalar(5);
+					_acceleration.add(vector);
+
+					vector.set(this.position.x, -_height, this.position.z);
+					vector = this.avoid(vector);
+					vector.multiplyScalar(5);
+					_acceleration.add(vector);
+
+					vector.set(this.position.x, _height, this.position.z);
+					vector = this.avoid(vector);
+					vector.multiplyScalar(5);
+					_acceleration.add(vector);
+
+					vector.set(this.position.x, this.position.y, -_depth);
+					vector = this.avoid(vector);
+					vector.multiplyScalar(5);
+					_acceleration.add(vector);
+
+					vector.set(this.position.x, this.position.y, _depth);
+					vector = this.avoid(vector);
+					vector.multiplyScalar(5);
+					_acceleration.add(vector);
+
+				}
+				/* else {
+
+										this.checkBounds();
+
+									}
+									*/
+
+				if (Math.random() > 0.5) {
+
+					this.flock(boids);
+
+				}
+
+				this.move();
+
+			};
+
+			this.flock = function (boids) {
+
+				if (_goal) {
+
+					_acceleration.add(this.reach(_goal, 0.005));
+
+				}
+
+				_acceleration.add(this.alignment(boids));
+				_acceleration.add(this.cohesion(boids));
+				_acceleration.add(this.separation(boids));
+
+			};
+
+			this.move = function () {
+
+				this.velocity.add(_acceleration);
+
+				var l = this.velocity.length();
+
+				if (l > _maxSpeed) {
+
+					this.velocity.divideScalar(l / _maxSpeed);
+
+				}
+
+				this.position.add(this.velocity);
+				_acceleration.set(0, 0, 0);
+
+			};
+
+			this.checkBounds = function () {
+
+				if (this.position.x > _width) this.position.x = -_width;
+				if (this.position.x < -_width) this.position.x = _width;
+				if (this.position.y > _height) this.position.y = -_height;
+				if (this.position.y < -_height) this.position.y = _height;
+				if (this.position.z > _depth) this.position.z = -_depth;
+				if (this.position.z < -_depth) this.position.z = _depth;
+
+			};
+
+			//
+
+			this.avoid = function (target) {
+
+				var steer = new THREE.Vector3();
+
+				steer.copy(this.position);
+				steer.sub(target);
+
+				steer.multiplyScalar(1 / this.position.distanceToSquared(target));
+
+				return steer;
+
+			};
+			// repulse 计算击退多少   用于鼠标移动击退效果
+			this.repulse = function (target) {	//target 鼠标的三维坐标Vector3 
+				// console.log(target);
+				// console.log(this.position);  // 当前鸟的三维坐标Vector3 
+				// this.position.distanceTo(target);  计算两个三维坐标之间的距离多远
+				var distance = this.position.distanceTo(target);
+
+				if (distance < 150) {
+					// steer 驾驶 操作
+					var steer = new THREE.Vector3();
+					// console.log(steer);	//Vector3 {x: 0, y: 0, z: 0}
+					// console.log(steer.subVectors);
+					// subVectors 子向量
+					steer.subVectors(this.position, target);
+					// subVectors 函数如下 , 将位置差值赋给当前steer 的位置
+					// ƒ ( a, b ) {
+							// 	this.x = a.x - b.x;
+							// 	this.y = a.y - b.y;
+							// 	this.z = a.z - b.z;
+							// 	return this;
+						// }
+
+
+					steer.multiplyScalar(0.5 / distance);
+					// console.log(steer.multiplyScalar);
+					//multiplyScalar 缩放当前steer 的大小 
+					// ƒ ( scalar ) {
+					// this.x *= scalar;
+					// this.y *= scalar;
+					// this.z *= scalar;
+					// return this;
+					// }
+
+						// console.log(_acceleration);		//Vector3 
+					_acceleration.add(steer);		//	
+					//  add 函数
+					// function ( v, w ) {
+					// 	if ( w !== undefined ) {
+					// 		console.warn( 'THREE.Vector3: .add() now only accepts one argument. Use .addVectors( a, b ) instead.' );
+					// 		return this.addVectors( v, w );
+					// 	}
+					// 	this.x += v.x;
+					// 	this.y += v.y;
+					// 	this.z += v.z;
+					// 	return this;
+					// 	}
+
+				}
+
+			};
+
+			this.reach = function (target, amount) {
+
+				var steer = new THREE.Vector3();
+
+				steer.subVectors(target, this.position);
+				steer.multiplyScalar(amount);
+
+				return steer;
+
+			};
+
+			this.alignment = function (boids) {
+
+				var count = 0;
+				var velSum = new THREE.Vector3();
+
+				for (var i = 0, il = boids.length; i < il; i++) {
+
+					if (Math.random() > 0.6) continue;
+
+					var boid = boids[i];
+					var distance = boid.position.distanceTo(this.position);
+
+					if (distance > 0 && distance <= _neighborhoodRadius) {
+
+						velSum.add(boid.velocity);
+						count++;
+
+					}
+
+				}
+
+				if (count > 0) {
+
+					velSum.divideScalar(count);
+
+					var l = velSum.length();
+
+					if (l > _maxSteerForce) {
+
+						velSum.divideScalar(l / _maxSteerForce);
+
+					}
+
+				}
+
+				return velSum;
+
+			};
+
+			this.cohesion = function (boids) {
+
+				var count = 0;
+				var posSum = new THREE.Vector3();
+				var steer = new THREE.Vector3();
+
+				for (var i = 0, il = boids.length; i < il; i++) {
+
+					if (Math.random() > 0.6) continue;
+
+					var boid = boids[i];
+					var distance = boid.position.distanceTo(this.position);
+
+					if (distance > 0 && distance <= _neighborhoodRadius) {
+
+						posSum.add(boid.position);
+						count++;
+
+					}
+
+				}
+
+				if (count > 0) {
+
+					posSum.divideScalar(count);
+
+				}
+
+				steer.subVectors(posSum, this.position);
+
+				var l = steer.length();
+
+				if (l > _maxSteerForce) {
+
+					steer.divideScalar(l / _maxSteerForce);
+
+				}
+
+				return steer;
+
+			};
+
+			this.separation = function (boids) {
+
+				var posSum = new THREE.Vector3();
+				var repulse = new THREE.Vector3();
+
+				for (var i = 0, il = boids.length; i < il; i++) {
+
+					if (Math.random() > 0.6) continue;
+
+					var boid = boids[i];
+					var distance = boid.position.distanceTo(this.position);
+
+					if (distance > 0 && distance <= _neighborhoodRadius) {
+
+						repulse.subVectors(this.position, boid.position);
+						repulse.normalize();
+						repulse.divideScalar(distance);
+						posSum.add(repulse);
+
+					}
+
+				}
+
+				return posSum;
+
+			}
+
+		}
+	</script>
+
+	<script>
+		var SCREEN_WIDTH = window.innerWidth,
+			SCREEN_HEIGHT = window.innerHeight,
+			SCREEN_WIDTH_HALF = SCREEN_WIDTH / 2,
+			SCREEN_HEIGHT_HALF = SCREEN_HEIGHT / 2;
+
+		var camera, scene, renderer,
+			birds, bird;
+
+		// Boids群体行为模拟
+		var boid, boids;
+
+		var stats;
+
+		init();
+		animate();
+
+		function init() {
+			// 创建相机
+			camera = new THREE.PerspectiveCamera(75, SCREEN_WIDTH / SCREEN_HEIGHT, 1, 10000);
+			// 设置z 轴位置
+			camera.position.z = 450;
+			// 创建场景
+			scene = new THREE.Scene();
+			// 场景背景颜色
+			scene.background = new THREE.Color(0xffffff);
+
+			birds = [];
+			boids = [];
+			// 循环创建200只鸟
+			for (var i = 0; i < 200; i++) {
+
+				boid = boids[i] = new Boid();
+				// boid.position 三维坐标顶点	鸟的初始坐标
+				boid.position.x = Math.random() * 400 - 200;
+				boid.position.y = Math.random() * 400 - 200;
+				boid.position.z = Math.random() * 400 - 200;
+				// velocity 速度	//鸟的初始速度
+				boid.velocity.x = Math.random() * 2 - 1;
+				boid.velocity.y = Math.random() * 2 - 1;
+				boid.velocity.z = Math.random() * 2 - 1;
+
+				boid.setAvoidWalls(true);
+				boid.setWorldSize(500, 500, 400);
+
+				bird = birds[i] = new THREE.Mesh(new Bird(), new THREE.MeshBasicMaterial({
+					color: Math.random() * 0xffffff,
+					side: THREE.DoubleSide //渲染面的两面,前面和后面
+				}));
+				// console.log(bird.phase);	//undefined
+				//phase 时期 ,没有时都变成圆锥,应该是展翅,收翅的各个时期
+				bird.phase = Math.floor(Math.random() * 62.83);
+				scene.add(bird);
+
+
+			}
+
+			// b={
+			// 	c:{
+			// 		d:1
+			// 	}
+			// }
+			// a=b.c	//c 是对象,a 直接引用c 地址
+			// a.d=10
+			// console.log(b.c.d);		//10
+			// console.log(boid); 
+			// console.log(boids);
+			// console.log(bird);
+			// console.log(birds);
+			// WebGLRenderer 和 CanvasRenderer 都是使用HTML5的 <canvas> 直接内嵌在网页中。
+			// Canvas渲染器使用相对较慢的Canvas 2D Context API来绘制场景。
+			// three.js已经将CanvasRenderer移除了。
+			renderer = new THREE.CanvasRenderer();
+			//  设置设备像素比。通常用于HiDPI设备防止模糊输出canvas。
+			renderer.setPixelRatio(window.devicePixelRatio);
+			// 设置渲染器的大小
+			renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
+
+			document.addEventListener('mousemove', onDocumentMouseMove, false);
+			document.body.appendChild(renderer.domElement); //添加到页面中
+
+			// 创建性能检测
+			stats = new Stats();
+			document.getElementById('container').appendChild(stats.dom); //添加到页面中
+
+			//
+
+			window.addEventListener('resize', onWindowResize, false);
+
+		}
+
+		function onWindowResize() {
+			// 重新设置相机的视图宽高比例
+			camera.aspect = window.innerWidth / window.innerHeight;
+			// 更新相机
+			camera.updateProjectionMatrix();
+			// 重新设置渲染器的大小
+			renderer.setSize(window.innerWidth, window.innerHeight);
+
+		}
+
+		function onDocumentMouseMove(event) {
+
+			var vector = new THREE.Vector3(event.clientX - SCREEN_WIDTH_HALF, -event.clientY + SCREEN_HEIGHT_HALF, 0);
+			// console.log(vector.z); //0
+
+			for (var i = 0, il = boids.length; i < il; i++) {
+
+				boid = boids[i];
+
+				vector.z = boid.position.z;
+
+				boid.repulse(vector);	//鼠标击退计算
+
+			}
+
+		}
+
+		//定时渲染动画
+
+		function animate() {
+
+			requestAnimationFrame(animate);
+
+			stats.begin();
+			render();
+			stats.end();
+
+		}
+		// 渲染函数
+		function render() {
+
+			for (var i = 0, il = birds.length; i < il; i++) {
+
+				boid = boids[i];
+				// 鸟类向四处飞行
+				boid.run(boids);
+
+				bird = birds[i];
+				bird.position.copy(boids[i].position);
+
+				var color = bird.material.color;
+				// 不同位置的颜色
+				color.r = color.g = color.b = (500 - bird.position.z) / 1000;
+
+				bird.rotation.y = Math.atan2(-boid.velocity.z, boid.velocity.x);
+				bird.rotation.z = Math.asin(boid.velocity.y / boid.velocity.length());
+				//每次渲染时,鸟的展翅收翅的变化幅度,最终形成的动画
+				bird.phase = (bird.phase + (Math.max(0, bird.rotation.z) + 0.1)) % 62.83;
+				// 将变化幅度应用到顶点队列上的标识6 顶点上,改变顶点6 的y 轴位置
+				// 本来是三个长三角形,左中右三个面,左右面的一个顶点不断向外向内来回扩展,形成翅膀
+				bird.geometry.vertices[5].y = bird.geometry.vertices[4].y = Math.sin(bird.phase) * 5;
+
+			}
+			// console.log(bird);  //Mesh
+			renderer.render(scene, camera);
+
+		}
+	</script>
+
+</body>
+
+</html>
