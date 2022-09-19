@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <script src="./layui/layui.js"></script>
+</head>
+<body>
+    
+    <div class="layui-btn layui-btn-primary">按钮</div>
+    <div class="layui-btn layui-btn-primary layui-border-orange">暖色按钮</div>
+
+
+    <script>
+        //一般直接写在一个js 文件里面
+        layui.use(['layer','form','mobile'],function(){
+            var layer=layui.layer,form=layui.form
+            console.log(form);
+            layer.msg('hello world')
+        })
+    </script>
+</body>
+</html>

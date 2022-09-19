@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <script src="./layui/layui.js"></script> 
+    <style>
+        .demo-class{
+            width:100px;
+            background:deeppink;
+            color:#fff
+        }
+    </style>
+</head>
+<body>
+    
+    <button id="openAlert" class="layui-btn layui-btn-primary">打开弹窗</button>
+    <button id="btn" class="layui-btn layui-btn-primary">获取段子</button>
+    <button id="iframe" class="layui-btn layui-btn-primary">打开iframe</button>
+
+    <script>
+        //一般直接写在一个js 文件里面
+        layui.use(['layer'],function(){
+            var layer=layui.layer
+            console.log(layui);
+            let $=layui.jquery       //使用layui 里面内置的jquery
+            console.log($);
+            layer.msg('layer 弹窗')
+            console.log($('button').eq(0));
+        $('#openAlert').click(()=>{
+            //点击按钮弹出一个弹窗
+            let index=layer.open({
+                title:'这是一个信息提示!',
+                content:'中午去吃蒸菜!',
+                btn:['跳转至淘宝','让页面变红','关闭弹窗'],
+                yes:function(){
+                    // 第一个bth调用，跳转至淘宝
+                    location.href='http://www.taobao.com'
+                },
+                btn2:function(){
+                    // 第2个bth调用，让页面变红
+                    $('body').css('background','skyblue')
+                },
+                btn3:function(){
+                    // 第2个bth调用，让页面变红
+                    layer.close(index)
+                }
+            })
+        })
+
+        console.log('-----------------分界线----------------------');
+
+        //获取段子
+        $('#btn').click(()=>{
+            $.get('https://api.apiopen.top/getJoke?page=1&count=1&type=text')
+            // $.get('https://api.apiopen.top/getJoke?page=1&count=2&type=video')
+            .then(res=>{
+                // layer.open()
+                console.log(res);
+                layer.open({
+                skin:'demo-class',      //添加自定义css
+                title:res.result[0].name,
+                content:res.result[0].text
+            })
+            })
+        })
+
+
+        $('#iframe').click(()=>{
+//                 layer.open({
+//                 type: 2, 
+//                 content: 'http://baidu.com',
+// //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
+//                 });
+
+            //  layer.msg('不开森..',{icon:5})
+            })
+      
+
+        })
+    </script>
+</body>
+</html>

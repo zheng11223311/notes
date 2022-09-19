@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <!-- / 代表public -->
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/stylesheets/font_pic/iconfont.css">
+  </head>
+  <body>
+    <div class="header">
+      <div class="container">
+        <div class="left">
+          <img src="/images/logo.dac7499.png" alt="" srcset="">
+          <ul>
+            <li><a href="/">发现音乐</a></li>
+            <li><a href="">下载客户端</a></li>
+            <li><a href="">音乐现场</a></li>
+            <li><a href="">VIP会员</a></li>
+            <li><a href="">酷我畅听</a></li>
+            <li><a href="">酷我耳机</a></li>
+            <li>
+              <a href="javascript:;">更多 
+                <i class="iconfont icon-xiangxia2"></i>
+              </a>
+              <div class="header_more">
+                  <div><a href="">酷我音乐人</a></div>
+                  <div><a href="">HiFi音乐</a></div>
+                  <div><a href="">酷我视频</a></div>
+                  <div><a href="">主播电台</a></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="right">
+          <div class="search">
+            <i class="iconfont icon-sousuo_o"></i>
+            <form action="/" method="get" style="display: inline-block;">
+              <input type="text" name="data" placeholder="搜索音乐/MV/歌单/歌手">
+              <input type="text" name="songNum" placeholder="输入要搜索歌曲的数量" style="width: 0;">
+              <input type="submit" value="搜索" style="max-width: 30px;min-width: 0;">
+            </form>
+            <div class="search_song">
+
+              <% for(var j=0;j<res2.length;j++){ %>
+                <div id="song" style="border:1px solid #999;height: 100px;">
+                  <video src="<%- res2[j] %>" height="0"></video>
+                  <span>
+                    <img src="<%- arrlist[j][4] %>" alt="" width="80px" height="80px" style="float: left;">
+                  </span>
+                  <span style="width:180px;height:80px;background-color: coral;position:absolute;font-size: 12px;">
+                    <p style="line-height: 20px;width:180px;overflow: hidden;text-overflow: ellipsis;word-wrap: none;">歌曲名称：<%- arrlist[j][0] %></p>
+                    <p style="line-height: 20px;width:180px;overflow: hidden;text-overflow: ellipsis;word-wrap: none;">歌手：<%- arrlist[j][1] %></p>
+                    <p style="line-height: 20px;width:180px;overflow: hidden;text-overflow: ellipsis;word-wrap: none;">歌曲ID：<%- arrlist[j][2] %></p>
+                    <p style="line-height: 20px;width:180px;overflow: hidden;text-overflow: ellipsis;word-wrap: none;">歌曲专辑：<%- arrlist[j][3] %></p>
+                    <!-- <p style="line-height: 20px;width:180px;overflow: hidden;text-overflow: ellipsis;word-wrap: none;">歌曲专辑：<%- arrlist[j][4] %></p> -->
+                  </span>
+              </div>
+             <% } %>
+             
+             
+            </div>
+            <p> 共搜集到歌曲：<%= res2.length %>首</p>
+          </div>
+          <div class="login">
+            <span><a href="">登入</a></span>/
+            <span><a href="">注册</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sub">
+      <div class="sub_content"></div>
+    </div>
+    <p>Welcome to <%= title %></p>
+  </body>
+  <script src="/javascripts/index.js" type="module"></script>
+</html>

@@ -1,0 +1,15 @@
+{
+  "name": "packageUpload",
+  "version": "1.0.0",
+  "description": "这是一个fs 包封装重命名的包",
+  "main": "rename.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "fs",
+    "Promise"
+  ],
+  "author": "lc",
+  "license": "ISC"
+}

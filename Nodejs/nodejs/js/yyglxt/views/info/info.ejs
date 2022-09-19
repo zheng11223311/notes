@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>登入失败</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>用户名已存在</h1>
+    <p><span>5</span>s 后跳转至注册页面</p>
+    <p class="">你也可以手动点击:<a href="/login/sign-up.html" class="">跳转至注册页面</a></p>
+  </body>
+  <script>
+    let num=5
+    setInterval(()=>{
+      num--
+      if(num<0){
+        //    /sign-up.html  是直接到http://localhost:3000/sign-up.html
+        location.href='/login/sign-up.html'
+      }else{
+        document.querySelector('span').innerHTML=num
+      }
+    },1000)
+  </script>
+</html>
