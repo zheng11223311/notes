@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.youku.phone.detail.plugin.fullscreen.PluginFullScreenVertical android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:layout_gravity="right" android:id="@id/plugin_fullscreen_vertical_watermark" android:layout_width="139.5dip" android:layout_height="65.0dip" layout="@layout/plugin_fullscreen_watermark" />
+    <FrameLayout android:id="@id/plugin_fullscreen_vertical_play_controller_top" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <RelativeLayout android:gravity="center_vertical" android:background="#e5171717" android:layout_width="fill_parent" android:layout_height="@dimen/fullscreen_player_header_state_height">
+            <TextView android:textSize="13.0dip" android:textColor="#ffffffff" android:gravity="center_horizontal" android:id="@id/plugin_fullscreen_vertical_state_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="15.0dip" android:layout_alignParentRight="true" />
+            <com.youku.phone.detail.plugin.fullscreen.BatteryView android:id="@id/plugin_fullscreen_vertical_state_battery" android:background="@drawable/plugin_fullscreen_state_battery_wrap" android:layout_width="21.0dip" android:layout_height="9.0dip" android:layout_marginRight="7.0dip" android:layout_toLeftOf="@id/plugin_fullscreen_vertical_state_time" android:layout_centerVertical="true" />
+            <ImageView android:id="@id/plugin_fullscreen_vertical_state_wifi" android:layout_width="wrap_content" android:layout_height="60.0dip" android:layout_marginRight="15.0dip" android:layout_toLeftOf="@id/plugin_fullscreen_vertical_state_battery" />
+        </RelativeLayout>
+        <LinearLayout android:background="#e5171717" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_marginTop="@dimen/fullscreen_player_header_state_height">
+            <ImageView android:id="@id/plugin_fullscreen_vertical_back_btn" android:layout_width="56.0dip" android:layout_height="48.0dip" android:src="@drawable/plugin_fullscreen_btn_back_drawable" android:scaleType="center" />
+            <View android:layout_gravity="center_vertical" android:background="#26ffffff" android:layout_width="1.0dip" android:layout_height="28.0dip" />
+            <TextView android:textSize="15.0sp" android:textColor="#7fffffff" android:ellipsize="marquee" android:layout_gravity="center_vertical" android:id="@id/plugin_fullscreen_vertical_video_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:singleLine="true" android:layout_weight="1.0" android:marqueeRepeatLimit="1" />
+            <ImageView android:id="@id/plugin_fullscreen_vertical_settings" android:layout_width="70.0dip" android:layout_height="48.0dip" android:src="@drawable/plugin_fullscreen_btn_more_drawable" android:scaleType="center" />
+        </LinearLayout>
+    </FrameLayout>
+    <com.youku.widget.RoundImageView android:layout_gravity="center" android:id="@id/play_controller_center_bright" android:visibility="gone" android:layout_width="@dimen/plugin_full_valome_size" android:layout_height="@dimen/plugin_full_valome_size" android:src="@drawable/play_gesture_brightness" android:scaleType="center" style="@style/player_setting_center_text" />
+    <com.youku.widget.RoundImageView android:layout_gravity="center" android:id="@id/play_controller_center_volume" android:visibility="gone" android:layout_width="@dimen/plugin_full_valome_size" android:layout_height="@dimen/plugin_full_valome_size" android:src="@drawable/play_gesture_volume" android:scaleType="center" style="@style/player_setting_center_text" />
+    <RelativeLayout android:layout_gravity="bottom" android:id="@id/plugin_fullscreen_vertical_play_controller_bottom" android:layout_width="fill_parent" android:layout_height="70.0dip">
+        <LinearLayout android:orientation="horizontal" android:id="@id/play_controller_bottom" android:background="#e5171717" android:layout_width="fill_parent" android:layout_height="60.0dip" android:layout_alignParentBottom="true">
+            <View android:id="@id/plugin_fullscreen_vertical_btn_play_or_pause" android:background="@drawable/plugin_fullscreen_btn_pause_drawable" android:layout_width="54.0dip" android:layout_height="60.0dip" android:layout_marginLeft="15.0dip" android:scaleType="center" />
+            <TextView android:textSize="12.0sp" android:textColor="#80ffffff" android:layout_gravity="center_vertical" android:id="@id/plugin_fullscreen_vertical_text_cur_position" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="21.0dip" />
+            <TextView android:textSize="12.0sp" android:textColor="#80ffffff" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=" / " />
+            <TextView android:textSize="12.0sp" android:textColor="#80ffffff" android:layout_gravity="center_vertical" android:id="@id/plugin_fullscreen_vertical_text_duration" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0" />
+            <View android:layout_gravity="center_vertical" android:id="@id/plugin_fullscreen_btn_good" android:background="@drawable/detail_fullscreen_fragment_video_goods_icon" android:visibility="gone" android:layout_width="39.0dip" android:layout_height="39.0dip" android:layout_marginRight="10.0dip" />
+            <View android:id="@id/plugin_fullscreen_btn_small" android:background="@drawable/plugin_fullscreen_btn_small_drawable" android:layout_width="60.0dip" android:layout_height="60.0dip" />
+        </LinearLayout>
+        <SeekBar android:id="@id/plugin_fullscreen_vertical_progressbar" android:paddingLeft="0.0dip" android:paddingRight="0.0dip" android:layout_width="fill_parent" android:layout_height="18.0dip" android:progressDrawable="@drawable/plugin_fullscreen_progress_drawable" android:thumb="@drawable/plugin_fullscreen_video_progressbar_thumb" android:thumbOffset="0.0dip" />
+    </RelativeLayout>
+    <RelativeLayout android:layout_gravity="center" android:id="@id/plugin_fullscreen_vertical_play_controller_center_time_layout" android:background="@drawable/player_shape_background" android:visibility="gone" android:layout_width="150.0dip" android:layout_height="80.0dip">
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+            <TextView android:id="@id/plugin_fullscreen_vertical_play_controller_center_time" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" style="@style/player_setting_center_text" />
+            <TextView android:textColor="#7dffffff" android:id="@id/plugin_fullscreen_vertical_play_controller_center_time_line" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" style="@style/player_setting_center_text_line" />
+        </LinearLayout>
+        <ImageView android:id="@id/plugin_fullscreen_vertical_pos_line" android:background="#ffff6600" android:layout_width="0.0dip" android:layout_height="2.0dip" android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+    <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="horizontal" android:id="@id/test_play_layout" android:background="@drawable/player_shape_background" android:paddingLeft="13.0dip" android:paddingTop="3.0dip" android:paddingRight="13.0dip" android:paddingBottom="3.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="27.0dip" android:layout_below="@id/play_controller_header">
+        <TextView android:textColor="#ffffffff" android:id="@id/vip_buy_tv1" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/FontE" />
+        <TextView android:textColor="#ffff6600" android:id="@id/vip_buy_tv2" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/FontE" />
+    </LinearLayout>
+    <TextView android:textSize="48.0sp" android:layout_gravity="center" android:id="@id/plugin_fullscreen_vertical_play_controller_center_text" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/player_setting_text" />
+    <RelativeLayout android:id="@id/plugin_fullscreen_vertical_loading" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageView android:background="@drawable/player_nei_loading" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" />
+        <com.youku.widget.Loading android:id="@id/newLoading" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/newloading_layout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:layout_below="@id/newLoading" android:layout_centerHorizontal="true">
+            <TextView android:layout_gravity="center" android:id="@id/newloading_tips" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/player_tip_loading" style="@style/detail_play_load" />
+            <TextView android:ellipsize="end" android:layout_gravity="center" android:id="@id/newloading_name" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" android:singleLine="true" style="@style/detail_play_load" />
+        </LinearLayout>
+    </RelativeLayout>
+    <ViewStub android:layout_gravity="bottom|center" android:id="@id/plugin_fullscreen_vertical_stub_goods_notice" android:visibility="gone" android:layout="@layout/plugin_fullscreen_hor_video_goods_notice" android:layout_width="328.0dip" android:layout_height="61.0dip" android:layout_marginBottom="20.0dip" />
+    <FrameLayout android:layout_gravity="bottom" android:id="@id/plugin_fullscreen_vertical_bottom_container" android:layout_width="fill_parent" android:layout_height="320.0dip" />
+    <RelativeLayout android:id="@id/plugin_full_vertical_pay_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <include android:id="@id/plugin_fullscreen_hor_restart" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/detail_retry" />
+    <RelativeLayout android:id="@id/plugin_vertical_fullscreen_restart" android:background="@drawable/bg_play" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/go_restart" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+            <ImageView android:id="@id/retry_iv" android:background="@color/transparent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/play_over_replay_1" />
+            <TextView android:id="@id/retry_tv" android:background="@color/transparent" android:padding="5.0px" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="重播" style="@style/detail_replay" />
+        </LinearLayout>
+    </RelativeLayout>
+    <FrameLayout android:gravity="center" android:id="@id/plugin_fullscreen_vertical_hint_3gonline_layout" android:background="@android:color/black" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:gravity="center_horizontal" android:layout_gravity="center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ImageButton android:layout_gravity="center_horizontal" android:id="@id/plugin_fullscreen_vertical_btn_play_3gonline" android:background="@android:color/transparent" android:padding="12.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/bigplay_icon" android:scaleType="center" />
+            <TextView android:textSize="13.0sp" android:textColor="@android:color/white" android:gravity="center" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="当前为移动网络\n继续播放将会消耗流量" />
+        </LinearLayout>
+    </FrameLayout>
+</com.youku.phone.detail.plugin.fullscreen.PluginFullScreenVertical>

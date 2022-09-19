@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/theshowrule_title" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/activity_discovery_title" />
+    <ScrollView android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_below="@id/theshowrule_title">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:orientation="horizontal" android:id="@id/rule_1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="14.0dip" android:layout_marginTop="24.0dip" android:layout_marginRight="24.0dip">
+                <TextView android:textSize="15.0sp" android:textColor="#ffff612a" android:id="@id/rule_1_number" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="1." />
+                <TextView android:textSize="15.0sp" android:textColor="#ff666666" android:id="@id/rule_1_content" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:text="每周四0点开榜至下周周一12点打榜截止。" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:id="@id/rule_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="14.0dip" android:layout_marginTop="24.0dip" android:layout_marginRight="24.0dip">
+                <TextView android:textSize="15.0sp" android:textColor="#ffff612a" android:id="@id/rule_2_number" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="2." />
+                <TextView android:textSize="15.0sp" android:textColor="#ff666666" android:id="@id/rule_2_content" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:text="用户通过增加20位候选艺人的推荐视频播放量以及付费增加人气值的方式进行打榜。" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:id="@id/rule_3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="14.0dip" android:layout_marginTop="24.0dip" android:layout_marginRight="24.0dip">
+                <TextView android:textSize="15.0sp" android:textColor="#ffff612a" android:id="@id/rule_3_number" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="3." />
+                <TextView android:textSize="15.0sp" android:textColor="#ff666666" android:id="@id/rule_3_content" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:text="韩秀榜排名的权重为视频播放量占60%，付费增加人气值占40%。" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:id="@id/rule_4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="14.0dip" android:layout_marginTop="24.0dip" android:layout_marginRight="24.0dip">
+                <TextView android:textSize="15.0sp" android:textColor="#ffff612a" android:id="@id/rule_4_number" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="4." />
+                <TextView android:textSize="15.0sp" android:textColor="#ff666666" android:id="@id/rule_4_content" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:text="韩秀榜的排名与韩国榜单的排名相结合，选出最终TOP5，以此入围争夺每期《The show韩秀榜》节目的TOP1（中韩榜单权重各占50%，其中，韩国榜依据音源，YouTube播放量，专家分数，SNS的排名情况）" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:id="@id/rule_5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="14.0dip" android:layout_marginTop="24.0dip" android:layout_marginRight="24.0dip">
+                <TextView android:textSize="15.0sp" android:textColor="#ffff612a" android:id="@id/rule_5_number" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="5." />
+                <TextView android:textSize="15.0sp" android:textColor="#ff666666" android:id="@id/rule_5_content" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:text="《The show韩秀榜》节目的冠军将通过韩秀榜与韩国榜单的排名（占70%权重）与每周二现场直播过程中的中韩用户投票产生。（直播中中韩投票各占15%的权重，中国用户通过来疯平台进行投票，韩国用户通过短信进行投票）" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

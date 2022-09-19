@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="#ff000000" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/rl_left" android:layout_width="112.0dip" android:layout_height="65.0dip" android:layout_centerVertical="true">
+        <ImageView android:id="@id/iv_left_icon" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_tongzhi_play" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginRight="15.0dip" android:layout_toRightOf="@id/rl_left" android:layout_centerVertical="true">
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="15.0sp" android:textColor="#ffffffff" android:ellipsize="end" android:id="@id/tv_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="标题" android:maxLines="1" android:layout_weight="1.0" />
+            <TextView android:textSize="12.0sp" android:textColor="#b2ffffff" android:id="@id/tv_time" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="上午 00:00" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="12.0sp" android:textColor="#b2ffffff" android:ellipsize="end" android:id="@id/intro_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="简介" android:maxLines="2" android:minLines="2" android:layout_weight="1.0" android:layout_toRightOf="@id/left_icon" android:layout_below="@id/title_text" />
+            <RelativeLayout android:layout_width="wrap_content" android:layout_height="fill_parent">
+                <ImageView android:background="@drawable/ic_tongzhi_logo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentBottom="true" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

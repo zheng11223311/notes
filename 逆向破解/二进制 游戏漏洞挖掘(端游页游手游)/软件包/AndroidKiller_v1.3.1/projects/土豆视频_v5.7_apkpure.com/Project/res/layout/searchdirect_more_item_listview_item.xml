@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/btnLine" android:background="#ffd9d9d9" android:layout_width="fill_parent" android:layout_height="@dimen/search_aside_bottom_btn_height" android:layout_marginLeft="@dimen/search_aside_padding" android:layout_marginRight="@dimen/search_aside_padding">
+        <Button android:ellipsize="end" android:gravity="center|left" android:id="@id/more_arts_button" android:background="@drawable/listview_item_bg" android:paddingLeft="@dimen/search_aside_padding" android:layout_width="fill_parent" android:layout_height="fill_parent" android:singleLine="true" style="@style/search_bside_gridview_item" />
+    </LinearLayout>
+</LinearLayout>

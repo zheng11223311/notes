@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="game_details_pic_width">270</integer>
+    <integer name="rc_audio_encoding_bit_rate">7950</integer>
+    <integer name="rc_chatroom_first_pull_message_count">10</integer>
+    <integer name="rc_image_quality">85</integer>
+    <integer name="rc_image_size">960</integer>
+</resources>

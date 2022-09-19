@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="82.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tudou="http://youku.com/tudou">
+    <RelativeLayout android:background="@drawable/listview_item_bg" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <RelativeLayout android:gravity="center|left" android:id="@id/image_layout" android:paddingLeft="11.0dip" android:paddingTop="9.0dip" android:paddingBottom="9.0dip" android:layout_width="136.0dip" android:layout_height="fill_parent" android:layout_centerVertical="true">
+            <com.youku.widget.YoukuImageView android:id="@id/ranking_detail_image" android:background="@drawable/hengtu_moren" android:layout_width="112.0dip" android:layout_height="wrap_content" android:scaleType="fitXY" android:layout_centerHorizontal="true" tudou:pheight="9" tudou:pwidth="16" />
+            <TextView android:textColor="@color/white" android:gravity="bottom" android:id="@id/ranking_detail_update" android:background="@drawable/yaofeng" android:paddingLeft="5.0dip" android:paddingBottom="3.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="更新至08集" android:maxLines="1" android:singleLine="true" android:layout_alignLeft="@id/ranking_detail_image" android:layout_alignRight="@id/ranking_detail_image" android:layout_alignBottom="@id/ranking_detail_image" style="@style/search_man_short" />
+        </RelativeLayout>
+        <RelativeLayout android:gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_toRightOf="@id/image_layout" android:layout_centerVertical="true">
+            <LinearLayout android:id="@id/linear_title" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textColor="@color/white" android:gravity="center" android:layout_gravity="center_vertical" android:id="@id/ranking_detail_no" android:background="@drawable/rankinglist_rank_backgroud_orange" android:layout_width="17.0dip" android:layout_height="17.0dip" android:text="1" android:maxLines="1" android:singleLine="true" style="@style/FontD" />
+                <TextView android:textColor="#ff3c3c3c" android:ellipsize="end" android:id="@id/ranking_detail_title" android:paddingLeft="7.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="国土安全 第四季" android:maxLines="1" android:singleLine="true" style="@style/FontG" />
+            </LinearLayout>
+            <TextView android:textColor="#ff999999" android:ellipsize="end" android:id="@id/ranking_detail_notice" android:paddingTop="1.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="主演：啊啊啊" android:maxLines="1" android:singleLine="true" android:layout_below="@id/linear_title" style="@style/FontD" />
+            <TextView android:textColor="#ff999999" android:ellipsize="end" android:id="@id/ranking_detail_playtimes" android:paddingTop="1.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="播放：173万" android:maxLines="1" android:singleLine="true" android:layout_below="@id/ranking_detail_notice" style="@style/FontD" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <View android:id="@id/cutline" android:background="#ffd9d9d9" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="11.0dip" />
+</LinearLayout>

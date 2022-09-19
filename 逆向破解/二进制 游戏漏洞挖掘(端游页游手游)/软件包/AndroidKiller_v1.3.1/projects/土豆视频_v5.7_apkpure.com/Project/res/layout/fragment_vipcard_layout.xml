@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="@drawable/app_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/vipcard_title" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/activity_discovery_title" />
+    <TextView android:textSize="13.0sp" android:textColor="#ffe73434" android:layout_gravity="center_horizontal" android:id="@id/tv_vipcard_result" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="17.0sp" android:layout_marginBottom="17.0sp" android:text="请输入正确的会员卡密码" android:layout_below="@id/vipcard_title" android:layout_centerHorizontal="true" />
+    <EditText android:textSize="15.0sp" android:textColorHint="#ff838383" android:id="@id/et_vipcard_input_code" android:background="@drawable/vipcard_inputbox" android:paddingLeft="15.0dip" android:layout_width="fill_parent" android:layout_height="42.0dip" android:layout_marginLeft="40.0dip" android:layout_marginRight="40.0dip" android:hint="请输入10位会员卡密码" android:layout_below="@id/tv_vipcard_result" />
+    <RelativeLayout android:id="@id/layout_vipcard_input" android:background="@drawable/vipcard_inputbox" android:layout_width="fill_parent" android:layout_height="42.0dip" android:layout_marginLeft="40.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="40.0dip" android:layout_below="@id/et_vipcard_input_code">
+        <EditText android:textSize="15.0sp" android:textColorHint="#ff838383" android:id="@id/et_vipcard_input_captcha" android:background="@null" android:paddingLeft="15.0dip" android:layout_width="180.0dip" android:layout_height="42.0dip" android:hint="请输入验证码" />
+        <ImageView android:id="@id/iv_vipcard_input_captcha" android:background="#fff6f6f6" android:layout_width="wrap_content" android:layout_height="36.0dip" android:layout_marginTop="3.0dip" android:layout_marginRight="3.0dip" android:layout_marginBottom="3.0dip" android:scaleType="fitXY" android:layout_toRightOf="@id/et_vipcard_input_captcha" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+    <TextView android:textSize="15.0sp" android:textColor="#ffffffff" android:gravity="center" android:id="@id/tv_vipcard_confirm" android:background="@drawable/vipcard_confirm_bg" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_marginLeft="40.0dip" android:layout_marginTop="40.0dip" android:layout_marginRight="40.0dip" android:text="激活" android:layout_below="@id/layout_vipcard_input" />
+    <LinearLayout android:orientation="vertical" android:id="@id/layout_vipcard_explain" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="40.0dip" android:layout_marginRight="40.0dip" android:layout_alignParentBottom="true">
+        <TextView android:textSize="13.0sp" android:textColor="#ff3c3c3c" android:id="@id/tv_vipcard_explain1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="会员卡使用说明：" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/tv_vipcard_explain2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12.0dip">
+            <TextView android:textSize="12.0sp" android:textColor="#ff838383" android:id="@id/tv_vipcard_explain2_1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1、" />
+            <TextView android:textSize="12.0sp" android:textColor="#ff838383" android:id="@id/tv_vipcard_explain2_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="会员卡仅限已登录用户使用。" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/tv_vipcard_explain3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip">
+            <TextView android:textSize="12.0sp" android:textColor="#ff838383" android:id="@id/tv_vipcard_explain3_1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2、" />
+            <TextView android:textSize="12.0sp" android:textColor="#ff838383" android:id="@id/tv_vipcard_explain3_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="会员卡分为月卡、季卡、半年卡和年卡。" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/tv_vipcard_explain4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip">
+            <TextView android:textSize="12.0sp" android:textColor="#ff838383" android:id="@id/tv_vipcard_explain4_1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="3、" />
+            <TextView android:textSize="12.0sp" android:textColor="#ff838383" android:id="@id/tv_vipcard_explain4_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="请在激活有效期内激活会员卡，过期会员卡失效。" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/tv_vipcard_explain5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip">
+            <TextView android:textSize="12.0sp" android:textColor="#ff838383" android:id="@id/tv_vipcard_explain5_1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="4、" />
+            <TextView android:textSize="12.0sp" android:textColor="#ff838383" android:id="@id/tv_vipcard_explain4_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="会员卡不可兑换现金。请注意会员卡保密性，若发生盗用、泄露、遗失等问题不予调换与退款。" />
+        </LinearLayout>
+        <TextView android:textSize="13.0sp" android:textColor="#ff3c3c3c" android:id="@id/tv_vipcard_explain6" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:layout_marginBottom="25.0dip" android:text="详情请联系客服：400-898-7799" />
+    </LinearLayout>
+</RelativeLayout>

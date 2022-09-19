@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:scrollbars="none" android:fadingEdge="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <include android:id="@id/today" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/classify_schudule_onedayitem" />
+        <include android:id="@id/second_day" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/classify_schudule_onedayitem" />
+        <include android:id="@id/third_day" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/classify_schudule_onedayitem" />
+        <include android:id="@id/fourth_day" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/classify_schudule_onedayitem" />
+        <include android:id="@id/fifth_day" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/classify_schudule_onedayitem" />
+        <include android:id="@id/sixth_day" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/classify_schudule_onedayitem" />
+        <include android:id="@id/seventh_day" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/classify_schudule_onedayitem" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/channelFilterNoResult" android:background="@color/app_background" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageView android:id="@id/none_img" android:layout_width="@dimen/noresult_img_width" android:layout_height="@dimen/noresult_img_height" android:src="@drawable/prompt_logo" android:scaleType="centerInside" />
+        <TextView android:id="@id/tips" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/get_filter_video_failure" style="@style/noresult_text_style" />
+    </LinearLayout>
+    <com.handmark.pulltorefresh.library.PullToRefreshListView android:id="@id/schedule_list" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:cacheColorHint="@color/transparent" android:divider="@color/transparent" />
+</LinearLayout>

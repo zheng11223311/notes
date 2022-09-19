@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:id="@id/dialog_root_view" android:background="@drawable/suspend_invite_chat_dialog_bg" android:layout_width="fill_parent" android:layout_height="65.0dip" android:layout_margin="5.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/tudou_icon" android:background="@drawable/suspend_invite_chat_dialog_logo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="18.0dip" android:layout_marginRight="18.0dip" android:layout_centerVertical="true" />
+    <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toLeftOf="@id/enter_icon" android:layout_toRightOf="@id/tudou_icon" android:layout_centerVertical="true">
+        <TextView android:textSize="13.0sp" android:textColor="#ff313131" android:ellipsize="end" android:id="@id/dialog_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" />
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/dialog_title">
+            <ImageView android:id="@id/dialog_icon" android:background="@drawable/suspend_invite_chat_dialog_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" />
+            <TextView android:textSize="13.0sp" android:textColor="#ffff612a" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="4.0dip" android:text="邀请你边看边聊" android:layout_toRightOf="@id/dialog_icon" android:layout_centerVertical="true" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <ImageView android:id="@id/enter_icon" android:background="@drawable/suspend_invite_chat_dialog_right_arrow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="17.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+</RelativeLayout>

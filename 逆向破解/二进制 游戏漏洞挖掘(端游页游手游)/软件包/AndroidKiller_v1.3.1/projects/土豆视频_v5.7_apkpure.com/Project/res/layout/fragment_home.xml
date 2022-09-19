@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/app_background5" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:id="@id/status_bar_view" android:background="@color/tudou5_yellow" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/status_bar_view">
+        <include android:id="@id/title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true" layout="@layout/index_title_layout" />
+        <com.handmark.pulltorefresh.library.PullToRefreshListView android:id="@id/scrollContainer" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@android:color/transparent" android:cacheColorHint="@color/transparent" android:divider="@color/transparent" android:layout_below="@id/title" />
+    </RelativeLayout>
+</RelativeLayout>

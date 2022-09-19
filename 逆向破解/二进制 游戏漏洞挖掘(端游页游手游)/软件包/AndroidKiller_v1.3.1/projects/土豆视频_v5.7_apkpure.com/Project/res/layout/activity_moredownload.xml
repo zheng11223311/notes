@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="#fffafafa" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/detail_title" layout="@layout/tudou_title" />
+    <RelativeLayout android:id="@id/body" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/detail_title" />
+    <ImageView android:background="@drawable/channel_sort_line" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/detail_title" />
+</RelativeLayout>

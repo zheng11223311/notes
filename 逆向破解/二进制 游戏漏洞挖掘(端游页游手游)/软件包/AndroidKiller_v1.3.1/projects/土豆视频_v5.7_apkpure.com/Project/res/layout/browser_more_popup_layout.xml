@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/bg_browser_more" android:padding="3.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:id="@id/browser_refresh" android:background="@drawable/btn_webview_popup_selected" android:layout_width="fill_parent" android:layout_height="48.0dip">
+        <ImageView android:layout_width="56.0dip" android:layout_height="fill_parent" android:src="@drawable/ic_browser_refresh" android:scaleType="centerInside" />
+        <TextView android:gravity="center|left" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="刷新" />
+    </LinearLayout>
+    <View android:background="#ffdbdadc" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="2.0dip" android:layout_marginRight="2.0dip" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/copylink" android:background="@drawable/btn_webview_popup_selected" android:layout_width="fill_parent" android:layout_height="48.0dip">
+        <ImageView android:layout_width="56.0dip" android:layout_height="fill_parent" android:src="@drawable/ic_browser_copy" android:scaleType="centerInside" />
+        <TextView android:gravity="center|left" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="复制链接" />
+    </LinearLayout>
+    <View android:id="@id/browserLine" android:background="#ffdbdadc" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="2.0dip" android:layout_marginRight="2.0dip" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/inbrowser" android:background="@drawable/btn_webview_popup_selected" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="48.0dip">
+        <ImageView android:layout_width="56.0dip" android:layout_height="fill_parent" android:src="@drawable/ic_browser_open" android:scaleType="centerInside" />
+        <TextView android:gravity="center|left" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="18.0dip" android:text="在浏览器中打开" />
+    </LinearLayout>
+</LinearLayout>

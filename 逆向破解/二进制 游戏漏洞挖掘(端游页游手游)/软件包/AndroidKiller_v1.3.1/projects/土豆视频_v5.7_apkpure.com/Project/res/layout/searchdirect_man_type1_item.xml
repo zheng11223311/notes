@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:background="#ffffffff" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" android:layout_centerHorizontal="true">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/musicRel0" android:layout_width="fill_parent" android:layout_height="@dimen/search_man_detail_music_h">
+            <Button android:id="@id/musicBtn0" android:background="@drawable/suggest_item_type_bg" android:layout_width="@dimen/search_man_detail_music_btnw" android:layout_height="@dimen/search_man_detail_music_btnh" android:layout_marginLeft="@dimen/search_man_detail_music_btn_ml" android:text="MV" style="@style/search_man_music_btn" />
+            <TextView android:ellipsize="end" android:id="@id/musicTxt0" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/search_man_detail_music_btn_ml" android:text="不老神话" android:singleLine="true" style="@style/search_man_music_txt" />
+        </LinearLayout>
+        <View android:id="@id/mv0Driver" android:background="#ffd9d9d9" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" android:layout_centerHorizontal="true">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/musicRel1" android:layout_width="fill_parent" android:layout_height="@dimen/search_man_detail_music_h">
+            <Button android:id="@id/musicBtn1" android:background="@drawable/suggest_item_type_bg" android:layout_width="@dimen/search_man_detail_music_btnw" android:layout_height="@dimen/search_man_detail_music_btnh" android:layout_marginLeft="@dimen/search_man_detail_music_btn_ml" android:text="MV" style="@style/search_man_music_btn" />
+            <TextView android:ellipsize="end" android:id="@id/musicTxt1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/search_man_detail_music_btn_ml" android:text="不老神话" android:singleLine="true" style="@style/search_man_music_txt" />
+        </LinearLayout>
+        <View android:id="@id/mv1Driver" android:background="#ffd9d9d9" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    </LinearLayout>
+</LinearLayout>

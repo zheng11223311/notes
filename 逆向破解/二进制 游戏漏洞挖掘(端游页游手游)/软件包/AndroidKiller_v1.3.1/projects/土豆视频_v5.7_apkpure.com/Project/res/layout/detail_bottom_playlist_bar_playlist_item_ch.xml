@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:paddingTop="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:detail="http://schemas.android.com/apk/res/com.tudou.android">
+    <FrameLayout android:id="@id/detail_bottom_playlist_bar_playlist_item_content" android:layout_width="fill_parent" android:layout_height="67.0dip">
+        <TextView android:textSize="15.0sp" android:textColor="#ff3c3c3c" android:ellipsize="end" android:id="@id/detail_bottom_playlist_bar_playlist_item_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="18.0dip" android:layout_marginTop="13.0dip" android:layout_marginRight="18.0dip" android:singleLine="true" />
+        <TextView android:textSize="13.0sp" android:textColor="#ff999999" android:id="@id/detail_bottom_playlist_bar_playlist_item_duration" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="18.0dip" android:layout_marginTop="37.0dip" android:singleLine="true" />
+        <TextView android:textSize="13.0sp" android:textColor="#ff999999" android:layout_gravity="right" android:id="@id/detail_bottom_playlist_bar_playlist_item_playtimes" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="37.0dip" android:layout_marginRight="18.0dip" android:singleLine="true" />
+        <ImageView android:layout_gravity="center|right|top" android:id="@id/detail_bottom_playlist_bar_playlist_item_mark" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/detail_video_trailer_mark" />
+    </FrameLayout>
+</LinearLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="fill_parent" android:onClick="interceptClickEvent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tudou="http://youku.com/tudou">
+    <FrameLayout android:id="@id/detail_fragment_video_brief_title_layout" android:layout_width="fill_parent" android:layout_height="48.0dip">
+        <View android:background="#ffff6600" android:layout_width="3.0dip" android:layout_height="15.0dip" android:layout_marginTop="16.5dip" />
+        <TextView android:textSize="17.0sp" android:textColor="#ff333333" android:gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="16.0dip" android:text="视频简介" />
+        <ImageView android:layout_gravity="right" android:id="@id/detail_fragment_video_brief_btn_close" android:layout_width="60.0dip" android:layout_height="fill_parent" android:src="@drawable/detail_bottom_bar_close" android:scaleType="center" />
+    </FrameLayout>
+    <View android:background="#ffcccccc" android:layout_width="fill_parent" android:layout_height="0.5px" android:layout_marginLeft="10.0dip" android:layout_marginTop="48.0dip" android:layout_marginRight="10.0dip" />
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="48.5dip">
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <com.youku.widget.YoukuImageView android:id="@id/detail_fragment_video_brief_preview" android:background="@drawable/detail_video_preview_h" android:padding="1.0dip" android:clickable="false" android:layout_width="138.0dip" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:layout_marginTop="13.0dip" android:scaleType="fitXY" tudou:pheight="9" tudou:pwidth="16" />
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="177.0dip" android:layout_marginLeft="165.0dip" android:layout_marginTop="13.0dip" android:layout_marginRight="16.0dip">
+                <TextView android:textSize="18.0sp" android:textColor="#ff3d3d3d" android:ellipsize="end" android:id="@id/detail_fragment_video_brief_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" />
+                <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip">
+                    <TextView android:textSize="14.0sp" android:textColor="#ff808080" android:id="@id/detail_fragment_video_brief_hint_director" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/detail_brief_ugc_hint_director" />
+                    <TextView android:textSize="14.0sp" android:textColor="#ff333333" android:ellipsize="end" android:id="@id/detail_fragment_video_brief_director" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="4.0dip" android:singleLine="true" />
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="4.0dip">
+                    <TextView android:textSize="14.0sp" android:textColor="#ff808080" android:id="@id/detail_fragment_video_brief_hint_playtimes" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/detail_brief_ugc_hint_playtimes" />
+                    <TextView android:textSize="14.0sp" android:textColor="#ff333333" android:ellipsize="end" android:id="@id/detail_fragment_video_brief_playtimes" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="4.0dip" android:singleLine="true" />
+                </LinearLayout>
+            </LinearLayout>
+            <TextView android:textSize="14.0sp" android:textColor="#ff333333" android:id="@id/detail_fragment_video_brief_desc" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:layout_marginTop="100.0dip" android:layout_marginRight="16.0dip" />
+        </FrameLayout>
+    </ScrollView>
+</FrameLayout>

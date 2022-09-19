@@ -1,0 +1,49 @@
+!!brut.androlib.meta.MetaInfo
+apkFileName: 土豆视频_v5.7_apkpure.com.apk
+compressionType: false
+doNotCompress:
+- mp3
+- png
+- jpg
+- ogg
+- wav
+isFrameworkApk: false
+packageInfo:
+  forcedPackageId: '127'
+  renameManifestPackage: null
+sdkInfo:
+  minSdkVersion: '14'
+  targetSdkVersion: '16'
+sharedLibrary: false
+sparseResources: false
+unknownFiles:
+  org/eclipse/paho/client/mqttv3/internal/nls/logcat.properties: '8'
+  org/eclipse/paho/client/mqttv3/internal/nls/messages.properties: '8'
+  org/eclipse/paho/client/mqttv3/internal/nls/messages_cs.properties: '8'
+  org/eclipse/paho/client/mqttv3/internal/nls/messages_de.properties: '8'
+  org/eclipse/paho/client/mqttv3/internal/nls/messages_es.properties: '8'
+  org/eclipse/paho/client/mqttv3/internal/nls/messages_fr.properties: '8'
+  org/eclipse/paho/client/mqttv3/internal/nls/messages_hu.properties: '8'
+  org/eclipse/paho/client/mqttv3/internal/nls/messages_it.properties: '8'
+  org/eclipse/paho/client/mqttv3/internal/nls/messages_ja.properties: '8'
+  org/eclipse/paho/client/mqttv3/internal/nls/messages_ko.properties: '8'
+  org/eclipse/paho/client/mqttv3/internal/nls/messages_pl.properties: '8'
+  org/eclipse/paho/client/mqttv3/internal/nls/messages_pt_BR.properties: '8'
+  org/eclipse/paho/client/mqttv3/internal/nls/messages_ru.properties: '8'
+  org/eclipse/paho/client/mqttv3/internal/nls/messages_zh_CN.properties: '8'
+  org/eclipse/paho/client/mqttv3/internal/nls/messages_zh_TW.properties: '8'
+  org/eclipse/paho/client/mqttv3/logging/jsr47min.properties: '8'
+  org/apache/http/entity/mime/version.properties: '8'
+  org/jbox2d/dynamics/portversion.txt: '8'
+  org/jbox2d/dynamics/contacts/portversion.txt: '8'
+  org/jbox2d/collision/portversion.txt: '8'
+  com/sina/weibo/sdk/net/cacert_cn.cer: '8'
+  com/sina/weibo/sdk/net/cacert_com.cer: '8'
+usesFramework:
+  ids:
+  - 1
+  tag: null
+version: 2.4.1
+versionInfo:
+  versionCode: '64'
+  versionName: '5.7'

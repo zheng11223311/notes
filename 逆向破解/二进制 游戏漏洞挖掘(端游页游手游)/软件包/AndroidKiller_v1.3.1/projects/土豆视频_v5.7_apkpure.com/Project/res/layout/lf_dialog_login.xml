@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/lf_common_dialog_background" android:layout_width="fill_parent" android:layout_height="fill_parent" android:minWidth="@dimen/lf_common_dialog_login_width" android:minHeight="@dimen/lf_common_dialog_login_height"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:layout_width="fill_parent" android:layout_height="102.0dip">
+        <TextView android:textSize="@dimen/lf_text_size_dp_huge" android:textColor="@color/lf_common_dialog_content" android:id="@id/content" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="登录享受更多精彩哦！" />
+    </LinearLayout>
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginBottom="10.0dip">
+        <Button android:textSize="18.0sp" android:textColor="@color/lf_common_dialog_button_blue" android:gravity="center" android:id="@id/cancel_button" android:background="@drawable/lf_common_dialog_button_bg_selector_one" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:layout_marginRight="6.0dip" android:text="取消" android:layout_weight="1.0" />
+        <Button android:textSize="18.0sp" android:textColor="@color/lf_common_dialog_button_white" android:gravity="center" android:id="@id/login_button" android:background="@drawable/lf_common_dialog_button_bg_selector_two" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginLeft="6.0dip" android:layout_marginRight="10.0dip" android:text="登录" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

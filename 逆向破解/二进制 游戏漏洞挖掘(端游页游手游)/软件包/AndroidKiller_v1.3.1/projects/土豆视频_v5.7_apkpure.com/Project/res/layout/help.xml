@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/transparent" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.youku.widget.YoukuGallery android:id="@id/help_gallery" android:fadingEdge="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:spacing="0.0dip" android:unselectedAlpha="1.0" />
+    <ImageButton android:id="@id/btn_close" android:background="@drawable/btn_delete" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="8.0dip" android:layout_alignParentTop="true" android:layout_alignParentRight="true" android:onClick="clickCloseBtn" />
+    <LinearLayout android:id="@id/moon_container" android:paddingBottom="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true">
+        <ImageView android:id="@id/moon1" android:background="@drawable/moon1_selected" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <ImageView android:id="@id/moon2" android:background="@drawable/moon2" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <ImageView android:id="@id/moon3" android:background="@drawable/moon3" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </LinearLayout>
+</RelativeLayout>

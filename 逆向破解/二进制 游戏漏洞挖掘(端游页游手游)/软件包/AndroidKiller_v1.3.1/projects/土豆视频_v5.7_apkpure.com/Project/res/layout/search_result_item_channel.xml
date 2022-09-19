@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="#fffafafa" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/searchChannelData" android:layout_width="fill_parent" android:layout_height="@dimen/search_man_w" android:layout_marginLeft="@dimen/search_man_mlr" android:layout_marginRight="@dimen/search_man_mlr">
+        <RelativeLayout android:id="@id/searchChannelRel" android:layout_width="@dimen/search_man_rel_w" android:layout_height="@dimen/search_man_rel_h">
+            <ImageView android:id="@id/searchChannelImg" android:layout_width="@dimen/podcast_user_img_widht" android:layout_height="@dimen/podcast_user_img_widht" android:src="@drawable/head_portrait" android:layout_centerInParent="true" />
+            <ImageView android:id="@id/headbg" android:layout_width="@dimen/podcast_user_img_widht" android:layout_height="@dimen/podcast_user_img_widht" android:src="@drawable/my_concern_head" android:layout_centerInParent="true" />
+            <ImageView android:id="@id/searchChannelV" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/v" android:layout_alignRight="@id/headbg" android:layout_alignBottom="@id/headbg" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/searchChannelDetail" android:layout_width="fill_parent" android:layout_height="@dimen/search_man_detail_h" android:layout_marginRight="@dimen/search_man_detail_mr" android:layout_toRightOf="@id/searchChannelRel">
+            <TextView android:ellipsize="end" android:id="@id/searchChannelName" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/search_man_name_mt" android:layout_marginBottom="@dimen/search_man_name_mb" android:text="邓超" android:maxLines="1" style="@style/search_aside_title" />
+            <TextView android:id="@id/searchChannelDetail1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="播放：1.5亿 ｜ 视频：58" android:layout_below="@id/searchChannelName" style="@style/search_aside_title_items" />
+            <FrameLayout android:id="@id/subedChannelFrame" android:layout_width="@dimen/search_result_play_w" android:layout_height="@dimen/search_result_play_h" android:layout_marginTop="10.0dip" android:layout_marginRight="@dimen/search_channel_item_pic_mr" android:layout_below="@id/searchChannelDetail1">
+                <ImageView android:layout_gravity="center" android:id="@id/imgChannelSubed" android:background="@drawable/details_subscribe" android:layout_width="@dimen/search_result_play_w" android:layout_height="@dimen/search_result_play_h" />
+                <ProgressBar android:layout_gravity="center" android:id="@id/subedChannelProgressBar" android:visibility="invisible" android:layout_width="@dimen/search_result_play_h" android:layout_height="@dimen/search_result_play_h" />
+            </FrameLayout>
+            <ImageView android:id="@id/searchChannelShare" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/search_man_name_mt" android:src="@drawable/search_detail_info" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <View android:background="#ffeaeaea" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <RelativeLayout android:orientation="vertical" android:id="@id/searchChannelTipsRel" android:layout_width="fill_parent" android:layout_height="@dimen/search_bside_middle_height" android:layout_marginLeft="@dimen/search_man_horfilter_mlr" android:layout_marginRight="@dimen/search_man_horfilter_mlr">
+        <TextView android:id="@id/searchChannelTips" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Ta的最新视频" android:layout_centerVertical="true" style="@style/search_channel_tips" />
+    </RelativeLayout>
+    <GridView android:gravity="center" android:id="@id/searchChannelGridView" android:background="#fffafafa" android:layout_width="fill_parent" android:layout_height="@dimen/search_channel_gridview_h" android:layout_marginLeft="10.0dip" android:layout_marginTop="@dimen/search_man_gridview_mt" android:layout_marginRight="10.0dip" android:horizontalSpacing="@dimen/search_man_gridview_hspace" android:verticalSpacing="@dimen/search_man_gridview_vspace" android:numColumns="2" />
+</LinearLayout>

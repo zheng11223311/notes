@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/root" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/title_layout" android:layout_width="fill_parent" android:layout_height="48.0dip">
+        <TextView android:textSize="15.0sp" android:textColor="#ff000000" android:id="@id/title_text" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/gift_title" android:drawableLeft="@drawable/vip_line" android:drawablePadding="8.0dip" android:layout_weight="1.0" />
+        <ImageView android:id="@id/back_img" android:layout_width="47.0dip" android:layout_height="fill_parent" android:src="@drawable/detail_bottom_bar_close" android:scaleType="center" />
+    </LinearLayout>
+    <View android:id="@id/divider_line" android:background="#ffd9d9d9" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:layout_below="@id/title_layout" />
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/divider_line">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <HorizontalScrollView android:scrollbarThumbHorizontal="@android:color/transparent" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="22.0dip" android:overScrollMode="never">
+                <LinearLayout android:gravity="center_horizontal" android:layout_gravity="center_horizontal" android:orientation="horizontal" android:id="@id/gift_layout" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            </HorizontalScrollView>
+            <View android:background="#ffd9d9d9" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="10.0dip" android:layout_marginTop="29.0dip" android:layout_marginRight="10.0dip" />
+            <LinearLayout android:orientation="vertical" android:id="@id/gift_ranking_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/tips_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="144.0dip">
+                <TextView android:textSize="15.0sp" android:textColor="#ff999999" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="忍心看到TA还木有礼物吗？" />
+                <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:textSize="15.0sp" android:textColor="#ff999999" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="快选择" />
+                    <TextView android:textSize="15.0sp" android:textColor="#ffff612a" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="上面的礼物" />
+                    <TextView android:textSize="15.0sp" android:textColor="#ff999999" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="送给你爱的TA！" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <com.youku.widget.ErrorLayout android:id="@id/error_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/divider_line" />
+    <com.youku.widget.Loading android:id="@id/loading" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" />
+</RelativeLayout>

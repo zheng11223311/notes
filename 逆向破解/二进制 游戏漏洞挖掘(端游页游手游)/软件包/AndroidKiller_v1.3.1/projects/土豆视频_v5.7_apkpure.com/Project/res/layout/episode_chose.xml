@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+        <RelativeLayout android:id="@id/rl_grid_layout" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="vertical" android:id="@id/top_layout" android:background="#b2000000" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <com.youku.widget.DetailHorizontalListView android:id="@id/seris_horizontalListView" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                <ImageView android:background="#3cd9d9d9" android:layout_width="fill_parent" android:layout_height="1.0px" />
+            </LinearLayout>
+            <GridView android:id="@id/grid_series" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:listSelector="@android:color/transparent" android:cacheColorHint="#00000000" android:numColumns="5" android:layout_below="@id/top_layout" />
+            <ListView android:id="@id/list_series" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:listSelector="@android:color/transparent" android:cacheColorHint="#00000000" android:divider="@null" android:layout_below="@id/top_layout" />
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

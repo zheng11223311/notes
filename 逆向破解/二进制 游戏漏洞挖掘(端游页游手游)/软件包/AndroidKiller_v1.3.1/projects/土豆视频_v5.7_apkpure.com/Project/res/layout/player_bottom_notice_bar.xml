@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/bottom_notice_bar" android:background="#33000000" android:focusable="true" android:focusableInTouchMode="true" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="32.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="16.0sp" android:textColor="#ffffffff" android:gravity="center|left" android:id="@id/bottom_notice_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="40.0dip" android:text="@string/chang_video_quality_notice" android:layout_centerVertical="true" />
+    <ImageButton android:id="@id/bottom_notice_close" android:background="@drawable/player_pad_poptop_close" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="19.0dip" android:scaleType="fitXY" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+</RelativeLayout>

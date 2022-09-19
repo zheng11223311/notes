@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppBaseTheme" parent="@android:style/Theme.Holo.Light" />
+    <style name="GameCenterAppBaseTheme" parent="@android:style/Theme.Holo.Light">
+        <item name="android:windowTitleSize">40.0dip</item>
+        <item name="android:windowActionBar">false</item>
+    </style>
+    <style name="MspAppBaseTheme" parent="@android:style/Theme.Light.NoTitleBar" />
+    <style name="MspAppTranslucentBaseTheme" parent="@android:style/Theme.Light.NoTitleBar" />
+</resources>

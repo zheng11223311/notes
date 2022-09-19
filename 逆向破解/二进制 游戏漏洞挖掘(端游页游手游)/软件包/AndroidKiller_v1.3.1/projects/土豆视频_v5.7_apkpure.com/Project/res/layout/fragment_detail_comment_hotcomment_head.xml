@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/layout_comment" android:background="#fffafafa" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/hot_layout" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="@dimen/detail_spac" android:layout_marginBottom="5.0dip">
+            <ImageView android:id="@id/fav_playlist_icon" android:background="#ffff7500" android:layout_width="3.0dip" android:layout_height="15.0dip" android:layout_centerVertical="true" />
+            <TextView android:textColor="#ffff6600" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="热门评论" style="@style/FontD" />
+        </LinearLayout>
+        <ImageView android:background="#ffe1e1e1" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="@dimen/detail_brief_comment_layout_margin" android:layout_marginRight="@dimen/detail_brief_comment_layout_margin" />
+        <LinearLayout android:orientation="vertical" android:id="@id/hot_comment_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/list_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="@dimen/detail_spac" android:layout_marginBottom="5.0dip">
+        <ImageView android:id="@id/fav_playlist_icon" android:background="#ffff7500" android:layout_width="3.0dip" android:layout_height="15.0dip" android:layout_centerVertical="true" />
+        <TextView android:textColor="#ffff6600" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="最新评论" style="@style/FontD" />
+    </LinearLayout>
+    <ImageView android:background="#ffe1e1e1" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="@dimen/detail_brief_comment_layout_margin" android:layout_marginRight="@dimen/detail_brief_comment_layout_margin" />
+</LinearLayout>

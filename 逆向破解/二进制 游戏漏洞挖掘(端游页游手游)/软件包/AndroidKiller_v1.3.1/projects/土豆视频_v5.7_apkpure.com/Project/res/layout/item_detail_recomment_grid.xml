@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tudou="http://youku.com/tudou">
+    <LinearLayout android:orientation="vertical" android:background="#ffffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="5.0dip">
+        <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <com.youku.widget.YoukuImageView android:id="@id/thumbnail" android:background="@drawable/hengtu_moren" android:layout_width="fill_parent" android:layout_height="wrap_content" android:scaleType="fitXY" android:layout_centerHorizontal="true" tudou:pheight="9" tudou:pwidth="16" />
+            <TextView android:gravity="bottom" android:id="@id/stripe_top" android:background="@drawable/yaofeng" android:paddingLeft="@dimen/home_cell_txt_padding_left" android:paddingBottom="@dimen/home_cell_txt_padding_left" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="10:30" android:maxLines="1" android:layout_alignLeft="@id/thumbnail" android:layout_alignBottom="@id/thumbnail" style="@style/search_man_short" />
+            <TextView android:textAppearance="@style/first_cell_title" android:ellipsize="end" android:id="@id/title_1line" android:paddingLeft="@dimen/home_cell_txt_padding_left" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="" android:singleLine="true" android:layout_below="@id/thumbnail" />
+            <TextView android:textAppearance="@style/first_cell_title2" android:ellipsize="end" android:id="@id/title_2line" android:paddingLeft="@dimen/home_cell_txt_padding_left" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="" android:singleLine="true" android:layout_below="@id/title_1line" />
+        </RelativeLayout>
+        <RelativeLayout android:layout_width="wrap_content" android:layout_height="10.0dip" />
+    </LinearLayout>
+    <ImageView android:background="#ffc8c8c8" android:layout_width="fill_parent" android:layout_height="2.0px" />
+</LinearLayout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/listview_item_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:id="@id/cacheStatusImgLine" android:layout_width="60.0dip" android:layout_height="fill_parent" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+        <ImageView android:id="@id/floderStatusImg" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </LinearLayout>
+    <RelativeLayout android:paddingLeft="@dimen/cached_progress_mbt" android:paddingRight="@dimen/cached_progress_mbt" android:layout_width="fill_parent" android:layout_height="@dimen/caching_item_heigth" android:layout_toLeftOf="@id/cacheStatusImgLine">
+        <ImageView android:id="@id/cacheFloderImage" android:background="@drawable/hengtu_moren" android:layout_width="@dimen/cache_item_imgae_width" android:layout_height="@dimen/cache_item_imgae_height" android:layout_marginRight="@dimen/cache_item_picture_part_margin_right" android:scaleType="fitXY" android:layout_centerVertical="true" />
+        <TextView android:gravity="bottom" android:id="@id/cacheFloderTiem" android:background="@drawable/detail_fragment_feature_item_shadow" android:paddingLeft="4.0dip" android:paddingBottom="5.0dip" android:layout_width="@dimen/cache_item_imgae_width" android:layout_height="wrap_content" android:maxLines="1" android:layout_alignBottom="@id/cacheFloderImage" style="@style/cache_fengyao_label" />
+        <RelativeLayout android:gravity="center_vertical" android:layout_gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="@dimen/cache_item_imgae_height" android:layout_toRightOf="@id/cacheFloderImage" android:layout_centerVertical="true">
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true">
+                <ImageView android:layout_gravity="top" android:id="@id/cacheNew" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" android:layout_marginRight="6.0dip" android:src="@drawable/account_cache_isplay" />
+                <TextView android:textAppearance="@style/cache_item_title" android:ellipsize="end" android:layout_gravity="top" android:id="@id/cacheFloderTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="2" android:minLines="1" />
+            </LinearLayout>
+            <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+                <TextView android:textAppearance="@style/cache_item_other" android:id="@id/cacheSizeQuti" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/caching_item_size_speed_space" android:text="高清 170.04M" />
+                <TextView android:textAppearance="@style/cache_item_other" android:ellipsize="end" android:gravity="right" android:id="@id/cacheProgress" android:paddingRight="2.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="2.0dip" android:text="已观看 12:00/14:00" android:singleLine="true" android:layout_toRightOf="@id/cacheSizeQuti" android:layout_alignParentRight="true" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

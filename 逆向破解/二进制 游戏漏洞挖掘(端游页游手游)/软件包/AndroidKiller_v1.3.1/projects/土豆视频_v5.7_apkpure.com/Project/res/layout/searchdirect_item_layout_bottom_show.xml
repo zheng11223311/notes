@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <Button android:ellipsize="end" android:gravity="center|left" android:id="@id/bottom_show_txt" android:background="@drawable/search_direct_item_part_bg" android:paddingLeft="@dimen/search_aside_padding" android:paddingRight="@dimen/search_aside_padding" android:layout_width="0.0px" android:layout_height="@dimen/search_aside_bottom_btn_height" android:layout_marginLeft="@dimen/search_margin_value" android:singleLine="true" android:layout_weight="4.0" style="@style/search_bside_gridview_item" />
+        <Button android:id="@id/bottom_show_more_btn" android:background="@drawable/search_direct_item_bg" android:layout_width="0.0px" android:layout_height="@dimen/search_aside_bottom_btn_height" android:layout_marginRight="@dimen/search_margin_value" android:text="更多" android:layout_weight="1.0" style="@style/search_bside_gridview_item" />
+    </LinearLayout>
+</merge>

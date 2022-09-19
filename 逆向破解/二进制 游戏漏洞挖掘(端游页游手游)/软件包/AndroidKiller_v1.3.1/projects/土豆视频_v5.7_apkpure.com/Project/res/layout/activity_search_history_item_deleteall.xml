@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="center_vertical" android:background="@drawable/app_background" android:layout_width="fill_parent" android:layout_height="@dimen/search_tudou_tag_item_height"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/searchItemDeleteRel" android:background="@drawable/btn_white_selected" android:layout_width="fill_parent" android:layout_height="@dimen/search_his_delete_h" android:layout_marginTop="@dimen/search_his_delete_mlrbt">
+        <ImageView android:id="@id/hotHeadLine" android:background="@drawable/search_delete_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/search_his_delete_mlrbt" />
+        <TextView android:id="@id/search_item_deleteall" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/clear_search_history" android:singleLine="true" style="@style/search_app_need" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/game_details_othergame_container" android:paddingLeft="@dimen/game_card_margin" android:paddingTop="@dimen/game_card_margin" android:paddingRight="@dimen/game_card_margin" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/game_photos_container_margin_top"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <RelativeLayout android:id="@id/game_tags_title" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/detail_gameinfo_padding" android:layout_marginRight="@dimen/detail_gameinfo_padding">
+            <TextView android:textSize="@dimen/game_photos_text_size" android:textColor="#ff333333" android:id="@id/game_tag_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/game_detail_tag_title_margin_top_bottom" android:layout_marginBottom="@dimen/game_detail_tag_title_margin_top_bottom" android:text="相关游戏" />
+            <View android:id="@id/line" android:background="#ffcccccc" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_below="@id/game_tag_title" />
+        </RelativeLayout>
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/detail_gameinfo_padding" android:layout_marginRight="@dimen/detail_gameinfo_padding" android:layout_below="@id/game_tags_title">
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/game_detail_game_margin_top_bottom" android:layout_marginBottom="@dimen/game_detail_game_margin_top_bottom">
+                <include android:id="@id/other_game_1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0" layout="@layout/layout_game_details_othergames_game_item" />
+                <include android:id="@id/other_game_2" android:background="#ff00ffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0" layout="@layout/layout_game_details_othergames_game_item" />
+            </LinearLayout>
+            <View android:orientation="horizontal" android:id="@id/line2" android:background="#ffcccccc" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_below="@id/game_desc" />
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/game_detail_game_margin_top_bottom" android:layout_marginBottom="@dimen/game_detail_game_margin_top_bottom">
+                <include android:id="@id/other_game_3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0" layout="@layout/layout_game_details_othergames_game_item" />
+                <include android:id="@id/other_game_4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0" layout="@layout/layout_game_details_othergames_game_item" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+    <View android:background="@color/game_card_bottom_color" android:layout_width="fill_parent" android:layout_height="@dimen/game_details_card_bttom_root_height" />
+</LinearLayout>

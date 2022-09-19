@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.youku.widget.AccountHeadView android:id="@id/account_header_view" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <ListView android:id="@id/account_listview" android:background="#fff0f0f0" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@android:color/transparent" android:cacheColorHint="@android:color/transparent" android:divider="@android:color/transparent" android:dividerHeight="0.0dip" android:layout_below="@id/account_header_view" />
+    <com.youku.widget.ErrorLayout android:id="@id/error_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</RelativeLayout>

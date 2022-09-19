@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <RelativeLayout android:gravity="center" android:orientation="horizontal" android:id="@id/bottom_movie_play" android:background="@drawable/tv_drama_click_button" android:layout_width="fill_parent" android:layout_height="@dimen/search_aside_bottom_btn_height" android:layout_margin="@dimen/search_margin_value">
+            <ImageView android:id="@id/playImg" android:layout_width="@dimen/search_aside_from_icon" android:layout_height="@dimen/search_aside_from_icon" android:src="@drawable/play_triangle" android:layout_centerVertical="true" />
+            <TextView android:id="@id/play" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/search_aside_paly_icon_margin_left" android:text="立即播放" android:singleLine="true" android:layout_toRightOf="@id/playImg" android:layout_centerVertical="true" style="@style/search_aside_movie_play" />
+        </RelativeLayout>
+    </LinearLayout>
+</merge>

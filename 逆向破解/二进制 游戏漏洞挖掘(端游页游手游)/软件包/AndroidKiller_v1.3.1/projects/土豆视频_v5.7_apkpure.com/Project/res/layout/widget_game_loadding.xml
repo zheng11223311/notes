@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:layout_gravity="center" android:id="@id/widget_game_loadding_container" android:background="#ffe2e2e2" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:layout_gravity="center" android:background="#ffe2e2e2" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/widget_game_loadding_text_size" android:textColor="#ff777777" android:gravity="center" android:id="@id/widget_game_loadding_title1" android:background="#ffe2e2e2" android:paddingBottom="@dimen/game_box_layout_margin_bottom" android:layout_width="wrap_content" android:layout_height="@dimen/widget_game_loadding_height" android:text="正在加载..." android:layout_weight="1.0" />
+        <TextView android:textSize="@dimen/widget_game_loadding_text_size" android:textColor="?gameCenterColor" android:gravity="center" android:id="@id/widget_game_loadding_title2" android:background="#ffe2e2e2" android:paddingBottom="@dimen/game_box_layout_margin_bottom" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="@dimen/widget_game_loadding_height" android:text="点击重试" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="128.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tudou="http://youku.com/tudou">
+    <ImageView android:id="@id/detail_bottom_selectness_card_item_pic" android:background="@drawable/detail_video_preview_h" android:layout_width="141.0dip" android:layout_height="76.0dip" android:scaleType="fitXY" />
+    <TextView android:textSize="14.0sp" android:textColor="#ff3c3c3c" android:ellipsize="end" android:id="@id/detail_bottom_selectness_card_item_title" android:layout_width="141.0dip" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:singleLine="true" android:layout_below="@id/detail_bottom_selectness_card_item_pic" />
+    <TextView android:textSize="13.0sp" android:textColor="#ffa4a4a4" android:ellipsize="end" android:id="@id/detail_bottom_selectness_card_item_desc" android:layout_width="141.0dip" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:singleLine="true" android:layout_below="@id/detail_bottom_selectness_card_item_title" />
+</RelativeLayout>

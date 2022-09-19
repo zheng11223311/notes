@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/webView_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true" layout="@layout/webview_title" />
+    <ProgressBar android:id="@id/progress" android:layout_width="fill_parent" android:layout_height="4.0dip" android:max="100" android:progressDrawable="@drawable/webview_process_ram" android:layout_alignBottom="@id/webView_title" style="?android:attr/progressBarStyleHorizontal" />
+    <RelativeLayout android:id="@id/layout_load_webview_failed" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/webView_title">
+        <ImageView android:id="@id/iv_tudou" android:layout_width="@dimen/noresult_img_width" android:layout_height="@dimen/noresult_img_height" android:layout_marginTop="100.0dip" android:src="@drawable/prompt_logo" android:scaleType="centerInside" android:layout_centerHorizontal="true" />
+        <TextView android:textSize="18.0sp" android:textColor="#ffdbdbdb" android:gravity="center_horizontal" android:id="@id/tv_load_failed" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/noresult_text_margin_top" android:text="@string/load_webview_failed" android:layout_below="@id/iv_tudou" />
+        <Button android:id="@id/try_load_webview" android:background="@drawable/login" android:layout_width="@dimen/login_login_btn_width" android:layout_height="@dimen/login_login_btn_height" android:layout_marginTop="@dimen/feedback_button_margin_top" android:text="@string/new_detail_get_data_fail_btn_text" android:layout_below="@id/tv_load_failed" android:layout_centerHorizontal="true" style="@style/Font6_white" />
+    </RelativeLayout>
+    <RelativeLayout android:visibility="visible" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/webView_title">
+        <WebView android:id="@id/webView" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <ImageView android:id="@id/channle_sort_line" android:background="@drawable/channel_sort_line" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    </RelativeLayout>
+</RelativeLayout>

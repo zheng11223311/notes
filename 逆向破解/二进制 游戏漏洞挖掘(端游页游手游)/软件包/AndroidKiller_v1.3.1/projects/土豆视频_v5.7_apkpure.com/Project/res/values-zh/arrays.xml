@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="UMageList">
+        <item>年龄</item>
+        <item>&lt;18</item>
+        <item>18-24</item>
+        <item>25-30</item>
+        <item>31-35</item>
+        <item>36-40</item>
+        <item>41-50</item>
+        <item>51-59</item>
+        <item>≥60</item>
+    </string-array>
+    <string-array name="UMgenderList">
+        <item>性别</item>
+        <item>男</item>
+        <item>女</item>
+    </string-array>
+</resources>

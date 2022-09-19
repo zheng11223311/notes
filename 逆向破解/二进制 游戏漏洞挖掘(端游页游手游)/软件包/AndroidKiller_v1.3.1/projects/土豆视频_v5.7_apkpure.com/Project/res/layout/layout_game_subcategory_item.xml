@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <TextView android:textSize="@dimen/game_category_gridview_item_text_size" android:ellipsize="end" android:gravity="center" android:id="@id/game_tag_item" android:background="@drawable/game_category_gridview_item_selector" android:paddingTop="@dimen/game_center_subcategory_item_margin_top_bottom" android:paddingBottom="@dimen/game_center_subcategory_item_margin_top_bottom" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/game_center_subcategory_margin" android:text="默认文本" android:maxLines="1" android:singleLine="true" />
+        <View android:id="@id/horizontal_line" android:background="#fff0f0f0" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    </LinearLayout>
+    <View android:layout_gravity="right" android:id="@id/vertical_line" android:background="#fff0f0f0" android:visibility="gone" android:layout_width="1.0px" android:layout_height="fill_parent" android:layout_weight="0.0" />
+</LinearLayout>

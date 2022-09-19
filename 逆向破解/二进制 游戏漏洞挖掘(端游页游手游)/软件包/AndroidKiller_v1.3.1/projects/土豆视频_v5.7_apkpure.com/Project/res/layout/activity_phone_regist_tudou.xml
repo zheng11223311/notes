@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <fragment android:name="com.tudou.ui.fragment.PhoneRegistFragment" android:id="@id/upload" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <ImageView android:background="@drawable/shadow_bottom" android:layout_width="fill_parent" android:layout_height="12.0px" android:layout_alignParentBottom="true" />
+    <ImageView android:background="@drawable/channel_sort_line" android:layout_width="fill_parent" android:layout_height="12.0px" android:layout_alignParentTop="true" />
+</RelativeLayout>

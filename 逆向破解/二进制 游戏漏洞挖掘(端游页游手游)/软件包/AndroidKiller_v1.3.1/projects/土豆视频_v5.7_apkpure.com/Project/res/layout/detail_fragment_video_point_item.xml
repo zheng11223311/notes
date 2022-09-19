@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@drawable/detail_playlist_item_normal" android:layout_width="fill_parent" android:layout_height="67.0dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="10.0dip" android:layout_marginBottom="5.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="15.0dip" android:textColor="#ff3c3c3c" android:ellipsize="end" android:id="@id/detail_fragment_video_point_item_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="19.0dip" android:layout_marginTop="12.0dip" android:maxWidth="270.0dip" />
+    <TextView android:textSize="13.0sp" android:textColor="#ff999999" android:id="@id/detail_fragment_video_point_item_starttime" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="19.0dip" android:layout_marginTop="37.0dip" />
+    <ImageView android:layout_gravity="center|right" android:id="@id/detail_fragment_video_point_item_start_pic" android:layout_width="12.0dip" android:layout_height="15.0dip" android:layout_marginRight="20.0dip" android:src="@drawable/detail_fragment_video_point_item_start_pic" android:scaleType="fitXY" />
+</FrameLayout>

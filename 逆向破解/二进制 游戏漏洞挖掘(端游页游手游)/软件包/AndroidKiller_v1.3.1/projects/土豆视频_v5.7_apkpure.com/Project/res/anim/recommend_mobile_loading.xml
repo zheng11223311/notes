@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list android:oneshot="false"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:duration="100" android:drawable="@drawable/recommendloading1_youku" />
+    <item android:duration="100" android:drawable="@drawable/recommendloading2_youku" />
+    <item android:duration="100" android:drawable="@drawable/recommendloading3_youku" />
+    <item android:duration="100" android:drawable="@drawable/recommendloading4_youku" />
+</animation-list>

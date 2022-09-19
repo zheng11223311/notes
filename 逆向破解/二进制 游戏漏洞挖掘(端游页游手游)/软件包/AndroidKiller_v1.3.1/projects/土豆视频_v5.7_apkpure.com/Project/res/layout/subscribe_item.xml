@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tudou="http://youku.com/tudou">
+    <View android:background="@color/app_background" android:layout_width="fill_parent" android:layout_height="6.0dip" />
+    <LinearLayout android:orientation="vertical" android:background="@drawable/picture_bg_one" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <RelativeLayout android:gravity="center" android:id="@id/title_bar" android:background="@drawable/btn_title_bg_selected" android:paddingLeft="19.0dip" android:paddingRight="11.0dip" android:layout_width="fill_parent" android:layout_height="53.0dip">
+            <RelativeLayout android:gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="53.0dip" android:layout_toLeftOf="@id/sub">
+                <ImageView android:id="@id/user_img" android:background="@drawable/no_user_bg_selector" android:layout_width="40.0dip" android:layout_height="40.0dip" android:scaleType="fitXY" android:layout_alignParentLeft="true" />
+                <ImageView android:id="@id/ImageView2" android:layout_width="40.0dip" android:layout_height="40.0dip" android:src="@drawable/my_concern_head2" android:scaleType="fitXY" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" />
+                <ImageView android:id="@id/vuserimg" android:background="@drawable/v" android:visibility="gone" android:layout_width="12.0dip" android:layout_height="12.0dip" android:layout_alignRight="@id/ImageView2" android:layout_alignBottom="@id/ImageView2" />
+                <TextView android:textSize="16.0dip" android:textColor="#ff3c3c3c" android:ellipsize="end" android:id="@id/user_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="用户名" android:singleLine="true" android:layout_toRightOf="@id/ImageView2" android:layout_alignParentTop="true" />
+                <LinearLayout android:gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_toRightOf="@id/ImageView2" android:layout_below="@id/user_name">
+                    <ImageView android:id="@id/juji_img" android:paddingRight="4.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/juji" />
+                    <TextView android:textSize="12.0sp" android:textColor="#ffb5b5b5" android:ellipsize="end" android:id="@id/update_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2小时前更新" android:singleLine="true" />
+                </LinearLayout>
+            </RelativeLayout>
+            <LinearLayout android:gravity="center" android:id="@id/sub" android:layout_width="wrap_content" android:layout_height="53.0dip" android:layout_alignParentRight="true">
+                <RelativeLayout android:id="@id/numlayout" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="13.0dip" android:layout_alignParentRight="true">
+                    <TextView android:textSize="11.0sp" android:textColor="#fff54b4b" android:gravity="center" android:id="@id/num" android:layout_width="24.0dip" android:layout_height="fill_parent" android:text="1" android:singleLine="true" />
+                    <ImageView android:id="@id/num_bg" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/number_bg" />
+                </RelativeLayout>
+                <ImageView android:id="@id/imgUserChanel" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="40.0dip" android:layout_marginRight="10.0dip" android:src="@drawable/discovery_arrow" android:layout_alignParentRight="true" />
+                <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="8.0dip" android:layout_alignParentRight="true">
+                    <ImageView android:id="@id/imgSubscribe" android:background="@drawable/btn_subscribe_press" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <ProgressBar android:layout_gravity="center" android:id="@id/subedProgressBar" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="28.0dip" android:layout_centerInParent="true" />
+                </RelativeLayout>
+            </LinearLayout>
+        </RelativeLayout>
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="11.0dip" android:layout_marginRight="11.0dip">
+            <com.youku.widget.viewpager.WrapContentHeightViewPager android:id="@id/subscribeItemViewPager" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            <TextView android:gravity="bottom" android:id="@id/stripe_top" android:background="@drawable/yaofeng" android:paddingLeft="6.0dip" android:paddingBottom="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="10:30" android:maxLines="1" android:layout_alignLeft="@id/subscribeItemViewPager" android:layout_alignBottom="@id/subscribeItemViewPager" style="@style/search_man_short" />
+            <LinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:id="@id/point_container" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="11.0dip" android:layout_marginBottom="10.0dip" android:layout_alignRight="@id/subscribeItemViewPager" android:layout_alignBottom="@id/subscribeItemViewPager" />
+            <ImageView android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/play_icon" android:layout_centerInParent="true" />
+        </RelativeLayout>
+        <RelativeLayout android:background="@color/white" android:layout_width="fill_parent" android:layout_height="40.0dip">
+            <TextView android:textAppearance="@style/channel_first_cell_title" android:textSize="15.0sp" android:textColor="#ff3c3c3c" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/title" android:paddingLeft="16.0dip" android:paddingRight="11.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="视频标题" android:singleLine="true" android:layout_toLeftOf="@id/linear_favourite" />
+            <LinearLayout android:gravity="center" android:id="@id/linear_favourite" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="53.0dip" android:layout_marginLeft="10.0dip" android:layout_alignParentRight="true">
+                <ImageView android:id="@id/favourite" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="23.0dip" android:src="@drawable/collect" android:scaleType="fitXY" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                <ImageView android:id="@id/share" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:src="@drawable/subscribe_share_icon" android:scaleType="fitXY" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            </LinearLayout>
+        </RelativeLayout>
+        <View android:id="@id/test" android:background="#ffe6e6e6" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="11.0dip" android:layout_marginRight="11.0dip" android:layout_below="@id/add_layout" />
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="40.0dip">
+            <LinearLayout android:gravity="center" android:id="@id/linear_cache" android:background="@drawable/btn_bottom_bg_selected" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <ImageView android:id="@id/img_cache" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="7.0dip" android:src="@drawable/subscribe_cache_icon" android:scaleType="fitXY" />
+                <TextView android:textSize="15.0sp" android:textColor="#ff969696" android:gravity="center" android:id="@id/txt_cache" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="缓存" />
+            </LinearLayout>
+            <View android:id="@id/cutline" android:background="#ffe6e6e6" android:layout_width="1.0px" android:layout_height="fill_parent" />
+            <LinearLayout android:gravity="center" android:id="@id/linear_share" android:background="@drawable/btn_bottom_bg_selected" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="7.0dip" android:src="@drawable/subscribe_share_icon" android:scaleType="fitXY" />
+                <TextView android:textSize="15.0sp" android:textColor="#ff969696" android:gravity="center" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="分享" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/layout_mytickets_summary" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="31.0dip" android:layout_marginBottom="13.0dip" android:layout_below="@id/mytickets_title">
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:textSize="15.0sp" android:textColor="#ff000000" android:id="@id/tv_mytickets_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="观影券2张" />
+            <TextView android:textSize="13.0sp" android:textColor="#ff838383" android:id="@id/tv_mytickets_desc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="黄金会员每月可免费获得两张哦" />
+        </LinearLayout>
+        <TextView android:textSize="14.0sp" android:textColor="#ffff612a" android:id="@id/tv_mytickets_use" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="立即使用 >" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+    <LinearLayout android:gravity="center" android:id="@id/layout_mytickets_add" android:background="@drawable/vipcard_confirm_bg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="15.0dip">
+        <ImageView android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_add" />
+        <TextView android:textSize="15.0sp" android:textColor="#ffffffff" android:gravity="center" android:id="@id/tv_mytickets_add" android:layout_width="wrap_content" android:layout_height="48.0dip" android:layout_marginLeft="7.0dip" android:text="添加观影券" />
+    </LinearLayout>
+</LinearLayout>

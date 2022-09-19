@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.tudou.detail.widget.VideoHtml5Bar android:orientation="vertical" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:onClick="interceptClickEvent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tudou="http://youku.com/tudou">
+    <View android:background="#ffe4e4e4" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <com.youku.widget.TudouModuleH5 android:id="@id/detail_bottom_html5_bar_content" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="10.0dip" android:layout_marginBottom="10.0dip" />
+    <View android:layout_gravity="bottom" android:background="#ffe4e4e4" android:layout_width="fill_parent" android:layout_height="1.0px" />
+</com.tudou.detail.widget.VideoHtml5Bar>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="#ffe6e6e6" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/app_title" android:layout_width="fill_parent" android:layout_height="@dimen/tudou_top_bar_height" layout="@layout/app_podcast_title" />
+    <RelativeLayout android:id="@id/user_head_layout" android:background="#fffafafa" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="5.0dip" android:layout_below="@id/title">
+        <RelativeLayout android:id="@id/user_layout" android:layout_width="@dimen/podcast_user_img_widht" android:layout_height="@dimen/podcast_user_img_widht" android:layout_marginLeft="@dimen/podcast_user_head_margin_left" android:layout_marginTop="@dimen/detail_brief_margin_right" android:layout_marginRight="@dimen/podcast_user_head_margin_left">
+            <ImageView android:id="@id/user_img" android:layout_width="@dimen/podcast_user_img_widht" android:layout_height="@dimen/podcast_user_img_widht" android:src="@drawable/classify_hot_icon" android:scaleType="fitXY" />
+            <ImageView android:id="@id/isVuser" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/v_little" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+        </RelativeLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/brief_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="@dimen/podcast_user_head_margin_left" android:layout_toRightOf="@id/user_layout" android:layout_alignTop="@id/user_layout">
+            <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/detail_brief_layout_margin">
+                <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textColor="#ff3c3c3c" android:ellipsize="end" android:id="@id/user_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" style="@style/FontF" />
+                </LinearLayout>
+            </RelativeLayout>
+            <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textColor="#ff666666" android:ellipsize="end" android:id="@id/user_line1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" style="@style/FontD" />
+                </LinearLayout>
+            </RelativeLayout>
+            <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textColor="#ff3c3c3c" android:ellipsize="end" android:id="@id/user_self" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:singleLine="true" style="@style/FontE" />
+                <ImageView android:id="@id/self_icon" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/podcast_down" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+            </RelativeLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/detail_brief_layout_margin" android:layout_marginBottom="@dimen/detail_brief_layout_margin">
+                <RelativeLayout android:id="@id/user_atten_layout" android:layout_width="@dimen/search_result_play_w" android:layout_height="@dimen/search_result_play_h">
+                    <ImageView android:id="@id/user_atten" android:background="@drawable/details_subscribe" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+                    <ProgressBar android:layout_gravity="center" android:id="@id/subedProgressBar" android:visibility="invisible" android:layout_width="@dimen/search_result_play_h" android:layout_height="@dimen/search_result_play_h" android:layout_centerInParent="true" />
+                </RelativeLayout>
+                <RelativeLayout android:id="@id/share_layout" android:layout_width="@dimen/search_result_play_w" android:layout_height="@dimen/search_result_play_h" android:layout_marginLeft="18.0dip">
+                    <ImageView android:id="@id/share_icon" android:background="@drawable/share_detail" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/podcastHeader" android:background="#fffafafa" android:layout_width="fill_parent" android:layout_height="40.0dip">
+        <TextView android:textAppearance="@style/podcast_bar_select" android:gravity="center" android:id="@id/bytime" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:text="@string/podcast_bytime_text" android:layout_weight="1.0" android:layout_alignParentLeft="true" />
+        <ImageView android:background="#ffd9d9d9" android:layout_width="1.0px" android:layout_height="fill_parent" android:layout_marginTop="5.0dip" android:layout_marginBottom="5.0dip" />
+        <TextView android:textAppearance="@style/upload_bar" android:gravity="center" android:id="@id/byclick" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="10.0dip" android:text="@string/podcast_byclick_text" android:layout_weight="1.0" android:layout_toRightOf="@id/bytime" />
+    </LinearLayout>
+    <com.handmark.pulltorefresh.library.PullToRefreshGridView android:id="@id/pod_gridview" android:paddingBottom="@dimen/history_item_padding_bottom" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/detail_spac" android:layout_marginTop="@dimen/detail_spac" android:layout_marginRight="@dimen/detail_spac" android:listSelector="@android:color/transparent" android:cacheColorHint="#00000000" android:horizontalSpacing="@dimen/detail_recomend_grid_ver_spacing" android:verticalSpacing="@dimen/detail_series_grid_ver_spacing" android:numColumns="2" />
+    <RelativeLayout android:id="@id/podcastnone" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/detail_spac" android:layout_marginTop="@dimen/detail_spac" android:layout_marginRight="@dimen/detail_spac" android:layout_centerInParent="true">
+        <ImageView android:id="@id/noresultImg" android:layout_width="@dimen/noresult_img_width" android:layout_height="@dimen/noresult_img_height" android:src="@drawable/prompt_logo" android:scaleType="centerInside" android:layout_centerInParent="true" />
+        <TextView android:id="@id/noresultTxt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/noresult_text_margin_top" android:layout_below="@id/noresultImg" android:layout_centerHorizontal="true" style="@style/noresult_text_style" />
+    </RelativeLayout>
+</LinearLayout>

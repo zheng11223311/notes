@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/detail_bottom_slider_bar_menu_item_icon" android:layout_width="53.0dip" android:layout_height="53.0dip" android:layout_marginLeft="13.0dip" android:layout_marginRight="13.0dip" android:scaleType="fitXY" />
+    <ImageView android:id="@id/detail_bottom_slider_bar_menu_item_cling" android:background="@drawable/detail_bottom_slider_bar_menu_item_cling" android:visibility="gone" android:layout_width="12.0dip" android:layout_height="12.0dip" android:layout_marginLeft="53.0dip" android:layout_marginTop="4.0dip" android:scaleType="fitXY" />
+    <ImageView android:id="@id/detail_bottom_slider_bar_menu_item_icon_corner" android:layout_width="27.0dip" android:layout_height="14.0dip" android:layout_marginLeft="39.0dip" android:layout_marginTop="39.0dip" android:scaleType="fitXY" />
+    <ImageView android:id="@id/detail_bottom_slider_bar_menu_item_icon_mark" android:visibility="gone" android:layout_width="17.0dip" android:layout_height="17.0dip" android:layout_marginLeft="49.0dip" android:layout_marginTop="36.0dip" android:src="@drawable/detail_vuser_mark" android:scaleType="fitXY" />
+    <TextView android:textSize="14.0sp" android:textColor="#ffa4a4a4" android:ellipsize="end" android:gravity="center_horizontal" android:layout_gravity="center_horizontal" android:id="@id/detail_bottom_slider_bar_menu_item_title" android:layout_width="68.0dip" android:layout_height="wrap_content" android:layout_marginTop="59.0dip" android:singleLine="true" />
+    <TextView android:textSize="20.0dip" android:textColor="@android:color/white" android:gravity="center_horizontal" android:layout_gravity="center_horizontal" android:id="@id/detail_bottom_slider_bar_menu_item_anim" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="17.0dip" android:singleLine="true" />
+</FrameLayout>

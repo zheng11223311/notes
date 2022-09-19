@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView android:textSize="14.0dip" android:textColor="#c8cccccc" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/detail_fullscreen_fragment_video_anno_item_title" android:layout_width="fill_parent" android:layout_height="60.0dip" android:singleLine="true"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/app_background" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/header"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/errorTips" android:background="#ffffffff" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true">
+        <TextView android:textAppearance="@style/search_result_error" android:ellipsize="end" android:gravity="center|left" android:id="@id/errorTipsTxt" android:paddingLeft="15.0dip" android:paddingRight="15.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" android:layout_marginBottom="6.0dip" android:layout_centerVertical="true" android:lineSpacingExtra="2.0dip" />
+        <View android:background="#ffd9d9d9" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_below="@id/errorTipsTxt" />
+    </RelativeLayout>
+    <com.youku.widget.SearchListView android:id="@id/list_search_result" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@android:color/transparent" android:cacheColorHint="#00000000" android:divider="@null" android:layout_below="@id/errorTips" />
+    <com.tudou.ui.fragment.SearchResultUGCHeader android:id="@id/search_ugc_filter_head_top" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true" />
+    <com.youku.widget.HintView android:id="@id/search_no_result" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/errorTips" />
+</RelativeLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/saosao_title" layout="@layout/page_second_white_title" />
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <SurfaceView android:layout_gravity="center" android:id="@id/preview_view" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_centerInParent="true" />
+        <com.zijunlin.Zxing.view.ViewfinderView android:id="@id/viewfinder_view" android:background="@color/transparent" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <FrameLayout android:layout_gravity="center_horizontal" android:id="@id/corner_blue" android:layout_width="fill_parent" android:layout_height="@dimen/saosao_hight">
+                <ImageView android:layout_gravity="center" android:id="@id/saoHeart" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/code_heart" />
+                <ImageView android:layout_gravity="center" android:background="@drawable/corner_blue" android:layout_width="@dimen/saosao_hight" android:layout_height="fill_parent" android:scaleType="fitXY" />
+            </FrameLayout>
+            <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:background="@drawable/saosao_tips_bg" android:paddingLeft="30.0dip" android:paddingRight="30.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:gravity="left" android:layout_gravity="center" android:id="@id/tishititle" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="支持功能：" style="@style/saosao_tips_title" />
+                    <TextView android:gravity="left" android:layout_gravity="center" android:id="@id/tishi" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/sao_sao_tips1" style="@style/saosao_tips" />
+                    <TextView android:gravity="left" android:layout_gravity="center" android:id="@id/tishi2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/sao_sao_tips2" style="@style/saosao_tips" />
+                    <TextView android:gravity="left" android:layout_gravity="center" android:id="@id/tishi3" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/sao_sao_tips3_nologin" style="@style/saosao_tips" />
+                    <TextView android:gravity="left" android:layout_gravity="center" android:id="@id/tishi4" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:layout_marginBottom="8.0dip" android:text="@string/sao_sao_tips4_danmu" style="@style/saosao_tips" />
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>

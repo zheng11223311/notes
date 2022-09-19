@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/root" android:background="@drawable/channel_filter_bg" android:paddingLeft="0.0dip" android:paddingRight="0.0dip" android:paddingBottom="0.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/buttons" android:background="#ff272727" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="60.0dip" android:layout_alignParentBottom="true">
+        <View android:background="#ffd9d9d9" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:gravity="center" android:id="@id/selected_cancel" android:background="@drawable/btn_white_selected" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="取消" android:layout_weight="1.0" style="@style/edit_button_selectall" />
+            <View android:background="#ffd9d9d9" android:layout_width="1.0dip" android:layout_height="fill_parent" />
+            <TextView android:textColor="@color/black" android:gravity="center" android:id="@id/selected_ok" android:background="@drawable/btn_white_selected" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="确定" android:layout_weight="1.0" style="@style/edit_button_nodelete" />
+        </LinearLayout>
+    </LinearLayout>
+    <RelativeLayout android:id="@id/rl_scrollview" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.youku.widget.ChannelFilterScrollView android:id="@id/cf_scrollview" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" fillVeewport="true">
+            <LinearLayout android:orientation="vertical" android:id="@id/channel_fliter_item" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        </com.youku.widget.ChannelFilterScrollView>
+    </RelativeLayout>
+    <com.youku.widget.HintView android:id="@id/hint_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/cutline2" android:layout_below="@id/cutline" />
+    <com.youku.widget.Loading android:id="@id/loading" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_centerInParent="true" />
+</RelativeLayout>

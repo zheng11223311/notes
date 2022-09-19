@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="@drawable/app_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/app_title" layout="@layout/tudou_title_login" />
+    <LinearLayout android:orientation="vertical" android:paddingTop="@dimen/mytudou_list_margin_top" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/app_title">
+        <include layout="@layout/discovery_line" />
+        <RelativeLayout android:id="@id/weiboManageLayout" android:background="@drawable/more_item_bg" android:layout_width="fill_parent" android:layout_height="@dimen/mytudou_layout_height">
+            <TextView android:gravity="center_vertical" android:id="@id/weiboManage_title" android:paddingLeft="@dimen/more_item_image_margin_left" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/sina_sharmanage" android:layout_alignParentLeft="true" style="@style/tudou_more_text" />
+            <TextView android:gravity="center_vertical" android:id="@id/weiboundstate_tips" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="5.0dip" android:text="@string/third_login_tips" android:layout_toRightOf="@id/weiboManage_title" style="@style/tudou_more_text_right" />
+            <ImageView android:id="@id/weibomanage" android:paddingRight="@dimen/more_item_image_margin_right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/discovery_arrow" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            <TextView android:gravity="center_vertical" android:id="@id/weiboundstate_title" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="5.0dip" android:text="@string/sina_unbound" android:layout_toLeftOf="@id/weibomanage" android:layout_centerVertical="true" style="@style/tudou_more_text_right" />
+        </RelativeLayout>
+        <include layout="@layout/discovery_line" />
+        <RelativeLayout android:layout_gravity="center_vertical" android:id="@id/tencentweibomanageLayout" android:background="@drawable/t_bg" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/mytudou_layout_height" android:layout_marginTop="@dimen/mytudou_list_margin_top">
+            <TextView android:gravity="center_vertical" android:id="@id/tencentweibomanage_title" android:paddingLeft="@dimen/more_item_image_margin_right" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/tencentweibo_sharmanage" android:layout_alignParentLeft="true" style="@style/tudou_more_text" />
+            <TextView android:gravity="center_vertical" android:id="@id/tencentboundstate_tips" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="5.0dip" android:text="@string/third_login_tips" android:layout_toRightOf="@id/tencentweibomanage_title" style="@style/tudou_more_text_right" />
+            <ImageView android:id="@id/tencentweibomanage" android:paddingRight="@dimen/more_item_line_margin_left" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/space_arrow" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            <TextView android:gravity="center_vertical" android:id="@id/tencentweiboboundstate_title" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="5.0dip" android:text="@string/sina_unbound" android:layout_toLeftOf="@id/tencentweibomanage" style="@style/tudou_more_text_right" />
+        </RelativeLayout>
+        <RelativeLayout android:layout_gravity="center_vertical" android:id="@id/qqzonemanageLayout" android:background="@drawable/t_bg" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/mytudou_layout_height" android:layout_marginTop="@dimen/mytudou_list_margin_top">
+            <TextView android:gravity="center_vertical" android:id="@id/qqzonemanage_title" android:paddingLeft="@dimen/more_item_image_margin_right" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/qqzone_sharmanage" android:layout_alignParentLeft="true" style="@style/tudou_more_text" />
+            <ImageView android:id="@id/qqzonemanage" android:paddingRight="@dimen/more_item_line_margin_left" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/space_arrow" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            <TextView android:gravity="center_vertical" android:id="@id/qqzoneboundstate_title" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="5.0dip" android:text="@string/sina_unbound" android:layout_toLeftOf="@id/qqzonemanage" style="@style/tudou_more_text_right" />
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

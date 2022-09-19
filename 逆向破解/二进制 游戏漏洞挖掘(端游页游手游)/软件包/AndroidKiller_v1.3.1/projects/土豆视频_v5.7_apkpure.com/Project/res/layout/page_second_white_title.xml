@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="#fffcfcfc" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:id="@id/status_bar_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="48.0dip">
+        <ImageView android:id="@id/back_img" android:layout_width="48.0dip" android:layout_height="48.0dip" android:src="@drawable/title_back_icon" android:scaleType="center" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        <ImageView android:id="@id/titleDriver" android:background="#ffe2e2e2" android:layout_width="1.0dip" android:layout_height="16.0dip" android:layout_toRightOf="@id/back_img" android:layout_centerVertical="true" />
+        <TextView android:textSize="17.0sp" android:textColor="#ff838384" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/txt_title" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="18.0dip" android:layout_marginRight="18.0dip" android:text="我是title" android:singleLine="true" android:layout_toRightOf="@id/titleDriver" />
+        <ImageView android:background="@drawable/tudouV5_yellow" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+</LinearLayout>

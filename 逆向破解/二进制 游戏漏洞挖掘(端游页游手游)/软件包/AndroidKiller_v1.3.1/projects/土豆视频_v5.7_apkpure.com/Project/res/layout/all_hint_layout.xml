@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="#fff5f5f5" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <RelativeLayout android:gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_centerVertical="true">
+            <ImageView android:id="@id/hint_image" android:background="@drawable/load_failed_image" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="30.0dip" android:layout_centerHorizontal="true" />
+            <TextView android:textSize="15.0sp" android:textStyle="bold" android:textColor="#ff878787" android:id="@id/hint_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="走神啦，点击屏幕重试" android:layout_below="@id/hint_image" android:layout_centerHorizontal="true" />
+            <Button android:textSize="15.0dip" android:textColor="#ff3d3d3d" android:gravity="center" android:id="@id/reload_but" android:background="@drawable/hint_view_but_bg" android:visibility="gone" android:layout_width="106.0dip" android:layout_height="40.0dip" android:layout_marginTop="13.0dip" android:text="重试一下" android:layout_below="@id/hint_text" android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

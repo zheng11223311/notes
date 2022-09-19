@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="center" android:orientation="vertical" android:background="@drawable/classify_feature_item_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textAppearance="@style/index_bottom_lable" android:ellipsize="end" android:gravity="center" android:id="@id/lable" android:layout_width="fill_parent" android:layout_height="@dimen/index_title_lable_h" android:text="" android:singleLine="true" android:layout_weight="1.0" />
+    <ImageView android:id="@id/lable_icon" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/lable_icon" android:layout_alignTop="@id/lable" android:layout_alignRight="@id/lable" />
+</RelativeLayout>

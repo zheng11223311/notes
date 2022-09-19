@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:background="@drawable/account_header_bg" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <View android:id="@id/status_bar_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="133.0dip">
+            <ImageView android:id="@id/account_icon_img" android:background="@drawable/user_bg" android:padding="@dimen/mytudou_space_img_user_img" android:layout_width="60.0dip" android:layout_height="60.0dip" android:layout_marginLeft="27.0dip" android:src="@drawable/no_user_bg" android:layout_centerVertical="true" />
+            <ImageView android:id="@id/account_v_img" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/v_little" android:layout_alignRight="@id/account_icon_img" android:layout_alignBottom="@id/account_icon_img" />
+            <RelativeLayout android:orientation="vertical" android:id="@id/account_status_layout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_toRightOf="@id/account_icon_img" android:layout_centerVertical="true">
+                <LinearLayout android:gravity="center_vertical" android:id="@id/account_name_layout" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:textSize="15.0sp" android:textColor="@android:color/white" android:ellipsize="end" android:id="@id/account_name_tv" android:layout_width="wrap_content" android:layout_height="19.0dip" android:maxWidth="100.0dip" android:singleLine="true" />
+                </LinearLayout>
+                <ImageView android:id="@id/account_vip_status_img" android:visibility="gone" android:layout_width="21.0dip" android:layout_height="14.0dip" android:layout_marginTop="6.0dip" android:layout_marginRight="6.0dip" android:src="@drawable/vip_main" android:scaleType="fitXY" android:layout_below="@id/account_name_layout" android:layout_alignLeft="@id/account_name_layout" android:layout_centerVertical="true" />
+                <ImageView android:id="@id/account_vip_year_img" android:visibility="gone" android:layout_width="10.0dip" android:layout_height="10.0dip" android:layout_marginTop="8.0dip" android:layout_marginRight="9.0dip" android:src="@drawable/vip_main" android:scaleType="fitXY" android:layout_toRightOf="@id/account_vip_status_img" android:layout_below="@id/account_name_layout" />
+                <TextView android:textSize="13.0sp" android:textColor="#ffffd327" android:id="@id/account_vip_length_tv" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:layout_toRightOf="@id/account_vip_year_img" android:layout_below="@id/account_name_layout" />
+            </RelativeLayout>
+            <ImageView android:id="@id/account_setting_img" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="20.0dip" android:src="@drawable/space_setting_selector" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            <ImageView android:id="@id/account_message_img" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="16.0dip" android:src="@drawable/space_message_selector" android:layout_toLeftOf="@id/account_setting_img" android:layout_centerVertical="true" />
+            <ImageView android:id="@id/mssage_icon" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="-1.0dip" android:layout_marginRight="-1.0dip" android:src="@drawable/my_tongzhitixing" android:scaleType="center" android:layout_alignTop="@id/account_message_img" android:layout_alignRight="@id/account_message_img" />
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="52.0dip">
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/account_collection_layout" android:background="@drawable/account_head_item_bg" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/account_favorites" />
+            <TextView android:textSize="16.0dip" android:textColor="#ff494949" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:text="收藏" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/account_upload_layout" android:background="@drawable/account_head_item_bg" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/account_upload" />
+            <TextView android:textSize="16.0dip" android:textColor="#ff494949" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:text="上传" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/account_vip_layout" android:background="@drawable/account_head_item_bg" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <ImageView android:id="@id/vip_img" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/account_vip" />
+            <TextView android:textSize="16.0dip" android:textColor="#ff494949" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:text="会员" />
+        </LinearLayout>
+    </LinearLayout>
+    <View android:background="#ffe7e7e7" android:layout_width="fill_parent" android:layout_height="1.0px" />
+</LinearLayout>

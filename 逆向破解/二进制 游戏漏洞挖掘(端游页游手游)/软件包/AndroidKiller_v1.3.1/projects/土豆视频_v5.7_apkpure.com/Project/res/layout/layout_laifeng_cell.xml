@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tudou="http://youku.com/tudou">
+    <com.youku.widget.YoukuImageView android:id="@id/icon" android:background="@drawable/laifeng_default" android:layout_width="fill_parent" android:layout_height="wrap_content" android:scaleType="fitXY" android:layout_centerHorizontal="true" tudou:pheight="3" tudou:pwidth="4" />
+    <RelativeLayout android:background="@drawable/yaofeng" android:paddingLeft="@dimen/index_yaofeng_margin_l" android:paddingBottom="@dimen/index_yaofeng_margin_b" android:layout_width="fill_parent" android:layout_height="60.0dip" android:layout_alignLeft="@id/icon" android:layout_alignBottom="@id/icon">
+        <TextView android:ellipsize="end" android:gravity="bottom" android:id="@id/view_count" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="111" android:singleLine="true" android:drawableLeft="@drawable/ic_fans" android:drawablePadding="4.0dip" android:layout_alignParentBottom="true" style="@style/laifeng_count" />
+        <TextView android:ellipsize="end" android:gravity="bottom" android:id="@id/cell_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="" android:singleLine="true" android:layout_above="@id/view_count" style="@style/search_man_short" />
+    </RelativeLayout>
+</RelativeLayout>

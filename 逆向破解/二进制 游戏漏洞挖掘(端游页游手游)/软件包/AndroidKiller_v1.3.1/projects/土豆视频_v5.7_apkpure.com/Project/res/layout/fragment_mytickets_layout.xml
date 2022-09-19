@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/mytickets_title" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/activity_discovery_title" />
+    <com.handmark.pulltorefresh.library.PullToRefreshListView android:id="@id/lv_mytickets_listview" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="40.0dip" android:layout_marginRight="40.0dip" android:listSelector="@android:color/transparent" android:divider="@null" android:layout_below="@id/mytickets_title" />
+    <com.youku.widget.HintView android:id="@id/hint_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/mytickets_title" />
+</RelativeLayout>

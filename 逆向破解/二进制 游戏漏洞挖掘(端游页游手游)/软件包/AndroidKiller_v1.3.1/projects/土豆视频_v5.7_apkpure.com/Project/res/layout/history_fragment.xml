@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/title_view" android:background="#fffcfcfc" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <View android:id="@id/status_bar_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <RelativeLayout android:background="#fffcfcfc" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_below="@id/status_bar_view">
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true">
+                <RelativeLayout android:id="@id/back_img" android:layout_width="48.0dip" android:layout_height="48.0dip">
+                    <ImageView android:background="@drawable/white_title_back_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+                </RelativeLayout>
+                <ImageView android:layout_gravity="center_vertical" android:background="#ffe2e2e2" android:layout_width="1.0dip" android:layout_height="16.0dip" />
+                <TextView android:textSize="17.0sp" android:textColor="#ff838384" android:layout_gravity="center_vertical" android:id="@id/txt_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:text="观看历史" />
+            </LinearLayout>
+            <TextView android:textColor="@color/tudou_title_right_seletor" android:gravity="center_vertical" android:layout_gravity="center|right" android:id="@id/title_right_text" android:paddingLeft="10.0dip" android:paddingRight="20.0dip" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/play_history_state_edit" android:layout_alignParentRight="true" style="@style/FontG" />
+            <ImageView android:background="#ffff612a" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_alignParentBottom="true" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <com.handmark.pulltorefresh.library.PullToRefreshListView android:id="@id/historylist" android:background="@color/app_background" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@android:color/transparent" android:cacheColorHint="#00000000" android:divider="@null" android:layout_above="@id/edit_layout" android:layout_below="@id/title_view" />
+    <com.youku.widget.HintView android:id="@id/hint_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/title_view" />
+    <LinearLayout android:orientation="vertical" android:id="@id/edit_layout" android:background="#ff272727" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="60.0dip" android:layout_alignParentBottom="true">
+        <View android:background="#ffd9d9d9" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:gravity="center" android:id="@id/trunc_button" android:background="@drawable/btn_white_selected" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="全选" android:layout_weight="1.0" style="@style/edit_button_selectall" />
+            <View android:id="@id/cutline" android:background="#ffd9d9d9" android:layout_width="1.0dip" android:layout_height="fill_parent" />
+            <TextView android:textColor="@color/black" android:gravity="center" android:id="@id/delete_button" android:background="@drawable/btn_white_selected" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="删除" android:layout_weight="1.0" style="@style/edit_button_nodelete" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

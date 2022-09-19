@@ -1,0 +1,98 @@
+.class Lio/rong/imlib/RongIMClient$53;
+.super Lio/rong/imlib/RongIMClient$SyncCallback;
+.source "RongIMClient.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lio/rong/imlib/RongIMClient;->sendMessage(Lio/rong/imlib/model/Conversation$ConversationType;Ljava/lang/String;Lio/rong/imlib/model/MessageContent;Ljava/lang/String;Ljava/lang/String;Lio/rong/imlib/RongIMClient$SendMessageCallback;)Lio/rong/imlib/model/Message;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x0
+    name = null
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lio/rong/imlib/RongIMClient$SyncCallback",
+        "<",
+        "Lio/rong/imlib/model/Message;",
+        ">;"
+    }
+.end annotation
+
+
+# instance fields
+.field final synthetic this$0:Lio/rong/imlib/RongIMClient;
+
+.field final synthetic val$latch:Ljava/util/concurrent/CountDownLatch;
+
+.field final synthetic val$result:Lio/rong/imlib/RongIMClient$ResultCallback$Result;
+
+
+# direct methods
+.method constructor <init>(Lio/rong/imlib/RongIMClient;Lio/rong/imlib/RongIMClient$ResultCallback$Result;Ljava/util/concurrent/CountDownLatch;)V
+    .locals 0
+
+    .prologue
+    .line 2980
+    iput-object p1, p0, Lio/rong/imlib/RongIMClient$53;->this$0:Lio/rong/imlib/RongIMClient;
+
+    iput-object p2, p0, Lio/rong/imlib/RongIMClient$53;->val$result:Lio/rong/imlib/RongIMClient$ResultCallback$Result;
+
+    iput-object p3, p0, Lio/rong/imlib/RongIMClient$53;->val$latch:Ljava/util/concurrent/CountDownLatch;
+
+    invoke-direct {p0}, Lio/rong/imlib/RongIMClient$SyncCallback;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public onError(Lio/rong/imlib/RongIMClient$ErrorCode;)V
+    .locals 1
+    .param p1, "e"    # Lio/rong/imlib/RongIMClient$ErrorCode;
+
+    .prologue
+    .line 2989
+    iget-object v0, p0, Lio/rong/imlib/RongIMClient$53;->val$latch:Ljava/util/concurrent/CountDownLatch;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
+
+    .line 2990
+    return-void
+.end method
+
+.method public onSuccess(Lio/rong/imlib/model/Message;)V
+    .locals 1
+    .param p1, "message"    # Lio/rong/imlib/model/Message;
+
+    .prologue
+    .line 2983
+    iget-object v0, p0, Lio/rong/imlib/RongIMClient$53;->val$result:Lio/rong/imlib/RongIMClient$ResultCallback$Result;
+
+    iput-object p1, v0, Lio/rong/imlib/RongIMClient$ResultCallback$Result;->t:Ljava/lang/Object;
+
+    .line 2984
+    iget-object v0, p0, Lio/rong/imlib/RongIMClient$53;->val$latch:Ljava/util/concurrent/CountDownLatch;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
+
+    .line 2985
+    return-void
+.end method
+
+.method public bridge synthetic onSuccess(Ljava/lang/Object;)V
+    .locals 0
+    .param p1, "x0"    # Ljava/lang/Object;
+
+    .prologue
+    .line 2980
+    check-cast p1, Lio/rong/imlib/model/Message;
+
+    .end local p1    # "x0":Ljava/lang/Object;
+    invoke-virtual {p0, p1}, Lio/rong/imlib/RongIMClient$53;->onSuccess(Lio/rong/imlib/model/Message;)V
+
+    return-void
+.end method

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:paddingLeft="@dimen/cached_progress_mbt" android:paddingRight="@dimen/cached_progress_mbt" android:layout_width="fill_parent" android:layout_height="@dimen/cache_head_height"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:id="@id/cacheHeaderText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" style="@style/cache_head_txt" />
+    <TextView android:textColor="#ffffffff" android:gravity="center" android:id="@id/cachingCount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/cached_progress_mrl" android:text="3" android:layout_toRightOf="@id/cacheHeaderText" android:layout_centerVertical="true" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/cachedEditLl" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/cached_progress_mrl" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+        <ImageView android:id="@id/cachedEditImg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="2.0dip" />
+        <TextView android:id="@id/cachedEditTxt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="2.0dip" />
+    </LinearLayout>
+</RelativeLayout>

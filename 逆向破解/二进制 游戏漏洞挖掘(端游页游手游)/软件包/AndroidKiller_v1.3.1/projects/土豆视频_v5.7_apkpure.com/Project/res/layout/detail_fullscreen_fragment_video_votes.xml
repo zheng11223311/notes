@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="#e6171717" android:layout_width="260.0dip" android:layout_height="fill_parent" android:onClick="interceptClickEvent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_width="33.0dip" android:layout_height="33.0dip" android:layout_marginLeft="19.0dip" android:layout_marginTop="13.0dip" android:src="@drawable/detail_fullscreen_fragment_video_vote_icon" android:scaleType="fitXY" />
+    <TextView android:textSize="14.0dip" android:textColor="#ffcccccc" android:ellipsize="end" android:id="@id/detail_fullscreen_fragment_video_vote_detail_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="62.0dip" android:layout_marginTop="13.0dip" android:layout_marginRight="19.0dip" android:maxLines="2" />
+    <RelativeLayout android:id="@id/detail_fullscreen_fragment_video_vote_detail_layout" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <View android:background="#19ffffff" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="19.0dip" android:layout_marginTop="62.0dip" android:layout_marginRight="19.0dip" />
+        <FrameLayout android:id="@id/detail_fullscreen_fragment_video_vote_hint_layout" android:layout_width="fill_parent" android:layout_height="76.0dip" android:layout_alignParentBottom="true">
+            <Button android:textSize="12.0dip" android:textColor="#ffffffff" android:layout_gravity="center" android:id="@id/detail_fullscreen_fragment_video_vote_detail_btn_vote" android:background="#ffff6600" android:visibility="gone" android:layout_width="120.0dip" android:layout_height="30.0dip" android:text="投票并查看结果" />
+            <TextView android:textSize="12.0dip" android:textColor="#ff666666" android:layout_gravity="center" android:id="@id/detail_fullscreen_fragment_video_vote_detail_hint" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="点击投票并查看结果" />
+        </FrameLayout>
+        <ListView android:scrollbarStyle="outsideOverlay" android:id="@id/detail_fullscreen_fragment_video_vote_item_list" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="63.0dip" android:listSelector="@color/transparent" android:dividerHeight="0.0px" android:layout_above="@id/detail_fullscreen_fragment_video_vote_hint_layout" />
+    </RelativeLayout>
+    <include android:layout_gravity="center" android:id="@id/detail_fullscreen_fragment_video_vote_loading" android:visibility="gone" android:layout_width="46.0dip" android:layout_height="46.0dip" layout="@layout/detail_loading" />
+    <com.youku.widget.HintView android:id="@id/detail_fullscreen_fragment_video_vote_hintview" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</FrameLayout>

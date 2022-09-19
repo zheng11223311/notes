@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/app_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:img="http://youku.com/tudou">
+    <include android:id="@id/fragment_history_manager" android:layout_width="fill_parent" android:layout_height="48.0dip" layout="@layout/fragment_history_manager_title" />
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/tab_layout" android:background="@android:color/white" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/search_tudou_tag_height" android:layout_below="@id/fragment_history_manager">
+        <RelativeLayout android:id="@id/layout_ugc" android:layout_width="wrap_content" android:layout_height="@dimen/search_tudou_tag_height" android:layout_weight="1.0">
+            <TextView android:textSize="18.0sp" android:textColor="#ffffffff" android:gravity="center" android:id="@id/txt_ugc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="全部记录" android:layout_centerInParent="true" />
+            <View android:id="@id/view_ugc" android:background="@color/txt_seleted" android:layout_width="100.0dip" android:layout_height="6.0px" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/layout_episode" android:layout_width="wrap_content" android:layout_height="@dimen/search_tudou_tag_height" android:layout_weight="1.0">
+            <TextView android:textSize="18.0sp" android:textColor="#ff000000" android:gravity="center" android:id="@id/txt_episode" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="剧集记录" android:layout_centerInParent="true" />
+            <View android:id="@id/view_episode" android:background="@color/txt_seleted" android:layout_width="100.0dip" android:layout_height="6.0px" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+    </LinearLayout>
+    <ImageView android:id="@id/channle_sort_line" android:background="@drawable/channel_sort_line" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/tab_layout" />
+    <com.youku.widget.ViewPager android:layout_gravity="center" android:id="@id/view_pager" android:visibility="visible" android:persistentDrawingCache="animation" android:layout_width="fill_parent" android:layout_height="fill_parent" android:flipInterval="30" android:layout_above="@id/edit_layout" android:layout_below="@id/tab_layout" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/edit_layout" android:background="#ff272727" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_alignParentBottom="true">
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:textSize="20.0sp" android:textColor="#ffffffff" android:gravity="center" android:id="@id/trunc_button" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="清空" android:layout_weight="1.0" />
+            <ImageView android:layout_width="1.0px" android:layout_height="fill_parent" android:src="#ff373737" />
+            <ImageView android:layout_width="1.0px" android:layout_height="fill_parent" android:src="#ff000000" />
+            <TextView android:textSize="20.0sp" android:textColor="#ffffffff" android:gravity="center" android:id="@id/delete_button" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="删除" android:layout_weight="1.0" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

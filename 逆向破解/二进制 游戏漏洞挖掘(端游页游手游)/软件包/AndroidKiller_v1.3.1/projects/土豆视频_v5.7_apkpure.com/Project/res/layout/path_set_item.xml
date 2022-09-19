@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:background="@drawable/t_bg" android:paddingLeft="@dimen/more_item_image_margin_left" android:paddingRight="@dimen/more_item_image_margin_right" android:layout_width="fill_parent" android:layout_height="@dimen/mytudou_layout_height">
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textAppearance="@style/tudou_more_not_bund" android:id="@id/save_desc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="手机内存(10/100M)" />
+            <ImageView android:layout_gravity="center" android:id="@id/img_choice" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/read_ic_empty" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            <ProgressBar android:id="@id/path_save_processbar" android:layout_width="fill_parent" android:layout_height="3.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="24.0dip" android:progress="0" android:progressDrawable="@drawable/download_notification_process" android:layout_toLeftOf="@id/img_choice" android:layout_below="@id/save_desc" style="?android:attr/progressBarStyleHorizontal" />
+        </RelativeLayout>
+    </LinearLayout>
+    <include layout="@layout/discovery_line" />
+</LinearLayout>

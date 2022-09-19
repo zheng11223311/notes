@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/game_card_root" android:background="#ffe2e2e2" android:paddingLeft="@dimen/game_card_margin" android:paddingRight="@dimen/game_card_margin" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:background="@drawable/game_listview_item_selector" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/game_card_margin">
+        <include layout="@layout/layout_game_home_card_top" />
+        <FrameLayout android:id="@id/game_card_poster_container" android:layout_width="fill_parent" android:layout_height="@dimen/card_poster_height">
+            <ImageView android:background="#ffaaaaaa" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginBottom="@dimen/card_poster_height_bottom" android:src="@drawable/game_default_icon" android:scaleType="center" />
+            <ImageView android:id="@id/game_card_poster" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginBottom="@dimen/card_poster_height_bottom" android:scaleType="fitXY" />
+        </FrameLayout>
+        <include android:id="@id/game_card_layout_1" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/layout_game_home_item_title_card_layout" />
+        <View android:id="@id/game_card_split_line" android:background="#ffe8e8e8" android:layout_width="fill_parent" android:layout_height="1.0px" />
+        <include android:id="@id/game_card_layout_2" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/layout_game_home_item_title_card_layout" />
+    </LinearLayout>
+    <View android:id="@id/card_line2" android:background="#ffc9c9c9" android:layout_width="fill_parent" android:layout_height="2.0px" />
+</LinearLayout>

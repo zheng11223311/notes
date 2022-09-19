@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_gravity="bottom" android:background="#cc000000" android:layout_width="fill_parent" android:layout_height="48.0dip">
+        <Button android:textSize="14.0sp" android:textColor="#ffffffff" android:gravity="center" android:id="@id/btn_cancel" android:background="@null" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="8.0dip" android:text="返回" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:onClick="ok" />
+    </LinearLayout>
+    <io.rong.imkit.widget.AsyncImageView android:id="@id/show_pictrue" android:layout_width="fill_parent" android:layout_height="0.0dip" android:scaleType="centerCrop" android:layout_weight="1.0" />
+    <RelativeLayout android:layout_gravity="bottom" android:orientation="horizontal" android:background="#cc000000" android:layout_width="fill_parent" android:layout_height="48.0dip">
+        <Button android:textSize="14.0sp" android:textColor="#ffffffff" android:gravity="center" android:id="@id/btn_isOK" android:background="@null" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="发送" android:layout_centerVertical="true" android:onClick="ok" />
+        <TextView android:textSize="18.0sp" android:textColor="#ffffffff" android:id="@id/shownumber" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1/1" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+        <CheckBox android:id="@id/rc_chebox_pictrue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:layout_marginRight="8.0dip" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+</LinearLayout>

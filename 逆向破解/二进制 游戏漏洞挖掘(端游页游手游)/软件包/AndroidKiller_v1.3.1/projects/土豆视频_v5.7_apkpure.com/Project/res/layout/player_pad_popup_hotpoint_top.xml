@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@id/layout" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="27.0dip">
+        <ImageView android:layout_gravity="center_vertical" android:id="@id/pointImg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="1.0dip" android:src="@drawable/player_pad_hotpoint_popup_play" android:scaleType="fitXY" />
+        <TextView android:textSize="13.0sp" android:textColor="#ffffffff" android:id="@id/pointContent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:layout_marginTop="-1.0dip" android:text="看彭跳粪坑比看啊堂哥跳楼紧张" />
+        <TextView android:textSize="13.0sp" android:textColor="#ffff6600" android:id="@id/pointTime" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:layout_marginTop="-1.0dip" android:text="14:07" />
+    </LinearLayout>
+</LinearLayout>

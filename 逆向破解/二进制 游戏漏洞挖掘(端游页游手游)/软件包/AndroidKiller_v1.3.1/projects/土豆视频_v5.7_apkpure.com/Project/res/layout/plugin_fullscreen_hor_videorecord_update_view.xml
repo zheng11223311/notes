@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.youku.phone.detail.plugin.fullscreen.VideoRecordUpdateView android:background="@android:color/black" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:onClick="interceptClickEvent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Button android:textSize="14.0sp" android:textColor="@android:color/white" android:gravity="center" android:id="@id/plugin_fullscreen_hor_videorecord_update_btn_back" android:background="@drawable/detail_fullscreen_screenshot_btn_back_default" android:layout_width="60.0dip" android:layout_height="30.0dip" android:layout_marginLeft="15.0dip" android:layout_marginTop="15.0dip" />
+    <TextView android:textSize="14.0dip" android:textColor="@android:color/white" android:layout_gravity="bottom|center" android:id="@id/plugin_fullscreen_hor_videorecord_update_loading" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="48.0dip" android:text="正在处理登录信息..." />
+    <LinearLayout android:layout_gravity="bottom|center" android:orientation="horizontal" android:id="@id/plugin_fullscreen_hor_videorecord_update_error_view" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="37.0dip">
+        <TextView android:textSize="14.0dip" android:textColor="@android:color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="处理失败" />
+        <Button android:textSize="14.0dip" android:textColor="#ffff612a" android:gravity="center" android:id="@id/plugin_fullscreen_hor_videorecord_update_error_retry" android:background="@drawable/plugin_fullscreen_videorecord_retry_default" android:layout_width="94.0dip" android:layout_height="36.0dip" android:layout_marginLeft="15.0dip" android:text="立即重试" />
+    </LinearLayout>
+</com.youku.phone.detail.plugin.fullscreen.VideoRecordUpdateView>

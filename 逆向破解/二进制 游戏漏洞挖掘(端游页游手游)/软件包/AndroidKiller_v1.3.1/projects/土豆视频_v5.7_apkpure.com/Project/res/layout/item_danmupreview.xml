@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/danmu_layout" android:background="@drawable/picture_bg_one" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tudou="http://youku.com/tudou">
+    <View android:id="@id/cutline" android:background="#fff0f0f0" android:layout_width="fill_parent" android:layout_height="6.0dip" />
+    <LinearLayout android:orientation="vertical" android:background="@drawable/picture_bg_one" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <RelativeLayout android:id="@id/DANMU_IMAGE_LAYOUT" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip">
+            <com.youku.widget.YoukuImageView android:id="@id/danmu_image" android:background="@drawable/hengtu_moren" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:scaleType="fitXY" android:layout_centerHorizontal="true" tudou:pheight="9" tudou:pwidth="16" />
+            <TextView android:textSize="22.0sp" android:textColor="#ffffffff" android:gravity="center" android:id="@id/danmu_content1" android:layout_width="wrap_content" android:layout_height="30.0dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="15.0dip" />
+            <TextView android:textSize="22.0sp" android:textColor="#ffffffff" android:gravity="center" android:id="@id/danmu_content2" android:layout_width="wrap_content" android:layout_height="30.0dip" android:layout_marginLeft="10.0dip" android:layout_below="@id/danmu_content1" />
+            <TextView android:textSize="22.0sp" android:textColor="#ffffffff" android:gravity="center" android:id="@id/danmu_content3" android:layout_width="wrap_content" android:layout_height="30.0dip" android:layout_marginLeft="10.0dip" android:layout_below="@id/danmu_content2" />
+            <TextView android:textSize="22.0sp" android:textColor="#ffffffff" android:gravity="center" android:id="@id/danmu_content4" android:layout_width="wrap_content" android:layout_height="30.0dip" android:layout_marginLeft="10.0dip" android:layout_below="@id/danmu_content3" />
+            <TextView android:textSize="22.0sp" android:textColor="#ffffffff" android:gravity="center" android:id="@id/danmu_content5" android:layout_width="wrap_content" android:layout_height="30.0dip" android:layout_marginLeft="10.0dip" android:layout_below="@id/danmu_content4" />
+            <ImageView android:id="@id/left_edge" android:background="@drawable/left_edge" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="190.0dip" android:layout_marginTop="10.0dip" />
+            <ImageView android:id="@id/right_edge" android:background="@drawable/right_edge" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="190.0dip" android:layout_marginTop="10.0dip" android:layout_alignParentRight="true" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/danmu_play" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="18.0dip" android:layout_marginTop="7.0dip" android:layout_marginRight="10.0dip" android:layout_centerInParent="true">
+            <LinearLayout android:gravity="center" android:id="@id/danmu_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" />
+            <TextView android:textSize="14.0sp" android:textColor="#ff3c3c3c" android:id="@id/danmu_count_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="条弹幕" android:layout_toRightOf="@id/danmu_count" android:layout_centerVertical="true" />
+            <ImageView android:id="@id/danmu_share" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_discover_caochang_share" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        </RelativeLayout>
+        <TextView android:textSize="15.0sp" android:textColor="#ff3c3c3c" android:ellipsize="end" android:id="@id/danmu_video_title" android:paddingRight="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="18.0dip" android:layout_marginRight="10.0dip" android:singleLine="true" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/danmu_video_count_layout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="18.0dip" android:layout_marginBottom="12.0dip">
+            <ImageView android:layout_gravity="center" android:id="@id/danmu_video_count_icon" android:background="@drawable/ic_caochang_play" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <TextView android:textSize="13.0sp" android:textColor="#ff999999" android:id="@id/danmu_video_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" />
+        </LinearLayout>
+        <RelativeLayout android:id="@id/danmu_play_layout" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="9.0dip" android:layout_marginRight="10.0dip">
+            <RelativeLayout android:gravity="center" android:orientation="horizontal" android:id="@id/danmu_play" android:background="@drawable/tv_drama_click_button" android:layout_width="120.0dip" android:layout_height="40.0dip" android:layout_centerInParent="true">
+                <ImageView android:id="@id/playImg" android:layout_width="@dimen/search_aside_from_icon" android:layout_height="@dimen/search_aside_from_icon" android:src="@drawable/ic_discover_caochang_play" android:layout_centerVertical="true" />
+                <TextView android:id="@id/play" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/search_aside_paly_icon_margin_left" android:text="立即播放" android:singleLine="true" android:layout_toRightOf="@id/playImg" android:layout_centerVertical="true" style="@style/search_aside_movie_play" />
+            </RelativeLayout>
+            <ImageView android:id="@id/danmu_share" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_discover_caochang_share" android:layout_alignParentRight="true" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

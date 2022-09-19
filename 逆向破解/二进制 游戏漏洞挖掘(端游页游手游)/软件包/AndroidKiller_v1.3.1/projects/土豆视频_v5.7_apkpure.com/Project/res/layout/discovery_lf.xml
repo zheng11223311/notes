@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/channel_flag_container" android:background="@drawable/discovery_item_bg_47" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/title" layout="@layout/discovery_item" />
+    <View android:id="@id/seprate_line" android:background="@drawable/discovery_line_bg" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="@dimen/discovery_ranking__list_padding_left" android:layout_below="@id/title" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/bottom_layout" android:paddingLeft="@dimen/discovery_ranking__list_padding_left_laifeng" android:paddingTop="@dimen/discovery_ranking_list_padding_top" android:paddingRight="@dimen/discovery_ranking__list_padding_left_laifeng" android:paddingBottom="@dimen/discovery_ranking_list_padding_top" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/seprate_line">
+        <include android:id="@id/item1" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" layout="@layout/layout_laifeng_cell" />
+        <include android:id="@id/item2" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="1.0dip" android:layout_weight="1.0" layout="@layout/layout_laifeng_cell" />
+    </LinearLayout>
+</RelativeLayout>

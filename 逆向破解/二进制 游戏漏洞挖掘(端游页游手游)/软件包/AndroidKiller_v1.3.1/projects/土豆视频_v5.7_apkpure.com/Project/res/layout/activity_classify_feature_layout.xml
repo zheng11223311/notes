@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <fragment android:name="com.tudou.ui.fragment.ClassifyFeatureFragment" android:id="@id/classify_feature_fragment" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</LinearLayout>

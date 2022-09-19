@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/search_list_item_back_f1f1f1" android:layout_width="fill_parent" android:layout_height="@dimen/search_tudou_tag_item_height"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:gravity="center_vertical" android:background="@color/search_list_item_back_f1f1f1" android:layout_width="fill_parent" android:layout_height="@dimen/search_tudou_tag_item_height">
+        <Button android:textAppearance="@style/FontH" android:textColor="#ff888888" android:gravity="center" android:id="@id/search_item_deleteall" android:background="@drawable/search_btn_search" android:layout_width="@dimen/search_history_btn_width" android:layout_height="@dimen/search_history_btn_height" android:layout_marginRight="@dimen/search_history_button_padding_right" android:text="清空搜索历史 " android:shadowColor="#ffffffff" android:shadowDx="1.0" android:shadowDy="1.0" android:shadowRadius="1.0" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+</RelativeLayout>

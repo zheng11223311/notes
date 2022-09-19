@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="@drawable/app_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/fragment_attention_manager" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/fragment_attention_manager_title" />
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/add_layout" android:background="@drawable/btn_white_selected" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="@dimen/recommend_channel_cell_filterview_height" android:layout_below="@id/fragment_attention_manager">
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/attention_add_icon" />
+        <TextView android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="添加更多" style="@style/FontG" />
+    </LinearLayout>
+    <View android:id="@id/test" android:background="#fff0f0f0" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_below="@id/add_layout" />
+    <com.handmark.pulltorefresh.library.PullToRefreshListView android:id="@id/gridview" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@android:color/transparent" android:cacheColorHint="#00000000" android:horizontalSpacing="@dimen/detail_recomend_grid_ver_spacing" android:verticalSpacing="@dimen/detail_series_grid_ver_spacing" android:divider="@null" android:layout_above="@id/edit_layout" android:layout_below="@id/test" />
+    <com.youku.widget.HintView android:id="@id/hint_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/add_layout" />
+    <LinearLayout android:orientation="vertical" android:id="@id/edit_layout" android:background="@drawable/btn_white_selected" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="60.0dip" android:layout_alignParentBottom="true">
+        <View android:background="#ffd9d9d9" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:background="@drawable/btn_white_selected" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:gravity="center" android:id="@id/delete_button" android:background="@drawable/btn_delete_attention" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="取消订阅" android:layout_weight="1.0" style="@style/edit_button_nodelete" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

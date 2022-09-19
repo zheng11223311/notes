@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="fill_parent" android:onClick="interceptClickEvent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/detail_fragment_video_vote_title_layout" android:layout_width="fill_parent" android:layout_height="48.0dip">
+        <View android:background="#ffff6600" android:layout_width="3.0dip" android:layout_height="15.0dip" android:layout_marginTop="16.5dip" />
+        <TextView android:textSize="17.0sp" android:textColor="#ff333333" android:gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="16.0dip" android:text="投票" />
+        <ImageView android:layout_gravity="right" android:layout_width="60.0dip" android:layout_height="fill_parent" android:src="@drawable/detail_bottom_bar_close" android:scaleType="center" />
+    </FrameLayout>
+    <View android:background="#ffe4e4e4" android:layout_width="fill_parent" android:layout_height="0.30000007dip" android:layout_marginLeft="18.0dip" android:layout_marginTop="48.0dip" android:layout_marginRight="18.0dip" />
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TextView android:textSize="17.0dip" android:textColor="#ff3d3d3d" android:ellipsize="end" android:id="@id/detail_fragment_video_vote_detail_title" android:paddingTop="16.0dip" android:paddingBottom="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="18.0dip" android:layout_marginTop="48.299988dip" android:layout_marginRight="18.0dip" android:maxLines="2" />
+        <View android:background="#ffe4e4e4" android:layout_width="fill_parent" android:layout_height="0.30000007dip" android:layout_marginLeft="18.0dip" android:layout_marginRight="18.0dip" />
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <RelativeLayout android:id="@id/detail_fragment_video_vote_detail_layout" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <TextView android:textSize="14.0dip" android:textColor="#ff575757" android:gravity="center" android:id="@id/detail_fragment_video_vote_detail_hint" android:layout_width="fill_parent" android:layout_height="53.0dip" android:text="点击投票并查看结果" android:layout_alignParentBottom="true" />
+                <ListView android:scrollbarStyle="outsideOverlay" android:id="@id/detail_fragment_video_vote_item_list" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@color/transparent" android:divider="@color/transparent" android:dividerHeight="0.0px" android:layout_above="@id/detail_fragment_video_vote_detail_hint" />
+            </RelativeLayout>
+            <include android:layout_gravity="center" android:id="@id/detail_fragment_video_vote_loading" android:visibility="invisible" android:layout_width="46.0dip" android:layout_height="46.0dip" layout="@layout/detail_loading" />
+            <com.youku.widget.HintView android:id="@id/detail_fragment_video_vote_hintview" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        </FrameLayout>
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:background="@drawable/listview_item_bg" android:layout_width="fill_parent" android:layout_height="@dimen/search_aside_bottom_btn_width" android:layout_marginBottom="@dimen/search_margin_value">
+        <Button android:id="@id/search_direct_more_btn" android:background="@drawable/tv_drama_button" android:layout_width="fill_parent" android:layout_height="@dimen/search_aside_bottom_btn_height" android:layout_margin="@dimen/search_margin_value" android:text="显示更多" android:layout_centerInParent="true" />
+    </RelativeLayout>
+</RelativeLayout>

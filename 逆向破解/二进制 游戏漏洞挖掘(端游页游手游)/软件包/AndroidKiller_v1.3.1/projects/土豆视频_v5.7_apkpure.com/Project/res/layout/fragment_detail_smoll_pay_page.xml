@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="#ff0d0d0d" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/rl_seek_top" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true">
+        <TextView android:textColor="#ffffffff" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="46.0dip" android:layout_marginLeft="46.0dip" android:layout_marginRight="40.0px" android:singleLine="true" android:layout_centerVertical="true" style="@style/FontE" />
+    </RelativeLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/nologin_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/rl_seek_top">
+        <TextView android:textColor="#ffffffff" android:id="@id/pay_tips" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="试看结束，观看全片请开通会员" style="@style/FontE" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/coprice_layout" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip">
+            <TextView android:textColor="#ffffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="限时价格：" style="@style/FontF" />
+            <TextView android:textColor="#ffff6600" android:id="@id/coprice" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/FontF" />
+            <com.youku.widget.SquareTextView android:textColor="#ffffffff" android:id="@id/oriprice" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" style="@style/FontC" />
+        </LinearLayout>
+        <TextView android:textColor="#ffffffff" android:id="@id/buy_vip" android:background="@drawable/player_vip_bug_shape_background" android:paddingLeft="10.0dip" android:paddingTop="5.0dip" android:paddingRight="10.0dip" android:paddingBottom="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="开通会员" style="@style/FontE" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/login_layout" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="18.0dip">
+            <TextView android:textColor="#ffffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="已是会员？" style="@style/FontE" />
+            <TextView android:textColor="#ffff6600" android:id="@id/login" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="立即登录>" style="@style/FontE" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

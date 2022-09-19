@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tudou="http://youku.com/tudou">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.youku.widget.YoukuImageView android:id="@id/poster_img" android:layout_width="fill_parent" android:layout_height="wrap_content" android:scaleType="fitXY" tudou:pheight="551" tudou:pwidth="1080" />
+        <View android:id="@id/selected_list_item_yaofeng" android:background="@drawable/yaofeng_paper" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" />
+        <LinearLayout android:orientation="vertical" android:paddingLeft="18.0dip" android:paddingRight="18.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="13.0dip" android:layout_alignBottom="@id/poster_img">
+            <TextView android:textSize="17.0sp" android:textColor="#ffffffff" android:ellipsize="end" android:id="@id/title_tv" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" />
+            <TextView android:textSize="13.0sp" android:textColor="#bfffffff" android:ellipsize="end" android:id="@id/desc_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="2" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

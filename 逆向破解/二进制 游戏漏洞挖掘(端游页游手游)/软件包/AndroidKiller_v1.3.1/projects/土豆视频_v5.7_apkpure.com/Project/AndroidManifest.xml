@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.tudou.android" platformBuildVersionCode="19" platformBuildVersionName="4.4.2-1456859">
+    <uses-permission android:name="com.youku.laifeng.libcuteroom"/>
+    <uses-permission android:name="android.permission.REORDER_TASKS"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.android.launcher3.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.google.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.teslacoilsw.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.ztemt.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.aspire.mm.permission.READ_SETTINGS"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDDW"/>
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.alipay.mobile.command.trigger.permission"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.front" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.flash" android:required="false"/>
+    <uses-feature android:name="android.hardware.wifi" android:required="false"/>
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE"/>
+    <android:uses-permission android:maxSdkVersion="18" android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:resizeable="true" android:smallScreens="true"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL"/>
+    <application android:allowBackup="true" android:icon="@drawable/icon" android:label="@string/app_name" android:largeHeap="true" android:name="com.tudou.android.Youku" android:theme="@style/AppTheme">
+        <PreferenceScreen android:summary="网络设置" android:title="网络设置">
+            <intent android:action="android.intent.action.MAIN" android:targetClass="com.android.settings.WirelessSettings" android:targetPackage="com.android.settings"/>
+        </PreferenceScreen>
+        <activity android:label="LaifengLiveRoom" android:launchMode="singleTask" android:name="com.youku.laifeng.sdk.LaifengLiveRoomActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <service android:exported="true" android:name="com.youku.laifeng.libcuteroom.service.CoreService" android:permission="com.youku.laifeng.libcuteroom" android:process="com.youku.laifeng.CoreService">
+            <intent-filter>
+                <action android:name="com.youku.laifeng.libcuteroom.model.port.service.IDataManagerService"/>
+                <action android:name="com.youku.laifeng.libcuteroom.model.port.service.IChatManagerService"/>
+                <action android:name="com.youku.laifeng.libcuteroom.model.port.service.IDownloadManagerService"/>
+                <action android:name="com.youku.laifeng.service.REMOTE_CORE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.tudou.ui.activity.WelcomeActivity" android:screenOrientation="nosensor" android:theme="@android:style/Theme.Translucent">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="tudouad"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.tudou.guide.GuideActivity" android:screenOrientation="nosensor" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.tudou.ui.activity.AccountIntroductionActivity" android:screenOrientation="nosensor"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.tudou.ui.activity.SelectedListActivity" android:screenOrientation="nosensor"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.tudou.ui.activity.SelectedDetailActivity" android:screenOrientation="nosensor"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.tudou.ui.activity.GiftPayActivity" android:screenOrientation="nosensor"/>
+        <activity android:name="com.tudou.guide.SplashActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:name="com.tudou.guide.SplashSubActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="true" android:launchMode="singleTask" android:name="com.tudou.ui.activity.HomePageActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTask" android:name="com.tudou.ui.activity.UploadActivity" android:screenOrientation="portrait" android:theme="@style/tudou_titlebar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.tudou.ui.activity.CheckedActivity" android:screenOrientation="portrait" android:theme="@style/tudou_titlebar"/>
+        <activity android:exported="false" android:launchMode="singleTask" android:name="com.tudou.push.EmptyActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="true" android:launchMode="singleTask" android:name="com.tudou.ui.fragment.SearchTudouActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize|stateUnchanged"/>
+        <activity android:name="com.tudou.ui.activity.SearchResultManDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="true" android:launchMode="singleTop" android:name="com.tudou.ui.activity.CachingListActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:exported="true" android:launchMode="singleTask" android:name="com.tudou.ui.activity.CacheActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.tudou.ui.activity.PlayHistoryActivity" android:screenOrientation="portrait" android:theme="@style/tudou_titlebar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.tudou.ui.activity.ClassifyAllChannelActivity" android:screenOrientation="portrait" android:theme="@style/tudou_titlebar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.tudou.ui.activity.ClassifySelectedResultsActivity" android:screenOrientation="portrait" android:theme="@style/tudou_titlebar"/>
+        <activity android:configChanges="keyboardHidden|layoutDirection|orientation|screenSize" android:exported="true" android:launchMode="singleTask" android:name="com.tudou.ui.activity.ClassifyFeatureActivity" android:screenOrientation="portrait" android:theme="@android:style/Animation.Activity" android:windowSoftInputMode="adjustNothing">
+            <intent-filter>
+                <action android:name="android.intent.action.channel.View"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.tudou.ui.activity.ClassifyHomeActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.tudou.ui.activity.ClassifyVipActivity" android:screenOrientation="portrait" android:theme="@style/tudou_titlebar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.tudou.ui.activity.VipPrivilegeActivity" android:screenOrientation="portrait" android:theme="@style/tudou_titlebar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.tudou.ui.activity.VipBuyActivity" android:screenOrientation="portrait" android:theme="@style/tudou_titlebar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.tudou.ui.activity.PayAgreementActivity" android:screenOrientation="portrait" android:theme="@style/tudou_titlebar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.tudou.ui.activity.ChannelSquareActivity" android:screenOrientation="portrait" android:theme="@style/tudou_titlebar"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:launchMode="singleTop" android:name="com.tudou.ui.activity.CacheFolderActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:launchMode="singleTop" android:name="com.tudou.ui.activity.CachingFolderActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:launchMode="singleTop" android:name="com.tudou.ui.activity.LocalVideoActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden" android:exported="true" android:launchMode="singleTask" android:name="com.tudou.ui.activity.UploadManagerActivity" android:screenOrientation="portrait" android:theme="@style/tudou_titlebar"/>
+        <activity android:name="com.tudou.ui.activity.RegistActivity" android:screenOrientation="portrait" android:theme="@style/tudou_titlebar"/>
+        <activity android:name="com.tudou.ui.activity.PhoneRegistActivity" android:screenOrientation="portrait" android:theme="@style/tudou_titlebar"/>
+        <activity android:name="com.tudou.ui.activity.PhoneLoginActivity" android:screenOrientation="portrait" android:theme="@style/tudou_titlebar"/>
+        <activity android:name="com.tudou.ui.activity.PasswordSetActivity" android:screenOrientation="portrait" android:theme="@style/tudou_titlebar"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.tudou.ui.activity.LoginActivity" android:theme="@style/tudou_titlebar" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:configChanges="keyboardHidden" android:name="com.tudou.ui.activity.DownLoadActivity" android:screenOrientation="portrait" android:theme="@style/tudou_titlebar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:name="com.tudou.ui.activity.MyFavoriteActivity" android:screenOrientation="portrait" android:theme="@style/tudou_titlebar"/>
+        <activity android:configChanges="keyboardHidden" android:name="com.tudou.ui.activity.MoreActivity" android:screenOrientation="portrait" android:theme="@style/tudou_titlebar"/>
+        <activity android:configChanges="keyboardHidden" android:name="com.tudou.ui.activity.WeiboManageActivity" android:screenOrientation="portrait" android:theme="@style/tudou_titlebar"/>
+        <activity android:configChanges="keyboardHidden" android:name="com.tudou.ui.activity.ChannelDetailActivity" android:screenOrientation="portrait" android:theme="@style/tudou_titlebar"/>
+        <activity android:configChanges="keyboardHidden" android:name="com.tudou.ui.activity.MoreDownloadActivity" android:screenOrientation="portrait" android:theme="@style/tudou_titlebar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.tudou.ui.activity.WebViewActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.tudou.ui.activity.AboutTudouActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTop" android:name="com.tudou.ui.activity.CrashActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:launchMode="singleTop" android:name="com.tudou.ui.activity.CrashResultAcitvity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:launchMode="singleTop" android:name="com.tudou.ui.activity.RowPieceTableActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:launchMode="singleTop" android:name="com.zijunlin.Zxing.CaptureActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan">
+            <meta-data android:name="android.app.default_searchable" android:value="com.youku.ui.activity.SearchActivity"/>
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.tudou.ui.activity.HomePageActivity"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:launchMode="singleTop" android:name="com.tudou.ui.activity.CaptureResultAcitvity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan">
+            <meta-data android:name="android.app.default_searchable" android:value="com.youku.ui.activity.SearchActivity"/>
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.tudou.ui.activity.HomePageActivity"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|layoutDirection|orientation|screenSize" android:launchMode="singleTop" android:name="com.tudou.ui.activity.DetailHLSActivity" android:theme="@style/Theme.Tudou" android:windowSoftInputMode="adjustPan">
+            <meta-data android:name="android.app.default_searchable" android:value="com.tudou.ui.activity.HomeActivity"/>
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.tudou.ui.activity.HomePageActivity"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="true" android:launchMode="singleTop" android:name="com.tudou.android.wxapi.WXEntryActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:configChanges="keyboardHidden|layoutDirection|orientation|screenSize" android:exported="true" android:launchMode="singleTask" android:name="com.tudou.ui.activity.DetailActivity" android:theme="@style/Theme.Tudou" android:windowSoftInputMode="stateAlwaysHidden|adjustResize">
+            <meta-data android:name="android.app.default_searchable" android:value="com.tudou.ui.activity.HomeActivity"/>
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.tudou.ui.activity.HomePageActivity"/>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:mimeType="application/mp4"/>
+                <data android:mimeType="*/rmvb"/>
+                <data android:mimeType="*/avi"/>
+                <data android:mimeType="*/mkv"/>
+                <data android:mimeType="*/f4v"/>
+                <data android:mimeType="*/flv"/>
+                <data android:mimeType="*/3gp"/>
+                <data android:mimeType="*/mp4"/>
+                <data android:mimeType="*/mov"/>
+                <data android:mimeType="application/3gpp*"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="tudou"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="m.youku.com" android:pathPrefix="/youkuplayer" android:scheme="http"/>
+                <data android:mimeType="video/mp4"/>
+                <data android:mimeType="video/3gp"/>
+                <data android:mimeType="video/3gpp"/>
+                <data android:mimeType="video/3gpp2"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.tudou.ui.activity.VIPCardActivity" android:screenOrientation="portrait" android:theme="@style/tudou_titlebar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.tudou.ui.activity.MyTicketsActivity" android:screenOrientation="portrait" android:theme="@style/tudou_titlebar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.tudou.ui.activity.MyTicketsBindActivity" android:screenOrientation="portrait" android:theme="@style/tudou_titlebar"/>
+        <receiver android:name="com.tudou.service.download.ShutdownReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_SHUTDOWN"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="UMENG_APPKEY" android:value="50f8ea90527015626c000004"/>
+        <meta-data android:name="UMENG_CHANNEL" android:value="Umeng"/>
+        <meta-data android:name="ire_channel" android:value="iresearch"/>
+        <activity android:name="com.youtu.apps.recommend.activity.RecommendHomeActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Tudou_Recommend"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTask" android:name="com.tudou.ui.activity.UpdateActivity" android:theme="@style/Theme.MyDialog"/>
+        <activity android:configChanges="orientation|screenSize" android:hardwareAccelerated="true" android:name="com.tudou.ui.activity.BuildInBrowserActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="true" android:launchMode="singleTop" android:name="com.tudou.ui.activity.NewPodcastActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.tudou.ui.activity.AttentionActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.tudou.ui.activity.RankingListActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.tudou.ui.activity.RankingListDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.tudou.ui.activity.MessageActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.tudou.ui.activity.MessageDetailActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <receiver android:name="com.tudou.push.PushReceiver">
+            <intent-filter>
+                <action android:name="com.youku.android.pushsdk.action.MESSAGE"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="true" android:name="com.youku.pushsdk.service.PushService" android:process="com.push.Youku_PushService">
+            <intent-filter>
+                <action android:name="com.youku.pushsdk.pushservice.START_PUSH_SERVICE"/>
+                <action android:name="com.youku.pushsdk.pushservice.BASE_DATA"/>
+                <action android:name="com.youku.pushsdk.pushservice.EVENT_DATA"/>
+                <action android:name="com.youku.pushsdk.pushservice.ACTION_PUSH_SWITCH_CHANGE"/>
+                <action android:name="com.youku.pushsdk.pushservice.ACTION_NET_CHANGE"/>
+                <action android:name="com.youku.pushsdk.pushservice.ACTION_COLLECT_DATA"/>
+                <action android:name="com.youku.pushsdk.pushservice.PUSH_STATE"/>
+            </intent-filter>
+        </service>
+        <receiver android:name="com.youku.pushsdk.receiver.YoukuMyPushServiceReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.youku.pushsdk.receiver.YoukuAppActionReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.youku.pushsdk.pushservice.ALARM_TICK"/>
+                <action android:name="com.youku.pushsdk.pushservice.ALARM_DATA_COLLECT"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="app_type" android:value="4"/>
+        <service android:exported="false" android:label="Tudou Push Notifications StartActivityService" android:name="com.tudou.push.StartActivityService"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.tudou.ui.activity.VideoRecommendActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTask" android:name="com.tencent.tauth.AuthActivity" android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="tencent200003"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.tencent.connect.common.AssistActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.youku.phone.detail.plugin.fullscreen.EndActivity" android:screenOrientation="landscape"/>
+        <activity android:configChanges="keyboardHidden|layoutDirection|orientation|screenSize" android:launchMode="singleTop" android:name="com.tudou.ui.activity.DanmuPreview" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboardHidden|layoutDirection|orientation|screenSize" android:launchMode="singleTop" android:name="com.tudou.ui.activity.TheShowRankActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboardHidden|layoutDirection|orientation|screenSize" android:launchMode="singleTop" android:name="com.tudou.ui.activity.TheShowRankHistoryActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboardHidden|layoutDirection|orientation|screenSize" android:launchMode="singleTop" android:name="com.tudou.ui.activity.TheShowRuleActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <service android:label="Tudou Download Service" android:name="com.tudou.service.download.DownloadService" android:process=":download">
+            <intent-filter android:priority="1000">
+                <action android:name="default_value"/>
+            </intent-filter>
+        </service>
+        <service android:enabled="true" android:exported="true" android:name="com.tudou.service.chat.ListenClipboardService" android:process=":ListenClipboardService"/>
+        <service android:name="com.tudou.openudid.OpenUDID_service">
+            <intent-filter>
+                <action android:name="org.openudid.GETUDID"/>
+            </intent-filter>
+        </service>
+        <service android:exported="true" android:name="com.youku.libmanager.SoUpgradeService" android:process=":SoUpgradeService"/>
+        <activity android:configChanges="fontScale|keyboardHidden|locale|orientation|screenSize" android:excludeFromRecents="true" android:exported="false" android:launchMode="singleTop" android:name="com.alipay.android.mini.window.sdk.MiniLaucherActivity" android:process="com.alipay.sdk" android:theme="@style/MspAppTheme">
+            <intent-filter>
+                <action android:name="com.alipay.mobilepay.android"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <meta-data android:name="com.taobao.android.ski.NODERIVATION" android:value="true"/>
+        </activity>
+        <activity android:configChanges="fontScale|keyboardHidden|locale|orientation|screenSize" android:excludeFromRecents="true" android:exported="false" android:label="@string/msp_app_name" android:launchMode="singleTop" android:name="com.alipay.android.mini.window.sdk.MiniPayActivity" android:process="com.alipay.sdk" android:screenOrientation="behind" android:theme="@style/MspAppTheme" android:windowSoftInputMode="adjustResize|stateHidden">
+            <intent-filter android:priority="800">
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <meta-data android:name="com.taobao.android.ski.NODERIVATION" android:value="true"/>
+        </activity>
+        <activity android:configChanges="fontScale|keyboardHidden|locale|orientation|screenSize" android:excludeFromRecents="true" android:exported="false" android:launchMode="singleTop" android:name="com.alipay.android.mini.window.sdk.MiniWebActivity" android:process="com.alipay.sdk" android:screenOrientation="behind" android:theme="@style/MspAppTheme">
+            <intent-filter android:priority="800">
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <meta-data android:name="com.taobao.android.ski.NODERIVATION" android:value="true"/>
+        </activity>
+        <service android:exported="false" android:name="com.alipay.android.app.MspService" android:process="com.alipay.sdk">
+            <intent-filter android:priority="800">
+                <action android:name="default_value"/>
+            </intent-filter>
+        </service>
+        <service android:enabled="true" android:label="commandCenter" android:name="com.alipay.mobile.command.engine.TaskExeService"/>
+        <receiver android:name="com.alipay.mobile.command.trigger.NotifyTrigger" android:permission="com.alipay.mobile.command.trigger.permission">
+            <intent-filter>
+                <action android:name="com.alipay.mobile.command.NOTIFY"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.alipay.mobile.command.trigger.NetChangeTrigger">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation" android:enabled="false" android:exported="true" android:name="com.alipay.mobile.command.trigger.WebViewTrigger" android:screenOrientation="portrait" android:windowSoftInputMode="stateAlwaysHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="alipaydt"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="true" android:label="@string/app_name" android:launchMode="singleTask" android:name="com.youku.gamecenter.GameCenterHomeActivity" android:theme="@style/GameCenterTheme.Tudou"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.youku.gamecenter.GameDetailsActivity" android:theme="@style/GameCenterTheme.Tudou"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTask" android:name="com.youku.gamecenter.GameCenterDialogActivity" android:theme="@android:style/Theme.Panel"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="true" android:name="com.youku.gamecenter.GameSubCategoryActivity" android:theme="@style/GameCenterTheme.Tudou"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="true" android:launchMode="singleTask" android:name="com.youku.gamecenter.GameManagerActivity" android:theme="@style/GameCenterTheme.Tudou"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="true" android:launchMode="singleTask" android:name="com.youku.gamecenter.GameSearchActivity" android:theme="@style/GameCenterTheme.Tudou"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="true" android:name="com.youku.gamecenter.GameSearchResultActivity" android:theme="@style/GameCenterTheme.Tudou"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:name="com.youku.gamecenter.GamePresentListActivity" android:theme="@style/GameCenterTheme.Tudou"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:name="com.youku.gamecenter.GamePresentDetailsActivity" android:theme="@style/GameCenterTheme.Tudou"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.youku.gamecenter.GamePresentActivity" android:theme="@style/GameCenterTheme.Tudou"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:launchMode="singleTask" android:name="com.youku.gamecenter.GameWebViewActivity" android:theme="@style/GameCenterTheme.Tudou"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTask" android:name="com.youku.gamecenter.GameRankActivity" android:theme="@style/GameCenterTheme.Tudou"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.youku.gamecenter.GameH5CardListActivity" android:theme="@style/GameCenterTheme.Tudou"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTask" android:name="com.youku.gamecenter.GameNetActivity" android:theme="@style/GameCenterTheme.Tudou"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTask" android:name="com.youku.gamecenter.GameVideoActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTask" android:name="com.youku.gamecenter.GameVideoListActivity" android:theme="@style/GameCenterTheme.Tudou"/>
+        <service android:exported="true" android:name="com.youku.gamecenter.download.DownloadingService" android:process=":GameCenterDownloadService"/>
+        <provider android:authorities="com.youku.gamecenter.providers.GameCenterProviderForTudou" android:exported="false" android:name="com.youku.gamecenter.providers.GameCenterProviderForTudou"/>
+        <receiver android:exported="false" android:name="com.youku.gamecenter.GameInstallActionReceiverForTudou" android:process=":GameCenterDownloadService">
+            <intent-filter>
+                <action android:name="com.youku.appcenter.action.LAUNCH_APP_INSTALL_ACTION_TUDOU"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.youku.player.ad.AdWebViewActivity" android:theme="@style/Theme.Tudou"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.tudou.guide.GuideVideoActivity" android:screenOrientation="nosensor"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:name="com.sina.weibo.sdk.component.WeiboSdkBrowser" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="true" android:launchMode="singleTop" android:name="com.tudou.videoshare.WBShareActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent">
+            <intent-filter>
+                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.alibaba.sdk.android.webview.BaseWebViewActivity"/>
+        <receiver android:exported="false" android:name="com.alibaba.sdk.android.hotpatch.HotPatchBroadcastReceiver" android:process=":hotpatch">
+            <intent-filter>
+                <action android:name="com.alibaba.sdk.android.hotpatch.action.HOT_PATCH"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.alibaba.sdk.android.login.ui.LoginWebViewActivity"/>
+        <activity android:name="com.alibaba.sdk.android.login.ui.QrLoginActivity" android:theme="@style/tae_sdk_login_qr_activity_style"/>
+        <meta-data android:name="RONG_CLOUD_APP_KEY" android:value="qd46yzrf4jxkf"/>
+        <service android:name="io.rong.imlib.ipc.RongService" android:process=":ipc"/>
+        <service android:name="io.rong.imlib.ReConnectService"/>
+        <receiver android:name="io.rong.imlib.ConnectChangeReceiver"/>
+        <receiver android:name="io.rong.imlib.HeartbeatReceiver" android:process=":ipc"/>
+        <service android:name="io.rong.push.CommandService" android:process="io.rong.push">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="io.rong.command"/>
+            </intent-filter>
+        </service>
+    </application>
+</manifest>

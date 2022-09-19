@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:laifeng="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:id="@id/actor_info_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="20.0dip">
+        <ImageView android:id="@id/actor_avatar" android:layout_width="50.0dip" android:layout_height="50.0dip" />
+        <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="18.0dip">
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <ImageView android:id="@id/actor_level" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" />
+                <ImageView android:id="@id/actor_guizu_level" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                <TextView android:textSize="@dimen/lf_text_size_dp_large" android:textColor="@android:color/white" android:id="@id/actor_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="9.0dip" />
+            </LinearLayout>
+            <TextView android:textSize="@dimen/lf_text_size_dp_medium" android:textColor="@android:color/white" android:id="@id/play_time_view" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:id="@id/recommend_rooms_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:layout_marginBottom="20.0dip">
+        <RelativeLayout android:id="@id/live_house_recommend_room_two" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginRight="5.0dip" android:layout_weight="1.0">
+            <ImageView android:id="@id/recommend_room_two_image" android:background="@drawable/lf_crazymodulebackground" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
+            <ImageView android:layout_width="34.0dip" android:layout_height="34.0dip" android:src="@drawable/lf_live_recommend_rooms_play" android:layout_centerInParent="true" />
+            <TextView android:textSize="@dimen/lf_text_size_dp_medium" android:textColor="#ffcccccc" android:ellipsize="end" android:gravity="bottom|center" android:id="@id/recommend_actor_two_name" android:background="@drawable/lf_live_recommend_room_cover" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="3.0dip" android:singleLine="true" android:layout_alignParentBottom="true" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/live_house_recommend_room_one" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:layout_weight="1.0">
+            <ImageView android:id="@id/recommend_room_one_image" android:background="@drawable/lf_crazymodulebackground" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
+            <ImageView android:layout_width="34.0dip" android:layout_height="34.0dip" android:src="@drawable/lf_live_recommend_rooms_play" android:layout_centerInParent="true" />
+            <TextView android:textSize="@dimen/lf_text_size_dp_medium" android:textColor="#ffcccccc" android:ellipsize="end" android:gravity="bottom|center" android:id="@id/recommend_actor_one_name" android:background="@drawable/lf_live_recommend_room_cover" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="3.0dip" android:singleLine="true" android:layout_alignParentBottom="true" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/live_house_recommend_room_three" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginRight="15.0dip" android:layout_weight="1.0">
+            <ImageView android:id="@id/recommend_room_three_image" android:background="@drawable/lf_crazymodulebackground" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
+            <ImageView android:layout_width="34.0dip" android:layout_height="34.0dip" android:src="@drawable/lf_live_recommend_rooms_play" android:layout_centerInParent="true" />
+            <TextView android:textSize="@dimen/lf_text_size_dp_medium" android:textColor="#ffcccccc" android:ellipsize="end" android:gravity="bottom|center" android:id="@id/recommend_actor_three_name" android:background="@drawable/lf_live_recommend_room_cover" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="3.0dip" android:singleLine="true" android:layout_alignParentBottom="true" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

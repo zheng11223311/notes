@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/cell_bg" android:background="@drawable/channel_row_even_bg" android:layout_width="138.0dip" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textAppearance="@style/index_scroll_card_title" android:ellipsize="end" android:id="@id/card_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="17.0dip" android:text="美国恐怖故事" android:singleLine="true" android:layout_centerInParent="true" />
+    <TextView android:textAppearance="@style/index_scroll_card_content" android:ellipsize="end" android:id="@id/card_content" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="17.0dip" android:layout_marginTop="5.0dip" android:text="第26集" android:singleLine="true" android:layout_centerInParent="true" />
+</LinearLayout>

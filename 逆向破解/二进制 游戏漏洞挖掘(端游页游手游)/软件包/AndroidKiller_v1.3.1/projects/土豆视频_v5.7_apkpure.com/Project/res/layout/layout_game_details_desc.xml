@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/game_card_margin" android:paddingTop="@dimen/game_card_margin" android:paddingRight="@dimen/game_card_margin" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/game_photos_container_margin_top"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <RelativeLayout android:id="@id/game_information_desc" android:background="#ffffffff" android:paddingLeft="@dimen/detail_gameinfo_padding" android:paddingTop="@dimen/game_detail_tag_title_margin_top_bottom" android:paddingRight="@dimen/detail_gameinfo_padding" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="@dimen/game_photos_text_size" android:textColor="#ff333333" android:id="@id/game_desc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/game_detail_tag_title_margin_top_bottom" android:text="@string/game_str_game_desc" />
+            <View android:id="@id/line" android:background="#ffcccccc" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_below="@id/game_desc" />
+            <TextView android:textSize="@dimen/game_category_text_size" android:textColor="#ff666666" android:id="@id/game_category" android:layout_width="@dimen/game_category_width" android:layout_height="@dimen/game_category_height" android:layout_marginTop="@dimen/game_line_margin_top" android:text="@string/game_category" android:layout_below="@id/line" android:layout_alignLeft="@id/game_desc" />
+            <TextView android:textSize="@dimen/game_category_text_size" android:textColor="#ff666666" android:id="@id/game_version" android:layout_width="@dimen/game_version_width" android:layout_height="@dimen/game_version_height" android:text="@string/game_version" android:singleLine="true" android:layout_below="@id/game_category" />
+            <TextView android:textSize="@dimen/game_category_text_size" android:textColor="#ff666666" android:ellipsize="end" android:id="@id/game_update_time" android:layout_width="wrap_content" android:layout_height="@dimen/game_update_time_height" android:text="@string/game_update_time" android:singleLine="true" android:layout_toRightOf="@id/game_version" android:layout_alignTop="@id/game_version" />
+        </RelativeLayout>
+        <include android:id="@id/elasticTextArea" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/elastic_textarea_margin_top" android:layout_below="@id/game_information_desc" layout="@layout/widget_game_elastic_textarea" />
+    </RelativeLayout>
+    <View android:background="@color/game_card_bottom_color" android:layout_width="fill_parent" android:layout_height="@dimen/game_details_card_bttom_root_height" />
+</LinearLayout>

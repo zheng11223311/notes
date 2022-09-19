@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/app_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/cache_none" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/cachingListTitle">
+        <TextView android:textSize="15.0sp" android:textStyle="bold" android:textColor="#ff878787" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="快来缓存你喜欢的视频吧" android:drawableTop="@drawable/cache_none_img" android:drawablePadding="33.0dip" android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <RelativeLayout android:orientation="vertical" android:id="@id/cache_rel" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ListView android:id="@id/cache_listview" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="#00000000" android:cacheColorHint="#00000000" android:divider="#ffd0d0d0" android:dividerHeight="1.0px" android:layout_above="@id/cache_delete" />
+        <com.youku.widget.PageBottomDeleteLayout android:id="@id/cache_delete" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/cached_delete_ll_height" android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+</RelativeLayout>

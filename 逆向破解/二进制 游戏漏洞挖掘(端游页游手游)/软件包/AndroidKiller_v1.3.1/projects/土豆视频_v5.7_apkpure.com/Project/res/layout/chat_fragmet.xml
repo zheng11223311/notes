@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent" android:onClick="interceptClickEvent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/chat_title_layout" android:layout_width="fill_parent" android:layout_height="48.0dip" android:onClick="interceptClickEvent">
+        <ImageView android:id="@id/chat_title_img" android:layout_width="53.0dip" android:layout_height="fill_parent" android:src="@drawable/chat_title_img" android:scaleType="center" />
+        <TextView android:textSize="15.0sp" android:textColor="#ff333333" android:id="@id/chat_title_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="边看边聊" />
+        <TextView android:textSize="13.0sp" android:textColor="#ff8e8e93" android:id="@id/chat_title_count_text" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="14.0dip" android:text="(3/30)" />
+        <View android:id="@id/chat_title_blank_view" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" />
+        <ImageView android:id="@id/chat_title_join_img" android:visibility="gone" android:layout_width="40.0dip" android:layout_height="fill_parent" android:layout_marginLeft="6.0dip" android:src="@drawable/chat_title_join_img_selector" android:scaleType="center" />
+        <ImageView android:id="@id/chat_title_exit_img" android:visibility="gone" android:layout_width="40.0dip" android:layout_height="fill_parent" android:src="@drawable/chat_exit_img" android:scaleType="center" />
+        <ImageView android:id="@id/chat_title_back_img" android:visibility="visible" android:layout_width="40.0dip" android:layout_height="fill_parent" android:layout_marginRight="10.0dip" android:src="@drawable/detail_bottom_bar_close" android:scaleType="center" />
+    </LinearLayout>
+    <View android:background="#ffd9d9d9" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_below="@id/chat_title_layout" />
+    <com.tudou.android.chat.ChatCreatedView android:id="@id/chat_created_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="1.0px" android:layout_below="@id/chat_title_layout" android:onClick="interceptClickEvent" />
+    <com.tudou.android.chat.ChatCreatedResultView android:id="@id/chat_created_result_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="1.0px" android:layout_below="@id/chat_title_layout" android:onClick="interceptClickEvent" />
+    <com.tudou.android.chat.ChatInviteView android:id="@id/chat_invite_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="1.0px" android:layout_below="@id/chat_title_layout" android:onClick="interceptClickEvent" />
+    <com.tudou.android.chat.ChatJoinedView android:id="@id/chat_joined_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="1.0px" android:layout_below="@id/chat_title_layout" android:onClick="interceptClickEvent" />
+    <com.tudou.android.chat.ChatConversationView android:id="@id/chat_conversation_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="1.0px" android:layout_below="@id/chat_title_layout" android:onClick="interceptClickEvent" />
+    <com.tudou.android.chat.ChatLoadingAndErrorView android:id="@id/chat_loading_error_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="1.0px" android:layout_below="@id/chat_title_layout" android:onClick="interceptClickEvent" />
+</RelativeLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/root_view" android:layout_width="fill_parent" android:layout_height="@dimen/index_selectness_title_h"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/txtLeft" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/index_selectness_head_padding_l" android:src="@drawable/index_selectness" android:scaleType="fitXY" android:layout_centerVertical="true" />
+    <ImageView android:id="@id/imgRight" android:background="@drawable/selectness_right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="17.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    <TextView android:textAppearance="@style/index_selectness_sub_title" android:id="@id/sub_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="6.0dip" android:text="往期精选" android:layout_toLeftOf="@id/imgRight" android:layout_centerVertical="true" />
+    <TextView android:textAppearance="@style/index_selectness_title" android:ellipsize="end" android:id="@id/channel_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="title" android:singleLine="true" android:layout_toLeftOf="@id/sub_title" android:layout_toRightOf="@id/txtLeft" android:layout_centerVertical="true" />
+</RelativeLayout>

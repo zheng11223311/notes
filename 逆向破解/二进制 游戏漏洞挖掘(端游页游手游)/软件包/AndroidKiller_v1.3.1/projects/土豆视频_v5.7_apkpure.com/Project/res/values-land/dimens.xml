@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="detail_play_progress_margin_left">9.0dip</dimen>
+    <dimen name="detail_play_title_height">37.0dip</dimen>
+    <dimen name="gamecenter_homepage_item_text_margin_left">3.0dip</dimen>
+    <dimen name="gamecenter_myouku_video_layout_width">120.0dip</dimen>
+    <dimen name="gamecenter_myouku_video_name_size">11.0dip</dimen>
+    <dimen name="gamecenter_myouku_video_name_view_padding">8.0dip</dimen>
+    <dimen name="gamecenter_myyouku_card_title_size">22.0dip</dimen>
+    <dimen name="gamehome_gridview_item_tv_marginleft">5.0dip</dimen>
+    <dimen name="gamehome_homepage_item_title_first">12.0dip</dimen>
+    <dimen name="gamehome_homepage_item_title_second">10.0dip</dimen>
+    <dimen name="gridview_pading_horizontal">8.0dip</dimen>
+    <dimen name="recommend_topgame_item_text_downloader_width">81.0dip</dimen>
+    <dimen name="recommend_topgame_item_text_intro_width">300.0dip</dimen>
+    <dimen name="recommend_topgame_item_text_name_width">130.0dip</dimen>
+    <dimen name="top_gallery_for_pad_width">398.0dip</dimen>
+    <dimen name="game_recom2_card_name_text_size">19.0sp</dimen>
+    <dimen name="channel_gridview_pading_horizontal">3.0dip</dimen>
+    <dimen name="top_gallery_for_pad_height">150.0dip</dimen>
+</resources>

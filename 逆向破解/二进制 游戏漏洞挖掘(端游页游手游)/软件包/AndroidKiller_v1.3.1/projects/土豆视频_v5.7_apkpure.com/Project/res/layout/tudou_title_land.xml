@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/bg_top" android:layout_width="fill_parent" android:layout_height="@dimen/tudou_top_bar_height"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:gravity="center" android:id="@id/title_text" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="title" android:layout_alignParentLeft="true" android:layout_centerInParent="true" style="@style/tudou_title" />
+    <ImageView android:id="@id/moreimg" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/home_btn_search" android:scaleType="fitXY" android:layout_alignParentRight="true" />
+    <ImageView android:id="@id/mytudouimg" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/home_btn_search" android:scaleType="fitXY" android:layout_toLeftOf="@id/moreimg" />
+    <ImageView android:id="@id/downloadimg" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/home_btn_search" android:scaleType="fitXY" android:layout_toLeftOf="@id/mytudouimg" />
+    <ImageView android:id="@id/uploadimg" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/home_btn_search" android:scaleType="fitXY" android:layout_toLeftOf="@id/downloadimg" />
+    <ImageView android:id="@id/searchimg" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/home_btn_search" android:scaleType="fitXY" android:layout_toLeftOf="@id/uploadimg" />
+    <ImageView android:id="@id/historyimg" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/home_btn_search" android:scaleType="fitXY" android:layout_toLeftOf="@id/searchimg" />
+    <ImageView android:id="@id/homeimg" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/home_btn_search" android:scaleType="fitXY" android:layout_toLeftOf="@id/historyimg" />
+</RelativeLayout>

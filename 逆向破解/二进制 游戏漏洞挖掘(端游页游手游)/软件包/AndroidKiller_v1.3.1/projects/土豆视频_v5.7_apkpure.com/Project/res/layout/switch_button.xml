@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.tudou.detail.widget.SwitchButton android:background="@android:color/transparent" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:gravity="center_vertical" android:layout_gravity="center" android:id="@id/detail_switch_button_btn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleType="fitXY" />
+    <ProgressBar android:layout_gravity="center" android:id="@id/detail_switch_button_progress" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="18.0dip" android:maxHeight="18.0dip" android:indeterminateOnly="true" android:indeterminateDrawable="@drawable/detail_progress_white_60" android:indeterminateBehavior="repeat" android:minWidth="18.0dip" android:minHeight="18.0dip" />
+</com.tudou.detail.widget.SwitchButton>

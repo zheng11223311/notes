@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@android:color/white" android:paddingLeft="9.0dip" android:paddingRight="9.0dip" android:paddingBottom="5.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tudou="http://youku.com/tudou">
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <RelativeLayout android:id="@id/cache_item_layout1" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <com.youku.widget.YoukuImageView android:id="@id/cache_poster_img1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:scaleType="fitXY" />
+            <FrameLayout android:id="@id/downloading_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <View android:background="#ffffa862" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="10.0dip" android:layout_marginBottom="10.0dip" />
+                <ImageView android:layout_gravity="center" android:id="@id/downloading_arrow_img" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:src="@drawable/downloading_arrow" />
+                <com.youku.widget.YoukuImageView android:id="@id/downloading_folder_img" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/downloading_folder" android:scaleType="fitXY" tudou:usedown="false" />
+            </FrameLayout>
+            <ImageView android:id="@id/cache_album_img1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/account_cache_album" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+            <TextView android:gravity="bottom" android:id="@id/cache_album_count_tv1" android:background="@drawable/yaofeng" android:paddingLeft="6.0dip" android:paddingBottom="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignBottom="@id/cache_poster_img1" style="@style/cache_fengyao_label" />
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:layout_below="@id/cache_poster_img1">
+                <ImageView android:id="@id/cache_point_img1" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/account_cache_isplay" />
+                <TextView android:textSize="13.0sp" android:textColor="#ff3c3c3c" android:ellipsize="end" android:id="@id/cache_title_tv1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:layout_marginRight="6.0dip" android:singleLine="true" />
+            </LinearLayout>
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/cache_item_layout2" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="1.0dip" android:layout_weight="1.0">
+            <com.youku.widget.YoukuImageView android:id="@id/cache_poster_img2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:scaleType="fitXY" />
+            <ImageView android:id="@id/cache_album_img2" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/account_cache_album" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+            <TextView android:gravity="bottom" android:id="@id/cache_album_count_tv2" android:background="@drawable/yaofeng" android:paddingLeft="6.0dip" android:paddingBottom="5.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignBottom="@id/cache_poster_img2" style="@style/cache_fengyao_label" />
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:layout_below="@id/cache_poster_img2">
+                <ImageView android:id="@id/cache_point_img2" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/account_cache_isplay" />
+                <TextView android:textSize="13.0sp" android:textColor="#ff3c3c3c" android:ellipsize="end" android:id="@id/cache_title_tv2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:layout_marginRight="6.0dip" android:singleLine="true" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+    <Button android:textSize="15.0sp" android:textColor="#ff333333" android:gravity="center" android:id="@id/cache_all_btn" android:background="@drawable/account_all_btn_bg" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginTop="10.0dip" android:text="全部缓存" />
+</LinearLayout>

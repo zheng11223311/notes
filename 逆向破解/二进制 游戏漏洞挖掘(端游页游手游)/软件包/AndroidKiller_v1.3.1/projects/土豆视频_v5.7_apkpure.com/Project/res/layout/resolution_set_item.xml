@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:background="@drawable/t_bg" android:layout_width="fill_parent" android:layout_height="@dimen/mytudou_layout_height">
+        <TextView android:textAppearance="@style/tudou_more_not_bund" android:id="@id/resolution_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/more_item_image_margin_left" android:text="标清" android:layout_centerVertical="true" />
+        <ImageView android:layout_gravity="center" android:id="@id/img_choice" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/more_item_image_margin_right" android:src="@drawable/read_ic_empty" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <include layout="@layout/discovery_line" />
+</LinearLayout>

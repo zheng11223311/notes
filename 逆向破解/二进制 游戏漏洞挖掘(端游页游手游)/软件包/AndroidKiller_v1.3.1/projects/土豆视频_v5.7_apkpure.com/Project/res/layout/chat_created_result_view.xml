@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:id="@id/chat_result_view_bottom_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="38.0dip" android:layout_alignParentBottom="true">
+        <TextView android:textSize="14.0sp" android:textColor="#ff313131" android:gravity="center" android:id="@id/chat_result_invite_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="邀请好友" android:drawableTop="@drawable/chat_invite_friend" android:drawablePadding="7.0dip" android:layout_weight="1.0" />
+        <View android:layout_gravity="center_vertical" android:background="#ff8cd4ff" android:layout_width="1.0dip" android:layout_height="70.0dip" />
+        <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <TextView android:textSize="14.0sp" android:textColor="#ff313131" android:gravity="center" android:id="@id/chat_result_join_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="进入聊天" android:drawableTop="@drawable/chat_join_room_normal" android:drawablePadding="7.0dip" android:layout_centerInParent="true" />
+            <ImageView android:id="@id/chat_result_red_img" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:layout_marginRight="5.0dip" android:src="@drawable/detail_bottom_slider_bar_menu_item_cling" android:layout_alignTop="@id/chat_result_join_text" android:layout_alignRight="@id/chat_result_join_text" />
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout android:gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/chat_result_view_bottom_layout">
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="16.0sp" android:textColor="#ff575757" android:id="@id/chat_created_result_view_complete_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="房间创建完成" android:drawableLeft="@drawable/chat_creted_success" android:drawablePadding="9.0dip" android:layout_centerHorizontal="true" />
+            <TextView android:textSize="20.0sp" android:textColor="#ffff612a" android:gravity="center" android:id="@id/chat_room_number" android:background="@drawable/chat_joined_view_bg_normal" android:layout_width="228.0dip" android:layout_height="56.0dip" android:layout_marginTop="24.0dip" android:text="z7fin279" android:layout_below="@id/chat_created_result_view_complete_text" android:layout_centerHorizontal="true" />
+            <TextView android:textSize="13.0sp" android:textColor="#ffb3b3b3" android:id="@id/chat_created_result_view_copy_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="点击可复制房间号" android:layout_below="@id/chat_room_number" android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+    </LinearLayout>
+</merge>

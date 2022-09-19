@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/LoginRoot" android:background="@drawable/app_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tudou="http://youku.com/tudou">
+    <include android:id="@id/app_title" layout="@layout/tudou_title_login" />
+    <ScrollView android:scrollbarThumbVertical="@drawable/null_drawable" android:id="@id/LoginContentRoot" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/app_title">
+        <RelativeLayout android:paddingLeft="@dimen/login_layout_Margin_right_left" android:paddingTop="@dimen/login_layout_Margin_top" android:paddingRight="@dimen/login_layout_Margin_right_left" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:orientation="vertical" android:id="@id/edit_layout_speed" android:layout_width="fill_parent" android:layout_height="96.0dip">
+                <EditText android:gravity="center_vertical" android:id="@id/login_name_speed" android:background="@drawable/zhuce_shang_heng" android:paddingLeft="@dimen/login_edit_padding_left" android:paddingRight="@dimen/login_edit_padding_right" android:layout_width="fill_parent" android:layout_height="fill_parent" android:hint="请输入手机号码" android:singleLine="true" android:maxLength="11" android:phoneNumber="true" android:layout_weight="1.0" style="@style/edit_txt" />
+                <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+                    <EditText android:gravity="center_vertical" android:id="@id/login_pwd_speed" android:background="@drawable/zhuce_xia_zuo" android:paddingLeft="@dimen/login_edit_padding_left" android:paddingRight="@dimen/login_edit_padding_right" android:layout_width="@dimen/vertify_code_edit_width" android:layout_height="fill_parent" android:hint="请输入短信密码" android:singleLine="true" android:maxLength="6" android:inputType="number" style="@style/edit_txt" />
+                    <TextView android:gravity="center" android:id="@id/mesPass" android:background="@drawable/zhuce_xia_you" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="获取短信密码" style="@style/login_button_txt_gray" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/cancel_layout_speed" android:layout_width="fill_parent" android:layout_height="96.0dip">
+                <ImageView android:layout_gravity="right" android:id="@id/cancel_speed1" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/search_ic_close_bak" android:layout_weight="1.0" />
+                <LinearLayout android:gravity="right" android:layout_width="@dimen/vertify_code_edit_width" android:layout_height="fill_parent" android:layout_weight="1.0">
+                    <ImageView android:id="@id/cancel_speed2" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/search_ic_close_bak" />
+                </LinearLayout>
+            </LinearLayout>
+            <TextView android:gravity="center" android:id="@id/user_login" android:background="@drawable/login_btn_bg_selector" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_marginTop="18.0dip" android:text="@string/login" android:layout_below="@id/edit_layout_speed" style="@style/login_button_txt_gray" />
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/tudou5_yellow" android:layout_width="fill_parent" android:layout_height="@dimen/home_title_height"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/home_title_logo_layout" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_alignParentLeft="true">
+        <ImageView android:id="@id/title_img" android:layout_width="150.0dip" android:layout_height="fill_parent" android:src="@drawable/main_logo" android:scaleType="fitStart" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <LinearLayout android:id="@id/local_layout" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="10.0dip" android:layout_alignParentRight="true">
+        <ImageView android:id="@id/recommend_img" android:layout_width="@dimen/index_right_img_width" android:layout_height="fill_parent" android:src="@drawable/homepage_tab_home" android:scaleType="center" />
+        <ImageView android:id="@id/game_img" android:layout_width="@dimen/index_right_img_width" android:layout_height="fill_parent" android:src="@drawable/homepage_tab_game_tishi" android:scaleType="center" />
+        <ImageView android:id="@id/history_img" android:layout_width="@dimen/index_right_img_width" android:layout_height="fill_parent" android:src="@drawable/homepage_tab_history" android:scaleType="center" />
+        <ImageView android:id="@id/serach_img" android:layout_width="@dimen/index_right_img_width" android:layout_height="fill_parent" android:src="@drawable/homepage_tab_search" android:scaleType="center" />
+        <ImageView android:id="@id/classify_img" android:layout_width="@dimen/index_right_img_width" android:layout_height="fill_parent" android:src="@drawable/index_classify_selector" android:scaleType="center" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_vertical" android:id="@id/net_layout" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="10.0dip" android:layout_alignParentRight="true" />
+</RelativeLayout>

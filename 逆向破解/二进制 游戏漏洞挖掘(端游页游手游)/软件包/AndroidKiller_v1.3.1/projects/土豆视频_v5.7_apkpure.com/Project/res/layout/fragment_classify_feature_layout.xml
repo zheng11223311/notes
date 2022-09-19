@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <View android:id="@id/status_bar_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <LinearLayout android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="48.0dip">
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="fill_parent">
+                        <RelativeLayout android:id="@id/rl_back" android:layout_width="48.0dip" android:layout_height="fill_parent">
+                            <ImageView android:background="@drawable/white_title_back_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+                        </RelativeLayout>
+                        <View android:layout_gravity="center_vertical" android:background="#ffe2e2e2" android:layout_width="1.0dip" android:layout_height="16.0dip" />
+                    </LinearLayout>
+                    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+                        <com.youku.widget.PageHorizontalScrollView android:id="@id/classify_title_scrollview" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                            <LinearLayout android:gravity="center_vertical" android:id="@id/classify_title_layout" android:paddingRight="25.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="15.0dip" />
+                        </com.youku.widget.PageHorizontalScrollView>
+                        <ImageView android:id="@id/right_img" android:background="@drawable/classify_title_gallery_right" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_alignParentRight="true" />
+                    </RelativeLayout>
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="11.0dip" android:layout_alignParentRight="true">
+                        <RelativeLayout android:id="@id/rl_search" android:layout_width="39.0dip" android:layout_height="fill_parent">
+                            <ImageView android:background="@drawable/tudou_classify_title_search" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+                        </RelativeLayout>
+                        <RelativeLayout android:id="@id/rl_classify_home" android:layout_width="39.0dip" android:layout_height="fill_parent">
+                            <ImageView android:background="@drawable/tudou_classify_title_home" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <ImageView android:background="#ffff612a" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_alignParentBottom="true" />
+        </LinearLayout>
+        <com.youku.widget.HintView android:id="@id/hint_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <android.support.v4.view.ViewPager android:id="@id/classify_viewpager" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/rl_top_title" />
+    </LinearLayout>
+    <com.youku.widget.HintView android:id="@id/hint_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</RelativeLayout>

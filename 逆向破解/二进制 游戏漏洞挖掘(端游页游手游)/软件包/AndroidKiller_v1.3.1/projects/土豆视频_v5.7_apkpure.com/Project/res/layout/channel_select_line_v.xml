@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/channel_selsect_v" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tudou="http://youku.com/tudou">
+    <RelativeLayout android:id="@id/sub_channel_title" android:background="@drawable/picture_title_bg" android:paddingLeft="6.0dip" android:paddingRight="6.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip">
+        <TextView android:textAppearance="@style/channel_filter_word" android:gravity="center_vertical" android:id="@id/channel_title" android:layout_width="wrap_content" android:layout_height="45.0dip" android:layout_marginLeft="@dimen/home_item_title_margin_left" android:text="今日热点" android:layout_alignParentLeft="true" />
+    </RelativeLayout>
+    <ImageView android:background="@color/white" android:paddingLeft="6.0dip" android:paddingRight="6.0dip" android:layout_width="fill_parent" android:layout_height="0.5dip" android:src="@color/tudou_yellow" />
+    <View android:background="@color/white" android:layout_width="fill_parent" android:layout_height="2.0dip" />
+    <LinearLayout android:orientation="vertical" android:background="@drawable/picture_bg" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:id="@id/function1" android:background="@drawable/white" android:paddingLeft="6.0dip" android:paddingRight="6.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <include android:id="@id/video1" android:paddingTop="@dimen/home_cell_padding_h" android:paddingBottom="@dimen/home_cell_padding_h" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginRight="3.0dip" android:layout_weight="1.0" layout="@layout/channel_select_cycle_v" />
+            <include android:id="@id/video2" android:paddingTop="@dimen/home_cell_padding_h" android:paddingBottom="@dimen/home_cell_padding_h" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_marginRight="3.0dip" android:layout_weight="1.0" layout="@layout/channel_select_cycle_v" />
+            <include android:id="@id/video3" android:paddingTop="@dimen/home_cell_padding_h" android:paddingBottom="@dimen/home_cell_padding_h" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_weight="1.0" layout="@layout/channel_select_cycle_v" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/linear2" android:background="@color/white" android:paddingLeft="6.0dip" android:paddingRight="6.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/function1">
+            <include android:id="@id/video4" android:paddingTop="@dimen/home_cell_padding_h" android:paddingBottom="@dimen/home_cell_padding_h" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginRight="3.0dip" android:layout_weight="1.0" layout="@layout/channel_select_cycle_v" />
+            <include android:id="@id/video5" android:paddingTop="@dimen/home_cell_padding_h" android:paddingBottom="@dimen/home_cell_padding_h" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_marginRight="3.0dip" android:layout_weight="1.0" layout="@layout/channel_select_cycle_v" />
+            <include android:id="@id/video6" android:paddingTop="@dimen/home_cell_padding_h" android:paddingBottom="@dimen/home_cell_padding_h" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_weight="1.0" layout="@layout/channel_select_cycle_v" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/linear3" android:background="@color/white" android:paddingLeft="6.0dip" android:paddingRight="6.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/function1">
+            <include android:id="@id/video7" android:paddingTop="@dimen/home_cell_padding_h" android:paddingBottom="@dimen/home_cell_padding_h" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginRight="3.0dip" android:layout_weight="1.0" layout="@layout/channel_select_cycle_v" />
+            <include android:id="@id/video8" android:paddingTop="@dimen/home_cell_padding_h" android:paddingBottom="@dimen/home_cell_padding_h" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_marginRight="3.0dip" android:layout_weight="1.0" layout="@layout/channel_select_cycle_v" />
+            <include android:id="@id/video9" android:paddingTop="@dimen/home_cell_padding_h" android:paddingBottom="@dimen/home_cell_padding_h" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_weight="1.0" android:layout_toRightOf="@id/video5" layout="@layout/channel_select_cycle_v" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

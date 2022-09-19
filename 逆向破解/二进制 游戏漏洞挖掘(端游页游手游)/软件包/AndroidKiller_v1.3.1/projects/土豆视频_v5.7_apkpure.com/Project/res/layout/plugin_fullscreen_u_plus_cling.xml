@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.tudou.detail.widget.Cling android:id="@id/plugin_fullscreen_u_plus_cling" android:background="#e6171717" android:layout_width="fill_parent" android:layout_height="fill_parent" android:onClick="interceptClickEvent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="120.0dip" android:src="@drawable/plugin_fullscreen_u_plus_cling_center_img" />
+    <LinearLayout android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="190.0dip">
+        <Button android:textSize="14.0dip" android:textColor="#4bffffff" android:id="@id/plugin_fullscreen_u_plus_cling_btn_cancle" android:background="@drawable/plugin_fullscreen_u_plus_cling_btn_cancle_default" android:layout_width="110.0dip" android:layout_height="32.0dip" android:text="我知道了" />
+        <Button android:textSize="14.0dip" android:textColor="#ffff612a" android:id="@id/plugin_fullscreen_u_plus_cling_btn_enter" android:background="@drawable/plugin_fullscreen_u_plus_cling_btn_enter_default" android:layout_width="110.0dip" android:layout_height="32.0dip" android:layout_marginLeft="19.0dip" android:text="立即体验" />
+    </LinearLayout>
+</com.tudou.detail.widget.Cling>

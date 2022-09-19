@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/mygame_card_root" android:background="#ffe2e2e2" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:background="@drawable/game_listview_item_selector" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/game_card_margin" android:layout_marginTop="@dimen/game_card_margin" android:layout_marginRight="@dimen/game_card_margin">
+        <include layout="@layout/layout_game_home_card_top" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/mygame_card_layout1" android:paddingLeft="@dimen/card_margin_32dp" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <RelativeLayout android:paddingTop="@dimen/recom_game_edit_mb" android:paddingBottom="@dimen/recom_game_edit_mb" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <ImageView android:id="@id/mygame_card_icon1" android:layout_width="@dimen/list_item_icon_size" android:layout_height="@dimen/list_item_icon_size" android:src="@drawable/game_list_item_default" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+                <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/card_margin_40dp" android:layout_toRightOf="@id/mygame_card_icon1" android:layout_centerVertical="true">
+                    <TextView android:textSize="@dimen/mygame_card_title_size" android:gravity="top" android:id="@id/mygame_card_title1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="游戏名称" android:singleLine="true" />
+                    <TextView android:textSize="@dimen/card_desc_textsize" android:textColor="#ff999999" android:id="@id/mygame_card_desc1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/recomgame_middle_mt" android:text="游戏描述" android:layout_below="@id/mygame_card_title1" />
+                </LinearLayout>
+            </RelativeLayout>
+            <TextView android:textSize="@dimen/game_card_action_textsize" android:textColor="#ffffffff" android:gravity="center" android:layout_gravity="center_vertical" android:id="@id/game_card_action1" android:background="#ffffd971" android:layout_width="@dimen/game_card_action_width" android:layout_height="@dimen/game_card_action_height" android:layout_marginLeft="@dimen/card_margin_32dp" android:layout_marginRight="@dimen/card_margin_32dp" android:text="安装" android:layout_weight="0.0" />
+        </LinearLayout>
+        <View android:id="@id/mygame_card_line" android:background="#ffe8e8e8" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_alignParentBottom="true" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/mygame_card_layout2" android:paddingLeft="@dimen/card_margin_32dp" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <RelativeLayout android:paddingTop="@dimen/recom_game_edit_mb" android:paddingBottom="@dimen/recom_game_edit_mb" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <ImageView android:id="@id/mygame_card_icon2" android:layout_width="@dimen/list_item_icon_size" android:layout_height="@dimen/list_item_icon_size" android:src="@drawable/game_list_item_default" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+                <LinearLayout android:orientation="vertical" android:id="@id/layout_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/card_margin_40dp" android:layout_toLeftOf="@id/mygame_card_action2" android:layout_toRightOf="@id/mygame_card_icon2" android:layout_alignTop="@id/mygame_card_icon2" android:layout_centerVertical="true">
+                    <TextView android:textSize="@dimen/mygame_card_title_size" android:gravity="top" android:id="@id/mygame_card_title2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="游戏名称" android:singleLine="true" />
+                    <TextView android:textSize="@dimen/card_desc_textsize" android:textColor="#ff999999" android:id="@id/mygame_card_desc2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/recomgame_middle_mt" android:text="游戏描述" android:layout_below="@id/mygame_card_title2" android:lineSpacingExtra="4.0dip" />
+                </LinearLayout>
+            </RelativeLayout>
+            <TextView android:textSize="@dimen/game_card_action_textsize" android:textColor="#ffffffff" android:gravity="center" android:layout_gravity="center_vertical" android:id="@id/game_card_action2" android:background="#ffffd971" android:layout_width="@dimen/game_card_action_width" android:layout_height="@dimen/game_card_action_height" android:layout_marginLeft="@dimen/card_margin_32dp" android:layout_marginRight="@dimen/card_margin_32dp" android:text="安装" android:layout_weight="0.0" />
+        </LinearLayout>
+        <View android:id="@id/card_line2" android:background="#ffc9c9c9" android:layout_width="fill_parent" android:layout_height="2.0px" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditText android:textAppearance="@style/regist_txt" android:gravity="top" android:id="@id/editTudou" android:background="@drawable/play_history_item_normal" android:paddingLeft="@dimen/login_edit_padding_left" android:paddingTop="@dimen/upload_edit_padding_top" android:paddingRight="@dimen/login_edit_padding_right" android:layout_width="fill_parent" android:layout_height="wrap_content" android:inputType="textMultiLine" />
+    <ImageView android:id="@id/cancelTudou" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/search_ic_close_bak" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+</RelativeLayout>

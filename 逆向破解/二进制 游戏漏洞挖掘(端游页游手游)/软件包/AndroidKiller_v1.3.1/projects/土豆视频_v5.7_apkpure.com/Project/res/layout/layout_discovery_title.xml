@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:paddingTop="@dimen/home_item_padding1" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <RelativeLayout android:id="@id/recommand_video" android:background="@drawable/home_title_bg" android:layout_width="fill_parent" android:layout_height="@dimen/home_item_bar_hight">
+            <TextView android:textAppearance="@style/discover_title" android:gravity="center" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/first_arraw_padding_right" android:text="精彩推荐" android:layout_toRightOf="@id/ImageView01" android:layout_centerVertical="true" />
+            <ImageView android:id="@id/discovery_arrow01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/first_arraw_padding_right" android:src="@drawable/discovery_arrow" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        </RelativeLayout>
+        <RelativeLayout android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ImageView android:id="@id/line_bottom" android:background="@drawable/tudou_yellow_bg" android:layout_width="fill_parent" android:layout_height="0.5dip" android:layout_marginLeft="6.0dip" android:layout_marginRight="6.0dip" />
+            <ImageView android:id="@id/line_transparent" android:layout_width="fill_parent" android:layout_height="2.0dip" android:layout_below="@id/line_bottom" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

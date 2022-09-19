@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/detail_bottom_actors_bar_menu_item_icon" android:background="@drawable/detail_bottom_comment_bar_switch_item_default" android:layout_width="53.0dip" android:layout_height="53.0dip" android:layout_marginLeft="13.0dip" android:layout_marginRight="13.0dip" android:scaleType="fitXY" />
+    <TextView android:textSize="14.0sp" android:textColor="#ffa4a4a4" android:ellipsize="end" android:gravity="center_horizontal" android:layout_gravity="center_horizontal" android:id="@id/detail_bottom_actors_bar_menu_item_title" android:layout_width="68.0dip" android:layout_height="wrap_content" android:layout_marginTop="59.0dip" android:maxLines="2" />
+</FrameLayout>

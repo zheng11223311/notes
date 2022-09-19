@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ViewSwitcher android:id="@id/searchdirect_item_viewswitcher" android:persistentDrawingCache="animation" android:layout_width="fill_parent" android:layout_height="@dimen/search_viewswitcher_height" android:layout_marginBottom="@dimen/search_margin_value">
+        <include android:id="@id/activity_searchdirect_item" android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/activity_searchdirect_item" />
+        <include android:id="@id/activity_searchdirect_more_item" android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/activity_searchdirect_more_item" />
+    </ViewSwitcher>
+    <include android:id="@id/activity_searchdirect_man_item" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="10.0dip" layout="@layout/search_result_item_man" />
+</LinearLayout>

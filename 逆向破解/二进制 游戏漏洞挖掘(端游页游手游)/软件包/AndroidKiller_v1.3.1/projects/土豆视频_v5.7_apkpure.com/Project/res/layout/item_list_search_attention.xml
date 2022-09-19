@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/search_channel_item_pad" android:paddingTop="@dimen/search_channel_item_pad" android:paddingRight="@dimen/search_channel_item_pad" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:background="@drawable/listview_item_bg" android:layout_width="fill_parent" android:layout_height="@dimen/attention_item_height">
+        <RelativeLayout android:id="@id/leftlayout" android:background="@color/transparent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/search_channel_item_pic_mr" android:layout_alignParentLeft="true" android:layout_centerVertical="true">
+            <ImageView android:id="@id/pic" android:background="@color/transparent" android:layout_width="45.0dip" android:layout_height="45.0dip" android:scaleType="fitXY" />
+            <ImageView android:id="@id/channelV" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/search_dajia_podcast_v" android:layout_alignRight="@id/pic" android:layout_alignBottom="@id/pic" />
+        </RelativeLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/lluser" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/search_channel_item_mid_ml" android:layout_toLeftOf="@id/subedFrame" android:layout_toRightOf="@id/leftlayout" android:layout_centerVertical="true">
+            <TextView android:ellipsize="end" android:id="@id/username" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="afafdasfdasfasd" android:singleLine="true" style="@style/search_channel_title" />
+            <TextView android:ellipsize="end" android:id="@id/aboutMyself" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:layout_centerVertical="true" style="@style/search_channel_about_self" />
+            <TextView android:ellipsize="end" android:id="@id/uploadCount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="afafdasfdasfasd" android:singleLine="true" android:layout_centerVertical="true" style="@style/search_channel_upload_count" />
+        </LinearLayout>
+        <FrameLayout android:id="@id/subedFrame" android:layout_width="@dimen/search_result_play_w" android:layout_height="@dimen/search_result_play_h" android:layout_marginRight="@dimen/search_channel_item_pic_mr" android:layout_alignParentRight="true" android:layout_centerInParent="true">
+            <ImageView android:layout_gravity="center" android:id="@id/imgSubed" android:background="@drawable/search_subscribed_selected" android:layout_width="@dimen/search_result_play_w" android:layout_height="@dimen/search_result_play_h" />
+            <ProgressBar android:layout_gravity="center" android:id="@id/subedProgressBar" android:visibility="invisible" android:layout_width="@dimen/search_result_play_h" android:layout_height="@dimen/search_result_play_h" />
+        </FrameLayout>
+    </RelativeLayout>
+</LinearLayout>

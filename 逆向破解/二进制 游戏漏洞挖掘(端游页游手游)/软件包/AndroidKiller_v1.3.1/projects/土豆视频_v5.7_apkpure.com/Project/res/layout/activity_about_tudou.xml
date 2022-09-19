@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/webView_title" layout="@layout/tudou_title_login" />
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true" android:layout_below="@id/webView_title">
+        <RelativeLayout android:background="@drawable/app_background" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <ImageView android:id="@id/iv_tudou" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/about_item_margin_top" android:src="@drawable/guanyu_logo" android:layout_centerHorizontal="true" />
+            <TextView android:textSize="14.0sp" android:textColor="#ffaaaaaa" android:id="@id/guanyu_txt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="14.0dip" android:text="" android:layout_below="@id/iv_tudou" android:layout_centerHorizontal="true" />
+            <LinearLayout android:orientation="vertical" android:background="#fff5f5f5" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/about_item_margin_top" android:layout_below="@id/guanyu_txt">
+                <ImageView android:background="#ffd9d9d9" android:layout_width="fill_parent" android:layout_height="1.0px" />
+                <RelativeLayout android:id="@id/online_service_button" android:background="@drawable/about_item_bg" android:layout_width="fill_parent" android:layout_height="@dimen/about_item_height">
+                    <ImageView android:id="@id/imgTel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/about_item_left_margin" android:src="@drawable/online_service" android:layout_centerVertical="true" />
+                    <TextView android:textSize="15.0sp" android:textColor="#ff3c3c3c" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:text="在线客服" android:layout_toRightOf="@id/imgTel" android:layout_centerVertical="true" />
+                </RelativeLayout>
+                <ImageView android:background="#ffd9d9d9" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="11.0dip" />
+                <RelativeLayout android:id="@id/button_sina" android:background="@drawable/about_item_bg" android:layout_width="fill_parent" android:layout_height="@dimen/about_item_height">
+                    <ImageView android:id="@id/imgSina" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/about_item_left_margin" android:src="@drawable/guanyu_sina" android:layout_centerVertical="true" />
+                    <TextView android:textSize="15.0sp" android:textColor="#ff3c3c3c" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:text="@string/about_tudou_button_sina" android:layout_toRightOf="@id/imgSina" android:layout_centerVertical="true" />
+                </RelativeLayout>
+                <ImageView android:background="#ffd9d9d9" android:layout_width="fill_parent" android:layout_height="1.0px" />
+                <RelativeLayout android:id="@id/button_qq" android:background="@drawable/about_item_bg" android:layout_width="fill_parent" android:layout_height="@dimen/about_item_height">
+                    <ImageView android:id="@id/imgWechat" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/about_item_left_margin" android:src="@drawable/guanyu_qq" android:layout_centerVertical="true" />
+                    <TextView android:textSize="15.0sp" android:textColor="#ff3c3c3c" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:text="@string/about_tudou_button_qq_group" android:layout_toRightOf="@id/imgWechat" android:layout_centerVertical="true" />
+                </RelativeLayout>
+                <ImageView android:background="#ffd9d9d9" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="11.0dip" />
+                <RelativeLayout android:id="@id/button_weixin" android:background="@drawable/about_item_bg" android:layout_width="fill_parent" android:layout_height="@dimen/about_item_height">
+                    <ImageView android:id="@id/imgWechat" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/about_item_left_margin" android:src="@drawable/guanyu_wechat" android:layout_centerVertical="true" />
+                    <TextView android:textSize="15.0sp" android:textColor="#ff3c3c3c" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:text="@string/about_tudou_button_weixin" android:layout_toRightOf="@id/imgWechat" android:layout_centerVertical="true" />
+                </RelativeLayout>
+                <ImageView android:id="@id/vip_phone_divider_line" android:background="#ffd9d9d9" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="11.0dip" />
+                <RelativeLayout android:id="@id/button_phone" android:background="@drawable/about_item_bg" android:layout_width="fill_parent" android:layout_height="@dimen/about_item_height">
+                    <ImageView android:id="@id/imgTel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/about_item_left_margin" android:src="@drawable/guanyu_tel" android:layout_centerVertical="true" />
+                    <TextView android:textSize="15.0sp" android:textColor="#ff3c3c3c" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:text="@string/about_tudou_button_phone" android:layout_toRightOf="@id/imgTel" android:layout_centerVertical="true" />
+                </RelativeLayout>
+                <ImageView android:id="@id/vip_phone_divider_line" android:background="#ffd9d9d9" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="11.0dip" />
+                <RelativeLayout android:id="@id/vip_phone_button" android:background="@drawable/about_item_bg" android:layout_width="fill_parent" android:layout_height="@dimen/about_item_height">
+                    <ImageView android:id="@id/imgTel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/about_item_left_margin" android:src="@drawable/about_vip" android:layout_centerVertical="true" />
+                    <TextView android:textSize="15.0sp" android:textColor="#ff3c3c3c" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:text="400-898-7799" android:layout_toRightOf="@id/imgTel" android:layout_centerVertical="true" />
+                </RelativeLayout>
+                <ImageView android:background="#ffd9d9d9" android:layout_width="fill_parent" android:layout_height="1.0px" />
+            </LinearLayout>
+            <TextView android:textSize="13.0sp" android:textColor="#ffaaaaaa" android:gravity="center_horizontal" android:id="@id/tv_tudou_copyright" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="15.0dip" android:text="@string/about_tudou_copyright" android:layout_alignParentBottom="true" />
+        </RelativeLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="#fffafafa" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="right" android:orientation="horizontal" android:id="@id/rll_format" android:background="#fffafafa" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:gravity="center" android:id="@id/rl_cache" android:background="@drawable/details_comment_bg" android:layout_width="wrap_content" android:layout_height="32.0dip" android:layout_marginTop="@dimen/detail_spac" android:layout_marginRight="@dimen/detail_spac_pading" android:layout_marginBottom="@dimen/detail_spac" android:layout_toLeftOf="@id/rl_lang" android:layout_centerVertical="true">
+            <TextView android:layout_gravity="center_vertical" android:id="@id/btn_cache_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:singleLine="true" style="@style/detail_seris_cache_text_btn" />
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/btn_cache_img" android:background="@drawable/details_arrow_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:id="@id/rl_lang" android:background="@drawable/details_comment_bg" android:visibility="gone" android:layout_width="@dimen/detail_series_rl_layout_width" android:layout_height="32.0dip" android:layout_marginTop="@dimen/detail_spac" android:layout_marginRight="@dimen/detail_spac_pading" android:layout_marginBottom="@dimen/detail_spac" android:layout_toLeftOf="@id/rl_format" android:layout_centerVertical="true">
+            <TextView android:layout_gravity="center_vertical" android:id="@id/btn_lang_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="语言" style="@style/detail_seris_cache_text_btn" />
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/btn_lang_img" android:background="@drawable/details_arrow_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:id="@id/rl_format" android:background="@drawable/details_comment_bg" android:layout_width="@dimen/detail_series_rl_layout_width" android:layout_height="32.0dip" android:layout_marginTop="@dimen/detail_spac" android:layout_marginRight="@dimen/detail_spac_pading" android:layout_marginBottom="@dimen/detail_spac" android:layout_alignParentRight="true" android:layout_centerInParent="true">
+            <TextView android:layout_gravity="center_vertical" android:id="@id/btn_format" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="标清" style="@style/detail_seris_cache_text_btn" />
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/btn_format_img" android:background="@drawable/details_arrow_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" />
+        </LinearLayout>
+    </LinearLayout>
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/detail_spac" android:layout_marginTop="@dimen/detail_spac" android:layout_marginRight="@dimen/detail_spac">
+        <LinearLayout android:orientation="horizontal" android:id="@id/top_layout" android:background="@drawable/details_comment_bg" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/year" android:background="@drawable/year_bg" android:paddingLeft="5.0dip" android:paddingRight="10.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/tudou_detail_seris_item_year" />
+            <com.youku.widget.DetailHorizontalListView android:layout_gravity="center_vertical" android:id="@id/seris_horizontalListView" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        </LinearLayout>
+        <GridView android:id="@id/grid_series" android:paddingTop="@dimen/detail_series_grid_ver_spacing" android:visibility="gone" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@android:color/transparent" android:cacheColorHint="#00000000" android:numColumns="5" android:layout_below="@id/top_layout" />
+        <ListView android:id="@id/list_series" android:visibility="gone" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@android:color/transparent" android:cacheColorHint="#00000000" android:divider="@null" android:dividerHeight="@dimen/detail_series_grid_ver_spacing" android:layout_below="@id/top_layout" />
+        <include android:id="@id/noresults" layout="@layout/detail_layout_no_results" />
+        <com.youku.widget.Loading android:id="@id/loading" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/root_view" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="221.0dip" android:layout_marginTop="10.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:background="#66000000" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <include layout="@layout/index_line_margin" />
+        <LinearLayout android:gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="70.0dip">
+            <TextView android:gravity="center" android:id="@id/txtLeft" android:background="@drawable/index_selectness" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="27.0dip" android:layout_centerVertical="true" />
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <TextView android:textSize="18.0sp" android:textStyle="bold" android:textColor="#ffffffff" android:ellipsize="end" android:id="@id/channel_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:singleLine="true" />
+                <ImageView android:layout_gravity="center_vertical" android:id="@id/title_corner_image" android:layout_width="26.0dip" android:layout_height="13.0dip" android:layout_marginLeft="5.0dip" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center_vertical" android:id="@id/old_selectness" android:layout_width="wrap_content" android:layout_height="fill_parent">
+                <TextView android:textAppearance="@style/index_chanel_title_right" android:textSize="14.0sp" android:textColor="#ffffffff" android:id="@id/sub_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="6.0dip" android:text="往期精选" android:layout_centerVertical="true" />
+                <ImageView android:id="@id/imgRight" android:background="@drawable/account_buy_btn_right_arrow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="15.0dip" android:layout_centerVertical="true" />
+            </LinearLayout>
+        </LinearLayout>
+        <android.support.v7.widget.RecyclerView android:id="@id/info_recycler_view" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <include layout="@layout/index_line_margin" />
+    </LinearLayout>
+</RelativeLayout>

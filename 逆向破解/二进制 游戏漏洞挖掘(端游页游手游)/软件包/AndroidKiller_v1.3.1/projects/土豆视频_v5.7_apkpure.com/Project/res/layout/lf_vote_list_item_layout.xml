@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="77.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="76.0dip" android:layout_marginLeft="18.0dip" android:layout_centerVertical="true">
+        <RelativeLayout android:id="@id/vote_option_place" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12.0dip" android:layout_marginBottom="12.0dip">
+            <com.youku.laifeng.sdk.util.NetworkImageView android:id="@id/vote_option_thumb" android:layout_width="55.0dip" android:layout_height="55.0dip" android:scaleType="centerCrop" />
+            <TextView android:textSize="@dimen/lf_text_size_dp_huge" android:textColor="#d1dddddd" android:id="@id/vote_option_index_label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" />
+        </RelativeLayout>
+        <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginLeft="12.0dip" android:layout_marginRight="85.0dip" android:layout_weight="1.0" android:layout_toRightOf="@id/vote_option_place">
+            <TextView android:textSize="@dimen/textsize_dp_large" android:textColor="@color/word_gray_light1" android:ellipsize="end" android:id="@id/vote_option_name_label" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="12.0dip" android:singleLine="true" />
+            <LinearLayout android:gravity="center_vertical" android:id="@id/vote_option_number_layout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip">
+                <RelativeLayout android:layout_width="wrap_content" android:layout_height="9.0dip">
+                    <ImageView android:id="@id/vote_option_number_progress_line" android:background="@drawable/vote_mock_progressbar_bg" android:layout_width="0.0dip" android:layout_height="5.0dip" android:layout_marginLeft="-2.0dip" android:layout_toRightOf="@id/vote_option_number_progress_header" android:layout_centerVertical="true" />
+                    <ImageView android:id="@id/vote_option_number_progress_header" android:background="@drawable/vote_numbers_progress_line" android:layout_width="3.0dip" android:layout_height="8.0dip" android:layout_centerVertical="true" />
+                </RelativeLayout>
+                <TextView android:textSize="@dimen/textsize_dp_small" android:textColor="#fffcb14f" android:id="@id/vote_option_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" />
+            </LinearLayout>
+            <TextView android:textSize="@dimen/textsize_dp_small" android:textColor="#ffec6941" android:id="@id/vote_option_add_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="3.0dip" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="15.5dip" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+        <ViewFlipper android:id="@id/vote_option_vf" android:layout_width="67.5dip" android:layout_height="34.0dip">
+            <Button android:textSize="@dimen/textsize_dp_large" android:textColor="@color/vote_btn_text_color" android:gravity="center" android:background="@drawable/vote_btn_background" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="投票" />
+            <ImageButton android:background="@drawable/vote_btn_voted_background" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/vote_btn_voted_normal_image" android:scaleType="centerInside" />
+            <Button android:textSize="15.0dip" android:textColor="#ff707070" android:gravity="center" android:background="@drawable/vote_btn_over_background" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="已结束" />
+            <Button android:textSize="15.0dip" android:textColor="#ff707070" android:gravity="center" android:background="@drawable/vote_btn_over_background" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="已投票" />
+        </ViewFlipper>
+        <TextView android:textSize="@dimen/textsize_dp_small" android:textColor="#ff0ba9b1" android:gravity="center_horizontal" android:id="@id/vote_option_cost_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="1000星币" />
+    </LinearLayout>
+    <ImageButton android:id="@id/vote_option_divider" android:background="#ffdcdcdc" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="85.0dip" android:layout_marginRight="18.0dip" android:layout_alignParentBottom="true" />
+</RelativeLayout>

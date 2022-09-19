@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:clickable="false" android:layout_width="fill_parent" android:layout_height="38.0dip">
+        <TextView android:textSize="17.0sp" android:gravity="center_horizontal" android:id="@id/left_date" android:paddingTop="12.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="周二,今天" />
+    </RelativeLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/content_list" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+</LinearLayout>

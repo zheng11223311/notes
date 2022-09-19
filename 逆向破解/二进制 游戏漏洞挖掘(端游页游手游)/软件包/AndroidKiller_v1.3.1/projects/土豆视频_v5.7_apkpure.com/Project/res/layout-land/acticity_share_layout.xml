@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/app_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/share_title" layout="@layout/tudou_title_login" />
+    <RelativeLayout android:orientation="vertical" android:padding="@dimen/share_layout_padding" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/share_title">
+        <Button android:textSize="@dimen/share_button_textsize" android:textColor="@android:color/black" android:id="@id/share_button" android:background="#ffffffff" android:layout_width="@dimen/share_button_width" android:layout_height="@dimen/share_button_height" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" android:text="分享" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
+        <RelativeLayout android:id="@id/share_content1" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/share_button">
+            <EditText android:textSize="@dimen/share_layout_edittext_textsize" android:textColor="#ff737373" android:gravity="top" android:id="@id/share_content" android:background="@drawable/share_edittext_bg" android:padding="@dimen/share_layout_edittext_padding" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_centerHorizontal="true" />
+            <TextView android:textSize="@dimen/share_layout_words_number_textsize" android:id="@id/words_limit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/share_layout_words_number_margin_right" android:layout_marginBottom="@dimen/share_layout_words_number_margin_bottom" android:layout_alignRight="@id/share_content" android:layout_alignBottom="@id/share_content" />
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

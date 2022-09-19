@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="center_vertical" android:layout_gravity="center_vertical" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="@dimen/search_tudou_tag_item_height"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:gravity="center" android:id="@id/search_item_image" android:paddingLeft="@dimen/search_his_head_prl" android:paddingTop="@dimen/search_his_head_pbt" android:paddingRight="@dimen/search_his_head_prl" android:paddingBottom="@dimen/search_his_head_pbt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/search_tudou_padding_left_right_width" android:src="@drawable/search_his_video" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+    <TextView android:textAppearance="@style/search_hot_history_list_item" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/textView1" android:layout_width="wrap_content" android:layout_height="@dimen/search_tudou_tag_item_height" android:layout_marginLeft="@dimen/search_tudou_padding_left_right_width" android:layout_marginRight="@dimen/tudou_xlarge_six_zero_dip" android:singleLine="true" android:layout_toRightOf="@id/search_item_image" />
+    <RelativeLayout android:gravity="center_vertical" android:id="@id/hisDelRel" android:layout_width="@dimen/cached_delete_ll_height" android:layout_height="@dimen/search_tudou_tag_item_height" android:layout_alignParentRight="true">
+        <ImageView android:id="@id/imageView1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/search_history_item_icon_margin_r" android:src="@drawable/ic_history_close" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+</RelativeLayout>

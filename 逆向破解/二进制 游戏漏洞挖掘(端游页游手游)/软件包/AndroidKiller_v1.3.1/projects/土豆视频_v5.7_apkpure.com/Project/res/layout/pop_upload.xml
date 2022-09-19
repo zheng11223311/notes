@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="bottom" android:orientation="vertical" android:id="@id/more_layout" android:background="@drawable/upload_bg" android:paddingLeft="@dimen/pop_upload_h_padding" android:paddingRight="@dimen/pop_upload_h_padding" android:layout_width="fill_parent" android:layout_height="@dimen/pop_upload_h"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Button android:textColor="@color/btn_black_txt_seletor" android:id="@id/btnVideoShot" android:background="@drawable/bt" android:layout_width="fill_parent" android:layout_height="@dimen/pop_upload_button_h" android:layout_marginBottom="@dimen/pop_upload_button_margin" android:text="@string/video_shot" />
+    <Button android:textColor="@color/btn_black_txt_seletor" android:id="@id/btnVideoPick" android:background="@drawable/bt" android:layout_width="fill_parent" android:layout_height="@dimen/pop_upload_button_h" android:layout_marginBottom="@dimen/pop_upload_button_margin" android:text="@string/local_upload" />
+    <Button android:textColor="@color/btn_white_txt_seletor" android:id="@id/btnCancel" android:background="@drawable/bt_cancel" android:layout_width="fill_parent" android:layout_height="@dimen/pop_upload_button_h" android:layout_marginBottom="@dimen/pop_upload_button_margin" android:text="@string/uploading_cancel" />
+</LinearLayout>

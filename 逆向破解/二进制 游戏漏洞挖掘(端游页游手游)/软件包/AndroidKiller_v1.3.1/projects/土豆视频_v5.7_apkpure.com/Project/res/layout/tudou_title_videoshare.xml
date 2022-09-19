@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="horizontal" android:background="@drawable/home_header_bg" android:layout_width="fill_parent" android:layout_height="@dimen/tudou_top_bar_height"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/title_left_img" android:background="@drawable/back" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+    <TextView android:textSize="20.0sp" android:textColor="#ffffffff" android:ellipsize="end" android:gravity="center" android:id="@id/title_text" android:layout_width="@dimen/title_width" android:layout_height="fill_parent" android:text="分享" android:singleLine="true" android:layout_centerInParent="true" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/right_layout" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_alignParentRight="true">
+        <ImageView android:layout_gravity="center|left" android:id="@id/title_right_img" android:layout_width="@dimen/cache_title_edit_icon" android:layout_height="@dimen/cache_title_edit_icon" android:layout_marginRight="@dimen/home_title_marginRight" />
+        <TextView android:textSize="26.699982sp" android:textColor="#ffffffff" android:layout_gravity="center|right" android:id="@id/title_right_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:layout_marginRight="@dimen/search_tudou_padding_left_right_width" />
+    </LinearLayout>
+</RelativeLayout>

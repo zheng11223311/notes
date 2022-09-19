@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.tudou.detail.widget.VideoSpecialTopicBar android:orientation="vertical" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:onClick="interceptClickEvent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tudou="http://youku.com/tudou">
+    <View android:background="#ffe4e4e4" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <View android:background="#ffff6600" android:layout_width="3.0dip" android:layout_height="15.0dip" android:layout_marginTop="16.5dip" />
+    <TextView android:textSize="17.0sp" android:textColor="#ff1f1f1f" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/detail_bottom_specialtopic_bar_title" android:layout_width="wrap_content" android:layout_height="48.0dip" android:layout_marginLeft="16.0dip" android:layout_marginRight="16.0dip" android:singleLine="true" />
+    <com.youku.widget.YoukuImageView android:id="@id/detail_bottom_specialtopic_bar_content" android:background="@drawable/hengtu_moren_big_topic" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="48.0dip" android:layout_marginRight="10.0dip" android:layout_marginBottom="10.0dip" android:scaleType="fitXY" tudou:pheight="282" tudou:pwidth="800" />
+    <View android:layout_gravity="bottom" android:background="#ffe4e4e4" android:layout_width="fill_parent" android:layout_height="1.0px" />
+</com.tudou.detail.widget.VideoSpecialTopicBar>

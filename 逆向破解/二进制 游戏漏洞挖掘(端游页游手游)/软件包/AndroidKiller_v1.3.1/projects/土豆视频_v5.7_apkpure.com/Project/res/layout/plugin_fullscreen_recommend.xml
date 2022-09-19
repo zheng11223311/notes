@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.youku.phone.detail.plugin.fullscreen.FullscreenRecomendView android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <GridView android:id="@id/plugin_fullscreen_recommend_grid" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:listSelector="@android:color/transparent" android:horizontalSpacing="2.0dip" android:verticalSpacing="10.0dip" />
+    <include android:layout_gravity="center" android:id="@id/plugin_fullscreen_recommend_loading" android:visibility="gone" android:layout_width="46.0dip" android:layout_height="46.0dip" layout="@layout/detail_loading" />
+    <com.youku.widget.HintView android:id="@id/plugin_fullscreen_recommend_hintview" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</com.youku.phone.detail.plugin.fullscreen.FullscreenRecomendView>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/tudou5_yellow" android:layout_width="fill_parent" android:layout_height="@dimen/home_title_height"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/home_title_logo_layout" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_alignParentLeft="true">
+        <ImageView android:id="@id/title_img" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/home_title_margin_left" android:src="@drawable/main_logo" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/home_title_text_layout" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_alignParentLeft="true">
+        <ImageView android:layout_gravity="center_vertical" android:id="@id/title_text_img" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/home_title_margin_left" />
+        <TextView android:textColor="#ffffffff" android:ellipsize="end" android:layout_gravity="center_vertical" android:id="@id/title_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="9.0dip" android:ems="6" style="@style/FontI" />
+    </LinearLayout>
+    <LinearLayout android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_alignParentRight="true">
+        <ImageView android:layout_gravity="center_vertical" android:id="@id/recommend_img" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="@dimen/home_title_margin_spac" android:src="@drawable/homepage_tab_home" />
+        <ImageView android:layout_gravity="center_vertical" android:id="@id/game_img" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="@dimen/home_title_margin_spac" android:src="@drawable/homepage_tab_game_tishi" />
+        <ImageView android:id="@id/upload_img" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="@dimen/home_title_margin_spac" android:src="@drawable/homepage_tab_upload" />
+        <ImageView android:id="@id/history_img" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="@dimen/home_title_margin_spac" android:src="@drawable/homepage_tab_history" />
+        <ImageView android:id="@id/serach_img" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="@dimen/home_title_margin_right" android:src="@drawable/homepage_tab_search" />
+    </LinearLayout>
+</RelativeLayout>

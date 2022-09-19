@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/black" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/app_title" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/tudou_top_bar_height" layout="@layout/recommend_title" />
+    <View android:id="@id/divider_line" android:background="#ffd9d9d9" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_below="@id/app_title" />
+    <include android:id="@id/recommend_title" layout="@layout/activity_recommend_home_title" />
+    <RelativeLayout android:background="#ffd7d8d8" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TextView android:textSize="@dimen/recommend_topgame_item_intro_textsize" android:layout_gravity="center" android:id="@id/txt_recommend_home_no_results" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="抱歉！暂时没有应用推荐,点击图片刷新试试" android:layout_centerInParent="true" />
+        <ImageView android:id="@id/img_recommend_home__no_results" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/recommend_topgame_item_intro_textsize" android:src="@drawable/recommend_icon_no_results" android:scaleType="fitCenter" android:layout_above="@id/txt_recommend_home_no_results" />
+        <com.youtu.apps.widget.YoutuViewPager android:layout_gravity="center" android:id="@id/recommend_homepager" android:persistentDrawingCache="animation" android:layout_width="fill_parent" android:layout_height="fill_parent" android:flipInterval="30" android:layout_weight="1.0" />
+    </RelativeLayout>
+</LinearLayout>

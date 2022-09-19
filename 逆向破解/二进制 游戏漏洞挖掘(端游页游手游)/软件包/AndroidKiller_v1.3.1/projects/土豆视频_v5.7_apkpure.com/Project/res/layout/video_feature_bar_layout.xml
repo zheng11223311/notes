@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.tudou.detail.widget.VideoFeatureBar android:orientation="vertical" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="10.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/detail_bottom_feature_bar_title_layout" android:layout_width="fill_parent" android:layout_height="48.0dip">
+        <View android:background="#ffe4e4e4" android:layout_width="fill_parent" android:layout_height="1.0px" />
+        <View android:background="#ffff6600" android:layout_width="3.0dip" android:layout_height="15.0dip" android:layout_marginTop="16.5dip" />
+        <TextView android:textSize="17.0sp" android:textColor="#ff1f1f1f" android:ellipsize="end" android:gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="16.0dip" android:maxWidth="165.0dip" android:text="片花" android:singleLine="true" />
+        <TextView android:textSize="14.0sp" android:textColor="#ffa4a4a4" android:ellipsize="end" android:gravity="center|right" android:layout_gravity="right" android:id="@id/detail_bottom_feature_bar_total" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="28.0dip" android:text="查看全部" android:singleLine="true" />
+        <ImageView android:layout_gravity="right" android:id="@id/detail_bottom_feature_bar_expand" android:paddingLeft="7.0dip" android:paddingRight="18.0dip" android:layout_width="31.0dip" android:layout_height="fill_parent" android:src="@drawable/detail_bottom_bar_expand_right" android:scaleType="fitCenter" />
+    </FrameLayout>
+    <ListView android:id="@id/detail_bottom_feature_bar_list" android:layout_width="fill_parent" android:layout_height="wrap_content" android:listSelector="@drawable/cache_listview_item_bg" android:divider="#ffe7e7e7" android:dividerHeight="1.0px" />
+</com.tudou.detail.widget.VideoFeatureBar>

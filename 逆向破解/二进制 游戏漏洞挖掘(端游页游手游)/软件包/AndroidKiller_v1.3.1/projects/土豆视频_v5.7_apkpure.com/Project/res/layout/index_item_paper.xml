@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/bg_layout" android:background="@drawable/picture_bg_no_shadow" android:paddingLeft="@dimen/home_item_padding1" android:paddingRight="@dimen/home_item_padding1" android:paddingBottom="@dimen/cell_margin" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tudou="http://youku.com/tudou">
+    <com.youku.widget.YoukuImageView android:id="@id/thumbnail" android:background="@drawable/hengtu_moren_big" android:layout_width="fill_parent" android:layout_height="wrap_content" android:scaleType="fitXY" android:layout_centerHorizontal="true" tudou:pheight="478" tudou:pwidth="1020" />
+    <RelativeLayout android:id="@id/paper_content" android:background="@drawable/yaofeng_paper" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="90.0dip" android:layout_alignLeft="@id/thumbnail" android:layout_alignBottom="@id/thumbnail">
+        <TextView android:textAppearance="@style/index_paper_sub_title" android:id="@id/sub_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_marginBottom="8.0dip" android:text="" android:layout_alignParentBottom="true" />
+        <TextView android:textAppearance="@style/index_paper_title" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" android:layout_above="@id/sub_title" android:layout_alignLeft="@id/sub_title" />
+    </RelativeLayout>
+</RelativeLayout>

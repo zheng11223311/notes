@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/layout_comment" android:background="#fffafafa" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:background="#ffd9d9d9" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <RelativeLayout android:background="#fffafafa" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="9.0dip" android:layout_marginBottom="9.0dip">
+        <ImageView android:id="@id/comment_img" android:background="@android:color/holo_red_dark" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginRight="7.0dip" android:scaleType="fitXY" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        <RelativeLayout android:gravity="center_vertical" android:id="@id/aaa" android:background="@drawable/bg_input_box" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="7.0dip" android:layout_toLeftOf="@id/btn_comment" android:layout_toRightOf="@id/comment_img">
+            <TextView android:textColor="#ffcecece" android:gravity="right" android:id="@id/text_lenght" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:minWidth="30.0dip" android:text="140" android:layout_alignParentRight="true" android:layout_centerVertical="true" style="@style/FontE" />
+            <com.youku.widget.EditTextForMeizu android:textColor="#ff252525" android:id="@id/edit_comment" android:background="@null" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:minHeight="35.0dip" android:hint="@string/new_detail_comment_Text_hint" android:maxLines="3" android:maxLength="140" android:layout_toLeftOf="@id/text_lenght" android:layout_centerVertical="true" android:inputType="textMultiLine" style="@style/detail_comment_edit_hint" />
+        </RelativeLayout>
+        <TextView android:gravity="center" android:id="@id/btn_comment" android:background="@drawable/btn_send_comment" android:layout_width="58.0dip" android:layout_height="35.0dip" android:layout_marginRight="10.0dip" android:text="@string/new_detail_comment_Text_send" android:layout_alignBottom="@id/aaa" android:layout_alignParentRight="true" style="@style/detail_comment_send_text" />
+    </RelativeLayout>
+</LinearLayout>

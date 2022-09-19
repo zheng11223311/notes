@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="@dimen/search_man_w" android:layout_marginLeft="@dimen/search_man_mlr" android:layout_marginRight="@dimen/search_man_mlr">
+        <RelativeLayout android:id="@id/searchManRel" android:layout_width="@dimen/search_man_rel_w" android:layout_height="@dimen/search_man_rel_h">
+            <ImageView android:id="@id/searchManImg" android:background="@drawable/detail_bottom_comment_bar_switch_item_default" android:layout_width="@dimen/search_man_img_wh" android:layout_height="@dimen/search_man_img_wh" android:layout_centerInParent="true" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/searchManDetail" android:layout_width="fill_parent" android:layout_height="@dimen/search_man_detail_h" android:layout_marginRight="@dimen/search_man_detail_mr" android:layout_toRightOf="@id/searchManRel">
+            <TextView android:ellipsize="end" android:id="@id/searchManName" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/search_man_name_mt" android:layout_marginBottom="@dimen/search_man_name_mb" android:text="邓超" android:maxLines="1" style="@style/search_man_title" />
+            <TextView android:id="@id/searchManDetail1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="职业：演员、配音、歌手" android:layout_below="@id/searchManName" style="@style/search_man_title_items" />
+            <TextView android:id="@id/searchManDetail2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="地区：大陆" android:layout_below="@id/searchManDetail1" style="@style/search_man_title_items" />
+            <TextView android:id="@id/searchManDetail3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="生日：1985.02.23" android:layout_below="@id/searchManDetail2" style="@style/search_man_title_items" />
+            <TextView android:id="@id/searchManDetail4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="星座：儿子座" android:layout_below="@id/searchManDetail3" style="@style/search_man_title_items" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <com.youku.widget.SearchFilterHorizontalSlide android:orientation="vertical" android:id="@id/searchManFilter" android:background="#fffafafa" android:layout_width="fill_parent" android:layout_height="@dimen/search_bside_middle_height" />
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/searchManGridView" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="@dimen/search_man_gridview_mt" android:layout_marginRight="10.0dip" />
+    <RelativeLayout android:id="@id/searchManDetailBtn" android:layout_width="fill_parent" android:layout_height="@dimen/search_man_godetail_h">
+        <View android:id="@id/top_driver" android:background="#ffe7e7e7" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_alignParentTop="true" />
+        <TextView android:textSize="15.0dip" android:textColor="@color/tudou5_yellow" android:gravity="center" android:id="@id/searchDetailBtn" android:background="@drawable/more_item_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="全部作品" android:layout_above="@id/bot_driver" android:layout_below="@id/top_driver" android:layout_centerInParent="true" style="@style/search_aside_title" />
+        <View android:id="@id/bot_driver" android:background="#ffe7e7e7" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:background="@drawable/series_btn_detail_series_list_selector" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:ellipsize="end" android:gravity="center|left" android:layout_gravity="center_vertical" android:id="@id/detail_podcast_text" android:paddingLeft="@dimen/detail_img_comment_margin_right" android:layout_width="wrap_content" android:layout_height="@dimen/detail_series_list_height" android:maxLines="1" android:lines="1" android:minLines="1" android:maxEms="11" android:singleLine="true" android:layout_above="@id/line" style="@style/tudou_detail_series_text" />
+        <TextView android:textColor="#ffff7500" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/playcount" android:layout_width="wrap_content" android:layout_height="@dimen/detail_series_list_height" android:layout_marginRight="@dimen/detail_img_comment_margin_right" android:layout_alignParentRight="true" style="@style/tudou_detail_series_text" />
+        <TextView android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/play" android:layout_width="wrap_content" android:layout_height="@dimen/detail_series_list_height" android:text="播放: " android:layout_toLeftOf="@id/playcount" style="@style/tudou_detail_series_text" />
+    </RelativeLayout>
+</RelativeLayout>

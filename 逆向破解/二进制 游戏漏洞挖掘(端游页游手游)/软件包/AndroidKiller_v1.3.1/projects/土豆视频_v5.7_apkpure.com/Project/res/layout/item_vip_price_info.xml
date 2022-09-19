@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:gravity="center_vertical" android:id="@id/vip_buy" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="48.0dip">
+        <TextView android:textColor="#ff818181" android:gravity="center" android:id="@id/vip_duration" android:paddingLeft="14.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" style="@style/FontF" />
+        <TextView android:textColor="#ff4b4b4b" android:gravity="center" android:id="@id/vip_price_now" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_toRightOf="@id/vip_duration" style="@style/FontF" />
+        <TextView android:textColor="#ff818181" android:gravity="center" android:id="@id/vip_price_old" android:paddingLeft="8.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_toRightOf="@id/vip_price_now" style="@style/FontD" />
+        <TextView android:textColor="#ffff6600" android:gravity="center" android:id="@id/pay_vip_tips" android:paddingRight="13.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="开通 >" android:layout_alignParentRight="true" style="@style/FontF" />
+    </RelativeLayout>
+    <View android:background="#ffd9d9d9" android:layout_width="fill_parent" android:layout_height="1.0px" />
+</LinearLayout>

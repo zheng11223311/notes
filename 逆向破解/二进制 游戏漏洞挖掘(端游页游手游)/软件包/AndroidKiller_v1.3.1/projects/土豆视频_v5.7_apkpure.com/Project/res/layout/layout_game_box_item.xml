@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="@dimen/game_box_grid_item_width" android:layout_height="@dimen/game_box_grid_item_height" android:layout_marginTop="@dimen/game_box_grid_item_margin_top" android:layout_marginBottom="@dimen/game_box_grid_item_margin_bottom"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_horizontal" android:layout_gravity="center_horizontal" android:orientation="vertical" android:id="@id/box_item_root" android:layout_width="@dimen/game_box_grid_item_width" android:layout_height="@dimen/game_box_grid_item_height" android:layout_toLeftOf="@id/gridview_box_item_splitline" android:layout_alignParentLeft="true">
+        <RelativeLayout android:layout_width="@dimen/game_box_grid_item_layout_width" android:layout_height="@dimen/game_box_grid_item_layout_width">
+            <ImageView android:id="@id/box_item_icon" android:layout_width="@dimen/game_box_grid_item_icon_width" android:layout_height="@dimen/game_box_grid_item_icon_width" android:layout_centerInParent="true" android:contentDescription="@string/str_image" />
+            <ImageView android:id="@id/box_item_recommend" android:layout_width="@dimen/game_box_grid_item_recommend_width" android:layout_height="@dimen/game_box_grid_item_recommend_height" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" android:contentDescription="@string/str_image" />
+        </RelativeLayout>
+        <TextView android:textSize="@dimen/game_box_item_title_size" android:textColor="#ff333333" android:gravity="center" android:id="@id/box_item_title" android:layout_width="@dimen/game_box_grid_item_title_width" android:layout_height="@dimen/game_box_grid_item_title_height" android:singleLine="true" />
+        <LinearLayout android:gravity="center" android:layout_gravity="center_horizontal" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="@dimen/game_box_item_middle_layout_height">
+            <TextView android:textSize="@dimen/game_box_item_type_size" android:textColor="#ff999999" android:gravity="center" android:layout_gravity="center" android:id="@id/box_item_type_and_size" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/box_item_type_and_size_margin" android:layout_marginRight="@dimen/box_item_type_and_size_margin" android:singleLine="true" android:layout_weight="1.0" />
+        </LinearLayout>
+        <Button android:textSize="@dimen/game_box_item_title_size" android:textColor="#ff999999" android:gravity="center" android:layout_gravity="center" android:id="@id/box_item_action" android:background="?gamecenter_button_bg" android:layout_width="@dimen/game_box_item_action_width" android:layout_height="@dimen/game_box_item_action_height" />
+    </LinearLayout>
+    <View android:id="@id/gridview_box_item_splitline" android:background="#fff4f4f4" android:layout_width="1.0px" android:layout_height="@dimen/gridview_box_item_splitline_height" android:layout_marginTop="@dimen/gridview_box_item_splitline_margin_top" android:layout_alignParentRight="true" />
+</RelativeLayout>

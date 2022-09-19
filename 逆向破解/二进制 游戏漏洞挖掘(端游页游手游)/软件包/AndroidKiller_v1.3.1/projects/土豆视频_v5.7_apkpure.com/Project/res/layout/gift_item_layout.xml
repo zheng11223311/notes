@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/gift_img" android:layout_width="100.0dip" android:layout_height="100.0dip" android:scaleType="fitXY" />
+    <TextView android:textSize="14.0sp" android:textColor="#ff333333" android:id="@id/gift_price" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="应援棒 1 元" android:singleLine="true" />
+    <TextView android:textSize="12.0sp" android:textColor="#ffffffff" android:gravity="center" android:id="@id/gift_buy_btn" android:background="@drawable/gift_buy_btn_normal_bg" android:layout_width="77.0dip" android:layout_height="33.0dip" android:layout_marginTop="8.0dip" android:text="+100人气" />
+</LinearLayout>

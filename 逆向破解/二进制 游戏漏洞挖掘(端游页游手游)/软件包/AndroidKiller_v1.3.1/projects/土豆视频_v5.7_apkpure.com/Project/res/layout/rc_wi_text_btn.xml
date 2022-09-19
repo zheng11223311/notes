@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Button android:textSize="14.0dip" android:textColor="@android:color/white" android:layout_gravity="center" android:id="@android:id/button1" android:background="@drawable/tudou_send_btn_selector" android:visibility="visible" android:layout_width="50.0dip" android:layout_height="35.0dip" android:scaleType="center" android:text="发送" android:includeFontPadding="false"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

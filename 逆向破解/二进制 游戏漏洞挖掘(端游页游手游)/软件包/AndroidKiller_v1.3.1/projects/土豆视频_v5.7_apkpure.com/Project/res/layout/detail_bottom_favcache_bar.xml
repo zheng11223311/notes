@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.tudou.detail.widget.VideoFavCacheBar android:layout_width="fill_parent" android:layout_height="50.299988dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="50.299988dip">
+        <TextView android:textSize="14.0dip" android:textColor="#ffa4a4a4" android:gravity="center_vertical" android:id="@id/detail_bottom_playtimes" android:layout_width="wrap_content" android:layout_height="50.5dip" android:layout_marginLeft="16.0dip" />
+        <LinearLayout android:layout_gravity="right" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="10.0dip">
+            <Button android:id="@id/detail_bottom_btn_share" android:background="@drawable/detail_btn_share_default" android:layout_width="50.0dip" android:layout_height="50.0dip" />
+            <ToggleButton android:id="@id/detail_bottom_btn_fav" android:background="@drawable/detail_btn_fav_default" android:layout_width="50.0dip" android:layout_height="50.0dip" android:layout_marginTop="-3.0dip" android:textOn="" android:textOff="" />
+            <Button android:id="@id/detail_bottom_btn_cache" android:background="@drawable/detail_btn_cache_default" android:layout_width="50.0dip" android:layout_height="50.0dip" />
+            <RelativeLayout android:id="@id/detail_bottom_btn_chat" android:layout_width="50.0dip" android:layout_height="50.0dip">
+                <ImageView android:layout_width="50.0dip" android:layout_height="50.0dip" android:src="@drawable/detail_bottom_brief_bar_chat_normal" android:scaleType="center" />
+                <ImageView android:id="@id/detail_bottom_btn_chat_cling" android:background="@drawable/detail_chat_cling" android:visibility="gone" android:layout_width="7.0dip" android:layout_height="7.0dip" android:layout_marginTop="9.0dip" android:layout_marginRight="9.0dip" android:scaleType="fitXY" android:layout_alignParentRight="true" />
+            </RelativeLayout>
+        </LinearLayout>
+        <View android:layout_gravity="bottom" android:background="#ffe4e4e4" android:layout_width="fill_parent" android:layout_height="0.30000007dip" />
+    </FrameLayout>
+</com.tudou.detail.widget.VideoFavCacheBar>

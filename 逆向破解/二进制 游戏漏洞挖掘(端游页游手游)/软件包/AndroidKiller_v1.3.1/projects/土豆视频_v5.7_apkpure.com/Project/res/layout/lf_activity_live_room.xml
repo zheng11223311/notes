@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/live_room_tab_container" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <RelativeLayout android:id="@id/video_container" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="vertical" android:id="@id/player_container" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            <LinearLayout android:orientation="vertical" android:id="@id/gift_container" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            <com.youku.laifeng.sdk.widget.PlayerStateView android:orientation="vertical" android:id="@id/playerState_container" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            <com.youku.laifeng.sdk.widget.RecommendRoomsView android:id="@id/recommend_rooms" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            <Button android:id="@id/follow_button" android:background="@drawable/lf_live_room_unfollow_icon" android:layout_width="40.0dip" android:layout_height="40.0dip" android:layout_marginTop="18.0dip" android:layout_marginRight="8.0dip" android:layout_alignParentRight="true" />
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/toolbar_container" android:background="@color/background_black_toolbar" android:layout_width="fill_parent" android:layout_height="35.0dip" android:layout_alignParentTop="true">
+                <ImageView android:id="@id/toolbar_back" android:paddingLeft="8.0dip" android:paddingTop="6.0dip" android:paddingRight="8.0dip" android:paddingBottom="6.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/lf_live_icon_back" />
+                <ImageView android:id="@id/toolbar_slider_0" android:paddingTop="5.0dip" android:paddingBottom="5.0dip" android:layout_width="1.0dip" android:layout_height="fill_parent" android:src="@drawable/lf_live_room_slide_bg" android:scaleType="fitXY" />
+                <TextView android:textSize="@dimen/textsize_dp_medium" android:textColor="@color/text_color_notice_toolbar" android:ellipsize="end" android:gravity="center_vertical" android:layout_gravity="center|left" android:id="@id/toolbar_text_title" android:paddingLeft="8.0dip" android:paddingTop="6.0dip" android:paddingRight="8.0dip" android:paddingBottom="6.0dip" android:layout_width="0.0dip" android:layout_height="fill_parent" android:singleLine="true" android:layout_weight="1.0" />
+                <ImageView android:id="@id/toolbar_slider_1" android:paddingTop="5.0dip" android:paddingBottom="5.0dip" android:layout_width="1.0dip" android:layout_height="fill_parent" android:src="@drawable/lf_live_room_slide_bg" android:scaleType="fitXY" />
+                <ImageView android:id="@id/toolbar_share" android:paddingLeft="10.0dip" android:paddingTop="6.0dip" android:paddingRight="10.0dip" android:paddingBottom="6.0dip" android:layout_width="42.0dip" android:layout_height="fill_parent" android:src="@drawable/lf_live_icon_share" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/actor_extra_layout" android:background="@drawable/lf_live_room_actor_extra_bg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true">
+                <ImageView android:id="@id/actor_avatar" android:layout_width="46.0dip" android:layout_height="46.0dip" android:layout_marginLeft="26.0dip" android:layout_marginTop="14.0dip" android:layout_marginBottom="10.0dip" />
+                <ImageView android:id="@id/actor_level" android:paddingTop="20.0dip" android:layout_width="22.0dip" android:layout_height="fill_parent" android:layout_marginLeft="12.0dip" />
+                <TextView android:gravity="center_vertical" android:id="@id/actor_name" android:paddingTop="20.0dip" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginLeft="4.0dip" android:layout_weight="1.0" />
+                <ImageView android:id="@id/actor_extra_slider_one" android:paddingTop="4.0dip" android:paddingBottom="4.0dip" android:layout_width="1.0dip" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:layout_marginTop="25.0dip" android:layout_marginRight="10.0dip" android:layout_marginBottom="5.0dip" android:src="@drawable/lf_live_room_slide_bg" android:scaleType="fitXY" />
+                <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:paddingTop="28.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="10.0dip">
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/lf_live_icon_love" />
+                    <TextView android:textSize="@dimen/lf_text_size_dp_micro" android:textColor="@color/lf_live_actor_extra_text" android:id="@id/actor_extra_follow_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" />
+                </LinearLayout>
+                <ImageView android:id="@id/actor_extra_slider_two" android:paddingTop="4.0dip" android:paddingBottom="4.0dip" android:layout_width="1.0dip" android:layout_height="fill_parent" android:layout_marginTop="25.0dip" android:layout_marginBottom="5.0dip" android:src="@drawable/lf_live_room_slide_bg" android:scaleType="fitXY" />
+                <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/actor_extra_online_layout" android:paddingTop="28.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:layout_marginRight="20.0dip">
+                    <ImageView android:id="@id/actor_extra_online_image" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/lf_live_icon_people" />
+                    <TextView android:textSize="@dimen/lf_text_size_dp_micro" android:textColor="@color/lf_live_actor_extra_text" android:id="@id/actor_extra_online_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/livehouse_tab_container" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:orientation="vertical" android:id="@id/tab_toolbar_container" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="36.0dip">
+                <LinearLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+                    <LinearLayout android:gravity="center" android:id="@id/room_chat_container" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+                        <ImageView android:id="@id/room_chat_image" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/lf_live_room_chat_icon_selector" />
+                        <TextView android:textSize="15.0dip" android:textColor="@color/lf_live_room_tab_text_selector" android:gravity="center" android:id="@id/room_chat" android:padding="4.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="聊天" />
+                    </LinearLayout>
+                    <View android:id="@id/tab_toolbar_slider" android:background="@color/lf_line_light_gray" android:layout_width="0.5dip" android:layout_height="fill_parent" />
+                    <LinearLayout android:gravity="center" android:id="@id/room_vote_container" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+                        <ImageView android:id="@id/room_vote_image" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/lf_live_room_vote_icon_selector" />
+                        <TextView android:textSize="15.0dip" android:textColor="@color/lf_live_room_tab_text_selector" android:gravity="center" android:id="@id/room_vote" android:background="@android:color/transparent" android:padding="4.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="投票" />
+                    </LinearLayout>
+                </LinearLayout>
+                <View android:background="@color/lf_line_light_gray" android:layout_width="fill_parent" android:layout_height="0.5dip" />
+            </LinearLayout>
+            <RelativeLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+                <com.youku.laifeng.sdk.widget.TabViewPager android:id="@id/tab_pager" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+                <RelativeLayout android:id="@id/lf_live_room_download_layout" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="50.0dip">
+                    <ImageView android:id="@id/lf_live_room_download_logo" android:layout_width="28.0dip" android:layout_height="24.0dip" android:layout_marginLeft="10.0dip" android:src="@drawable/lf_live_room_download_laifeng_logo" android:layout_centerVertical="true" />
+                    <TextView android:textSize="12.0dip" android:textColor="#ff2d2d2d" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:text="打开来疯客户端享受更流畅体验" android:layout_toRightOf="@id/lf_live_room_download_logo" android:layout_centerVertical="true" />
+                    <ViewSwitcher android:id="@id/lf_live_room_download_switcher" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="15.0dip" android:inAnimation="@anim/vs_slide_in_top" android:outAnimation="@anim/vs_slide_in_bottom" android:layout_toLeftOf="@id/lf_live_room_download_close" android:layout_centerVertical="true">
+                        <Button android:textSize="12.0dip" android:textColor="@color/white" android:gravity="center" android:id="@id/lf_live_room_download_install_button" android:background="@drawable/background_lf_live_room_download_install_button" android:layout_width="90.0dip" android:layout_height="30.0dip" android:text="安装" />
+                        <FrameLayout android:layout_width="90.0dip" android:layout_height="30.0dip">
+                            <ProgressBar android:id="@id/lf_live_room_download_progress_bar" android:layout_width="fill_parent" android:layout_height="fill_parent" android:max="100" android:progress="0" android:progressDrawable="@drawable/background_lf_live_room_download_bar" style="@android:style/Widget.Holo.ProgressBar.Horizontal" />
+                            <TextView android:textSize="12.0dip" android:textColor="@android:color/white" android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="准备资源" />
+                        </FrameLayout>
+                    </ViewSwitcher>
+                    <ImageView android:id="@id/lf_live_room_download_close" android:layout_width="22.0dip" android:layout_height="22.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="5.0dip" android:src="@drawable/lf_live_room_download_laifeng_close" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/livehouse_chat_container" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+        <View android:background="@color/lf_line_light_gray" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        <LinearLayout android:orientation="horizontal" android:background="@android:color/white" android:paddingLeft="8.0dip" android:paddingRight="8.0dip" android:layout_width="fill_parent" android:layout_height="42.0dip">
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/btn_chat_tab_expression" android:layout_width="32.0dip" android:layout_height="32.0dip" android:src="@drawable/lf_chat_expression_btn_selector" />
+            <EditText android:textSize="13.0dip" android:textColor="@android:color/black" android:textColorHint="@color/word_gray_light2" android:layout_gravity="center_vertical" android:id="@id/edit_chat_tab_inputbox" android:background="@drawable/lf_chat_input_background" android:paddingLeft="5.0dip" android:paddingRight="5.0dip" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_margin="5.0dip" android:hint="@string/lf_chat_input_hint" android:maxLines="2" android:minLines="2" android:scrollHorizontally="false" android:singleLine="false" android:layout_weight="1.0" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+            <Button android:layout_gravity="center_vertical" android:id="@id/btn_chat_send" android:background="@drawable/lf_chat_btn_send" android:layout_width="32.0dip" android:layout_height="32.0dip" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/expression_container" android:background="@color/white" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="264.0dip">
+            <View android:background="@color/line_gray_light" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+            <android.support.v4.view.ViewPager android:id="@id/expression_viewpager" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
+            <LinearLayout android:orientation="horizontal" android:id="@id/dot_layout_id" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:layout_marginBottom="12.0dip">
+                <TextView android:id="@id/margin_space_1" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+                <LinearLayout android:orientation="horizontal" android:id="@id/expression_select_dot_container" android:layout_width="wrap_content" android:layout_height="fill_parent" />
+                <TextView android:id="@id/margin_space_2" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <RelativeLayout android:id="@id/send_star_layout" android:layout_width="50.0dip" android:layout_height="58.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="12.0dip" android:layout_above="@id/livehouse_chat_container" android:layout_alignParentRight="true">
+        <Button android:id="@id/send_star_button" android:background="@drawable/lf_live_room_star_btn" android:layout_width="48.0dip" android:layout_height="48.0dip" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+        <TextView android:textSize="12.0dip" android:textColor="@color/white" android:gravity="center" android:id="@id/star_count_view" android:background="@drawable/lf_btn_cicle_star_count_bg" android:visibility="invisible" android:layout_width="23.0dip" android:layout_height="23.0dip" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/root_view" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tudou="http://youku.com/tudou">
+    <include layout="@layout/index_line_margin" />
+    <RelativeLayout android:gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="44.0dip">
+        <TextView android:textSize="13.0sp" android:textColor="#ffffffff" android:gravity="center" android:id="@id/txtLeft" android:background="@color/tudou_yellow" android:layout_width="34.0dip" android:layout_height="18.0dip" android:layout_marginLeft="10.0dip" android:text="活动" android:layout_centerVertical="true" />
+        <TextView android:textAppearance="@style/index_chanel_title" android:textSize="15.0sp" android:textColor="#ff000000" android:ellipsize="end" android:id="@id/channel_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="title" android:singleLine="true" android:layout_weight="1.0" android:layout_toRightOf="@id/txtLeft" android:layout_centerVertical="true" />
+        <ImageView android:id="@id/title_corner_image" android:layout_width="26.0dip" android:layout_height="13.0dip" android:layout_marginLeft="5.0dip" android:layout_toRightOf="@id/channel_title" android:layout_centerVertical="true" />
+        <TextView android:textAppearance="@style/index_chanel_title_right" android:textSize="14.0sp" android:id="@id/sub_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="6.0dip" android:layout_toLeftOf="@id/imgRight" android:layout_centerVertical="true" />
+        <ImageView android:id="@id/imgRight" android:background="@drawable/topic_right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="17.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <com.youku.widget.YoukuImageView android:id="@id/thumbnail" android:background="@drawable/hengtu_moren_big_topic" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="1.0dip" android:scaleType="fitXY" android:layout_centerHorizontal="true" tudou:pheight="360" tudou:pwidth="1020" />
+    <include layout="@layout/index_line_margin" />
+</LinearLayout>

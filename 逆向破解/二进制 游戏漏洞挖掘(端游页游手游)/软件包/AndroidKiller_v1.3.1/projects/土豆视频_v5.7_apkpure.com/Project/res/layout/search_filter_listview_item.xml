@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:orientation="vertical" android:id="@id/channel_filter_bg" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="4.0dip" android:layout_marginRight="4.0dip">
+        <View android:id="@id/channel_filter_item_zhanwei" android:visibility="gone" android:layout_width="20.0dip" android:layout_height="fill_parent" android:layout_alignParentLeft="true" />
+        <TextView android:ellipsize="end" android:gravity="center" android:id="@id/channel_filter_item" android:paddingLeft="6.0dip" android:paddingRight="6.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="test" android:maxLines="1" android:layout_toRightOf="@id/channel_filter_item_zhanwei" android:layout_centerInParent="true" style="@style/search_filter_noselect" />
+    </RelativeLayout>
+</LinearLayout>

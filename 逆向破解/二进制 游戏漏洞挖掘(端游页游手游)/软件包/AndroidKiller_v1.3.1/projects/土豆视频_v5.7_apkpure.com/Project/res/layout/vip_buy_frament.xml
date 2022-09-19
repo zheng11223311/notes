@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="#fff0f0f0" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:background="#fff0f0f0" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <include android:id="@id/vip_buy_title" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/tudou_title_login" />
+        <ScrollView android:id="@id/vip_data_scrollview" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/vip_buy_title">
+            <RelativeLayout android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <RelativeLayout android:gravity="center" android:id="@id/vip_tips" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="40.0dip">
+                    <TextView android:textColor="#ffff6600" android:gravity="center" android:id="@id/txt_no_vip_tips" android:background="@color/white" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="订单确认中" style="@style/FontF" />
+                    <ImageView android:id="@id/img_donghua" android:background="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="2.0dip" android:layout_marginTop="23.0dip" android:layout_toRightOf="@id/txt_no_vip_tips" />
+                    <TextView android:textColor="#ff4b4b4b" android:gravity="center" android:id="@id/txt_no_login_tips1" android:background="@color/white" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="已是黄金会员？" style="@style/FontF" />
+                    <TextView android:textColor="#ffff6600" android:gravity="center" android:id="@id/txt_no_login_tips2" android:background="@color/white" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="立即登录" android:layout_toRightOf="@id/txt_no_login_tips1" style="@style/FontF" />
+                </RelativeLayout>
+                <View android:id="@id/cut_11" android:background="@drawable/tudou_grey" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_below="@id/vip_tips" />
+                <RelativeLayout android:id="@id/vip_pay_title" android:background="@drawable/app_background" android:layout_width="fill_parent" android:layout_height="47.0dip" android:layout_below="@id/cut_11">
+                    <TextView android:textColor="#ff3c3c3c" android:gravity="center_vertical" android:id="@id/tv_privilege_mytickets_text" android:background="@drawable/app_background" android:paddingLeft="13.0dip" android:paddingTop="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="开通土豆会员" android:drawableLeft="@drawable/vip_line" android:drawablePadding="5.0dip" style="@style/FontF" />
+                </RelativeLayout>
+                <View android:id="@id/cut_22" android:background="@drawable/tudou_grey" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_below="@id/vip_pay_title" />
+                <LinearLayout android:orientation="vertical" android:id="@id/linear_vip_pay" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/cut_22" />
+                <LinearLayout android:orientation="vertical" android:id="@id/layout_mytickets" android:background="@color/white" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/linear_vip_pay">
+                    <View android:id="@id/cut_mytickets_2" android:background="@drawable/app_background" android:layout_width="fill_parent" android:layout_height="10.0dip" />
+                    <View android:id="@id/cut_mytickets_3" android:background="@drawable/tudou_grey" android:layout_width="fill_parent" android:layout_height="1.0px" />
+                    <RelativeLayout android:background="@color/white" android:paddingLeft="13.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <TextView android:textSize="15.0sp" android:textColor="#ff3c3c3c" android:gravity="center" android:id="@id/vipbuy_vipcard_text" android:background="@color/white" android:layout_width="wrap_content" android:layout_height="47.0dip" android:text="@string/vipcard_havecard" android:layout_centerVertical="true" />
+                        <TextView android:textSize="15.0sp" android:textColor="#ffff6600" android:gravity="center" android:id="@id/tv_privilege_mytickets_arrow" android:background="@color/white" android:paddingLeft="13.0dip" android:paddingRight="13.0dip" android:layout_width="wrap_content" android:layout_height="47.0dip" android:text=">" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                    </RelativeLayout>
+                    <View android:background="@drawable/tudou_grey" android:layout_width="fill_parent" android:layout_height="1.0px" />
+                </LinearLayout>
+                <RelativeLayout android:id="@id/vip_customer_service_title" android:background="@drawable/app_background" android:layout_width="fill_parent" android:layout_height="47.0dip" android:layout_below="@id/layout_mytickets">
+                    <TextView android:gravity="center_vertical" android:id="@id/phone" android:background="@drawable/app_background" android:paddingLeft="13.0dip" android:paddingTop="10.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="客服电话：400-898-7799" android:layout_alignParentLeft="true" style="@style/FontD" />
+                    <TextView android:textColor="#ff00a0e9" android:gravity="center_vertical" android:id="@id/txt_agreement" android:background="@drawable/app_background" android:paddingTop="10.0dip" android:paddingRight="13.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="服务协议 >" android:layout_alignParentRight="true" style="@style/FontD" />
+                </RelativeLayout>
+                <LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/vip_customer_service_title">
+                    <View android:background="@drawable/tudou_grey" android:layout_width="fill_parent" android:layout_height="1.0px" />
+                    <LinearLayout android:orientation="horizontal" android:id="@id/fisrt_line" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="0.0px" android:layout_weight="1.0">
+                        <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/line1_1" android:background="@color/white" android:layout_width="0.0px" android:layout_height="100.0dip" android:layout_weight="1.0">
+                            <ImageView android:background="@drawable/ic_vip_movies" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                            <TextView android:textColor="#ff838383" android:gravity="center" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="海量片库" />
+                        </LinearLayout>
+                        <View android:background="@drawable/tudou_grey" android:layout_width="1.0px" android:layout_height="fill_parent" />
+                        <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/line1_2" android:background="@color/white" android:layout_width="0.0px" android:layout_height="100.0dip" android:layout_weight="1.0">
+                            <ImageView android:background="@drawable/ic_vip_ad" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                            <TextView android:textColor="#ff838383" android:gravity="center" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="免广告" />
+                        </LinearLayout>
+                        <View android:background="@drawable/tudou_grey" android:layout_width="1.0px" android:layout_height="fill_parent" />
+                        <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/line1_3" android:background="@color/white" android:layout_width="0.0px" android:layout_height="100.0dip" android:layout_weight="1.0">
+                            <ImageView android:background="@drawable/ic_vip_1080" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                            <TextView android:textColor="#ff838383" android:gravity="center" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="专享高清" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <View android:background="@drawable/tudou_grey" android:layout_width="fill_parent" android:layout_height="1.0px" />
+                    <LinearLayout android:orientation="horizontal" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="0.0px" android:layout_weight="1.0">
+                        <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/line2_1" android:background="@color/white" android:layout_width="0.0px" android:layout_height="100.0dip" android:layout_weight="1.0">
+                            <ImageView android:background="@drawable/ic_vip_vip" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                            <TextView android:textColor="#ff838383" android:gravity="center" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="尊贵标识" />
+                        </LinearLayout>
+                        <View android:background="@drawable/tudou_grey" android:layout_width="1.0px" android:layout_height="fill_parent" />
+                        <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/line2_2" android:background="@color/white" android:layout_width="0.0px" android:layout_height="100.0dip" android:layout_weight="1.0">
+                            <ImageView android:background="@drawable/ic_rmb_phone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                            <TextView android:textColor="#ff838383" android:gravity="center" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="折扣点播" />
+                        </LinearLayout>
+                        <View android:background="@drawable/tudou_grey" android:layout_width="1.0px" android:layout_height="fill_parent" />
+                        <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/line2_3" android:background="@color/white" android:layout_width="0.0px" android:layout_height="100.0dip" android:layout_weight="1.0">
+                            <ImageView android:background="@drawable/ic_vip_phone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                            <TextView android:textColor="#ff838383" android:gravity="center" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="私人客服" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <View android:background="@drawable/tudou_grey" android:layout_width="fill_parent" android:layout_height="1.0px" />
+                    <TextView android:gravity="center" android:id="@id/vip_help_h5_txt" android:background="@drawable/cache_listview_item_bg" android:paddingTop="20.0dip" android:paddingBottom="20.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="会员帮助中心" style="@style/FontD" />
+                </LinearLayout>
+            </RelativeLayout>
+        </ScrollView>
+        <com.youku.widget.HintView android:id="@id/hint_view" android:background="@color/white" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/vip_buy_title" />
+    </RelativeLayout>
+</RelativeLayout>

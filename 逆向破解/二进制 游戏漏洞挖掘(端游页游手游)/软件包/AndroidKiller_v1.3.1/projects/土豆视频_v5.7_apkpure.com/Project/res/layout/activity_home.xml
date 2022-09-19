@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/layout_bottom" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+        <ImageView android:background="#ffd9d9d9" android:layout_width="fill_parent" android:layout_height="1.0px" />
+        <com.youku.widget.TudouTab android:id="@id/viewpagertab" android:layout_width="fill_parent" android:layout_height="@dimen/tudou_bottom_bar_height" />
+    </LinearLayout>
+    <com.youku.widget.TabViewPager android:id="@id/home_viewpager" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/layout_bottom" android:layout_below="@id/title" />
+</RelativeLayout>

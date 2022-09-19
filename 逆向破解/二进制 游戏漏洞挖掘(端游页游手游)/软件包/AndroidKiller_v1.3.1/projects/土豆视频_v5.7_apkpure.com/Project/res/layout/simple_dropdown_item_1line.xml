@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/listview_item_bg" android:layout_width="fill_parent" android:layout_height="@dimen/search_tudou_tag_item_height"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textAppearance="@style/search_hot_history_list_item" android:ellipsize="end" android:gravity="center|left" android:id="@id/suggestText" android:paddingLeft="@dimen/tudou_xlarge_ten_zero_dip" android:layout_width="fill_parent" android:layout_height="@dimen/search_tudou_tag_item_height" android:layout_marginLeft="@dimen/search_capture_box_ml" android:text="aaafafd" android:singleLine="true" android:layout_alignParentLeft="true" />
+    <RelativeLayout android:gravity="center_vertical" android:id="@id/suggestTypeRel" android:layout_width="50.0dip" android:layout_height="@dimen/search_tudou_tag_item_height" android:layout_toLeftOf="@id/suggestImage" android:layout_centerVertical="true">
+        <TextView android:textAppearance="@style/search_suggest_item_text_style" android:gravity="center" android:id="@id/suggestType" android:background="@drawable/suggest_cat_type_bg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/search_capture_box_ml" android:text="综艺" android:singleLine="true" android:layout_alignParentLeft="true" />
+    </RelativeLayout>
+    <ImageView android:id="@id/suggestImage" android:background="@drawable/search_relevant_arrow_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/search_sug_img_ml" android:layout_marginRight="@dimen/search_sug_img_mr" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+</RelativeLayout>

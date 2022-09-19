@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/white" android:layout_width="fill_parent" android:layout_height="@dimen/caching_item_heigth"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:android_custom="http://schemas.android.com/apk/res/com.tudou.android">
+    <ImageView android:id="@id/uploadImage" android:layout_width="@dimen/cache_item_imgae_width" android:layout_height="@dimen/cache_item_imgae_height" android:layout_marginLeft="@dimen/cache_item_picture_part_margin_left" android:layout_marginRight="@dimen/cache_item_picture_part_margin_right" android:scaleType="fitXY" android:layout_centerVertical="true" />
+    <TextView android:gravity="bottom" android:id="@id/uploadTime" android:background="@drawable/yaofeng" android:paddingLeft="@dimen/home_cell_txt_padding_left" android:paddingBottom="@dimen/home_cell_txt_padding_left" android:layout_width="@dimen/cache_item_imgae_width" android:layout_height="wrap_content" android:text="10:30" android:maxLines="1" android:layout_alignLeft="@id/uploadImage" android:layout_alignBottom="@id/uploadImage" style="@style/search_man_short" />
+    <LinearLayout android:gravity="center|left" android:orientation="vertical" android:id="@id/uploadContent" android:layout_width="@dimen/cache_item_title_part" android:layout_height="fill_parent" android:layout_marginTop="@dimen/tudou_xlarge_two_zero_dip" android:layout_marginBottom="@dimen/tudou_xlarge_two_zero_dip" android:layout_toRightOf="@id/uploadImage">
+        <TextView android:textAppearance="@style/cache_item_title" android:ellipsize="end" android:gravity="top" android:id="@id/uploadTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="视频标题" android:maxLines="2" />
+        <TextView android:textAppearance="@style/cache_item_other" android:id="@id/uploadContent1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="2014/03/01" />
+    </LinearLayout>
+    <ImageView android:id="@id/line_bottom" android:background="@drawable/tudou_grey" android:layout_width="fill_parent" android:layout_height="@dimen/list_divider_height" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:layout_alignParentBottom="true" />
+</RelativeLayout>

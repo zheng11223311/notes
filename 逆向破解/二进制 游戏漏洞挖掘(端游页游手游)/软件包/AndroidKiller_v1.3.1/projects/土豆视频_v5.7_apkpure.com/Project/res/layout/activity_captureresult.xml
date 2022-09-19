@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="#ffe2e2e2" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/saosao_result_title" layout="@layout/page_second_white_title" />
+    <ScrollView android:id="@id/has_result" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="vertical" android:id="@id/has_result_white" android:background="@drawable/saosao_bg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/saosao_result_pic_mrl" android:layout_marginTop="@dimen/saosao_result_pic_mt" android:layout_marginRight="@dimen/saosao_result_pic_mrl" android:layout_marginBottom="@dimen/saosao_result_pic_mb">
+                <TextView android:textAppearance="@style/saosao_result_title" android:ellipsize="end" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/saosao_title_mtop" android:layout_marginTop="@dimen/saosao_title_mtop" android:layout_marginBottom="@dimen/saosao_title_mtop" android:singleLine="true" />
+                <FrameLayout android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/saosao_result_pic_mlr" android:layout_marginRight="@dimen/saosao_result_pic_mlr" android:layout_marginBottom="@dimen/saosao_title_mtop">
+                    <ImageView android:layout_gravity="center" android:id="@id/img" android:background="@drawable/hengtu_moren" android:layout_width="@dimen/saosao_result_pic_w" android:layout_height="@dimen/saosao_result_pic_h" android:scaleType="fitXY" />
+                    <ImageView android:layout_gravity="bottom|center|right" android:id="@id/img_play" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/saosao_play_ic" />
+                </FrameLayout>
+                <TextView android:textAppearance="@style/saosao_result_status" android:ellipsize="end" android:id="@id/paly_status" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/saosao_title_mtop" android:layout_marginBottom="@dimen/saosao_title_mtop" android:singleLine="true" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:layout_gravity="center_horizontal" android:orientation="horizontal" android:id="@id/play" android:background="@drawable/saosao_btn_play" android:layout_width="@dimen/saosao_result_playbtn_w" android:layout_height="@dimen/saosao_result_playbtn_h">
+                <ImageView android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/saosao_result_playbtn_mr" android:src="@drawable/play_triangle" />
+                <TextView android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/sao_sao_result_play" style="@style/saosao_btn_player" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <ScrollView android:id="@id/no_result" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/no_result_white" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/saosao_noresult_mlr" android:layout_marginTop="@dimen/saosao_noresult_mtop" android:layout_marginRight="@dimen/saosao_noresult_mlr">
+                <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/saosao_noresult_pic_mbt" android:layout_marginBottom="@dimen/saosao_noresult_pic_mbt">
+                    <ImageView android:id="@id/img_saosao_error_icon" android:paddingRight="8.0px" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <TextView android:id="@id/no_result_white_tt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/crash_no_result" android:layout_toRightOf="@id/img_saosao_error_icon" style="@style/saosao_result_tips" />
+                </RelativeLayout>
+                <Button android:gravity="center" android:id="@id/re_saosao" android:background="@drawable/saosao_btn_play" android:layout_width="@dimen/saosao_noresult_btn_w" android:layout_height="@dimen/saosao_noresult_btn_h" android:layout_marginBottom="@dimen/saosao_noresult_btn_mbt" style="@style/saosao_btn_no_result" />
+            </LinearLayout>
+            <ImageView android:layout_gravity="center_horizontal" android:id="@id/no_result_img_tishi" android:layout_width="@dimen/saosao_noresult_img_tips_w" android:layout_height="@dimen/saosao_noresult_img_tips_h" android:layout_marginLeft="@dimen/saosao_noresult_img_tips_mlr" android:layout_marginTop="@dimen/saosao_noresult_img_tips_mt" android:layout_marginRight="@dimen/saosao_noresult_img_tips_mlr" android:layout_marginBottom="@dimen/saosao_noresult_img_tips_mb" android:scaleType="fitXY" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

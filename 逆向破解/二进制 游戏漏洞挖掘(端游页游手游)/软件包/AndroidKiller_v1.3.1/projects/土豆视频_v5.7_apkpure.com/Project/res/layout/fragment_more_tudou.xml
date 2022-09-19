@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="@drawable/app_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/app_title" layout="@layout/tudou_title_login" />
+    <ScrollView android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/app_title">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <RelativeLayout android:id="@id/logout_layout" android:background="@drawable/more_item_bg" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="72.0dip">
+                <ImageView android:id="@id/user_pic" android:background="@drawable/head_80" android:layout_width="51.0dip" android:layout_height="51.0dip" android:layout_marginLeft="@dimen/more_item_image_margin_left" android:src="@drawable/no_attention_user_bg" android:scaleType="fitXY" android:layout_centerVertical="true" />
+                <TextView android:textAppearance="@style/more_logout_txt" android:gravity="center" android:id="@id/rightTxt" android:layout_width="42.0dip" android:layout_height="fill_parent" android:layout_marginRight="22.0dip" android:text="退出" android:layout_alignParentRight="true" />
+                <TextView android:textAppearance="@style/tudou_more_text" android:ellipsize="end" android:id="@id/user_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/mini_margin_10" android:text="" android:singleLine="true" android:layout_toLeftOf="@id/rightTxt" android:layout_toRightOf="@id/user_pic" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <include android:id="@id/line_logout" android:visibility="gone" layout="@layout/discovery_line" />
+            <View android:id="@id/line_top_forget" android:background="@drawable/discovery_line_bg" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginTop="@dimen/mytudou_list_margin_top" />
+            <RelativeLayout android:id="@id/pwdSetlayout" android:background="@drawable/more_item_bg" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/mytudou_layout_height">
+                <TextView android:gravity="center_vertical" android:id="@id/txtPwdSet" android:paddingLeft="@dimen/more_item_image_margin_left" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="密码设置" android:layout_alignParentLeft="true" style="@style/tudou_more_text" />
+                <ImageView android:id="@id/imgPwdSet" android:background="@color/transparent" android:paddingRight="@dimen/more_item_image_margin_right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/discovery_arrow" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <include android:id="@id/line1" android:visibility="gone" layout="@layout/discovery_line" />
+            <include layout="@layout/discovery_line" />
+            <include android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginTop="@dimen/mytudou_list_margin_top" layout="@layout/discovery_line" />
+            <RelativeLayout android:layout_gravity="center_vertical" android:background="@drawable/t_bg" android:layout_width="fill_parent" android:layout_height="@dimen/mytudou_layout_height">
+                <TextView android:gravity="center_vertical" android:id="@id/ispushed_title" android:paddingLeft="@dimen/more_item_image_margin_left" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/more_is_allowed_push" android:layout_alignParentLeft="true" style="@style/tudou_more_text" />
+                <ImageView android:id="@id/ispushed" android:paddingRight="@dimen/more_item_image_margin_right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/more_close" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <include layout="@layout/discovery_line" />
+            <RelativeLayout android:layout_gravity="center_vertical" android:background="@drawable/t_bg" android:layout_width="fill_parent" android:layout_height="@dimen/mytudou_layout_height">
+                <TextView android:gravity="center_vertical" android:id="@id/not_disturb_title" android:paddingLeft="@dimen/more_item_image_margin_left" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/more_not_disturb_mode" android:layout_alignParentLeft="true" android:layout_centerVertical="true" style="@style/tudou_more_text" />
+                <TextView android:id="@id/not_disturb_title_sub" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="@string/more_not_disturb_mode_sub" android:layout_toRightOf="@id/not_disturb_title" android:layout_alignBottom="@id/not_disturb_title" style="@style/tudou_more_sub_des" />
+                <ImageView android:id="@id/not_disturb" android:paddingRight="@dimen/more_item_image_margin_right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/more_open" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <include layout="@layout/discovery_line" />
+            <include android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginTop="@dimen/mytudou_list_margin_top" layout="@layout/discovery_line" />
+            <RelativeLayout android:gravity="center_vertical" android:background="@drawable/t_bg" android:layout_width="fill_parent" android:layout_height="@dimen/mytudou_layout_height">
+                <TextView android:gravity="center_vertical" android:id="@id/isplay_title" android:paddingLeft="@dimen/more_item_image_margin_left" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/more_allowed_play_in_2G_3G" android:layout_alignParentLeft="true" style="@style/tudou_more_text" />
+                <ImageView android:id="@id/is_play_3G" android:paddingRight="@dimen/more_item_image_margin_right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/more_close" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <include layout="@layout/discovery_line" />
+            <RelativeLayout android:gravity="center_vertical" android:background="@drawable/t_bg" android:layout_width="fill_parent" android:layout_height="@dimen/mytudou_layout_height">
+                <TextView android:gravity="center_vertical" android:id="@id/isupload_title" android:paddingLeft="@dimen/more_item_image_margin_left" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/more_allowed_upload_in_2G_3G" android:layout_alignParentLeft="true" style="@style/tudou_more_text" />
+                <ImageView android:id="@id/isupload" android:paddingRight="@dimen/more_item_image_margin_right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/more_close" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <include layout="@layout/discovery_line" />
+            <RelativeLayout android:gravity="center_vertical" android:background="@drawable/t_bg" android:layout_width="fill_parent" android:layout_height="@dimen/mytudou_layout_height">
+                <TextView android:gravity="center_vertical" android:id="@id/isdownload_title" android:paddingLeft="@dimen/more_item_image_margin_left" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/more_allowed_download_in_2G_3G" android:layout_alignParentLeft="true" style="@style/tudou_more_text" />
+                <ImageView android:id="@id/isdownload" android:paddingRight="@dimen/more_item_image_margin_right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/more_close" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <include layout="@layout/discovery_line" />
+            <RelativeLayout android:gravity="center_vertical" android:id="@id/downloadtoSDcardlayout" android:background="@drawable/more_item_bg" android:layout_width="fill_parent" android:layout_height="@dimen/mytudou_layout_height">
+                <TextView android:gravity="center_vertical" android:id="@id/downloadtoSDcard_title" android:paddingLeft="@dimen/more_item_image_margin_left" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/more_downloadtoSDcard" android:layout_alignParentLeft="true" style="@style/tudou_more_text" />
+                <TextView android:gravity="center_vertical" android:id="@id/downloadLoc" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="@dimen/more_item_image_margin_right" android:layout_toLeftOf="@id/downloadTag" style="@style/tudou_more_not_bund" />
+                <ImageView android:id="@id/downloadTag" android:background="@color/transparent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/more_item_image_margin_right" android:src="@drawable/discovery_arrow" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <include android:id="@id/line2" layout="@layout/discovery_line" />
+            <LinearLayout android:orientation="vertical" android:id="@id/save_path_set_content" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            <include layout="@layout/discovery_line" />
+            <RelativeLayout android:gravity="center_vertical" android:id="@id/video_resolution" android:background="@drawable/more_item_bg" android:layout_width="fill_parent" android:layout_height="@dimen/mytudou_layout_height">
+                <TextView android:gravity="center_vertical" android:id="@id/video_resolution_title" android:paddingLeft="@dimen/more_item_image_margin_left" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/more_video_resolution" android:layout_alignParentLeft="true" style="@style/tudou_more_text" />
+                <TextView android:gravity="center_vertical" android:id="@id/resolutionLoc" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="@dimen/more_item_image_margin_right" android:layout_toLeftOf="@id/resolutionTag" style="@style/tudou_more_not_bund" />
+                <ImageView android:id="@id/resolutionTag" android:background="@color/transparent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/more_item_image_margin_right" android:src="@drawable/discovery_arrow" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <include android:id="@id/line2" layout="@layout/discovery_line" />
+            <LinearLayout android:orientation="vertical" android:id="@id/resolution_content" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            <include android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginTop="@dimen/mytudou_list_margin_top" layout="@layout/discovery_line" />
+            <RelativeLayout android:gravity="center_vertical" android:id="@id/goClearCacheLayout" android:background="@drawable/more_item_bg" android:layout_width="fill_parent" android:layout_height="@dimen/mytudou_layout_height">
+                <TextView android:gravity="center_vertical" android:id="@id/goClearCache_title" android:paddingLeft="@dimen/more_item_image_margin_left" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/more_clear_cache" android:layout_alignParentLeft="true" style="@style/tudou_more_text" />
+                <TextView android:gravity="center_vertical" android:id="@id/goClearCache_num" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_toRightOf="@id/goClearCache_title" style="@style/tudou_more_text_ff7500" />
+            </RelativeLayout>
+            <include layout="@layout/discovery_line" />
+            <include android:visibility="gone" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginTop="@dimen/mytudou_list_margin_top" layout="@layout/discovery_line" />
+            <RelativeLayout android:gravity="center_vertical" android:id="@id/guide_page" android:background="@drawable/more_item_bg" android:layout_width="fill_parent" android:layout_height="@dimen/mytudou_layout_height">
+                <TextView android:gravity="center_vertical" android:id="@id/gofeedback_title" android:paddingLeft="@dimen/more_item_image_margin_left" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="引导图" android:layout_alignParentLeft="true" style="@style/tudou_more_text" />
+                <ImageView android:id="@id/gofeedback" android:background="@color/transparent" android:paddingRight="@dimen/more_item_image_margin_right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/discovery_arrow" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <include android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginTop="@dimen/mytudou_list_margin_top" layout="@layout/discovery_line" />
+            <RelativeLayout android:gravity="center_vertical" android:id="@id/gofeedbacklayout" android:background="@drawable/more_item_bg" android:layout_width="fill_parent" android:layout_height="@dimen/mytudou_layout_height">
+                <TextView android:gravity="center_vertical" android:id="@id/gofeedback_title" android:paddingLeft="@dimen/more_item_image_margin_left" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/more_user_feedback" android:layout_alignParentLeft="true" style="@style/tudou_more_text" />
+                <ImageView android:id="@id/gofeedback" android:background="@color/transparent" android:paddingRight="@dimen/more_item_image_margin_right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/discovery_arrow" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <include layout="@layout/discovery_line" />
+            <RelativeLayout android:gravity="center_vertical" android:id="@id/goaboutlayout" android:background="@drawable/more_item_bg" android:layout_width="fill_parent" android:layout_height="@dimen/mytudou_layout_height">
+                <TextView android:gravity="center_vertical" android:id="@id/goabout_title" android:paddingLeft="@dimen/more_item_image_margin_left" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/more_about_tudou" android:layout_alignParentLeft="true" style="@style/tudou_more_text" />
+                <ImageView android:id="@id/goabout" android:background="@color/transparent" android:paddingRight="@dimen/more_item_image_margin_right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/discovery_arrow" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <include layout="@layout/discovery_line" />
+            <RelativeLayout android:gravity="center_vertical" android:id="@id/goUpdateslayout" android:background="@drawable/more_item_bg" android:layout_width="fill_parent" android:layout_height="@dimen/mytudou_layout_height">
+                <TextView android:gravity="center_vertical" android:id="@id/goUpdates_title" android:paddingLeft="@dimen/more_item_image_margin_left" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/more_tudou_updates" android:layout_alignParentLeft="true" style="@style/tudou_more_text" />
+                <ImageView android:id="@id/goUpdates_tips" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:src="@drawable/update" android:layout_toRightOf="@id/goUpdates_title" android:layout_centerVertical="true" />
+                <ImageView android:id="@id/goUpdates" android:background="@color/transparent" android:paddingRight="@dimen/more_item_image_margin_right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/discovery_arrow" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <include android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/mytudou_list_margin_top" layout="@layout/discovery_line" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

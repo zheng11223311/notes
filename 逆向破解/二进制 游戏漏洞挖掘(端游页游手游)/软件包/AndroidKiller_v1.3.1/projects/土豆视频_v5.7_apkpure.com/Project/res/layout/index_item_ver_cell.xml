@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/item1" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tudou="http://youku.com/tudou">
+    <com.youku.widget.YoukuImageView android:id="@id/thumbnail" android:background="@drawable/shutu_moren" android:layout_width="fill_parent" android:layout_height="wrap_content" android:scaleType="fitXY" android:layout_centerHorizontal="true" tudou:pheight="3" tudou:pwidth="2"
+      xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tudou="http://youku.com/tudou" />
+    <ImageView android:id="@id/corner_image" android:layout_width="@dimen/index_icon_w" android:layout_height="@dimen/index_icon_h" android:layout_marginTop="@dimen/index_icon_m" android:layout_marginRight="@dimen/index_icon_m" android:scaleType="fitXY" android:layout_alignTop="@id/thumbnail" android:layout_alignRight="@id/thumbnail" />
+    <RelativeLayout android:background="@drawable/yaofeng" android:layout_width="fill_parent" android:layout_height="@dimen/yaofeng_height" android:layout_alignLeft="@id/thumbnail" android:layout_alignBottom="@id/thumbnail">
+        <TextView android:textColor="@color/tudou5_yellow" android:ellipsize="end" android:id="@id/stripe_right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/index_yaofeng_margin_l" android:layout_marginBottom="@dimen/index_yaofeng_margin_b" android:text="7.2" android:singleLine="true" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+        <TextView android:ellipsize="end" android:id="@id/stripe_top" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/index_yaofeng_margin_l" android:layout_marginBottom="@dimen/index_yaofeng_margin_b" android:text="10:30" android:singleLine="true" android:layout_alignParentLeft="true" android:layout_alignParentBottom="true" style="@style/search_man_short" />
+    </RelativeLayout>
+    <LinearLayout android:orientation="vertical" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="@dimen/cell_botteom_height" android:layout_below="@id/thumbnail" android:layout_alignLeft="@id/thumbnail">
+        <TextView android:textAppearance="@style/index_cell_title" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/title_1line" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/index_title_margin_t" android:text="" android:singleLine="true" />
+        <TextView android:textAppearance="@style/index_sub_title" android:ellipsize="end" android:id="@id/alias" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="" android:singleLine="true" />
+    </LinearLayout>
+</RelativeLayout>

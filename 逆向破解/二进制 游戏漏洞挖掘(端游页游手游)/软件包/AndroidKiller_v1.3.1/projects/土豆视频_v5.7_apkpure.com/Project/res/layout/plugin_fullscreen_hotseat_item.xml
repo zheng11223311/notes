@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.youku.phone.detail.plugin.fullscreen.FullscreenHotseatItem android:background="@android:color/transparent" android:clipChildren="false" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="10.0dip" android:textColor="#b2ffffff" android:gravity="center" android:layout_gravity="center|right" android:id="@id/plugin_fullscreen_hotseat_item_title" android:background="@drawable/plugin_fullscreen_hotseat_item_title_bg" android:visibility="gone" android:layout_width="33.0dip" android:layout_height="18.0dip" android:layout_marginRight="51.0dip" />
+    <Button android:layout_gravity="right" android:id="@id/plugin_fullscreen_hotseat_item_btn" android:clickable="false" android:layout_width="40.0dip" android:layout_height="40.0dip" />
+</com.youku.phone.detail.plugin.fullscreen.FullscreenHotseatItem>

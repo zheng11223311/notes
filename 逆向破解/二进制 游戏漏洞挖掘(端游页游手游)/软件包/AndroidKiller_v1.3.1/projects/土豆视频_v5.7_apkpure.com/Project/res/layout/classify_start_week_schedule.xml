@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/row_info" android:background="@drawable/channel_row_start_bg" android:layout_width="125.0dip" android:layout_height="66.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="11.0sp" android:textColor="#ff8d8d8d" android:ellipsize="end" android:id="@id/tv_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="17.0dip" android:layout_marginBottom="5.0dip" android:text="匹诺曹" android:maxLines="1" android:singleLine="true" />
+    <TextView android:textSize="13.0sp" android:textColor="#ff000000" android:ellipsize="end" android:id="@id/tv_episode" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="17.0dip" android:text="第26集" android:maxLines="1" android:singleLine="true" />
+</LinearLayout>

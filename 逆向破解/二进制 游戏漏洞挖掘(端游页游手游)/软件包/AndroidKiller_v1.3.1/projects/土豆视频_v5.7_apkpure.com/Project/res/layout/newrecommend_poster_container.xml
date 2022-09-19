@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:id="@id/recommend_scrollview" android:scrollbars="vertical" android:fadingEdge="none" android:descendantFocusability="blocksDescendants" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/newRecommendContainer" android:descendantFocusability="blocksDescendants" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <RelativeLayout android:gravity="center_horizontal" android:layout_gravity="center_horizontal" android:descendantFocusability="blocksDescendants" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ImageView android:id="@id/img_recommend_newrecommend_poster_left" android:layout_width="@dimen/recommend_newrecommend_posterleft_width" android:layout_height="@dimen/recommend_newrecommend_poster_height" android:src="@drawable/recommend_newrecommend_poster_left" android:scaleType="fitXY" />
+            <ImageView android:id="@id/img_recommend_newrecommend_poster_right" android:layout_width="@dimen/recommend_newrecommend_posterleft_width" android:layout_height="@dimen/recommend_newrecommend_poster_height" android:src="@drawable/recommend_newrecommend_poster_right" android:scaleType="fitXY" android:layout_alignParentRight="true" />
+            <com.youtu.apps.widget.YoutuGallery android:id="@id/newrecommend_poster" android:fadingEdge="none" android:layout_width="fill_parent" android:layout_height="@dimen/recommend_newrecommend_poster_height" android:layout_toLeftOf="@id/img_recommend_newrecommend_poster_right" android:layout_toRightOf="@id/img_recommend_newrecommend_poster_left" android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+        <LinearLayout android:gravity="center_horizontal" android:layout_gravity="center_horizontal" android:orientation="horizontal" android:id="@id/point_container" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/recommend_newrecommend_point_margin" android:layout_marginBottom="@dimen/recommend_newrecommend_point_margin">
+            <ImageView android:id="@id/img_point1" android:layout_width="@dimen/recommend_newrecommend_point_width" android:layout_height="@dimen/recommend_newrecommend_point_width" android:layout_marginRight="@dimen/recommend_newrecommend_point_margin" android:scaleType="fitXY" />
+            <ImageView android:id="@id/img_point2" android:layout_width="@dimen/recommend_newrecommend_point_width" android:layout_height="@dimen/recommend_newrecommend_point_width" android:layout_marginRight="@dimen/recommend_newrecommend_point_margin" android:scaleType="fitXY" />
+            <ImageView android:id="@id/img_point3" android:layout_width="@dimen/recommend_newrecommend_point_width" android:layout_height="@dimen/recommend_newrecommend_point_width" android:scaleType="fitXY" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

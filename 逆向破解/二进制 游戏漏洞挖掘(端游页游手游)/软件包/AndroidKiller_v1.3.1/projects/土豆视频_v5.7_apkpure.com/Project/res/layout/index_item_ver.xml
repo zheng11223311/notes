@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@id/bg_layout" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/item1" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/home_item_padding1" android:layout_weight="1.0" layout="@layout/index_item_ver_cell" />
+    <include android:id="@id/item2" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/cell_margin" android:layout_marginRight="@dimen/cell_margin" android:layout_weight="1.0" layout="@layout/index_item_ver_cell" />
+    <include android:id="@id/item3" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginRight="@dimen/home_item_padding1" android:layout_weight="1.0" layout="@layout/index_item_ver_cell" />
+</LinearLayout>

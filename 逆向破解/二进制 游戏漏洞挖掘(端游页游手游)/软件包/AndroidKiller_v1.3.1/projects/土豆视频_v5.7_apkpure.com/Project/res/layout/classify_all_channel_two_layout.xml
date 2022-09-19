@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tudou="http://youku.com/tudou">
+    <RelativeLayout android:id="@id/left_rl" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="1.0dip" android:layout_weight="1.0">
+        <com.youku.widget.YoukuImageView android:id="@id/left_iv_icon" android:background="@drawable/hengtu_moren" android:layout_width="fill_parent" android:layout_height="wrap_content" android:scaleType="fitXY" android:layout_centerHorizontal="true" tudou:pheight="9" tudou:pwidth="16" />
+        <TextView android:textSize="10.0sp" android:textColor="#ffffffff" android:gravity="bottom|center|left" android:id="@id/left_tv_stripe_top" android:background="@drawable/yaofeng" android:paddingLeft="8.0dip" android:paddingBottom="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="10:30" android:maxLines="1" android:layout_alignLeft="@id/left_iv_icon" android:layout_alignBottom="@id/left_iv_icon" style="@style/search_man_short" />
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginRight="10.0dip" android:layout_below="@id/left_iv_icon">
+            <TextView android:textAppearance="@style/channel_first_cell_title" android:textSize="13.0sp" android:textColor="#ff000000" android:ellipsize="end" android:id="@id/left_tv_title_1line" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:text="默认" android:singleLine="true" />
+            <TextView android:textAppearance="@style/channel_first_cell_alias" android:textSize="11.0sp" android:textColor="#ffa4a4a4" android:ellipsize="end" android:id="@id/left_tv_alias" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="默认" android:singleLine="true" />
+        </LinearLayout>
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/right_rl" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:layout_weight="1.0">
+        <com.youku.widget.YoukuImageView android:id="@id/right_iv_icon" android:background="@drawable/hengtu_moren" android:layout_width="fill_parent" android:layout_height="wrap_content" android:scaleType="fitXY" android:layout_centerHorizontal="true" tudou:pheight="9" tudou:pwidth="16" />
+        <TextView android:textSize="10.0sp" android:textColor="#ffffffff" android:gravity="bottom|center|left" android:id="@id/right_tv_stripe_top" android:background="@drawable/yaofeng" android:paddingLeft="8.0dip" android:paddingBottom="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="10:30" android:maxLines="1" android:layout_alignLeft="@id/right_iv_icon" android:layout_alignBottom="@id/right_iv_icon" style="@style/search_man_short" />
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginRight="10.0dip" android:layout_below="@id/right_iv_icon">
+            <TextView android:textAppearance="@style/channel_first_cell_title" android:textSize="13.0sp" android:textColor="#ff000000" android:ellipsize="end" android:id="@id/right_tv_title_1line" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:text="默认" android:singleLine="true" />
+            <TextView android:textAppearance="@style/channel_first_cell_alias" android:textSize="11.0sp" android:textColor="#ffa4a4a4" android:ellipsize="end" android:id="@id/right_tv_alias" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="默认" android:singleLine="true" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

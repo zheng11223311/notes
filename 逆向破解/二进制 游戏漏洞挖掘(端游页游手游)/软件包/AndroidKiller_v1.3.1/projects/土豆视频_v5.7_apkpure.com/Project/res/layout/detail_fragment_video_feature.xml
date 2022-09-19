@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="fill_parent" android:onClick="interceptClickEvent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/detail_fragment_video_feature_title_layout" android:layout_width="fill_parent" android:layout_height="48.0dip">
+        <View android:background="#ffff6600" android:layout_width="3.0dip" android:layout_height="15.0dip" android:layout_marginTop="16.5dip" />
+        <TextView android:textSize="17.0sp" android:textColor="#ff333333" android:gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="16.0dip" android:text="片花" />
+        <ImageView android:layout_gravity="right" android:id="@id/detail_fragment_video_feature_btn_close" android:layout_width="60.0dip" android:layout_height="fill_parent" android:src="@drawable/detail_bottom_bar_close" android:scaleType="center" />
+    </FrameLayout>
+    <View android:background="#ffe4e4e4" android:layout_width="fill_parent" android:layout_height="0.30000007dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="48.0dip" android:layout_marginRight="10.0dip" />
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="48.299988dip">
+        <GridView android:scrollbarStyle="insideInset" android:layout_gravity="center_horizontal" android:id="@id/detail_fragment_video_feature_grid" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:layout_marginRight="5.0dip" android:horizontalSpacing="1.0dip" android:numColumns="2" />
+    </FrameLayout>
+</FrameLayout>

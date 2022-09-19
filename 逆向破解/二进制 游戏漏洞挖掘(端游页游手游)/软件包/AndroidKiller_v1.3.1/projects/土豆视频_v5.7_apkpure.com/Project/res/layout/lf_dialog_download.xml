@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/lf_common_dialog_background" android:layout_width="fill_parent" android:layout_height="fill_parent" android:minWidth="@dimen/lf_common_dialog_download_width" android:minHeight="@dimen/lf_common_dialog_download_height"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:background="@drawable/lf_live_room_dialog_download_bg_image" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@id/close_button" android:layout_width="22.0dip" android:layout_height="22.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="5.0dip" android:src="@drawable/lf_live_room_dialog_download_close" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+        <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+            <ImageView android:id="@id/lf_live_room_dialog_download_logo" android:layout_width="70.0dip" android:layout_height="95.0dip" android:src="@drawable/lf_live_room_dialog_download_laifeng_logo" />
+            <TextView android:textSize="19.0dip" android:textColor="@color/white" android:id="@id/lf_live_room_dialog_download_tip_one" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="14.0dip" android:layout_marginTop="32.0dip" android:text="更真实体验，炫酷互动" android:layout_toRightOf="@id/lf_live_room_dialog_download_logo" />
+            <TextView android:textSize="28.0dip" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="14.0dip" android:layout_marginTop="10.0dip" android:text="就在来疯客户端" android:layout_toRightOf="@id/lf_live_room_dialog_download_logo" android:layout_below="@id/lf_live_room_dialog_download_tip_one" />
+            <ViewSwitcher android:id="@id/lf_dialog_download_switcher" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="30.0dip" android:inAnimation="@anim/vs_slide_in_top" android:outAnimation="@anim/vs_slide_in_bottom" android:layout_below="@id/lf_live_room_dialog_download_logo">
+                <Button android:textSize="14.0dip" android:textColor="@color/white" android:id="@id/install_button" android:background="@drawable/background_lf_dialog_download_install_button" android:layout_width="275.0dip" android:layout_height="30.0dip" android:text="安装" />
+                <FrameLayout android:layout_width="275.0dip" android:layout_height="30.0dip">
+                    <ProgressBar android:id="@id/lf_dialog_download_progress_bar" android:layout_width="fill_parent" android:layout_height="fill_parent" android:max="100" android:progress="0" android:progressDrawable="@drawable/background_lf_dialog_download_progress_bar" style="@android:style/Widget.Holo.ProgressBar.Horizontal" />
+                    <TextView android:textSize="14.0dip" android:textColor="@android:color/white" android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="正在准备资源" />
+                </FrameLayout>
+            </ViewSwitcher>
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

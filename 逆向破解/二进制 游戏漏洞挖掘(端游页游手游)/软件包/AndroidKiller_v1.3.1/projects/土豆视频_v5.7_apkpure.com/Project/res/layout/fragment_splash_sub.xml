@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/container" android:background="#fffff6df" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/splashHeader" android:background="#ffeadec0" android:layout_width="fill_parent" android:layout_height="88.0dip" android:layout_alignParentTop="true">
+        <ImageView android:id="@id/splashKind" android:background="@drawable/title_card_bagua" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/splashBody1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/splashHeader">
+        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="19.0dip" android:layout_marginBottom="19.0dip" android:layout_centerInParent="true">
+            <TextView android:textSize="16.0sp" android:textColor="#ffff6600" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="豆小巫猜你喜欢这些自频道：" />
+            <Button android:id="@id/btnAllFollow" android:background="@drawable/btn_card_allfollow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="17.0dip" />
+            <ProgressBar android:id="@id/subProgressBar" android:visibility="gone" android:layout_width="18.0dip" android:layout_height="18.0dip" android:layout_marginLeft="30.0dip" />
+        </LinearLayout>
+    </RelativeLayout>
+    <GridView android:id="@id/gridViewSub" android:fadingEdge="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="#00000000" android:cacheColorHint="#00000000" android:verticalSpacing="19.0dip" android:numColumns="3" android:layout_above="@id/splashFooter" android:layout_below="@id/splashBody1" />
+    <RelativeLayout android:id="@id/splashFooter" android:background="@drawable/shadow_card" android:layout_width="fill_parent" android:layout_height="84.0dip" android:layout_alignParentBottom="true">
+        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+            <ImageView android:layout_gravity="bottom" android:orientation="horizontal" android:id="@id/goOtherCard" android:background="@drawable/btn_card_others" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <TextView android:textSize="16.0sp" android:textColor="#ffff6600" android:layout_gravity="bottom" android:id="@id/goTudou" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="35.299988dip" android:layout_marginBottom="5.0dip" android:text="退出占卜" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

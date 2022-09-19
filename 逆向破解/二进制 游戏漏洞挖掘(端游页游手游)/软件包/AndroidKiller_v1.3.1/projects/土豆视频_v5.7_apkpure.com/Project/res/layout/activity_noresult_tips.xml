@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/noresultRel" android:layout_width="fill_parent" android:layout_height="400.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/noresultImg" android:layout_width="@dimen/noresult_img_width" android:layout_height="@dimen/noresult_img_height" android:src="@drawable/prompt_logo" android:scaleType="centerInside" android:layout_centerInParent="true" />
+    <TextView android:id="@id/noresultTxt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/noresult_text_margin_top" android:text="@string/downloaded_none" android:layout_below="@id/noresultImg" android:layout_centerHorizontal="true" style="@style/noresult_text_style" />
+</RelativeLayout>

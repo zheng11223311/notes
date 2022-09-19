@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.tudou.detail.widget.VideoRecommendBar android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:background="#ffff6600" android:layout_width="3.0dip" android:layout_height="15.0dip" android:layout_marginTop="16.5dip" />
+    <TextView android:textSize="17.0sp" android:textColor="#ff1f1f1f" android:ellipsize="end" android:gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="48.0dip" android:layout_marginLeft="16.0dip" android:maxWidth="165.0dip" android:text="推荐" android:singleLine="true" />
+    <com.tudou.detail.widget.GridViewEx android:layout_gravity="center_horizontal" android:id="@id/detail_bottom_recommend_bar_grid" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="48.0dip" android:layout_marginRight="10.0dip" android:horizontalSpacing="1.0dip" />
+</com.tudou.detail.widget.VideoRecommendBar>

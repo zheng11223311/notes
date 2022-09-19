@@ -1,0 +1,95 @@
+.class Lcom/tudou/adapter/ChannelSquearAdapter$3$1$1;
+.super Ljava/lang/Object;
+.source "ChannelSquearAdapter.java"
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/tudou/adapter/ChannelSquearAdapter$3$1;->onSucess(Ljava/lang/String;)V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x0
+    name = null
+.end annotation
+
+
+# instance fields
+.field final synthetic this$2:Lcom/tudou/adapter/ChannelSquearAdapter$3$1;
+
+
+# direct methods
+.method constructor <init>(Lcom/tudou/adapter/ChannelSquearAdapter$3$1;)V
+    .locals 0
+
+    .prologue
+    .line 288
+    iput-object p1, p0, Lcom/tudou/adapter/ChannelSquearAdapter$3$1$1;->this$2:Lcom/tudou/adapter/ChannelSquearAdapter$3$1;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public run()V
+    .locals 6
+
+    .prologue
+    const/4 v5, 0x0
+
+    .line 293
+    iget-object v0, p0, Lcom/tudou/adapter/ChannelSquearAdapter$3$1$1;->this$2:Lcom/tudou/adapter/ChannelSquearAdapter$3$1;
+
+    iget-object v0, v0, Lcom/tudou/adapter/ChannelSquearAdapter$3$1;->this$1:Lcom/tudou/adapter/ChannelSquearAdapter$3;
+
+    iget-object v0, v0, Lcom/tudou/adapter/ChannelSquearAdapter$3;->val$dcItem:Lcom/youku/vo/DiscoveryChannelItem;
+
+    iput v5, v0, Lcom/youku/vo/DiscoveryChannelItem;->sub_status:I
+
+    .line 301
+    iget-object v0, p0, Lcom/tudou/adapter/ChannelSquearAdapter$3$1$1;->this$2:Lcom/tudou/adapter/ChannelSquearAdapter$3$1;
+
+    iget-object v0, v0, Lcom/tudou/adapter/ChannelSquearAdapter$3$1;->this$1:Lcom/tudou/adapter/ChannelSquearAdapter$3;
+
+    iget-object v0, v0, Lcom/tudou/adapter/ChannelSquearAdapter$3;->this$0:Lcom/tudou/adapter/ChannelSquearAdapter;
+
+    iget-object v1, p0, Lcom/tudou/adapter/ChannelSquearAdapter$3$1$1;->this$2:Lcom/tudou/adapter/ChannelSquearAdapter$3$1;
+
+    iget-object v1, v1, Lcom/tudou/adapter/ChannelSquearAdapter$3$1;->this$1:Lcom/tudou/adapter/ChannelSquearAdapter$3;
+
+    iget-object v1, v1, Lcom/tudou/adapter/ChannelSquearAdapter$3;->val$viewholder:Lcom/tudou/adapter/ChannelSquearAdapter$ViewHolder;
+
+    iget-object v2, p0, Lcom/tudou/adapter/ChannelSquearAdapter$3$1$1;->this$2:Lcom/tudou/adapter/ChannelSquearAdapter$3$1;
+
+    iget-object v2, v2, Lcom/tudou/adapter/ChannelSquearAdapter$3$1;->this$1:Lcom/tudou/adapter/ChannelSquearAdapter$3;
+
+    iget-object v2, v2, Lcom/tudou/adapter/ChannelSquearAdapter$3;->val$dcItem:Lcom/youku/vo/DiscoveryChannelItem;
+
+    iget-object v3, p0, Lcom/tudou/adapter/ChannelSquearAdapter$3$1$1;->this$2:Lcom/tudou/adapter/ChannelSquearAdapter$3$1;
+
+    iget-object v3, v3, Lcom/tudou/adapter/ChannelSquearAdapter$3$1;->this$1:Lcom/tudou/adapter/ChannelSquearAdapter$3;
+
+    iget-object v3, v3, Lcom/tudou/adapter/ChannelSquearAdapter$3;->val$aListView:Landroid/widget/ListView;
+
+    iget-object v4, p0, Lcom/tudou/adapter/ChannelSquearAdapter$3$1$1;->this$2:Lcom/tudou/adapter/ChannelSquearAdapter$3$1;
+
+    iget-object v4, v4, Lcom/tudou/adapter/ChannelSquearAdapter$3$1;->val$v1:Landroid/widget/ImageView;
+
+    invoke-static/range {v0 .. v5}, Lcom/tudou/adapter/ChannelSquearAdapter;->access$200(Lcom/tudou/adapter/ChannelSquearAdapter;Lcom/tudou/adapter/ChannelSquearAdapter$ViewHolder;Lcom/youku/vo/DiscoveryChannelItem;Landroid/widget/ListView;Landroid/widget/ImageView;Z)V
+
+    .line 303
+    const v0, 0x7f0d01df
+
+    invoke-static {v0}, Lcom/youku/util/Util;->showTips(I)V
+
+    .line 304
+    invoke-static {}, Lcom/tudou/ui/fragment/ChannelSquareFragment;->changeSub()V
+
+    .line 305
+    return-void
+.end method

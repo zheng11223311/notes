@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/detail_bottom_playlist_bar_playlist_item_hor_content" android:layout_width="56.0dip" android:layout_height="56.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="16.0sp" android:textColor="#ff676767" android:ellipsize="end" android:gravity="center" android:id="@id/detail_bottom_playlist_bar_playlist_item_hor_title" android:layout_width="56.0dip" android:layout_height="56.0dip" />
+    <ImageView android:layout_gravity="center|right|top" android:id="@id/detail_bottom_playlist_bar_playlist_item_hor_mark" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/detail_video_trailer_mark" />
+</FrameLayout>

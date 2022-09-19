@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="#00000000" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:background="#ffffffff" android:paddingTop="@dimen/game_category_tags_item_padding_top_bottom" android:paddingBottom="@dimen/game_category_tags_item_padding_top_bottom" android:layout_width="fill_parent" android:layout_height="@dimen/game_category_tags_item_height">
+        <RelativeLayout android:id="@id/game_tags_title" android:background="#ffffffff" android:layout_width="wrap_content" android:layout_height="fill_parent">
+            <LinearLayout android:orientation="vertical" android:id="@id/game_tag_title_layout" android:layout_width="@dimen/game_category_tags_title_width" android:layout_height="wrap_content" android:layout_centerVertical="true">
+                <TextView android:textSize="@dimen/game_category_tags_title_textview_size" android:textColor="#ff333333" android:gravity="top" android:layout_gravity="center|top" android:id="@id/game_tag_title" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" />
+                <View android:id="@id/game_tag_title_imageview_margintop" android:background="#ffffffff" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="@dimen/game_category_tags_title_imageview_margintop" />
+                <ImageView android:layout_gravity="center_horizontal" android:id="@id/game_tag_icon" android:layout_width="@dimen/game_category_tags_title_imageview_size" android:layout_height="@dimen/game_category_tags_title_imageview_size" android:src="@drawable/game_list_item_default" />
+                <View android:id="@id/game_tag_title_imageview_marginbottom" android:background="#ffffffff" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="@dimen/game_category_tags_title_imageview_marginbottom" />
+            </LinearLayout>
+            <View android:gravity="center_vertical" android:id="@id/line" android:background="#fff0f0f0" android:layout_width="1.0px" android:layout_height="fill_parent" android:layout_toRightOf="@id/game_tag_title_layout" />
+        </RelativeLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_toRightOf="@id/game_tags_title">
+            <com.youku.gamecenter.widgets.ScrollabledGridView android:id="@id/gridview" android:background="#ffffffff" android:layout_width="wrap_content" android:layout_height="fill_parent" android:columnWidth="@dimen/game_category_gridview_item_columnwidth" android:numColumns="3" android:layout_weight="1.0" />
+            <View android:background="#ffffffff" android:visibility="gone" android:layout_width="@dimen/game_category_gridview_tile_margin_left" android:layout_height="fill_parent" android:layout_weight="0.0" />
+        </LinearLayout>
+    </RelativeLayout>
+    <View android:id="@id/view_bottom" android:background="#00000000" android:layout_width="fill_parent" android:layout_height="@dimen/game_card_margin" />
+</LinearLayout>

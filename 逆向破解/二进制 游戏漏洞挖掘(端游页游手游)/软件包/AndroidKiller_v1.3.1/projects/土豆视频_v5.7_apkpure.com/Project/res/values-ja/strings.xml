@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="UMContentTooLong">140文字を超えていた、短いもの。</string>
+    <string name="UMDeleteFeedback">フィードバックを削除</string>
+    <string name="UMDeleteMsg">情報を削除します</string>
+    <string name="UMDeleteThread">フィードバックを削除</string>
+    <string name="UMEmptyFbNotAllowed">ご意見を入力してください。</string>
+    <string name="UMFbList_ListItem_State_Fail">送信に失敗しました</string>
+    <string name="UMFbList_ListItem_State_ReSend">送信に失敗した再送信をタッチする</string>
+    <string name="UMFbList_ListItem_State_Resending">再伝送</string>
+    <string name="UMFbList_ListItem_State_Sending">送信中…</string>
+    <string name="UMFb_Atom_State_Fail">送信に失敗しました</string>
+    <string name="UMFb_Atom_State_Resending">送信に失敗した再送信をタッチする</string>
+    <string name="UMFb_Atom_State_Sending">送信中…</string>
+    <string name="UMFeedbackContent">ご意見·ご感想を入力してください</string>
+    <string name="UMFeedbackConversationTitle">お客様のご返答</string>
+    <string name="UMFeedbackGoBack">戻る</string>
+    <string name="UMFeedbackGotIt">知っている</string>
+    <string name="UMFeedbackListTitle">私のご返答</string>
+    <string name="UMFeedbackSeeDetail">確認するには</string>
+    <string name="UMFeedbackSummit">送信</string>
+    <string name="UMFeedbackTitle">ご提案の各々は、私たちはより良い実行するのに役立ちます。</string>
+    <string name="UMFeedbackUmengTitle">お客様のご返答</string>
+    <string name="UMNewReplyAlertTitle">あなたのフィードバックは、応答を受信する</string>
+    <string name="UMNewReplyFlick">新しい回答を持っている</string>
+    <string name="UMNewReplyHint">クリックして表示</string>
+    <string name="UMNewReplyTitle">新しい回答を持っている</string>
+    <string name="UMResendFeedback">再伝送</string>
+    <string name="UMViewFeedback">フィードバックを見る</string>
+    <string name="UMViewThread">ご返答を見る</string>
+</resources>

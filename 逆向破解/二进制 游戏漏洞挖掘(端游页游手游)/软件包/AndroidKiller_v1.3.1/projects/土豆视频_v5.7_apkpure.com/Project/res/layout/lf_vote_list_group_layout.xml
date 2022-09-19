@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:background="@color/lf_vote_background" android:layout_width="fill_parent" android:layout_height="59.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:background="@color/white" android:layout_width="fill_parent" android:layout_height="52.0dip">
+        <LinearLayout android:gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="51.0dip" android:layout_marginLeft="10.0dip" android:layout_marginRight="36.0dip" android:layout_centerVertical="true">
+            <TextView android:textSize="@dimen/lf_text_size_dp_large" android:textColor="@color/lf_word_gray_light" android:gravity="center" android:id="@id/vote_title_index" android:layout_width="20.0dip" android:layout_height="wrap_content" />
+            <ImageView android:id="@id/vote_type_image" android:background="@drawable/lf_vote_type_free_background" android:padding="5.0dip" android:layout_width="32.0dip" android:layout_height="20.0dip" android:layout_marginLeft="6.0dip" android:text="免费" />
+            <TextView android:textSize="@dimen/lf_text_size_dp_large" android:textColor="@color/lf_word_gray_light" android:ellipsize="end" android:id="@id/vote_title_label" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:singleLine="true" android:layout_weight="1.0" />
+        </LinearLayout>
+        <ImageView android:id="@id/vote_title_indicator" android:visibility="visible" android:layout_width="16.0dip" android:layout_height="10.0dip" android:layout_marginRight="15.5dip" android:src="@drawable/lf_vote_group_collapsed" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        <ProgressBar android:id="@id/vote_progressbar" android:visibility="gone" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginRight="15.5dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" style="@style/lf_vote_loading_progressbar_style" />
+        <ImageView android:id="@id/vote_dotted_divider" android:background="@drawable/lf_vote_item_divider_background" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip" android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+</LinearLayout>

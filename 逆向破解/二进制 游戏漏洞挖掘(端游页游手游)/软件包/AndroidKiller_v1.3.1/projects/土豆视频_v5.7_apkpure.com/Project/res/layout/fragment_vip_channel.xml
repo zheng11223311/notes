@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/search_list_item_back_f1f1f1" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.youku.widget.HintView android:id="@id/hint_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <com.handmark.pulltorefresh.library.PullToRefreshListView android:id="@id/vip_lv" android:background="@color/search_list_item_back_f1f1f1" android:paddingLeft="6.0dip" android:paddingRight="6.0dip" android:fadingEdge="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="@dimen/channel_tudou_filter_to_gridview_height" android:listSelector="#00000000" android:cacheColorHint="#00000000" android:horizontalSpacing="@dimen/channel_gridview_horspacing_channel" android:verticalSpacing="@dimen/channel_gridview_verspacing_channel" android:numColumns="3" android:divider="@null" />
+</RelativeLayout>

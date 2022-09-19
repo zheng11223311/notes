@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/gamecenter_group_container" android:background="#ffe2e2e2" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:id="@id/search_hotgame_scrollView" android:background="@android:color/transparent" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_alignParentTop="true" android:scrollbarFadeDuration="500">
+        <LinearLayout android:orientation="vertical" android:id="@id/gamecenter_group_linear" android:paddingLeft="@dimen/game_card_margin" android:paddingRight="@dimen/game_card_margin" android:paddingBottom="@dimen/game_card_margin" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    </ScrollView>
+    <RelativeLayout android:id="@id/no_result_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_centerInParent="true">
+        <TextView android:textSize="@dimen/no_result_textsize" android:textColor="#ffb6b6b6" android:layout_gravity="center" android:id="@id/tv_no_result" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/str_no_search_keywords" android:layout_centerInParent="true" />
+        <ImageView android:id="@id/iv_no_result" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/no_result_textsize" android:src="@drawable/pic_no_results" android:scaleType="fitCenter" android:layout_above="@id/tv_no_result" android:contentDescription="@string/str_image" />
+    </RelativeLayout>
+</RelativeLayout>

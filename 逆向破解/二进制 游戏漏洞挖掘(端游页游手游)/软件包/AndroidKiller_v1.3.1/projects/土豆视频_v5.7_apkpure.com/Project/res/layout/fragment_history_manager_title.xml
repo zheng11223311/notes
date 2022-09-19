@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/home_header_bg" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:id="@id/status_bar_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_below="@id/status_bar_view">
+        <ImageView android:id="@id/left_icon" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:src="@drawable/main_logo" android:layout_centerVertical="true" />
+        <ImageView android:id="@id/back_img" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:src="@drawable/title_back_selector" android:layout_centerVertical="true" />
+        <TextView android:textSize="20.0sp" android:textColor="#ffffffff" android:gravity="center" android:id="@id/txt_title" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="观看记录" android:singleLine="true" android:layout_centerInParent="true" />
+        <ImageView android:id="@id/edit_img" android:background="@drawable/history_edit_icon" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="20.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        <TextView android:textColor="@color/tudou_title_right_seletor" android:gravity="center_vertical" android:layout_gravity="center|right" android:id="@id/title_right_text" android:paddingLeft="10.0dip" android:paddingRight="20.0dip" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/play_history_state_edit" android:layout_alignParentRight="true" style="@style/FontG" />
+    </RelativeLayout>
+</RelativeLayout>

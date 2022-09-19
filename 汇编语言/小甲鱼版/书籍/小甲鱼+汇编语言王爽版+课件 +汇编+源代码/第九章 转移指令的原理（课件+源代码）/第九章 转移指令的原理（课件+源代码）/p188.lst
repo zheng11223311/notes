@@ -1,0 +1,108 @@
+Microsoft (R) Macro Assembler Version 6.11		    01/07/22 13:20:14
+tempfile.asm						     Page 1 - 1
+
+
+				assume cs:code,ds:data,ss:stack
+
+
+ 0000				data segment
+
+ 0000  77 65 6C 63 6F 6D	        db 'welcome to masm!'  ;定义要显示的字符串(共16字节)
+       65 20 74 6F 20 6D
+       61 73 6D 21
+ 0010  02 24 71			        db 02h,24h,71h         ;定义三种颜色属性
+
+ 0013				data ends
+				 
+
+ 0000				stack segment
+
+ 0000  0008 [			        dw 8 dup(0)
+        0000
+       ]
+
+ 0010				stack ends
+
+
+ 0000				code segment
+
+ 0000				start:
+ 0000  B8 ---- R		        mov ax,data
+ 0003  8E D8			        mov ds,ax
+ 0005  B8 ---- R		        mov ax,stack
+ 0008  8E D0			        mov ss,ax
+ 000A  BC 0010			        mov sp,10h
+
+ 000D  33 DB					xor bx,bx			;bx清零,用来索引颜色
+ 000F  B8 B872			        mov ax,0b872h    	;算出屏幕第12行中间的显存的段起始位置放入ax中
+						
+ 0012  B9 0003			        mov cx,3     		;S3循环控制行数，外循环为3次，因为要显示三个字符串
+ 0015  51			s3:     push cx        		;三个进栈操作为外循环s3保存相关寄存器的值
+ 0016  50			        push ax        		;以防止它们的值在内循环中被破坏
+ 0017  53			        push bx
+						
+ 0018  8E C0			        mov es,ax      		;此时es为屏幕第12行中间的显存的段起始位置
+						
+ 001A  BE 0000			        mov si,0			;si用来索引代码列的字符
+ 001D  BF 0000			        mov di,0			;di用来定位目标列
+
+ 0020  B9 0010			        mov cx,10h     		;S1循环控制存放的字符，内循环为10h次，因为一个字符串中含10h个字节
+ 0023  8A 04			s1:     mov al,ds:[si]
+ 0025  26: 88 05		        mov es:[di],al
+ 0028  46			        inc si
+ 0029  83 C7 02			        add di,2
+ 002C  E2 F5			        loop s1		      		;此循环实现偶地址中存放字符
+				        
+ 002E  BF 0001			        mov di,1  				;di的值设为1,从而为在显存奇地址中存放字符的颜色属性做准备
+ 0031  5B					pop bx					
+ 0032  8A 47 10			        mov al,ds:10h[bx]   	;取颜色属性
+ 0035  43					inc bx
+						
+						
+ 0036  B9 0010			        mov cx,10h     			;第二个内循环也为10h次
+ 0039  26: 88 05		s2:     mov es:[di],al
+ 003C  83 C7 02			        add di,2
+ 003F  E2 F8			        loop s2       			;此循环实现奇地址中存放字符的颜色属性
+				        
+				        ;以下4句为下一趟外循环做准备
+ 0041  58			        pop ax
+ 0042  83 C0 0A			        add ax,0ah   			;将显存的段起始地址设为当前行的下一行
+												;[在段地址中加0ah,相当于在偏移地址中加了0a0h(=160d)]
+ 0045  59			        pop cx
+ 0046  E2 CD			        loop s3
+				        
+
+ 0048  B8 4C00			        mov ax,4c00h
+ 004B  CD 21			        int 21h
+
+ 004D				code ends
+
+				end start
+
+
+Microsoft (R) Macro Assembler Version 6.11		    01/07/22 13:20:14
+tempfile.asm						     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+code . . . . . . . . . . . . . .	16 Bit	 004D	  Para	  Private 
+data . . . . . . . . . . . . . .	16 Bit	 0013	  Para	  Private 
+stack  . . . . . . . . . . . . .	16 Bit	 0010	  Para	  Private 
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+s1 . . . . . . . . . . . . . . .	L Near	 0023	  code	
+s2 . . . . . . . . . . . . . . .	L Near	 0039	  code	
+s3 . . . . . . . . . . . . . . .	L Near	 0015	  code	
+start  . . . . . . . . . . . . .	L Near	 0000	  code	
+
+	   0 Warnings
+	   0 Errors

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:background="@null" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:background="@drawable/toast_shape_bg" android:paddingLeft="13.0dip" android:paddingRight="13.0dip" android:layout_width="wrap_content" android:layout_height="43.0dip">
+        <ImageView android:id="@id/img_left" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_toast_nonetwork" />
+        <TextView android:textAppearance="@style/toast_txt" android:ellipsize="end" android:gravity="center" android:id="@id/content" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:text="当前无网络连接,请检查网络设置" android:singleLine="true" />
+    </LinearLayout>
+</LinearLayout>

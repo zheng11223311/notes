@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/gamelist_title_txt"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/tab_title_installed_layout" android:background="@drawable/gamecenter_tab_indicator_selector" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" style="@style/gamelist_title_txt">
+        <TextView android:textColor="@drawable/gamecenter_homepage_title_textcolor" android:gravity="center" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/game_manager_installed" style="@style/gamelist_title_txt" />
+        <TextView android:textColor="?gameCenterColor" android:gravity="center" android:id="@id/tab_title_installed_count" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/game_manager_game_type_count" style="@style/gamelist_title_txt" />
+    </LinearLayout>
+    <ImageView android:background="@drawable/gamecenter_tab_indicator_divider_line" android:layout_width="wrap_content" android:layout_height="fill_parent" />
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/tab_title_downloading_layout" android:background="@drawable/gamecenter_tab_indicator_selector" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" style="@style/gamelist_title_txt">
+        <TextView android:textColor="@drawable/gamecenter_homepage_title_textcolor" android:gravity="center" android:id="@id/tab_title_manager_layout" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/game_manager_downloading" style="@style/gamelist_title_txt" />
+        <TextView android:textColor="?gameCenterColor" android:gravity="center" android:id="@id/tab_title_downloading_count" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/game_manager_game_type_count" style="@style/gamelist_title_txt" />
+    </LinearLayout>
+    <ImageView android:background="@drawable/gamecenter_tab_indicator_divider_line" android:layout_width="wrap_content" android:layout_height="fill_parent" />
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/tab_title_update_layout" android:background="@drawable/gamecenter_tab_indicator_selector" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" style="@style/gamelist_title_txt">
+        <TextView android:textColor="@drawable/gamecenter_homepage_title_textcolor" android:gravity="center" android:id="@id/tab_title_upgrade_layout" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/game_manager_update" style="@style/gamelist_title_txt" />
+        <TextView android:textColor="?gameCenterColor" android:gravity="center" android:id="@id/tab_title_update_count" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/game_manager_game_type_count" style="@style/gamelist_title_txt" />
+    </LinearLayout>
+</LinearLayout>

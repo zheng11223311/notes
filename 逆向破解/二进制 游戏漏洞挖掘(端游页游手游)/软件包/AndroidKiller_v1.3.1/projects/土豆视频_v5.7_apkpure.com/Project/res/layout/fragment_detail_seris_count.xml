@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TextView android:textColor="#ff666666" android:gravity="center" android:id="@id/seris_item" android:layout_width="@dimen/detail_seris_count_item_width" android:layout_height="fill_parent" android:layout_centerVertical="true" style="@style/tudou_detail_seris_item_count" />
+        <ImageView android:id="@id/bottom_line" android:visibility="invisible" android:layout_width="@dimen/detail_seris_count_item_line_width" android:layout_height="2.0dip" android:src="#ffff6600" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="@dimen/recommend_subtitle_height">
+        <RelativeLayout android:id="@id/layout_newrecommend" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_centerVertical="true">
+                <TextView android:ellipsize="end" android:id="@id/text_newrecommend" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" style="@style/recommend_home_title" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="2.5dip" android:layout_alignParentBottom="true">
+                <ImageView android:id="@id/img_selectnewrecommend" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            </LinearLayout>
+            <ImageView android:layout_width="1.0dip" android:layout_height="fill_parent" android:layout_marginTop="@dimen/recommend_tab_dividerpadding" android:layout_marginBottom="@dimen/recommend_tab_dividerpadding" android:src="#fff2f2f2" android:layout_alignParentRight="true" android:contentDescription="竖线" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/layout_topgame" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_centerVertical="true">
+                <TextView android:ellipsize="end" android:id="@id/text_topgame" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" style="@style/recommend_home_title" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="2.5dip" android:layout_alignParentBottom="true">
+                <ImageView android:id="@id/img_selecttopgame" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            </LinearLayout>
+            <ImageView android:layout_width="1.0dip" android:layout_height="fill_parent" android:layout_marginTop="@dimen/recommend_tab_dividerpadding" android:layout_marginBottom="@dimen/recommend_tab_dividerpadding" android:src="#fff2f2f2" android:layout_alignParentRight="true" android:contentDescription="竖线" />
+        </RelativeLayout>
+    </LinearLayout>
+    <ImageView android:background="@drawable/tab_shadow" android:layout_width="fill_parent" android:layout_height="4.0dip" android:layout_alignParentBottom="true" />
+</LinearLayout>

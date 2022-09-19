@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:orientation="vertical" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="@dimen/detail_tab_height"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <TextView android:id="@id/tabtext" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" style="@style/FontF" />
+        <ImageView android:id="@id/bottom_line" android:background="#ffff6600" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="2.0px" android:layout_marginLeft="5.0dip" android:layout_marginTop="2.0dip" android:layout_marginRight="5.0dip" android:layout_below="@id/tabtext" />
+        <ImageView android:id="@id/tabline" android:background="#ffd9d9d9" android:visibility="gone" android:layout_width="1.0px" android:layout_height="36.0px" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+</RelativeLayout>

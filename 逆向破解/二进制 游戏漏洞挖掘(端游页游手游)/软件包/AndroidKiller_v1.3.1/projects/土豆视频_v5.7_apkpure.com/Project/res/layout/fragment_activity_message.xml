@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/app_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/message_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true" layout="@layout/activity_message_title" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/messaegLayout" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="@dimen/recommend_channel_cell_filterview_height" android:layout_below="@id/message_title">
+        <RelativeLayout android:id="@id/systemMsgRel" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <TextView android:id="@id/systemMsg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="系统消息" android:layout_centerInParent="true" style="@style/channel_selectedfilter_word" />
+            <ImageView android:id="@id/systemMsgIcon" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:src="@drawable/my_tongzhitixing" android:scaleType="center" android:layout_toRightOf="@id/systemMsg" android:layout_centerVertical="true" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/checkedMsgRel" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <TextView android:id="@id/checkedMsg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="审核通知" android:layout_centerInParent="true" style="@style/channel_filter_word" />
+            <ImageView android:id="@id/checkedMsgIcon" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:src="@drawable/my_tongzhitixing" android:scaleType="center" android:layout_toRightOf="@id/checkedMsg" android:layout_centerVertical="true" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/privateMsgRel" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <TextView android:id="@id/privateMsg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="私信" android:layout_centerInParent="true" style="@style/channel_filter_word" />
+            <ImageView android:id="@id/privateMsgIcon" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:src="@drawable/my_tongzhitixing" android:scaleType="center" android:layout_toRightOf="@id/privateMsg" android:layout_centerVertical="true" />
+        </RelativeLayout>
+    </LinearLayout>
+    <View android:id="@id/cut" android:background="#ffd9d9d9" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_below="@id/messaegLayout" />
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/layout_no_data" android:background="@drawable/app_background" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageView android:id="@id/none_img" android:layout_width="@dimen/noresult_img_width" android:layout_height="@dimen/noresult_img_height" android:src="@drawable/prompt_logo" android:scaleType="centerInside" />
+        <TextView android:textSize="18.0sp" android:id="@id/tips" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/noresult_text_margin_top" android:text="@string/get_filter_video_failure" style="@style/noresult_text_style" />
+    </LinearLayout>
+    <com.youku.widget.ViewPager android:id="@id/msgViewPager" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/cut" />
+</RelativeLayout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@android:color/black" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/play_end_btn_back" android:padding="11.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/small_back" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_centerVertical="true">
+        <LinearLayout android:orientation="vertical" android:id="@id/play_end_current_video_panel" android:layout_width="234.0dip" android:layout_height="wrap_content">
+            <ImageView android:id="@id/play_end_current_video_pic" android:layout_width="234.0dip" android:layout_height="132.0dip" android:src="@drawable/shouye_datu_moren" android:scaleType="fitXY" />
+            <TextView android:textSize="13.0sp" android:textColor="@android:color/white" android:id="@id/play_end_current_video_title" android:background="#19ffffff" android:paddingLeft="10.0dip" android:paddingTop="5.0dip" android:layout_width="234.0dip" android:layout_height="50.0dip" />
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="12.0dip">
+                <Button android:textSize="13.0sp" android:textColor="@android:color/white" android:gravity="center|left" android:id="@id/play_end_btn_replay" android:background="#19ffffff" android:paddingLeft="30.0dip" android:layout_width="117.0dip" android:layout_height="50.0dip" android:text="重播" android:drawableLeft="@drawable/play_end_btn_replay_drawable" android:drawablePadding="6.0dip" />
+                <Button android:textSize="13.0sp" android:textColor="@android:color/white" android:gravity="center|left" android:id="@id/play_end_btn_share" android:background="#ffff612a" android:paddingLeft="30.0dip" android:layout_width="117.0dip" android:layout_height="50.0dip" android:layout_marginLeft="1.0px" android:text="分享" android:drawableLeft="@drawable/play_end_btn_share_drawable" android:drawablePadding="6.0dip" />
+            </LinearLayout>
+        </LinearLayout>
+        <RelativeLayout android:id="@id/play_end_rec_video_panel" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip">
+            <include android:id="@id/play_end_rec_item_1" android:layout_width="141.0dip" android:layout_height="117.0dip" layout="@layout/activity_play_end_rec_item" />
+            <include android:id="@id/play_end_rec_item_2" android:layout_width="141.0dip" android:layout_height="117.0dip" android:layout_marginLeft="15.0dip" android:layout_toRightOf="@id/play_end_rec_item_1" layout="@layout/activity_play_end_rec_item" />
+            <include android:id="@id/play_end_rec_item_3" android:layout_width="141.0dip" android:layout_height="117.0dip" android:layout_marginTop="15.0dip" android:layout_below="@id/play_end_rec_item_1" layout="@layout/activity_play_end_rec_item" />
+            <include android:id="@id/play_end_rec_item_4" android:layout_width="141.0dip" android:layout_height="117.0dip" android:layout_marginLeft="15.0dip" android:layout_marginTop="15.0dip" android:layout_toRightOf="@id/play_end_rec_item_3" android:layout_below="@id/play_end_rec_item_2" layout="@layout/activity_play_end_rec_item" />
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

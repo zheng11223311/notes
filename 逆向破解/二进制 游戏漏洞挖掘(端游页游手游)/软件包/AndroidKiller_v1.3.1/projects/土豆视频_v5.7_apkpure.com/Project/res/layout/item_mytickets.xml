@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/layout_item_mytickets" android:background="@drawable/ticket_dingxiang" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="10.0dip">
+        <TextView android:textSize="13.0sp" android:textColor="#ff000000" android:id="@id/tv_item_mytickets_num" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="2.0dip" android:text="券号：" />
+        <TextView android:textSize="11.0sp" android:textColor="#ffa3a3a3" android:id="@id/tv_item_mytickets_copy" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="2.0dip" android:text="长按复制券号" />
+        <TextView android:textSize="11.0sp" android:textColor="#ff000000" android:id="@id/tv_item_mytickets_date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="有效期至：" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="100.0dip">
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/texts" android:paddingLeft="15.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_centerVertical="true">
+            <TextView android:textAppearance="@style/pulltextstyle" android:gravity="center" android:id="@id/pull_to_refresh_text" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            <TextView android:textAppearance="?android:textAppearanceSmall" android:id="@id/pull_to_refresh_sub_text" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" />
+        </LinearLayout>
+        <TextView android:textSize="10.0sp" android:textColor="#ff9c9c9c" android:id="@id/lastUpdateTime" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="上次更新：13-10-16 17:12" android:singleLine="true" android:layout_below="@id/texts" android:layout_centerHorizontal="true" />
+        <ImageView android:id="@id/pull_to_refresh_image" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/lsitview_drop_down_drawable" android:scaleType="center" android:layout_toLeftOf="@id/texts" android:layout_centerVertical="true" />
+    </RelativeLayout>
+</merge>

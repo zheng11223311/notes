@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/title_view" android:background="#fffcfcfc" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <View android:id="@id/status_bar_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <RelativeLayout android:background="#fffcfcfc" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_below="@id/status_bar_view">
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true">
+                <RelativeLayout android:id="@id/back_img" android:layout_width="48.0dip" android:layout_height="48.0dip">
+                    <ImageView android:background="@drawable/white_title_back_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+                </RelativeLayout>
+                <ImageView android:layout_gravity="center_vertical" android:background="#ffe2e2e2" android:layout_width="1.0dip" android:layout_height="16.0dip" />
+                <TextView android:textSize="17.0sp" android:textColor="#ff838384" android:layout_gravity="center_vertical" android:id="@id/txt_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:text="排片表" />
+            </LinearLayout>
+            <ImageView android:background="#ffff612a" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_alignParentBottom="true" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <View android:id="@id/left_line" android:background="#ffdfdfdf" android:visibility="gone" android:layout_width="2.0dip" android:layout_height="fill_parent" android:layout_marginLeft="21.0dip" android:layout_below="@id/row_title" />
+        <com.handmark.pulltorefresh.library.PullToRefreshListView android:scrollbarStyle="outsideOverlay" android:id="@id/pull_listview" android:fadingEdge="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="@dimen/channel_tudou_filter_to_gridview_height" android:listSelector="#00000000" android:cacheColorHint="#00000000" android:horizontalSpacing="@dimen/channel_gridview_horspacing_channel" android:verticalSpacing="@dimen/channel_gridview_verspacing_channel" android:numColumns="3" android:divider="@null" android:layout_below="@id/row_title" />
+        <com.youku.widget.HintView android:id="@id/hint_view" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/row_title" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:id="@id/hotHeadLine" android:background="#ffd9d9d9" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="4.0dip" />
+    <TextView android:id="@id/hotHead" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="@dimen/search_hot_head_mbt" android:layout_marginBottom="@dimen/search_hot_head_mbt" android:singleLine="true" style="@style/search_hot_head" />
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/appNeed" android:background="@drawable/btn_white_selected" android:layout_width="fill_parent" android:layout_height="@dimen/search_app_need_h" android:layout_marginTop="@dimen/search_hot_head_mbt1" android:layout_marginBottom="@dimen/search_hot_head_mbt">
+        <TextView android:id="@id/hotHeadDetail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="装机必备" android:singleLine="true" style="@style/search_app_need1" />
+    </LinearLayout>
+</LinearLayout>

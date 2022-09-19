@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:paddingTop="@dimen/home_item_padding1" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <RelativeLayout android:id="@id/channel_flag_container" android:background="@drawable/home_title_bg" android:layout_width="fill_parent" android:layout_height="@dimen/home_item_bar_hight">
+            <ImageView android:id="@id/icon_left" android:layout_width="@dimen/first_page_channel_icon" android:layout_height="@dimen/first_page_channel_icon" android:layout_marginLeft="@dimen/first_icon_margin_left" android:layout_marginRight="@dimen/first_icon_margin_right" android:src="@drawable/icon_youth" android:layout_centerVertical="true" />
+            <ImageView android:id="@id/channel_more" android:background="@color/transparent" android:paddingLeft="@dimen/first_arraw_padding_left" android:paddingRight="@dimen/first_arraw_padding_right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/discovery_arrow" android:scaleType="centerInside" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/first_sub_title_margin_left" android:layout_toLeftOf="@id/channel_more" android:layout_toRightOf="@id/icon_left" android:layout_centerVertical="true">
+                <TextView android:textAppearance="@style/first_chanel_title" android:id="@id/channel_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" android:layout_weight="45.0" android:layout_toRightOf="@id/icon_left" />
+                <TextView android:ellipsize="end" android:gravity="right" android:id="@id/sub_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" android:layout_weight="55.0" style="@style/sub_title_txt" />
+            </LinearLayout>
+        </RelativeLayout>
+        <RelativeLayout android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ImageView android:id="@id/line_bottom" android:background="@drawable/tudou_yellow_bg" android:layout_width="fill_parent" android:layout_height="0.5dip" android:layout_marginLeft="6.0dip" android:layout_marginRight="6.0dip" />
+            <ImageView android:id="@id/line_transparent" android:layout_width="fill_parent" android:layout_height="2.0dip" android:layout_below="@id/line_bottom" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:background="#fff4f4f4" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:id="@id/layout_title_container" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <LinearLayout android:orientation="vertical" android:id="@id/layout_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/gamecenter_myyouku_card_title_marginleft">
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:textSize="@dimen/gamecenter_myyouku_card_title_size" android:id="@id/card_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="游戏中心" style="@style/drawer_group_title" />
+                <ImageView android:layout_gravity="center" android:background="@drawable/gamecenter_box_title_right_normal_usercenter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <ImageButton android:layout_gravity="center" android:id="@id/more" android:background="@null" android:layout_width="@dimen/gamecenter_myyouku_card_title_img_width" android:layout_height="@dimen/gamecenter_myyouku_card_title_img_height" android:src="@drawable/game_detail_card_more" android:scaleType="fitCenter" />
+</LinearLayout>

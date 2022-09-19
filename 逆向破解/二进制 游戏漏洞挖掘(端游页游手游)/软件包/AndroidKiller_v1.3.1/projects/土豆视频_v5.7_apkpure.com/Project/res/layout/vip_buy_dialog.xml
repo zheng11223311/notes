@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/white" android:layout_width="300.0dip" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:gravity="center_vertical" android:id="@id/dialog_title" android:layout_width="fill_parent" android:layout_height="48.0dip">
+        <TextView android:textColor="#ff4b4b4b" android:gravity="center" android:id="@id/txt_dialog_title" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="您正在购买黄金会员" style="@style/FontF" />
+        <ImageView android:id="@id/img_close" android:paddingRight="7.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/vip_buy_close" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+    <View android:id="@id/cut_line" android:background="#ffd9d9d9" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_below="@id/dialog_title" />
+    <RelativeLayout android:id="@id/price_line" android:background="@drawable/bg_zhifu" android:layout_width="fill_parent" android:layout_height="39.0dip" android:layout_marginLeft="13.0dip" android:layout_marginTop="12.0dip" android:layout_marginRight="13.0dip" android:layout_below="@id/cut_line">
+        <TextView android:textColor="#ff4b4b4b" android:gravity="center" android:id="@id/vip_duration" android:paddingLeft="11.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="12个月" android:layout_alignParentLeft="true" style="@style/FontF" />
+        <TextView android:textColor="#ffff6600" android:gravity="center" android:id="@id/price" android:paddingRight="11.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="169元" android:layout_alignParentRight="true" style="@style/FontG" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/pay_way" android:background="@drawable/bg_zhifu" android:layout_width="fill_parent" android:layout_height="39.0dip" android:layout_marginLeft="13.0dip" android:layout_marginTop="12.0dip" android:layout_marginRight="13.0dip" android:layout_below="@id/price_line">
+        <ImageView android:id="@id/img_zfb" android:paddingLeft="6.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/ic_zfb" />
+        <TextView android:textColor="#ff4b4b4b" android:gravity="center" android:paddingLeft="7.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="支付宝支付" android:layout_toRightOf="@id/img_zfb" style="@style/FontF" />
+        <ImageView android:background="@drawable/vip_pay_way_selected" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="11.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <RelativeLayout android:gravity="center" android:id="@id/agreement_line" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="46.0dip" android:layout_below="@id/pay_way">
+        <ImageView android:id="@id/agreement_agree" android:background="@drawable/ic_chose_lar_on" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" />
+        <TextView android:textColor="#ff999999" android:id="@id/agree_text" android:paddingLeft="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="同意" android:layout_toRightOf="@id/agreement_agree" style="@style/FontE" />
+        <TextView android:textColor="#ff999999" android:id="@id/agreement_link" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="土豆视频会员服务协议" android:layout_toRightOf="@id/agree_text" style="@style/FontE" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/pay_line" android:layout_width="fill_parent" android:layout_height="39.0dip" android:layout_marginTop="17.0dip" android:layout_below="@id/agreement_line">
+        <TextView android:textColor="#ffffffff" android:gravity="center" android:id="@id/btn_buy" android:background="@drawable/vip_buy_color_corner_enable" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="13.0dip" android:layout_marginRight="13.0dip" android:text="购买" style="@style/FontG" />
+    </RelativeLayout>
+    <View android:layout_width="fill_parent" android:layout_height="10.0dip" android:layout_below="@id/pay_line" />
+</RelativeLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<level-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/no_vip_1" android:maxLevel="1" />
+    <item android:drawable="@drawable/no_vip_2" android:maxLevel="2" />
+    <item android:drawable="@drawable/no_vip_3" android:maxLevel="3" />
+    <item android:drawable="@drawable/no_vip_4" android:maxLevel="4" />
+    <item android:drawable="@drawable/no_vip_5" android:maxLevel="5" />
+    <item android:drawable="@drawable/no_vip_6" android:maxLevel="6" />
+    <item android:drawable="@drawable/no_vip_7" android:maxLevel="7" />
+</level-list>

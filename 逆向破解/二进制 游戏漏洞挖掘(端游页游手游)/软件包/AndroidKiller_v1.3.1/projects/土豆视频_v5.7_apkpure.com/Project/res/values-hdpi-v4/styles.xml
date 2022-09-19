@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Font14">
+        <item name="android:textSize">13.0sp</item>
+    </style>
+    <style name="FontA">
+        <item name="android:textSize">8.0sp</item>
+    </style>
+    <style name="FontB">
+        <item name="android:textSize">9.0sp</item>
+    </style>
+    <style name="FontC">
+        <item name="android:textSize">10.0sp</item>
+    </style>
+    <style name="FontD">
+        <item name="android:textSize">11.0sp</item>
+    </style>
+    <style name="FontE">
+        <item name="android:textSize">12.0sp</item>
+    </style>
+    <style name="FontF">
+        <item name="android:textSize">14.0sp</item>
+    </style>
+    <style name="FontG">
+        <item name="android:textSize">15.0sp</item>
+    </style>
+    <style name="FontH">
+        <item name="android:textSize">17.0sp</item>
+    </style>
+    <style name="FontI">
+        <item name="android:textSize">18.0sp</item>
+    </style>
+    <style name="FontJ">
+        <item name="android:textSize">19.0sp</item>
+    </style>
+    <style name="FontK">
+        <item name="android:textSize">23.0sp</item>
+    </style>
+    <style name="FontL">
+        <item name="android:textSize">25.0sp</item>
+    </style>
+    <style name="FontM">
+        <item name="android:textSize">16.0sp</item>
+    </style>
+    <style name="FontN">
+        <item name="android:textSize">16.0sp</item>
+    </style>
+    <style name="FontQ">
+        <item name="android:textSize">22.399994sp</item>
+    </style>
+    <style name="fliter_item_color" parent="@style/FontH">
+        <item name="android:textColor">#ffffffff</item>
+    </style>
+    <style name="fliter_item_color_yellow" parent="@style/FontH">
+        <item name="android:textColor">#ffff8400</item>
+    </style>
+    <style name="mytudou_space_user_name">
+        <item name="android:textSize">21.0sp</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:shadowColor">#ffa54200</item>
+        <item name="android:shadowDx">2.0</item>
+        <item name="android:shadowDy">2.0</item>
+        <item name="android:shadowRadius">2.0</item>
+    </style>
+    <style name="recomment_second_cell_starBig" parent="@style/FontG">
+        <item name="android:textColor">#ffff8400</item>
+    </style>
+    <style name="recomment_second_cell_starSmall" parent="@style/FontB">
+        <item name="android:textColor">#ffff8400</item>
+    </style>
+    <style name="recommend_video_title" parent="@style/FontQ">
+        <item name="android:textColor">#ff474747</item>
+        <item name="android:shadowColor">#ffff7500</item>
+        <item name="android:shadowDy">1.0</item>
+        <item name="android:shadowRadius">1.0</item>
+    </style>
+    <style name="recommend_video_totals" parent="@style/FontB">
+        <item name="android:textColor">#ffff7500</item>
+        <item name="android:shadowColor">#ffffffff</item>
+        <item name="android:shadowDy">1.0</item>
+        <item name="android:shadowRadius">1.0</item>
+    </style>
+</resources>

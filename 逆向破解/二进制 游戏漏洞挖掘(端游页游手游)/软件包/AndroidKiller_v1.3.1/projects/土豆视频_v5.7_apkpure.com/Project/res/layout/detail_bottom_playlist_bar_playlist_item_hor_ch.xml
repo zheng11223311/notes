@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/detail_bottom_playlist_bar_playlist_item_hor_content" android:layout_width="156.0dip" android:layout_height="82.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="15.0sp" android:textColor="#ff333333" android:ellipsize="end" android:id="@id/detail_bottom_playlist_bar_playlist_item_hor_title" android:layout_width="130.0dip" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_marginTop="13.0dip" android:maxLines="2" />
+    <TextView android:textSize="12.0sp" android:textColor="#ffa4a4a4" android:id="@id/detail_bottom_playlist_bar_playlist_item_hor_duration" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_marginTop="59.0dip" android:singleLine="true" />
+    <TextView android:textSize="12.0sp" android:textColor="#ffa4a4a4" android:layout_gravity="right" android:id="@id/detail_bottom_playlist_bar_playlist_item_hor_playtimes" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="59.0dip" android:layout_marginRight="14.0dip" android:singleLine="true" />
+    <ImageView android:layout_gravity="center|right|top" android:id="@id/detail_bottom_playlist_bar_playlist_item_hor_mark" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/detail_video_trailer_mark" />
+</FrameLayout>

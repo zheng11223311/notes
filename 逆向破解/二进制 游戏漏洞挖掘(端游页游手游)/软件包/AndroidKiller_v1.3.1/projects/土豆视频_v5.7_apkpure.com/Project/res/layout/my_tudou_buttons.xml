@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/buttons_layout" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/cacheHeaderRel" android:background="@drawable/white" android:paddingLeft="@dimen/cached_progress_mbt" android:paddingRight="@dimen/cached_progress_mbt" android:clickable="false" android:layout_width="fill_parent" android:layout_height="@dimen/cache_head_height" android:layout_alignParentTop="true">
+        <TextView android:gravity="center_vertical" android:id="@id/cacheHeaderText1" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/cached_progress_mbt" android:text="离线缓存" android:layout_centerVertical="true" style="@style/cache_head_txt" />
+        <TextView android:textColor="#ffffffff" android:gravity="center" android:id="@id/cachingCount1" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/cached_progress_mrl" android:layout_toLeftOf="@id/cachedEditLl1" android:layout_toRightOf="@id/cacheHeaderText1" android:layout_centerVertical="true" />
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/cachedEditLl1" android:background="@drawable/btn_f0_selected" android:paddingLeft="@dimen/cached_progress_mbt" android:paddingRight="@dimen/cached_progress_mbt" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+            <ImageView android:id="@id/cachedEditImg1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="2.0dip" />
+            <TextView android:id="@id/cachedEditTxt1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="编辑" style="@style/cache_head_edit" />
+        </LinearLayout>
+    </RelativeLayout>
+    <View android:id="@id/downloadNoneDriver" android:background="#ffd0d0d0" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginBottom="1.0px" android:layout_alignParentBottom="true" />
+</LinearLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="fill_parent" android:onClick="interceptClickEvent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="48.0dip">
+        <View android:layout_gravity="center_vertical" android:background="#19000000" android:layout_width="1.0dip" android:layout_height="18.0dip" android:layout_marginLeft="48.0dip" />
+        <ImageView android:id="@id/detail_fragment_image_preview_btn_close" android:layout_width="48.0dip" android:layout_height="fill_parent" android:src="@drawable/detail_fragment_image_preview_btn_close" android:scaleType="center" />
+        <TextView android:textSize="17.0sp" android:textColor="#ff838384" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="67.0dip" android:text="图片" />
+        <Button android:layout_gravity="right" android:id="@id/detail_fragment_image_preview_btn_delete" android:background="@drawable/detail_image_preview_delete_default" android:layout_width="48.0dip" android:layout_height="48.0dip" android:layout_marginRight="14.0dip" android:scaleType="center" />
+    </FrameLayout>
+    <ImageView android:id="@id/detail_fragment_image_preview_image" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="48.0dip" android:scaleType="fitCenter" />
+</FrameLayout>

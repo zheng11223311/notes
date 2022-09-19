@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/detail_root" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:background="@android:color/transparent" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <LinearLayout android:orientation="vertical" android:id="@id/base_holder" android:padding="0.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.youku.player.base.YoukuPlayerView android:id="@id/full_holder" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <FrameLayout android:background="#fff0f0f0" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <com.tudou.detail.widget.DetailContentPanel android:id="@id/detail_content_panel" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <LinearLayout android:orientation="vertical" android:id="@id/detail_content_panel_inner" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <LinearLayout android:id="@id/detail_bottom_brief_bar_wrap" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                    <LinearLayout android:id="@id/detail_bottom_favcache_bar_wrap" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                    <LinearLayout android:id="@id/detail_bottom_html5_bar_1_wrap" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                    <LinearLayout android:id="@id/detail_bottom_slider_bar_wrap" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                    <LinearLayout android:id="@id/detail_bottom_html5_bar_2_wrap" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                    <LinearLayout android:id="@id/detail_bottom_playlist_bar_wrap" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                    <LinearLayout android:id="@id/detail_bottom_html5_bar_3_wrap" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                    <LinearLayout android:id="@id/detail_bottom_specialtopic_bar_wrap" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                    <LinearLayout android:id="@id/detail_bottom_selectness_bar_wrap" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                    <LinearLayout android:id="@id/detail_bottom_actors_bar_wrap" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                    <LinearLayout android:id="@id/detail_bottom_feature_bar_wrap" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                    <LinearLayout android:id="@id/detail_bottom_goods_bar_wrap" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                    <LinearLayout android:id="@id/detail_bottom_comment_bar_wrap" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                    <LinearLayout android:id="@id/detail_bottom_recommend_bar_wrap" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                    <LinearLayout android:id="@id/detail_bottom_easter_eggs_bar_wrap" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                </LinearLayout>
+            </com.tudou.detail.widget.DetailContentPanel>
+            <com.youku.widget.Loading android:layout_gravity="center" android:id="@id/detail_content_panel_loading" android:layout_width="46.0dip" android:layout_height="46.0dip" />
+            <com.youku.widget.HintView android:id="@id/detail_content_panel_error" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            <com.tudou.detail.widget.DetailSubPanel android:id="@id/detail_sub_panel" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        </FrameLayout>
+    </LinearLayout>
+    <ImageView android:id="@id/small_back" android:layout_width="46.0dip" android:layout_height="46.0dip" android:src="@drawable/small_back" android:scaleType="center" />
+</FrameLayout>

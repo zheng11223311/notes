@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.tudou.detail.widget.VideoSliderBar android:layout_width="fill_parent" android:layout_height="104.599976dip" android:layout_marginTop="10.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="104.0dip">
+        <View android:background="#ffe4e4e4" android:layout_width="fill_parent" android:layout_height="0.30000007dip" />
+        <com.tudou.detail.widget.HorizontalScrollViewEx android:layout_gravity="center_vertical" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:overScrollMode="never">
+            <LinearLayout android:orientation="horizontal" android:id="@id/detail_bottom_slider_bar_menu" android:paddingLeft="3.0dip" android:paddingRight="3.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        </com.tudou.detail.widget.HorizontalScrollViewEx>
+        <View android:layout_gravity="bottom" android:background="#ffe4e4e4" android:layout_width="fill_parent" android:layout_height="0.30000007dip" />
+    </FrameLayout>
+</com.tudou.detail.widget.VideoSliderBar>

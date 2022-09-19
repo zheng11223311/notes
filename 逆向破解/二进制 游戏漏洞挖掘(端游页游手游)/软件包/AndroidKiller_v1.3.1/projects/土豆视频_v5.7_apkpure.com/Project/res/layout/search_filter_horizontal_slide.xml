@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="@dimen/search_bside_middle_height"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:background="#ffeaeaea" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/layout_searchdirect_more_item_middle" android:layout_width="fill_parent" android:layout_height="@dimen/search_bside_middle_ll_height">
+        <RelativeLayout android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <com.youku.widget.PageHorizontalScrollView android:id="@id/pageHorizontalMan" android:scrollbars="none" android:fadingEdge="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true">
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/pageScrollviewMan" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            </com.youku.widget.PageHorizontalScrollView>
+            <ImageView android:id="@id/pageCoverLeftMan" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/quanbuzhezhao" android:scaleType="fitXY" android:layout_alignParentLeft="true" />
+            <ImageView android:id="@id/pageCoverRightMan" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/youcezhezhao" android:scaleType="fitXY" android:layout_alignParentRight="true" />
+        </RelativeLayout>
+    </LinearLayout>
+    <View android:background="#ffeaeaea" android:layout_width="fill_parent" android:layout_height="1.0px" />
+</LinearLayout>

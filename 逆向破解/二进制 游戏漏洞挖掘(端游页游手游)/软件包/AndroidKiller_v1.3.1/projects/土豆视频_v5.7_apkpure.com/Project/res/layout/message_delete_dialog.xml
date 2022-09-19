@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/container" android:background="#fff0f0f0" android:layout_width="@dimen/tudou_normal_dialog_width" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="16.0sp" android:textColor="#ff000000" android:gravity="center|left" android:id="@id/msgDelete" android:background="#ffffffff" android:paddingLeft="@dimen/tudou_normal_dialog_btn_marginLeft" android:paddingRight="@dimen/tudou_normal_dialog_btn_marginLeft" android:layout_width="fill_parent" android:layout_height="48.0dip" android:text="删除" />
+</RelativeLayout>

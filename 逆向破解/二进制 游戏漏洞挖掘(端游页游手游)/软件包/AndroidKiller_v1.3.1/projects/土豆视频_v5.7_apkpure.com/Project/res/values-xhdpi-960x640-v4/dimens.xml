@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="game_download_count_width">90.0dip</dimen>
+    <dimen name="game_size_width">90.0dip</dimen>
+    <dimen name="game_version_width">100.0dip</dimen>
+</resources>

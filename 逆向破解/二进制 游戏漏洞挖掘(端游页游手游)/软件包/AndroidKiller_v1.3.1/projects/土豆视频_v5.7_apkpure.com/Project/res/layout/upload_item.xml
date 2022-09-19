@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:android_custom="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:background="@drawable/listview_item_bg" android:layout_width="fill_parent" android:layout_height="@dimen/caching_item_heigth">
+        <ImageView android:id="@id/uploadImage" android:layout_width="@dimen/cache_item_imgae_width" android:layout_height="@dimen/cache_item_imgae_height" android:layout_marginLeft="@dimen/cache_item_picture_part_margin_left" android:layout_marginRight="@dimen/cache_item_picture_part_margin_right" android:scaleType="fitXY" android:layout_centerVertical="true" />
+        <TextView android:gravity="bottom|center|right" android:id="@id/uploadTime" android:background="@drawable/yaofeng" android:paddingRight="@dimen/index_yaofeng_margin_l" android:paddingBottom="@dimen/index_yaofeng_margin_b" android:visibility="gone" android:layout_width="@dimen/cache_item_imgae_width" android:layout_height="@dimen/yaofeng_height" android:text="10:30" android:maxLines="1" android:layout_alignLeft="@id/uploadImage" android:layout_alignBottom="@id/uploadImage" style="@style/search_man_short" />
+        <RelativeLayout android:id="@id/uploadContent" android:paddingTop="@dimen/tudou_xlarge_two_zero_dip" android:paddingRight="@dimen/tudou_xlarge_two_zero_dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_toLeftOf="@id/layoutRight" android:layout_toRightOf="@id/uploadImage">
+            <TextView android:textAppearance="@style/cache_item_title" android:ellipsize="end" android:gravity="top" android:id="@id/uploadTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="视频标题 视频标题 视频标题 视频标题 视频标题 视频标题" android:maxLines="2" />
+            <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:layout_below="@id/uploadTitle">
+                <TextView android:textAppearance="@style/cache_item_other" android:id="@id/uploadContent1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="10M" />
+                <TextView android:textAppearance="@style/cache_item_other" android:id="@id/uploadContent2" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="" />
+            </LinearLayout>
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/layoutRight" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="10.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+            <ImageView android:id="@id/imgRight" android:layout_width="wrap_content" android:layout_height="wrap_content" android:adjustViewBounds="true" android:maxWidth="@dimen/cache_title_edit_icon" android:maxHeight="@dimen/cache_title_edit_icon" android:layout_centerInParent="true" />
+            <com.youku.widget.RoundProgressBar android:id="@id/progressRight" android:visibility="gone" android:layout_width="@dimen/cache_title_edit_icon" android:layout_height="@dimen/cache_title_edit_icon" android:layout_centerInParent="true" android_custom:roundColor="#ffdcdcdc" android_custom:roundProgressColor="#ffdcdcdc" android_custom:roundWidth="2.5dip" android_custom:textColor="#ff8c8c8c" android_custom:textSize="@dimen/cache_edit_btn_mr" android_custom:textIsDisplayable="true" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <View android:id="@id/cutline" android:background="#ffd9d9d9" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="@dimen/history_item_padding_left" android:layout_marginRight="@dimen/history_item_padding_top" />
+</LinearLayout>

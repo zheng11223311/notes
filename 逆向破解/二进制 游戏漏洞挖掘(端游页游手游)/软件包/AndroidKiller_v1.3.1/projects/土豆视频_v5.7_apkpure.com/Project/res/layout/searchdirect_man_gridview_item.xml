@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="#ffffffff" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/noMusicRel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true">
+        <ImageView android:id="@id/manDirectImg" android:background="@drawable/hengtu_moren" android:layout_width="@dimen/search_man_detail_img_w" android:layout_height="@dimen/search_man_detail_img_h" android:scaleType="fitXY" />
+        <TextView android:ellipsize="end" android:id="@id/manDirectTitle" android:layout_width="@dimen/search_man_detail_txt_w" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:singleLine="true" android:layout_below="@id/manDirectImg" android:layout_alignLeft="@id/manDirectImg" style="@style/search_aside_title" />
+        <TextView android:ellipsize="end" android:id="@id/manDirectShort" android:layout_width="@dimen/search_man_detail_txt_w" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:singleLine="true" android:layout_below="@id/manDirectTitle" android:layout_alignLeft="@id/manDirectImg" style="@style/search_ugc_ower" />
+        <TextView android:gravity="bottom|center|right" android:id="@id/manDirectTime" android:background="@drawable/detail_fragment_feature_item_shadow" android:paddingRight="@dimen/yaofeng_padding_right" android:paddingBottom="@dimen/yaofeng_padding_bottom" android:layout_width="@dimen/search_man_detail_img_w" android:layout_height="wrap_content" android:maxLines="1" android:layout_alignBottom="@id/manDirectImg" style="@style/search_man_short" />
+    </RelativeLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/musicRel" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_centerHorizontal="true">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/musicRel" android:layout_width="fill_parent" android:layout_height="@dimen/search_man_detail_music_h">
+            <Button android:id="@id/musicBtn" android:background="@drawable/suggest_item_type_bg" android:layout_width="@dimen/search_man_detail_music_btnw" android:layout_height="@dimen/search_man_detail_music_btnh" android:layout_marginLeft="@dimen/search_man_detail_music_btn_ml" android:text="MV" style="@style/search_man_music_btn" />
+            <TextView android:ellipsize="end" android:id="@id/musicTxt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/search_man_detail_music_btn_ml" android:text="不老神话" android:singleLine="true" style="@style/search_man_music_txt" />
+        </LinearLayout>
+        <View android:background="#ffd9d9d9" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    </LinearLayout>
+</RelativeLayout>

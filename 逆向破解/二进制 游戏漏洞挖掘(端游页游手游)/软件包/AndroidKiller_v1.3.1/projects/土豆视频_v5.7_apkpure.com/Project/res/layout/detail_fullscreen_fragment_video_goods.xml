@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="#e6171717" android:layout_width="fill_parent" android:layout_height="fill_parent" android:onClick="interceptClickEvent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_width="33.0dip" android:layout_height="33.0dip" android:layout_marginLeft="19.0dip" android:layout_marginTop="13.0dip" android:src="@drawable/detail_fullscreen_fragment_video_goods_icon" android:scaleType="fitXY" />
+    <ImageView android:layout_width="40.0dip" android:layout_height="22.0dip" android:layout_marginLeft="63.0dip" android:layout_marginTop="20.0dip" android:src="@drawable/detail_fullscreen_fragment_video_goods_title" android:scaleType="fitXY" />
+    <View android:background="#19ffffff" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="19.0dip" android:layout_marginTop="62.0dip" android:layout_marginRight="19.0dip" />
+    <ListView android:scrollbarStyle="outsideOverlay" android:id="@id/detail_fullscreen_fragment_video_goods_list" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="19.0dip" android:layout_marginTop="63.0dip" android:layout_marginRight="19.0dip" android:divider="#19ffffff" android:dividerHeight="1.0dip" />
+</FrameLayout>

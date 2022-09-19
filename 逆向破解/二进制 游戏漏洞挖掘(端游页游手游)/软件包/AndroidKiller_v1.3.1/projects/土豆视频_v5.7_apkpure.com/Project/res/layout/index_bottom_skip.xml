@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/bg_layout" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="60.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textAppearance="@style/index_chanel_bottom_skip" android:ellipsize="end" android:id="@id/content_txt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="还不够多?去电视剧频道" android:singleLine="true" android:layout_centerInParent="true" />
+    <ImageView android:background="@drawable/bottom_skip_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_toRightOf="@id/content_txt" android:layout_centerVertical="true" />
+</RelativeLayout>

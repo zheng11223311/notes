@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/caidan_bg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:scaleType="fitXY" />
+    <RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="70.0dip">
+        <ImageView android:id="@id/header_bg" android:layout_width="fill_parent" android:layout_height="70.0dip" android:scaleType="fitXY" />
+        <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_centerVertical="true">
+            <RelativeLayout android:id="@id/animation_image" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true">
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/bg" />
+                <ImageView android:id="@id/pull_to_refresh_image" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="22.0dip" android:layout_marginTop="15.0dip" android:src="@drawable/bplay" />
+            </RelativeLayout>
+            <TextView android:textSize="12.0sp" android:textColor="#ff666666" android:gravity="center" android:id="@id/pull_to_refresh_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="下拉刷新" android:singleLine="true" android:layout_below="@id/animation_image" />
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

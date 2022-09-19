@@ -1,0 +1,1077 @@
+.class public Lcom/baseproject/image/DiskLruCache;
+.super Ljava/lang/Object;
+.source "DiskLruCache.java"
+
+
+# static fields
+.field private static final CACHE_FILENAME_PREFIX:Ljava/lang/String; = "cache_"
+
+.field private static final INITIAL_CAPACITY:I
+
+.field private static final LOAD_FACTOR:F
+
+.field private static final MAX_REMOVALS:I = 0x4
+
+.field private static final TAG:Ljava/lang/String; = "DiskLruCache"
+
+.field private static final cacheFileFilter:Ljava/io/FilenameFilter;
+
+
+# instance fields
+.field private cacheByteSize:I
+
+.field private cacheSize:I
+
+.field private final mCacheDir:Ljava/io/File;
+
+.field private mCompressFormat:Landroid/graphics/Bitmap$CompressFormat;
+
+.field private mCompressQuality:I
+
+.field private final mLinkedHashMap:Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private maxCacheByteSize:J
+
+.field private final maxCacheItemSize:I
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 2
+
+    .prologue
+    .line 63
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x9
+
+    if-lt v0, v1, :cond_0
+
+    .line 64
+    const/4 v0, 0x0
+
+    sput v0, Lcom/baseproject/image/DiskLruCache;->INITIAL_CAPACITY:I
+
+    .line 65
+    const/high16 v0, 0x3f400000    # 0.75f
+
+    sput v0, Lcom/baseproject/image/DiskLruCache;->LOAD_FACTOR:F
+
+    .line 80
+    :goto_0
+    new-instance v0, Lcom/baseproject/image/DiskLruCache$1;
+
+    invoke-direct {v0}, Lcom/baseproject/image/DiskLruCache$1;-><init>()V
+
+    sput-object v0, Lcom/baseproject/image/DiskLruCache;->cacheFileFilter:Ljava/io/FilenameFilter;
+
+    return-void
+
+    .line 67
+    :cond_0
+    const/16 v0, 0xa
+
+    sput v0, Lcom/baseproject/image/DiskLruCache;->INITIAL_CAPACITY:I
+
+    .line 68
+    const v0, 0x3f8ccccd    # 1.1f
+
+    sput v0, Lcom/baseproject/image/DiskLruCache;->LOAD_FACTOR:F
+
+    goto :goto_0
+.end method
+
+.method private constructor <init>(Ljava/io/File;J)V
+    .locals 4
+    .param p1, "cacheDir"    # Ljava/io/File;
+    .param p2, "maxByteSize"    # J
+
+    .prologue
+    const/4 v0, 0x0
+
+    .line 120
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 55
+    iput v0, p0, Lcom/baseproject/image/DiskLruCache;->cacheSize:I
+
+    .line 56
+    iput v0, p0, Lcom/baseproject/image/DiskLruCache;->cacheByteSize:I
+
+    .line 57
+    const/16 v0, 0x80
+
+    iput v0, p0, Lcom/baseproject/image/DiskLruCache;->maxCacheItemSize:I
+
+    .line 58
+    const-wide/32 v0, 0xa00000
+
+    iput-wide v0, p0, Lcom/baseproject/image/DiskLruCache;->maxCacheByteSize:J
+
+    .line 59
+    sget-object v0, Landroid/graphics/Bitmap$CompressFormat;->PNG:Landroid/graphics/Bitmap$CompressFormat;
+
+    iput-object v0, p0, Lcom/baseproject/image/DiskLruCache;->mCompressFormat:Landroid/graphics/Bitmap$CompressFormat;
+
+    .line 60
+    const/16 v0, 0x46
+
+    iput v0, p0, Lcom/baseproject/image/DiskLruCache;->mCompressQuality:I
+
+    .line 72
+    new-instance v0, Ljava/util/LinkedHashMap;
+
+    sget v1, Lcom/baseproject/image/DiskLruCache;->INITIAL_CAPACITY:I
+
+    sget v2, Lcom/baseproject/image/DiskLruCache;->LOAD_FACTOR:F
+
+    const/4 v3, 0x1
+
+    invoke-direct {v0, v1, v2, v3}, Ljava/util/LinkedHashMap;-><init>(IFZ)V
+
+    invoke-static {v0}, Ljava/util/Collections;->synchronizedMap(Ljava/util/Map;)Ljava/util/Map;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/baseproject/image/DiskLruCache;->mLinkedHashMap:Ljava/util/Map;
+
+    .line 121
+    iput-object p1, p0, Lcom/baseproject/image/DiskLruCache;->mCacheDir:Ljava/io/File;
+
+    .line 122
+    iput-wide p2, p0, Lcom/baseproject/image/DiskLruCache;->maxCacheByteSize:J
+
+    .line 123
+    return-void
+.end method
+
+.method public static clearCache(Landroid/content/Context;Ljava/lang/String;)V
+    .locals 1
+    .param p0, "context"    # Landroid/content/Context;
+    .param p1, "uniqueName"    # Ljava/lang/String;
+
+    .prologue
+    .line 283
+    invoke-static {p0, p1}, Lcom/baseproject/image/DiskLruCache;->getDiskCacheDir(Landroid/content/Context;Ljava/lang/String;)Ljava/io/File;
+
+    move-result-object v0
+
+    .line 284
+    .local v0, "cacheDir":Ljava/io/File;
+    invoke-static {v0}, Lcom/baseproject/image/DiskLruCache;->clearCache(Ljava/io/File;)V
+
+    .line 285
+    return-void
+.end method
+
+.method private static clearCache(Ljava/io/File;)V
+    .locals 3
+    .param p0, "cacheDir"    # Ljava/io/File;
+
+    .prologue
+    .line 296
+    sget-object v2, Lcom/baseproject/image/DiskLruCache;->cacheFileFilter:Ljava/io/FilenameFilter;
+
+    invoke-virtual {p0, v2}, Ljava/io/File;->listFiles(Ljava/io/FilenameFilter;)[Ljava/io/File;
+
+    move-result-object v0
+
+    .line 297
+    .local v0, "files":[Ljava/io/File;
+    if-eqz v0, :cond_0
+
+    .line 298
+    const/4 v1, 0x0
+
+    .local v1, "i":I
+    :goto_0
+    array-length v2, v0
+
+    if-ge v1, v2, :cond_0
+
+    .line 299
+    aget-object v2, v0, v1
+
+    invoke-virtual {v2}, Ljava/io/File;->delete()Z
+
+    .line 298
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    .line 302
+    .end local v1    # "i":I
+    :cond_0
+    return-void
+.end method
+
+.method public static createFilePath(Ljava/io/File;Ljava/lang/String;)Ljava/lang/String;
+    .locals 4
+    .param p0, "cacheDir"    # Ljava/io/File;
+    .param p1, "key"    # Ljava/lang/String;
+
+    .prologue
+    .line 340
+    :try_start_0
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {p0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    sget-object v2, Ljava/io/File;->separator:Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "cache_"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "*"
+
+    const-string v3, ""
+
+    invoke-virtual {p1, v2, v3}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "UTF-8"
+
+    invoke-static {v2, v3}, Ljava/net/URLEncoder;->encode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    :try_end_0
+    .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result-object v1
+
+    .line 347
+    :goto_0
+    return-object v1
+
+    .line 343
+    :catch_0
+    move-exception v0
+
+    .line 344
+    .local v0, "e":Ljava/io/UnsupportedEncodingException;
+    const-string v1, "DiskLruCache"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "createFilePath - "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 347
+    const/4 v1, 0x0
+
+    goto :goto_0
+.end method
+
+.method private flushCache()V
+    .locals 10
+
+    .prologue
+    .line 175
+    const/4 v0, 0x0
+
+    .line 178
+    .local v0, "count":I
+    :goto_0
+    const/4 v3, 0x4
+
+    if-ge v0, v3, :cond_1
+
+    iget v3, p0, Lcom/baseproject/image/DiskLruCache;->cacheSize:I
+
+    const/16 v6, 0x80
+
+    if-gt v3, v6, :cond_0
+
+    iget v3, p0, Lcom/baseproject/image/DiskLruCache;->cacheByteSize:I
+
+    int-to-long v6, v3
+
+    iget-wide v8, p0, Lcom/baseproject/image/DiskLruCache;->maxCacheByteSize:J
+
+    cmp-long v3, v6, v8
+
+    if-lez v3, :cond_1
+
+    .line 179
+    :cond_0
+    iget-object v3, p0, Lcom/baseproject/image/DiskLruCache;->mLinkedHashMap:Ljava/util/Map;
+
+    invoke-interface {v3}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+
+    move-result-object v3
+
+    invoke-interface {v3}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v3
+
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/util/Map$Entry;
+
+    .line 180
+    .local v1, "eldestEntry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/String;>;"
+    new-instance v2, Ljava/io/File;
+
+    invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/String;
+
+    invoke-direct {v2, v3}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    .line 181
+    .local v2, "eldestFile":Ljava/io/File;
+    invoke-virtual {v2}, Ljava/io/File;->length()J
+
+    move-result-wide v4
+
+    .line 182
+    .local v4, "eldestFileSize":J
+    iget-object v3, p0, Lcom/baseproject/image/DiskLruCache;->mLinkedHashMap:Ljava/util/Map;
+
+    invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v6
+
+    invoke-interface {v3, v6}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 183
+    invoke-virtual {v2}, Ljava/io/File;->delete()Z
+
+    .line 184
+    iget-object v3, p0, Lcom/baseproject/image/DiskLruCache;->mLinkedHashMap:Ljava/util/Map;
+
+    invoke-interface {v3}, Ljava/util/Map;->size()I
+
+    move-result v3
+
+    iput v3, p0, Lcom/baseproject/image/DiskLruCache;->cacheSize:I
+
+    .line 185
+    iget v3, p0, Lcom/baseproject/image/DiskLruCache;->cacheByteSize:I
+
+    int-to-long v6, v3
+
+    sub-long/2addr v6, v4
+
+    long-to-int v3, v6
+
+    iput v3, p0, Lcom/baseproject/image/DiskLruCache;->cacheByteSize:I
+
+    .line 186
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    .line 190
+    .end local v1    # "eldestEntry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/String;>;"
+    .end local v2    # "eldestFile":Ljava/io/File;
+    .end local v4    # "eldestFileSize":J
+    :cond_1
+    return-void
+.end method
+
+.method public static getDiskCacheDir(Landroid/content/Context;Ljava/lang/String;)Ljava/io/File;
+    .locals 4
+    .param p0, "context"    # Landroid/content/Context;
+    .param p1, "uniqueName"    # Ljava/lang/String;
+
+    .prologue
+    .line 318
+    const-string v1, "mounted"
+
+    invoke-static {}, Landroid/os/Environment;->getExternalStorageState()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    invoke-static {}, Lcom/baseproject/image/Utils;->isExternalStorageRemovable()Z
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    :cond_0
+    invoke-static {p0}, Lcom/baseproject/image/Utils;->getExternalCacheDir(Landroid/content/Context;)Ljava/io/File;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_1
+
+    invoke-static {p0}, Lcom/baseproject/image/Utils;->getExternalCacheDir(Landroid/content/Context;)Ljava/io/File;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/io/File;->getPath()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 324
+    .local v0, "cachePath":Ljava/lang/String;
+    :goto_0
+    new-instance v1, Ljava/io/File;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    sget-object v3, Ljava/io/File;->separator:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct {v1, v2}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    return-object v1
+
+    .line 318
+    .end local v0    # "cachePath":Ljava/lang/String;
+    :cond_1
+    invoke-virtual {p0}, Landroid/content/Context;->getCacheDir()Ljava/io/File;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/io/File;->getPath()Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_0
+.end method
+
+.method private getFileSize(Ljava/io/File;)J
+    .locals 8
+    .param p1, "cacheDir"    # Ljava/io/File;
+
+    .prologue
+    .line 374
+    const-wide/16 v2, 0x0
+
+    .line 375
+    .local v2, "size":J
+    invoke-virtual {p1}, Ljava/io/File;->listFiles()[Ljava/io/File;
+
+    move-result-object v0
+
+    .line 376
+    .local v0, "flist":[Ljava/io/File;
+    if-nez v0, :cond_0
+
+    move-wide v4, v2
+
+    .line 386
+    .end local v2    # "size":J
+    .local v4, "size":J
+    :goto_0
+    return-wide v4
+
+    .line 379
+    .end local v4    # "size":J
+    .restart local v2    # "size":J
+    :cond_0
+    const/4 v1, 0x0
+
+    .local v1, "i":I
+    :goto_1
+    array-length v6, v0
+
+    if-ge v1, v6, :cond_2
+
+    .line 380
+    aget-object v6, v0, v1
+
+    invoke-virtual {v6}, Ljava/io/File;->isDirectory()Z
+
+    move-result v6
+
+    if-eqz v6, :cond_1
+
+    .line 381
+    aget-object v6, v0, v1
+
+    invoke-direct {p0, v6}, Lcom/baseproject/image/DiskLruCache;->getFileSize(Ljava/io/File;)J
+
+    move-result-wide v6
+
+    add-long/2addr v2, v6
+
+    .line 379
+    :goto_2
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_1
+
+    .line 383
+    :cond_1
+    aget-object v6, v0, v1
+
+    invoke-virtual {v6}, Ljava/io/File;->length()J
+
+    move-result-wide v6
+
+    add-long/2addr v2, v6
+
+    goto :goto_2
+
+    :cond_2
+    move-wide v4, v2
+
+    .line 386
+    .end local v2    # "size":J
+    .restart local v4    # "size":J
+    goto :goto_0
+.end method
+
+.method public static openCache(Landroid/content/Context;Ljava/io/File;J)Lcom/baseproject/image/DiskLruCache;
+    .locals 4
+    .param p0, "context"    # Landroid/content/Context;
+    .param p1, "cacheDir"    # Ljava/io/File;
+    .param p2, "maxByteSize"    # J
+
+    .prologue
+    .line 97
+    invoke-virtual {p1}, Ljava/io/File;->exists()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 98
+    invoke-virtual {p1}, Ljava/io/File;->mkdir()Z
+
+    .line 101
+    :cond_0
+    invoke-virtual {p1}, Ljava/io/File;->isDirectory()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    invoke-virtual {p1}, Ljava/io/File;->canWrite()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    .line 102
+    invoke-static {p1}, Lcom/baseproject/image/Utils;->getUsableSpace(Ljava/io/File;)J
+
+    move-result-wide v0
+
+    cmp-long v0, v0, p2
+
+    if-lez v0, :cond_1
+
+    .line 103
+    new-instance v0, Lcom/baseproject/image/DiskLruCache;
+
+    invoke-direct {v0, p1, p2, p3}, Lcom/baseproject/image/DiskLruCache;-><init>(Ljava/io/File;J)V
+
+    .line 109
+    :goto_0
+    return-object v0
+
+    .line 105
+    :cond_1
+    new-instance v0, Lcom/baseproject/image/DiskLruCache;
+
+    const-wide/16 v2, 0x2
+
+    div-long v2, p2, v2
+
+    invoke-direct {v0, p1, v2, v3}, Lcom/baseproject/image/DiskLruCache;-><init>(Ljava/io/File;J)V
+
+    goto :goto_0
+
+    .line 109
+    :cond_2
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method private put(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 4
+    .param p1, "key"    # Ljava/lang/String;
+    .param p2, "file"    # Ljava/lang/String;
+
+    .prologue
+    .line 153
+    new-instance v2, Ljava/io/File;
+
+    invoke-direct {v2, p2}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v2}, Ljava/io/File;->length()J
+
+    move-result-wide v0
+
+    .line 154
+    .local v0, "fileLength":J
+    const-wide/16 v2, 0x0
+
+    cmp-long v2, v0, v2
+
+    if-nez v2, :cond_0
+
+    .line 155
+    iget-object v2, p0, Lcom/baseproject/image/DiskLruCache;->mLinkedHashMap:Ljava/util/Map;
+
+    invoke-interface {v2, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 156
+    iget-object v2, p0, Lcom/baseproject/image/DiskLruCache;->mLinkedHashMap:Ljava/util/Map;
+
+    invoke-interface {v2}, Ljava/util/Map;->size()I
+
+    move-result v2
+
+    iput v2, p0, Lcom/baseproject/image/DiskLruCache;->cacheSize:I
+
+    .line 163
+    :goto_0
+    return-void
+
+    .line 159
+    :cond_0
+    iget-object v2, p0, Lcom/baseproject/image/DiskLruCache;->mLinkedHashMap:Ljava/util/Map;
+
+    invoke-interface {v2, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 160
+    iget-object v2, p0, Lcom/baseproject/image/DiskLruCache;->mLinkedHashMap:Ljava/util/Map;
+
+    invoke-interface {v2}, Ljava/util/Map;->size()I
+
+    move-result v2
+
+    iput v2, p0, Lcom/baseproject/image/DiskLruCache;->cacheSize:I
+
+    .line 161
+    iget v2, p0, Lcom/baseproject/image/DiskLruCache;->cacheByteSize:I
+
+    int-to-long v2, v2
+
+    add-long/2addr v2, v0
+
+    long-to-int v2, v2
+
+    iput v2, p0, Lcom/baseproject/image/DiskLruCache;->cacheByteSize:I
+
+    goto :goto_0
+.end method
+
+
+# virtual methods
+.method public clearCache()V
+    .locals 1
+
+    .prologue
+    .line 269
+    iget-object v0, p0, Lcom/baseproject/image/DiskLruCache;->mCacheDir:Ljava/io/File;
+
+    invoke-static {v0}, Lcom/baseproject/image/DiskLruCache;->clearCache(Ljava/io/File;)V
+
+    .line 270
+    return-void
+.end method
+
+.method public containsKey(Ljava/lang/String;)Z
+    .locals 1
+    .param p1, "key"    # Ljava/lang/String;
+
+    .prologue
+    .line 251
+    iget-object v0, p0, Lcom/baseproject/image/DiskLruCache;->mLinkedHashMap:Ljava/util/Map;
+
+    invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 252
+    const/4 v0, 0x1
+
+    .line 262
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public createFilePath(Ljava/lang/String;)Ljava/lang/String;
+    .locals 1
+    .param p1, "key"    # Ljava/lang/String;
+
+    .prologue
+    .line 358
+    iget-object v0, p0, Lcom/baseproject/image/DiskLruCache;->mCacheDir:Ljava/io/File;
+
+    invoke-static {v0, p1}, Lcom/baseproject/image/DiskLruCache;->createFilePath(Ljava/io/File;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public get(Ljava/lang/String;)Landroid/graphics/Bitmap;
+    .locals 6
+    .param p1, "key"    # Ljava/lang/String;
+
+    .prologue
+    const/4 v3, 0x0
+
+    .line 218
+    iget-object v4, p0, Lcom/baseproject/image/DiskLruCache;->mLinkedHashMap:Ljava/util/Map;
+
+    monitor-enter v4
+
+    .line 220
+    :try_start_0
+    iget-object v5, p0, Lcom/baseproject/image/DiskLruCache;->mLinkedHashMap:Ljava/util/Map;
+
+    invoke-interface {v5, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/String;
+
+    .line 221
+    .local v2, "file":Ljava/lang/String;
+    if-eqz v2, :cond_0
+
+    .line 223
+    invoke-static {v2}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;)Landroid/graphics/Bitmap;
+    :try_end_0
+    .catch Ljava/lang/OutOfMemoryError; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    move-result-object v3
+
+    :try_start_1
+    monitor-exit v4
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    .line 238
+    .end local v2    # "file":Ljava/lang/String;
+    :goto_0
+    return-object v3
+
+    .line 225
+    .restart local v2    # "file":Ljava/lang/String;
+    :cond_0
+    :try_start_2
+    iget-object v5, p0, Lcom/baseproject/image/DiskLruCache;->mCacheDir:Ljava/io/File;
+
+    invoke-static {v5, p1}, Lcom/baseproject/image/DiskLruCache;->createFilePath(Ljava/io/File;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 226
+    .local v1, "existingFile":Ljava/lang/String;
+    new-instance v5, Ljava/io/File;
+
+    invoke-direct {v5, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v5}, Ljava/io/File;->exists()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_1
+
+    .line 227
+    invoke-direct {p0, p1, v1}, Lcom/baseproject/image/DiskLruCache;->put(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 229
+    invoke-static {v1}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;)Landroid/graphics/Bitmap;
+    :try_end_2
+    .catch Ljava/lang/OutOfMemoryError; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    move-result-object v3
+
+    :try_start_3
+    monitor-exit v4
+
+    goto :goto_0
+
+    .line 239
+    .end local v1    # "existingFile":Ljava/lang/String;
+    .end local v2    # "file":Ljava/lang/String;
+    :catchall_0
+    move-exception v3
+
+    monitor-exit v4
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+
+    throw v3
+
+    .line 232
+    :catch_0
+    move-exception v0
+
+    .line 233
+    .local v0, "e":Ljava/lang/OutOfMemoryError;
+    :try_start_4
+    invoke-virtual {v0}, Ljava/lang/OutOfMemoryError;->printStackTrace()V
+
+    .line 234
+    invoke-virtual {p0}, Lcom/baseproject/image/DiskLruCache;->clearCache()V
+
+    .line 235
+    invoke-static {}, Ljava/lang/System;->gc()V
+
+    .line 236
+    monitor-exit v4
+
+    goto :goto_0
+
+    .line 238
+    .end local v0    # "e":Ljava/lang/OutOfMemoryError;
+    .restart local v1    # "existingFile":Ljava/lang/String;
+    .restart local v2    # "file":Ljava/lang/String;
+    :cond_1
+    monitor-exit v4
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
+
+    goto :goto_0
+.end method
+
+.method public getFileSize()Ljava/lang/String;
+    .locals 2
+
+    .prologue
+    .line 390
+    iget-object v0, p0, Lcom/baseproject/image/DiskLruCache;->mCacheDir:Ljava/io/File;
+
+    invoke-direct {p0, v0}, Lcom/baseproject/image/DiskLruCache;->getFileSize(Ljava/io/File;)J
+
+    move-result-wide v0
+
+    long-to-float v0, v0
+
+    invoke-static {v0}, Lcom/baseproject/image/Utils;->formatSizeM(F)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public put(Ljava/lang/String;Landroid/graphics/Bitmap;)V
+    .locals 3
+    .param p1, "key"    # Ljava/lang/String;
+    .param p2, "data"    # Landroid/graphics/Bitmap;
+
+    .prologue
+    .line 134
+    iget-object v2, p0, Lcom/baseproject/image/DiskLruCache;->mLinkedHashMap:Ljava/util/Map;
+
+    monitor-enter v2
+
+    .line 135
+    :try_start_0
+    iget-object v1, p0, Lcom/baseproject/image/DiskLruCache;->mLinkedHashMap:Ljava/util/Map;
+
+    invoke-interface {v1, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    if-nez v1, :cond_0
+
+    .line 137
+    iget-object v1, p0, Lcom/baseproject/image/DiskLruCache;->mCacheDir:Ljava/io/File;
+
+    invoke-static {v1, p1}, Lcom/baseproject/image/DiskLruCache;->createFilePath(Ljava/io/File;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 139
+    .local v0, "file":Ljava/lang/String;
+    invoke-direct {p0, p1, v0}, Lcom/baseproject/image/DiskLruCache;->put(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 140
+    invoke-direct {p0}, Lcom/baseproject/image/DiskLruCache;->flushCache()V
+
+    .line 149
+    .end local v0    # "file":Ljava/lang/String;
+    :cond_0
+    monitor-exit v2
+
+    .line 150
+    return-void
+
+    .line 149
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
+.end method
+
+.method public removeFile(Ljava/lang/String;)V
+    .locals 6
+    .param p1, "key"    # Ljava/lang/String;
+
+    .prologue
+    .line 196
+    iget-object v4, p0, Lcom/baseproject/image/DiskLruCache;->mLinkedHashMap:Ljava/util/Map;
+
+    invoke-interface {v4, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/String;
+
+    .line 197
+    .local v1, "file":Ljava/lang/String;
+    if-eqz v1, :cond_0
+
+    .line 198
+    new-instance v0, Ljava/io/File;
+
+    invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    .line 199
+    .local v0, "f":Ljava/io/File;
+    invoke-virtual {v0}, Ljava/io/File;->length()J
+
+    move-result-wide v2
+
+    .line 200
+    .local v2, "fLength":J
+    invoke-virtual {v0}, Ljava/io/File;->exists()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    .line 201
+    invoke-virtual {v0}, Ljava/io/File;->delete()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    .line 202
+    iget-object v4, p0, Lcom/baseproject/image/DiskLruCache;->mLinkedHashMap:Ljava/util/Map;
+
+    invoke-interface {v4, v1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 203
+    iget-object v4, p0, Lcom/baseproject/image/DiskLruCache;->mLinkedHashMap:Ljava/util/Map;
+
+    invoke-interface {v4}, Ljava/util/Map;->size()I
+
+    move-result v4
+
+    iput v4, p0, Lcom/baseproject/image/DiskLruCache;->cacheSize:I
+
+    .line 204
+    iget v4, p0, Lcom/baseproject/image/DiskLruCache;->cacheByteSize:I
+
+    int-to-long v4, v4
+
+    sub-long/2addr v4, v2
+
+    long-to-int v4, v4
+
+    iput v4, p0, Lcom/baseproject/image/DiskLruCache;->cacheByteSize:I
+
+    .line 208
+    .end local v0    # "f":Ljava/io/File;
+    .end local v2    # "fLength":J
+    :cond_0
+    return-void
+.end method
+
+.method public setCompressParams(Landroid/graphics/Bitmap$CompressFormat;I)V
+    .locals 0
+    .param p1, "compressFormat"    # Landroid/graphics/Bitmap$CompressFormat;
+    .param p2, "quality"    # I
+
+    .prologue
+    .line 369
+    iput-object p1, p0, Lcom/baseproject/image/DiskLruCache;->mCompressFormat:Landroid/graphics/Bitmap$CompressFormat;
+
+    .line 370
+    iput p2, p0, Lcom/baseproject/image/DiskLruCache;->mCompressQuality:I
+
+    .line 371
+    return-void
+.end method

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="#fff5f5f5" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/linearLayout" android:background="#fffcfcfc" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <View android:id="@id/status_bar_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_below="@id/status_bar_view">
+            <TextView android:textAppearance="@style/title_right_close_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="全部分类" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+            <RelativeLayout android:id="@id/rl_title_close" android:layout_width="39.0dip" android:layout_height="48.0dip" android:layout_marginRight="11.0dip" android:layout_alignParentRight="true">
+                <ImageView android:background="@drawable/classify_home_list_title_colse_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+                <TextView android:textColor="#ff838384" android:gravity="center" android:id="@id/back_edit" android:background="#fffcfcfc" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="取消" />
+            </RelativeLayout>
+        </RelativeLayout>
+        <View android:background="#ffff612a" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    </LinearLayout>
+    <com.youku.widget.HintView android:id="@id/hint_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/linearLayout" />
+    <ListView android:id="@id/lv_all_classify" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:listSelector="@android:color/transparent" android:divider="@null" android:layout_below="@id/linearLayout" android:layout_alignParentLeft="true" />
+    <Button android:textSize="14.0sp" android:textColor="#ffffffff" android:id="@id/add_launcher_but" android:background="#ffff612a" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="48.0dip" android:text="添加到桌面" android:layout_alignParentBottom="true" />
+    <RelativeLayout android:id="@id/guide_view" android:background="#b2000000" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <View android:background="@drawable/classify_list_guide_bg" android:layout_width="222.0dip" android:layout_height="155.0dip" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+</RelativeLayout>

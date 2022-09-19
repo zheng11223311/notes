@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/game_card_margin" android:paddingTop="@dimen/game_card_margin" android:paddingRight="@dimen/game_card_margin" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/game_photos_container_margin_top"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:background="#ffffffff" android:paddingTop="@dimen/game_detail_tag_title_margin_top_bottom" android:paddingBottom="@dimen/game_detail_tag_gridview_margin_bottom" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <RelativeLayout android:id="@id/game_tags_title" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/detail_gameinfo_padding" android:layout_marginRight="@dimen/detail_gameinfo_padding">
+            <TextView android:textSize="@dimen/game_photos_text_size" android:textColor="#ff333333" android:id="@id/game_tag_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/game_detail_tag_title_margin_top_bottom" android:text="游戏标签" />
+            <View android:id="@id/line" android:background="#ffcccccc" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_below="@id/game_tag_title" />
+        </RelativeLayout>
+        <com.youku.gamecenter.widgets.ScrollabledGridView android:id="@id/gridview" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/detail_gameinfo_padding" android:layout_marginTop="@dimen/game_detail_tag_gridview_margin_top" android:layout_marginRight="@dimen/detail_gameinfo_padding" android:horizontalSpacing="@dimen/game_detail_tag_gridview_horizontal_spacing" android:verticalSpacing="@dimen/game_detail_tag_gridview_vertical_spacing" android:numColumns="4" android:layout_below="@id/game_tags_title" />
+    </RelativeLayout>
+    <View android:background="@color/game_card_bottom_color" android:layout_width="fill_parent" android:layout_height="@dimen/game_details_card_bttom_root_height" />
+</LinearLayout>

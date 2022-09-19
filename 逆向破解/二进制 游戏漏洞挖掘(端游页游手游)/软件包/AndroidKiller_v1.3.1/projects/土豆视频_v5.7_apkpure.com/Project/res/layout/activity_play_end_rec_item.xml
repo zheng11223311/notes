@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="141.0dip" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/play_end_rec_item_pic" android:background="@drawable/detail_video_preview_h" android:layout_width="141.0dip" android:layout_height="76.0dip" android:scaleType="fitXY" />`1
+<TextView android:textSize="11.0sp" android:textColor="@android:color/white" android:ellipsize="end" android:gravity="bottom|center|right" android:id="@id/play_end_rec_item_playtimes" android:background="@drawable/detail_fragment_feature_item_shadow" android:paddingRight="10.0dip" android:paddingBottom="3.0dip" android:layout_width="141.0dip" android:layout_height="wrap_content" android:singleLine="true" android:layout_alignBottom="@id/play_end_rec_item_pic" android:layout_alignParentRight="true" />
+    <TextView android:textSize="14.0sp" android:textColor="@android:color/white" android:ellipsize="end" android:id="@id/play_end_rec_item_title" android:layout_width="141.0dip" android:layout_height="38.0dip" android:layout_marginTop="3.0dip" android:maxLines="2" android:singleLine="false" android:layout_below="@id/play_end_rec_item_pic" />
+</RelativeLayout>

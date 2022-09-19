@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="recommend_home_title">
+        <item name="android:textSize">24.0dip</item>
+        <item name="android:textColor">#ff333333</item>
+    </style>
+</resources>

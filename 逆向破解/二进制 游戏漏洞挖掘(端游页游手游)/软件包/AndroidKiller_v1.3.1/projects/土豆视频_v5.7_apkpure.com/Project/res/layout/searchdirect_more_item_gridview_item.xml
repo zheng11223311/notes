@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/btnRel" android:background="#ffd9d9d9" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Button android:textAppearance="@style/search_bside_gridview_item" android:id="@id/more_show_button" android:background="@drawable/listview_item_bg" android:layout_width="fill_parent" android:layout_height="@dimen/search_aside_bottom_btn_height" android:layout_centerInParent="true" />
+    <ImageView android:id="@id/more_show_img" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/bofang_ic_yugao" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+</RelativeLayout>

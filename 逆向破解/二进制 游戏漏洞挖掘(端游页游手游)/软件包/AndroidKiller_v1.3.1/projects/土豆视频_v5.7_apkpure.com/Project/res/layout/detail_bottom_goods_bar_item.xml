@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="165.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/detail_bottom_goods_bar_item_icon" android:background="@drawable/detail_bottom_goods_bar_item_icon_default" android:layout_width="112.0dip" android:layout_height="112.0dip" android:scaleType="fitXY" />
+    <ImageView android:id="@id/detail_bottom_goods_bar_item_type_icon" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginTop="92.0dip" android:scaleType="fitXY" />
+    <TextView android:textSize="14.0dip" android:textColor="#ff3d3d3d" android:ellipsize="end" android:id="@id/detail_bottom_goods_bar_item_title" android:layout_width="112.0dip" android:layout_height="49.0dip" android:layout_marginTop="116.0dip" android:maxLines="2" android:singleLine="false" />
+</FrameLayout>

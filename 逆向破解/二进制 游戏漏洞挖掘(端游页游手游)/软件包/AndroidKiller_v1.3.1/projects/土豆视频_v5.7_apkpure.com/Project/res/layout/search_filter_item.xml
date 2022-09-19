@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:background="#ffdfdfdf" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <LinearLayout android:orientation="vertical" android:paddingTop="17.0dip" android:paddingBottom="3.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="15.0sp" android:textColor="#ff434343" android:id="@id/search_filter_item_subtitle" android:paddingLeft="@dimen/channels_filterpop_item_margin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_marginBottom="6.0dip" android:text="jsjsj" />
+        <LinearLayout android:orientation="vertical" android:id="@id/search_filter_item_wrapper" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/channels_filterpop_parent_margin" android:layout_marginRight="@dimen/channels_filterpop_parent_margin" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="#ffe6e6e6" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:id="@id/video_layout" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <ListView android:id="@id/video_listview" android:scrollbars="@null" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@android:color/transparent" android:cacheColorHint="#00000000" android:divider="@null" />
+        </LinearLayout>
+        <com.youku.widget.HintView android:id="@id/hint_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="@dimen/header_height" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/ucenter_header_wrapper" android:layout_width="fill_parent" android:layout_height="@dimen/ucenter_header_wrapper_height">
+        <ImageView android:id="@id/home_pic" android:background="@drawable/newpodcast_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
+        <ImageView android:background="@drawable/zipindao_bg_zhezhao" android:layout_width="fill_parent" android:layout_height="wrap_content" android:scaleType="centerCrop" android:layout_alignParentBottom="true" />
+        <ImageView android:id="@id/back" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/podcast_user_head_margin_left" android:layout_marginTop="@dimen/podcast_user_head_margin_left" android:src="@drawable/podcast_back" />
+        <RelativeLayout android:id="@id/user_layout" android:layout_width="@dimen/podcast_user_img_widht" android:layout_height="@dimen/podcast_user_img_widht" android:layout_marginLeft="@dimen/podcast_user_head_margin_left" android:layout_marginRight="@dimen/podcast_user_head_margin_left" android:layout_marginBottom="@dimen/ucenter_header_wrapper_margin_img_bottom" android:layout_alignParentLeft="true" android:layout_alignParentBottom="true">
+            <ImageView android:id="@id/user_img" android:background="@drawable/detail_bottom_comment_bar_switch_item_default" android:padding="3.0px" android:layout_width="@dimen/podcast_user_img_widht" android:layout_height="@dimen/podcast_user_img_widht" android:scaleType="fitXY" />
+            <ImageView android:layout_width="@dimen/podcast_user_img_widht" android:layout_height="@dimen/podcast_user_img_widht" android:src="@drawable/head" android:scaleType="fitXY" />
+            <ImageView android:id="@id/isVuser" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/v_little" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+            <ImageView android:id="@id/user_from" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/from_sina" android:scaleType="fitXY" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+        </RelativeLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/atten_layout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/ucenter_header_wrapper_margin_bottom" android:layout_marginBottom="@dimen/ucenter_header_wrapper_margin_bottom" android:layout_alignParentRight="true" android:layout_alignParentBottom="true">
+            <RelativeLayout android:id="@id/user_atten_layout" android:visibility="gone" android:layout_width="@dimen/search_result_play_w" android:layout_height="@dimen/search_result_play_h">
+                <ImageView android:id="@id/user_atten" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+                <ProgressBar android:layout_gravity="center" android:id="@id/subedProgressBar" android:visibility="invisible" android:layout_width="@dimen/search_result_play_h" android:layout_height="@dimen/search_result_play_h" android:layout_centerInParent="true" />
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="@dimen/podcast_user_head_margin_left" android:layout_toLeftOf="@id/atten_layout" android:layout_toRightOf="@id/user_layout" android:layout_alignBottom="@id/atten_layout">
+            <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/detail_brief_layout_margin">
+                <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textColor="#ffffffff" android:ellipsize="end" android:id="@id/user_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:shadowColor="#b2000000" android:shadowDx="0.0" android:shadowDy="4.0" style="@style/FontG" />
+                </LinearLayout>
+            </RelativeLayout>
+            <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textColor="#ffffffff" android:ellipsize="end" android:id="@id/user_line1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" style="@style/FontD" />
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+    <RelativeLayout android:gravity="center" android:orientation="vertical" android:id="@id/sticky_wrapper" android:background="#fffafafa" android:layout_width="fill_parent" android:layout_height="@dimen/sticky_wrapper_tab_height">
+        <TextView android:textColor="#ff3c3c3c" android:id="@id/share" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/sticky_wrapper_tab_margin_right" android:layout_marginRight="@dimen/sticky_wrapper_tab_margin_right" android:text="分享" android:drawableTop="@drawable/subscribe_share_icon" android:layout_alignParentRight="true" android:layout_centerVertical="true" style="@style/FontE" />
+        <ImageView android:id="@id/line" android:background="#ffe6e6e6" android:layout_width="2.0px" android:layout_height="fill_parent" android:layout_toLeftOf="@id/share" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_toLeftOf="@id/line">
+            <RelativeLayout android:id="@id/brief_layout_tab" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="26.0dip" android:minWidth="@dimen/sticky_wrapper_tab_line_width">
+                <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+                    <TextView android:layout_gravity="center_horizontal" android:id="@id/top_brief" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="频道" style="@style/FontE" />
+                    <TextView android:textColor="#ff3c3c3c" android:layout_gravity="center_horizontal" android:id="@id/tv_brief" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="简介" style="@style/FontE" />
+                </LinearLayout>
+                <ImageView android:id="@id/brief_layout_line" android:background="#ffff5500" android:layout_width="@dimen/sticky_wrapper_tab_line_width" android:layout_height="2.0dip" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/video_layout_tab" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="34.0dip" android:minWidth="@dimen/sticky_wrapper_tab_line_width">
+                <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+                    <TextView android:layout_gravity="center_horizontal" android:id="@id/totle_video" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" android:singleLine="true" style="@style/FontE" />
+                    <TextView android:layout_gravity="center_horizontal" android:id="@id/tv_video" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="视频" style="@style/FontE" />
+                </LinearLayout>
+                <ImageView android:id="@id/video_layout_line" android:background="#ffff5500" android:layout_width="@dimen/sticky_wrapper_tab_line_width" android:layout_height="2.0dip" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/plist_layout_tab" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="34.0dip" android:minWidth="@dimen/sticky_wrapper_tab_line_width">
+                <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+                    <TextView android:layout_gravity="center_horizontal" android:id="@id/totle_plist" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" style="@style/FontE" />
+                    <TextView android:layout_gravity="center_horizontal" android:id="@id/tv_plist" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="栏目" style="@style/FontE" />
+                </LinearLayout>
+                <ImageView android:id="@id/plist_layout_line" android:background="#ffff5500" android:layout_width="@dimen/sticky_wrapper_tab_line_width" android:layout_height="2.0dip" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/home_header_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/left_icon" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:src="@drawable/main_logo" android:layout_centerVertical="true" />
+    <ImageView android:id="@id/back_img" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:src="@drawable/title_back_selector" android:layout_centerVertical="true" />
+    <TextView android:textSize="20.0sp" android:textColor="#ffffffff" android:gravity="center" android:id="@id/txt_title" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="土豆会员" android:singleLine="true" android:layout_centerInParent="true" />
+    <ImageView android:id="@id/cancel_img" android:paddingLeft="20.0dip" android:paddingTop="10.0dip" android:paddingRight="20.0dip" android:paddingBottom="10.0dip" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/cancel_icon" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    <TextView android:textColor="@color/tudou_title_right_seletor" android:gravity="center_vertical" android:layout_gravity="center|right" android:id="@id/title_right_text" android:paddingLeft="10.0dip" android:paddingRight="20.0dip" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/play_history_state_edit" android:layout_alignParentRight="true" style="@style/FontG" />
+</RelativeLayout>

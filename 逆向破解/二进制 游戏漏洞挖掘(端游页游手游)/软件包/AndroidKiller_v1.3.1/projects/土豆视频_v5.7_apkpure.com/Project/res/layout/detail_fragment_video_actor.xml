@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="fill_parent" android:onClick="interceptClickEvent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:layout_gravity="bottom" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TextView android:textSize="15.0dip" android:textColor="#ff333333" android:id="@id/detail_fragment_video_actor_desc_getheight" android:paddingLeft="18.0dip" android:paddingTop="13.0dip" android:paddingRight="18.0dip" android:paddingBottom="1.0dip" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    </ScrollView>
+    <FrameLayout android:id="@id/detail_fragment_video_actor_title_layout" android:layout_width="fill_parent" android:layout_height="48.0dip">
+        <View android:background="#ffff6600" android:layout_width="3.0dip" android:layout_height="15.0dip" android:layout_marginTop="16.5dip" />
+        <TextView android:textSize="17.0sp" android:textColor="#ff333333" android:gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="16.0dip" android:text="明星" />
+        <ImageView android:layout_gravity="right" android:id="@id/detail_fragment_video_actor_btn_close" android:layout_width="60.0dip" android:layout_height="fill_parent" android:src="@drawable/detail_bottom_bar_close" android:scaleType="center" />
+    </FrameLayout>
+    <View android:background="#ffe4e4e4" android:layout_width="fill_parent" android:layout_height="0.30000007dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="48.0dip" android:layout_marginRight="10.0dip" />
+    <FrameLayout android:paddingTop="48.299988dip" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ScrollView android:id="@id/detail_fragment_video_actor_content" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <ImageView android:id="@id/detail_fragment_video_actor_pic" android:background="@drawable/detail_bottom_comment_bar_switch_item_default" android:padding="1.0dip" android:layout_width="60.0dip" android:layout_height="60.0dip" android:layout_marginLeft="14.0dip" android:layout_marginTop="14.0dip" android:scaleType="fitXY" />
+                    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="22.0dip" android:layout_marginRight="18.0dip">
+                        <TextView android:textSize="17.0sp" android:textColor="#ff3d3d3d" android:ellipsize="end" android:id="@id/detail_fragment_video_actor_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+                        <TextView android:textSize="13.0sp" android:textColor="#ff808080" android:id="@id/detail_fragment_video_actor_job" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:layout_marginTop="4.0dip" android:singleLine="true" android:layout_toRightOf="@id/detail_fragment_video_actor_name" />
+                        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:layout_below="@id/detail_fragment_video_actor_name">
+                            <TextView android:textSize="13.0sp" android:textColor="#ff808080" android:id="@id/detail_fragment_video_actor_area" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+                            <ImageView android:layout_gravity="center_vertical" android:background="@drawable/detail_fragment_video_actor_detail_split" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginRight="8.0dip" android:scaleType="fitXY" />
+                            <TextView android:textSize="13.0sp" android:textColor="#ff808080" android:id="@id/detail_fragment_video_actor_birthday" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+                            <ImageView android:layout_gravity="center_vertical" android:background="@drawable/detail_fragment_video_actor_detail_split" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginRight="8.0dip" android:scaleType="fitXY" />
+                            <TextView android:textSize="13.0sp" android:textColor="#ff808080" android:id="@id/detail_fragment_video_actor_constellation" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+                        </LinearLayout>
+                    </RelativeLayout>
+                </LinearLayout>
+                <TextView android:textSize="15.0dip" android:textColor="#ff333333" android:ellipsize="end" android:id="@id/detail_fragment_video_actor_desc" android:paddingLeft="18.0dip" android:paddingTop="13.0dip" android:paddingRight="18.0dip" android:paddingBottom="1.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="2000" />
+                <ImageView android:id="@id/detail_fragment_video_actor_btn_expand_icon" android:layout_width="fill_parent" android:layout_height="22.0dip" android:src="@drawable/detail_bottom_bar_expand_down" android:scaleType="center" />
+                <View android:background="#ffe4e4e4" android:layout_width="fill_parent" android:layout_height="0.30000007dip" />
+                <View android:background="#fff0f0f0" android:layout_width="fill_parent" android:layout_height="10.0dip" />
+                <View android:background="#ffe4e4e4" android:layout_width="fill_parent" android:layout_height="0.30000007dip" />
+                <android.support.v7.widget.RecyclerView android:id="@id/detail_fragment_video_actor_categorys" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="46.0dip" android:layout_marginLeft="16.0dip" android:layout_marginRight="16.0dip" android:overScrollMode="never" />
+                <android.support.v7.widget.RecyclerView android:id="@id/detail_fragment_video_actor_cat_videos" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="130.0dip" android:overScrollMode="never" />
+                <View android:background="#ffe4e4e4" android:layout_width="fill_parent" android:layout_height="0.30000007dip" />
+                <View android:background="#fff0f0f0" android:layout_width="fill_parent" android:layout_height="10.0dip" />
+                <View android:background="#ffe4e4e4" android:layout_width="fill_parent" android:layout_height="0.30000007dip" />
+                <FrameLayout android:id="@id/detail_fragment_video_actor_correlation_layout" android:layout_width="fill_parent" android:layout_height="48.0dip">
+                    <View android:background="#ffff6600" android:layout_width="3.0dip" android:layout_height="15.0dip" android:layout_marginTop="16.5dip" />
+                    <TextView android:textSize="17.0sp" android:textColor="#ff333333" android:gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="16.0dip" android:text="相关视频" />
+                </FrameLayout>
+                <android.support.v7.widget.RecyclerView android:id="@id/detail_fragment_video_actor_correlation" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="130.0dip" android:overScrollMode="never" />
+            </LinearLayout>
+        </ScrollView>
+        <com.youku.widget.HintView android:id="@id/detail_fragment_video_actor_hintview" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <include android:id="@id/detail_fragment_video_actor_loading" layout="@layout/detail_loading" />
+    </FrameLayout>
+</FrameLayout>

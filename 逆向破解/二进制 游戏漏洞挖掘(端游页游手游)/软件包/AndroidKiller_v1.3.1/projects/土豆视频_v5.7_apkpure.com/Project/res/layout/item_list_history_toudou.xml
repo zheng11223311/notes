@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tudou="http://youku.com/tudou">
+    <RelativeLayout android:background="@drawable/listview_item_bg" android:layout_width="fill_parent" android:layout_height="@dimen/history_item_heigth">
+        <RelativeLayout android:id="@id/item_poster_layout" android:paddingLeft="@dimen/history_item_padding_left" android:paddingTop="@dimen/history_item_padding_top" android:paddingRight="@dimen/history_item_padding_top" android:paddingBottom="@dimen/history_item_padding_top" android:layout_width="@dimen/history_item_imgae_width" android:layout_height="@dimen/history_item_imgae_heigth" android:layout_centerVertical="true">
+            <ImageView android:id="@id/thumbnail" android:background="@drawable/hengtu_moren" android:layout_width="fill_parent" android:layout_height="wrap_content" android:scaleType="fitXY" android:layout_centerHorizontal="true" tudou:pheight="9" tudou:pwidth="16" />
+            <TextView android:gravity="bottom|center|right" android:id="@id/stripe_top" android:background="@drawable/yaofeng" android:paddingRight="6.0dip" android:paddingBottom="4.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="10:30" android:maxLines="1" android:layout_alignBottom="@id/thumbnail" style="@style/search_man_short" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/item_description" android:paddingTop="@dimen/history_item_padding_top" android:paddingBottom="@dimen/history_item_padding_top" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_toLeftOf="@id/edit_img" android:layout_toRightOf="@id/item_poster_layout" android:layout_alignTop="@id/item_poster_layout" android:layout_alignBottom="@id/item_poster_layout" android:layout_centerVertical="true">
+            <TextView android:ellipsize="end" android:id="@id/history_item_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="XXXXXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" android:maxLines="2" style="@style/history_item_title_text_attri" />
+            <RelativeLayout android:id="@id/item_description" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignLeft="@id/history_item_title" android:layout_alignParentBottom="true">
+                <ImageView android:id="@id/history_item_devicetype" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+                <TextView android:id="@id/history_item_play_to" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="观看至：XXXXX" android:layout_toRightOf="@id/history_item_devicetype" android:layout_centerVertical="true" style="@style/history_item_descr_text_attri" />
+            </RelativeLayout>
+            <TextView android:id="@id/history_item_play_date" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2天前" style="@style/history_favourite_item_descr_text_attri" />
+        </RelativeLayout>
+        <FrameLayout android:id="@id/edit_img" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/space_arrow_margin_right" android:layout_marginRight="@dimen/space_arrow_margin_right" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+            <ImageView android:layout_gravity="center" android:id="@id/img_space_arrow" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <ImageView android:layout_gravity="center" android:id="@id/item_delete_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </FrameLayout>
+    </RelativeLayout>
+    <View android:id="@id/cutline" android:background="#ffd9d9d9" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="@dimen/history_item_padding_left" android:layout_marginRight="@dimen/history_item_padding_top" />
+</LinearLayout>

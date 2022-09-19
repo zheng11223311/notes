@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/RegistRoot" android:background="@drawable/app_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tudou="http://youku.com/tudou">
+    <include android:id="@id/app_title" android:layout_width="fill_parent" android:layout_height="@dimen/tudou_top_bar_height" layout="@layout/app_title" />
+    <ScrollView android:scrollbarThumbVertical="@drawable/null_drawable" android:id="@id/RegistScrollRoot" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/app_title">
+        <RelativeLayout android:paddingLeft="@dimen/login_layout_Margin_right_left" android:paddingTop="@dimen/login_layout_Margin_top" android:paddingRight="@dimen/login_layout_Margin_right_left" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:orientation="vertical" android:id="@id/edit_layout" android:layout_width="fill_parent" android:layout_height="144.0dip">
+                <AutoCompleteTextView android:gravity="center_vertical" android:id="@id/regist_email" android:background="@drawable/zhuce_shang" android:paddingLeft="@dimen/login_edit_padding_left" android:paddingRight="@dimen/login_edit_padding_right" android:layout_width="fill_parent" android:layout_height="fill_parent" android:hint="@string/regist_user_email_hint" android:singleLine="true" android:layout_weight="1.0" style="@style/edit_txt" />
+                <EditText android:gravity="center_vertical" android:id="@id/regist_name" android:background="@drawable/zhuce_zhong" android:paddingLeft="@dimen/login_edit_padding_left" android:paddingRight="@dimen/login_edit_padding_right" android:layout_width="fill_parent" android:layout_height="fill_parent" android:hint="@string/regist_user_name_hint" android:singleLine="true" android:layout_weight="1.0" style="@style/edit_txt" />
+                <LinearLayout android:orientation="horizontal" android:id="@id/pwd_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+                    <EditText android:gravity="center_vertical" android:id="@id/regist_pwd1" android:background="@drawable/zhuce_xia_zuo" android:paddingLeft="@dimen/login_edit_padding_left" android:layout_width="250.0dip" android:layout_height="fill_parent" android:hint="@string/password_hint" android:singleLine="true" android:inputType="textPassword" style="@style/edit_txt" />
+                    <TextView android:gravity="center" android:id="@id/showPass" android:background="@drawable/zhuce_xia_you" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="显示" style="@style/edit_btn" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/cancel_layout" android:layout_width="fill_parent" android:layout_height="144.0dip">
+                <ImageView android:layout_gravity="right" android:id="@id/cancel1" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/search_ic_close_bak" android:layout_weight="1.0" />
+                <ImageView android:layout_gravity="right" android:id="@id/cancel2" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/search_ic_close_bak" android:layout_weight="1.0" />
+                <LinearLayout android:gravity="right" android:layout_width="250.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+                    <ImageView android:id="@id/cancel3" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/search_ic_close_bak" />
+                </LinearLayout>
+            </LinearLayout>
+            <TextView android:gravity="center" android:id="@id/user_regist" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_marginTop="18.0dip" android:text="完成注册" android:layout_below="@id/edit_layout" style="@style/login_button_txt_gray" />
+            <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/agreelayout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="13.0dip" android:layout_below="@id/user_regist" android:layout_alignParentRight="true">
+                <CheckBox android:id="@id/cbxAgreement" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" style="@style/loginCheckBoxR" />
+                <TextView android:id="@id/agreement" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="注册协议" style="@style/phone_btn_txt" />
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

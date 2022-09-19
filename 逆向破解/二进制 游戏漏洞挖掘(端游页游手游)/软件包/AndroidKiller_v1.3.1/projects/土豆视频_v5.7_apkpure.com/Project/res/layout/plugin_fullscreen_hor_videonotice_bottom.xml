@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.youku.phone.detail.plugin.fullscreen.VideoNoticeBottomView android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/plugin_fullscreen_hor_videonotice_bottom_image" android:layout_width="58.0dip" android:layout_height="36.0dip" android:scaleType="fitXY" />
+    <TextSwitcher android:id="@id/plugin_fullscreen_hor_videonotice_bottom_switcher" android:background="@drawable/plugin_fullscreen_hor_videonotice_background" android:paddingRight="8.0dip" android:layout_width="wrap_content" android:layout_height="36.0dip" android:layout_marginLeft="42.0dip" />
+</com.youku.phone.detail.plugin.fullscreen.VideoNoticeBottomView>

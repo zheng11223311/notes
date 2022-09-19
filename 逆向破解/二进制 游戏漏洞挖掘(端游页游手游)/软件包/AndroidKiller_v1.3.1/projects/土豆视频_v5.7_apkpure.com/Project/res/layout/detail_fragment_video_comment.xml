@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="fill_parent" android:onClick="interceptClickEvent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:detail="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:id="@id/detail_fragment_video_comment_title_layout" android:layout_width="fill_parent" android:layout_height="48.0dip">
+        <View android:background="#ffff6600" android:layout_width="3.0dip" android:layout_height="15.0dip" android:layout_marginTop="16.5dip" />
+        <TextView android:textSize="17.0sp" android:textColor="#ff333333" android:gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="16.0dip" android:text="评论" />
+        <ImageView android:layout_gravity="right" android:id="@id/detail_fragment_video_comment_btn_close" android:layout_width="60.0dip" android:layout_height="fill_parent" android:src="@drawable/detail_bottom_bar_close" android:scaleType="center" />
+    </FrameLayout>
+    <View android:background="#ffe4e4e4" android:layout_width="fill_parent" android:layout_height="0.30000007dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="48.0dip" android:layout_marginRight="10.0dip" />
+    <ImageView android:id="@id/detail_fragment_video_comment_user_pic" android:background="@drawable/detail_bottom_comment_bar_switch_item_default" android:padding="1.0dip" android:layout_width="40.0dip" android:layout_height="40.0dip" android:layout_marginLeft="12.0dip" android:layout_marginTop="63.0dip" android:scaleType="fitXY" />
+    <ImageView android:id="@id/detail_fragment_video_comment_vuser_mark" android:layout_width="12.0dip" android:layout_height="12.0dip" android:layout_marginLeft="40.0dip" android:layout_marginTop="90.0dip" android:src="@drawable/detail_vuser_mark" android:scaleType="fitXY" />
+    <TextView android:textSize="15.0sp" android:textColor="#ffa4a4a4" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/detail_fragment_video_comment_user_input" android:background="@drawable/detail_bottom_comment_bar_input" android:paddingLeft="18.0dip" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginLeft="67.0dip" android:layout_marginTop="63.0dip" android:layout_marginRight="13.0dip" android:text="大家一起来吐槽" android:singleLine="true" />
+    <FrameLayout android:paddingLeft="10.0dip" android:paddingTop="1.0dip" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="118.0dip">
+        <com.handmark.pulltorefresh.library.PullToRefreshListView android:id="@id/detail_fragment_video_comment_list" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@android:color/transparent" android:divider="@null" android:dividerHeight="0.0px" detail:ptrMode="both" />
+        <com.youku.widget.HintView android:id="@id/detail_fragment_video_comment_hintview" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </FrameLayout>
+</FrameLayout>

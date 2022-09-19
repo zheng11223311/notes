@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.tudou.detail.widget.VideoSelectnessBar android:orientation="vertical" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:onClick="interceptClickEvent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tudou="http://youku.com/tudou">
+    <FrameLayout android:id="@id/detail_bottom_selectness_bar_title_layout" android:layout_width="fill_parent" android:layout_height="48.0dip">
+        <View android:background="#ffe4e4e4" android:layout_width="fill_parent" android:layout_height="1.0px" />
+        <View android:background="#ffff6600" android:layout_width="3.0dip" android:layout_height="15.0dip" android:layout_marginTop="16.5dip" />
+        <TextView android:textSize="17.0sp" android:textColor="#ff1f1f1f" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/detail_bottom_selectness_bar_title" android:layout_width="wrap_content" android:layout_height="48.0dip" android:layout_marginLeft="16.0dip" android:layout_marginRight="16.0dip" android:singleLine="true" />
+    </FrameLayout>
+    <TextView android:textSize="14.0sp" android:textColor="#ffa4a4a4" android:ellipsize="end" android:gravity="center|right" android:layout_gravity="right" android:id="@id/detail_bottom_selectness_bar_total" android:layout_width="wrap_content" android:layout_height="48.0dip" android:layout_marginRight="31.0dip" android:maxWidth="140.0dip" android:singleLine="true" />
+    <ImageView android:layout_gravity="right" android:paddingLeft="7.0dip" android:paddingRight="18.0dip" android:layout_width="31.0dip" android:layout_height="48.0dip" android:src="@drawable/detail_bottom_bar_expand_right" android:scaleType="fitCenter" />
+    <android.support.v7.widget.RecyclerView android:id="@id/detail_bottom_selectness_bar_cards" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="128.0dip" android:layout_marginTop="48.299988dip" android:overScrollMode="never" />
+    <View android:layout_gravity="bottom" android:background="#ffe4e4e4" android:layout_width="fill_parent" android:layout_height="1.0px" />
+</com.tudou.detail.widget.VideoSelectnessBar>

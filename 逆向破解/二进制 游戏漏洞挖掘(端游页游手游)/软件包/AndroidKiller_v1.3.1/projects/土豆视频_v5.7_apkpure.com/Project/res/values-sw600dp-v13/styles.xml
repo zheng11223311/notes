@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="game_center_NoResultStyle">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="recommend_home_title">
+        <item name="android:textSize">20.0dip</item>
+        <item name="android:textColor">#ff333333</item>
+    </style>
+</resources>

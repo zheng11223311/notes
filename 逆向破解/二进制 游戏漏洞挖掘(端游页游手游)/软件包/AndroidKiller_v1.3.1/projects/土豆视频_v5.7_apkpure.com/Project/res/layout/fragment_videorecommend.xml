@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/title_videorecommend" android:layout_width="fill_parent" android:layout_height="@dimen/tudou_top_bar_height" layout="@layout/app_title" />
+    <RelativeLayout android:id="@id/layout_login" android:background="@drawable/pic_bg" android:layout_width="fill_parent" android:layout_height="@dimen/tudou_top_bar_height" android:layout_below="@id/title_videorecommend">
+        <TextView android:gravity="center" android:id="@id/tv_login" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/recommend_video_login_margin_right" android:text="@string/more_video_if_logined" android:layout_alignParentLeft="true" style="@style/Font6_gray" />
+        <Button android:textColor="@color/white" android:gravity="center" android:id="@id/btn_login" android:background="#ffff6600" android:layout_width="@dimen/recommend_video_login_width" android:layout_height="@dimen/recommend_video_login_height" android:layout_marginRight="@dimen/recommend_video_login_margin_right" android:text="登录" android:layout_alignParentRight="true" style="@style/Font6_white" />
+    </RelativeLayout>
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="@dimen/indicator_right_padding" android:layout_marginBottom="@dimen/indicator_right_padding" android:layout_below="@id/layout_login">
+        <RelativeLayout android:orientation="vertical" android:id="@id/layout_video_recommend" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <com.youku.widget.SteadyGridView android:id="@id/lv_recommend_video" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/recommend_video_login_margin_right" android:layout_marginRight="@dimen/recommend_video_login_margin_right" android:horizontalSpacing="6.0dip" android:verticalSpacing="6.0dip" android:numColumns="2" android:dividerHeight="0.0dip" />
+            <Button android:textColor="@color/login_underline_color" android:gravity="center" android:id="@id/btn_app_recommend" android:background="@drawable/pic_bg" android:layout_width="200.0dip" android:layout_height="45.0dip" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" android:text="@string/home_more_recommend" android:layout_below="@id/lv_recommend_video" android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+    </ScrollView>
+    <RelativeLayout android:id="@id/layout_no_video_recommend" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="@dimen/indicator_right_padding" android:layout_marginBottom="@dimen/indicator_right_padding" android:layout_below="@id/layout_login">
+        <ImageView android:id="@id/img_no_video_recommend" android:layout_width="@dimen/noresult_img_width" android:layout_height="@dimen/noresult_img_height" android:src="@drawable/prompt_logo" android:scaleType="centerInside" android:layout_centerInParent="true" />
+        <TextView android:id="@id/tv_no_video_recommend" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/noresult_text_margin_top" android:text="@string/no_video_recommend" android:layout_below="@id/img_no_video_recommend" android:layout_centerHorizontal="true" style="@style/noresult_text_style" />
+    </RelativeLayout>
+</RelativeLayout>

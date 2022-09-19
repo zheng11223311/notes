@@ -1,0 +1,70 @@
+.class final Lcom/corncop/capricornus/zip/ZipUtil$1;
+.super Ljava/lang/Object;
+.source "ZipUtil.java"
+
+# interfaces
+.implements Lcom/corncop/capricornus/zip/NameMapper;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/corncop/capricornus/zip/ZipUtil;->pack(Ljava/io/File;Ljava/io/File;Z)V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x8
+    name = null
+.end annotation
+
+
+# instance fields
+.field final synthetic val$parentName:Ljava/lang/String;
+
+
+# direct methods
+.method constructor <init>(Ljava/lang/String;)V
+    .locals 0
+
+    .prologue
+    .line 1098
+    iput-object p1, p0, Lcom/corncop/capricornus/zip/ZipUtil$1;->val$parentName:Ljava/lang/String;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public map(Ljava/lang/String;)Ljava/lang/String;
+    .locals 2
+    .param p1, "name"    # Ljava/lang/String;
+
+    .prologue
+    .line 1100
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v1, p0, Lcom/corncop/capricornus/zip/ZipUtil$1;->val$parentName:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "/"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method

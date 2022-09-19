@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="#fff0f0f0" android:layout_width="@dimen/tudou_normal_dialog_width" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textAppearance="@style/tudou_dialog_title" android:gravity="center_vertical" android:layout_gravity="left" android:id="@id/title" android:paddingLeft="@dimen/tudou_normal_dialog_btn_marginLeft" android:paddingRight="@dimen/tudou_normal_dialog_btn_marginLeft" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/tudou_normal_dialog_btn_marginTop" android:text="TextView" />
+    <TextView android:textAppearance="@style/tudou_dialog_msg" android:layout_gravity="center_horizontal" android:id="@id/message" android:paddingLeft="@dimen/tudou_normal_dialog_btn_marginLeft" android:paddingRight="@dimen/tudou_normal_dialog_btn_marginLeft" android:scrollbars="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/tudou_normal_dialog_btn_marginTop" android:text="TextView" android:maxLines="10" />
+    <RelativeLayout android:paddingLeft="@dimen/tudou_normal_dialog_btn_marginLeft" android:paddingRight="@dimen/tudou_normal_dialog_btn_marginLeft" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/tudou_normal_dialog_btn_marginTop" android:layout_marginBottom="@dimen/tudou_normal_dialog_btn_marginTop">
+        <ProgressBar android:id="@id/progress" android:layout_width="fill_parent" android:layout_height="3.0dip" android:progressDrawable="@drawable/download_apk_process_ram" style="?android:attr/progressBarStyleHorizontal" />
+        <TextView android:id="@id/progress_number" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="TextView" android:layout_below="@id/progress" android:layout_alignParentLeft="true" style="@style/tudou_dialog_progress" />
+        <TextView android:id="@id/progress_percent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="TextView" android:layout_below="@id/progress" android:layout_alignParentRight="true" style="@style/tudou_dialog_progress" />
+    </RelativeLayout>
+    <View android:id="@id/driver_big" android:background="#ffd9d9d9" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginTop="@dimen/tudou_normal_dialog_btn_marginTop" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <Button android:textSize="16.0sp" android:textColor="#ffff6600" android:id="@id/negtive_btn1" android:background="#fff0f0f0" android:layout_width="0.0dip" android:layout_height="@dimen/tudou_normal_dialog_btn_height" android:layout_weight="1.0" android:layout_alignParentRight="true" />
+        <View android:id="@id/two_driver1" android:background="#ffd9d9d9" android:layout_width="1.0px" android:layout_height="@dimen/tudou_normal_dialog_btn_height" />
+        <Button android:textSize="16.0sp" android:textColor="#ffff6600" android:id="@id/middle_btn1" android:background="#fff0f0f0" android:layout_width="0.0dip" android:layout_height="@dimen/tudou_normal_dialog_btn_height" android:layout_weight="1.0" />
+        <View android:id="@id/one_driver1" android:background="#ffd9d9d9" android:layout_width="1.0px" android:layout_height="@dimen/tudou_normal_dialog_btn_height" />
+        <Button android:textSize="16.0sp" android:textColor="#ffff6600" android:id="@id/positive_btn1" android:background="#fff0f0f0" android:layout_width="0.0dip" android:layout_height="@dimen/tudou_normal_dialog_btn_height" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/rl_view" android:layout_width="153.0dip" android:layout_height="123.0dip" android:layout_marginRight="1.0dip">
+        <com.youku.widget.YoukuImageView android:id="@id/iv_icon" android:background="@drawable/hengtu_moren" android:layout_width="fill_parent" android:layout_height="wrap_content" android:scaleType="fitXY" android:layout_centerHorizontal="true" />
+        <ImageView android:id="@id/top_mark" android:visibility="gone" android:layout_width="32.0dip" android:layout_height="17.0dip" android:layout_marginTop="4.0dip" android:layout_marginRight="4.0dip" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+        <TextView android:textSize="14.0dip" android:textColor="#ff3c3c3c" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/tv_title_1line" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:layout_marginRight="10.0dip" android:text="默认" android:singleLine="true" android:layout_below="@id/iv_icon" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:paddingLeft="18.0dip" android:paddingRight="18.0dip" android:layout_width="fill_parent" android:layout_height="57.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/detail_fragment_video_vote_detail_item_img_bg" android:paddingRight="10.0dip" android:layout_width="50.0dip" android:layout_height="40.0dip" android:src="@drawable/detail_fragment_video_vote_detail_item_img_bg" android:scaleType="fitStart" android:layout_centerVertical="true" />
+    <ImageView android:id="@id/detail_fragment_video_vote_detail_item_img" android:paddingRight="10.0dip" android:visibility="gone" android:layout_width="50.0dip" android:layout_height="40.0dip" android:scaleType="fitStart" android:layout_centerVertical="true" />
+    <TextView android:textSize="13.0dip" android:textColor="#ffff6600" android:id="@id/detail_fragment_video_vote_detail_item_percent" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    <TextView android:textSize="15.0dip" android:textColor="#ff333333" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/detail_fragment_video_vote_detail_item_content" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:singleLine="true" android:layout_toLeftOf="@id/detail_fragment_video_vote_detail_item_percent" android:layout_toRightOf="@id/detail_fragment_video_vote_detail_item_img_bg" />
+    <View android:id="@id/detail_fragment_video_vote_detail_item_progress" android:background="#ffff6600" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="2.0dip" android:layout_alignParentBottom="true" />
+    <ImageView android:background="#ffe4e4e4" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_alignParentBottom="true" />
+</RelativeLayout>

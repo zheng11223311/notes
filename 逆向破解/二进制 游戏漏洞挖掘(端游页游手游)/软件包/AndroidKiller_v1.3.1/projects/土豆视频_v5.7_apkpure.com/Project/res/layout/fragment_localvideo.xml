@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/LoginRoot" android:background="@drawable/app_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tudou="http://youku.com/tudou">
+    <include android:id="@id/app_title" android:layout_width="fill_parent" android:layout_height="@dimen/tudou_top_bar_height" layout="@layout/app_title" />
+    <ListView android:id="@id/localvideo" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@android:color/transparent" android:cacheColorHint="#00000000" android:divider="@null" android:layout_below="@id/app_title" />
+    <RelativeLayout android:orientation="vertical" android:id="@id/nolocalvideo" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="400.0dip" android:layout_below="@id/app_title" android:layout_centerInParent="true">
+        <ImageView android:id="@id/localvideo_none" android:layout_width="@dimen/noresult_img_width" android:layout_height="@dimen/noresult_img_height" android:src="@drawable/prompt_logo" android:scaleType="centerInside" android:layout_centerInParent="true" />
+        <TextView android:id="@id/no_localvideo_tips" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/noresult_text_margin_top" android:text="@string/no_localvideo" android:layout_below="@id/localvideo_none" android:layout_centerHorizontal="true" style="@style/noresult_text_style" />
+    </RelativeLayout>
+</RelativeLayout>

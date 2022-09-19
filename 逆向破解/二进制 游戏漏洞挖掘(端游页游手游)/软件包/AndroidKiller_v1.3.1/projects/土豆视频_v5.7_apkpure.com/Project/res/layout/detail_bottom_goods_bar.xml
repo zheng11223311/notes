@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.tudou.detail.widget.VideoGoodsBar android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="213.0dip" android:layout_marginTop="10.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:background="#ffff6600" android:layout_width="3.0dip" android:layout_height="15.0dip" android:layout_marginTop="16.5dip" />
+    <TextView android:textSize="17.0sp" android:textColor="#ff1f1f1f" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/detail_bottom_goods_bar_title" android:layout_width="wrap_content" android:layout_height="48.0dip" android:layout_marginLeft="16.0dip" android:maxWidth="165.0dip" android:text="陶陶" android:singleLine="true" />
+    <android.support.v7.widget.RecyclerView android:id="@id/detail_bottom_goods_bar_list" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="165.0dip" android:layout_marginTop="48.0dip" android:overScrollMode="never" />
+</com.tudou.detail.widget.VideoGoodsBar>

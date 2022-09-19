@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/transparent" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/rl_seek_top" android:background="@drawable/plug_small_name_bg" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_alignParentTop="true">
+        <com.youku.widget.AlwaysMarqueeTextView android:textColor="#ffffffff" android:ellipsize="marquee" android:gravity="center_vertical" android:id="@id/title" android:focusable="true" android:focusableInTouchMode="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="48.0dip" android:singleLine="true" android:layout_alignParentLeft="true" android:layout_centerVertical="true" android:marqueeRepeatLimit="1" style="@style/FontF" />
+    </RelativeLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/test_play_layout" android:background="@drawable/player_shape_background" android:paddingLeft="13.0dip" android:paddingTop="3.0dip" android:paddingRight="13.0dip" android:paddingBottom="3.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="-5.0dip" android:layout_below="@id/rl_seek_top" android:layout_centerHorizontal="true">
+        <TextView android:textColor="#ffffffff" android:layout_gravity="center_vertical" android:id="@id/vip_buy_tv1" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/FontE" />
+        <TextView android:textColor="#ffff6600" android:layout_gravity="center_vertical" android:id="@id/vip_buy_tv2" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/FontE" />
+    </LinearLayout>
+    <RelativeLayout android:id="@id/rl_seek" android:background="@drawable/time_bg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+        <ImageButton android:id="@id/ib_detail_play_full" android:background="@android:color/transparent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/details_full_screen_icon" android:scaleType="fitCenter" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        <LinearLayout android:id="@id/detail_play_bottom_left" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:layout_centerVertical="true">
+            <ImageView android:id="@id/small_play" android:background="@drawable/details_play_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+        <RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_toLeftOf="@id/ib_detail_play_full" android:layout_toRightOf="@id/detail_play_bottom_left" android:layout_centerVertical="true">
+            <LinearLayout android:gravity="center" android:id="@id/progress_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_centerVertical="true">
+                <SeekBar android:layout_gravity="center" android:id="@id/sb_detail_play_progress" android:paddingLeft="15.0dip" android:paddingRight="15.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:progressDrawable="@drawable/progress_holo_light" android:thumb="@drawable/details_spot_icon" android:layout_centerVertical="true" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:id="@id/time_layout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:layout_marginRight="15.0dip" android:layout_below="@id/progress_layout" android:layout_alignParentRight="true">
+                <TextView android:textSize="10.0sp" android:textColor="#ffffffff" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/small_time" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                <TextView android:textSize="10.0sp" android:textColor="#ff969696" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=" / " />
+                <TextView android:textSize="10.0sp" android:textColor="#ff969696" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/small_total_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toLeftOf="@id/ib_detail_play_full" android:layout_centerVertical="true" />
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+    <ImageButton android:layout_gravity="center_horizontal" android:id="@id/ib_detail_play_control" android:background="@android:color/transparent" android:padding="12.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/bigpause_icon" android:scaleType="center" android:layout_centerInParent="true" />
+</RelativeLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/filterLayout" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <RelativeLayout android:background="@color/channel_filter" android:layout_width="fill_parent" android:layout_height="@dimen/recommend_channel_cell_filterview_height">
+            <com.youku.widget.PageHorizontalScrollView android:id="@id/typescroll" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="@dimen/recommend_channel_cell_filterview_height" android:layout_marginLeft="20.0px" android:layout_marginRight="20.0px">
+                <LinearLayout android:gravity="center_vertical" android:id="@id/typelist" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            </com.youku.widget.PageHorizontalScrollView>
+            <ImageView android:id="@id/typelist_cover_left" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/channel_fliter_left" android:scaleType="fitXY" android:layout_alignParentLeft="true" />
+            <ImageView android:id="@id/typelist_cover_right" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/channel_fliter_right" android:scaleType="fitXY" android:layout_alignParentRight="true" />
+        </RelativeLayout>
+        <ImageView android:id="@id/channel_filter_line1" android:background="@drawable/channel_filter_line" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" />
+        <RelativeLayout android:background="@color/channel_filter" android:layout_width="fill_parent" android:layout_height="@dimen/recommend_channel_cell_filterview_height">
+            <com.youku.widget.PageHorizontalScrollView android:id="@id/areascroll" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="@dimen/recommend_channel_cell_filterview_height" android:layout_marginLeft="20.0px" android:layout_marginRight="20.0px">
+                <LinearLayout android:gravity="center_vertical" android:id="@id/arealist" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            </com.youku.widget.PageHorizontalScrollView>
+            <ImageView android:id="@id/arealist_cover_left" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/channel_fliter_left" android:scaleType="fitXY" android:layout_alignParentLeft="true" />
+            <ImageView android:id="@id/arealist_cover_right" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/channel_fliter_right" android:scaleType="fitXY" android:layout_alignParentRight="true" />
+        </RelativeLayout>
+        <ImageView android:id="@id/channel_filter_line2" android:background="@drawable/channel_filter_line" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" />
+        <RelativeLayout android:background="@color/channel_filter" android:layout_width="fill_parent" android:layout_height="@dimen/recommend_channel_cell_filterview_height">
+            <com.youku.widget.PageHorizontalScrollView android:id="@id/yearscroll" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="@dimen/recommend_channel_cell_filterview_height" android:layout_marginLeft="20.0px" android:layout_marginRight="20.0px">
+                <LinearLayout android:gravity="center_vertical" android:id="@id/yearlist" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            </com.youku.widget.PageHorizontalScrollView>
+            <ImageView android:id="@id/yearlist_cover_left" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/channel_fliter_left" android:scaleType="fitXY" android:layout_alignParentLeft="true" />
+            <ImageView android:id="@id/yearlist_cover_right" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/channel_fliter_right" android:scaleType="fitXY" android:layout_alignParentRight="true" />
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="#ffe6e6e6" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/cachingListTitle" layout="@layout/tudou_title" />
+    <com.youku.widget.HintView android:id="@id/CachingNone" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/cachingListTitle" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/cachingAllEdit" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="@dimen/caching_all_edit_heigth" android:layout_marginLeft="@dimen/caching_all_edit_mlr" android:layout_marginTop="@dimen/caching_all_edit_mtb" android:layout_marginRight="@dimen/caching_all_edit_mlr" android:layout_below="@id/cachingListTitle">
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/btnCachingAllStart" android:background="@drawable/btn_white_selected" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/caching_all_edit_mlr" android:src="@drawable/caching_all_start" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="全部开始" style="@style/search_app_need" />
+        </LinearLayout>
+        <View android:background="#ffd0d0d0" android:layout_width="1.0px" android:layout_height="fill_parent" />
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/btnCachingAllPause" android:background="@drawable/btn_white_selected" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/caching_all_edit_mlr" android:src="@drawable/caching_all_pause" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="全部暂停" style="@style/search_app_need" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/cacheListview" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="@dimen/caching_all_edit_mtb" android:layout_below="@id/cachingAllEdit">
+        <ListView android:id="@id/listview" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/caching_all_edit_mlr" android:layout_marginRight="@dimen/caching_all_edit_mlr" android:listSelector="#00000000" android:cacheColorHint="#00000000" android:divider="#ffd0d0d0" android:dividerHeight="1.0px" />
+        <com.youku.widget.PageBottomDeleteLayout android:id="@id/listviewp" android:layout_width="fill_parent" android:layout_height="@dimen/cached_delete_ll_height" />
+    </LinearLayout>
+</RelativeLayout>

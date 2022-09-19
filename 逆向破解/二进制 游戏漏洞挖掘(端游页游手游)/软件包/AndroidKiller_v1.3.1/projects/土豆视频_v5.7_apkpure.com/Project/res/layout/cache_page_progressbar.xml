@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/history_backbgcolor" android:layout_width="fill_parent" android:layout_height="@dimen/cache_folder_item_progress_height"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:id="@id/topDriver" android:background="#ffe5e5e5" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_alignParentTop="true" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="15.0dip" android:layout_marginRight="15.0dip" android:layout_below="@id/topDriver" android:layout_centerInParent="true">
+        <TextView android:id="@id/txtMemUsed" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/cached_progress_mbt" android:layout_alignRight="@id/mem_used" android:layout_alignParentRight="true" android:layout_centerVertical="true" style="@style/cache_progress_mem_used" />
+        <ProgressBar android:id="@id/memUsed" android:layout_width="fill_parent" android:layout_height="2.0dip" android:layout_marginTop="4.0dip" android:progressDrawable="@drawable/download_process_80ram" android:layout_centerInParent="true" style="?android:attr/progressBarStyleHorizontal" />
+    </LinearLayout>
+</RelativeLayout>

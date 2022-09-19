@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<level-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/lvip_1_white_bg" android:maxLevel="1" />
+    <item android:drawable="@drawable/lvip_2_white_bg" android:maxLevel="2" />
+    <item android:drawable="@drawable/lvip_3_white_bg" android:maxLevel="3" />
+    <item android:drawable="@drawable/lvip_4_white_bg" android:maxLevel="4" />
+    <item android:drawable="@drawable/lvip_5_white_bg" android:maxLevel="5" />
+    <item android:drawable="@drawable/lvip_6_white_bg" android:maxLevel="6" />
+    <item android:drawable="@drawable/lvip_7_white_bg" android:maxLevel="7" />
+</level-list>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tudou="http://youku.com/tudou">
+    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+        <TextView android:id="@id/printtest" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/new_detail_get_data_fail_text" style="@style/detail_get_fail_text" />
+        <TextView android:id="@id/clicktext" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/new_detail_get_data_fail_btn_text" style="@style/detail_get_fail_text_btn" />
+    </LinearLayout>
+    <com.youku.widget.Loading android:id="@id/no_relate_video_loading" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" />
+</RelativeLayout>

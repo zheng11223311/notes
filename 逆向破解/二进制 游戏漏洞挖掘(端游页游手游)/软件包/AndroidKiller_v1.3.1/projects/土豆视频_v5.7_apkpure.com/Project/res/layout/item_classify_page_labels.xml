@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="10.0dip">
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="40.0dip">
+            <RelativeLayout android:id="@id/rl_up_one_view" android:background="@drawable/classify_feature_item_bg" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginRight="1.0dip" android:layout_weight="1.0">
+                <ImageView android:id="@id/iv_up_one_mark" android:background="@drawable/right_up_mark" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+                <LinearLayout android:id="@id/ll_up_one_view" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_centerVertical="true">
+                    <ImageView android:layout_gravity="center_vertical" android:id="@id/iv_up_one_icon" android:background="@drawable/search_grey" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <TextView android:textSize="13.0sp" android:textColor="#ff000000" android:ellipsize="end" android:gravity="center" android:id="@id/tv_up_one_name" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="筛选" android:maxLines="1" />
+                </LinearLayout>
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/rl_up_two_view" android:background="@drawable/classify_feature_item_bg" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginRight="1.0dip" android:layout_weight="1.0">
+                <ImageView android:id="@id/iv_up_two_mark" android:background="@drawable/right_up_mark" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+                <LinearLayout android:id="@id/ll_up_two_view" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_centerVertical="true">
+                    <ImageView android:id="@id/iv_up_two_icon" android:background="@drawable/search_grey" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <TextView android:textSize="13.0sp" android:textColor="#ff000000" android:ellipsize="end" android:gravity="center" android:id="@id/tv_up_two_name" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="筛选" android:maxLines="1" />
+                </LinearLayout>
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/rl_up_three_view" android:background="@drawable/classify_feature_item_bg" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginRight="1.0dip" android:layout_weight="1.0">
+                <ImageView android:id="@id/iv_up_three_mark" android:background="@drawable/right_up_mark" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+                <LinearLayout android:id="@id/ll_up_three_view" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_centerVertical="true">
+                    <ImageView android:id="@id/iv_up_three_icon" android:background="@drawable/search_grey" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <TextView android:textSize="13.0sp" android:textColor="#ff000000" android:ellipsize="end" android:gravity="center" android:id="@id/tv_up_three_name" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="筛选" android:maxLines="1" />
+                </LinearLayout>
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/rl_up_four_view" android:background="@drawable/classify_feature_item_bg" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <ImageView android:id="@id/iv_up_four_mark" android:background="@drawable/right_up_mark" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+                <LinearLayout android:id="@id/ll_up_four_view" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_centerVertical="true">
+                    <ImageView android:id="@id/iv_up_four_icon" android:background="@drawable/search_grey" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <TextView android:textSize="13.0sp" android:textColor="#ff000000" android:ellipsize="end" android:gravity="center" android:id="@id/tv_up_four_name" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="筛选" android:maxLines="1" />
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout android:id="@id/ll_down_view" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginTop="1.0dip">
+            <RelativeLayout android:id="@id/rl_down_one_view" android:background="@drawable/classify_feature_item_bg" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginRight="1.0dip" android:layout_weight="1.0">
+                <ImageView android:id="@id/iv_down_one_mark" android:background="@drawable/right_up_mark" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+                <LinearLayout android:id="@id/ll_down_one_view" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_centerVertical="true">
+                    <ImageView android:id="@id/iv_down_one_icon" android:background="@drawable/search_grey" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <TextView android:textSize="13.0sp" android:textColor="#ff000000" android:ellipsize="end" android:gravity="center" android:id="@id/tv_down_one_name" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="筛选" android:maxLines="1" />
+                </LinearLayout>
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/rl_down_two_view" android:background="@drawable/classify_feature_item_bg" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginRight="1.0dip" android:layout_weight="1.0">
+                <ImageView android:id="@id/iv_down_two_mark" android:background="@drawable/right_up_mark" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+                <LinearLayout android:id="@id/ll_down_two_view" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_centerVertical="true">
+                    <ImageView android:id="@id/iv_down_two_icon" android:background="@drawable/search_grey" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <TextView android:textSize="13.0sp" android:textColor="#ff000000" android:ellipsize="end" android:gravity="center" android:id="@id/tv_down_two_name" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="筛选" android:maxLines="1" />
+                </LinearLayout>
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/rl_down_three_view" android:background="@drawable/classify_feature_item_bg" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginRight="1.0dip" android:layout_weight="1.0">
+                <ImageView android:id="@id/iv_down_three_mark" android:background="@drawable/right_up_mark" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+                <LinearLayout android:id="@id/ll_down_three_view" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_centerVertical="true">
+                    <ImageView android:id="@id/iv_down_three_icon" android:background="@drawable/search_grey" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <TextView android:textSize="13.0sp" android:textColor="#ff000000" android:ellipsize="end" android:gravity="center" android:id="@id/tv_down_three_name" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="筛选" android:maxLines="1" />
+                </LinearLayout>
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/rl_down_four_view" android:background="@drawable/classify_feature_item_bg" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <ImageView android:id="@id/iv_down_four_mark" android:background="@drawable/right_up_mark" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+                <LinearLayout android:gravity="center_vertical" android:id="@id/ll_down_four_view" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_centerVertical="true">
+                    <ImageView android:id="@id/iv_down_four_icon" android:background="@drawable/search_grey" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <TextView android:textSize="13.0sp" android:textColor="#ff000000" android:ellipsize="end" android:gravity="center" android:id="@id/tv_down_four_name" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="筛选" android:maxLines="1" />
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

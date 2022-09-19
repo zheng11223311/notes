@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="rc_is_show_warning_notification">true</bool>
+    <bool name="rc_play_audio_continuous">true</bool>
+    <bool name="rc_read_receipt">false</bool>
+</resources>

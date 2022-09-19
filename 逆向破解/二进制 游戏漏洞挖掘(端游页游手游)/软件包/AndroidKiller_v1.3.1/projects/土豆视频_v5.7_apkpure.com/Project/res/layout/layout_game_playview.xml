@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.youku.gamecenter.widgets.PlayViewBar android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="@dimen/game_detail_card_video_detail_title_height">
+        <RelativeLayout android:layout_gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" android:layout_centerVertical="true">
+            <ImageView android:id="@id/layout_game_playview_icon" android:background="@drawable/game_list_item_default" android:layout_width="@dimen/game_detail_card_subscribe_icon_width" android:layout_height="@dimen/game_detail_card_subscribe_icon_width" android:layout_marginLeft="@dimen/game_detail_card_subscribe_icon_marginLeft" android:layout_centerVertical="true" />
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/game_detail_card_subscribe_title__marginLeft" android:layout_toRightOf="@id/layout_game_playview_icon" android:layout_centerVertical="true">
+                <TextView android:textSize="@dimen/game_detail_card_title_size" android:textColor="#ff444444" android:ellipsize="end" android:id="@id/layout_game_playview_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" android:singleLine="true" />
+                <TextView android:textSize="@dimen/game_detail_card_subtitle_size" android:textColor="#ffb9b9b9" android:ellipsize="end" android:id="@id/layout_game_playview_recom" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/game_detail_card_subtitle_marginTop" android:maxWidth="1000.0dip" android:text="" android:singleLine="true" />
+            </LinearLayout>
+        </RelativeLayout>
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="2.0">
+            <View android:background="#ffe5e5e5" android:layout_width="1.0px" android:layout_height="@dimen/game_detail_card_subscribe_state_icon_width" />
+            <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <ImageView android:id="@id/layout_game_playview_clound" android:layout_width="@dimen/game_detail_card_subscribe_state_icon_width" android:layout_height="@dimen/game_detail_card_subscribe_state_icon_width" android:layout_marginRight="@dimen/game_detail_card_subscribe_state_icon_marginRight" android:src="@drawable/game_detail_card_rss" />
+                <TextView android:textSize="@dimen/game_detail_card_subscribe_dingyue_text_size" android:textColor="#ff02a2fe" android:id="@id/layout_game_playview_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="安装" />
+                <TextView android:textSize="@dimen/layout_game_playview_button_textsize" android:textColor="#ff999999" android:gravity="center" android:layout_gravity="center" android:id="@id/layout_game_playview_button_ing" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="下载中..." />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <View android:background="#ffc9c9c9" android:layout_width="fill_parent" android:layout_height="2.0px" />
+</com.youku.gamecenter.widgets.PlayViewBar>

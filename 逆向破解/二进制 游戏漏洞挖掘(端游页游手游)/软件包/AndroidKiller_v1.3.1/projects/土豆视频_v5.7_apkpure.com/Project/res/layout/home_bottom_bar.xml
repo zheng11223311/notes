@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:gravity="center" android:id="@id/home" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <ImageView android:id="@id/homeimg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/home_homepage_notselected" android:scaleType="fitEnd" android:layout_centerHorizontal="true" />
+        <TextView android:gravity="center" android:id="@id/homeText" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="精选" android:layout_below="@id/homeimg" style="@style/home_tab_text" />
+    </RelativeLayout>
+    <RelativeLayout android:gravity="center" android:id="@id/subscribe" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <ImageView android:id="@id/subscribeIcon" android:visibility="gone" android:layout_width="@dimen/red_tip_new" android:layout_height="@dimen/red_tip_new" android:src="@drawable/home_cue" android:layout_toRightOf="@id/subscribeimg" />
+        <ImageView android:id="@id/subscribeimg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/home_subscribe" android:scaleType="fitEnd" android:layout_centerHorizontal="true" />
+        <TextView android:gravity="center" android:id="@id/subscribeText" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="订阅" android:layout_below="@id/subscribeimg" style="@style/home_tab_text" />
+    </RelativeLayout>
+    <RelativeLayout android:gravity="center" android:id="@id/discovery" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <ImageView android:id="@id/discoveryImg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/home_find_notselected" android:scaleType="fitEnd" android:layout_centerHorizontal="true" />
+        <ImageView android:id="@id/discoveryIcon" android:visibility="gone" android:layout_width="@dimen/red_tip_new" android:layout_height="@dimen/red_tip_new" android:src="@drawable/home_cue" android:layout_toRightOf="@id/discoveryImg" />
+        <TextView android:gravity="center" android:id="@id/discoveryText" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="发现" android:layout_below="@id/discoveryImg" style="@style/home_tab_text" />
+    </RelativeLayout>
+    <RelativeLayout android:gravity="center" android:id="@id/mytudou" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <ImageView android:id="@id/mytudouimg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/home_mine_notselected" android:scaleType="fitEnd" android:layout_centerHorizontal="true" />
+        <ImageView android:id="@id/mineIcon" android:visibility="gone" android:layout_width="@dimen/red_tip_new" android:layout_height="@dimen/red_tip_new" android:src="@drawable/home_cue" android:layout_toRightOf="@id/mytudouimg" />
+        <TextView android:gravity="center" android:id="@id/mytudouText" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="我的" android:layout_below="@id/mytudouimg" style="@style/home_tab_text" />
+    </RelativeLayout>
+</LinearLayout>

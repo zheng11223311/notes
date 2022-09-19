@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/allchannel" android:background="@color/search_list_item_back_f1f1f1" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/activity_newchannel_title" android:layout_width="fill_parent" android:layout_height="48.0dip" layout="@layout/activity_newchannel_title" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/subchannel" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="@dimen/recommend_channel_cell_filterview_height" android:layout_below="@id/activity_newchannel_title">
+        <TextView android:id="@id/quality" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/recommend_channel_cell_filter_marginleftright" android:layout_marginTop="@dimen/recommend_channel_cell_filter_margintop" android:layout_marginRight="@dimen/recommend_channel_cell_filter_marginleftright" android:layout_marginBottom="@dimen/recommend_channel_cell_filter_marginbottom" android:text="最具人气" style="@style/channel_selectedfilter_word" />
+        <TextView android:id="@id/pubTime" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/recommend_channel_cell_filter_marginleftright" android:layout_marginTop="@dimen/recommend_channel_cell_filter_margintop" android:layout_marginRight="@dimen/recommend_channel_cell_filter_marginleftright" android:layout_marginBottom="@dimen/recommend_channel_cell_filter_marginbottom" android:text="最新发布" style="@style/channel_filter_word" />
+    </LinearLayout>
+    <ImageView android:id="@id/channel_subclass_cutline" android:background="#ffd9d9d9" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_below="@id/subchannel" />
+    <android.support.v4.view.ViewPager android:id="@id/vipviewpager" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/channel_subclass_cutline" />
+</RelativeLayout>

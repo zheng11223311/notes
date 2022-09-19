@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.tudou.detail.widget.DefinedRatioFrameLayout android:id="@id/detail_fullscreen_playlist_item_num_content" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="14.0sp" android:textColor="#c8cccccc" android:ellipsize="end" android:gravity="center" android:id="@id/detail_fullscreen_playlist_item_num_title" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <View android:background="#ff404040" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <View android:background="#ff404040" android:layout_width="1.0px" android:layout_height="fill_parent" />
+    <View android:layout_gravity="right" android:background="#ff404040" android:layout_width="1.0px" android:layout_height="fill_parent" />
+    <View android:layout_gravity="bottom" android:background="#ff404040" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <ImageView android:layout_gravity="center|right|top" android:id="@id/detail_fullscreen_playlist_item_num_mark" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/detail_video_trailer_mark" />
+</com.tudou.detail.widget.DefinedRatioFrameLayout>

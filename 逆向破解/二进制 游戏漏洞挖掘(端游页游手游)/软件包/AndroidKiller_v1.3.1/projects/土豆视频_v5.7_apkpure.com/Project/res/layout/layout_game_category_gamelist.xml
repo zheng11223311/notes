@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/tags_container" android:background="#ffffffff" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.youku.gamecenter.widgets.ScrollabledGridView android:id="@id/gridview" android:background="#ffffffff" android:paddingLeft="@dimen/game_center_subcategory_margin" android:paddingRight="@dimen/game_center_subcategory_margin" android:layout_width="fill_parent" android:layout_height="wrap_content" android:numColumns="4" android:layout_below="@id/top_spaceholder" />
+    <View android:id="@id/top_spaceholder" android:background="#ffffffff" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="@dimen/game_center_subcategory_margin" />
+    <View android:id="@id/bottom_spaceholder" android:background="#ffffffff" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="@dimen/game_center_subcategory_margin" android:layout_below="@id/gridview" />
+    <View android:background="#ffbcbbbb" android:layout_width="fill_parent" android:layout_height="2.0px" android:layout_below="@id/bottom_spaceholder" />
+</RelativeLayout>

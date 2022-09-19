@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/tudou_title_second" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:id="@id/status_bar_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="@dimen/tudou_top_bar_height"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <TextView android:textAppearance="@style/title_right_close_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="视频信息" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+        <RelativeLayout android:id="@id/rl_title_close" android:layout_width="39.0dip" android:layout_height="fill_parent" android:layout_marginRight="11.0dip" android:layout_alignParentRight="true">
+            <ImageView android:background="@drawable/classify_home_list_title_colse_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+        </RelativeLayout>
+        <View android:background="@drawable/tudouV5_yellow" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+</LinearLayout>

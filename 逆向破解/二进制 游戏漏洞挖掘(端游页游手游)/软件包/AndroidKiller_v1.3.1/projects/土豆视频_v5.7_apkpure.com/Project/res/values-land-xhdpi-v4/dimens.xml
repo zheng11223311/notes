@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="game_details_video_item_tv_title_size">14.0sp</dimen>
+    <dimen name="gamecenter_homepage_item_text_margin_left">7.0dip</dimen>
+    <dimen name="gridview_pading_horizontal">8.0dip</dimen>
+    <dimen name="channel_gridview_pading_horizontal">3.0dip</dimen>
+</resources>

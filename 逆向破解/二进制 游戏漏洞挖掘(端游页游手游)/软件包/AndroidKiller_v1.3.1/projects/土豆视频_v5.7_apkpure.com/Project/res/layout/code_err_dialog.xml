@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/code_err_bg" android:layout_width="@dimen/tudou_normal_dialog_width" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="center_horizontal" android:id="@id/codeErrImg" android:layout_width="@dimen/error_dialog_width" android:layout_height="@dimen/error_dialog_height" android:layout_marginTop="20.0dip" android:src="@drawable/code_err_logo" />
+    <TextView android:textAppearance="@style/tudou_dialog_msg" android:textColorLink="#ff3c3c3c" android:autoLink="web" android:layout_gravity="center_horizontal" android:id="@id/codeErrTips" android:paddingLeft="@dimen/tudou_normal_dialog_btn_marginLeft" android:paddingRight="@dimen/tudou_normal_dialog_btn_marginLeft" android:scrollbars="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/tudou_normal_dialog_btn_marginTop" android:text="抱歉，没有扫到相关二维码信息" android:maxLines="10" />
+    <View android:background="#ffd9d9d9" android:layout_width="fill_parent" android:layout_height="2.0px" android:layout_marginTop="@dimen/tudou_normal_dialog_btn_marginTop" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="17.0sp" android:textColor="#ffff6600" android:gravity="center" android:id="@id/codeErrBtn" android:layout_width="0.0dip" android:layout_height="@dimen/tudou_normal_dialog_btn_height" android:text="重新扫描" android:layout_weight="1.0" android:layout_alignParentRight="true" />
+    </LinearLayout>
+</LinearLayout>

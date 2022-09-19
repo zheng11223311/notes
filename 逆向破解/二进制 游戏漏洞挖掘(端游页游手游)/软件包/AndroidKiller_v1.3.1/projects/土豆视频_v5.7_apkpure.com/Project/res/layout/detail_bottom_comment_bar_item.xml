@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="13.0dip" android:textColor="@android:color/white" android:gravity="center" android:id="@id/detail_bottom_comment_item_type" android:background="#ffff6600" android:layout_width="34.0dip" android:layout_height="20.0dip" />
+    <TextView android:textSize="15.0dip" android:textColor="#ff3d3d3d" android:ellipsize="end" android:id="@id/detail_bottom_comment_item_content" android:layout_width="fill_parent" android:layout_height="fill_parent" android:maxLines="2" android:lineSpacingExtra="4.0dip" />
+</FrameLayout>

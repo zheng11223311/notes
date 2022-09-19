@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:background="@android:color/transparent" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <include android:id="@id/plugin_fullscreen_inner" layout="@layout/plugin_fullscreen_horizontal" />
+    <include android:id="@id/plugin_fullscreen_vertical_inner" layout="@layout/plugin_fullscreen_vertical" />
+    <RelativeLayout android:id="@id/plugin_full_pay_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <include android:id="@id/load_seekbar_container" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/detail_play_loading" />
+    <View android:id="@id/plugin_fullscreen_screenshot_anim_view" android:background="@android:color/white" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:alpha="0.0" />
+</FrameLayout>

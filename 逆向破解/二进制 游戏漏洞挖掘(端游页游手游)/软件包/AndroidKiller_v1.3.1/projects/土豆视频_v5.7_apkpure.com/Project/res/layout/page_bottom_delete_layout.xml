@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="horizontal" android:background="#ffd9d9d9" android:layout_width="fill_parent" android:layout_height="@dimen/cached_delete_ll_height"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:gravity="center" android:id="@id/btnALLSelect" android:background="@drawable/btn_white_selected" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_margin="1.0px" android:text="全选" android:layout_weight="1.0" style="@style/edit_button_selectall" />
+    <TextView android:gravity="center" android:id="@id/btnDeleteSelect" android:background="@drawable/btn_white_selected" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginTop="1.0px" android:layout_marginRight="1.0px" android:layout_marginBottom="1.0px" android:text="删除" android:layout_weight="1.0" style="@style/edit_button_nodelete" />
+</LinearLayout>

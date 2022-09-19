@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:paddingTop="@dimen/home_item_padding1" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:orientation="vertical" android:id="@id/root_view" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="@dimen/index_selectness_body_h">
+        <View android:background="#66000000" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <include android:id="@id/item1" android:layout_width="fill_parent" android:layout_height="@dimen/index_selectness_title_h" android:layout_alignParentTop="true" layout="@layout/index_selectness_title" />
+        <include android:id="@id/item2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="20.0dip" android:layout_below="@id/item1" layout="@layout/index_selectness_scroll" />
+    </RelativeLayout>
+</LinearLayout>

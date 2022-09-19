@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:id="@id/item_header_layout" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tudou="http://youku.com/tudou">
+    <RelativeLayout android:id="@id/header" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <ImageView android:id="@id/background" android:background="@drawable/hanxiubang_bg" android:layout_width="fill_parent" android:layout_height="200.0dip" android:layout_below="@id/theshow_title" />
+        <RelativeLayout android:id="@id/number" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:layout_below="@id/theshow_title">
+            <ImageView android:id="@id/number_background" android:background="@drawable/hanxiubang_number_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" />
+            <TextView android:textSize="16.0sp" android:textColor="#ffffffff" android:id="@id/number_num" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="第一期" android:layout_centerHorizontal="true" />
+            <TextView android:textSize="14.0sp" android:textColor="#ffffffff" android:id="@id/number_date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="26.0dip" android:text="2015.01.12 - 2015.02.12" android:layout_centerHorizontal="true" android:alpha="0.8" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/middle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="17.0dip" android:layout_below="@id/number">
+            <RelativeLayout android:background="@drawable/hanxiubang_countdown" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="34.0dip" android:layout_centerVertical="true">
+                    <TextView android:textSize="@dimen/text_15" android:textColor="#fffff5c5" android:id="@id/middle_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="下次排名更新" android:layout_centerVertical="true" />
+                    <TextView android:textSize="@dimen/text_15" android:textColor="#ffff6600" android:id="@id/middle_nexttime" android:paddingRight="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:text="00:00" android:layout_toRightOf="@id/middle_text" android:layout_centerVertical="true" />
+                </RelativeLayout>
+            </RelativeLayout>
+            <TextView android:textSize="15.0sp" android:textColor="#ffec710d" android:id="@id/right_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="打榜规则" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            <ImageView android:id="@id/right_icon" android:background="@drawable/hanxiubang_ic_explanation" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="6.0dip" android:layout_toLeftOf="@id/right_text" android:layout_centerVertical="true" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/live_layout" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:layout_below="@id/middle">
+            <RelativeLayout android:id="@id/live_body_pic" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <RelativeLayout android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="2.0dip">
+                    <com.youku.widget.YoukuImageView android:id="@id/live_pic" android:background="@drawable/hengtu_moren_big" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleType="fitXY" android:layout_centerHorizontal="true" tudou:pheight="7" tudou:pwidth="15" />
+                    <RelativeLayout android:background="@drawable/yaofeng" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignLeft="@id/live_pic" android:layout_alignRight="@id/live_pic" android:layout_alignBottom="@id/live_pic">
+                        <LinearLayout android:orientation="vertical" android:id="@id/video_layout" android:paddingBottom="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+                            <TextView android:textSize="15.0sp" android:textColor="#ffffffff" android:ellipsize="end" android:id="@id/laifeng" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="来疯" android:maxEms="10" android:singleLine="true" />
+                        </LinearLayout>
+                    </RelativeLayout>
+                    <ImageView android:background="@drawable/bigplay_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" />
+                </RelativeLayout>
+                <ImageView android:id="@id/live_icon" android:background="@drawable/hanxiubang_ic_zhibo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" />
+            </RelativeLayout>
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/history_layout" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/live_layout">
+            <TextView android:textSize="15.0sp" android:textColor="#ff101010" android:gravity="center" android:id="@id/history_date" android:layout_width="fill_parent" android:layout_height="40.0dip" android:text="2015.04.12 - 2015.04.16" />
+            <LinearLayout android:orientation="vertical" android:id="@id/cutline" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="6.0dip" android:layout_below="@id/history_date">
+                <View android:background="#ffededed" android:layout_width="fill_parent" android:layout_height="1.0px" />
+                <View android:background="#fff3f3f3" android:layout_width="fill_parent" android:layout_height="7.0dip" />
+                <View android:background="#ffededed" android:layout_width="fill_parent" android:layout_height="1.0px" />
+            </LinearLayout>
+        </RelativeLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/body" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_below="@id/history_layout">
+            <RelativeLayout android:id="@id/body_pic" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip">
+                    <com.youku.widget.YoukuImageView android:id="@id/pic" android:background="@drawable/hengtu_moren_big" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleType="fitXY" android:layout_centerHorizontal="true" tudou:pheight="7" tudou:pwidth="15" />
+                    <RelativeLayout android:background="@drawable/yaofeng" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/theshow_yaofeng_h" android:layout_alignLeft="@id/pic" android:layout_alignRight="@id/pic" android:layout_alignBottom="@id/pic">
+                        <LinearLayout android:orientation="vertical" android:id="@id/video_layout" android:paddingBottom="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+                            <TextView android:textSize="15.0sp" android:textColor="#ffffffff" android:ellipsize="end" android:id="@id/video_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="What is Love" android:maxEms="10" android:singleLine="true" />
+                            <TextView android:textSize="10.0sp" android:textColor="#ffa5a6a7" android:ellipsize="end" android:id="@id/player_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="EXO" android:maxEms="10" android:singleLine="true" />
+                        </LinearLayout>
+                        <TextView android:textSize="14.0sp" android:textColor="#ffa5a6a7" android:id="@id/play_count" android:paddingBottom="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="7.0dip" android:text="播放2.3万" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+                    </RelativeLayout>
+                </RelativeLayout>
+                <ImageView android:id="@id/rank_pic" android:background="@drawable/hanxiubang_ic_1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:layout_marginTop="4.0dip" android:layout_marginRight="6.0dip" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/body_text" android:layout_width="wrap_content" android:layout_height="64.0dip" android:layout_marginLeft="12.0dip">
+                <RelativeLayout android:paddingBottom="3.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true">
+                    <LinearLayout android:orientation="horizontal" android:id="@id/score_layout" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="22.0sp" android:textColor="#ffff2a2a" android:id="@id/score" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="100.00" />
+                        <TextView android:textSize="14.0sp" android:textColor="#ff333333" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="2.0dip" android:text="分" android:layout_toRightOf="@id/score" />
+                    </LinearLayout>
+                    <RelativeLayout android:id="@id/score_add_layout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/score_layout">
+                        <ImageView android:id="@id/add_icon" android:background="@drawable/hanxiubang_ic_up" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" />
+                        <TextView android:textSize="14.0sp" android:textColor="#ffff612a" android:id="@id/add_score" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_marginRight="6.0dip" android:text="10.00" android:layout_toRightOf="@id/add_icon" android:layout_centerVertical="true" />
+                        <TextView android:textSize="14.0sp" android:textColor="#ff999999" android:id="@id/popularity" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="人气：2.8万" android:layout_toRightOf="@id/add_score" android:layout_centerVertical="true" />
+                    </RelativeLayout>
+                </RelativeLayout>
+                <ImageView android:id="@id/gift" android:background="@drawable/theshowrank_gift_selected" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="12.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/all_channel_layout" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/rl_title" android:background="#fffcfcfc" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <View android:id="@id/status_bar_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <LinearLayout android:background="#fffcfcfc" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_below="@id/status_bar_view">
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true">
+                <RelativeLayout android:id="@id/rl_back" android:layout_width="48.0dip" android:layout_height="48.0dip">
+                    <ImageView android:background="@drawable/white_title_back_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+                </RelativeLayout>
+                <ImageView android:layout_gravity="center_vertical" android:background="#ffe2e2e2" android:layout_width="1.0dip" android:layout_height="16.0dip" />
+            </LinearLayout>
+            <TextView android:textSize="17.0sp" android:textColor="#ff838384" android:ellipsize="end" android:gravity="center|left" android:id="@id/tv_title_text" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="15.0dip" android:text="全部" android:maxLines="1" android:singleLine="true" android:layout_weight="1.0" />
+            <LinearLayout android:gravity="center_vertical" android:id="@id/ll_filtrate" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="10.0dip" android:layout_alignParentRight="true">
+                <ImageView android:id="@id/iv_filtrate" android:background="@drawable/channel_filter_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+                <TextView android:textSize="15.0dip" android:textColor="@color/classify_feature_title_item_def" android:id="@id/tv_filtrate" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:text="筛选" />
+            </LinearLayout>
+        </LinearLayout>
+        <View android:background="#ffff612a" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <com.handmark.pulltorefresh.library.PullToRefreshListView android:scrollbarStyle="outsideOverlay" android:id="@id/lv_pull_listview" android:background="@android:color/white" android:fadingEdge="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="#00000000" android:cacheColorHint="#00000000" android:horizontalSpacing="@dimen/channel_gridview_horspacing_channel" android:verticalSpacing="@dimen/channel_gridview_verspacing_channel" android:numColumns="3" android:divider="@null" />
+            <LinearLayout android:orientation="vertical" android:id="@id/float_view" android:background="@android:color/white" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <ListView android:id="@id/float_listview" android:background="@android:color/white" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" android:divider="@null" />
+            </LinearLayout>
+            <com.youku.widget.HintView android:id="@id/hint_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,14 @@
+.class synthetic Lcom/sea_monster/dao/query/DeepQuery$1;
+.super Ljava/lang/Object;
+.source "DeepQuery.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/sea_monster/dao/query/DeepQuery;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x1008
+    name = null
+.end annotation

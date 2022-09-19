@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/search_webiew_title" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/webview_title" />
+    <WebView android:id="@id/search_webview" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/search_webiew_title" />
+    <com.youku.widget.HintView android:id="@id/webviewNoResult" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/search_webiew_title" />
+    <ProgressBar android:id="@id/progress" android:layout_width="fill_parent" android:layout_height="3.0dip" android:max="100" android:progressDrawable="@drawable/webview_process_ram" android:layout_alignBottom="@id/search_webiew_title" style="?android:attr/progressBarStyleHorizontal" />
+</RelativeLayout>
