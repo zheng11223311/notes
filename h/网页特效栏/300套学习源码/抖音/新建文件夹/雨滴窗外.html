@@ -1,0 +1,59 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>雨滴-jq22.com</title>
+<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<style>
+body {
+	overflow:hidden;
+	height:100%;
+	margin:0;
+	padding:0;
+}
+.container {
+	width:100vw;
+	height:100vh;
+}
+
+
+.image-container {
+  overflow: hidden;
+}</style>
+</head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rainyday.js/0.1.2/rainyday.min.js"></script>
+<div class="image-container">
+  <img src="" 
+       alt="" 
+       class="container" 
+       id="image">
+</div>  
+
+
+
+
+<script>
+var image = document.getElementById('image');
+image.onload = function() {
+  var engine = new RainyDay({
+    image: this,
+    gravityAngle: Math.PI / 5
+
+  });
+  engine.trail = engine.TRAIL_SMUDGE;
+  engine.rain([ [3, 2, 2] ], 100);
+  engine.rain(
+    [
+        [1, 0, 20], 
+        [3, 3, 1],
+        [1, 2, 19]
+    ],                       
+    100);
+ // engine.rain([ [0, 2, 200], [3, 3, 1] ], 100);
+};
+image.crossOrigin = 'anonymous';
+image.src = 'http://www.jq22.com/tp/b59cb3f4-a074-4267-b4ed-bda5769e1ebc.jpg';</script>
+
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>zero-element 3d css corridor</title>
+  
+  
+  
+      <style>
+      html {
+  perspective: 600px;
+  background: rgb(10,25,10);
+}
+html,body {
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  transform-style: preserve-3d;
+}
+
+
+html:before,
+html:after,
+body:before,
+body:after {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  content: "";
+  background-size: 100% 100%, 400px 400px;
+  animation: 2s move3 linear infinite;
+}
+
+/* ceiling */
+html:before,
+html:after {
+  width: 200px;
+  height: 1600px;
+  margin: -800px -100px;
+  animation: 2s move2 linear infinite;
+  
+}
+/* walls */
+body:before,
+body:after {
+  height: 200px;
+  width: 1600px;
+  margin: -100px -800px;
+  background-image:
+    linear-gradient(90deg, rgba(0,0,0,0), rgba(10,20,10,.75) 50%, rgba(10,25,10,1)),
+    url(http://keithclark.co.uk/labs/css-fps/wall.jpg);
+}
+
+/* ceiling */
+html:before {
+  transform: translateY(-100px) rotateX(-90deg);  
+  background-image:
+    linear-gradient(rgba(0,0,0,0), rgba(10,20,10,.75) 50%, rgba(10,25,10,1)),
+    url(http://keithclark.co.uk/labs/css-fps/ceil.jpg);
+}
+
+/* floor */
+html:after {
+  transform: translateY(100px) rotateX(-90deg);
+  background-image:
+    linear-gradient(rgba(0,0,0,0), rgba(10,20,10,.75) 50%, rgba(10,25,10,1)),
+    url(http://keithclark.co.uk/labs/css-fps/floor.jpg);
+}
+
+/* left wall */
+body:before {
+  transform: translateX(-100px) rotateY(90deg);
+}
+
+/* right wall */
+body:after {
+  transform: translateX(100px) rotateY(90deg);
+}
+
+body {
+  animation: 2s move3 linear infinite;
+}
+html {
+  animation: 2s move2 linear infinite,
+    10s move ease-in-out alternate infinite;
+}
+
+@keyframes move {
+  from {
+    transform: translateX(-50px) rotateY(7deg) rotateX(2deg)
+  }
+  to {
+    transform: translateX(50px) rotateY(-7deg) rotateX(-4deg)  rotateZ(5deg)
+  }
+}
+
+@keyframes move2 {
+  from {
+    background-position: 0 0, 0 400px;
+  }
+  to {
+    background-position: 0 0, 0 0;
+  }
+}
+@keyframes move3 {
+  from {
+    background-position: 0 0, 400px 0;
+  }
+  to {
+    background-position: 0 0, 0 0;
+  }
+}
+
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+
+<body>
+
+  <!--
+
+This is a work in progress
+
+* Need to rething the z movement effect so it can be H/W accelerated
+* Need to create tiling textures
+* background-position z movement trick can be done with one animation
+
+-->
+  
+  
+
+</body>
+
+</html>

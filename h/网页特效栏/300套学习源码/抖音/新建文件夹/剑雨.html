@@ -1,0 +1,719 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>css3剑雨-jq22.com</title>
+<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<style>
+.sword:before, .sword:after, .grip:before, .grip:after {
+  border: 2px solid;
+}
+
+.sword {
+  height: 20vh;
+  width: 3vh;
+  background-image: -webkit-linear-gradient(left, transparent, transparent 16.66667%, black 16.76667%, black calc(16.66667% + 2px + .1%), #4a2713 calc(16.66667% + 2px + .1%), #6b3b1f calc(83.33333% - 2px), black calc(83.33333% - 2px + .1%), black 83.33333%, transparent 83.43333%);
+  background-image: linear-gradient(to right, transparent, transparent 16.66667%, black 16.76667%, black calc(16.66667% + 2px + .1%), #4a2713 calc(16.66667% + 2px + .1%), #6b3b1f calc(83.33333% - 2px), black calc(83.33333% - 2px + .1%), black 83.33333%, transparent 83.43333%);
+  -webkit-transform-origin: top center;
+          transform-origin: top center;
+  -webkit-animation: sword 10s ease-in both infinite;
+          animation: sword 10s ease-in both infinite;
+}
+.sword:before, .sword:after {
+  content: '';
+  position: absolute;
+  height: 70%;
+  width: 50%;
+  bottom: -2vh;
+  background-color: gray;
+}
+.sword:before {
+  left: 0;
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+  -webkit-transform: skewY(45deg);
+          transform: skewY(45deg);
+  background-color: #494545;
+  border-right: none;
+}
+.sword:after {
+  right: 0;
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+  -webkit-transform: skewY(-45deg);
+          transform: skewY(-45deg);
+  background-color: #878383;
+  border-left: none;
+}
+.sword:nth-child(1) {
+  --rotate: 8.39386deg;
+  --z: -83.75725px;
+  -webkit-animation-delay: 0.47328s;
+          animation-delay: 0.47328s;
+}
+.sword:nth-child(2) {
+  --rotate: -6.8085deg;
+  --z: -72.38789px;
+  -webkit-animation-delay: 0.11367s;
+          animation-delay: 0.11367s;
+}
+.sword:nth-child(3) {
+  --rotate: -1.63563deg;
+  --z: -7.72513px;
+  -webkit-animation-delay: 1.14191s;
+          animation-delay: 1.14191s;
+}
+.sword:nth-child(4) {
+  --rotate: 5.61503deg;
+  --z: -61.22559px;
+  -webkit-animation-delay: 0.47981s;
+          animation-delay: 0.47981s;
+}
+.sword:nth-child(5) {
+  --rotate: 2.60706deg;
+  --z: -62.69257px;
+  -webkit-animation-delay: 0.75611s;
+          animation-delay: 0.75611s;
+}
+.sword:nth-child(6) {
+  --rotate: 7.80629deg;
+  --z: -2.27727px;
+  -webkit-animation-delay: 1.06902s;
+          animation-delay: 1.06902s;
+}
+.sword:nth-child(7) {
+  --rotate: 3.06714deg;
+  --z: -20.85914px;
+  -webkit-animation-delay: 1.42217s;
+          animation-delay: 1.42217s;
+}
+.sword:nth-child(8) {
+  --rotate: -8.73295deg;
+  --z: -96.66717px;
+  -webkit-animation-delay: 1.25464s;
+          animation-delay: 1.25464s;
+}
+.sword:nth-child(9) {
+  --rotate: 6.79895deg;
+  --z: -6.32906px;
+  -webkit-animation-delay: 0.07573s;
+          animation-delay: 0.07573s;
+}
+.sword:nth-child(10) {
+  --rotate: -6.98765deg;
+  --z: -70.44303px;
+  -webkit-animation-delay: 1.80721s;
+          animation-delay: 1.80721s;
+}
+.sword:nth-child(11) {
+  --rotate: -3.16949deg;
+  --z: -30.74019px;
+  -webkit-animation-delay: 0.67041s;
+          animation-delay: 0.67041s;
+}
+.sword:nth-child(12) {
+  --rotate: 0.21328deg;
+  --z: -20.84269px;
+  -webkit-animation-delay: 4.17622s;
+          animation-delay: 4.17622s;
+}
+.sword:nth-child(13) {
+  --rotate: 1.63682deg;
+  --z: -27.30875px;
+  -webkit-animation-delay: 1.59776s;
+          animation-delay: 1.59776s;
+}
+.sword:nth-child(14) {
+  --rotate: 4.93067deg;
+  --z: -43.03541px;
+  -webkit-animation-delay: 6.43133s;
+          animation-delay: 6.43133s;
+}
+.sword:nth-child(15) {
+  --rotate: 1.90074deg;
+  --z: -87.00767px;
+  -webkit-animation-delay: 1.61407s;
+          animation-delay: 1.61407s;
+}
+.sword:nth-child(16) {
+  --rotate: -0.77103deg;
+  --z: -15.8819px;
+  -webkit-animation-delay: 7.13583s;
+          animation-delay: 7.13583s;
+}
+.sword:nth-child(17) {
+  --rotate: -7.57022deg;
+  --z: -31.15633px;
+  -webkit-animation-delay: 2.31672s;
+          animation-delay: 2.31672s;
+}
+.sword:nth-child(18) {
+  --rotate: 2.0886deg;
+  --z: -11.75369px;
+  -webkit-animation-delay: 0.12172s;
+          animation-delay: 0.12172s;
+}
+.sword:nth-child(19) {
+  --rotate: -5.86961deg;
+  --z: -79.20324px;
+  -webkit-animation-delay: 7.94673s;
+          animation-delay: 7.94673s;
+}
+.sword:nth-child(20) {
+  --rotate: -8.13614deg;
+  --z: -56.73587px;
+  -webkit-animation-delay: 9.84234s;
+          animation-delay: 9.84234s;
+}
+.sword:nth-child(21) {
+  --rotate: 2.27997deg;
+  --z: -51.48173px;
+  -webkit-animation-delay: 8.9305s;
+          animation-delay: 8.9305s;
+}
+.sword:nth-child(22) {
+  --rotate: 7.29396deg;
+  --z: -42.69384px;
+  -webkit-animation-delay: 9.83579s;
+          animation-delay: 9.83579s;
+}
+.sword:nth-child(23) {
+  --rotate: -6.6045deg;
+  --z: -38.5548px;
+  -webkit-animation-delay: 3.67031s;
+          animation-delay: 3.67031s;
+}
+.sword:nth-child(24) {
+  --rotate: -5.44095deg;
+  --z: -38.05734px;
+  -webkit-animation-delay: 3.44631s;
+          animation-delay: 3.44631s;
+}
+.sword:nth-child(25) {
+  --rotate: 4.29331deg;
+  --z: -38.05218px;
+  -webkit-animation-delay: 11.86746s;
+          animation-delay: 11.86746s;
+}
+.sword:nth-child(26) {
+  --rotate: -1.67063deg;
+  --z: -7.4513px;
+  -webkit-animation-delay: 7.15327s;
+          animation-delay: 7.15327s;
+}
+.sword:nth-child(27) {
+  --rotate: 0.71187deg;
+  --z: -11.12918px;
+  -webkit-animation-delay: 5.06463s;
+          animation-delay: 5.06463s;
+}
+.sword:nth-child(28) {
+  --rotate: 3.82341deg;
+  --z: -33.35393px;
+  -webkit-animation-delay: 3.10124s;
+          animation-delay: 3.10124s;
+}
+.sword:nth-child(29) {
+  --rotate: 1.81681deg;
+  --z: -31.20551px;
+  -webkit-animation-delay: 3.57987s;
+          animation-delay: 3.57987s;
+}
+.sword:nth-child(30) {
+  --rotate: 3.91762deg;
+  --z: -27.99528px;
+  -webkit-animation-delay: 2.78144s;
+          animation-delay: 2.78144s;
+}
+.sword:nth-child(31) {
+  --rotate: -0.70354deg;
+  --z: -12.75031px;
+  -webkit-animation-delay: 1.06997s;
+          animation-delay: 1.06997s;
+}
+.sword:nth-child(32) {
+  --rotate: 4.25287deg;
+  --z: -35.87313px;
+  -webkit-animation-delay: 10.1253s;
+          animation-delay: 10.1253s;
+}
+.sword:nth-child(33) {
+  --rotate: 6.37927deg;
+  --z: -24.85096px;
+  -webkit-animation-delay: 1.66117s;
+          animation-delay: 1.66117s;
+}
+.sword:nth-child(34) {
+  --rotate: 9.83106deg;
+  --z: -71.21465px;
+  -webkit-animation-delay: 4.4098s;
+          animation-delay: 4.4098s;
+}
+.sword:nth-child(35) {
+  --rotate: 8.39125deg;
+  --z: -25.06617px;
+  -webkit-animation-delay: 5.99589s;
+          animation-delay: 5.99589s;
+}
+.sword:nth-child(36) {
+  --rotate: -0.93748deg;
+  --z: -34.90687px;
+  -webkit-animation-delay: 15.30374s;
+          animation-delay: 15.30374s;
+}
+.sword:nth-child(37) {
+  --rotate: 5.87064deg;
+  --z: -94.47802px;
+  -webkit-animation-delay: 8.14205s;
+          animation-delay: 8.14205s;
+}
+.sword:nth-child(38) {
+  --rotate: 2.58501deg;
+  --z: -88.41837px;
+  -webkit-animation-delay: 15.93085s;
+          animation-delay: 15.93085s;
+}
+.sword:nth-child(39) {
+  --rotate: -6.61699deg;
+  --z: -41.5508px;
+  -webkit-animation-delay: 17.48765s;
+          animation-delay: 17.48765s;
+}
+.sword:nth-child(40) {
+  --rotate: -4.59197deg;
+  --z: -48.89949px;
+  -webkit-animation-delay: 8.19838s;
+          animation-delay: 8.19838s;
+}
+.sword:nth-child(41) {
+  --rotate: -1.83705deg;
+  --z: -75.18958px;
+  -webkit-animation-delay: 11.52209s;
+          animation-delay: 11.52209s;
+}
+.sword:nth-child(42) {
+  --rotate: -2.25668deg;
+  --z: -48.11329px;
+  -webkit-animation-delay: 13.68936s;
+          animation-delay: 13.68936s;
+}
+.sword:nth-child(43) {
+  --rotate: 4.10462deg;
+  --z: -66.9364px;
+  -webkit-animation-delay: 0.73041s;
+          animation-delay: 0.73041s;
+}
+.sword:nth-child(44) {
+  --rotate: -7.89393deg;
+  --z: -9.63365px;
+  -webkit-animation-delay: 15.91373s;
+          animation-delay: 15.91373s;
+}
+.sword:nth-child(45) {
+  --rotate: 3.4608deg;
+  --z: -58.19061px;
+  -webkit-animation-delay: 3.10076s;
+          animation-delay: 3.10076s;
+}
+.sword:nth-child(46) {
+  --rotate: -8.23501deg;
+  --z: -80.69943px;
+  -webkit-animation-delay: 11.82384s;
+          animation-delay: 11.82384s;
+}
+.sword:nth-child(47) {
+  --rotate: -9.77678deg;
+  --z: -76.91881px;
+  -webkit-animation-delay: 4.30803s;
+          animation-delay: 4.30803s;
+}
+.sword:nth-child(48) {
+  --rotate: -7.69954deg;
+  --z: -17.63265px;
+  -webkit-animation-delay: 13.04739s;
+          animation-delay: 13.04739s;
+}
+.sword:nth-child(49) {
+  --rotate: 3.79306deg;
+  --z: -34.19814px;
+  -webkit-animation-delay: 10.67998s;
+          animation-delay: 10.67998s;
+}
+.sword:nth-child(50) {
+  --rotate: -4.12563deg;
+  --z: -75.97199px;
+  -webkit-animation-delay: 8.76057s;
+          animation-delay: 8.76057s;
+}
+@-webkit-keyframes sword {
+  from {
+    -webkit-transform: translateY(-200vh) translateZ(var(--z)) rotate(var(--rotate));
+            transform: translateY(-200vh) translateZ(var(--z)) rotate(var(--rotate));
+  }
+  10%, to {
+    -webkit-transform: translateZ(var(--z)) rotate(var(--rotate));
+            transform: translateZ(var(--z)) rotate(var(--rotate));
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes sword {
+  from {
+    -webkit-transform: translateY(-200vh) translateZ(var(--z)) rotate(var(--rotate));
+            transform: translateY(-200vh) translateZ(var(--z)) rotate(var(--rotate));
+  }
+  10%, to {
+    -webkit-transform: translateZ(var(--z)) rotate(var(--rotate));
+            transform: translateZ(var(--z)) rotate(var(--rotate));
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.grip {
+  position: absolute;
+  width: 200%;
+  height: 40%;
+  left: -50%;
+  z-index: 1;
+}
+.grip:before, .grip:after {
+  content: '';
+  position: absolute;
+}
+.grip:before {
+  bottom: 0;
+  height: 25%;
+  width: 100%;
+  background-color: #594E4C;
+}
+.grip:after {
+  width: 3vh;
+  height: 3vh;
+  border-radius: 50%;
+  background-color: #594e4c;
+  left: calc(50% - 1.5vh);
+  top: -1vh;
+}
+
+.clouds {
+  width: 20vmax;
+  height: 10vmax;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-filter: blur(5vmax);
+          filter: blur(5vmax);
+  will-change: transform;
+}
+.clouds:before, .clouds:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -5vh;
+  left: 0;
+  background-color: currentColor;
+  border-radius: 50%;
+}
+.clouds:before {
+  color: rgba(255, 255, 255, 0.3);
+  width: 200%;
+  box-shadow: 51.46069vw 2.20661vh currentColor, 4.23275vw 5.34393vh currentColor, 61.96204vw 5.60124vh currentColor, 76.41196vw 13.43362vh currentColor, 27.17839vw 15.88727vh currentColor, 68.88903vw 14.37287vh currentColor, 68.27601vw 18.81424vh currentColor, 18.73497vw 8.14598vh currentColor, 45.23568vw 11.77528vh currentColor, 23.49576vw 5.78673vh currentColor;
+}
+.clouds:after {
+  color: #0d141c;
+  -webkit-filter: blur(3vmax);
+          filter: blur(3vmax);
+  z-index: 1;
+  opacity: 0.6;
+  box-shadow: 7.03855vw 14.44877vh currentColor, 50.38532vw 19.75786vh currentColor, 12.37191vw 19.24552vh currentColor, 37.30133vw 10.33487vh currentColor, 74.22589vw 11.91745vh currentColor, 47.69337vw 11.6707vh currentColor, 6.7451vw 11.5466vh currentColor, 30.73069vw 17.49921vh currentColor, 78.58482vw 10.9125vh currentColor, 66.90668vw 4.3153vh currentColor, 2.62032vw 9.25307vh currentColor, 78.92189vw 4.64943vh currentColor, 9.54749vw 11.94573vh currentColor, 75.3324vw 16.62846vh currentColor, 51.04472vw 0.16786vh currentColor, 8.70098vw 4.83993vh currentColor, 9.92011vw 0.02991vh currentColor, 57.21962vw 8.88835vh currentColor, 2.15261vw 4.72386vh currentColor, 37.72257vw 9.80013vh currentColor, 28.77529vw 1.4043vh currentColor, 81.76587vw 7.03797vh currentColor, 82.91088vw 14.00317vh currentColor, 9.52429vw 11.06823vh currentColor, 24.95449vw 2.41647vh currentColor, 68.82464vw 12.08197vh currentColor, 42.26014vw 16.36082vh currentColor, 34.09558vw 16.2289vh currentColor, 68.26821vw 3.6377vh currentColor, 36.30567vw 10.35826vh currentColor, 20.6792vw 18.01393vh currentColor, 93.77443vw 19.86978vh currentColor, 70.62608vw 0.162vh currentColor, 32.36522vw 6.98021vh currentColor, 65.42297vw 14.74296vh currentColor, 44.82203vw 10.41328vh currentColor, 74.57411vw 15.50219vh currentColor, 79.91373vw 0.19257vh currentColor, 96.0318vw 12.04559vh currentColor, 92.77587vw 19.17998vh currentColor, 16.72115vw 10.99563vh currentColor, 16.27435vw 12.71046vh currentColor, 12.39346vw 0.4635vh currentColor, 94.99648vw 9.36274vh currentColor, 25.01611vw 3.65712vh currentColor, 2.12716vw 15.84533vh currentColor, 78.49207vw 5.95591vh currentColor, 43.67731vw 17.70427vh currentColor, 69.07299vw 13.79832vh currentColor, 81.47311vw 17.11507vh currentColor;
+}
+
+@-webkit-keyframes lightning {
+  from, to {
+    opacity: 0;
+  }
+  90.45835% {
+    opacity: 1;
+  }
+  93.45835%, 89.45835% {
+    opacity: 0;
+  }
+  76.20299% {
+    opacity: 1;
+  }
+  79.20299%, 75.20299% {
+    opacity: 0;
+  }
+  6.75355% {
+    opacity: 1;
+  }
+  9.75355%, 5.75355% {
+    opacity: 0;
+  }
+  91.12547% {
+    opacity: 1;
+  }
+  94.12547%, 90.12547% {
+    opacity: 0;
+  }
+  20.58968% {
+    opacity: 1;
+  }
+  23.58968%, 19.58968% {
+    opacity: 0;
+  }
+}
+
+@keyframes lightning {
+  from, to {
+    opacity: 0;
+  }
+  90.45835% {
+    opacity: 1;
+  }
+  93.45835%, 89.45835% {
+    opacity: 0;
+  }
+  76.20299% {
+    opacity: 1;
+  }
+  79.20299%, 75.20299% {
+    opacity: 0;
+  }
+  6.75355% {
+    opacity: 1;
+  }
+  9.75355%, 5.75355% {
+    opacity: 0;
+  }
+  91.12547% {
+    opacity: 1;
+  }
+  94.12547%, 90.12547% {
+    opacity: 0;
+  }
+  20.58968% {
+    opacity: 1;
+  }
+  23.58968%, 19.58968% {
+    opacity: 0;
+  }
+}
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform-origin: top center;
+          transform-origin: top center;
+  -webkit-perspective: 100px;
+          perspective: 100px;
+  background-color: #0C1617;
+}
+body:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  -webkit-animation: lightning 10s infinite;
+          animation: lightning 10s infinite;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  position: relative;
+}
+</style>
+</head>
+<body>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+<div class="sword">
+  <div class="grip"></div>
+</div>
+
+<div class="clouds">
+  
+</div>
+
+<script>
+</script>
+
+</body>
+</html>
