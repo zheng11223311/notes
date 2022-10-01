@@ -38,6 +38,10 @@ demo.js,
 
 vscode 打开文件,按F5运行脚本
 
+按shift+F5停止当前脚本
+
+ctrl+shift+p 查看其他命令
+
 ```js
 toast("autojs 初体验");
 sleep(1);
