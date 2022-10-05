@@ -1,0 +1,6 @@
+<!--index.wxml-->
+<view class="container">
+  Weixin
+</view>
+<web-view src="https://www.escook.cn">
+</web-view>
